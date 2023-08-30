@@ -16,5 +16,10 @@ namespace SistemaDeGestionHotel
         {
             InitializeComponent();
         }
+
+        private void LUsuario_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
