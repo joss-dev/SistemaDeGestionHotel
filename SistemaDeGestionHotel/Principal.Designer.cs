@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             panelMenu = new Panel();
-            iconButton4 = new FontAwesome.Sharp.IconButton();
-            iconButton3 = new FontAwesome.Sharp.IconButton();
-            iconButton2 = new FontAwesome.Sharp.IconButton();
-            iconButtonHome = new FontAwesome.Sharp.IconButton();
+            btnGestionPagos = new FontAwesome.Sharp.IconButton();
+            btnRegistrarServicios = new FontAwesome.Sharp.IconButton();
+            btnGestionHabitaciones = new FontAwesome.Sharp.IconButton();
+            btnHome = new FontAwesome.Sharp.IconButton();
             panelLogo = new Panel();
             btnExit = new FontAwesome.Sharp.IconButton();
             panelMenu.SuspendLayout();
@@ -41,10 +41,10 @@
             // panelMenu
             // 
             panelMenu.BackColor = Color.Indigo;
-            panelMenu.Controls.Add(iconButton4);
-            panelMenu.Controls.Add(iconButton3);
-            panelMenu.Controls.Add(iconButton2);
-            panelMenu.Controls.Add(iconButtonHome);
+            panelMenu.Controls.Add(btnGestionPagos);
+            panelMenu.Controls.Add(btnRegistrarServicios);
+            panelMenu.Controls.Add(btnGestionHabitaciones);
+            panelMenu.Controls.Add(btnHome);
             panelMenu.Controls.Add(panelLogo);
             panelMenu.Dock = DockStyle.Left;
             panelMenu.ForeColor = SystemColors.ActiveCaptionText;
@@ -53,97 +53,97 @@
             panelMenu.Size = new Size(220, 450);
             panelMenu.TabIndex = 0;
             // 
-            // iconButton4
+            // btnGestionPagos
             // 
-            iconButton4.Dock = DockStyle.Top;
-            iconButton4.FlatAppearance.BorderSize = 0;
-            iconButton4.FlatAppearance.MouseDownBackColor = Color.Gainsboro;
-            iconButton4.FlatAppearance.MouseOverBackColor = Color.Gray;
-            iconButton4.FlatStyle = FlatStyle.Flat;
-            iconButton4.ForeColor = Color.White;
-            iconButton4.IconChar = FontAwesome.Sharp.IconChar.HomeLg;
-            iconButton4.IconColor = Color.White;
-            iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton4.IconSize = 38;
-            iconButton4.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton4.Location = new Point(0, 320);
-            iconButton4.Name = "iconButton4";
-            iconButton4.Padding = new Padding(20, 0, 10, 0);
-            iconButton4.Size = new Size(220, 60);
-            iconButton4.TabIndex = 4;
-            iconButton4.Text = "iconButton4";
-            iconButton4.TextAlign = ContentAlignment.MiddleLeft;
-            iconButton4.TextImageRelation = TextImageRelation.ImageBeforeText;
-            iconButton4.UseVisualStyleBackColor = true;
+            btnGestionPagos.Dock = DockStyle.Top;
+            btnGestionPagos.FlatAppearance.BorderSize = 0;
+            btnGestionPagos.FlatAppearance.MouseDownBackColor = Color.Gainsboro;
+            btnGestionPagos.FlatAppearance.MouseOverBackColor = Color.Gray;
+            btnGestionPagos.FlatStyle = FlatStyle.Flat;
+            btnGestionPagos.ForeColor = Color.White;
+            btnGestionPagos.IconChar = FontAwesome.Sharp.IconChar.MoneyCheckDollar;
+            btnGestionPagos.IconColor = Color.White;
+            btnGestionPagos.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnGestionPagos.IconSize = 38;
+            btnGestionPagos.ImageAlign = ContentAlignment.MiddleLeft;
+            btnGestionPagos.Location = new Point(0, 320);
+            btnGestionPagos.Name = "btnGestionPagos";
+            btnGestionPagos.Padding = new Padding(20, 0, 10, 0);
+            btnGestionPagos.Size = new Size(220, 60);
+            btnGestionPagos.TabIndex = 4;
+            btnGestionPagos.Text = "Gestionar Pagos";
+            btnGestionPagos.TextAlign = ContentAlignment.MiddleLeft;
+            btnGestionPagos.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnGestionPagos.UseVisualStyleBackColor = true;
             // 
-            // iconButton3
+            // btnRegistrarServicios
             // 
-            iconButton3.Dock = DockStyle.Top;
-            iconButton3.FlatAppearance.BorderSize = 0;
-            iconButton3.FlatAppearance.MouseDownBackColor = Color.Gainsboro;
-            iconButton3.FlatAppearance.MouseOverBackColor = Color.Gray;
-            iconButton3.FlatStyle = FlatStyle.Flat;
-            iconButton3.ForeColor = Color.White;
-            iconButton3.IconChar = FontAwesome.Sharp.IconChar.HomeLg;
-            iconButton3.IconColor = Color.White;
-            iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton3.IconSize = 38;
-            iconButton3.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton3.Location = new Point(0, 260);
-            iconButton3.Name = "iconButton3";
-            iconButton3.Padding = new Padding(20, 0, 10, 0);
-            iconButton3.Size = new Size(220, 60);
-            iconButton3.TabIndex = 3;
-            iconButton3.Text = "iconButton3";
-            iconButton3.TextAlign = ContentAlignment.MiddleLeft;
-            iconButton3.TextImageRelation = TextImageRelation.ImageBeforeText;
-            iconButton3.UseVisualStyleBackColor = true;
+            btnRegistrarServicios.Dock = DockStyle.Top;
+            btnRegistrarServicios.FlatAppearance.BorderSize = 0;
+            btnRegistrarServicios.FlatAppearance.MouseDownBackColor = Color.Gainsboro;
+            btnRegistrarServicios.FlatAppearance.MouseOverBackColor = Color.Gray;
+            btnRegistrarServicios.FlatStyle = FlatStyle.Flat;
+            btnRegistrarServicios.ForeColor = Color.White;
+            btnRegistrarServicios.IconChar = FontAwesome.Sharp.IconChar.WifiStrong;
+            btnRegistrarServicios.IconColor = Color.White;
+            btnRegistrarServicios.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnRegistrarServicios.IconSize = 38;
+            btnRegistrarServicios.ImageAlign = ContentAlignment.MiddleLeft;
+            btnRegistrarServicios.Location = new Point(0, 260);
+            btnRegistrarServicios.Name = "btnRegistrarServicios";
+            btnRegistrarServicios.Padding = new Padding(20, 0, 10, 0);
+            btnRegistrarServicios.Size = new Size(220, 60);
+            btnRegistrarServicios.TabIndex = 3;
+            btnRegistrarServicios.Text = "Registrar Servicios ";
+            btnRegistrarServicios.TextAlign = ContentAlignment.MiddleLeft;
+            btnRegistrarServicios.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnRegistrarServicios.UseVisualStyleBackColor = true;
             // 
-            // iconButton2
+            // btnGestionHabitaciones
             // 
-            iconButton2.Dock = DockStyle.Top;
-            iconButton2.FlatAppearance.BorderSize = 0;
-            iconButton2.FlatAppearance.MouseDownBackColor = Color.Gainsboro;
-            iconButton2.FlatAppearance.MouseOverBackColor = Color.Gray;
-            iconButton2.FlatStyle = FlatStyle.Flat;
-            iconButton2.ForeColor = Color.White;
-            iconButton2.IconChar = FontAwesome.Sharp.IconChar.HomeLg;
-            iconButton2.IconColor = Color.White;
-            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton2.IconSize = 38;
-            iconButton2.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton2.Location = new Point(0, 200);
-            iconButton2.Name = "iconButton2";
-            iconButton2.Padding = new Padding(20, 0, 10, 0);
-            iconButton2.Size = new Size(220, 60);
-            iconButton2.TabIndex = 2;
-            iconButton2.Text = "iconButton2";
-            iconButton2.TextAlign = ContentAlignment.MiddleLeft;
-            iconButton2.TextImageRelation = TextImageRelation.ImageBeforeText;
-            iconButton2.UseVisualStyleBackColor = true;
+            btnGestionHabitaciones.Dock = DockStyle.Top;
+            btnGestionHabitaciones.FlatAppearance.BorderSize = 0;
+            btnGestionHabitaciones.FlatAppearance.MouseDownBackColor = Color.Gainsboro;
+            btnGestionHabitaciones.FlatAppearance.MouseOverBackColor = Color.Gray;
+            btnGestionHabitaciones.FlatStyle = FlatStyle.Flat;
+            btnGestionHabitaciones.ForeColor = Color.White;
+            btnGestionHabitaciones.IconChar = FontAwesome.Sharp.IconChar.DoorOpen;
+            btnGestionHabitaciones.IconColor = Color.White;
+            btnGestionHabitaciones.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnGestionHabitaciones.IconSize = 38;
+            btnGestionHabitaciones.ImageAlign = ContentAlignment.MiddleLeft;
+            btnGestionHabitaciones.Location = new Point(0, 200);
+            btnGestionHabitaciones.Name = "btnGestionHabitaciones";
+            btnGestionHabitaciones.Padding = new Padding(20, 0, 10, 0);
+            btnGestionHabitaciones.Size = new Size(220, 60);
+            btnGestionHabitaciones.TabIndex = 2;
+            btnGestionHabitaciones.Text = "Gestionar Habitaciones";
+            btnGestionHabitaciones.TextAlign = ContentAlignment.MiddleLeft;
+            btnGestionHabitaciones.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnGestionHabitaciones.UseVisualStyleBackColor = true;
             // 
-            // iconButtonHome
+            // btnHome
             // 
-            iconButtonHome.Dock = DockStyle.Top;
-            iconButtonHome.FlatAppearance.BorderSize = 0;
-            iconButtonHome.FlatAppearance.MouseDownBackColor = Color.Gainsboro;
-            iconButtonHome.FlatAppearance.MouseOverBackColor = Color.Gray;
-            iconButtonHome.FlatStyle = FlatStyle.Flat;
-            iconButtonHome.ForeColor = Color.White;
-            iconButtonHome.IconChar = FontAwesome.Sharp.IconChar.HomeLg;
-            iconButtonHome.IconColor = Color.White;
-            iconButtonHome.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButtonHome.IconSize = 38;
-            iconButtonHome.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButtonHome.Location = new Point(0, 140);
-            iconButtonHome.Name = "iconButtonHome";
-            iconButtonHome.Padding = new Padding(20, 0, 10, 0);
-            iconButtonHome.Size = new Size(220, 60);
-            iconButtonHome.TabIndex = 1;
-            iconButtonHome.Text = "Home";
-            iconButtonHome.TextAlign = ContentAlignment.MiddleLeft;
-            iconButtonHome.TextImageRelation = TextImageRelation.ImageBeforeText;
-            iconButtonHome.UseVisualStyleBackColor = true;
+            btnHome.Dock = DockStyle.Top;
+            btnHome.FlatAppearance.BorderSize = 0;
+            btnHome.FlatAppearance.MouseDownBackColor = Color.Gainsboro;
+            btnHome.FlatAppearance.MouseOverBackColor = Color.Gray;
+            btnHome.FlatStyle = FlatStyle.Flat;
+            btnHome.ForeColor = Color.White;
+            btnHome.IconChar = FontAwesome.Sharp.IconChar.HomeLg;
+            btnHome.IconColor = Color.White;
+            btnHome.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnHome.IconSize = 38;
+            btnHome.ImageAlign = ContentAlignment.MiddleLeft;
+            btnHome.Location = new Point(0, 140);
+            btnHome.Name = "btnHome";
+            btnHome.Padding = new Padding(20, 0, 10, 0);
+            btnHome.Size = new Size(220, 60);
+            btnHome.TabIndex = 1;
+            btnHome.Text = "Home";
+            btnHome.TextAlign = ContentAlignment.MiddleLeft;
+            btnHome.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnHome.UseVisualStyleBackColor = true;
             // 
             // panelLogo
             // 
@@ -186,11 +186,11 @@
         #endregion
 
         private Panel panelMenu;
-        private FontAwesome.Sharp.IconButton iconButtonHome;
+        private FontAwesome.Sharp.IconButton btnHome;
         private Panel panelLogo;
-        private FontAwesome.Sharp.IconButton iconButton4;
-        private FontAwesome.Sharp.IconButton iconButton3;
-        private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton btnGestionPagos;
+        private FontAwesome.Sharp.IconButton btnRegistrarServicios;
+        private FontAwesome.Sharp.IconButton btnGestionHabitaciones;
         private FontAwesome.Sharp.IconButton btnExit;
     }
 }
