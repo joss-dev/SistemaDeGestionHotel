@@ -31,14 +31,16 @@
             LUsuario = new Label();
             LPass = new Label();
             textBox1 = new TextBox();
-            textBox2 = new TextBox();
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
-            iconButton2 = new FontAwesome.Sharp.IconButton();
             button1 = new Button();
+            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
+            textBox2 = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
             SuspendLayout();
             // 
             // LUsuario
@@ -71,13 +73,6 @@
             textBox1.Size = new Size(155, 23);
             textBox1.TabIndex = 2;
             // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(127, 274);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(155, 23);
-            textBox2.TabIndex = 3;
-            // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(39, 79, 193);
@@ -98,35 +93,6 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // iconButton1
-            // 
-            iconButton1.AutoSize = true;
-            iconButton1.FlatAppearance.BorderSize = 0;
-            iconButton1.FlatStyle = FlatStyle.Flat;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.User;
-            iconButton1.IconColor = Color.Black;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.IconSize = 30;
-            iconButton1.Location = new Point(139, 172);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(36, 36);
-            iconButton1.TabIndex = 5;
-            iconButton1.UseVisualStyleBackColor = true;
-            // 
-            // iconButton2
-            // 
-            iconButton2.FlatAppearance.BorderSize = 0;
-            iconButton2.FlatStyle = FlatStyle.Flat;
-            iconButton2.IconChar = FontAwesome.Sharp.IconChar.Lock;
-            iconButton2.IconColor = Color.Black;
-            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton2.IconSize = 30;
-            iconButton2.Location = new Point(139, 239);
-            iconButton2.Name = "iconButton2";
-            iconButton2.Size = new Size(36, 33);
-            iconButton2.TabIndex = 6;
-            iconButton2.UseVisualStyleBackColor = true;
-            // 
             // button1
             // 
             button1.Location = new Point(127, 317);
@@ -136,17 +102,52 @@
             button1.Text = "Iniciar Sesión";
             button1.UseVisualStyleBackColor = true;
             // 
+            // iconPictureBox1
+            // 
+            iconPictureBox1.BackColor = Color.FromArgb(103, 209, 100);
+            iconPictureBox1.ForeColor = SystemColors.ControlText;
+            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.User;
+            iconPictureBox1.IconColor = SystemColors.ControlText;
+            iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox1.Location = new Point(139, 170);
+            iconPictureBox1.Name = "iconPictureBox1";
+            iconPictureBox1.Size = new Size(32, 32);
+            iconPictureBox1.TabIndex = 8;
+            iconPictureBox1.TabStop = false;
+            iconPictureBox1.Click += iconPictureBox1_Click;
+            // 
+            // iconPictureBox2
+            // 
+            iconPictureBox2.BackColor = Color.FromArgb(103, 209, 100);
+            iconPictureBox2.ForeColor = SystemColors.ControlText;
+            iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Lock;
+            iconPictureBox2.IconColor = SystemColors.ControlText;
+            iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox2.Location = new Point(139, 235);
+            iconPictureBox2.Name = "iconPictureBox2";
+            iconPictureBox2.Size = new Size(32, 32);
+            iconPictureBox2.TabIndex = 9;
+            iconPictureBox2.TabStop = false;
+            iconPictureBox2.Click += iconPictureBox2_Click;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(127, 273);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(155, 23);
+            textBox2.TabIndex = 10;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(103, 209, 100);
             ClientSize = new Size(408, 394);
-            Controls.Add(button1);
-            Controls.Add(iconButton2);
-            Controls.Add(iconButton1);
-            Controls.Add(panel1);
             Controls.Add(textBox2);
+            Controls.Add(iconPictureBox2);
+            Controls.Add(iconPictureBox1);
+            Controls.Add(button1);
+            Controls.Add(panel1);
             Controls.Add(textBox1);
             Controls.Add(LPass);
             Controls.Add(LUsuario);
@@ -154,6 +155,8 @@
             Text = "Login";
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -163,11 +166,11 @@
         private Label LUsuario;
         private Label LPass;
         private TextBox textBox1;
-        private TextBox textBox2;
         private Panel panel1;
         private PictureBox pictureBox1;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private FontAwesome.Sharp.IconButton iconButton2;
         private Button button1;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
+        private TextBox textBox2;
     }
 }
