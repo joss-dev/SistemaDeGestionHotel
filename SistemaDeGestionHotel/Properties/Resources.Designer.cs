@@ -59,5 +59,15 @@ namespace SistemaDeGestionHotel.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logoHotel {
+            get {
+                object obj = ResourceManager.GetObject("logoHotel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

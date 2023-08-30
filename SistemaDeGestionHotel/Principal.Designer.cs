@@ -35,12 +35,15 @@
             btnHome = new FontAwesome.Sharp.IconButton();
             panelLogo = new Panel();
             btnExit = new FontAwesome.Sharp.IconButton();
+            pictureLogo = new PictureBox();
             panelMenu.SuspendLayout();
+            panelLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureLogo).BeginInit();
             SuspendLayout();
             // 
             // panelMenu
             // 
-            panelMenu.BackColor = Color.Indigo;
+            panelMenu.BackColor = Color.FromArgb(39, 79, 193);
             panelMenu.Controls.Add(btnGestionPagos);
             panelMenu.Controls.Add(btnRegistrarServicios);
             panelMenu.Controls.Add(btnGestionHabitaciones);
@@ -84,7 +87,7 @@
             btnRegistrarServicios.FlatAppearance.MouseOverBackColor = Color.Gray;
             btnRegistrarServicios.FlatStyle = FlatStyle.Flat;
             btnRegistrarServicios.ForeColor = Color.White;
-            btnRegistrarServicios.IconChar = FontAwesome.Sharp.IconChar.WifiStrong;
+            btnRegistrarServicios.IconChar = FontAwesome.Sharp.IconChar.Spa;
             btnRegistrarServicios.IconColor = Color.White;
             btnRegistrarServicios.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnRegistrarServicios.IconSize = 38;
@@ -147,6 +150,7 @@
             // 
             // panelLogo
             // 
+            panelLogo.Controls.Add(pictureLogo);
             panelLogo.Dock = DockStyle.Top;
             panelLogo.Location = new Point(0, 0);
             panelLogo.Name = "panelLogo";
@@ -169,6 +173,17 @@
             btnExit.UseVisualStyleBackColor = true;
             btnExit.Click += btnExit_Click;
             // 
+            // pictureLogo
+            // 
+            pictureLogo.BackColor = Color.FromArgb(39, 79, 193);
+            pictureLogo.Image = Properties.Resources.logoHotel;
+            pictureLogo.Location = new Point(0, 0);
+            pictureLogo.Name = "pictureLogo";
+            pictureLogo.Size = new Size(220, 140);
+            pictureLogo.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureLogo.TabIndex = 0;
+            pictureLogo.TabStop = false;
+            // 
             // Principal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -180,6 +195,8 @@
             Name = "Principal";
             Text = "Home";
             panelMenu.ResumeLayout(false);
+            panelLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureLogo).EndInit();
             ResumeLayout(false);
         }
 
@@ -192,5 +209,6 @@
         private FontAwesome.Sharp.IconButton btnRegistrarServicios;
         private FontAwesome.Sharp.IconButton btnGestionHabitaciones;
         private FontAwesome.Sharp.IconButton btnExit;
+        private PictureBox pictureLogo;
     }
 }
