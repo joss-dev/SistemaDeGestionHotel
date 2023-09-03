@@ -28,149 +28,161 @@
         /// </summary>
         private void InitializeComponent()
         {
-            LUsuario = new Label();
-            LPass = new Label();
-            textBox1 = new TextBox();
-            panel1 = new Panel();
             pictureBox1 = new PictureBox();
-            button1 = new Button();
-            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
-            textBox2 = new TextBox();
-            panel1.SuspendLayout();
+            panel1 = new Panel();
+            label1 = new Label();
+            btnLogin = new Button();
+            btnSalir = new Button();
+            linkPass = new LinkLabel();
+            TUsuario = new TextBox();
+            TPass = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
-            // LUsuario
+            // pictureBox1
             // 
-            LUsuario.AutoSize = true;
-            LUsuario.Font = new Font("Magneto", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            LUsuario.ForeColor = SystemColors.HotTrack;
-            LUsuario.Location = new Point(177, 183);
-            LUsuario.Name = "LUsuario";
-            LUsuario.Size = new Size(75, 20);
-            LUsuario.TabIndex = 0;
-            LUsuario.Text = "Usuario";
-            LUsuario.Click += LUsuario_Click;
-            // 
-            // LPass
-            // 
-            LPass.AutoSize = true;
-            LPass.Font = new Font("Magneto", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            LPass.ForeColor = SystemColors.HotTrack;
-            LPass.Location = new Point(168, 247);
-            LPass.Name = "LPass";
-            LPass.Size = new Size(91, 20);
-            LPass.TabIndex = 1;
-            LPass.Text = "Password";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(127, 208);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(155, 23);
-            textBox1.TabIndex = 2;
+            pictureBox1.Image = Properties.Resources.logoHotel;
+            pictureBox1.Location = new Point(-1, 65);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(227, 172);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(39, 79, 193);
             panel1.Controls.Add(pictureBox1);
-            panel1.Dock = DockStyle.Top;
+            panel1.Dock = DockStyle.Left;
+            panel1.ForeColor = SystemColors.HotTrack;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(408, 130);
-            panel1.TabIndex = 4;
+            panel1.Size = new Size(229, 330);
+            panel1.TabIndex = 11;
             // 
-            // pictureBox1
+            // label1
             // 
-            pictureBox1.Image = Properties.Resources.logoHotel;
-            pictureBox1.Location = new Point(105, 3);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(193, 124);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            label1.AutoSize = true;
+            label1.Font = new Font("Century Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = SystemColors.GrayText;
+            label1.Location = new Point(420, 48);
+            label1.Name = "label1";
+            label1.Size = new Size(169, 25);
+            label1.TabIndex = 14;
+            label1.Text = "INICIAR SESIÓN";
             // 
-            // button1
+            // btnLogin
             // 
-            button1.Location = new Point(127, 317);
-            button1.Name = "button1";
-            button1.Size = new Size(155, 34);
-            button1.TabIndex = 7;
-            button1.Text = "Iniciar Sesión";
-            button1.UseVisualStyleBackColor = true;
+            btnLogin.BackColor = Color.FromArgb(40, 40, 40);
+            btnLogin.FlatAppearance.BorderSize = 0;
+            btnLogin.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
+            btnLogin.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
+            btnLogin.FlatStyle = FlatStyle.Flat;
+            btnLogin.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnLogin.ForeColor = SystemColors.GrayText;
+            btnLogin.Location = new Point(338, 205);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(339, 30);
+            btnLogin.TabIndex = 3;
+            btnLogin.Text = "ACCEDER";
+            btnLogin.UseVisualStyleBackColor = false;
             // 
-            // iconPictureBox1
+            // btnSalir
             // 
-            iconPictureBox1.BackColor = Color.FromArgb(103, 209, 100);
-            iconPictureBox1.ForeColor = SystemColors.ControlText;
-            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.User;
-            iconPictureBox1.IconColor = SystemColors.ControlText;
-            iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox1.Location = new Point(139, 170);
-            iconPictureBox1.Name = "iconPictureBox1";
-            iconPictureBox1.Size = new Size(32, 32);
-            iconPictureBox1.TabIndex = 8;
-            iconPictureBox1.TabStop = false;
-            iconPictureBox1.Click += iconPictureBox1_Click;
+            btnSalir.BackColor = Color.FromArgb(40, 40, 40);
+            btnSalir.FlatAppearance.BorderSize = 0;
+            btnSalir.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
+            btnSalir.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
+            btnSalir.FlatStyle = FlatStyle.Flat;
+            btnSalir.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnSalir.ForeColor = SystemColors.GrayText;
+            btnSalir.Location = new Point(648, 279);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(111, 30);
+            btnSalir.TabIndex = 4;
+            btnSalir.Text = "Salir";
+            btnSalir.UseVisualStyleBackColor = false;
+            btnSalir.Click += btnSalir_Click;
             // 
-            // iconPictureBox2
+            // linkPass
             // 
-            iconPictureBox2.BackColor = Color.FromArgb(103, 209, 100);
-            iconPictureBox2.ForeColor = SystemColors.ControlText;
-            iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Lock;
-            iconPictureBox2.IconColor = SystemColors.ControlText;
-            iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox2.Location = new Point(139, 235);
-            iconPictureBox2.Name = "iconPictureBox2";
-            iconPictureBox2.Size = new Size(32, 32);
-            iconPictureBox2.TabIndex = 9;
-            iconPictureBox2.TabStop = false;
-            iconPictureBox2.Click += iconPictureBox2_Click;
+            linkPass.ActiveLinkColor = Color.FromArgb(0, 122, 204);
+            linkPass.AutoSize = true;
+            linkPass.Font = new Font("Century Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            linkPass.LinkColor = Color.Gray;
+            linkPass.Location = new Point(426, 238);
+            linkPass.Name = "linkPass";
+            linkPass.Size = new Size(173, 16);
+            linkPass.TabIndex = 0;
+            linkPass.TabStop = true;
+            linkPass.Text = "¿Has olvidado tu contraseña?";
             // 
-            // textBox2
+            // TUsuario
             // 
-            textBox2.Location = new Point(127, 273);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(155, 23);
-            textBox2.TabIndex = 10;
+            TUsuario.BackColor = Color.Black;
+            TUsuario.BorderStyle = BorderStyle.FixedSingle;
+            TUsuario.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            TUsuario.ForeColor = SystemColors.GrayText;
+            TUsuario.Location = new Point(322, 102);
+            TUsuario.Name = "TUsuario";
+            TUsuario.Size = new Size(376, 27);
+            TUsuario.TabIndex = 1;
+            TUsuario.Text = "Usuario";
+            TUsuario.TextAlign = HorizontalAlignment.Center;
+            TUsuario.Enter += TUsuario_Enter;
+            TUsuario.Leave += TUsuario_Leave;
+            // 
+            // TPass
+            // 
+            TPass.BackColor = Color.Black;
+            TPass.BorderStyle = BorderStyle.FixedSingle;
+            TPass.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            TPass.ForeColor = SystemColors.GrayText;
+            TPass.Location = new Point(322, 155);
+            TPass.Name = "TPass";
+            TPass.Size = new Size(376, 27);
+            TPass.TabIndex = 2;
+            TPass.Text = "Contraseña";
+            TPass.TextAlign = HorizontalAlignment.Center;
+            TPass.Enter += TPass_Enter;
+            TPass.Leave += TUsuario_Leave;
             // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(103, 209, 100);
-            ClientSize = new Size(408, 394);
-            Controls.Add(textBox2);
-            Controls.Add(iconPictureBox2);
-            Controls.Add(iconPictureBox1);
-            Controls.Add(button1);
+            BackColor = Color.FromArgb(15, 15, 15);
+            CausesValidation = false;
+            ClientSize = new Size(780, 330);
+            Controls.Add(TPass);
+            Controls.Add(TUsuario);
+            Controls.Add(linkPass);
+            Controls.Add(btnSalir);
+            Controls.Add(btnLogin);
+            Controls.Add(label1);
             Controls.Add(panel1);
-            Controls.Add(textBox1);
-            Controls.Add(LPass);
-            Controls.Add(LUsuario);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "Login";
+            Opacity = 0.9D;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
-            panel1.ResumeLayout(false);
+            Load += Login_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBox2).EndInit();
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Label LUsuario;
-        private Label LPass;
-        private TextBox textBox1;
-        private Panel panel1;
         private PictureBox pictureBox1;
-        private Button button1;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
-        private TextBox textBox2;
+        private Panel panel1;
+        private TextBox TUsuario;
+        private Label label1;
+        private Button btnLogin;
+        private Button btnSalir;
+        private LinkLabel linkPass;
+        private TextBox TPas;
+        private TextBox TPass;
     }
 }
