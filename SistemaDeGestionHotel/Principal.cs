@@ -30,8 +30,11 @@ namespace SistemaDeGestionHotel
         //metodo para resaltar el boton activo
         private void ActivateButton(object senderBtn, Color color)
         {
-            if(senderBtn != null)
+            if (senderBtn != null)
             {
+                //desactivamos el boton antes de activarlo
+                DisableButton();
+
                 //boton
                 currentBtn = (IconButton)senderBtn;
                 currentBtn.BackColor = Color.FromArgb(28, 121, 182);
@@ -50,10 +53,42 @@ namespace SistemaDeGestionHotel
         }
 
         //metodo para desactivar el resaltado
+        private void DisableButton()
+        {
+            if (currentBtn != null)
+            {
+                currentBtn.BackColor = Color.FromArgb(39, 79, 193);
+                currentBtn.ForeColor = Color.White;
+                currentBtn.TextAlign = ContentAlignment.MiddleLeft;
+                currentBtn.IconColor = Color.Black;
+                currentBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
+                currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            }
+        }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, Color.FromArgb(34, 81, 111));
+        }
+
+        private void btnGestionHabitaciones_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, Color.FromArgb(34, 81, 111));
+        }
+
+        private void btnRegistrarServicios_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, Color.FromArgb(34, 81, 111));
+        }
+
+        private void btnGestionPagos_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, Color.FromArgb(34, 81, 111));
         }
     }
 }

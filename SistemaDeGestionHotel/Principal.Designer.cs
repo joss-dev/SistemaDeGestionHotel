@@ -97,6 +97,7 @@
             btnGestionPagos.TextAlign = ContentAlignment.MiddleLeft;
             btnGestionPagos.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnGestionPagos.UseVisualStyleBackColor = true;
+            btnGestionPagos.Click += btnGestionPagos_Click;
             // 
             // btnRegistrarServicios
             // 
@@ -121,6 +122,7 @@
             btnRegistrarServicios.TextAlign = ContentAlignment.MiddleLeft;
             btnRegistrarServicios.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnRegistrarServicios.UseVisualStyleBackColor = true;
+            btnRegistrarServicios.Click += btnRegistrarServicios_Click;
             // 
             // btnGestionHabitaciones
             // 
@@ -145,6 +147,7 @@
             btnGestionHabitaciones.TextAlign = ContentAlignment.MiddleLeft;
             btnGestionHabitaciones.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnGestionHabitaciones.UseVisualStyleBackColor = true;
+            btnGestionHabitaciones.Click += btnGestionHabitaciones_Click;
             // 
             // btnHome
             // 
@@ -169,6 +172,7 @@
             btnHome.TextAlign = ContentAlignment.MiddleLeft;
             btnHome.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnHome.UseVisualStyleBackColor = true;
+            btnHome.Click += btnHome_Click;
             // 
             // panelLogo
             // 
