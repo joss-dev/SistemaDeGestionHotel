@@ -98,6 +98,10 @@ namespace SistemaDeGestionHotel
             this.WindowState = FormWindowState.Minimized;
         }
 
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            TPass.UseSystemPasswordChar = !TPass.UseSystemPasswordChar;
+        }
     }
 
     internal class DLLImportAttribute : Attribute

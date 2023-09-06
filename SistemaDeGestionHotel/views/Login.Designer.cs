@@ -37,6 +37,7 @@
             TUsuario = new TextBox();
             TPass = new TextBox();
             btnMinimizar = new FontAwesome.Sharp.IconButton();
+            iconButton1 = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -67,11 +68,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.GrayText;
             label1.Location = new Point(420, 48);
             label1.Name = "label1";
-            label1.Size = new Size(169, 25);
+            label1.Size = new Size(184, 25);
             label1.TabIndex = 14;
             label1.Text = "INICIAR SESIÓN";
             // 
@@ -112,11 +113,11 @@
             // 
             linkPass.ActiveLinkColor = Color.FromArgb(0, 122, 204);
             linkPass.AutoSize = true;
-            linkPass.Font = new Font("Century Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            linkPass.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             linkPass.LinkColor = Color.Gray;
             linkPass.Location = new Point(426, 238);
             linkPass.Name = "linkPass";
-            linkPass.Size = new Size(173, 16);
+            linkPass.Size = new Size(149, 13);
             linkPass.TabIndex = 0;
             linkPass.TabStop = true;
             linkPass.Text = "¿Has olvidado tu contraseña?";
@@ -125,11 +126,11 @@
             // 
             TUsuario.BackColor = Color.Black;
             TUsuario.BorderStyle = BorderStyle.FixedSingle;
-            TUsuario.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            TUsuario.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
             TUsuario.ForeColor = SystemColors.GrayText;
             TUsuario.Location = new Point(322, 102);
             TUsuario.Name = "TUsuario";
-            TUsuario.Size = new Size(376, 27);
+            TUsuario.Size = new Size(376, 26);
             TUsuario.TabIndex = 1;
             TUsuario.Text = "Usuario";
             TUsuario.TextAlign = HorizontalAlignment.Center;
@@ -140,11 +141,11 @@
             // 
             TPass.BackColor = Color.Black;
             TPass.BorderStyle = BorderStyle.FixedSingle;
-            TPass.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            TPass.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
             TPass.ForeColor = SystemColors.GrayText;
             TPass.Location = new Point(322, 155);
             TPass.Name = "TPass";
-            TPass.Size = new Size(376, 27);
+            TPass.Size = new Size(376, 26);
             TPass.TabIndex = 2;
             TPass.Text = "Contraseña";
             TPass.TextAlign = HorizontalAlignment.Center;
@@ -167,6 +168,21 @@
             btnMinimizar.UseVisualStyleBackColor = true;
             btnMinimizar.Click += btnMinimizar_Click;
             // 
+            // iconButton1
+            // 
+            iconButton1.FlatStyle = FlatStyle.Popup;
+            iconButton1.ForeColor = SystemColors.ButtonFace;
+            iconButton1.IconChar = FontAwesome.Sharp.IconChar.EyeSlash;
+            iconButton1.IconColor = Color.Gray;
+            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton1.IconSize = 20;
+            iconButton1.Location = new Point(717, 157);
+            iconButton1.Name = "iconButton1";
+            iconButton1.Size = new Size(27, 24);
+            iconButton1.TabIndex = 16;
+            iconButton1.UseVisualStyleBackColor = true;
+            iconButton1.Click += iconButton1_Click;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -174,6 +190,7 @@
             BackColor = Color.FromArgb(15, 15, 15);
             CausesValidation = false;
             ClientSize = new Size(780, 330);
+            Controls.Add(iconButton1);
             Controls.Add(btnMinimizar);
             Controls.Add(TPass);
             Controls.Add(TUsuario);
@@ -206,5 +223,6 @@
         private TextBox TPas;
         private TextBox TPass;
         private FontAwesome.Sharp.IconButton btnMinimizar;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }
