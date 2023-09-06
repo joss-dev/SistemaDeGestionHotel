@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             panelMenu = new Panel();
+            btnCerrarSesion = new Button();
             btnGestionPagos = new FontAwesome.Sharp.IconButton();
             btnRegistrarServicios = new FontAwesome.Sharp.IconButton();
             btnGestionHabitaciones = new FontAwesome.Sharp.IconButton();
             btnHome = new FontAwesome.Sharp.IconButton();
             panelLogo = new Panel();
-            btnExit = new FontAwesome.Sharp.IconButton();
             pictureLogo = new PictureBox();
+            btnExit = new FontAwesome.Sharp.IconButton();
             panelMenu.SuspendLayout();
             panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureLogo).BeginInit();
@@ -44,6 +45,7 @@
             // panelMenu
             // 
             panelMenu.BackColor = Color.FromArgb(39, 79, 193);
+            panelMenu.Controls.Add(btnCerrarSesion);
             panelMenu.Controls.Add(btnGestionPagos);
             panelMenu.Controls.Add(btnRegistrarServicios);
             panelMenu.Controls.Add(btnGestionHabitaciones);
@@ -56,6 +58,22 @@
             panelMenu.Size = new Size(220, 450);
             panelMenu.TabIndex = 0;
             // 
+            // btnCerrarSesion
+            // 
+            btnCerrarSesion.BackColor = Color.FromArgb(40, 40, 40);
+            btnCerrarSesion.FlatAppearance.BorderSize = 0;
+            btnCerrarSesion.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
+            btnCerrarSesion.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
+            btnCerrarSesion.FlatStyle = FlatStyle.Flat;
+            btnCerrarSesion.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCerrarSesion.ForeColor = SystemColors.GrayText;
+            btnCerrarSesion.Location = new Point(39, 399);
+            btnCerrarSesion.Name = "btnCerrarSesion";
+            btnCerrarSesion.Size = new Size(134, 39);
+            btnCerrarSesion.TabIndex = 5;
+            btnCerrarSesion.Text = "Cerrar Sesión";
+            btnCerrarSesion.UseVisualStyleBackColor = false;
+            // 
             // btnGestionPagos
             // 
             btnGestionPagos.Dock = DockStyle.Top;
@@ -63,9 +81,10 @@
             btnGestionPagos.FlatAppearance.MouseDownBackColor = Color.Gainsboro;
             btnGestionPagos.FlatAppearance.MouseOverBackColor = Color.Gray;
             btnGestionPagos.FlatStyle = FlatStyle.Flat;
+            btnGestionPagos.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnGestionPagos.ForeColor = Color.White;
             btnGestionPagos.IconChar = FontAwesome.Sharp.IconChar.MoneyCheckDollar;
-            btnGestionPagos.IconColor = Color.White;
+            btnGestionPagos.IconColor = Color.FromArgb(15, 15, 15);
             btnGestionPagos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnGestionPagos.IconSize = 38;
             btnGestionPagos.ImageAlign = ContentAlignment.MiddleLeft;
@@ -78,6 +97,7 @@
             btnGestionPagos.TextAlign = ContentAlignment.MiddleLeft;
             btnGestionPagos.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnGestionPagos.UseVisualStyleBackColor = true;
+            btnGestionPagos.Click += btnGestionPagos_Click;
             // 
             // btnRegistrarServicios
             // 
@@ -86,9 +106,10 @@
             btnRegistrarServicios.FlatAppearance.MouseDownBackColor = Color.Gainsboro;
             btnRegistrarServicios.FlatAppearance.MouseOverBackColor = Color.Gray;
             btnRegistrarServicios.FlatStyle = FlatStyle.Flat;
+            btnRegistrarServicios.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnRegistrarServicios.ForeColor = Color.White;
             btnRegistrarServicios.IconChar = FontAwesome.Sharp.IconChar.Spa;
-            btnRegistrarServicios.IconColor = Color.White;
+            btnRegistrarServicios.IconColor = Color.FromArgb(15, 15, 15);
             btnRegistrarServicios.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnRegistrarServicios.IconSize = 38;
             btnRegistrarServicios.ImageAlign = ContentAlignment.MiddleLeft;
@@ -101,6 +122,7 @@
             btnRegistrarServicios.TextAlign = ContentAlignment.MiddleLeft;
             btnRegistrarServicios.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnRegistrarServicios.UseVisualStyleBackColor = true;
+            btnRegistrarServicios.Click += btnRegistrarServicios_Click;
             // 
             // btnGestionHabitaciones
             // 
@@ -109,9 +131,10 @@
             btnGestionHabitaciones.FlatAppearance.MouseDownBackColor = Color.Gainsboro;
             btnGestionHabitaciones.FlatAppearance.MouseOverBackColor = Color.Gray;
             btnGestionHabitaciones.FlatStyle = FlatStyle.Flat;
+            btnGestionHabitaciones.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnGestionHabitaciones.ForeColor = Color.White;
             btnGestionHabitaciones.IconChar = FontAwesome.Sharp.IconChar.DoorOpen;
-            btnGestionHabitaciones.IconColor = Color.White;
+            btnGestionHabitaciones.IconColor = Color.FromArgb(15, 15, 15);
             btnGestionHabitaciones.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnGestionHabitaciones.IconSize = 38;
             btnGestionHabitaciones.ImageAlign = ContentAlignment.MiddleLeft;
@@ -124,6 +147,7 @@
             btnGestionHabitaciones.TextAlign = ContentAlignment.MiddleLeft;
             btnGestionHabitaciones.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnGestionHabitaciones.UseVisualStyleBackColor = true;
+            btnGestionHabitaciones.Click += btnGestionHabitaciones_Click;
             // 
             // btnHome
             // 
@@ -132,9 +156,10 @@
             btnHome.FlatAppearance.MouseDownBackColor = Color.Gainsboro;
             btnHome.FlatAppearance.MouseOverBackColor = Color.Gray;
             btnHome.FlatStyle = FlatStyle.Flat;
+            btnHome.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnHome.ForeColor = Color.White;
             btnHome.IconChar = FontAwesome.Sharp.IconChar.HomeLg;
-            btnHome.IconColor = Color.White;
+            btnHome.IconColor = Color.FromArgb(15, 15, 15);
             btnHome.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnHome.IconSize = 38;
             btnHome.ImageAlign = ContentAlignment.MiddleLeft;
@@ -147,6 +172,7 @@
             btnHome.TextAlign = ContentAlignment.MiddleLeft;
             btnHome.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnHome.UseVisualStyleBackColor = true;
+            btnHome.Click += btnHome_Click;
             // 
             // panelLogo
             // 
@@ -157,6 +183,17 @@
             panelLogo.Padding = new Padding(20, 0, 10, 0);
             panelLogo.Size = new Size(220, 140);
             panelLogo.TabIndex = 0;
+            // 
+            // pictureLogo
+            // 
+            pictureLogo.BackColor = Color.FromArgb(39, 79, 193);
+            pictureLogo.Image = Properties.Resources.logoHotel;
+            pictureLogo.Location = new Point(0, 0);
+            pictureLogo.Name = "pictureLogo";
+            pictureLogo.Size = new Size(220, 140);
+            pictureLogo.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureLogo.TabIndex = 0;
+            pictureLogo.TabStop = false;
             // 
             // btnExit
             // 
@@ -172,17 +209,6 @@
             btnExit.TabIndex = 1;
             btnExit.UseVisualStyleBackColor = true;
             btnExit.Click += btnExit_Click;
-            // 
-            // pictureLogo
-            // 
-            pictureLogo.BackColor = Color.FromArgb(39, 79, 193);
-            pictureLogo.Image = Properties.Resources.logoHotel;
-            pictureLogo.Location = new Point(0, 0);
-            pictureLogo.Name = "pictureLogo";
-            pictureLogo.Size = new Size(220, 140);
-            pictureLogo.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureLogo.TabIndex = 0;
-            pictureLogo.TabStop = false;
             // 
             // Principal
             // 
@@ -210,5 +236,6 @@
         private FontAwesome.Sharp.IconButton btnGestionHabitaciones;
         private FontAwesome.Sharp.IconButton btnExit;
         private PictureBox pictureLogo;
+        private Button btnCerrarSesion;
     }
 }
