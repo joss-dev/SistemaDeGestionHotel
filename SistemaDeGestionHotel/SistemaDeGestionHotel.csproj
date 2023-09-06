@@ -32,7 +32,6 @@
 
   <ItemGroup>
     <Folder Include="models\" />
-    <Folder Include="controllers\" />
   </ItemGroup>
 
 </Project>
