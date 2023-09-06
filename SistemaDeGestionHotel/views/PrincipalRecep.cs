@@ -12,14 +12,14 @@ using FontAwesome.Sharp;
 
 namespace SistemaDeGestionHotel
 {
-    public partial class Principal : Form
+    public partial class PrincipalRecep : Form
     {
         //declaracion de icono y boton 
         private IconButton currentBtn;
         private Panel leftBorderBtn;
 
 
-        public Principal()
+        public PrincipalRecep()
         {
             InitializeComponent();
             leftBorderBtn = new Panel();

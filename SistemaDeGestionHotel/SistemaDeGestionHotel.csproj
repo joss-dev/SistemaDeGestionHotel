@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Login.cs">
+    <Compile Update="views\Login.cs">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
@@ -31,7 +31,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Login\" />
+    <Folder Include="models\" />
+    <Folder Include="controllers\" />
   </ItemGroup>
 
 </Project>

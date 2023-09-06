@@ -1,6 +1,6 @@
 ﻿namespace SistemaDeGestionHotel
 {
-    partial class Principal
+    partial class PrincipalRecep
     {
         /// <summary>
         /// Required designer variable.
