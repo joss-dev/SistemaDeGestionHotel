@@ -1,0 +1,19 @@
+{
+  "profiles": {
+    "SistemaDeGestionHotel": {
+      "commandName": "Project"
+    },
+    "Perfil 1": {
+      "commandName": "Executable"
+    },
+    "Perfil 2": {
+      "commandName": "Project"
+    },
+    "Perfil 3": {
+      "commandName": "Executable"
+    },
+    "Perfil 4": {
+      "commandName": "Project"
+    }
+  }
+}
