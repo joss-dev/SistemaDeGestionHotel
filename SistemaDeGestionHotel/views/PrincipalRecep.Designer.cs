@@ -58,6 +58,9 @@
             panelMenu.Name = "panelMenu";
             panelMenu.Size = new Size(220, 450);
             panelMenu.TabIndex = 0;
+            panelMenu.MouseDown += Form1_MouseDown;
+            panelMenu.MouseMove += Form1_MouseMove;
+            panelMenu.MouseUp += Form1_MouseUp;
             // 
             // btnCerrarSesion
             // 
@@ -195,6 +198,9 @@
             pictureLogo.SizeMode = PictureBoxSizeMode.Zoom;
             pictureLogo.TabIndex = 0;
             pictureLogo.TabStop = false;
+            pictureLogo.MouseDown += Form1_MouseDown;
+            pictureLogo.MouseMove += Form1_MouseMove;
+            pictureLogo.MouseUp += Form1_MouseUp;
             // 
             // btnExit
             // 
@@ -226,7 +232,7 @@
             iconButton1.TabIndex = 2;
             iconButton1.UseVisualStyleBackColor = true;
             // 
-            // Principal
+            // PrincipalRecep
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -235,8 +241,11 @@
             Controls.Add(btnExit);
             Controls.Add(panelMenu);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Principal";
+            Name = "PrincipalRecep";
             Text = "Home";
+            MouseDown += Form1_MouseDown;
+            MouseMove += Form1_MouseMove;
+            MouseUp += Form1_MouseUp;
             panelMenu.ResumeLayout(false);
             panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureLogo).EndInit();
