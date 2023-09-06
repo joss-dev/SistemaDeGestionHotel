@@ -37,6 +37,7 @@
             panelLogo = new Panel();
             pictureLogo = new PictureBox();
             btnExit = new FontAwesome.Sharp.IconButton();
+            iconButton1 = new FontAwesome.Sharp.IconButton();
             panelMenu.SuspendLayout();
             panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureLogo).BeginInit();
@@ -202,19 +203,35 @@
             btnExit.IconChar = FontAwesome.Sharp.IconChar.X;
             btnExit.IconColor = Color.Black;
             btnExit.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            btnExit.IconSize = 30;
-            btnExit.Location = new Point(763, 0);
+            btnExit.IconSize = 20;
+            btnExit.Location = new Point(766, 0);
             btnExit.Name = "btnExit";
-            btnExit.Size = new Size(37, 36);
+            btnExit.Size = new Size(33, 30);
             btnExit.TabIndex = 1;
             btnExit.UseVisualStyleBackColor = true;
             btnExit.Click += btnExit_Click;
+            // 
+            // iconButton1
+            // 
+            iconButton1.FlatAppearance.BorderSize = 0;
+            iconButton1.FlatStyle = FlatStyle.Flat;
+            iconButton1.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
+            iconButton1.IconColor = Color.Black;
+            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            iconButton1.IconSize = 20;
+            iconButton1.ImageAlign = ContentAlignment.BottomRight;
+            iconButton1.Location = new Point(731, 6);
+            iconButton1.Name = "iconButton1";
+            iconButton1.Size = new Size(29, 18);
+            iconButton1.TabIndex = 2;
+            iconButton1.UseVisualStyleBackColor = true;
             // 
             // Principal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(iconButton1);
             Controls.Add(btnExit);
             Controls.Add(panelMenu);
             FormBorderStyle = FormBorderStyle.None;
@@ -237,5 +254,6 @@
         private FontAwesome.Sharp.IconButton btnExit;
         private PictureBox pictureLogo;
         private Button btnCerrarSesion;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }
