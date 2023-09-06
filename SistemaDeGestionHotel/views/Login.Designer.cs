@@ -88,7 +88,7 @@
             btnLogin.Location = new Point(338, 205);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(339, 30);
-            btnLogin.TabIndex = 3;
+            btnLogin.TabIndex = 4;
             btnLogin.Text = "ACCEDER";
             btnLogin.UseVisualStyleBackColor = false;
             // 
@@ -104,7 +104,7 @@
             btnSalir.Location = new Point(648, 279);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(111, 30);
-            btnSalir.TabIndex = 4;
+            btnSalir.TabIndex = 6;
             btnSalir.Text = "Salir";
             btnSalir.UseVisualStyleBackColor = false;
             btnSalir.Click += btnSalir_Click;
@@ -150,7 +150,7 @@
             TPass.Text = "Contraseña";
             TPass.TextAlign = HorizontalAlignment.Center;
             TPass.Enter += TPass_Enter;
-            TPass.Leave += TUsuario_Leave;
+            TPass.Leave += TPass_Leave;
             // 
             // btnMinimizar
             // 
@@ -164,7 +164,7 @@
             btnMinimizar.Location = new Point(717, 12);
             btnMinimizar.Name = "btnMinimizar";
             btnMinimizar.Size = new Size(42, 33);
-            btnMinimizar.TabIndex = 15;
+            btnMinimizar.TabIndex = 5;
             btnMinimizar.UseVisualStyleBackColor = true;
             btnMinimizar.Click += btnMinimizar_Click;
             // 
@@ -179,7 +179,7 @@
             iconButton1.Location = new Point(717, 157);
             iconButton1.Name = "iconButton1";
             iconButton1.Size = new Size(27, 24);
-            iconButton1.TabIndex = 16;
+            iconButton1.TabIndex = 3;
             iconButton1.UseVisualStyleBackColor = true;
             iconButton1.Click += iconButton1_Click;
             // 

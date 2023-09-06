@@ -101,6 +101,7 @@ namespace SistemaDeGestionHotel
         private void iconButton1_Click(object sender, EventArgs e)
         {
             TPass.UseSystemPasswordChar = !TPass.UseSystemPasswordChar;
+            TPass.Text = "";
         }
     }
 
