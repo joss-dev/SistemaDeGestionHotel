@@ -121,5 +121,10 @@ namespace SistemaDeGestionHotel
         {
             ActivateButton(sender, Color.FromArgb(34, 81, 111));
         }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
