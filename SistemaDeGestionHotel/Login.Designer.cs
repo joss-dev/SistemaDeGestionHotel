@@ -36,6 +36,7 @@
             linkPass = new LinkLabel();
             TUsuario = new TextBox();
             TPass = new TextBox();
+            btnMinimizar = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -60,6 +61,8 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(229, 330);
             panel1.TabIndex = 11;
+            panel1.Paint += panel1_Paint;
+            panel1.MouseDown += Login_MouseDown;
             // 
             // label1
             // 
@@ -148,6 +151,22 @@
             TPass.Enter += TPass_Enter;
             TPass.Leave += TUsuario_Leave;
             // 
+            // btnMinimizar
+            // 
+            btnMinimizar.FlatStyle = FlatStyle.Popup;
+            btnMinimizar.ForeColor = SystemColors.ButtonFace;
+            btnMinimizar.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
+            btnMinimizar.IconColor = Color.Gray;
+            btnMinimizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnMinimizar.IconSize = 36;
+            btnMinimizar.ImageAlign = ContentAlignment.BottomRight;
+            btnMinimizar.Location = new Point(717, 12);
+            btnMinimizar.Name = "btnMinimizar";
+            btnMinimizar.Size = new Size(42, 33);
+            btnMinimizar.TabIndex = 15;
+            btnMinimizar.UseVisualStyleBackColor = true;
+            btnMinimizar.Click += btnMinimizar_Click;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -155,6 +174,7 @@
             BackColor = Color.FromArgb(15, 15, 15);
             CausesValidation = false;
             ClientSize = new Size(780, 330);
+            Controls.Add(btnMinimizar);
             Controls.Add(TPass);
             Controls.Add(TUsuario);
             Controls.Add(linkPass);
@@ -168,6 +188,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
             Load += Login_Load;
+            MouseDown += Login_MouseDown;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             ResumeLayout(false);
@@ -184,5 +205,6 @@
         private LinkLabel linkPass;
         private TextBox TPas;
         private TextBox TPass;
+        private FontAwesome.Sharp.IconButton btnMinimizar;
     }
 }
