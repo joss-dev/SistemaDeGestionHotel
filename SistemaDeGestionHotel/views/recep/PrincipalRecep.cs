@@ -156,7 +156,7 @@ namespace SistemaDeGestionHotel
             }
         }
 
-
+        //agrega comentario
         private void btnAgregarReserva_Click_1(object sender, EventArgs e)
         {
             AbrirFormHija(new agregarReserva());
