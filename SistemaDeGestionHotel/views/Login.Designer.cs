@@ -115,7 +115,7 @@
             linkPass.AutoSize = true;
             linkPass.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             linkPass.LinkColor = Color.Gray;
-            linkPass.Location = new Point(426, 238);
+            linkPass.Location = new Point(433, 239);
             linkPass.Name = "linkPass";
             linkPass.Size = new Size(149, 13);
             linkPass.TabIndex = 0;
@@ -125,7 +125,6 @@
             // TUsuario
             // 
             TUsuario.BackColor = Color.Black;
-            TUsuario.BorderStyle = BorderStyle.FixedSingle;
             TUsuario.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
             TUsuario.ForeColor = SystemColors.GrayText;
             TUsuario.Location = new Point(322, 102);
@@ -154,31 +153,33 @@
             // 
             // btnMinimizar
             // 
-            btnMinimizar.FlatStyle = FlatStyle.Popup;
-            btnMinimizar.ForeColor = SystemColors.ButtonFace;
+            btnMinimizar.FlatAppearance.BorderSize = 0;
+            btnMinimizar.FlatStyle = FlatStyle.Flat;
+            btnMinimizar.ForeColor = Color.Transparent;
             btnMinimizar.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
             btnMinimizar.IconColor = Color.Gray;
             btnMinimizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnMinimizar.IconSize = 36;
+            btnMinimizar.IconSize = 24;
             btnMinimizar.ImageAlign = ContentAlignment.BottomRight;
-            btnMinimizar.Location = new Point(717, 12);
+            btnMinimizar.Location = new Point(730, 0);
             btnMinimizar.Name = "btnMinimizar";
-            btnMinimizar.Size = new Size(42, 33);
+            btnMinimizar.Size = new Size(38, 33);
             btnMinimizar.TabIndex = 5;
             btnMinimizar.UseVisualStyleBackColor = true;
             btnMinimizar.Click += btnMinimizar_Click;
             // 
             // iconButton1
             // 
-            iconButton1.FlatStyle = FlatStyle.Popup;
-            iconButton1.ForeColor = SystemColors.ButtonFace;
+            iconButton1.FlatAppearance.BorderSize = 0;
+            iconButton1.FlatStyle = FlatStyle.Flat;
+            iconButton1.ForeColor = Color.Transparent;
             iconButton1.IconChar = FontAwesome.Sharp.IconChar.EyeSlash;
             iconButton1.IconColor = Color.Gray;
             iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.IconSize = 20;
-            iconButton1.Location = new Point(717, 157);
+            iconButton1.IconSize = 30;
+            iconButton1.Location = new Point(705, 153);
             iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(27, 24);
+            iconButton1.Size = new Size(36, 30);
             iconButton1.TabIndex = 3;
             iconButton1.UseVisualStyleBackColor = true;
             iconButton1.Click += iconButton1_Click;
