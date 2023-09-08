@@ -1,5 +1,6 @@
 ﻿using FontAwesome.Sharp;
 using SistemaDeGestionHotel.views.admin;
+using SistemaDeGestionHotel.views.recep;
 
 namespace SistemaDeGestionHotel
 {
@@ -141,17 +142,24 @@ namespace SistemaDeGestionHotel
             this.WindowState = FormWindowState.Minimized;
         }
 
-       
+
         private void btnPantallaCompleta_Click(object sender, EventArgs e)
         {
-            
-            if(this.WindowState == FormWindowState.Maximized)
+
+            if (this.WindowState == FormWindowState.Maximized)
             {
                 this.WindowState = FormWindowState.Normal;
-            }else
+            }
+            else
             {
                 this.WindowState = FormWindowState.Maximized;
             }
+        }
+
+
+        private void btnAgregarReserva_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormHija(new agregarReserva());
         }
     }
 }
