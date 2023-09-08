@@ -37,8 +37,9 @@
             panelLogo = new Panel();
             pictureLogo = new PictureBox();
             btnExit = new FontAwesome.Sharp.IconButton();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
+            btnMinimizar = new FontAwesome.Sharp.IconButton();
             panelContenedor = new Panel();
+            btnPantallaCompleta = new FontAwesome.Sharp.IconButton();
             panelMenu.SuspendLayout();
             panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureLogo).BeginInit();
@@ -207,6 +208,7 @@
             // 
             // btnExit
             // 
+            btnExit.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnExit.FlatAppearance.BorderSize = 0;
             btnExit.FlatStyle = FlatStyle.Flat;
             btnExit.IconChar = FontAwesome.Sharp.IconChar.X;
@@ -220,35 +222,56 @@
             btnExit.UseVisualStyleBackColor = true;
             btnExit.Click += btnExit_Click;
             // 
-            // iconButton1
+            // btnMinimizar
             // 
-            iconButton1.FlatAppearance.BorderSize = 0;
-            iconButton1.FlatStyle = FlatStyle.Flat;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
-            iconButton1.IconColor = Color.Black;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            iconButton1.IconSize = 20;
-            iconButton1.ImageAlign = ContentAlignment.BottomRight;
-            iconButton1.Location = new Point(742, 6);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(29, 18);
-            iconButton1.TabIndex = 2;
-            iconButton1.UseVisualStyleBackColor = true;
-            iconButton1.Click += iconButton1_Click;
+            btnMinimizar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnMinimizar.FlatAppearance.BorderSize = 0;
+            btnMinimizar.FlatStyle = FlatStyle.Flat;
+            btnMinimizar.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
+            btnMinimizar.IconColor = Color.Black;
+            btnMinimizar.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            btnMinimizar.IconSize = 20;
+            btnMinimizar.ImageAlign = ContentAlignment.BottomRight;
+            btnMinimizar.Location = new Point(694, 0);
+            btnMinimizar.Name = "btnMinimizar";
+            btnMinimizar.Size = new Size(29, 26);
+            btnMinimizar.TabIndex = 2;
+            btnMinimizar.UseVisualStyleBackColor = true;
+            btnMinimizar.Click += btnMinimizar_Click;
             // 
             // panelContenedor
             // 
+            panelContenedor.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panelContenedor.AutoSize = true;
             panelContenedor.Location = new Point(220, 27);
             panelContenedor.Name = "panelContenedor";
             panelContenedor.Size = new Size(581, 423);
             panelContenedor.TabIndex = 3;
             // 
+            // btnPantallaCompleta
+            // 
+            btnPantallaCompleta.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnPantallaCompleta.FlatAppearance.BorderSize = 0;
+            btnPantallaCompleta.FlatStyle = FlatStyle.Flat;
+            btnPantallaCompleta.IconChar = FontAwesome.Sharp.IconChar.Square;
+            btnPantallaCompleta.IconColor = Color.Black;
+            btnPantallaCompleta.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            btnPantallaCompleta.IconSize = 20;
+            btnPantallaCompleta.Location = new Point(729, 0);
+            btnPantallaCompleta.Name = "btnPantallaCompleta";
+            btnPantallaCompleta.Size = new Size(33, 30);
+            btnPantallaCompleta.TabIndex = 4;
+            btnPantallaCompleta.UseVisualStyleBackColor = true;
+            btnPantallaCompleta.Click += btnPantallaCompleta_Click;
+            // 
             // PrincipalRecep
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
             ClientSize = new Size(800, 450);
-            Controls.Add(iconButton1);
+            Controls.Add(btnPantallaCompleta);
+            Controls.Add(btnMinimizar);
             Controls.Add(panelContenedor);
             Controls.Add(btnExit);
             Controls.Add(panelMenu);
@@ -262,6 +285,7 @@
             panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureLogo).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -275,7 +299,8 @@
         private FontAwesome.Sharp.IconButton btnExit;
         private PictureBox pictureLogo;
         private Button btnCerrarSesion;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton btnMinimizar;
         private Panel panelContenedor;
+        private FontAwesome.Sharp.IconButton btnPantallaCompleta;
     }
 }

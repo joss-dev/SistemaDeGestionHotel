@@ -101,7 +101,9 @@ namespace SistemaDeGestionHotel
         private void btnGestionHabitaciones_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, Color.FromArgb(34, 81, 111));
-            AbrirFormHija(new gestionHabitaciones());
+            Form h = new gestionHabitaciones();
+
+            AbrirFormHija(h);
         }
 
         private void btnRegistrarServicios_Click(object sender, EventArgs e)
@@ -124,18 +126,32 @@ namespace SistemaDeGestionHotel
             if (this.panelContenedor.Controls.Count > 0)
             {
                 this.panelContenedor.Controls.RemoveAt(0);
-                Form fh = formHija as Form;
-                fh.TopLevel = false;
-                fh.Dock = DockStyle.Fill;
-                this.panelContenedor.Controls.Add(fh);
-                this.panelContenedor.Tag = fh;
-                fh.Show();
             }
+            Form fh = (Form)formHija as Form;
+            fh.TopLevel = false;
+            fh.Dock = DockStyle.Fill;
+            this.panelContenedor.Controls.Add(fh);
+            this.panelContenedor.Tag = fh;
+            fh.Show();
+
         }
 
-        private void iconButton1_Click(object sender, EventArgs e)
+        private void btnMinimizar_Click(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Minimized;
+        }
 
+       
+        private void btnPantallaCompleta_Click(object sender, EventArgs e)
+        {
+            
+            if(this.WindowState == FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Normal;
+            }else
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
         }
     }
 }

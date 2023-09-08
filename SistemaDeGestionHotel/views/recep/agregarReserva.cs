@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SistemaDeGestionHotel.views.admin
+namespace SistemaDeGestionHotel.views.recep
 {
-    public partial class gestionHabitaciones : Form
+    public partial class agregarReserva : Form
     {
-        public gestionHabitaciones()
+        public agregarReserva()
         {
             InitializeComponent();
-        }
-
-        private void gestionHabitaciones_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
