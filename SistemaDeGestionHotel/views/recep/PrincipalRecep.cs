@@ -141,21 +141,10 @@ namespace SistemaDeGestionHotel
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void PantallaCompleta(Form form)
-        {
-            if (form != null)
-            {
-                form.WindowState = FormWindowState.Normal; // Restaurar el estado del formulario si estaba minimizado o maximizado
-                form.FormBorderStyle = FormBorderStyle.None; // Sin bordes
-                form.WindowState = FormWindowState.Maximized; // Maximizar el formulario
-                form.TopMost = true; // Mantener el formulario en la parte superior
-            }
-        }
-
-
+       
         private void btnPantallaCompleta_Click(object sender, EventArgs e)
         {
-            this.PantallaCompleta(this);
+            this.WindowState = FormWindowState.Maximized;
         }
     }
 }
