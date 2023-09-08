@@ -144,7 +144,14 @@ namespace SistemaDeGestionHotel
        
         private void btnPantallaCompleta_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
+            
+            if(this.WindowState == FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Normal;
+            }else
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
         }
     }
 }
