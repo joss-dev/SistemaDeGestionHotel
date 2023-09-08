@@ -16,5 +16,10 @@ namespace SistemaDeGestionHotel.views.admin
         {
             InitializeComponent();
         }
+
+        private void gestionHabitaciones_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
