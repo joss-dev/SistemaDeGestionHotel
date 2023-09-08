@@ -38,9 +38,10 @@
             btnGestionHabitaciones = new FontAwesome.Sharp.IconButton();
             btnHome = new FontAwesome.Sharp.IconButton();
             panelMenu = new Panel();
+            btnUsuarios = new FontAwesome.Sharp.IconButton();
             panelLogo = new Panel();
             btnMaximized = new FontAwesome.Sharp.IconButton();
-            btnUsuarios = new FontAwesome.Sharp.IconButton();
+            btnAdmHabitaciones = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)pictureLogo).BeginInit();
             panelMenu.SuspendLayout();
             panelLogo.SuspendLayout();
@@ -155,7 +156,7 @@
             btnCerrarSesion.FlatStyle = FlatStyle.Flat;
             btnCerrarSesion.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnCerrarSesion.ForeColor = SystemColors.GrayText;
-            btnCerrarSesion.Location = new Point(39, 481);
+            btnCerrarSesion.Location = new Point(39, 525);
             btnCerrarSesion.Name = "btnCerrarSesion";
             btnCerrarSesion.Size = new Size(134, 39);
             btnCerrarSesion.TabIndex = 5;
@@ -214,6 +215,7 @@
             // panelMenu
             // 
             panelMenu.BackColor = Color.FromArgb(39, 79, 193);
+            panelMenu.Controls.Add(btnAdmHabitaciones);
             panelMenu.Controls.Add(btnUsuarios);
             panelMenu.Controls.Add(btnCerrarSesion);
             panelMenu.Controls.Add(btnPagos);
@@ -225,8 +227,32 @@
             panelMenu.ForeColor = SystemColors.ActiveCaptionText;
             panelMenu.Location = new Point(0, 0);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(220, 535);
+            panelMenu.Size = new Size(220, 579);
             panelMenu.TabIndex = 4;
+            // 
+            // btnUsuarios
+            // 
+            btnUsuarios.Dock = DockStyle.Top;
+            btnUsuarios.FlatAppearance.BorderSize = 0;
+            btnUsuarios.FlatAppearance.MouseDownBackColor = Color.Gainsboro;
+            btnUsuarios.FlatAppearance.MouseOverBackColor = Color.Gray;
+            btnUsuarios.FlatStyle = FlatStyle.Flat;
+            btnUsuarios.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnUsuarios.ForeColor = Color.White;
+            btnUsuarios.IconChar = FontAwesome.Sharp.IconChar.User;
+            btnUsuarios.IconColor = Color.FromArgb(15, 15, 15);
+            btnUsuarios.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnUsuarios.IconSize = 38;
+            btnUsuarios.ImageAlign = ContentAlignment.MiddleLeft;
+            btnUsuarios.Location = new Point(0, 380);
+            btnUsuarios.Name = "btnUsuarios";
+            btnUsuarios.Padding = new Padding(20, 0, 10, 0);
+            btnUsuarios.Size = new Size(220, 60);
+            btnUsuarios.TabIndex = 6;
+            btnUsuarios.Text = "Gestión de Usuarios";
+            btnUsuarios.TextAlign = ContentAlignment.MiddleLeft;
+            btnUsuarios.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnUsuarios.UseVisualStyleBackColor = true;
             // 
             // panelLogo
             // 
@@ -254,35 +280,35 @@
             btnMaximized.UseVisualStyleBackColor = false;
             btnMaximized.Click += btnMaximized_Click;
             // 
-            // btnUsuarios
+            // btnAdmHabitaciones
             // 
-            btnUsuarios.Dock = DockStyle.Top;
-            btnUsuarios.FlatAppearance.BorderSize = 0;
-            btnUsuarios.FlatAppearance.MouseDownBackColor = Color.Gainsboro;
-            btnUsuarios.FlatAppearance.MouseOverBackColor = Color.Gray;
-            btnUsuarios.FlatStyle = FlatStyle.Flat;
-            btnUsuarios.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnUsuarios.ForeColor = Color.White;
-            btnUsuarios.IconChar = FontAwesome.Sharp.IconChar.User;
-            btnUsuarios.IconColor = Color.FromArgb(15, 15, 15);
-            btnUsuarios.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnUsuarios.IconSize = 38;
-            btnUsuarios.ImageAlign = ContentAlignment.MiddleLeft;
-            btnUsuarios.Location = new Point(0, 380);
-            btnUsuarios.Name = "btnUsuarios";
-            btnUsuarios.Padding = new Padding(20, 0, 10, 0);
-            btnUsuarios.Size = new Size(220, 60);
-            btnUsuarios.TabIndex = 6;
-            btnUsuarios.Text = "Gestión de Usuarios";
-            btnUsuarios.TextAlign = ContentAlignment.MiddleLeft;
-            btnUsuarios.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnUsuarios.UseVisualStyleBackColor = true;
+            btnAdmHabitaciones.Dock = DockStyle.Top;
+            btnAdmHabitaciones.FlatAppearance.BorderSize = 0;
+            btnAdmHabitaciones.FlatAppearance.MouseDownBackColor = Color.Gainsboro;
+            btnAdmHabitaciones.FlatAppearance.MouseOverBackColor = Color.Gray;
+            btnAdmHabitaciones.FlatStyle = FlatStyle.Flat;
+            btnAdmHabitaciones.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAdmHabitaciones.ForeColor = Color.White;
+            btnAdmHabitaciones.IconChar = FontAwesome.Sharp.IconChar.R;
+            btnAdmHabitaciones.IconColor = Color.FromArgb(15, 15, 15);
+            btnAdmHabitaciones.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnAdmHabitaciones.IconSize = 38;
+            btnAdmHabitaciones.ImageAlign = ContentAlignment.MiddleLeft;
+            btnAdmHabitaciones.Location = new Point(0, 440);
+            btnAdmHabitaciones.Name = "btnAdmHabitaciones";
+            btnAdmHabitaciones.Padding = new Padding(20, 0, 10, 0);
+            btnAdmHabitaciones.Size = new Size(220, 60);
+            btnAdmHabitaciones.TabIndex = 7;
+            btnAdmHabitaciones.Text = "Administrar Habitaciones";
+            btnAdmHabitaciones.TextAlign = ContentAlignment.MiddleLeft;
+            btnAdmHabitaciones.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnAdmHabitaciones.UseVisualStyleBackColor = true;
             // 
             // PrincipalAdmin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 535);
+            ClientSize = new Size(800, 579);
             Controls.Add(btnMaximized);
             Controls.Add(iconButton1);
             Controls.Add(panelContenedor);
@@ -311,5 +337,6 @@
         private Panel panelLogo;
         private FontAwesome.Sharp.IconButton btnMaximized;
         private FontAwesome.Sharp.IconButton btnUsuarios;
+        private FontAwesome.Sharp.IconButton btnAdmHabitaciones;
     }
 }
