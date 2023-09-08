@@ -32,7 +32,7 @@
             iconButton1 = new FontAwesome.Sharp.IconButton();
             panelContenedor = new Panel();
             btnExit = new FontAwesome.Sharp.IconButton();
-            btnGestionPagos = new FontAwesome.Sharp.IconButton();
+            btnPagos = new FontAwesome.Sharp.IconButton();
             pictureLogo = new PictureBox();
             btnCerrarSesion = new Button();
             btnGestionHabitaciones = new FontAwesome.Sharp.IconButton();
@@ -40,6 +40,7 @@
             panelMenu = new Panel();
             panelLogo = new Panel();
             btnMaximized = new FontAwesome.Sharp.IconButton();
+            btnUsuarios = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)pictureLogo).BeginInit();
             panelMenu.SuspendLayout();
             panelLogo.SuspendLayout();
@@ -64,7 +65,7 @@
             btnRegistrarServicios.Padding = new Padding(20, 0, 10, 0);
             btnRegistrarServicios.Size = new Size(220, 60);
             btnRegistrarServicios.TabIndex = 3;
-            btnRegistrarServicios.Text = "Registrar Servicios ";
+            btnRegistrarServicios.Text = "Registrar Adicionales";
             btnRegistrarServicios.TextAlign = ContentAlignment.MiddleLeft;
             btnRegistrarServicios.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnRegistrarServicios.UseVisualStyleBackColor = true;
@@ -90,7 +91,7 @@
             // 
             panelContenedor.Location = new Point(221, 33);
             panelContenedor.Name = "panelContenedor";
-            panelContenedor.Size = new Size(581, 423);
+            panelContenedor.Size = new Size(581, 502);
             panelContenedor.TabIndex = 7;
             // 
             // btnExit
@@ -108,29 +109,30 @@
             btnExit.UseVisualStyleBackColor = true;
             btnExit.Click += btnExit_Click;
             // 
-            // btnGestionPagos
+            // btnPagos
             // 
-            btnGestionPagos.Dock = DockStyle.Top;
-            btnGestionPagos.FlatAppearance.BorderSize = 0;
-            btnGestionPagos.FlatAppearance.MouseDownBackColor = Color.Gainsboro;
-            btnGestionPagos.FlatAppearance.MouseOverBackColor = Color.Gray;
-            btnGestionPagos.FlatStyle = FlatStyle.Flat;
-            btnGestionPagos.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnGestionPagos.ForeColor = Color.White;
-            btnGestionPagos.IconChar = FontAwesome.Sharp.IconChar.MoneyCheckDollar;
-            btnGestionPagos.IconColor = Color.FromArgb(15, 15, 15);
-            btnGestionPagos.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnGestionPagos.IconSize = 38;
-            btnGestionPagos.ImageAlign = ContentAlignment.MiddleLeft;
-            btnGestionPagos.Location = new Point(0, 320);
-            btnGestionPagos.Name = "btnGestionPagos";
-            btnGestionPagos.Padding = new Padding(20, 0, 10, 0);
-            btnGestionPagos.Size = new Size(220, 60);
-            btnGestionPagos.TabIndex = 4;
-            btnGestionPagos.Text = "Gestionar Pagos";
-            btnGestionPagos.TextAlign = ContentAlignment.MiddleLeft;
-            btnGestionPagos.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnGestionPagos.UseVisualStyleBackColor = true;
+            btnPagos.Dock = DockStyle.Top;
+            btnPagos.FlatAppearance.BorderSize = 0;
+            btnPagos.FlatAppearance.MouseDownBackColor = Color.Gainsboro;
+            btnPagos.FlatAppearance.MouseOverBackColor = Color.Gray;
+            btnPagos.FlatStyle = FlatStyle.Flat;
+            btnPagos.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnPagos.ForeColor = Color.White;
+            btnPagos.IconChar = FontAwesome.Sharp.IconChar.CashRegister;
+            btnPagos.IconColor = Color.FromArgb(15, 15, 15);
+            btnPagos.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnPagos.IconSize = 38;
+            btnPagos.ImageAlign = ContentAlignment.MiddleLeft;
+            btnPagos.Location = new Point(0, 320);
+            btnPagos.Name = "btnPagos";
+            btnPagos.Padding = new Padding(20, 0, 10, 0);
+            btnPagos.Size = new Size(220, 60);
+            btnPagos.TabIndex = 4;
+            btnPagos.Text = "Pagos";
+            btnPagos.TextAlign = ContentAlignment.MiddleLeft;
+            btnPagos.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnPagos.UseVisualStyleBackColor = true;
+            btnPagos.Click += btnRegistrarUsuario_Click;
             // 
             // pictureLogo
             // 
@@ -145,6 +147,7 @@
             // 
             // btnCerrarSesion
             // 
+            btnCerrarSesion.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             btnCerrarSesion.BackColor = Color.FromArgb(40, 40, 40);
             btnCerrarSesion.FlatAppearance.BorderSize = 0;
             btnCerrarSesion.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
@@ -152,7 +155,7 @@
             btnCerrarSesion.FlatStyle = FlatStyle.Flat;
             btnCerrarSesion.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnCerrarSesion.ForeColor = SystemColors.GrayText;
-            btnCerrarSesion.Location = new Point(39, 399);
+            btnCerrarSesion.Location = new Point(39, 481);
             btnCerrarSesion.Name = "btnCerrarSesion";
             btnCerrarSesion.Size = new Size(134, 39);
             btnCerrarSesion.TabIndex = 5;
@@ -179,7 +182,7 @@
             btnGestionHabitaciones.Padding = new Padding(20, 0, 10, 0);
             btnGestionHabitaciones.Size = new Size(220, 60);
             btnGestionHabitaciones.TabIndex = 2;
-            btnGestionHabitaciones.Text = "Gestionar Habitaciones";
+            btnGestionHabitaciones.Text = "Gestion de Habitaciones";
             btnGestionHabitaciones.TextAlign = ContentAlignment.MiddleLeft;
             btnGestionHabitaciones.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnGestionHabitaciones.UseVisualStyleBackColor = true;
@@ -211,8 +214,9 @@
             // panelMenu
             // 
             panelMenu.BackColor = Color.FromArgb(39, 79, 193);
+            panelMenu.Controls.Add(btnUsuarios);
             panelMenu.Controls.Add(btnCerrarSesion);
-            panelMenu.Controls.Add(btnGestionPagos);
+            panelMenu.Controls.Add(btnPagos);
             panelMenu.Controls.Add(btnRegistrarServicios);
             panelMenu.Controls.Add(btnGestionHabitaciones);
             panelMenu.Controls.Add(btnHome);
@@ -221,7 +225,7 @@
             panelMenu.ForeColor = SystemColors.ActiveCaptionText;
             panelMenu.Location = new Point(0, 0);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(220, 450);
+            panelMenu.Size = new Size(220, 535);
             panelMenu.TabIndex = 4;
             // 
             // panelLogo
@@ -250,11 +254,35 @@
             btnMaximized.UseVisualStyleBackColor = false;
             btnMaximized.Click += btnMaximized_Click;
             // 
+            // btnUsuarios
+            // 
+            btnUsuarios.Dock = DockStyle.Top;
+            btnUsuarios.FlatAppearance.BorderSize = 0;
+            btnUsuarios.FlatAppearance.MouseDownBackColor = Color.Gainsboro;
+            btnUsuarios.FlatAppearance.MouseOverBackColor = Color.Gray;
+            btnUsuarios.FlatStyle = FlatStyle.Flat;
+            btnUsuarios.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnUsuarios.ForeColor = Color.White;
+            btnUsuarios.IconChar = FontAwesome.Sharp.IconChar.User;
+            btnUsuarios.IconColor = Color.FromArgb(15, 15, 15);
+            btnUsuarios.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnUsuarios.IconSize = 38;
+            btnUsuarios.ImageAlign = ContentAlignment.MiddleLeft;
+            btnUsuarios.Location = new Point(0, 380);
+            btnUsuarios.Name = "btnUsuarios";
+            btnUsuarios.Padding = new Padding(20, 0, 10, 0);
+            btnUsuarios.Size = new Size(220, 60);
+            btnUsuarios.TabIndex = 6;
+            btnUsuarios.Text = "Gestión de Usuarios";
+            btnUsuarios.TextAlign = ContentAlignment.MiddleLeft;
+            btnUsuarios.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnUsuarios.UseVisualStyleBackColor = true;
+            // 
             // PrincipalAdmin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 535);
             Controls.Add(btnMaximized);
             Controls.Add(iconButton1);
             Controls.Add(panelContenedor);
@@ -274,7 +302,7 @@
         private FontAwesome.Sharp.IconButton iconButton1;
         private Panel panelContenedor;
         private FontAwesome.Sharp.IconButton btnExit;
-        private FontAwesome.Sharp.IconButton btnGestionPagos;
+        private FontAwesome.Sharp.IconButton btnPagos;
         private PictureBox pictureLogo;
         private Button btnCerrarSesion;
         private FontAwesome.Sharp.IconButton btnGestionHabitaciones;
@@ -282,5 +310,6 @@
         private Panel panelMenu;
         private Panel panelLogo;
         private FontAwesome.Sharp.IconButton btnMaximized;
+        private FontAwesome.Sharp.IconButton btnUsuarios;
     }
 }
