@@ -1,4 +1,5 @@
 ﻿using FontAwesome.Sharp;
+using SistemaDeGestionHotel.views.admin;
 
 namespace SistemaDeGestionHotel
 {
@@ -100,6 +101,7 @@ namespace SistemaDeGestionHotel
         private void btnGestionHabitaciones_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, Color.FromArgb(34, 81, 111));
+            AbrirFormHija(new gestionHabitaciones());
         }
 
         private void btnRegistrarServicios_Click(object sender, EventArgs e)
@@ -115,6 +117,25 @@ namespace SistemaDeGestionHotel
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void AbrirFormHija(object formHija)
+        {
+            if (this.panelContenedor.Controls.Count > 0)
+            {
+                this.panelContenedor.Controls.RemoveAt(0);
+                Form fh = formHija as Form;
+                fh.TopLevel = false;
+                fh.Dock = DockStyle.Fill;
+                this.panelContenedor.Controls.Add(fh);
+                this.panelContenedor.Tag = fh;
+                fh.Show();
+            }
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -32,9 +32,6 @@
 
   <ItemGroup>
     <Folder Include="models\" />
-    <Folder Include="views\admin\" />
-    <Folder Include="views\superAdmin\" />
-    <Folder Include="views\recep\" />
   </ItemGroup>
 
 </Project>
