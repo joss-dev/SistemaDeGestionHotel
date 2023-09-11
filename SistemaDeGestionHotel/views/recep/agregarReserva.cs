@@ -15,9 +15,18 @@ namespace SistemaDeGestionHotel.views.recep
         public agregarReserva()
         {
             InitializeComponent();
+
+            //establece la fecha minima para seleccionar
+            dateTimeIngreso.MinDate = DateTime.Today;
+            dateTimeSalida.MinDate = DateTime.Today;
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimeIngreso_ValueChanged(object sender, EventArgs e)
         {
 
         }
