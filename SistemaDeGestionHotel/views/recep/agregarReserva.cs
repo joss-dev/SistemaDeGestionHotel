@@ -16,5 +16,10 @@ namespace SistemaDeGestionHotel.views.recep
         {
             InitializeComponent();
         }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
