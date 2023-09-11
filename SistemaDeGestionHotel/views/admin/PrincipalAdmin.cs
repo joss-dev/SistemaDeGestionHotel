@@ -1,3 +1,5 @@
+using SistemaDeGestionHotel.SGHControl;
+using System.ComponentModel;
 using System.Runtime.InteropServices;
 
 namespace SistemaDeGestionHotel
@@ -9,10 +11,26 @@ namespace SistemaDeGestionHotel
             InitializeComponent();
         }
 
+        private void PrincipalAdmin_Load(object sender, EventArgs e)
+        {
+            IContainer container = this.Container; // Usa el contenedor del formulario actual
+            if (container == null)
+            {
+                container = new Container();
+            }
+            else
+            {
+                var dropDownMenu = new SGHDropDownMenu(container);
+                dropDownMenu.IsMainMenu = true;
+            }
+        }
+
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
+
+
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
@@ -49,9 +67,11 @@ namespace SistemaDeGestionHotel
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void btnRegistrarUsuario_Click(object sender, EventArgs e)
+        private void btnUsuarios_Click(object sender, EventArgs e)
         {
-
+            ToolStripDropDown SGHDropDownMenu = new ToolStripDropDown();
+            SGHDropDownMenu.Show(btnUsuarios, btnUsuarios.Width, 0);
         }
+
     }
 }

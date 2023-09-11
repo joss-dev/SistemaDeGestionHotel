@@ -51,6 +51,7 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // panel1
             // 
@@ -125,6 +126,7 @@
             // TUsuario
             // 
             TUsuario.BackColor = Color.Black;
+            TUsuario.BorderStyle = BorderStyle.FixedSingle;
             TUsuario.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
             TUsuario.ForeColor = SystemColors.GrayText;
             TUsuario.Location = new Point(322, 102);
@@ -220,8 +222,7 @@
         private Label label1;
         private Button btnLogin;
         private Button btnSalir;
-        private LinkLabel linkPass;
-        private TextBox TPas;
+        private LinkLabel linkPass; 
         private TextBox TPass;
         private FontAwesome.Sharp.IconButton btnMinimizar;
         private FontAwesome.Sharp.IconButton iconButton1;

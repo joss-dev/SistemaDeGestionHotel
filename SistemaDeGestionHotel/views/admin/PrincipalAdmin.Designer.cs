@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             btnRegistrarServicios = new FontAwesome.Sharp.IconButton();
             iconButton1 = new FontAwesome.Sharp.IconButton();
             panelContenedor = new Panel();
@@ -38,10 +39,11 @@
             btnGestionHabitaciones = new FontAwesome.Sharp.IconButton();
             btnHome = new FontAwesome.Sharp.IconButton();
             panelMenu = new Panel();
+            btnAdmHabitaciones = new FontAwesome.Sharp.IconButton();
             btnUsuarios = new FontAwesome.Sharp.IconButton();
             panelLogo = new Panel();
             btnMaximized = new FontAwesome.Sharp.IconButton();
-            btnAdmHabitaciones = new FontAwesome.Sharp.IconButton();
+            sghDropDownMenu1 = new SGHControl.SGHDropDownMenu(components);
             ((System.ComponentModel.ISupportInitialize)pictureLogo).BeginInit();
             panelMenu.SuspendLayout();
             panelLogo.SuspendLayout();
@@ -133,7 +135,6 @@
             btnPagos.TextAlign = ContentAlignment.MiddleLeft;
             btnPagos.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnPagos.UseVisualStyleBackColor = true;
-            btnPagos.Click += btnRegistrarUsuario_Click;
             // 
             // pictureLogo
             // 
@@ -156,7 +157,7 @@
             btnCerrarSesion.FlatStyle = FlatStyle.Flat;
             btnCerrarSesion.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnCerrarSesion.ForeColor = SystemColors.GrayText;
-            btnCerrarSesion.Location = new Point(39, 525);
+            btnCerrarSesion.Location = new Point(39, 501);
             btnCerrarSesion.Name = "btnCerrarSesion";
             btnCerrarSesion.Size = new Size(134, 39);
             btnCerrarSesion.TabIndex = 5;
@@ -230,6 +231,30 @@
             panelMenu.Size = new Size(220, 579);
             panelMenu.TabIndex = 4;
             // 
+            // btnAdmHabitaciones
+            // 
+            btnAdmHabitaciones.Dock = DockStyle.Top;
+            btnAdmHabitaciones.FlatAppearance.BorderSize = 0;
+            btnAdmHabitaciones.FlatAppearance.MouseDownBackColor = Color.Gainsboro;
+            btnAdmHabitaciones.FlatAppearance.MouseOverBackColor = Color.Gray;
+            btnAdmHabitaciones.FlatStyle = FlatStyle.Flat;
+            btnAdmHabitaciones.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAdmHabitaciones.ForeColor = Color.White;
+            btnAdmHabitaciones.IconChar = FontAwesome.Sharp.IconChar.R;
+            btnAdmHabitaciones.IconColor = Color.FromArgb(15, 15, 15);
+            btnAdmHabitaciones.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnAdmHabitaciones.IconSize = 38;
+            btnAdmHabitaciones.ImageAlign = ContentAlignment.MiddleLeft;
+            btnAdmHabitaciones.Location = new Point(0, 440);
+            btnAdmHabitaciones.Name = "btnAdmHabitaciones";
+            btnAdmHabitaciones.Padding = new Padding(20, 0, 10, 0);
+            btnAdmHabitaciones.Size = new Size(220, 60);
+            btnAdmHabitaciones.TabIndex = 7;
+            btnAdmHabitaciones.Text = "Administrar Habitaciones";
+            btnAdmHabitaciones.TextAlign = ContentAlignment.MiddleLeft;
+            btnAdmHabitaciones.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnAdmHabitaciones.UseVisualStyleBackColor = true;
+            // 
             // btnUsuarios
             // 
             btnUsuarios.Dock = DockStyle.Top;
@@ -253,6 +278,7 @@
             btnUsuarios.TextAlign = ContentAlignment.MiddleLeft;
             btnUsuarios.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnUsuarios.UseVisualStyleBackColor = true;
+            btnUsuarios.Click += btnUsuarios_Click;
             // 
             // panelLogo
             // 
@@ -280,29 +306,14 @@
             btnMaximized.UseVisualStyleBackColor = false;
             btnMaximized.Click += btnMaximized_Click;
             // 
-            // btnAdmHabitaciones
+            // sghDropDownMenu1
             // 
-            btnAdmHabitaciones.Dock = DockStyle.Top;
-            btnAdmHabitaciones.FlatAppearance.BorderSize = 0;
-            btnAdmHabitaciones.FlatAppearance.MouseDownBackColor = Color.Gainsboro;
-            btnAdmHabitaciones.FlatAppearance.MouseOverBackColor = Color.Gray;
-            btnAdmHabitaciones.FlatStyle = FlatStyle.Flat;
-            btnAdmHabitaciones.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnAdmHabitaciones.ForeColor = Color.White;
-            btnAdmHabitaciones.IconChar = FontAwesome.Sharp.IconChar.R;
-            btnAdmHabitaciones.IconColor = Color.FromArgb(15, 15, 15);
-            btnAdmHabitaciones.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnAdmHabitaciones.IconSize = 38;
-            btnAdmHabitaciones.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAdmHabitaciones.Location = new Point(0, 440);
-            btnAdmHabitaciones.Name = "btnAdmHabitaciones";
-            btnAdmHabitaciones.Padding = new Padding(20, 0, 10, 0);
-            btnAdmHabitaciones.Size = new Size(220, 60);
-            btnAdmHabitaciones.TabIndex = 7;
-            btnAdmHabitaciones.Text = "Administrar Habitaciones";
-            btnAdmHabitaciones.TextAlign = ContentAlignment.MiddleLeft;
-            btnAdmHabitaciones.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnAdmHabitaciones.UseVisualStyleBackColor = true;
+            sghDropDownMenu1.IsMainMenu = false;
+            sghDropDownMenu1.MenuItemHeight = 25;
+            sghDropDownMenu1.MenuItemTextColor = Color.DimGray;
+            sghDropDownMenu1.Name = "sghDropDownMenu1";
+            sghDropDownMenu1.PrimaryColor = Color.MediumSlateBlue;
+            sghDropDownMenu1.Size = new Size(181, 26);
             // 
             // PrincipalAdmin
             // 
@@ -316,6 +327,7 @@
             Controls.Add(panelMenu);
             Name = "PrincipalAdmin";
             Text = "Form1";
+            Load += PrincipalAdmin_Load;
             ((System.ComponentModel.ISupportInitialize)pictureLogo).EndInit();
             panelMenu.ResumeLayout(false);
             panelLogo.ResumeLayout(false);
@@ -338,5 +350,6 @@
         private FontAwesome.Sharp.IconButton btnMaximized;
         private FontAwesome.Sharp.IconButton btnUsuarios;
         private FontAwesome.Sharp.IconButton btnAdmHabitaciones;
+        private SGHControl.SGHDropDownMenu sghDropDownMenu1;
     }
 }

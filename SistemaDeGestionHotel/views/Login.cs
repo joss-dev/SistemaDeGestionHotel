@@ -29,7 +29,7 @@ namespace SistemaDeGestionHotel
             if (TUsuario.Text == "")
             {
                 TUsuario.Text = "Usuario";
-                TUsuario.ForeColor = Color.DimGray;
+                TUsuario.ForeColor = Color.DimGray;                
             }
         }
 
@@ -37,7 +37,7 @@ namespace SistemaDeGestionHotel
         {
             if (TPass.Text == "Contraseña")
             {
-                TPass.Text = "";
+                TPass.Text = "string.Empty";
                 TPass.ForeColor = Color.LightGray;
                 TPass.UseSystemPasswordChar = true;
             }
@@ -45,12 +45,12 @@ namespace SistemaDeGestionHotel
 
         private void TPass_Leave(object sender, EventArgs e)
         {
-            if (TPass.Text == "")
+            if (TPass.Text == "string.Empty")
             {
                 TPass.Text = "Contraseña";
                 TPass.ForeColor = Color.DimGray;
-                TPass.UseSystemPasswordChar = false;
-            }
+                TPass.UseSystemPasswordChar = true;
+            }            
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -84,6 +84,12 @@ namespace SistemaDeGestionHotel
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -91,12 +97,19 @@ namespace SistemaDeGestionHotel
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            TPass.UseSystemPasswordChar = !TPass.UseSystemPasswordChar;
-            TPass.Text = "";
+            if (TPass.UseSystemPasswordChar == true)
+            {
+                TPass.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                TPass.UseSystemPasswordChar = true;
+            }
+
         }
     }
-
     internal class DLLImportAttribute : Attribute
     {
+        
     }
 }
