@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SistemaDeGestionHotel;
+
 
 namespace SistemaDeGestionHotel.views.recep
 {
@@ -29,6 +31,11 @@ namespace SistemaDeGestionHotel.views.recep
         private void dateTimeIngreso_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void validarDni(object sender, KeyPressEventArgs e)
+        {
+            ValidacionTextBox.ValidarSoloNumeros(sender as TextBox, errorProviderNumero);
         }
     }
 }

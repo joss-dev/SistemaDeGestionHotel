@@ -41,8 +41,8 @@
             label4 = new Label();
             label5 = new Label();
             dateTimeSalida = new DateTimePicker();
-            errorProvider1 = new ErrorProvider(components);
-            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
+            errorProviderNumero = new ErrorProvider(components);
+            ((System.ComponentModel.ISupportInitialize)errorProviderNumero).BeginInit();
             SuspendLayout();
             // 
             // textBox1
@@ -66,6 +66,7 @@
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(206, 23);
             textBox3.TabIndex = 2;
+            textBox3.KeyPress += validarDni;
             // 
             // textBox4
             // 
@@ -152,9 +153,9 @@
             dateTimeSalida.Size = new Size(98, 23);
             dateTimeSalida.TabIndex = 10;
             // 
-            // errorProvider1
+            // errorProviderNumero
             // 
-            errorProvider1.ContainerControl = this;
+            errorProviderNumero.ContainerControl = this;
             // 
             // agregarReserva
             // 
@@ -177,7 +178,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "agregarReserva";
             Text = "agregarReserva";
-            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProviderNumero).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -196,6 +197,6 @@
         private Label label4;
         private Label label5;
         private DateTimePicker dateTimeSalida;
-        private ErrorProvider errorProvider1;
+        private ErrorProvider errorProviderNumero;
     }
 }
