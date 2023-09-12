@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             textBox1 = new TextBox();
             textBox2 = new TextBox();
             textBox3 = new TextBox();
@@ -40,6 +41,8 @@
             label4 = new Label();
             label5 = new Label();
             dateTimeSalida = new DateTimePicker();
+            errorProvider1 = new ErrorProvider(components);
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // textBox1
@@ -149,6 +152,10 @@
             dateTimeSalida.Size = new Size(98, 23);
             dateTimeSalida.TabIndex = 10;
             // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
+            // 
             // agregarReserva
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -170,6 +177,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "agregarReserva";
             Text = "agregarReserva";
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -188,5 +196,6 @@
         private Label label4;
         private Label label5;
         private DateTimePicker dateTimeSalida;
+        private ErrorProvider errorProvider1;
     }
 }
