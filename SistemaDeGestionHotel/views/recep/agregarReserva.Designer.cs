@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
+            TApellido = new TextBox();
+            TNombre = new TextBox();
+            TDni = new TextBox();
+            TCantidadHuespedes = new TextBox();
             lApellido = new Label();
             label1 = new Label();
             label2 = new Label();
@@ -45,36 +45,38 @@
             ((System.ComponentModel.ISupportInitialize)errorProviderNumero).BeginInit();
             SuspendLayout();
             // 
-            // textBox1
+            // TApellido
             // 
-            textBox1.BorderStyle = BorderStyle.FixedSingle;
-            textBox1.Location = new Point(185, 29);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(206, 23);
-            textBox1.TabIndex = 0;
+            TApellido.BorderStyle = BorderStyle.FixedSingle;
+            TApellido.Location = new Point(185, 29);
+            TApellido.Name = "TApellido";
+            TApellido.Size = new Size(206, 23);
+            TApellido.TabIndex = 0;
+            TApellido.KeyDown += ValidarApellido;
             // 
-            // textBox2
+            // TNombre
             // 
-            textBox2.Location = new Point(185, 93);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(206, 23);
-            textBox2.TabIndex = 1;
+            TNombre.Location = new Point(185, 93);
+            TNombre.Name = "TNombre";
+            TNombre.Size = new Size(206, 23);
+            TNombre.TabIndex = 1;
+            TNombre.KeyDown += ValidarNombre;
             // 
-            // textBox3
+            // TDni
             // 
-            textBox3.Location = new Point(185, 151);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(206, 23);
-            textBox3.TabIndex = 2;
-            textBox3.KeyPress += validarDni;
+            TDni.Location = new Point(185, 151);
+            TDni.Name = "TDni";
+            TDni.Size = new Size(206, 23);
+            TDni.TabIndex = 2;
+            TDni.KeyDown += ValidarDni;
             // 
-            // textBox4
+            // TCantidadHuespedes
             // 
-            textBox4.Location = new Point(185, 214);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(206, 23);
-            textBox4.TabIndex = 3;
-            textBox4.TextChanged += textBox4_TextChanged;
+            TCantidadHuespedes.Location = new Point(185, 214);
+            TCantidadHuespedes.Name = "TCantidadHuespedes";
+            TCantidadHuespedes.Size = new Size(206, 23);
+            TCantidadHuespedes.TabIndex = 3;
+            TCantidadHuespedes.KeyDown += ValidarCantidadHuespedes;
             // 
             // lApellido
             // 
@@ -123,7 +125,6 @@
             dateTimeIngreso.Name = "dateTimeIngreso";
             dateTimeIngreso.Size = new Size(98, 23);
             dateTimeIngreso.TabIndex = 8;
-            dateTimeIngreso.ValueChanged += dateTimeIngreso_ValueChanged;
             // 
             // label4
             // 
@@ -171,10 +172,10 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(lApellido);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(TCantidadHuespedes);
+            Controls.Add(TDni);
+            Controls.Add(TNombre);
+            Controls.Add(TApellido);
             FormBorderStyle = FormBorderStyle.None;
             Name = "agregarReserva";
             Text = "agregarReserva";
@@ -185,10 +186,10 @@
 
         #endregion
 
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
+        private TextBox TApellido;
+        private TextBox TNombre;
+        private TextBox TDni;
+        private TextBox TCantidadHuespedes;
         private Label lApellido;
         private Label label1;
         private Label label2;

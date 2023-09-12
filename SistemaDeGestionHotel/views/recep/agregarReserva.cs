@@ -23,19 +23,24 @@ namespace SistemaDeGestionHotel.views.recep
             dateTimeSalida.MinDate = DateTime.Today;
         }
 
-        private void textBox4_TextChanged(object sender, EventArgs e)
+        private void ValidarApellido(object sender, KeyEventArgs e)
         {
-
+            ValidacionTextBox.ValidarTextoConEspacios(TApellido, errorProviderNumero);
         }
 
-        private void dateTimeIngreso_ValueChanged(object sender, EventArgs e)
+        private void ValidarNombre(object sender, KeyEventArgs e)
         {
-
+            ValidacionTextBox.ValidarTextoConEspacios(TNombre, errorProviderNumero);
         }
 
-        private void validarDni(object sender, KeyPressEventArgs e)
+        private void ValidarDni(object sender, KeyEventArgs e)
         {
-            ValidacionTextBox.ValidarSoloNumeros(sender as TextBox, errorProviderNumero);
+            ValidacionTextBox.ValidarSoloNumeros(TDni, errorProviderNumero);
+        }
+
+        private void ValidarCantidadHuespedes(object sender, KeyEventArgs e)
+        {
+            ValidacionTextBox.ValidarSoloNumeros(TCantidadHuespedes, errorProviderNumero);
         }
     }
 }
