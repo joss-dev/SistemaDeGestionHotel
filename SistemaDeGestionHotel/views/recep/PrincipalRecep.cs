@@ -1,6 +1,7 @@
 ﻿using FontAwesome.Sharp;
 using SistemaDeGestionHotel.views.admin;
 using SistemaDeGestionHotel.views.recep;
+using System.Drawing.Text;
 
 namespace SistemaDeGestionHotel
 {
@@ -97,6 +98,10 @@ namespace SistemaDeGestionHotel
         private void btnHome_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, Color.FromArgb(34, 81, 111));
+            if (this.panelContenedor.Controls.Count > 0)
+            {
+                this.panelContenedor.Controls.RemoveAt(0);
+            }
         }
 
         private void btnGestionHabitaciones_Click(object sender, EventArgs e)
@@ -110,11 +115,19 @@ namespace SistemaDeGestionHotel
         private void btnRegistrarServicios_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, Color.FromArgb(34, 81, 111));
+            if (this.panelContenedor.Controls.Count > 0)
+            {
+                this.panelContenedor.Controls.RemoveAt(0);
+            }
         }
 
         private void btnGestionPagos_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, Color.FromArgb(34, 81, 111));
+            if (this.panelContenedor.Controls.Count > 0)
+            {
+                this.panelContenedor.Controls.RemoveAt(0);
+            }
         }
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
@@ -124,14 +137,25 @@ namespace SistemaDeGestionHotel
 
         private void AbrirFormHija(object formHija)
         {
+            foreach (Control control in this.panelContenedor.Controls)
+            {
+                // Si el formulario ya está abierto, lo trae al frente y termina el método.
+                if (control.GetType() == formHija.GetType())
+                {
+                    control.BringToFront();
+                    return;
+                }
+            }
+
             if (this.panelContenedor.Controls.Count > 0)
             {
                 this.panelContenedor.Controls.RemoveAt(0);
             }
-            Form fh = (Form)formHija as Form;
+            Form fh = formHija as Form;
             fh.TopLevel = false;
             fh.Dock = DockStyle.Fill;
             this.panelContenedor.Controls.Add(fh);
+            
             this.panelContenedor.Tag = fh;
             fh.Show();
 
@@ -159,6 +183,7 @@ namespace SistemaDeGestionHotel
         //agrega comentario
         private void btnAgregarReserva_Click_1(object sender, EventArgs e)
         {
+            ActivateButton(sender, Color.FromArgb(34, 81, 111));
             AbrirFormHija(new agregarReserva());
         }
     }
