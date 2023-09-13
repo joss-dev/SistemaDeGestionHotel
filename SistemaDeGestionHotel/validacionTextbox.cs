@@ -10,52 +10,45 @@ namespace SistemaDeGestionHotel
 {
     public static class ValidacionTextBox
     {
+
+        //metodo que permite validar los campos para que solo acepten numeros
         public static void ValidarSoloNumeros(TextBox textBox, ErrorProvider errorProvider)
         {
-            bool primerCaracterNoValido = false;
-
             textBox.KeyPress += (sender, e) =>
             {
+                // Permitir solo caracteres numéricos y teclas de control como Backspace y Delete
                 if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
                 {
-                    e.Handled = true; // Cancelar la entrada del carácter
-                    if (!primerCaracterNoValido)
-                    {
-                        errorProvider.SetError(textBox, "Solo se permiten números.");
-                        primerCaracterNoValido = true;
-                    }
+                    e.Handled = true; // Cancelar la entrada del caracter
+                    errorProvider.SetError(textBox, "Solo se permiten números.");
                 }
                 else
                 {
                     errorProvider.SetError(textBox, ""); // Limpiar el mensaje de error si es válido
-                    primerCaracterNoValido = false;
                 }
             };
         }
 
+        //metodo que permite validar los campos para que solo acepten textos con espacio
+
         public static void ValidarTextoConEspacios(TextBox textBox, ErrorProvider errorProvider)
         {
-            bool primerCaracterNoValido = false;
-
             textBox.KeyPress += (sender, e) =>
             {
                 // Permitir solo caracteres de letras, espacios y teclas de control como Backspace y Delete
                 if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
                 {
                     e.Handled = true; // Cancelar la entrada del carácter
-                    if (!primerCaracterNoValido)
-                    {
-                        errorProvider.SetError(textBox, "Solo se permiten letras y espacios.");
-                        primerCaracterNoValido = true;
-                    }
+                    errorProvider.SetError(textBox, "Solo se permiten letras y espacios.");
                 }
                 else
                 {
                     errorProvider.SetError(textBox, ""); // Limpiar el mensaje de error si es válido
-                    primerCaracterNoValido = false;
                 }
             };
         }
+
+        //metodo que permite validar los campos que no esten vacios
 
         public static void ValidarNoVacio(TextBox textBox, ErrorProvider errorProvider)
         {
