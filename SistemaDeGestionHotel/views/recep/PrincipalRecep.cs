@@ -98,7 +98,7 @@ namespace SistemaDeGestionHotel
         private void btnHome_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, Color.FromArgb(34, 81, 111));
-            
+
         }
 
         private void btnGestionHabitaciones_Click(object sender, EventArgs e)
@@ -110,13 +110,13 @@ namespace SistemaDeGestionHotel
         private void btnRegistrarServicios_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, Color.FromArgb(34, 81, 111));
-            
+
         }
 
         private void btnGestionPagos_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, Color.FromArgb(34, 81, 111));
-            
+
         }
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
@@ -124,7 +124,7 @@ namespace SistemaDeGestionHotel
             Application.Exit();
         }
 
-     
+
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -141,6 +141,7 @@ namespace SistemaDeGestionHotel
             else
             {
                 this.WindowState = FormWindowState.Maximized;
+                
             }
         }
 
@@ -149,6 +150,11 @@ namespace SistemaDeGestionHotel
         {
             ActivateButton(sender, Color.FromArgb(34, 81, 111));
             formsHijos.AbrirFormHija(new agregarReserva(), panelContenedor);
+        }
+
+        private void panelContenedor_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -42,5 +42,10 @@ namespace SistemaDeGestionHotel.views.recep
         {
             ValidacionTextBox.ValidarSoloNumeros(TCantidadHuespedes, errorProviderNumero);
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

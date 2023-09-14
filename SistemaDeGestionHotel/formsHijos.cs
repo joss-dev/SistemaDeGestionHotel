@@ -10,9 +10,9 @@ namespace SistemaDeGestionHotel
     
     public static class formsHijos
     {
-        
 
-        public static void AbrirFormHija(object formHija, Control panelContenedor)
+
+        public static void AbrirFormHija(Form formHija, Control panelContenedor)
         {
             
 
@@ -34,11 +34,11 @@ namespace SistemaDeGestionHotel
             Form fh = formHija as Form;
             fh.TopLevel = false;
             fh.Dock = DockStyle.Fill;
-           
             panelContenedor.Controls.Add(fh);
             panelContenedor.Tag = fh;
             fh.Show();
-
+           
         }
+      
     }
 }

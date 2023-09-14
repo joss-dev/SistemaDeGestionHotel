@@ -48,7 +48,7 @@
             // TApellido
             // 
             TApellido.BorderStyle = BorderStyle.FixedSingle;
-            TApellido.Location = new Point(185, 29);
+            TApellido.Location = new Point(176, 96);
             TApellido.Name = "TApellido";
             TApellido.Size = new Size(206, 23);
             TApellido.TabIndex = 0;
@@ -56,7 +56,7 @@
             // 
             // TNombre
             // 
-            TNombre.Location = new Point(185, 93);
+            TNombre.Location = new Point(176, 139);
             TNombre.Name = "TNombre";
             TNombre.Size = new Size(206, 23);
             TNombre.TabIndex = 1;
@@ -64,7 +64,7 @@
             // 
             // TDni
             // 
-            TDni.Location = new Point(185, 151);
+            TDni.Location = new Point(176, 187);
             TDni.Name = "TDni";
             TDni.Size = new Size(206, 23);
             TDni.TabIndex = 2;
@@ -72,7 +72,7 @@
             // 
             // TCantidadHuespedes
             // 
-            TCantidadHuespedes.Location = new Point(185, 214);
+            TCantidadHuespedes.Location = new Point(221, 241);
             TCantidadHuespedes.Name = "TCantidadHuespedes";
             TCantidadHuespedes.Size = new Size(206, 23);
             TCantidadHuespedes.TabIndex = 3;
@@ -82,7 +82,7 @@
             // 
             lApellido.AutoSize = true;
             lApellido.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lApellido.Location = new Point(99, 32);
+            lApellido.Location = new Point(90, 99);
             lApellido.Name = "lApellido";
             lApellido.Size = new Size(67, 20);
             lApellido.TabIndex = 4;
@@ -92,7 +92,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(99, 96);
+            label1.Location = new Point(90, 142);
             label1.Name = "label1";
             label1.Size = new Size(71, 20);
             label1.TabIndex = 5;
@@ -102,17 +102,18 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(120, 154);
+            label2.Location = new Point(90, 187);
             label2.Name = "label2";
             label2.Size = new Size(37, 20);
             label2.TabIndex = 6;
             label2.Text = "DNI";
+            label2.Click += label2_Click;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(9, 217);
+            label3.Location = new Point(29, 240);
             label3.Name = "label3";
             label3.Size = new Size(170, 20);
             label3.TabIndex = 7;
@@ -121,7 +122,7 @@
             // dateTimeIngreso
             // 
             dateTimeIngreso.Format = DateTimePickerFormat.Short;
-            dateTimeIngreso.Location = new Point(612, 30);
+            dateTimeIngreso.Location = new Point(178, 295);
             dateTimeIngreso.Name = "dateTimeIngreso";
             dateTimeIngreso.Size = new Size(98, 23);
             dateTimeIngreso.TabIndex = 8;
@@ -130,7 +131,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(469, 33);
+            label4.Location = new Point(45, 295);
             label4.Name = "label4";
             label4.Size = new Size(127, 20);
             label4.TabIndex = 9;
@@ -140,7 +141,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(469, 93);
+            label5.Location = new Point(45, 334);
             label5.Name = "label5";
             label5.Size = new Size(115, 20);
             label5.TabIndex = 11;
@@ -149,7 +150,7 @@
             // dateTimeSalida
             // 
             dateTimeSalida.Format = DateTimePickerFormat.Short;
-            dateTimeSalida.Location = new Point(612, 90);
+            dateTimeSalida.Location = new Point(178, 338);
             dateTimeSalida.Name = "dateTimeSalida";
             dateTimeSalida.Size = new Size(98, 23);
             dateTimeSalida.TabIndex = 10;
@@ -162,20 +163,21 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
             BackColor = Color.FromArgb(1, 110, 180);
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(580, 564);
+            Controls.Add(TCantidadHuespedes);
+            Controls.Add(label3);
+            Controls.Add(TApellido);
             Controls.Add(label5);
+            Controls.Add(TNombre);
+            Controls.Add(label2);
+            Controls.Add(label1);
             Controls.Add(dateTimeSalida);
             Controls.Add(label4);
             Controls.Add(dateTimeIngreso);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(lApellido);
-            Controls.Add(TCantidadHuespedes);
             Controls.Add(TDni);
-            Controls.Add(TNombre);
-            Controls.Add(TApellido);
+            Controls.Add(lApellido);
             FormBorderStyle = FormBorderStyle.None;
             Name = "agregarReserva";
             Text = "agregarReserva";
