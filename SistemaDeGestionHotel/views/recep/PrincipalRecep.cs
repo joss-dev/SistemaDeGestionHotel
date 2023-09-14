@@ -98,10 +98,7 @@ namespace SistemaDeGestionHotel
         private void btnHome_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, Color.FromArgb(34, 81, 111));
-            if (this.panelContenedor.Controls.Count > 0)
-            {
-                this.panelContenedor.Controls.RemoveAt(0);
-            }
+            
         }
 
         private void btnGestionHabitaciones_Click(object sender, EventArgs e)
@@ -113,19 +110,13 @@ namespace SistemaDeGestionHotel
         private void btnRegistrarServicios_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, Color.FromArgb(34, 81, 111));
-            if (this.panelContenedor.Controls.Count > 0)
-            {
-                this.panelContenedor.Controls.RemoveAt(0);
-            }
+            
         }
 
         private void btnGestionPagos_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, Color.FromArgb(34, 81, 111));
-            if (this.panelContenedor.Controls.Count > 0)
-            {
-                this.panelContenedor.Controls.RemoveAt(0);
-            }
+            
         }
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
