@@ -47,5 +47,10 @@ namespace SistemaDeGestionHotel.views.recep
         {
 
         }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

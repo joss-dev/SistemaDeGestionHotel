@@ -42,13 +42,16 @@
             label5 = new Label();
             dateTimeSalida = new DateTimePicker();
             errorProviderNumero = new ErrorProvider(components);
+            lTitulo = new Label();
+            btnVolver = new FontAwesome.Sharp.IconButton();
+            btnGuardarReserva = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)errorProviderNumero).BeginInit();
             SuspendLayout();
             // 
             // TApellido
             // 
             TApellido.BorderStyle = BorderStyle.FixedSingle;
-            TApellido.Location = new Point(176, 96);
+            TApellido.Location = new Point(221, 125);
             TApellido.Name = "TApellido";
             TApellido.Size = new Size(206, 23);
             TApellido.TabIndex = 0;
@@ -56,7 +59,7 @@
             // 
             // TNombre
             // 
-            TNombre.Location = new Point(176, 139);
+            TNombre.Location = new Point(221, 184);
             TNombre.Name = "TNombre";
             TNombre.Size = new Size(206, 23);
             TNombre.TabIndex = 1;
@@ -64,7 +67,7 @@
             // 
             // TDni
             // 
-            TDni.Location = new Point(176, 187);
+            TDni.Location = new Point(221, 237);
             TDni.Name = "TDni";
             TDni.Size = new Size(206, 23);
             TDni.TabIndex = 2;
@@ -72,7 +75,7 @@
             // 
             // TCantidadHuespedes
             // 
-            TCantidadHuespedes.Location = new Point(221, 241);
+            TCantidadHuespedes.Location = new Point(221, 300);
             TCantidadHuespedes.Name = "TCantidadHuespedes";
             TCantidadHuespedes.Size = new Size(206, 23);
             TCantidadHuespedes.TabIndex = 3;
@@ -82,7 +85,7 @@
             // 
             lApellido.AutoSize = true;
             lApellido.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lApellido.Location = new Point(90, 99);
+            lApellido.Location = new Point(132, 128);
             lApellido.Name = "lApellido";
             lApellido.Size = new Size(67, 20);
             lApellido.TabIndex = 4;
@@ -92,7 +95,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(90, 142);
+            label1.Location = new Point(128, 187);
             label1.Name = "label1";
             label1.Size = new Size(71, 20);
             label1.TabIndex = 5;
@@ -102,7 +105,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(90, 187);
+            label2.Location = new Point(132, 240);
             label2.Name = "label2";
             label2.Size = new Size(37, 20);
             label2.TabIndex = 6;
@@ -113,7 +116,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(29, 240);
+            label3.Location = new Point(29, 300);
             label3.Name = "label3";
             label3.Size = new Size(170, 20);
             label3.TabIndex = 7;
@@ -122,7 +125,7 @@
             // dateTimeIngreso
             // 
             dateTimeIngreso.Format = DateTimePickerFormat.Short;
-            dateTimeIngreso.Location = new Point(178, 295);
+            dateTimeIngreso.Location = new Point(221, 379);
             dateTimeIngreso.Name = "dateTimeIngreso";
             dateTimeIngreso.Size = new Size(98, 23);
             dateTimeIngreso.TabIndex = 8;
@@ -131,7 +134,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(45, 295);
+            label4.Location = new Point(84, 382);
             label4.Name = "label4";
             label4.Size = new Size(127, 20);
             label4.TabIndex = 9;
@@ -141,7 +144,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(45, 334);
+            label5.Location = new Point(84, 423);
             label5.Name = "label5";
             label5.Size = new Size(115, 20);
             label5.TabIndex = 11;
@@ -150,7 +153,7 @@
             // dateTimeSalida
             // 
             dateTimeSalida.Format = DateTimePickerFormat.Short;
-            dateTimeSalida.Location = new Point(178, 338);
+            dateTimeSalida.Location = new Point(221, 421);
             dateTimeSalida.Name = "dateTimeSalida";
             dateTimeSalida.Size = new Size(98, 23);
             dateTimeSalida.TabIndex = 10;
@@ -159,6 +162,60 @@
             // 
             errorProviderNumero.ContainerControl = this;
             // 
+            // lTitulo
+            // 
+            lTitulo.AutoSize = true;
+            lTitulo.Font = new Font("Yu Gothic UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            lTitulo.Location = new Point(190, 30);
+            lTitulo.Name = "lTitulo";
+            lTitulo.Size = new Size(204, 32);
+            lTitulo.TabIndex = 12;
+            lTitulo.Text = "Registrar Reserva";
+            // 
+            // btnVolver
+            // 
+            btnVolver.BackColor = Color.Transparent;
+            btnVolver.Cursor = Cursors.Hand;
+            btnVolver.FlatAppearance.BorderSize = 0;
+            btnVolver.FlatAppearance.MouseDownBackColor = Color.SteelBlue;
+            btnVolver.FlatAppearance.MouseOverBackColor = Color.SteelBlue;
+            btnVolver.FlatStyle = FlatStyle.Flat;
+            btnVolver.IconChar = FontAwesome.Sharp.IconChar.ArrowAltCircleLeft;
+            btnVolver.IconColor = Color.Black;
+            btnVolver.IconFont = FontAwesome.Sharp.IconFont.Regular;
+            btnVolver.IconSize = 40;
+            btnVolver.ImageAlign = ContentAlignment.TopCenter;
+            btnVolver.Location = new Point(29, 496);
+            btnVolver.Name = "btnVolver";
+            btnVolver.Size = new Size(74, 61);
+            btnVolver.TabIndex = 14;
+            btnVolver.Text = "Volver";
+            btnVolver.TextAlign = ContentAlignment.BottomCenter;
+            btnVolver.UseVisualStyleBackColor = false;
+            btnVolver.Click += iconButton1_Click;
+            // 
+            // btnGuardarReserva
+            // 
+            btnGuardarReserva.BackColor = Color.Transparent;
+            btnGuardarReserva.Cursor = Cursors.Hand;
+            btnGuardarReserva.FlatAppearance.BorderSize = 0;
+            btnGuardarReserva.FlatAppearance.MouseDownBackColor = Color.SteelBlue;
+            btnGuardarReserva.FlatAppearance.MouseOverBackColor = Color.SteelBlue;
+            btnGuardarReserva.FlatStyle = FlatStyle.Flat;
+            btnGuardarReserva.ForeColor = Color.Black;
+            btnGuardarReserva.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
+            btnGuardarReserva.IconColor = SystemColors.ActiveCaptionText;
+            btnGuardarReserva.IconFont = FontAwesome.Sharp.IconFont.Regular;
+            btnGuardarReserva.IconSize = 40;
+            btnGuardarReserva.ImageAlign = ContentAlignment.TopCenter;
+            btnGuardarReserva.Location = new Point(479, 496);
+            btnGuardarReserva.Name = "btnGuardarReserva";
+            btnGuardarReserva.Size = new Size(74, 61);
+            btnGuardarReserva.TabIndex = 15;
+            btnGuardarReserva.Text = "Registrar";
+            btnGuardarReserva.TextAlign = ContentAlignment.BottomCenter;
+            btnGuardarReserva.UseVisualStyleBackColor = false;
+            // 
             // agregarReserva
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -166,6 +223,9 @@
             AutoSize = true;
             BackColor = Color.FromArgb(1, 110, 180);
             ClientSize = new Size(580, 564);
+            Controls.Add(btnGuardarReserva);
+            Controls.Add(btnVolver);
+            Controls.Add(lTitulo);
             Controls.Add(TCantidadHuespedes);
             Controls.Add(label3);
             Controls.Add(TApellido);
@@ -201,5 +261,8 @@
         private Label label5;
         private DateTimePicker dateTimeSalida;
         private ErrorProvider errorProviderNumero;
+        private Label lTitulo;
+        private FontAwesome.Sharp.IconButton btnVolver;
+        private FontAwesome.Sharp.IconButton btnGuardarReserva;
     }
 }

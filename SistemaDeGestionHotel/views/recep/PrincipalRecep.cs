@@ -22,6 +22,7 @@ namespace SistemaDeGestionHotel
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 60);
             panelMenu.Controls.Add(leftBorderBtn);
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
 
         //metodos para arrastrar el formulario
@@ -141,7 +142,7 @@ namespace SistemaDeGestionHotel
             else
             {
                 this.WindowState = FormWindowState.Maximized;
-                
+
             }
         }
 

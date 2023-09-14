@@ -70,6 +70,7 @@
             // 
             // btnAgregarReserva
             // 
+            btnAgregarReserva.Cursor = Cursors.Hand;
             btnAgregarReserva.Dock = DockStyle.Top;
             btnAgregarReserva.FlatAppearance.BorderSize = 0;
             btnAgregarReserva.FlatAppearance.MouseDownBackColor = Color.Gainsboro;
@@ -113,6 +114,7 @@
             // 
             // btnGestionPagos
             // 
+            btnGestionPagos.Cursor = Cursors.Hand;
             btnGestionPagos.Dock = DockStyle.Top;
             btnGestionPagos.FlatAppearance.BorderSize = 0;
             btnGestionPagos.FlatAppearance.MouseDownBackColor = Color.Gainsboro;
@@ -138,6 +140,7 @@
             // 
             // btnRegistrarServicios
             // 
+            btnRegistrarServicios.Cursor = Cursors.Hand;
             btnRegistrarServicios.Dock = DockStyle.Top;
             btnRegistrarServicios.FlatAppearance.BorderSize = 0;
             btnRegistrarServicios.FlatAppearance.MouseDownBackColor = Color.Gainsboro;
@@ -189,6 +192,7 @@
             // 
             // btnHome
             // 
+            btnHome.Cursor = Cursors.Hand;
             btnHome.Dock = DockStyle.Top;
             btnHome.FlatAppearance.BorderSize = 0;
             btnHome.FlatAppearance.MouseDownBackColor = Color.Gainsboro;
