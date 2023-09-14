@@ -107,9 +107,7 @@ namespace SistemaDeGestionHotel
         private void btnGestionHabitaciones_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, Color.FromArgb(34, 81, 111));
-            Form h = new gestionHabitaciones();
-
-            AbrirFormHija(h);
+            formsHijos.AbrirFormHija(new gestionHabitaciones(), panelContenedor);
         }
 
         private void btnRegistrarServicios_Click(object sender, EventArgs e)
@@ -135,32 +133,7 @@ namespace SistemaDeGestionHotel
             Application.Exit();
         }
 
-        private void AbrirFormHija(object formHija)
-        {
-            foreach (Control control in this.panelContenedor.Controls)
-            {
-                // Si el formulario ya está abierto, lo trae al frente y termina el método.
-                if (control.GetType() == formHija.GetType())
-                {
-                    control.BringToFront();
-                    return;
-                }
-            }
-
-            if (this.panelContenedor.Controls.Count > 0)
-            {
-                this.panelContenedor.Controls.RemoveAt(0);
-            }
-            Form fh = formHija as Form;
-            fh.TopLevel = false;
-            fh.Dock = DockStyle.Fill;
-            this.panelContenedor.Controls.Add(fh);
-            
-            this.panelContenedor.Tag = fh;
-            fh.Show();
-
-        }
-
+     
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -184,7 +157,7 @@ namespace SistemaDeGestionHotel
         private void btnAgregarReserva_Click_1(object sender, EventArgs e)
         {
             ActivateButton(sender, Color.FromArgb(34, 81, 111));
-            AbrirFormHija(new agregarReserva());
+            formsHijos.AbrirFormHija(new agregarReserva(), panelContenedor);
         }
     }
 }
