@@ -144,7 +144,8 @@ namespace SistemaDeGestionHotel
             else
             {
                 this.WindowState = FormWindowState.Maximized;
-
+                Form fh = panelContenedor.Tag as Form;
+                fh.Size = panelContenedor.Size;
             }
         }
 

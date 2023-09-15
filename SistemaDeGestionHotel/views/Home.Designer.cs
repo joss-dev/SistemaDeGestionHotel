@@ -37,6 +37,7 @@
             label1 = new Label();
             chartRedondo = new System.Windows.Forms.DataVisualization.Charting.Chart();
             chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)chartRedondo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)chart1).BeginInit();
             SuspendLayout();
@@ -53,13 +54,14 @@
             // 
             // chartRedondo
             // 
+            chartRedondo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             chartRedondo.BackColor = Color.SteelBlue;
             chartRedondo.BorderSkin.BorderColor = Color.Transparent;
             chartArea1.Name = "ChartArea1";
             chartRedondo.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             chartRedondo.Legends.Add(legend1);
-            chartRedondo.Location = new Point(12, 199);
+            chartRedondo.Location = new Point(37, 199);
             chartRedondo.Name = "chartRedondo";
             series1.BackImageTransparentColor = Color.White;
             series1.ChartArea = "ChartArea1";
@@ -67,12 +69,13 @@
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             chartRedondo.Series.Add(series1);
-            chartRedondo.Size = new Size(270, 224);
+            chartRedondo.Size = new Size(245, 224);
             chartRedondo.TabIndex = 1;
             chartRedondo.Text = "chart1";
             // 
             // chart1
             // 
+            chart1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             chart1.BackColor = Color.SteelBlue;
             chart1.BorderSkin.BorderColor = Color.Transparent;
             chartArea2.Name = "ChartArea1";
@@ -86,19 +89,29 @@
             series2.Name = "Series1";
             series2.YValuesPerPoint = 4;
             chart1.Series.Add(series2);
-            chart1.Size = new Size(264, 213);
+            chart1.Size = new Size(241, 224);
             chart1.TabIndex = 2;
             chart1.Text = "chart1";
+            // 
+            // panel1
+            // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(580, 564);
+            panel1.TabIndex = 3;
             // 
             // Home
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
             BackColor = Color.SteelBlue;
             ClientSize = new Size(580, 564);
             Controls.Add(chart1);
             Controls.Add(chartRedondo);
             Controls.Add(label1);
+            Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Home";
             Text = "Home";
@@ -113,5 +126,6 @@
         private Label label1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartRedondo;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private Panel panel1;
     }
 }
