@@ -32,12 +32,14 @@
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             btnGuardarReserva = new FontAwesome.Sharp.IconButton();
             btnVolver = new FontAwesome.Sharp.IconButton();
+            label1 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
+            panel1.Controls.Add(label1);
             panel1.Controls.Add(iconPictureBox1);
             panel1.Location = new Point(76, 129);
             panel1.Name = "panel1";
@@ -48,13 +50,13 @@
             // 
             iconPictureBox1.BackColor = Color.SteelBlue;
             iconPictureBox1.ForeColor = SystemColors.ControlText;
-            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.None;
+            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.DoorOpen;
             iconPictureBox1.IconColor = SystemColors.ControlText;
             iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox1.IconSize = 71;
+            iconPictureBox1.IconSize = 59;
             iconPictureBox1.Location = new Point(15, 13);
             iconPictureBox1.Name = "iconPictureBox1";
-            iconPictureBox1.Size = new Size(71, 76);
+            iconPictureBox1.Size = new Size(59, 62);
             iconPictureBox1.TabIndex = 0;
             iconPictureBox1.TabStop = false;
             // 
@@ -103,6 +105,16 @@
             btnVolver.TextAlign = ContentAlignment.BottomCenter;
             btnVolver.UseVisualStyleBackColor = false;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("SimSun", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(15, 92);
+            label1.Name = "label1";
+            label1.Size = new Size(52, 16);
+            label1.TabIndex = 1;
+            label1.Text = "Libre";
+            // 
             // gestionHabitaciones
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -118,6 +130,7 @@
             Text = "gestionHabitaciones";
             Load += gestionHabitaciones_Load;
             panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             ResumeLayout(false);
         }
@@ -128,5 +141,6 @@
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private FontAwesome.Sharp.IconButton btnGuardarReserva;
         private FontAwesome.Sharp.IconButton btnVolver;
+        private Label label1;
     }
 }
