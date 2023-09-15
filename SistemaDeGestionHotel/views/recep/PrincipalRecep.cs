@@ -111,6 +111,7 @@ namespace SistemaDeGestionHotel
         private void btnRegistrarServicios_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, Color.FromArgb(34, 81, 111));
+            formsHijos.AbrirFormHija(new registrarServicio(), panelContenedor);
 
         }
 
