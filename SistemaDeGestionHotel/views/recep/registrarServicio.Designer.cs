@@ -170,7 +170,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(1, 110, 180);
+            BackColor = Color.SteelBlue;
             ClientSize = new Size(580, 564);
             Controls.Add(label2);
             Controls.Add(textBox1);

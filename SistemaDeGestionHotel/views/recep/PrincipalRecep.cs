@@ -2,6 +2,7 @@
 using SistemaDeGestionHotel.views.admin;
 using SistemaDeGestionHotel.views.recep;
 using System.Drawing.Text;
+using SistemaDeGestionHotel.views;
 
 namespace SistemaDeGestionHotel
 {
@@ -99,7 +100,7 @@ namespace SistemaDeGestionHotel
         private void btnHome_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, Color.FromArgb(34, 81, 111));
-
+            formsHijos.AbrirFormHija(new Home(), panelContenedor);
         }
 
         private void btnGestionHabitaciones_Click(object sender, EventArgs e)

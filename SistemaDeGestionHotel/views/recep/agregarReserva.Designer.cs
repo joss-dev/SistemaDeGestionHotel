@@ -221,7 +221,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
-            BackColor = Color.FromArgb(1, 110, 180);
+            BackColor = Color.SteelBlue;
             ClientSize = new Size(580, 564);
             Controls.Add(btnGuardarReserva);
             Controls.Add(btnVolver);
