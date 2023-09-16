@@ -72,5 +72,10 @@ namespace SistemaDeGestionHotel.views.recep
         {
 
         }
+
+        private void lTitulo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
