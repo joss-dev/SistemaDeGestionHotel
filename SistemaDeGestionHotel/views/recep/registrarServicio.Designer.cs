@@ -46,6 +46,7 @@
             // 
             // lTitulo2
             // 
+            lTitulo2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             lTitulo2.AutoSize = true;
             lTitulo2.Font = new Font("Yu Gothic UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
             lTitulo2.Location = new Point(175, 48);
@@ -56,6 +57,7 @@
             // 
             // LDni
             // 
+            LDni.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             LDni.AutoSize = true;
             LDni.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             LDni.Location = new Point(44, 99);
@@ -66,6 +68,7 @@
             // 
             // TDni
             // 
+            TDni.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             TDni.Location = new Point(233, 100);
             TDni.Name = "TDni";
             TDni.Size = new Size(206, 23);
@@ -84,6 +87,7 @@
             // 
             // btnGuardarReserva
             // 
+            btnGuardarReserva.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnGuardarReserva.BackColor = Color.Transparent;
             btnGuardarReserva.Cursor = Cursors.Hand;
             btnGuardarReserva.FlatAppearance.BorderSize = 0;
@@ -106,6 +110,7 @@
             // 
             // btnVolver
             // 
+            btnVolver.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             btnVolver.BackColor = Color.Transparent;
             btnVolver.Cursor = Cursors.Hand;
             btnVolver.FlatAppearance.BorderSize = 0;
@@ -131,6 +136,7 @@
             // 
             // panel1
             // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             panel1.Controls.Add(comboBox1);
             panel1.Controls.Add(label1);
             panel1.Location = new Point(78, 146);
@@ -150,6 +156,7 @@
             // 
             // textBox1
             // 
+            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             textBox1.Location = new Point(233, 207);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
@@ -158,6 +165,7 @@
             // 
             // label2
             // 
+            label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             label2.Location = new Point(98, 206);
