@@ -1,4 +1,5 @@
 using SistemaDeGestionHotel.SGHControl;
+using SistemaDeGestionHotel.views.admin;
 
 namespace SistemaDeGestionHotel
 {
@@ -13,7 +14,7 @@ namespace SistemaDeGestionHotel
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new PrincipalRecep());
+            Application.Run(new gestionImpuestos());
         }
     }
 }

@@ -131,9 +131,9 @@
             TUsuario.ForeColor = SystemColors.GrayText;
             TUsuario.Location = new Point(322, 102);
             TUsuario.Name = "TUsuario";
+            TUsuario.PlaceholderText = "Usuario";
             TUsuario.Size = new Size(376, 26);
             TUsuario.TabIndex = 1;
-            TUsuario.Text = "Usuario";
             TUsuario.TextAlign = HorizontalAlignment.Center;
             TUsuario.Enter += TUsuario_Enter;
             TUsuario.Leave += TUsuario_Leave;
@@ -146,9 +146,9 @@
             TPass.ForeColor = SystemColors.GrayText;
             TPass.Location = new Point(322, 155);
             TPass.Name = "TPass";
+            TPass.PlaceholderText = "Contraseña";
             TPass.Size = new Size(376, 26);
             TPass.TabIndex = 2;
-            TPass.Text = "Contraseña";
             TPass.TextAlign = HorizontalAlignment.Center;
             TPass.Enter += TPass_Enter;
             TPass.Leave += TPass_Leave;
@@ -222,7 +222,7 @@
         private Label label1;
         private Button btnLogin;
         private Button btnSalir;
-        private LinkLabel linkPass; 
+        private LinkLabel linkPass;
         private TextBox TPass;
         private FontAwesome.Sharp.IconButton btnMinimizar;
         private FontAwesome.Sharp.IconButton iconButton1;

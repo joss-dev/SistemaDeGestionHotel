@@ -37,19 +37,6 @@ namespace SistemaDeGestionHotel
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void btnMaximized_Click(object sender, EventArgs e)
-        {
-            if (this.WindowState == FormWindowState.Maximized)
-            {
-                this.WindowState = FormWindowState.Normal;
-            }
-            else
-            {
-                this.WindowState = FormWindowState.Maximized;
-
-            }
-        }
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -70,8 +57,32 @@ namespace SistemaDeGestionHotel
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
             ToolStripDropDown SGHDropDownMenu = new ToolStripDropDown();
+
+            // Crear elementos del menú
+            ToolStripMenuItem item1 = new ToolStripMenuItem("Opción 1");
+            ToolStripMenuItem item2 = new ToolStripMenuItem("Opción 2");
+            ToolStripMenuItem item3 = new ToolStripMenuItem("Opción 3");
+
+            // Añadir los elementos al menú
+            SGHDropDownMenu.Items.Add(item1);
+            SGHDropDownMenu.Items.Add(item2);
+            SGHDropDownMenu.Items.Add(item3);
+
+            // Mostrar el menú
             SGHDropDownMenu.Show(btnUsuarios, btnUsuarios.Width, 0);
         }
 
+        private void btnMaximized_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Maximized;
+
+            }
+        }
     }
 }

@@ -42,11 +42,13 @@
             btnAdmHabitaciones = new FontAwesome.Sharp.IconButton();
             btnUsuarios = new FontAwesome.Sharp.IconButton();
             panelLogo = new Panel();
-            btnMaximized = new FontAwesome.Sharp.IconButton();
             sghDropDownMenu1 = new SGHControl.SGHDropDownMenu(components);
+            panel1 = new Panel();
+            btnMaximized = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)pictureLogo).BeginInit();
             panelMenu.SuspendLayout();
             panelLogo.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // btnRegistrarServicios
@@ -75,6 +77,7 @@
             // 
             // iconButton1
             // 
+            iconButton1.BackColor = Color.GreenYellow;
             iconButton1.FlatAppearance.BorderColor = Color.Black;
             iconButton1.FlatAppearance.BorderSize = 0;
             iconButton1.FlatStyle = FlatStyle.Flat;
@@ -83,33 +86,34 @@
             iconButton1.IconFont = FontAwesome.Sharp.IconFont.Solid;
             iconButton1.IconSize = 20;
             iconButton1.ImageAlign = ContentAlignment.BottomRight;
-            iconButton1.Location = new Point(706, 12);
+            iconButton1.Location = new Point(472, 6);
             iconButton1.Name = "iconButton1";
             iconButton1.Size = new Size(32, 18);
             iconButton1.TabIndex = 6;
-            iconButton1.UseVisualStyleBackColor = true;
+            iconButton1.UseVisualStyleBackColor = false;
             iconButton1.Click += iconButton1_Click;
             // 
             // panelContenedor
             // 
-            panelContenedor.Location = new Point(221, 33);
+            panelContenedor.Location = new Point(220, 42);
             panelContenedor.Name = "panelContenedor";
-            panelContenedor.Size = new Size(581, 502);
+            panelContenedor.Size = new Size(579, 502);
             panelContenedor.TabIndex = 7;
             // 
             // btnExit
             // 
+            btnExit.BackColor = Color.GreenYellow;
             btnExit.FlatAppearance.BorderSize = 0;
             btnExit.FlatStyle = FlatStyle.Flat;
             btnExit.IconChar = FontAwesome.Sharp.IconChar.X;
             btnExit.IconColor = Color.Black;
             btnExit.IconFont = FontAwesome.Sharp.IconFont.Solid;
             btnExit.IconSize = 20;
-            btnExit.Location = new Point(769, 6);
+            btnExit.Location = new Point(540, 4);
             btnExit.Name = "btnExit";
-            btnExit.Size = new Size(33, 30);
+            btnExit.Size = new Size(33, 23);
             btnExit.TabIndex = 5;
-            btnExit.UseVisualStyleBackColor = true;
+            btnExit.UseVisualStyleBackColor = false;
             btnExit.Click += btnExit_Click;
             // 
             // btnPagos
@@ -157,7 +161,7 @@
             btnCerrarSesion.FlatStyle = FlatStyle.Flat;
             btnCerrarSesion.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnCerrarSesion.ForeColor = SystemColors.GrayText;
-            btnCerrarSesion.Location = new Point(39, 501);
+            btnCerrarSesion.Location = new Point(39, 517);
             btnCerrarSesion.Name = "btnCerrarSesion";
             btnCerrarSesion.Size = new Size(134, 39);
             btnCerrarSesion.TabIndex = 5;
@@ -283,28 +287,13 @@
             // panelLogo
             // 
             panelLogo.Controls.Add(pictureLogo);
+            panelLogo.Controls.Add(panelContenedor);
             panelLogo.Dock = DockStyle.Top;
             panelLogo.Location = new Point(0, 0);
             panelLogo.Name = "panelLogo";
             panelLogo.Padding = new Padding(20, 0, 10, 0);
             panelLogo.Size = new Size(220, 140);
             panelLogo.TabIndex = 0;
-            // 
-            // btnMaximized
-            // 
-            btnMaximized.BackColor = SystemColors.ActiveCaptionText;
-            btnMaximized.ForeColor = SystemColors.ActiveCaptionText;
-            btnMaximized.IconChar = FontAwesome.Sharp.IconChar.Square;
-            btnMaximized.IconColor = Color.Black;
-            btnMaximized.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnMaximized.IconSize = 15;
-            btnMaximized.Location = new Point(743, 6);
-            btnMaximized.Name = "btnMaximized";
-            btnMaximized.Size = new Size(26, 25);
-            btnMaximized.TabIndex = 8;
-            btnMaximized.Text = "Maximizar";
-            btnMaximized.UseVisualStyleBackColor = false;
-            btnMaximized.Click += btnMaximized_Click;
             // 
             // sghDropDownMenu1
             // 
@@ -313,24 +302,49 @@
             sghDropDownMenu1.MenuItemTextColor = Color.DimGray;
             sghDropDownMenu1.Name = "sghDropDownMenu1";
             sghDropDownMenu1.PrimaryColor = Color.MediumSlateBlue;
-            sghDropDownMenu1.Size = new Size(181, 26);
+            sghDropDownMenu1.Size = new Size(61, 4);
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.GreenYellow;
+            panel1.Controls.Add(btnMaximized);
+            panel1.Controls.Add(iconButton1);
+            panel1.Controls.Add(btnExit);
+            panel1.Location = new Point(220, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(582, 30);
+            panel1.TabIndex = 9;
+            // 
+            // btnMaximized
+            // 
+            btnMaximized.BackColor = Color.GreenYellow;
+            btnMaximized.FlatAppearance.BorderSize = 0;
+            btnMaximized.FlatStyle = FlatStyle.Flat;
+            btnMaximized.IconChar = FontAwesome.Sharp.IconChar.Square;
+            btnMaximized.IconColor = Color.Black;
+            btnMaximized.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            btnMaximized.IconSize = 20;
+            btnMaximized.Location = new Point(507, 4);
+            btnMaximized.Name = "btnMaximized";
+            btnMaximized.Size = new Size(33, 23);
+            btnMaximized.TabIndex = 7;
+            btnMaximized.UseVisualStyleBackColor = false;
             // 
             // PrincipalAdmin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 579);
-            Controls.Add(btnMaximized);
-            Controls.Add(iconButton1);
-            Controls.Add(panelContenedor);
-            Controls.Add(btnExit);
             Controls.Add(panelMenu);
+            Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "PrincipalAdmin";
             Text = "Form1";
             Load += PrincipalAdmin_Load;
             ((System.ComponentModel.ISupportInitialize)pictureLogo).EndInit();
             panelMenu.ResumeLayout(false);
             panelLogo.ResumeLayout(false);
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -347,9 +361,10 @@
         private FontAwesome.Sharp.IconButton btnHome;
         private Panel panelMenu;
         private Panel panelLogo;
-        private FontAwesome.Sharp.IconButton btnMaximized;
         private FontAwesome.Sharp.IconButton btnUsuarios;
         private FontAwesome.Sharp.IconButton btnAdmHabitaciones;
         private SGHControl.SGHDropDownMenu sghDropDownMenu1;
+        private Panel panel1;
+        private FontAwesome.Sharp.IconButton btnMaximized;
     }
 }
