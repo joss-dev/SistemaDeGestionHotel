@@ -15,6 +15,18 @@ namespace SistemaDeGestionHotel.views.admin
         public gestionOfertas()
         {
             InitializeComponent();
+
+            // Agregar elementos a la lista desplegable.
+            comboBoxEstado.Items.Add("Activo");
+            comboBoxEstado.Items.Add("Inactivo");
+
+            // Establecer los elementos seleccionados por defecto.
+            comboBoxEstado.SelectedIndex = 0;
+        }
+
+        private void comboBoxEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

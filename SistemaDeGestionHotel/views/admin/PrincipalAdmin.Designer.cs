@@ -77,10 +77,11 @@
             // 
             // iconButton1
             // 
-            iconButton1.BackColor = Color.GreenYellow;
+            iconButton1.BackColor = Color.YellowGreen;
             iconButton1.FlatAppearance.BorderColor = Color.Black;
             iconButton1.FlatAppearance.BorderSize = 0;
             iconButton1.FlatStyle = FlatStyle.Flat;
+            iconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Horizontal;
             iconButton1.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
             iconButton1.IconColor = Color.Black;
             iconButton1.IconFont = FontAwesome.Sharp.IconFont.Solid;
@@ -102,9 +103,10 @@
             // 
             // btnExit
             // 
-            btnExit.BackColor = Color.GreenYellow;
+            btnExit.BackColor = Color.YellowGreen;
             btnExit.FlatAppearance.BorderSize = 0;
             btnExit.FlatStyle = FlatStyle.Flat;
+            btnExit.Flip = FontAwesome.Sharp.FlipOrientation.Horizontal;
             btnExit.IconChar = FontAwesome.Sharp.IconChar.X;
             btnExit.IconColor = Color.Black;
             btnExit.IconFont = FontAwesome.Sharp.IconFont.Solid;
@@ -306,7 +308,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.GreenYellow;
+            panel1.BackColor = Color.YellowGreen;
             panel1.Controls.Add(btnMaximized);
             panel1.Controls.Add(iconButton1);
             panel1.Controls.Add(btnExit);
@@ -317,9 +319,10 @@
             // 
             // btnMaximized
             // 
-            btnMaximized.BackColor = Color.GreenYellow;
+            btnMaximized.BackColor = Color.YellowGreen;
             btnMaximized.FlatAppearance.BorderSize = 0;
             btnMaximized.FlatStyle = FlatStyle.Flat;
+            btnMaximized.Flip = FontAwesome.Sharp.FlipOrientation.Horizontal;
             btnMaximized.IconChar = FontAwesome.Sharp.IconChar.Square;
             btnMaximized.IconColor = Color.Black;
             btnMaximized.IconFont = FontAwesome.Sharp.IconFont.Solid;
