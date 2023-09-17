@@ -211,6 +211,7 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.BackgroundColor = Color.MediumSeaGreen;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(-3, 397);
             dataGridView1.Name = "dataGridView1";
@@ -280,7 +281,6 @@
             comboBoxEstado.Name = "comboBoxEstado";
             comboBoxEstado.Size = new Size(121, 23);
             comboBoxEstado.TabIndex = 30;
-            comboBoxEstado.SelectedIndexChanged += comboBoxEstado_SelectedIndexChanged;
             // 
             // gestionImpuestos
             // 

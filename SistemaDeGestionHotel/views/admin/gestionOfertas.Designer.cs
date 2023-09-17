@@ -106,7 +106,7 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(544, 219);
+            textBox2.Location = new Point(476, 217);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(154, 23);
             textBox2.TabIndex = 26;
@@ -281,11 +281,12 @@
             // 
             // dataGridView2
             // 
+            dataGridView2.BackgroundColor = Color.MediumSeaGreen;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView2.Location = new Point(-8, 468);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowTemplate.Height = 25;
-            dataGridView2.Size = new Size(807, 152);
+            dataGridView2.Size = new Size(759, 152);
             dataGridView2.TabIndex = 42;
             // 
             // label12

@@ -50,10 +50,5 @@ namespace SistemaDeGestionHotel.views.admin
         {
 
         }
-
-        private void comboBoxEstado_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
