@@ -29,7 +29,7 @@ namespace SistemaDeGestionHotel
             if (TUsuario.Text == "")
             {
                 TUsuario.Text = "Usuario";
-                TUsuario.ForeColor = Color.DimGray;                
+                TUsuario.ForeColor = Color.DimGray;
             }
         }
 
@@ -50,7 +50,7 @@ namespace SistemaDeGestionHotel
                 TPass.Text = "Contraseña";
                 TPass.ForeColor = Color.DimGray;
                 TPass.UseSystemPasswordChar = true;
-            }            
+            }
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -100,16 +100,18 @@ namespace SistemaDeGestionHotel
             if (TPass.UseSystemPasswordChar == true)
             {
                 TPass.UseSystemPasswordChar = false;
+                iconButton1.IconChar = FontAwesome.Sharp.IconChar.Eye;
             }
             else
             {
                 TPass.UseSystemPasswordChar = true;
+                iconButton1.IconChar = FontAwesome.Sharp.IconChar.EyeSlash;
             }
 
         }
     }
     internal class DLLImportAttribute : Attribute
     {
-        
+
     }
 }
