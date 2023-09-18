@@ -29,10 +29,8 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            btnGuardarReserva = new FontAwesome.Sharp.IconButton();
-            btnVolver = new FontAwesome.Sharp.IconButton();
             label1 = new Label();
+            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             SuspendLayout();
@@ -45,6 +43,16 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(180, 125);
             panel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("SimSun", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(15, 92);
+            label1.Name = "label1";
+            label1.Size = new Size(52, 16);
+            label1.TabIndex = 1;
+            label1.Text = "Libre";
             // 
             // iconPictureBox1
             // 
@@ -60,69 +68,12 @@
             iconPictureBox1.TabIndex = 0;
             iconPictureBox1.TabStop = false;
             // 
-            // btnGuardarReserva
-            // 
-            btnGuardarReserva.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnGuardarReserva.BackColor = Color.Transparent;
-            btnGuardarReserva.Cursor = Cursors.Hand;
-            btnGuardarReserva.FlatAppearance.BorderSize = 0;
-            btnGuardarReserva.FlatAppearance.MouseDownBackColor = Color.SteelBlue;
-            btnGuardarReserva.FlatAppearance.MouseOverBackColor = Color.SteelBlue;
-            btnGuardarReserva.FlatStyle = FlatStyle.Flat;
-            btnGuardarReserva.ForeColor = Color.Black;
-            btnGuardarReserva.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
-            btnGuardarReserva.IconColor = SystemColors.ActiveCaptionText;
-            btnGuardarReserva.IconFont = FontAwesome.Sharp.IconFont.Regular;
-            btnGuardarReserva.IconSize = 40;
-            btnGuardarReserva.ImageAlign = ContentAlignment.TopCenter;
-            btnGuardarReserva.Location = new Point(465, 482);
-            btnGuardarReserva.Name = "btnGuardarReserva";
-            btnGuardarReserva.Size = new Size(74, 61);
-            btnGuardarReserva.TabIndex = 17;
-            btnGuardarReserva.Text = "Registrar";
-            btnGuardarReserva.TextAlign = ContentAlignment.BottomCenter;
-            btnGuardarReserva.UseVisualStyleBackColor = false;
-            // 
-            // btnVolver
-            // 
-            btnVolver.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnVolver.BackColor = Color.Transparent;
-            btnVolver.Cursor = Cursors.Hand;
-            btnVolver.FlatAppearance.BorderSize = 0;
-            btnVolver.FlatAppearance.MouseDownBackColor = Color.SteelBlue;
-            btnVolver.FlatAppearance.MouseOverBackColor = Color.SteelBlue;
-            btnVolver.FlatStyle = FlatStyle.Flat;
-            btnVolver.IconChar = FontAwesome.Sharp.IconChar.ArrowAltCircleLeft;
-            btnVolver.IconColor = Color.Black;
-            btnVolver.IconFont = FontAwesome.Sharp.IconFont.Regular;
-            btnVolver.IconSize = 40;
-            btnVolver.ImageAlign = ContentAlignment.TopCenter;
-            btnVolver.Location = new Point(15, 482);
-            btnVolver.Name = "btnVolver";
-            btnVolver.Size = new Size(74, 61);
-            btnVolver.TabIndex = 16;
-            btnVolver.Text = "Volver";
-            btnVolver.TextAlign = ContentAlignment.BottomCenter;
-            btnVolver.UseVisualStyleBackColor = false;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("SimSun", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(15, 92);
-            label1.Name = "label1";
-            label1.Size = new Size(52, 16);
-            label1.TabIndex = 1;
-            label1.Text = "Libre";
-            // 
             // gestionHabitaciones
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SteelBlue;
             ClientSize = new Size(580, 564);
-            Controls.Add(btnGuardarReserva);
-            Controls.Add(btnVolver);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "gestionHabitaciones";
@@ -139,8 +90,6 @@
 
         private Panel panel1;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
-        private FontAwesome.Sharp.IconButton btnGuardarReserva;
-        private FontAwesome.Sharp.IconButton btnVolver;
         private Label label1;
     }
 }

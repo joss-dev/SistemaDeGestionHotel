@@ -33,13 +33,13 @@
             LDni = new Label();
             TDni = new TextBox();
             label1 = new Label();
-            btnGuardarReserva = new FontAwesome.Sharp.IconButton();
-            btnVolver = new FontAwesome.Sharp.IconButton();
             errorProvider = new ErrorProvider(components);
             panel1 = new Panel();
             comboBox1 = new ComboBox();
             textBox1 = new TextBox();
             label2 = new Label();
+            btnCancelar = new Button();
+            btnRegistrar = new Button();
             ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -48,10 +48,10 @@
             // 
             lTitulo2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             lTitulo2.AutoSize = true;
-            lTitulo2.Font = new Font("Yu Gothic UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            lTitulo2.Location = new Point(175, 48);
+            lTitulo2.Font = new Font("Verdana", 27.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lTitulo2.Location = new Point(95, 59);
             lTitulo2.Name = "lTitulo2";
-            lTitulo2.Size = new Size(203, 32);
+            lTitulo2.Size = new Size(392, 45);
             lTitulo2.TabIndex = 19;
             lTitulo2.Text = "Registrar Servicio";
             // 
@@ -60,7 +60,7 @@
             LDni.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             LDni.AutoSize = true;
             LDni.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            LDni.Location = new Point(44, 99);
+            LDni.Location = new Point(41, 167);
             LDni.Name = "LDni";
             LDni.Size = new Size(183, 20);
             LDni.TabIndex = 18;
@@ -69,7 +69,7 @@
             // TDni
             // 
             TDni.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            TDni.Location = new Point(233, 100);
+            TDni.Location = new Point(230, 168);
             TDni.Name = "TDni";
             TDni.Size = new Size(206, 23);
             TDni.TabIndex = 15;
@@ -85,51 +85,6 @@
             label1.TabIndex = 21;
             label1.Text = "Servicio a registrar :";
             // 
-            // btnGuardarReserva
-            // 
-            btnGuardarReserva.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnGuardarReserva.BackColor = Color.Transparent;
-            btnGuardarReserva.Cursor = Cursors.Hand;
-            btnGuardarReserva.FlatAppearance.BorderSize = 0;
-            btnGuardarReserva.FlatAppearance.MouseDownBackColor = Color.SteelBlue;
-            btnGuardarReserva.FlatAppearance.MouseOverBackColor = Color.SteelBlue;
-            btnGuardarReserva.FlatStyle = FlatStyle.Flat;
-            btnGuardarReserva.ForeColor = Color.Black;
-            btnGuardarReserva.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
-            btnGuardarReserva.IconColor = SystemColors.ActiveCaptionText;
-            btnGuardarReserva.IconFont = FontAwesome.Sharp.IconFont.Regular;
-            btnGuardarReserva.IconSize = 40;
-            btnGuardarReserva.ImageAlign = ContentAlignment.TopCenter;
-            btnGuardarReserva.Location = new Point(476, 491);
-            btnGuardarReserva.Name = "btnGuardarReserva";
-            btnGuardarReserva.Size = new Size(74, 61);
-            btnGuardarReserva.TabIndex = 26;
-            btnGuardarReserva.Text = "Registrar";
-            btnGuardarReserva.TextAlign = ContentAlignment.BottomCenter;
-            btnGuardarReserva.UseVisualStyleBackColor = false;
-            // 
-            // btnVolver
-            // 
-            btnVolver.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            btnVolver.BackColor = Color.Transparent;
-            btnVolver.Cursor = Cursors.Hand;
-            btnVolver.FlatAppearance.BorderSize = 0;
-            btnVolver.FlatAppearance.MouseDownBackColor = Color.SteelBlue;
-            btnVolver.FlatAppearance.MouseOverBackColor = Color.SteelBlue;
-            btnVolver.FlatStyle = FlatStyle.Flat;
-            btnVolver.IconChar = FontAwesome.Sharp.IconChar.ArrowAltCircleLeft;
-            btnVolver.IconColor = Color.Black;
-            btnVolver.IconFont = FontAwesome.Sharp.IconFont.Regular;
-            btnVolver.IconSize = 40;
-            btnVolver.ImageAlign = ContentAlignment.TopCenter;
-            btnVolver.Location = new Point(26, 491);
-            btnVolver.Name = "btnVolver";
-            btnVolver.Size = new Size(74, 61);
-            btnVolver.TabIndex = 25;
-            btnVolver.Text = "Volver";
-            btnVolver.TextAlign = ContentAlignment.BottomCenter;
-            btnVolver.UseVisualStyleBackColor = false;
-            // 
             // errorProvider
             // 
             errorProvider.ContainerControl = this;
@@ -139,7 +94,7 @@
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             panel1.Controls.Add(comboBox1);
             panel1.Controls.Add(label1);
-            panel1.Location = new Point(78, 146);
+            panel1.Location = new Point(75, 214);
             panel1.Name = "panel1";
             panel1.Size = new Size(288, 48);
             panel1.TabIndex = 27;
@@ -157,10 +112,9 @@
             // textBox1
             // 
             textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            textBox1.Location = new Point(233, 207);
-            textBox1.Multiline = true;
+            textBox1.Location = new Point(230, 275);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(248, 86);
+            textBox1.Size = new Size(248, 23);
             textBox1.TabIndex = 28;
             // 
             // label2
@@ -168,11 +122,45 @@
             label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(98, 206);
+            label2.Location = new Point(95, 274);
             label2.Name = "label2";
             label2.Size = new Size(98, 20);
             label2.TabIndex = 29;
             label2.Text = "Descripción :";
+            // 
+            // btnCancelar
+            // 
+            btnCancelar.Anchor = AnchorStyles.Bottom;
+            btnCancelar.Cursor = Cursors.Hand;
+            btnCancelar.FlatAppearance.BorderSize = 0;
+            btnCancelar.FlatStyle = FlatStyle.Flat;
+            btnCancelar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCancelar.Image = Properties.Resources.btnCancelar;
+            btnCancelar.ImageAlign = ContentAlignment.TopCenter;
+            btnCancelar.Location = new Point(277, 459);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(111, 83);
+            btnCancelar.TabIndex = 31;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.TextAlign = ContentAlignment.BottomCenter;
+            btnCancelar.UseVisualStyleBackColor = true;
+            // 
+            // btnRegistrar
+            // 
+            btnRegistrar.Anchor = AnchorStyles.Bottom;
+            btnRegistrar.Cursor = Cursors.Hand;
+            btnRegistrar.FlatAppearance.BorderSize = 0;
+            btnRegistrar.FlatStyle = FlatStyle.Flat;
+            btnRegistrar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnRegistrar.Image = Properties.Resources.btn_guardar_;
+            btnRegistrar.ImageAlign = ContentAlignment.TopCenter;
+            btnRegistrar.Location = new Point(159, 459);
+            btnRegistrar.Name = "btnRegistrar";
+            btnRegistrar.Size = new Size(112, 83);
+            btnRegistrar.TabIndex = 30;
+            btnRegistrar.Text = "Registrar";
+            btnRegistrar.TextAlign = ContentAlignment.BottomCenter;
+            btnRegistrar.UseVisualStyleBackColor = true;
             // 
             // registrarServicio
             // 
@@ -180,11 +168,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SteelBlue;
             ClientSize = new Size(580, 564);
+            Controls.Add(btnCancelar);
+            Controls.Add(btnRegistrar);
             Controls.Add(label2);
             Controls.Add(textBox1);
             Controls.Add(panel1);
-            Controls.Add(btnGuardarReserva);
-            Controls.Add(btnVolver);
             Controls.Add(lTitulo2);
             Controls.Add(LDni);
             Controls.Add(TDni);
@@ -204,12 +192,12 @@
         private Label LDni;
         private TextBox TDni;
         private Label label1;
-        private FontAwesome.Sharp.IconButton btnGuardarReserva;
-        private FontAwesome.Sharp.IconButton btnVolver;
         private ErrorProvider errorProvider;
         private Panel panel1;
         private ComboBox comboBox1;
         private Label label2;
         private TextBox textBox1;
+        private Button btnCancelar;
+        private Button btnRegistrar;
     }
 }

@@ -48,10 +48,6 @@ namespace SistemaDeGestionHotel.views.recep
 
         }
 
-        private void iconButton1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void TApellido_TextChanged(object sender, EventArgs e)
         {
@@ -68,12 +64,7 @@ namespace SistemaDeGestionHotel.views.recep
 
         }
 
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lTitulo_Click(object sender, EventArgs e)
+        private void dateTimeSalida_ValueChanged(object sender, EventArgs e)
         {
 
         }
