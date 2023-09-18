@@ -119,7 +119,7 @@ namespace SistemaDeGestionHotel
         private void btnGestionPagos_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, Color.FromArgb(34, 81, 111));
-
+            formsHijos.AbrirFormHija(new  gestionPagos(), panelContenedor);
         }
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
