@@ -17,10 +17,6 @@ namespace SistemaDeGestionHotel.views.recep
             InitializeComponent();
         }
 
-        private void ValidarDni(object sender, KeyEventArgs e)
-        {
-            ValidacionTextBox.ValidarSoloNumeros(TDni, errorProvider);
-        }
 
     }
 }

@@ -32,7 +32,6 @@
             btnAgregarReserva = new FontAwesome.Sharp.IconButton();
             btnCerrarSesion = new Button();
             btnGestionPagos = new FontAwesome.Sharp.IconButton();
-            btnRegistrarServicios = new FontAwesome.Sharp.IconButton();
             btnGestionHabitaciones = new FontAwesome.Sharp.IconButton();
             btnHome = new FontAwesome.Sharp.IconButton();
             panelLogo = new Panel();
@@ -54,7 +53,6 @@
             panelMenu.Controls.Add(btnAgregarReserva);
             panelMenu.Controls.Add(btnCerrarSesion);
             panelMenu.Controls.Add(btnGestionPagos);
-            panelMenu.Controls.Add(btnRegistrarServicios);
             panelMenu.Controls.Add(btnGestionHabitaciones);
             panelMenu.Controls.Add(btnHome);
             panelMenu.Controls.Add(panelLogo);
@@ -83,7 +81,7 @@
             btnAgregarReserva.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnAgregarReserva.IconSize = 38;
             btnAgregarReserva.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAgregarReserva.Location = new Point(0, 380);
+            btnAgregarReserva.Location = new Point(0, 320);
             btnAgregarReserva.Name = "btnAgregarReserva";
             btnAgregarReserva.Padding = new Padding(20, 0, 10, 0);
             btnAgregarReserva.Size = new Size(220, 60);
@@ -127,7 +125,7 @@
             btnGestionPagos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnGestionPagos.IconSize = 38;
             btnGestionPagos.ImageAlign = ContentAlignment.MiddleLeft;
-            btnGestionPagos.Location = new Point(0, 320);
+            btnGestionPagos.Location = new Point(0, 260);
             btnGestionPagos.Name = "btnGestionPagos";
             btnGestionPagos.Padding = new Padding(20, 0, 10, 0);
             btnGestionPagos.Size = new Size(220, 60);
@@ -137,32 +135,6 @@
             btnGestionPagos.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnGestionPagos.UseVisualStyleBackColor = true;
             btnGestionPagos.Click += btnGestionPagos_Click;
-            // 
-            // btnRegistrarServicios
-            // 
-            btnRegistrarServicios.Cursor = Cursors.Hand;
-            btnRegistrarServicios.Dock = DockStyle.Top;
-            btnRegistrarServicios.FlatAppearance.BorderSize = 0;
-            btnRegistrarServicios.FlatAppearance.MouseDownBackColor = Color.Gainsboro;
-            btnRegistrarServicios.FlatAppearance.MouseOverBackColor = Color.Gray;
-            btnRegistrarServicios.FlatStyle = FlatStyle.Flat;
-            btnRegistrarServicios.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnRegistrarServicios.ForeColor = Color.White;
-            btnRegistrarServicios.IconChar = FontAwesome.Sharp.IconChar.Spa;
-            btnRegistrarServicios.IconColor = Color.FromArgb(15, 15, 15);
-            btnRegistrarServicios.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnRegistrarServicios.IconSize = 38;
-            btnRegistrarServicios.ImageAlign = ContentAlignment.MiddleLeft;
-            btnRegistrarServicios.Location = new Point(0, 260);
-            btnRegistrarServicios.Name = "btnRegistrarServicios";
-            btnRegistrarServicios.Padding = new Padding(20, 0, 10, 0);
-            btnRegistrarServicios.Size = new Size(220, 60);
-            btnRegistrarServicios.TabIndex = 3;
-            btnRegistrarServicios.Text = "Registrar Servicios ";
-            btnRegistrarServicios.TextAlign = ContentAlignment.MiddleLeft;
-            btnRegistrarServicios.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnRegistrarServicios.UseVisualStyleBackColor = true;
-            btnRegistrarServicios.Click += btnRegistrarServicios_Click;
             // 
             // btnGestionHabitaciones
             // 
@@ -337,7 +309,6 @@
         private FontAwesome.Sharp.IconButton btnHome;
         private Panel panelLogo;
         private FontAwesome.Sharp.IconButton btnGestionPagos;
-        private FontAwesome.Sharp.IconButton btnRegistrarServicios;
         private FontAwesome.Sharp.IconButton btnGestionHabitaciones;
         private FontAwesome.Sharp.IconButton btnExit;
         private PictureBox pictureLogo;

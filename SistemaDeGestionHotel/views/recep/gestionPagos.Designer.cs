@@ -76,6 +76,7 @@
             btnCobrar.Anchor = AnchorStyles.Bottom;
             btnCobrar.BackColor = Color.LawnGreen;
             btnCobrar.FlatAppearance.BorderSize = 0;
+            btnCobrar.FlatStyle = FlatStyle.Flat;
             btnCobrar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnCobrar.ForeColor = SystemColors.ActiveCaptionText;
             btnCobrar.IconChar = FontAwesome.Sharp.IconChar.MoneyBillAlt;

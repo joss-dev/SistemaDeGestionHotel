@@ -30,103 +30,30 @@
         {
             components = new System.ComponentModel.Container();
             lTitulo2 = new Label();
-            LDni = new Label();
-            TDni = new TextBox();
-            label1 = new Label();
             errorProvider = new ErrorProvider(components);
-            panel1 = new Panel();
-            comboBox1 = new ComboBox();
-            textBox1 = new TextBox();
-            label2 = new Label();
             btnCancelar = new Button();
             btnRegistrar = new Button();
+            checkBox1 = new CheckBox();
+            checkBox2 = new CheckBox();
+            checkBox3 = new CheckBox();
+            checkBox4 = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
-            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // lTitulo2
             // 
             lTitulo2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             lTitulo2.AutoSize = true;
-            lTitulo2.Font = new Font("Verdana", 27.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lTitulo2.Location = new Point(95, 59);
+            lTitulo2.Font = new Font("Yu Gothic", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lTitulo2.Location = new Point(78, 73);
             lTitulo2.Name = "lTitulo2";
-            lTitulo2.Size = new Size(392, 45);
+            lTitulo2.Size = new Size(263, 38);
             lTitulo2.TabIndex = 19;
             lTitulo2.Text = "Registrar Servicio";
-            // 
-            // LDni
-            // 
-            LDni.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            LDni.AutoSize = true;
-            LDni.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            LDni.Location = new Point(41, 167);
-            LDni.Name = "LDni";
-            LDni.Size = new Size(183, 20);
-            LDni.TabIndex = 18;
-            LDni.Text = "Ingrese dni del huesped :";
-            // 
-            // TDni
-            // 
-            TDni.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            TDni.Location = new Point(230, 168);
-            TDni.Name = "TDni";
-            TDni.Size = new Size(206, 23);
-            TDni.TabIndex = 15;
-            TDni.KeyDown += ValidarDni;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(3, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(148, 20);
-            label1.TabIndex = 21;
-            label1.Text = "Servicio a registrar :";
             // 
             // errorProvider
             // 
             errorProvider.ContainerControl = this;
-            // 
-            // panel1
-            // 
-            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            panel1.Controls.Add(comboBox1);
-            panel1.Controls.Add(label1);
-            panel1.Location = new Point(75, 214);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(288, 48);
-            panel1.TabIndex = 27;
-            // 
-            // comboBox1
-            // 
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Wifi", "Gimnasio", "Limpieza", "Estacionamiento" });
-            comboBox1.Location = new Point(157, 3);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 28;
-            // 
-            // textBox1
-            // 
-            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            textBox1.Location = new Point(230, 275);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(248, 23);
-            textBox1.TabIndex = 28;
-            // 
-            // label2
-            // 
-            label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(95, 274);
-            label2.Name = "label2";
-            label2.Size = new Size(98, 20);
-            label2.TabIndex = 29;
-            label2.Text = "Descripción :";
             // 
             // btnCancelar
             // 
@@ -137,7 +64,7 @@
             btnCancelar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnCancelar.Image = Properties.Resources.btnCancelar;
             btnCancelar.ImageAlign = ContentAlignment.TopCenter;
-            btnCancelar.Location = new Point(277, 459);
+            btnCancelar.Location = new Point(212, 459);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(111, 83);
             btnCancelar.TabIndex = 31;
@@ -154,7 +81,7 @@
             btnRegistrar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnRegistrar.Image = Properties.Resources.btn_guardar_;
             btnRegistrar.ImageAlign = ContentAlignment.TopCenter;
-            btnRegistrar.Location = new Point(159, 459);
+            btnRegistrar.Location = new Point(94, 459);
             btnRegistrar.Name = "btnRegistrar";
             btnRegistrar.Size = new Size(112, 83);
             btnRegistrar.TabIndex = 30;
@@ -162,26 +89,71 @@
             btnRegistrar.TextAlign = ContentAlignment.BottomCenter;
             btnRegistrar.UseVisualStyleBackColor = true;
             // 
+            // checkBox1
+            // 
+            checkBox1.Anchor = AnchorStyles.Top;
+            checkBox1.AutoSize = true;
+            checkBox1.Font = new Font("Yu Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            checkBox1.Location = new Point(142, 178);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(126, 31);
+            checkBox1.TabIndex = 32;
+            checkBox1.Text = "Gimnasio";
+            checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            checkBox2.Anchor = AnchorStyles.Top;
+            checkBox2.AutoSize = true;
+            checkBox2.Font = new Font("Yu Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            checkBox2.Location = new Point(142, 225);
+            checkBox2.Name = "checkBox2";
+            checkBox2.Size = new Size(201, 31);
+            checkBox2.TabIndex = 33;
+            checkBox2.Text = "Estacionamiento";
+            checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox3
+            // 
+            checkBox3.Anchor = AnchorStyles.Top;
+            checkBox3.AutoSize = true;
+            checkBox3.Font = new Font("Yu Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            checkBox3.Location = new Point(142, 275);
+            checkBox3.Name = "checkBox3";
+            checkBox3.Size = new Size(143, 31);
+            checkBox3.TabIndex = 34;
+            checkBox3.Text = "Lavanderia";
+            checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox4
+            // 
+            checkBox4.Anchor = AnchorStyles.Top;
+            checkBox4.AutoSize = true;
+            checkBox4.Font = new Font("Yu Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            checkBox4.Location = new Point(142, 327);
+            checkBox4.Name = "checkBox4";
+            checkBox4.Size = new Size(125, 31);
+            checkBox4.TabIndex = 35;
+            checkBox4.Text = "Almuerzo";
+            checkBox4.UseVisualStyleBackColor = true;
+            // 
             // registrarServicio
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SteelBlue;
-            ClientSize = new Size(580, 564);
+            ClientSize = new Size(451, 564);
+            Controls.Add(checkBox4);
+            Controls.Add(checkBox3);
+            Controls.Add(checkBox2);
+            Controls.Add(checkBox1);
             Controls.Add(btnCancelar);
             Controls.Add(btnRegistrar);
-            Controls.Add(label2);
-            Controls.Add(textBox1);
-            Controls.Add(panel1);
             Controls.Add(lTitulo2);
-            Controls.Add(LDni);
-            Controls.Add(TDni);
             FormBorderStyle = FormBorderStyle.None;
             Name = "registrarServicio";
             Text = "registrarServicio";
             ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -189,15 +161,12 @@
         #endregion
 
         private Label lTitulo2;
-        private Label LDni;
-        private TextBox TDni;
-        private Label label1;
         private ErrorProvider errorProvider;
-        private Panel panel1;
-        private ComboBox comboBox1;
-        private Label label2;
-        private TextBox textBox1;
         private Button btnCancelar;
         private Button btnRegistrar;
+        private CheckBox checkBox1;
+        private CheckBox checkBox4;
+        private CheckBox checkBox3;
+        private CheckBox checkBox2;
     }
 }
