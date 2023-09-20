@@ -74,6 +74,7 @@
             // btnCobrar
             // 
             btnCobrar.Anchor = AnchorStyles.Bottom;
+            btnCobrar.BackColor = Color.LawnGreen;
             btnCobrar.FlatAppearance.BorderSize = 0;
             btnCobrar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnCobrar.ForeColor = SystemColors.ActiveCaptionText;
@@ -81,13 +82,13 @@
             btnCobrar.IconColor = Color.Black;
             btnCobrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnCobrar.ImageAlign = ContentAlignment.TopCenter;
-            btnCobrar.Location = new Point(215, 466);
+            btnCobrar.Location = new Point(228, 465);
             btnCobrar.Name = "btnCobrar";
             btnCobrar.Size = new Size(123, 74);
             btnCobrar.TabIndex = 23;
             btnCobrar.Text = "Cobrar";
             btnCobrar.TextAlign = ContentAlignment.BottomCenter;
-            btnCobrar.UseVisualStyleBackColor = true;
+            btnCobrar.UseVisualStyleBackColor = false;
             // 
             // btnBuscar
             // 
