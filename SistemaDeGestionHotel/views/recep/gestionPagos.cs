@@ -21,5 +21,10 @@ namespace SistemaDeGestionHotel.views.recep
         {
 
         }
+
+        private void ValidacionDni(object sender, KeyEventArgs e)
+        {
+            ValidacionTextBox.ValidarSoloNumeros(TDni, errorProviderNumero);
+        }
     }
 }

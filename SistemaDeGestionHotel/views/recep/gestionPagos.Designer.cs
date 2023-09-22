@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             lTitulo2 = new Label();
             LDni = new Label();
             TDni = new TextBox();
@@ -52,9 +53,11 @@
             SubTotal = new DataGridViewTextBoxColumn();
             Total = new DataGridViewTextBoxColumn();
             btnCancelar = new Button();
+            errorProviderNumero = new ErrorProvider(components);
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewFactura).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProviderNumero).BeginInit();
             SuspendLayout();
             // 
             // lTitulo2
@@ -86,6 +89,7 @@
             TDni.Name = "TDni";
             TDni.Size = new Size(206, 23);
             TDni.TabIndex = 21;
+            TDni.KeyDown += ValidacionDni;
             // 
             // btnCobrar
             // 
@@ -109,7 +113,6 @@
             // 
             // btnBuscar
             // 
-            btnBuscar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             btnBuscar.Location = new Point(278, 101);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(85, 31);
@@ -311,6 +314,10 @@
             btnCancelar.TextAlign = ContentAlignment.BottomCenter;
             btnCancelar.UseVisualStyleBackColor = true;
             // 
+            // errorProviderNumero
+            // 
+            errorProviderNumero.ContainerControl = this;
+            // 
             // gestionPagos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -331,6 +338,7 @@
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridViewFactura).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProviderNumero).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -361,5 +369,6 @@
         private Label label2;
         private Label label1;
         private Button btnCancelar;
+        private ErrorProvider errorProviderNumero;
     }
 }

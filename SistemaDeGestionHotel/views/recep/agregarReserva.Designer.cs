@@ -49,6 +49,7 @@
             label4 = new Label();
             dateTimeIngreso = new DateTimePicker();
             dateTimeSalida = new DateTimePicker();
+            btnServiciosAd = new Button();
             ((System.ComponentModel.ISupportInitialize)errorProviderNumero).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -114,6 +115,7 @@
             // groupBox1
             // 
             groupBox1.Anchor = AnchorStyles.Top;
+            groupBox1.Controls.Add(btnServiciosAd);
             groupBox1.Controls.Add(comboBox1);
             groupBox1.Controls.Add(label7);
             groupBox1.Controls.Add(lApellido);
@@ -276,6 +278,16 @@
             dateTimeSalida.Size = new Size(123, 27);
             dateTimeSalida.TabIndex = 22;
             // 
+            // btnServiciosAd
+            // 
+            btnServiciosAd.Location = new Point(423, 296);
+            btnServiciosAd.Name = "btnServiciosAd";
+            btnServiciosAd.Size = new Size(163, 36);
+            btnServiciosAd.TabIndex = 26;
+            btnServiciosAd.Text = "Servicios Adicionales";
+            btnServiciosAd.UseVisualStyleBackColor = true;
+            btnServiciosAd.Click += btnServiciosAd_Click;
+            // 
             // agregarReserva
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -320,5 +332,6 @@
         private DateTimePicker dateTimeSalida;
         private ComboBox comboBox1;
         private Label label7;
+        private Button btnServiciosAd;
     }
 }

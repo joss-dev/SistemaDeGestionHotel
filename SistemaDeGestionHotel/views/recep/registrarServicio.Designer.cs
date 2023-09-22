@@ -34,10 +34,10 @@
             btnCancelar = new Button();
             btnRegistrar = new Button();
             groupBox1 = new GroupBox();
-            checkBox4 = new CheckBox();
-            checkBox3 = new CheckBox();
-            checkBox2 = new CheckBox();
             checkBox1 = new CheckBox();
+            checkBox2 = new CheckBox();
+            checkBox3 = new CheckBox();
+            checkBox4 = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -73,6 +73,7 @@
             btnCancelar.Text = "Cancelar";
             btnCancelar.TextAlign = ContentAlignment.BottomCenter;
             btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // btnRegistrar
             // 
@@ -105,29 +106,17 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Servicios Adicionales";
             // 
-            // checkBox4
+            // checkBox1
             // 
-            checkBox4.Anchor = AnchorStyles.Top;
-            checkBox4.AutoSize = true;
-            checkBox4.Font = new Font("Yu Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            checkBox4.Location = new Point(70, 225);
-            checkBox4.Name = "checkBox4";
-            checkBox4.Size = new Size(125, 31);
-            checkBox4.TabIndex = 36;
-            checkBox4.Text = "Almuerzo";
-            checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            checkBox3.Anchor = AnchorStyles.Top;
-            checkBox3.AutoSize = true;
-            checkBox3.Font = new Font("Yu Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            checkBox3.Location = new Point(70, 110);
-            checkBox3.Name = "checkBox3";
-            checkBox3.Size = new Size(143, 31);
-            checkBox3.TabIndex = 37;
-            checkBox3.Text = "Lavanderia";
-            checkBox3.UseVisualStyleBackColor = true;
+            checkBox1.Anchor = AnchorStyles.Top;
+            checkBox1.AutoSize = true;
+            checkBox1.Font = new Font("Yu Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            checkBox1.Location = new Point(69, 60);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(126, 31);
+            checkBox1.TabIndex = 37;
+            checkBox1.Text = "Gimnasio";
+            checkBox1.UseVisualStyleBackColor = true;
             // 
             // checkBox2
             // 
@@ -141,17 +130,29 @@
             checkBox2.Text = "Estacionamiento";
             checkBox2.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // checkBox3
             // 
-            checkBox1.Anchor = AnchorStyles.Top;
-            checkBox1.AutoSize = true;
-            checkBox1.Font = new Font("Yu Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            checkBox1.Location = new Point(69, 60);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(126, 31);
-            checkBox1.TabIndex = 37;
-            checkBox1.Text = "Gimnasio";
-            checkBox1.UseVisualStyleBackColor = true;
+            checkBox3.Anchor = AnchorStyles.Top;
+            checkBox3.AutoSize = true;
+            checkBox3.Font = new Font("Yu Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            checkBox3.Location = new Point(70, 110);
+            checkBox3.Name = "checkBox3";
+            checkBox3.Size = new Size(143, 31);
+            checkBox3.TabIndex = 37;
+            checkBox3.Text = "Lavanderia";
+            checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox4
+            // 
+            checkBox4.Anchor = AnchorStyles.Top;
+            checkBox4.AutoSize = true;
+            checkBox4.Font = new Font("Yu Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            checkBox4.Location = new Point(70, 225);
+            checkBox4.Name = "checkBox4";
+            checkBox4.Size = new Size(125, 31);
+            checkBox4.TabIndex = 36;
+            checkBox4.Text = "Almuerzo";
+            checkBox4.UseVisualStyleBackColor = true;
             // 
             // registrarServicio
             // 

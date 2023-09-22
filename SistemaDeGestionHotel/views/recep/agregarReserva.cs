@@ -48,5 +48,21 @@ namespace SistemaDeGestionHotel.views.recep
         {
             ValidacionTextBox.ValidarSoloNumeros(TCantidadHuespedes, errorProviderNumero);
         }
+
+        private void btnServiciosAd_Click(object sender, EventArgs e)
+        {
+            Form servicios = new registrarServicio();
+
+            servicios.StartPosition = FormStartPosition.CenterScreen;
+
+            DialogResult result = servicios.ShowDialog();
+
+            // Verificar si se cerró el formulario secundario
+            if (result == DialogResult.OK)
+            {
+                // Realizar acciones después de cerrar el formulario secundario si es necesario
+            }
+
+        }
     }
 }

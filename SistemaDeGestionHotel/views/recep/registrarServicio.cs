@@ -17,6 +17,12 @@ namespace SistemaDeGestionHotel.views.recep
             InitializeComponent();
         }
 
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
 
+            // Cerrar el formulario secundario
+            this.Close();
+        }
     }
 }
