@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             groupBox1 = new GroupBox();
             label4 = new Label();
             label2 = new Label();
@@ -52,8 +53,10 @@
             dateTimeSalida = new DateTimePicker();
             btnCancelar = new Button();
             btnRegistrar = new Button();
+            errorProviderNumero = new ErrorProvider(components);
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProviderNumero).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
@@ -200,6 +203,7 @@
             TApellido.Name = "TApellido";
             TApellido.Size = new Size(206, 25);
             TApellido.TabIndex = 26;
+            TApellido.KeyDown += ValidacionApellido;
             // 
             // TNombre
             // 
@@ -208,6 +212,7 @@
             TNombre.Name = "TNombre";
             TNombre.Size = new Size(206, 25);
             TNombre.TabIndex = 27;
+            TNombre.KeyDown += ValidacionNombre;
             // 
             // label5
             // 
@@ -227,6 +232,7 @@
             TCantidadHuespedes.Name = "TCantidadHuespedes";
             TCantidadHuespedes.Size = new Size(206, 25);
             TCantidadHuespedes.TabIndex = 29;
+            TCantidadHuespedes.KeyDown += ValidacionCantHuesped;
             // 
             // TDni
             // 
@@ -235,6 +241,7 @@
             TDni.Name = "TDni";
             TDni.Size = new Size(206, 25);
             TDni.TabIndex = 28;
+            TDni.KeyDown += ValidacionDni;
             // 
             // label6
             // 
@@ -314,6 +321,7 @@
             btnCancelar.Text = "Cancelar";
             btnCancelar.TextAlign = ContentAlignment.BottomCenter;
             btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // btnRegistrar
             // 
@@ -333,6 +341,10 @@
             btnRegistrar.UseVisualStyleBackColor = true;
             btnRegistrar.Click += btnRegistrar_Click;
             // 
+            // errorProviderNumero
+            // 
+            errorProviderNumero.ContainerControl = this;
+            // 
             // AgregarHuesped
             // 
             AutoScaleDimensions = new SizeF(6F, 13F);
@@ -351,6 +363,7 @@
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProviderNumero).EndInit();
             ResumeLayout(false);
         }
 
@@ -380,5 +393,6 @@
         private Label label10;
         private DateTimePicker dateTimeIngreso;
         private DateTimePicker dateTimeSalida;
+        private ErrorProvider errorProviderNumero;
     }
 }

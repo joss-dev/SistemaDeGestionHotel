@@ -173,6 +173,7 @@
             button7.TabIndex = 7;
             button7.Text = "101";
             button7.UseVisualStyleBackColor = false;
+            button7.Click += button7_Click;
             // 
             // label1
             // 
