@@ -16,5 +16,15 @@ namespace SistemaDeGestionHotel.views.recep
         {
             InitializeComponent();
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ValidacionDni(object sender, KeyEventArgs e)
+        {
+            ValidacionTextBox.ValidarSoloNumeros(TDni, errorProviderNumero);
+        }
     }
 }

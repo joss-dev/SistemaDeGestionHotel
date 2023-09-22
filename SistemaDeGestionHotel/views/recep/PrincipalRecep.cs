@@ -155,9 +155,5 @@ namespace SistemaDeGestionHotel
             formsHijos.AbrirFormHija(new agregarReserva(), panelContenedor);
         }
 
-        private void panelContenedor_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

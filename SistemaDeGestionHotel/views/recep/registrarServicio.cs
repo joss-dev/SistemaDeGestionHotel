@@ -17,10 +17,12 @@ namespace SistemaDeGestionHotel.views.recep
             InitializeComponent();
         }
 
-        private void ValidarDni(object sender, KeyEventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
-            ValidacionTextBox.ValidarSoloNumeros(TDni, errorProvider);
-        }
+            this.DialogResult = DialogResult.OK;
 
+            // Cerrar el formulario secundario
+            this.Close();
+        }
     }
 }
