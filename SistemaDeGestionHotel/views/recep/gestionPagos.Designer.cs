@@ -39,8 +39,9 @@
             label6 = new Label();
             label7 = new Label();
             label8 = new Label();
-            btnCancelar = new FontAwesome.Sharp.IconButton();
             groupBox1 = new GroupBox();
+            label2 = new Label();
+            label1 = new Label();
             groupBox2 = new GroupBox();
             dataGridViewFactura = new DataGridView();
             Servicio = new DataGridViewTextBoxColumn();
@@ -50,8 +51,7 @@
             Precio = new DataGridViewTextBoxColumn();
             SubTotal = new DataGridViewTextBoxColumn();
             Total = new DataGridViewTextBoxColumn();
-            label1 = new Label();
-            label2 = new Label();
+            btnCancelar = new Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewFactura).BeginInit();
@@ -70,20 +70,19 @@
             // 
             // LDni
             // 
-            LDni.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            LDni.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             LDni.AutoSize = true;
-            LDni.BorderStyle = BorderStyle.FixedSingle;
             LDni.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            LDni.Location = new Point(46, 102);
+            LDni.Location = new Point(46, 77);
             LDni.Name = "LDni";
-            LDni.Size = new Size(185, 22);
+            LDni.Size = new Size(183, 20);
             LDni.TabIndex = 22;
             LDni.Text = "Ingrese dni del huesped :";
             // 
             // TDni
             // 
-            TDni.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            TDni.Location = new Point(254, 103);
+            TDni.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            TDni.Location = new Point(46, 106);
             TDni.Name = "TDni";
             TDni.Size = new Size(206, 23);
             TDni.TabIndex = 21;
@@ -110,8 +109,8 @@
             // 
             // btnBuscar
             // 
-            btnBuscar.Anchor = AnchorStyles.Top;
-            btnBuscar.Location = new Point(476, 98);
+            btnBuscar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            btnBuscar.Location = new Point(278, 101);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(85, 31);
             btnBuscar.TabIndex = 24;
@@ -191,26 +190,6 @@
             label8.TabIndex = 33;
             label8.Text = "Cantidad de Huespedes :";
             // 
-            // btnCancelar
-            // 
-            btnCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnCancelar.BackColor = Color.Crimson;
-            btnCancelar.FlatAppearance.BorderSize = 0;
-            btnCancelar.FlatStyle = FlatStyle.Flat;
-            btnCancelar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnCancelar.ForeColor = SystemColors.ActiveCaptionText;
-            btnCancelar.IconChar = FontAwesome.Sharp.IconChar.X;
-            btnCancelar.IconColor = Color.Black;
-            btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnCancelar.ImageAlign = ContentAlignment.TopCenter;
-            btnCancelar.Location = new Point(22, 485);
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(85, 67);
-            btnCancelar.TabIndex = 35;
-            btnCancelar.Text = "Cancelar";
-            btnCancelar.TextAlign = ContentAlignment.BottomCenter;
-            btnCancelar.UseVisualStyleBackColor = false;
-            // 
             // groupBox1
             // 
             groupBox1.Anchor = AnchorStyles.Top;
@@ -229,6 +208,30 @@
             groupBox1.TabIndex = 36;
             groupBox1.TabStop = false;
             groupBox1.Text = "Datos del Huesped";
+            // 
+            // label2
+            // 
+            label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            label2.AutoSize = true;
+            label2.BorderStyle = BorderStyle.FixedSingle;
+            label2.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(587, 70);
+            label2.Name = "label2";
+            label2.Size = new Size(132, 18);
+            label2.TabIndex = 35;
+            label2.Text = "Fecha de Salida :";
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            label1.AutoSize = true;
+            label1.BorderStyle = BorderStyle.FixedSingle;
+            label1.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(587, 29);
+            label1.Name = "label1";
+            label1.Size = new Size(130, 18);
+            label1.TabIndex = 34;
+            label1.Text = "Tipo Habitacion :";
             // 
             // groupBox2
             // 
@@ -291,29 +294,22 @@
             Total.HeaderText = "Total";
             Total.Name = "Total";
             // 
-            // label1
+            // btnCancelar
             // 
-            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            label1.AutoSize = true;
-            label1.BorderStyle = BorderStyle.FixedSingle;
-            label1.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(587, 29);
-            label1.Name = "label1";
-            label1.Size = new Size(130, 18);
-            label1.TabIndex = 34;
-            label1.Text = "Tipo Habitacion :";
-            // 
-            // label2
-            // 
-            label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            label2.AutoSize = true;
-            label2.BorderStyle = BorderStyle.FixedSingle;
-            label2.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(587, 70);
-            label2.Name = "label2";
-            label2.Size = new Size(132, 18);
-            label2.TabIndex = 35;
-            label2.Text = "Fecha de Salida :";
+            btnCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnCancelar.Cursor = Cursors.Hand;
+            btnCancelar.FlatAppearance.BorderSize = 0;
+            btnCancelar.FlatStyle = FlatStyle.Flat;
+            btnCancelar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCancelar.Image = Properties.Resources.btnCancelar;
+            btnCancelar.ImageAlign = ContentAlignment.TopCenter;
+            btnCancelar.Location = new Point(12, 479);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(98, 78);
+            btnCancelar.TabIndex = 38;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.TextAlign = ContentAlignment.BottomCenter;
+            btnCancelar.UseVisualStyleBackColor = true;
             // 
             // gestionPagos
             // 
@@ -352,7 +348,6 @@
         private Label label6;
         private Label label7;
         private Label label8;
-        private FontAwesome.Sharp.IconButton btnCancelar;
         private GroupBox groupBox1;
         private GroupBox groupBox2;
         private DataGridView dataGridViewFactura;
@@ -365,5 +360,6 @@
         private DataGridViewTextBoxColumn Total;
         private Label label2;
         private Label label1;
+        private Button btnCancelar;
     }
 }

@@ -35,6 +35,8 @@
             btnCancelar = new Button();
             label6 = new Label();
             groupBox1 = new GroupBox();
+            comboBox1 = new ComboBox();
+            label7 = new Label();
             lApellido = new Label();
             TApellido = new TextBox();
             TNombre = new TextBox();
@@ -47,8 +49,6 @@
             label4 = new Label();
             dateTimeIngreso = new DateTimePicker();
             dateTimeSalida = new DateTimePicker();
-            label7 = new Label();
-            comboBox1 = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)errorProviderNumero).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -136,6 +136,25 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Datos del Huesped";
             // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(65, 314);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(121, 28);
+            comboBox1.TabIndex = 25;
+            // 
+            // label7
+            // 
+            label7.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.Location = new Point(64, 280);
+            label7.Name = "label7";
+            label7.Size = new Size(122, 20);
+            label7.TabIndex = 24;
+            label7.Text = "Forma de Pago :";
+            // 
             // lApellido
             // 
             lApellido.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
@@ -155,6 +174,7 @@
             TApellido.Name = "TApellido";
             TApellido.Size = new Size(206, 27);
             TApellido.TabIndex = 12;
+            TApellido.KeyDown += ValidacionApellido;
             // 
             // TNombre
             // 
@@ -163,6 +183,7 @@
             TNombre.Name = "TNombre";
             TNombre.Size = new Size(206, 27);
             TNombre.TabIndex = 13;
+            TNombre.KeyDown += ValidacionNombre;
             // 
             // label1
             // 
@@ -182,6 +203,7 @@
             TCantidadHuespedes.Name = "TCantidadHuespedes";
             TCantidadHuespedes.Size = new Size(206, 27);
             TCantidadHuespedes.TabIndex = 15;
+            TCantidadHuespedes.KeyDown += ValidacionCantHuesped;
             // 
             // TDni
             // 
@@ -190,6 +212,7 @@
             TDni.Name = "TDni";
             TDni.Size = new Size(206, 27);
             TDni.TabIndex = 14;
+            TDni.KeyDown += ValidacionDni;
             // 
             // label5
             // 
@@ -241,7 +264,7 @@
             dateTimeIngreso.Format = DateTimePickerFormat.Short;
             dateTimeIngreso.Location = new Point(64, 224);
             dateTimeIngreso.Name = "dateTimeIngreso";
-            dateTimeIngreso.Size = new Size(98, 27);
+            dateTimeIngreso.Size = new Size(135, 27);
             dateTimeIngreso.TabIndex = 20;
             // 
             // dateTimeSalida
@@ -250,27 +273,8 @@
             dateTimeSalida.Format = DateTimePickerFormat.Short;
             dateTimeSalida.Location = new Point(423, 224);
             dateTimeSalida.Name = "dateTimeSalida";
-            dateTimeSalida.Size = new Size(98, 27);
+            dateTimeSalida.Size = new Size(123, 27);
             dateTimeSalida.TabIndex = 22;
-            // 
-            // label7
-            // 
-            label7.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(64, 280);
-            label7.Name = "label7";
-            label7.Size = new Size(122, 20);
-            label7.TabIndex = 24;
-            label7.Text = "Forma de Pago :";
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(65, 314);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 28);
-            comboBox1.TabIndex = 25;
             // 
             // agregarReserva
             // 
