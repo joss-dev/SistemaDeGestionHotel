@@ -1,6 +1,8 @@
 using SistemaDeGestionHotel.SGHControl;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
+using SistemaDeGestionHotel.views;
+using SistemaDeGestionHotel.views.admin;
 
 namespace SistemaDeGestionHotel
 {
@@ -83,6 +85,11 @@ namespace SistemaDeGestionHotel
                 this.WindowState = FormWindowState.Maximized;
 
             }
+        }
+
+        private void btnPagos_Click(object sender, EventArgs e)
+        {
+            formsHijos.AbrirFormHija(new gestionDePagos(), panelCont);
         }
     }
 }

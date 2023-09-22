@@ -309,7 +309,7 @@
             Controls.Add(label2);
             Controls.Add(nombImp);
             Controls.Add(impuesto);
-            FormBorderStyle = FormBorderStyle.Fixed3D;
+            FormBorderStyle = FormBorderStyle.None;
             Name = "gestionImpuestos";
             Text = "Gestión de Impuestos";
             Load += gestionImpuestos_Load;

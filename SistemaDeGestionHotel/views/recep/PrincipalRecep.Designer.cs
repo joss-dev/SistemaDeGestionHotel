@@ -278,7 +278,7 @@
             panelContenedor.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panelContenedor.Location = new Point(220, 0);
             panelContenedor.Name = "panelContenedor";
-            panelContenedor.Size = new Size(580, 564);
+            panelContenedor.Size = new Size(800, 564);
             panelContenedor.TabIndex = 3;
             panelContenedor.Paint += panelContenedor_Paint;
             // 

@@ -45,6 +45,7 @@
             sghDropDownMenu1 = new SGHControl.SGHDropDownMenu(components);
             panel1 = new Panel();
             btnMaximized = new FontAwesome.Sharp.IconButton();
+            panelCont = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureLogo).BeginInit();
             panelMenu.SuspendLayout();
             panelLogo.SuspendLayout();
@@ -70,7 +71,7 @@
             btnRegistrarServicios.Padding = new Padding(20, 0, 10, 0);
             btnRegistrarServicios.Size = new Size(220, 60);
             btnRegistrarServicios.TabIndex = 3;
-            btnRegistrarServicios.Text = "Registrar Adicionales";
+            btnRegistrarServicios.Text = "Registrar Ss. Adicionales";
             btnRegistrarServicios.TextAlign = ContentAlignment.MiddleLeft;
             btnRegistrarServicios.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnRegistrarServicios.UseVisualStyleBackColor = true;
@@ -141,6 +142,7 @@
             btnPagos.TextAlign = ContentAlignment.MiddleLeft;
             btnPagos.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnPagos.UseVisualStyleBackColor = true;
+            btnPagos.Click += btnPagos_Click;
             // 
             // pictureLogo
             // 
@@ -333,11 +335,20 @@
             btnMaximized.TabIndex = 7;
             btnMaximized.UseVisualStyleBackColor = false;
             // 
+            // panelCont
+            // 
+            panelCont.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panelCont.Location = new Point(222, 30);
+            panelCont.Name = "panelCont";
+            panelCont.Size = new Size(580, 549);
+            panelCont.TabIndex = 10;
+            // 
             // PrincipalAdmin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 579);
+            Controls.Add(panelCont);
             Controls.Add(panelMenu);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
@@ -369,5 +380,6 @@
         private SGHControl.SGHDropDownMenu sghDropDownMenu1;
         private Panel panel1;
         private FontAwesome.Sharp.IconButton btnMaximized;
+        public Panel panelCont;
     }
 }

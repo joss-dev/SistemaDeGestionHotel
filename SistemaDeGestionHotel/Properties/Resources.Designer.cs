@@ -123,9 +123,49 @@ namespace SistemaDeGestionHotel.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Impuestos {
+            get {
+                object obj = ResourceManager.GetObject("Impuestos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Impuestos1 {
+            get {
+                object obj = ResourceManager.GetObject("Impuestos1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logoHotel {
             get {
                 object obj = ResourceManager.GetObject("logoHotel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap medios_de_pago {
+            get {
+                object obj = ResourceManager.GetObject("medios_de_pago", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Recargos {
+            get {
+                object obj = ResourceManager.GetObject("Recargos", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
