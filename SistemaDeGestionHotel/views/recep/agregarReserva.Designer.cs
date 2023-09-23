@@ -35,8 +35,10 @@
             btnCancelar = new Button();
             label6 = new Label();
             groupBox1 = new GroupBox();
+            btnAdelanto = new Button();
             btnServiciosAd = new Button();
-            comboBox1 = new ComboBox();
+            formasDePago = new ComboBox();
+            label7 = new Label();
             lApellido = new Label();
             TApellido = new TextBox();
             TNombre = new TextBox();
@@ -49,8 +51,6 @@
             label4 = new Label();
             dateTimeIngreso = new DateTimePicker();
             dateTimeSalida = new DateTimePicker();
-            label7 = new Label();
-            btnAdelanto = new Button();
             ((System.ComponentModel.ISupportInitialize)errorProviderNumero).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -101,6 +101,7 @@
             btnCancelar.Text = "Cancelar";
             btnCancelar.TextAlign = ContentAlignment.BottomCenter;
             btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // label6
             // 
@@ -118,7 +119,7 @@
             groupBox1.Anchor = AnchorStyles.Top;
             groupBox1.Controls.Add(btnAdelanto);
             groupBox1.Controls.Add(btnServiciosAd);
-            groupBox1.Controls.Add(comboBox1);
+            groupBox1.Controls.Add(formasDePago);
             groupBox1.Controls.Add(label7);
             groupBox1.Controls.Add(lApellido);
             groupBox1.Controls.Add(TApellido);
@@ -140,6 +141,15 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Datos del Huesped";
             // 
+            // btnAdelanto
+            // 
+            btnAdelanto.Location = new Point(519, 335);
+            btnAdelanto.Name = "btnAdelanto";
+            btnAdelanto.Size = new Size(163, 36);
+            btnAdelanto.TabIndex = 27;
+            btnAdelanto.Text = "Adelanto";
+            btnAdelanto.UseVisualStyleBackColor = true;
+            // 
             // btnServiciosAd
             // 
             btnServiciosAd.Location = new Point(519, 280);
@@ -150,13 +160,24 @@
             btnServiciosAd.UseVisualStyleBackColor = true;
             btnServiciosAd.Click += btnServiciosAd_Click;
             // 
-            // comboBox1
+            // formasDePago
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(161, 312);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 28);
-            comboBox1.TabIndex = 25;
+            formasDePago.FormattingEnabled = true;
+            formasDePago.Location = new Point(161, 312);
+            formasDePago.Name = "formasDePago";
+            formasDePago.Size = new Size(121, 28);
+            formasDePago.TabIndex = 25;
+            // 
+            // label7
+            // 
+            label7.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.Location = new Point(160, 280);
+            label7.Name = "label7";
+            label7.Size = new Size(122, 20);
+            label7.TabIndex = 24;
+            label7.Text = "Forma de Pago :";
             // 
             // lApellido
             // 
@@ -279,26 +300,6 @@
             dateTimeSalida.Size = new Size(123, 27);
             dateTimeSalida.TabIndex = 22;
             // 
-            // label7
-            // 
-            label7.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(160, 280);
-            label7.Name = "label7";
-            label7.Size = new Size(122, 20);
-            label7.TabIndex = 24;
-            label7.Text = "Forma de Pago :";
-            // 
-            // btnAdelanto
-            // 
-            btnAdelanto.Location = new Point(519, 335);
-            btnAdelanto.Name = "btnAdelanto";
-            btnAdelanto.Size = new Size(163, 36);
-            btnAdelanto.TabIndex = 27;
-            btnAdelanto.Text = "Adelanto";
-            btnAdelanto.UseVisualStyleBackColor = true;
-            // 
             // agregarReserva
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -341,7 +342,7 @@
         private Label label4;
         private DateTimePicker dateTimeIngreso;
         private DateTimePicker dateTimeSalida;
-        private ComboBox comboBox1;
+        private ComboBox formasDePago;
         private Button btnServiciosAd;
         private Button btnAdelanto;
         private Label label7;

@@ -64,5 +64,16 @@ namespace SistemaDeGestionHotel.views.recep
             }
 
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            TDni.Clear();
+            TApellido.Clear();
+            TNombre.Clear();
+            TCantidadHuespedes.Clear();
+            dateTimeIngreso.ResetText();
+            dateTimeSalida.ResetText();
+            formasDePago.ResetText();
+        }
     }
 }

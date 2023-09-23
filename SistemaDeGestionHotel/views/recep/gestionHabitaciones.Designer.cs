@@ -45,6 +45,9 @@
             button4 = new Button();
             button5 = new Button();
             button6 = new Button();
+            btnBuscar = new Button();
+            LDni = new Label();
+            TDni = new TextBox();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -61,9 +64,9 @@
             panel1.Controls.Add(button9);
             panel1.Controls.Add(button8);
             panel1.Controls.Add(button7);
-            panel1.Location = new Point(14, 130);
+            panel1.Location = new Point(14, 159);
             panel1.Name = "panel1";
-            panel1.Size = new Size(856, 428);
+            panel1.Size = new Size(856, 376);
             panel1.TabIndex = 0;
             // 
             // button15
@@ -180,7 +183,7 @@
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label1.AutoSize = true;
             label1.Font = new Font("Verdana", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(290, 18);
+            label1.Location = new Point(259, 9);
             label1.Name = "label1";
             label1.Size = new Size(303, 29);
             label1.TabIndex = 1;
@@ -191,7 +194,7 @@
             button1.BackColor = Color.LightCyan;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Yu Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(14, 80);
+            button1.Location = new Point(15, 120);
             button1.Name = "button1";
             button1.Size = new Size(95, 33);
             button1.TabIndex = 2;
@@ -203,7 +206,7 @@
             button2.BackColor = Color.LightCyan;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Yu Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.Location = new Point(125, 80);
+            button2.Location = new Point(126, 120);
             button2.Name = "button2";
             button2.Size = new Size(95, 33);
             button2.TabIndex = 3;
@@ -215,7 +218,7 @@
             button3.BackColor = Color.LightCyan;
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Yu Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.Location = new Point(235, 80);
+            button3.Location = new Point(236, 120);
             button3.Name = "button3";
             button3.Size = new Size(95, 33);
             button3.TabIndex = 4;
@@ -228,7 +231,7 @@
             button4.BackColor = Color.Red;
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Yu Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button4.Location = new Point(664, 80);
+            button4.Location = new Point(663, 120);
             button4.Name = "button4";
             button4.Size = new Size(95, 33);
             button4.TabIndex = 5;
@@ -241,7 +244,7 @@
             button5.BackColor = Color.MediumSpringGreen;
             button5.FlatStyle = FlatStyle.Flat;
             button5.Font = new Font("Yu Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button5.Location = new Point(776, 80);
+            button5.Location = new Point(775, 120);
             button5.Name = "button5";
             button5.Size = new Size(95, 33);
             button5.TabIndex = 6;
@@ -254,12 +257,41 @@
             button6.BackColor = Color.SandyBrown;
             button6.FlatStyle = FlatStyle.Flat;
             button6.Font = new Font("Yu Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button6.Location = new Point(549, 80);
+            button6.Location = new Point(548, 120);
             button6.Name = "button6";
             button6.Size = new Size(95, 33);
             button6.TabIndex = 7;
             button6.Text = "Reservado";
             button6.UseVisualStyleBackColor = false;
+            // 
+            // btnBuscar
+            // 
+            btnBuscar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnBuscar.Location = new Point(806, 62);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Size = new Size(73, 29);
+            btnBuscar.TabIndex = 32;
+            btnBuscar.Text = "Buscar";
+            btnBuscar.UseVisualStyleBackColor = true;
+            // 
+            // LDni
+            // 
+            LDni.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            LDni.AutoSize = true;
+            LDni.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            LDni.Location = new Point(663, 45);
+            LDni.Name = "LDni";
+            LDni.Size = new Size(96, 20);
+            LDni.TabIndex = 31;
+            LDni.Text = "Habitación : ";
+            // 
+            // TDni
+            // 
+            TDni.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            TDni.Location = new Point(663, 68);
+            TDni.Name = "TDni";
+            TDni.Size = new Size(126, 23);
+            TDni.TabIndex = 30;
             // 
             // gestionHabitaciones
             // 
@@ -268,6 +300,9 @@
             AutoSize = true;
             BackColor = Color.SteelBlue;
             ClientSize = new Size(891, 564);
+            Controls.Add(btnBuscar);
+            Controls.Add(LDni);
+            Controls.Add(TDni);
             Controls.Add(button6);
             Controls.Add(button5);
             Controls.Add(button4);
@@ -305,5 +340,8 @@
         private Button button15;
         private Button button14;
         private Button button13;
+        private Button btnBuscar;
+        private Label LDni;
+        private TextBox TDni;
     }
 }
