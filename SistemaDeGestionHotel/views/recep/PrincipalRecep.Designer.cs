@@ -40,6 +40,7 @@
             btnMinimizar = new FontAwesome.Sharp.IconButton();
             panelContenedor = new Panel();
             btnPantallaCompleta = new FontAwesome.Sharp.IconButton();
+            btnGestionarReservas = new FontAwesome.Sharp.IconButton();
             panelMenu.SuspendLayout();
             panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureLogo).BeginInit();
@@ -48,6 +49,7 @@
             // panelMenu
             // 
             panelMenu.BackColor = Color.FromArgb(39, 79, 193);
+            panelMenu.Controls.Add(btnGestionarReservas);
             panelMenu.Controls.Add(btnAgregarReserva);
             panelMenu.Controls.Add(btnCerrarSesion);
             panelMenu.Controls.Add(btnGestionPagos);
@@ -267,6 +269,32 @@
             btnPantallaCompleta.UseVisualStyleBackColor = true;
             btnPantallaCompleta.Click += btnPantallaCompleta_Click;
             // 
+            // btnGestionarReservas
+            // 
+            btnGestionarReservas.Cursor = Cursors.Hand;
+            btnGestionarReservas.Dock = DockStyle.Top;
+            btnGestionarReservas.FlatAppearance.BorderSize = 0;
+            btnGestionarReservas.FlatAppearance.MouseDownBackColor = Color.Gainsboro;
+            btnGestionarReservas.FlatAppearance.MouseOverBackColor = Color.Gray;
+            btnGestionarReservas.FlatStyle = FlatStyle.Flat;
+            btnGestionarReservas.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnGestionarReservas.ForeColor = Color.White;
+            btnGestionarReservas.IconChar = FontAwesome.Sharp.IconChar.Registered;
+            btnGestionarReservas.IconColor = Color.FromArgb(15, 15, 15);
+            btnGestionarReservas.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnGestionarReservas.IconSize = 38;
+            btnGestionarReservas.ImageAlign = ContentAlignment.MiddleLeft;
+            btnGestionarReservas.Location = new Point(0, 380);
+            btnGestionarReservas.Name = "btnGestionarReservas";
+            btnGestionarReservas.Padding = new Padding(20, 0, 10, 0);
+            btnGestionarReservas.Size = new Size(220, 60);
+            btnGestionarReservas.TabIndex = 8;
+            btnGestionarReservas.Text = "Gestionar Reservas";
+            btnGestionarReservas.TextAlign = ContentAlignment.MiddleLeft;
+            btnGestionarReservas.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnGestionarReservas.UseVisualStyleBackColor = true;
+            btnGestionarReservas.Click += btnGestionarReservas_Click;
+            // 
             // PrincipalRecep
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -304,5 +332,6 @@
         private Panel panelContenedor;
         private FontAwesome.Sharp.IconButton btnPantallaCompleta;
         private FontAwesome.Sharp.IconButton btnAgregarReserva;
+        private FontAwesome.Sharp.IconButton btnGestionarReservas;
     }
 }

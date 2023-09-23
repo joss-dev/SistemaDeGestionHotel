@@ -155,5 +155,10 @@ namespace SistemaDeGestionHotel
             formsHijos.AbrirFormHija(new agregarReserva(), panelContenedor);
         }
 
+        private void btnGestionarReservas_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, Color.FromArgb(34, 81, 111));
+            formsHijos.AbrirFormHija(new GestionReservas(), panelContenedor);
+        }
     }
 }
