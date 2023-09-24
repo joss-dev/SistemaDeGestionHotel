@@ -27,17 +27,18 @@ namespace SistemaDeGestionHotel
                 }
             }
 
-            if (panelContenedor.Controls.Count > 0)
+           /* if (panelContenedor.Controls.Count > 0)
             {
                 panelContenedor.Controls.RemoveAt(0);
-            }
+            }*/
+
             Form fh = formHija as Form;
             fh.TopLevel = false;
             fh.Dock = DockStyle.Fill;
             panelContenedor.Controls.Add(fh);
             panelContenedor.Tag = fh;
             fh.Show();
-           
+            fh.BringToFront();
         }
       
     }
