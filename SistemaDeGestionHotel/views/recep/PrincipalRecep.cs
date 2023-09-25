@@ -100,26 +100,26 @@ namespace SistemaDeGestionHotel
         private void btnHome_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, Color.FromArgb(34, 81, 111));
-            formsHijos.AbrirFormHija(new Home(), panelContenedor);
+            FormsHijos.AbrirFormHija(new Home(), panelContenedor);
         }
 
         private void btnGestionHabitaciones_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, Color.FromArgb(34, 81, 111));
-            formsHijos.AbrirFormHija(new gestionHabitaciones(), panelContenedor);
+            FormsHijos.AbrirFormHija(new gestionHabitaciones(), panelContenedor);
         }
 
         private void btnRegistrarServicios_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, Color.FromArgb(34, 81, 111));
-            formsHijos.AbrirFormHija(new registrarServicio(), panelContenedor);
+            FormsHijos.AbrirFormHija(new registrarServicio(), panelContenedor);
 
         }
 
         private void btnGestionPagos_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, Color.FromArgb(34, 81, 111));
-            formsHijos.AbrirFormHija(new gestionPagos(), panelContenedor);
+            FormsHijos.AbrirFormHija(new gestionPagos(), panelContenedor);
         }
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
@@ -152,13 +152,13 @@ namespace SistemaDeGestionHotel
         private void btnAgregarReserva_Click_1(object sender, EventArgs e)
         {
             ActivateButton(sender, Color.FromArgb(34, 81, 111));
-            formsHijos.AbrirFormHija(new agregarReserva(), panelContenedor);
+            FormsHijos.AbrirFormHija(new agregarReserva(), panelContenedor);
         }
 
         private void btnGestionarReservas_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, Color.FromArgb(34, 81, 111));
-            formsHijos.AbrirFormHija(new GestionReservas(), panelContenedor);
+            FormsHijos.AbrirFormHija(new GestionReservas(), panelContenedor);
         }
 
 

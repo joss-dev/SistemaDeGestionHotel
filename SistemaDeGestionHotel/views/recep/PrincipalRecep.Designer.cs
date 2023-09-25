@@ -247,7 +247,7 @@
             btnExit.IconColor = Color.Black;
             btnExit.IconFont = FontAwesome.Sharp.IconFont.Solid;
             btnExit.IconSize = 20;
-            btnExit.Location = new Point(767, 1);
+            btnExit.Location = new Point(864, 1);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(33, 30);
             btnExit.TabIndex = 1;
@@ -264,7 +264,7 @@
             btnMinimizar.IconFont = FontAwesome.Sharp.IconFont.Solid;
             btnMinimizar.IconSize = 20;
             btnMinimizar.ImageAlign = ContentAlignment.BottomRight;
-            btnMinimizar.Location = new Point(696, 1);
+            btnMinimizar.Location = new Point(793, 1);
             btnMinimizar.Name = "btnMinimizar";
             btnMinimizar.Size = new Size(29, 26);
             btnMinimizar.TabIndex = 2;
@@ -276,7 +276,7 @@
             panelContenedor.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panelContenedor.Location = new Point(220, 33);
             panelContenedor.Name = "panelContenedor";
-            panelContenedor.Size = new Size(580, 531);
+            panelContenedor.Size = new Size(677, 531);
             panelContenedor.TabIndex = 3;
             // 
             // btnPantallaCompleta
@@ -288,7 +288,7 @@
             btnPantallaCompleta.IconColor = Color.Black;
             btnPantallaCompleta.IconFont = FontAwesome.Sharp.IconFont.Solid;
             btnPantallaCompleta.IconSize = 20;
-            btnPantallaCompleta.Location = new Point(731, 1);
+            btnPantallaCompleta.Location = new Point(828, 1);
             btnPantallaCompleta.Name = "btnPantallaCompleta";
             btnPantallaCompleta.Size = new Size(33, 26);
             btnPantallaCompleta.TabIndex = 4;
@@ -300,7 +300,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
-            ClientSize = new Size(800, 564);
+            ClientSize = new Size(897, 564);
             Controls.Add(btnMinimizar);
             Controls.Add(btnExit);
             Controls.Add(panelContenedor);

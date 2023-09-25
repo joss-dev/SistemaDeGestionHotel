@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace SistemaDeGestionHotel
 {
     
-    public static class formsHijos
+    public static class FormsHijos
     {
 
 
