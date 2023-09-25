@@ -35,8 +35,6 @@
             label1 = new Label();
             label3 = new Label();
             groupBox2 = new GroupBox();
-            dateTimePicker1 = new DateTimePicker();
-            label11 = new Label();
             comboBox1 = new ComboBox();
             label7 = new Label();
             lApellido = new Label();
@@ -123,8 +121,6 @@
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(dateTimePicker1);
-            groupBox2.Controls.Add(label11);
             groupBox2.Controls.Add(comboBox1);
             groupBox2.Controls.Add(label7);
             groupBox2.Controls.Add(lApellido);
@@ -146,24 +142,6 @@
             groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "Datos del Huesped";
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Location = new Point(225, 315);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(292, 25);
-            dateTimePicker1.TabIndex = 41;
-            // 
-            // label11
-            // 
-            label11.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            label11.AutoSize = true;
-            label11.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label11.Location = new Point(388, 280);
-            label11.Name = "label11";
-            label11.Size = new Size(129, 20);
-            label11.TabIndex = 40;
-            label11.Text = "Hora de Ingreso :";
             // 
             // comboBox1
             // 
@@ -377,8 +355,6 @@
         private Label label2;
         private Label label1;
         private Label label3;
-        private DateTimePicker dateTimePicker1;
-        private Label label11;
         private ComboBox comboBox1;
         private Label label7;
         private Label lApellido;

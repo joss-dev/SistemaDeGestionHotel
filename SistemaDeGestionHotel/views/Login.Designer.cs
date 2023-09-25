@@ -92,6 +92,7 @@
             btnLogin.TabIndex = 4;
             btnLogin.Text = "ACCEDER";
             btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += btnLogin_Click;
             // 
             // btnSalir
             // 

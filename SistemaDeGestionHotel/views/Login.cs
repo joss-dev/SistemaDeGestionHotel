@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices;
+﻿using SistemaDeGestionHotel.views;
+using System.Runtime.InteropServices;
 
 namespace SistemaDeGestionHotel
 {
@@ -109,7 +110,33 @@ namespace SistemaDeGestionHotel
             }
 
         }
-    }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            if(TPass.Text == "123")
+            {
+                if (TUsuario.Text == "admin")
+                {
+                    Form form = new PrincipalAdmin();
+                    form.ShowDialog();
+                }
+                if (TUsuario.Text == "recep")
+                {
+                    Form form = new PrincipalRecep();
+                    form.ShowDialog();
+                }
+                }
+                if (TUsuario.Text == "superadmin")
+                {
+                    Form form = new PrincipalSuperAdmin();
+                    form.ShowDialog();
+                }
+            else
+            {
+                MessageBox.Show("Contraseña incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+      }
     internal class DLLImportAttribute : Attribute
     {
 

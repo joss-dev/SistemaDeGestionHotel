@@ -23,7 +23,10 @@ namespace SistemaDeGestionHotel.views.recep
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-
+            ValidacionTextBox.ValidarNoVacio(TDni, errorProviderNumero);
+            ValidacionTextBox.ValidarNoVacio(TNombre, errorProviderNumero);
+            ValidacionTextBox.ValidarNoVacio(TApellido, errorProviderNumero);
+            ValidacionTextBox.ValidarNoVacio(TCantidadHuespedes, errorProviderNumero);
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

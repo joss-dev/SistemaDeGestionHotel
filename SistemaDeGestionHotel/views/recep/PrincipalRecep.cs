@@ -160,5 +160,7 @@ namespace SistemaDeGestionHotel
             ActivateButton(sender, Color.FromArgb(34, 81, 111));
             formsHijos.AbrirFormHija(new GestionReservas(), panelContenedor);
         }
+
+
     }
 }
