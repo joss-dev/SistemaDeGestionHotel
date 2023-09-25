@@ -50,21 +50,17 @@ namespace SistemaDeGestionHotel
 
         //metodo que permite validar los campos que no esten vacios
 
-        public static void ValidarNoVacio(TextBox textBox, ErrorProvider errorProvider)
+        public static bool ValidarNoVacio(params TextBox[] textBoxes)
         {
-            textBox.Validating += (sender, e) =>
+            foreach (TextBox textBox in textBoxes)
             {
                 if (string.IsNullOrWhiteSpace(textBox.Text))
                 {
-                    e.Cancel = true; // Evitar que el foco salga del TextBox
-                    errorProvider.SetError(textBox, "Este campo es obligatorio.");
+                    return true; // Al menos un TextBox está vacío
                 }
-                else
-                {
-                    errorProvider.SetError(textBox, ""); // Limpiar el mensaje de error si es válido
-                }
-            };
+            }
 
+            return false; // Ningún TextBox está vacío
         }
     }
 }

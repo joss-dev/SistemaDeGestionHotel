@@ -89,7 +89,7 @@ namespace SistemaDeGestionHotel
 
         private void btnPagos_Click(object sender, EventArgs e)
         {
-            formsHijos.AbrirFormHija(new gestionDePagos(), panelCont);
+            FormsHijos.AbrirFormHija(new gestionDePagos(), panelCont);
         }
     }
 }
