@@ -82,7 +82,6 @@ namespace SistemaDeGestionHotel.views
             else
             {
                 this.WindowState = FormWindowState.Maximized;
-
             }
         }
 

@@ -51,7 +51,7 @@
             panelMenu.ForeColor = SystemColors.ActiveCaptionText;
             panelMenu.Location = new Point(0, 0);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(220, 544);
+            panelMenu.Size = new Size(220, 570);
             panelMenu.TabIndex = 1;
             panelMenu.MouseDown += MouseDownSuperAdmin;
             // 
@@ -65,7 +65,7 @@
             btnCerrarSesion.FlatStyle = FlatStyle.Flat;
             btnCerrarSesion.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnCerrarSesion.ForeColor = SystemColors.GrayText;
-            btnCerrarSesion.Location = new Point(39, 947);
+            btnCerrarSesion.Location = new Point(39, 973);
             btnCerrarSesion.Name = "btnCerrarSesion";
             btnCerrarSesion.Size = new Size(134, 39);
             btnCerrarSesion.TabIndex = 5;
@@ -174,13 +174,14 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
-            ClientSize = new Size(893, 544);
+            ClientSize = new Size(893, 570);
             Controls.Add(btnMinimizar);
             Controls.Add(btnExit);
             Controls.Add(btnPantallaCompleta);
             Controls.Add(panelMenu);
             FormBorderStyle = FormBorderStyle.None;
             Name = "PrincipalSuperAdmin";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             Load += PAdmin_Load;
             MouseDown += PAdmin_MouseDown;
