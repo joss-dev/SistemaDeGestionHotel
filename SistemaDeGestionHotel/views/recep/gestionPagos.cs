@@ -38,5 +38,10 @@ namespace SistemaDeGestionHotel.views.recep
         {
             TDni.Clear();
         }
+
+        private void dataGridViewFactura_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
