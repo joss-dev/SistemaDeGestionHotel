@@ -53,6 +53,7 @@
             panelMenu.Name = "panelMenu";
             panelMenu.Size = new Size(220, 544);
             panelMenu.TabIndex = 1;
+            panelMenu.MouseDown += MouseDownSuperAdmin;
             // 
             // btnCerrarSesion
             // 
@@ -95,6 +96,7 @@
             btnHome.TextAlign = ContentAlignment.MiddleLeft;
             btnHome.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnHome.UseVisualStyleBackColor = true;
+            btnHome.Click += btnHome_Click;
             // 
             // panelLogo
             // 
@@ -116,6 +118,7 @@
             pictureLogo.SizeMode = PictureBoxSizeMode.Zoom;
             pictureLogo.TabIndex = 0;
             pictureLogo.TabStop = false;
+            pictureLogo.MouseDown += MouseDownPicture;
             // 
             // btnMinimizar
             // 
@@ -179,6 +182,8 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "PrincipalSuperAdmin";
             Text = "Form1";
+            Load += PAdmin_Load;
+            MouseDown += PAdmin_MouseDown;
             panelMenu.ResumeLayout(false);
             panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureLogo).EndInit();
