@@ -54,6 +54,7 @@
             // 
             // btnRegistrarServicios
             // 
+            btnRegistrarServicios.Cursor = Cursors.Hand;
             btnRegistrarServicios.Dock = DockStyle.Top;
             btnRegistrarServicios.FlatAppearance.BorderSize = 0;
             btnRegistrarServicios.FlatAppearance.MouseDownBackColor = Color.Gainsboro;
@@ -124,6 +125,7 @@
             // 
             // btnPagos
             // 
+            btnPagos.Cursor = Cursors.Hand;
             btnPagos.Dock = DockStyle.Top;
             btnPagos.FlatAppearance.BorderSize = 0;
             btnPagos.FlatAppearance.MouseDownBackColor = Color.Gainsboro;
@@ -203,6 +205,7 @@
             // 
             // btnHome
             // 
+            btnHome.Cursor = Cursors.Hand;
             btnHome.Dock = DockStyle.Top;
             btnHome.FlatAppearance.BorderSize = 0;
             btnHome.FlatAppearance.MouseDownBackColor = Color.Gainsboro;
@@ -246,6 +249,7 @@
             // 
             // btnAdmHabitaciones
             // 
+            btnAdmHabitaciones.Cursor = Cursors.Hand;
             btnAdmHabitaciones.Dock = DockStyle.Top;
             btnAdmHabitaciones.FlatAppearance.BorderSize = 0;
             btnAdmHabitaciones.FlatAppearance.MouseDownBackColor = Color.Gainsboro;
@@ -271,6 +275,7 @@
             // 
             // btnUsuarios
             // 
+            btnUsuarios.Cursor = Cursors.Hand;
             btnUsuarios.Dock = DockStyle.Top;
             btnUsuarios.FlatAppearance.BorderSize = 0;
             btnUsuarios.FlatAppearance.MouseDownBackColor = Color.Gainsboro;
