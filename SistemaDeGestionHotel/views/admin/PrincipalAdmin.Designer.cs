@@ -79,6 +79,7 @@
             // 
             // iconButton1
             // 
+            iconButton1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             iconButton1.BackColor = Color.YellowGreen;
             iconButton1.FlatAppearance.BorderColor = Color.Black;
             iconButton1.FlatAppearance.BorderSize = 0;
@@ -105,6 +106,7 @@
             // 
             // btnExit
             // 
+            btnExit.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnExit.BackColor = Color.YellowGreen;
             btnExit.FlatAppearance.BorderSize = 0;
             btnExit.FlatStyle = FlatStyle.Flat;
@@ -314,6 +316,7 @@
             // 
             // panel1
             // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.YellowGreen;
             panel1.Controls.Add(btnMaximized);
             panel1.Controls.Add(iconButton1);
@@ -325,6 +328,7 @@
             // 
             // btnMaximized
             // 
+            btnMaximized.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnMaximized.BackColor = Color.YellowGreen;
             btnMaximized.FlatAppearance.BorderSize = 0;
             btnMaximized.FlatStyle = FlatStyle.Flat;

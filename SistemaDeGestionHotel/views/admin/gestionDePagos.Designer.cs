@@ -43,41 +43,45 @@
             // 
             // panel1
             // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.FromArgb(39, 79, 193);
             panel1.Controls.Add(pictureBox1);
-            panel1.Location = new Point(-8, 0);
+            panel1.Location = new Point(-2, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(817, 116);
+            panel1.Size = new Size(800, 116);
             panel1.TabIndex = 21;
             // 
             // pictureBox1
             // 
+            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             pictureBox1.Image = Properties.Resources.logoHotel;
             pictureBox1.Location = new Point(276, -16);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(205, 132);
+            pictureBox1.Size = new Size(307, 132);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 19;
             pictureBox1.TabStop = false;
             // 
             // button1
             // 
+            button1.Anchor = AnchorStyles.None;
             button1.BackColor = Color.ForestGreen;
             button1.FlatAppearance.BorderColor = Color.Black;
             button1.FlatStyle = FlatStyle.Popup;
             button1.Image = Properties.Resources.medios_de_pago;
-            button1.Location = new Point(104, 264);
+            button1.Location = new Point(157, 286);
             button1.Name = "button1";
-            button1.Size = new Size(114, 82);
+            button1.Size = new Size(111, 77);
             button1.TabIndex = 23;
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(95, 349);
+            label1.Location = new Point(148, 371);
             label1.Name = "label1";
             label1.Size = new Size(134, 21);
             label1.TabIndex = 24;
@@ -85,20 +89,22 @@
             // 
             // button2
             // 
+            button2.Anchor = AnchorStyles.None;
             button2.BackColor = Color.LightCoral;
             button2.FlatStyle = FlatStyle.Popup;
             button2.Image = Properties.Resources.Impuestos1;
-            button2.Location = new Point(304, 264);
+            button2.Location = new Point(357, 286);
             button2.Name = "button2";
-            button2.Size = new Size(114, 82);
+            button2.Size = new Size(111, 77);
             button2.TabIndex = 25;
             button2.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
+            label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(317, 349);
+            label2.Location = new Point(370, 371);
             label2.Name = "label2";
             label2.Size = new Size(92, 21);
             label2.TabIndex = 26;
@@ -106,20 +112,22 @@
             // 
             // button3
             // 
+            button3.Anchor = AnchorStyles.None;
             button3.BackColor = Color.DarkTurquoise;
             button3.FlatStyle = FlatStyle.Popup;
             button3.Image = Properties.Resources.Recargos;
-            button3.Location = new Point(495, 264);
+            button3.Location = new Point(548, 286);
             button3.Name = "button3";
-            button3.Size = new Size(114, 82);
+            button3.Size = new Size(111, 77);
             button3.TabIndex = 27;
             button3.UseVisualStyleBackColor = false;
             // 
             // label3
             // 
+            label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
             label3.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(476, 349);
+            label3.Location = new Point(529, 371);
             label3.Name = "label3";
             label3.Size = new Size(155, 21);
             label3.TabIndex = 28;
@@ -127,11 +135,11 @@
             // 
             // label4
             // 
-            label4.AutoSize = true;
+            label4.Anchor = AnchorStyles.None;
             label4.Font = new Font("Yu Gothic", 27.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(81, 160);
+            label4.Location = new Point(132, 159);
             label4.Name = "label4";
-            label4.Size = new Size(569, 48);
+            label4.Size = new Size(572, 54);
             label4.TabIndex = 29;
             label4.Text = "Seleccione la opción deseada:";
             // 
@@ -140,7 +148,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.YellowGreen;
-            ClientSize = new Size(696, 450);
+            ClientSize = new Size(798, 488);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(button3);
