@@ -47,7 +47,7 @@
             button6 = new Button();
             btnBuscar = new Button();
             LDni = new Label();
-            TDni = new TextBox();
+            TNumHabitacion = new TextBox();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -273,6 +273,7 @@
             btnBuscar.TabIndex = 32;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = true;
+            btnBuscar.Click += btnBuscar_Click;
             // 
             // LDni
             // 
@@ -285,13 +286,13 @@
             LDni.TabIndex = 31;
             LDni.Text = "Habitación : ";
             // 
-            // TDni
+            // TNumHabitacion
             // 
-            TDni.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            TDni.Location = new Point(663, 68);
-            TDni.Name = "TDni";
-            TDni.Size = new Size(126, 23);
-            TDni.TabIndex = 30;
+            TNumHabitacion.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            TNumHabitacion.Location = new Point(663, 68);
+            TNumHabitacion.Name = "TNumHabitacion";
+            TNumHabitacion.Size = new Size(126, 23);
+            TNumHabitacion.TabIndex = 30;
             // 
             // gestionHabitaciones
             // 
@@ -302,7 +303,7 @@
             ClientSize = new Size(891, 564);
             Controls.Add(btnBuscar);
             Controls.Add(LDni);
-            Controls.Add(TDni);
+            Controls.Add(TNumHabitacion);
             Controls.Add(button6);
             Controls.Add(button5);
             Controls.Add(button4);
@@ -342,6 +343,6 @@
         private Button button13;
         private Button btnBuscar;
         private Label LDni;
-        private TextBox TDni;
+        private TextBox TNumHabitacion;
     }
 }

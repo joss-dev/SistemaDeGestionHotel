@@ -84,6 +84,7 @@
             btnRegistrar.Text = "Registrar";
             btnRegistrar.TextAlign = ContentAlignment.BottomCenter;
             btnRegistrar.UseVisualStyleBackColor = true;
+            btnRegistrar.Click += btnRegistrar_Click;
             // 
             // btnCancelar
             // 

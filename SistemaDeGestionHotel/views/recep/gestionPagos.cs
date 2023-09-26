@@ -19,7 +19,14 @@ namespace SistemaDeGestionHotel.views.recep
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-
+            if (ValidacionTextBox.ValidarNoVacio(TDni))
+            {
+                MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                MessageBox.Show("Exito!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void ValidacionDni(object sender, KeyEventArgs e)

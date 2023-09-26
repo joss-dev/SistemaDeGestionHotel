@@ -75,5 +75,17 @@ namespace SistemaDeGestionHotel.views.recep
             dateTimeSalida.ResetText();
             formasDePago.ResetText();
         }
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            if (ValidacionTextBox.ValidarNoVacio(TDni, TNombre, TApellido, TCantidadHuespedes))
+            {
+                MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                MessageBox.Show("Registrado!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }

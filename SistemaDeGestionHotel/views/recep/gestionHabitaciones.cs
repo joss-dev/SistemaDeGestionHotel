@@ -47,5 +47,17 @@ namespace SistemaDeGestionHotel.views.admin
                 // Realizar acciones después de cerrar el formulario secundario si es necesario
             }
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (ValidacionTextBox.ValidarNoVacio(TNumHabitacion))
+            {
+                MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                MessageBox.Show("Exito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }

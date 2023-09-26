@@ -26,5 +26,17 @@ namespace SistemaDeGestionHotel.views.recep
         {
             ValidacionTextBox.ValidarSoloNumeros(TDni, errorProviderNumero);
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (ValidacionTextBox.ValidarNoVacio(TDni))
+            {
+                MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                MessageBox.Show("Registrado!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }
