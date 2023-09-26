@@ -132,6 +132,7 @@
             btnMinimizar.Size = new Size(29, 26);
             btnMinimizar.TabIndex = 6;
             btnMinimizar.UseVisualStyleBackColor = true;
+            btnMinimizar.Click += btnMinimizar_Click;
             // 
             // btnExit
             // 
@@ -147,6 +148,7 @@
             btnExit.Size = new Size(33, 30);
             btnExit.TabIndex = 5;
             btnExit.UseVisualStyleBackColor = true;
+            btnExit.Click += btnExit_Click;
             // 
             // btnPantallaCompleta
             // 
@@ -162,6 +164,7 @@
             btnPantallaCompleta.Size = new Size(33, 26);
             btnPantallaCompleta.TabIndex = 7;
             btnPantallaCompleta.UseVisualStyleBackColor = true;
+            btnPantallaCompleta.Click += btnPantallaCompleta_Click;
             // 
             // PrincipalSuperAdmin
             // 
