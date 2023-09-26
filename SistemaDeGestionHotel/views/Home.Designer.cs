@@ -29,63 +29,49 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            panel1 = new Panel();
             label2 = new Label();
-            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
-            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.Font = new Font("SimSun", 36F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(37, 26);
+            label1.Location = new Point(325, 42);
             label1.Name = "label1";
-            label1.Size = new Size(295, 48);
-            label1.TabIndex = 0;
-            label1.Text = "Bienvenido ";
-            // 
-            // panel1
-            // 
-            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel1.Controls.Add(label2);
-            panel1.Controls.Add(label1);
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(580, 564);
-            panel1.TabIndex = 3;
+            label1.Size = new Size(270, 48);
+            label1.TabIndex = 7;
+            label1.Text = "Bienvenido";
             // 
             // label2
             // 
-            label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.Font = new Font("SimSun", 36F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(128, 87);
+            label2.Location = new Point(302, 90);
             label2.Name = "label2";
             label2.Size = new Size(320, 48);
-            label2.TabIndex = 4;
+            label2.TabIndex = 6;
             label2.Text = "Hotel Paraná";
             // 
             // Home
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            AutoSize = true;
             BackColor = Color.SteelBlue;
-            ClientSize = new Size(580, 564);
-            Controls.Add(panel1);
+            ClientSize = new Size(888, 564);
+            Controls.Add(label1);
+            Controls.Add(label2);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Home";
             Text = "Home";
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private Label label1;
-        private Panel panel1;
         private Label label2;
     }
 }
