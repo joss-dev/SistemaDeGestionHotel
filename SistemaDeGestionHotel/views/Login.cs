@@ -8,6 +8,8 @@ namespace SistemaDeGestionHotel
         public Login()
         {
             InitializeComponent();
+            // Establece la posición de inicio en el centro de la pantalla
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]

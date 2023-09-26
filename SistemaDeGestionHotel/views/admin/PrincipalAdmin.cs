@@ -11,6 +11,9 @@ namespace SistemaDeGestionHotel
         public PrincipalAdmin()
         {
             InitializeComponent();
+            // Establece que el formulario se inicie maximizado
+            this.WindowState = FormWindowState.Maximized;
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
 
         private void PrincipalAdmin_Load(object sender, EventArgs e)

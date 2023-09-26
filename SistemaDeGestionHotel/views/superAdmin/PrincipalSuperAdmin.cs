@@ -5,6 +5,9 @@
         public PrincipalSuperAdmin()
         {
             InitializeComponent();
+            // Establece que el formulario se inicie maximizado
+            this.WindowState = FormWindowState.Maximized;
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
     }
 }

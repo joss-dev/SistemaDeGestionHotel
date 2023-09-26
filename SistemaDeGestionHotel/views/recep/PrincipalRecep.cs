@@ -23,6 +23,9 @@ namespace SistemaDeGestionHotel
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 60);
             panelMenu.Controls.Add(leftBorderBtn);
+
+            // Establece que el formulario se inicie maximizado
+            this.WindowState = FormWindowState.Maximized;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
 
