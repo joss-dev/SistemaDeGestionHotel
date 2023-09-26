@@ -115,7 +115,7 @@ namespace SistemaDeGestionHotel
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if(TPass.Text == "123")
+            if (TPass.Text == "123")
             {
                 if (TUsuario.Text == "admin")
                 {
@@ -127,12 +127,13 @@ namespace SistemaDeGestionHotel
                     Form form = new PrincipalRecep();
                     form.ShowDialog();
                 }
-                }
+
                 if (TUsuario.Text == "superadmin")
                 {
                     Form form = new PrincipalSuperAdmin();
                     form.ShowDialog();
                 }
+            }
             else
             {
                 MessageBox.Show("Contraseña incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
