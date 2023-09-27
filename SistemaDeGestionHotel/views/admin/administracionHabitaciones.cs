@@ -17,6 +17,6 @@ namespace SistemaDeGestionHotel.views.admin
             InitializeComponent();
         }
 
-     
+
     }
 }
