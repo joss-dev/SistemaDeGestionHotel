@@ -36,6 +36,7 @@
             btnMinimizar = new FontAwesome.Sharp.IconButton();
             btnExit = new FontAwesome.Sharp.IconButton();
             btnPantallaCompleta = new FontAwesome.Sharp.IconButton();
+            panelContenedor = new Panel();
             panelMenu.SuspendLayout();
             panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureLogo).BeginInit();
@@ -169,12 +170,20 @@
             btnPantallaCompleta.UseVisualStyleBackColor = true;
             btnPantallaCompleta.Click += btnPantallaCompleta_Click;
             // 
+            // panelContenedor
+            // 
+            panelContenedor.Location = new Point(218, 24);
+            panelContenedor.Name = "panelContenedor";
+            panelContenedor.Size = new Size(676, 543);
+            panelContenedor.TabIndex = 8;
+            // 
             // PrincipalSuperAdmin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             ClientSize = new Size(893, 570);
+            Controls.Add(panelContenedor);
             Controls.Add(btnMinimizar);
             Controls.Add(btnExit);
             Controls.Add(btnPantallaCompleta);
@@ -201,5 +210,6 @@
         private FontAwesome.Sharp.IconButton btnMinimizar;
         private FontAwesome.Sharp.IconButton btnExit;
         private FontAwesome.Sharp.IconButton btnPantallaCompleta;
+        private Panel panelContenedor;
     }
 }
