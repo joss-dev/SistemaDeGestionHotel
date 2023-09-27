@@ -379,11 +379,12 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.Anchor = AnchorStyles.None;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(-1, 581);
+            dataGridView1.Location = new Point(48, 579);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(679, 213);
+            dataGridView1.Size = new Size(679, 133);
             dataGridView1.TabIndex = 60;
             // 
             // administracionHabitaciones
