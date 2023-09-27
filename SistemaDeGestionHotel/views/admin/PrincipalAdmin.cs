@@ -1,4 +1,3 @@
-using SistemaDeGestionHotel.SGHControl;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
 using SistemaDeGestionHotel.views;
@@ -14,6 +13,7 @@ namespace SistemaDeGestionHotel
         //declaracion de icono y boton 
         private IconButton currentBtn;
         private Panel leftBorderBtn;
+
         public PrincipalAdmin()
         {
             InitializeComponent();
@@ -23,8 +23,6 @@ namespace SistemaDeGestionHotel
 
             //abre el form home cuando principalAdmin se abre
             FormsHijos.AbrirFormHija(new Home(), panelCont);
-
-
 
             // Establece que el formulario se inicie maximizado
             this.WindowState = FormWindowState.Maximized;
@@ -73,16 +71,7 @@ namespace SistemaDeGestionHotel
 
         private void PrincipalAdmin_Load(object sender, EventArgs e)
         {
-            IContainer container = this.Container; // Usa el contenedor del formulario actual
-            if (container == null)
-            {
-                container = new Container();
-            }
-            else
-            {
-                var dropDownMenu = new SGHDropDownMenu(container);
-                dropDownMenu.IsMainMenu = true;
-            }
+
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -117,21 +106,8 @@ namespace SistemaDeGestionHotel
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, Color.FromArgb(34, 81, 111));
-            FormsHijos.AbrirFormHija(new registroUsuario(), panelCont);
-            ToolStripDropDown SGHDropDownMenu = new ToolStripDropDown();
-
-            // Crear elementos del menú
-            ToolStripMenuItem item1 = new ToolStripMenuItem("Opción 1");
-            ToolStripMenuItem item2 = new ToolStripMenuItem("Opción 2");
-            ToolStripMenuItem item3 = new ToolStripMenuItem("Opción 3");
-
-            // Añadir los elementos al menú
-            SGHDropDownMenu.Items.Add(item1);
-            SGHDropDownMenu.Items.Add(item2);
-            SGHDropDownMenu.Items.Add(item3);
-
-            // Mostrar el menú
-            SGHDropDownMenu.Show(btnUsuarios, btnUsuarios.Width, 0);
+            FormsHijos.AbrirFormHija(new registroUsuario(), panelCont);          
+            
         }
 
         private void btnMaximized_Click(object sender, EventArgs e)

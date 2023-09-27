@@ -1,4 +1,3 @@
-using SistemaDeGestionHotel.SGHControl;
 using SistemaDeGestionHotel.views.admin;
 
 namespace SistemaDeGestionHotel
