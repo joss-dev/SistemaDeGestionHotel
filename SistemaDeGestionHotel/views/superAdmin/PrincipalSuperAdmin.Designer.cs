@@ -60,7 +60,7 @@
             panelMenu.ForeColor = SystemColors.ActiveCaptionText;
             panelMenu.Location = new Point(0, 0);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(220, 570);
+            panelMenu.Size = new Size(220, 567);
             panelMenu.TabIndex = 1;
             panelMenu.MouseDown += MouseDownSuperAdmin;
             // 
@@ -74,7 +74,7 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = SystemColors.GrayText;
-            button1.Location = new Point(45, 435);
+            button1.Location = new Point(43, 516);
             button1.Name = "button1";
             button1.Size = new Size(134, 39);
             button1.TabIndex = 9;
@@ -167,7 +167,7 @@
             btnCerrarSesion.FlatStyle = FlatStyle.Flat;
             btnCerrarSesion.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnCerrarSesion.ForeColor = SystemColors.GrayText;
-            btnCerrarSesion.Location = new Point(39, 973);
+            btnCerrarSesion.Location = new Point(39, 970);
             btnCerrarSesion.Name = "btnCerrarSesion";
             btnCerrarSesion.Size = new Size(134, 39);
             btnCerrarSesion.TabIndex = 5;
@@ -232,7 +232,7 @@
             btnMinimizar.IconFont = FontAwesome.Sharp.IconFont.Solid;
             btnMinimizar.IconSize = 20;
             btnMinimizar.ImageAlign = ContentAlignment.BottomRight;
-            btnMinimizar.Location = new Point(790, 0);
+            btnMinimizar.Location = new Point(831, 0);
             btnMinimizar.Name = "btnMinimizar";
             btnMinimizar.Size = new Size(29, 26);
             btnMinimizar.TabIndex = 6;
@@ -248,7 +248,7 @@
             btnExit.IconColor = Color.Black;
             btnExit.IconFont = FontAwesome.Sharp.IconFont.Solid;
             btnExit.IconSize = 20;
-            btnExit.Location = new Point(861, 0);
+            btnExit.Location = new Point(902, 0);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(33, 30);
             btnExit.TabIndex = 5;
@@ -264,7 +264,7 @@
             btnPantallaCompleta.IconColor = Color.Black;
             btnPantallaCompleta.IconFont = FontAwesome.Sharp.IconFont.Solid;
             btnPantallaCompleta.IconSize = 20;
-            btnPantallaCompleta.Location = new Point(825, 0);
+            btnPantallaCompleta.Location = new Point(866, 0);
             btnPantallaCompleta.Name = "btnPantallaCompleta";
             btnPantallaCompleta.Size = new Size(33, 26);
             btnPantallaCompleta.TabIndex = 7;
@@ -273,10 +273,11 @@
             // 
             // panelContenedor
             // 
+            panelContenedor.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panelContenedor.BackColor = Color.White;
             panelContenedor.Location = new Point(219, 29);
             panelContenedor.Name = "panelContenedor";
-            panelContenedor.Size = new Size(675, 541);
+            panelContenedor.Size = new Size(716, 538);
             panelContenedor.TabIndex = 8;
             // 
             // PrincipalSuperAdmin
@@ -285,7 +286,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             BackColor = Color.LightGreen;
-            ClientSize = new Size(893, 570);
+            ClientSize = new Size(934, 567);
             Controls.Add(panelContenedor);
             Controls.Add(btnMinimizar);
             Controls.Add(btnExit);
