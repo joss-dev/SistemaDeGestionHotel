@@ -93,6 +93,36 @@ namespace SistemaDeGestionHotel.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap backup {
+            get {
+                object obj = ResourceManager.GetObject("backup", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap backupEd {
+            get {
+                object obj = ResourceManager.GetObject("backupEd", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap backupEd1 {
+            get {
+                object obj = ResourceManager.GetObject("backupEd1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap btn_Cancelar__1_ {
             get {
                 object obj = ResourceManager.GetObject("btn-Cancelar (1)", resourceCulture);
@@ -233,6 +263,26 @@ namespace SistemaDeGestionHotel.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap folder {
+            get {
+                object obj = ResourceManager.GetObject("folder", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap foldered {
+            get {
+                object obj = ResourceManager.GetObject("foldered", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap habitac1 {
             get {
                 object obj = ResourceManager.GetObject("habitac1", resourceCulture);
@@ -356,6 +406,16 @@ namespace SistemaDeGestionHotel.Properties {
         internal static System.Drawing.Bitmap registrar {
             get {
                 object obj = ResourceManager.GetObject("registrar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap restauracionRED {
+            get {
+                object obj = ResourceManager.GetObject("restauracionRED", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -106,8 +106,8 @@ namespace SistemaDeGestionHotel
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, Color.FromArgb(34, 81, 111));
-            FormsHijos.AbrirFormHija(new registroUsuario(), panelCont);          
-            
+            FormsHijos.AbrirFormHija(new registroUsuario(), panelCont);
+
         }
 
         private void btnMaximized_Click(object sender, EventArgs e)

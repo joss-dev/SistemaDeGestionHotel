@@ -37,6 +37,10 @@
             btnExit = new FontAwesome.Sharp.IconButton();
             btnPantallaCompleta = new FontAwesome.Sharp.IconButton();
             panelContenedor = new Panel();
+            btnBackUpBD = new FontAwesome.Sharp.IconButton();
+            btnRestaurarBD = new FontAwesome.Sharp.IconButton();
+            btnUsuarios = new FontAwesome.Sharp.IconButton();
+            button1 = new Button();
             panelMenu.SuspendLayout();
             panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureLogo).BeginInit();
@@ -45,6 +49,10 @@
             // panelMenu
             // 
             panelMenu.BackColor = Color.FromArgb(39, 79, 193);
+            panelMenu.Controls.Add(button1);
+            panelMenu.Controls.Add(btnUsuarios);
+            panelMenu.Controls.Add(btnRestaurarBD);
+            panelMenu.Controls.Add(btnBackUpBD);
             panelMenu.Controls.Add(btnCerrarSesion);
             panelMenu.Controls.Add(btnHome);
             panelMenu.Controls.Add(panelLogo);
@@ -172,16 +180,109 @@
             // 
             // panelContenedor
             // 
-            panelContenedor.Location = new Point(218, 24);
+            panelContenedor.BackColor = Color.White;
+            panelContenedor.Location = new Point(219, 29);
             panelContenedor.Name = "panelContenedor";
-            panelContenedor.Size = new Size(676, 543);
+            panelContenedor.Size = new Size(675, 541);
             panelContenedor.TabIndex = 8;
+            // 
+            // btnBackUpBD
+            // 
+            btnBackUpBD.Cursor = Cursors.Hand;
+            btnBackUpBD.Dock = DockStyle.Top;
+            btnBackUpBD.FlatAppearance.BorderSize = 0;
+            btnBackUpBD.FlatAppearance.MouseDownBackColor = Color.Gainsboro;
+            btnBackUpBD.FlatAppearance.MouseOverBackColor = Color.Gray;
+            btnBackUpBD.FlatStyle = FlatStyle.Flat;
+            btnBackUpBD.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnBackUpBD.ForeColor = Color.White;
+            btnBackUpBD.IconChar = FontAwesome.Sharp.IconChar.Shield;
+            btnBackUpBD.IconColor = Color.FromArgb(15, 15, 15);
+            btnBackUpBD.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnBackUpBD.IconSize = 38;
+            btnBackUpBD.ImageAlign = ContentAlignment.MiddleLeft;
+            btnBackUpBD.Location = new Point(0, 200);
+            btnBackUpBD.Name = "btnBackUpBD";
+            btnBackUpBD.Padding = new Padding(20, 0, 10, 0);
+            btnBackUpBD.Size = new Size(220, 60);
+            btnBackUpBD.TabIndex = 6;
+            btnBackUpBD.Text = "BackUp Base de Datos";
+            btnBackUpBD.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnBackUpBD.UseVisualStyleBackColor = true;
+            btnBackUpBD.Click += btnBackUp_Click;
+            // 
+            // btnRestaurarBD
+            // 
+            btnRestaurarBD.Cursor = Cursors.Hand;
+            btnRestaurarBD.Dock = DockStyle.Top;
+            btnRestaurarBD.FlatAppearance.BorderSize = 0;
+            btnRestaurarBD.FlatAppearance.MouseDownBackColor = Color.Gainsboro;
+            btnRestaurarBD.FlatAppearance.MouseOverBackColor = Color.Gray;
+            btnRestaurarBD.FlatStyle = FlatStyle.Flat;
+            btnRestaurarBD.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnRestaurarBD.ForeColor = Color.White;
+            btnRestaurarBD.IconChar = FontAwesome.Sharp.IconChar.CircleNodes;
+            btnRestaurarBD.IconColor = Color.FromArgb(15, 15, 15);
+            btnRestaurarBD.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnRestaurarBD.IconSize = 38;
+            btnRestaurarBD.ImageAlign = ContentAlignment.MiddleLeft;
+            btnRestaurarBD.Location = new Point(0, 260);
+            btnRestaurarBD.Name = "btnRestaurarBD";
+            btnRestaurarBD.Padding = new Padding(20, 0, 10, 0);
+            btnRestaurarBD.Size = new Size(220, 60);
+            btnRestaurarBD.TabIndex = 7;
+            btnRestaurarBD.Text = "Restauración Base de Datos";
+            btnRestaurarBD.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnRestaurarBD.UseVisualStyleBackColor = true;
+            // 
+            // btnUsuarios
+            // 
+            btnUsuarios.Cursor = Cursors.Hand;
+            btnUsuarios.Dock = DockStyle.Top;
+            btnUsuarios.FlatAppearance.BorderSize = 0;
+            btnUsuarios.FlatAppearance.MouseDownBackColor = Color.Gainsboro;
+            btnUsuarios.FlatAppearance.MouseOverBackColor = Color.Gray;
+            btnUsuarios.FlatStyle = FlatStyle.Flat;
+            btnUsuarios.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnUsuarios.ForeColor = Color.White;
+            btnUsuarios.IconChar = FontAwesome.Sharp.IconChar.User;
+            btnUsuarios.IconColor = Color.FromArgb(15, 15, 15);
+            btnUsuarios.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnUsuarios.IconSize = 38;
+            btnUsuarios.ImageAlign = ContentAlignment.MiddleLeft;
+            btnUsuarios.Location = new Point(0, 320);
+            btnUsuarios.Name = "btnUsuarios";
+            btnUsuarios.Padding = new Padding(20, 0, 10, 0);
+            btnUsuarios.Size = new Size(220, 60);
+            btnUsuarios.TabIndex = 8;
+            btnUsuarios.Text = "Gestión de Usuarios";
+            btnUsuarios.TextAlign = ContentAlignment.MiddleLeft;
+            btnUsuarios.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnUsuarios.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            button1.BackColor = Color.FromArgb(40, 40, 40);
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
+            button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.ForeColor = SystemColors.GrayText;
+            button1.Location = new Point(45, 435);
+            button1.Name = "button1";
+            button1.Size = new Size(134, 39);
+            button1.TabIndex = 9;
+            button1.Text = "Cerrar Sesión";
+            button1.UseVisualStyleBackColor = false;
             // 
             // PrincipalSuperAdmin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
+            BackColor = Color.LightGreen;
             ClientSize = new Size(893, 570);
             Controls.Add(panelContenedor);
             Controls.Add(btnMinimizar);
@@ -211,5 +312,9 @@
         private FontAwesome.Sharp.IconButton btnExit;
         private FontAwesome.Sharp.IconButton btnPantallaCompleta;
         private Panel panelContenedor;
+        private FontAwesome.Sharp.IconButton btnBackUpBD;
+        private FontAwesome.Sharp.IconButton btnRestaurarBD;
+        private FontAwesome.Sharp.IconButton btnUsuarios;
+        private Button button1;
     }
 }

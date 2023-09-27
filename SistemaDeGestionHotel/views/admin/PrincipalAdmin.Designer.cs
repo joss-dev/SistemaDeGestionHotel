@@ -227,8 +227,8 @@
             btnAdmHabitaciones.FlatStyle = FlatStyle.Flat;
             btnAdmHabitaciones.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnAdmHabitaciones.ForeColor = Color.White;
-            btnAdmHabitaciones.IconChar = FontAwesome.Sharp.IconChar.R;
-            btnAdmHabitaciones.IconColor = Color.FromArgb(15, 15, 15);
+            btnAdmHabitaciones.IconChar = FontAwesome.Sharp.IconChar.Bed;
+            btnAdmHabitaciones.IconColor = Color.FromArgb(20, 20, 20);
             btnAdmHabitaciones.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnAdmHabitaciones.IconSize = 38;
             btnAdmHabitaciones.ImageAlign = ContentAlignment.MiddleLeft;
