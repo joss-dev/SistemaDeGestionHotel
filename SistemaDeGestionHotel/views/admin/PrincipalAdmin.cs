@@ -117,6 +117,7 @@ namespace SistemaDeGestionHotel
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, Color.FromArgb(34, 81, 111));
+            FormsHijos.AbrirFormHija(new registroUsuario(), panelCont);
             ToolStripDropDown SGHDropDownMenu = new ToolStripDropDown();
 
             // Crear elementos del menú
@@ -158,19 +159,16 @@ namespace SistemaDeGestionHotel
             FormsHijos.AbrirFormHija(new Home(), panelCont);
         }
 
-        private void btnGestionHabitaciones_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, Color.FromArgb(34, 81, 111));
-        }
-
         private void btnRegistrarServicios_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, Color.FromArgb(34, 81, 111));
+            FormsHijos.AbrirFormHija(new registrarSsAdicionales(), panelCont);
         }
 
         private void btnAdmHabitaciones_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, Color.FromArgb(34, 81, 111));
+            FormsHijos.AbrirFormHija(new administracionHabitaciones(), panelCont);
         }
     }
 }
