@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             pictureBox1 = new PictureBox();
             panel1 = new Panel();
             pictureBox2 = new PictureBox();
@@ -59,10 +60,12 @@
             btnDeshabHabitacion = new Button();
             btnEditar = new Button();
             dataGridView1 = new DataGridView();
+            errorProvider1 = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -115,6 +118,7 @@
             txtNroHab.Name = "txtNroHab";
             txtNroHab.Size = new Size(137, 23);
             txtNroHab.TabIndex = 26;
+            txtNroHab.TextChanged += txtNroHab_TextChanged;
             // 
             // label2
             // 
@@ -134,6 +138,7 @@
             txtCantCamas.Name = "txtCantCamas";
             txtCantCamas.Size = new Size(137, 23);
             txtCantCamas.TabIndex = 28;
+            txtCantCamas.KeyDown += validarCantidadCamas;
             // 
             // label3
             // 
@@ -387,6 +392,10 @@
             dataGridView1.Size = new Size(679, 133);
             dataGridView1.TabIndex = 60;
             // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
+            // 
             // administracionHabitaciones
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -430,6 +439,7 @@
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -467,5 +477,6 @@
         private Button btnDeshabHabitacion;
         private Button btnEditar;
         private DataGridView dataGridView1;
+        private ErrorProvider errorProvider1;
     }
 }

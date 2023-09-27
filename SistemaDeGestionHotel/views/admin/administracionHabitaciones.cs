@@ -17,6 +17,14 @@ namespace SistemaDeGestionHotel.views.admin
             InitializeComponent();
         }
 
+        private void txtNroHab_TextChanged(object sender, EventArgs e)
+        {
 
+        }
+
+        private void validarCantidadCamas(object sender, KeyEventArgs e)
+        {
+            ValidacionTextBox.ValidarSoloNumeros(txtCantCamas, errorProvider1);
+        }
     }
 }
