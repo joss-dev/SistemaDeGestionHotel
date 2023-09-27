@@ -1,5 +1,7 @@
 ﻿using FontAwesome.Sharp;
 using System.Runtime.InteropServices;
+using SistemaDeGestionHotel.views.superAdmin;
+using SistemaDeGestionHotel.views.admin;
 
 namespace SistemaDeGestionHotel.views
 {
@@ -100,6 +102,7 @@ namespace SistemaDeGestionHotel.views
         private void btnHome_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, Color.FromArgb(34, 81, 111));
+            FormsHijos.AbrirFormHija(new Home(), panelContenedor);
         }
 
         private void PAdmin_Load(object sender, EventArgs e)
@@ -136,7 +139,20 @@ namespace SistemaDeGestionHotel.views
 
         private void btnBackUp_Click(object sender, EventArgs e)
         {
+            ActivateButton(sender, Color.FromArgb(34, 81, 111));
+            FormsHijos.AbrirFormHija(new FormBackUp(), panelContenedor);
+        }
 
+        private void btnRestaurarBD_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, Color.FromArgb(34, 81, 111));
+            FormsHijos.AbrirFormHija(new FormRestaurarBD(), panelContenedor);
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, Color.FromArgb(34, 81, 111));
+            FormsHijos.AbrirFormHija(new registroUsuario(), panelContenedor);
         }
     }
 }
