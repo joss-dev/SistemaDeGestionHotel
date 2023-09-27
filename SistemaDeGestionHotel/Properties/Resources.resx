@@ -118,29 +118,32 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="btn-eliminar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btn-eliminar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btn-Cancelar (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btn-Cancelar (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="img1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Recargos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Recargos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="medios_de_pago" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\medios_de_pago.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnRegistrar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnRegistrar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="4af43ce1082231cba5e5aa60fbb03f2f-iconos-de-circulo-de-personal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\4af43ce1082231cba5e5aa60fbb03f2f-iconos-de-circulo-de-personal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="eliminar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eliminar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="img" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Impuestos1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Impuestos1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="serivcios" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\serivcios.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="cancelar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cancelar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnCancelar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnCancelar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="editar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\editar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="servicios-adicionales-hotel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\servicios-adicionales-hotel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btn-guardar " type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btn-guardar .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,37 +151,70 @@
   <data name="Impuestos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Impuestos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btn-registrar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btn-registrar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="4af43ce1082231cba5e5aa60fbb03f2f-iconos-de-circulo-de-personal (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\4af43ce1082231cba5e5aa60fbb03f2f-iconos-de-circulo-de-personal (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="servicios-adicionales-hotel" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\servicios-adicionales-hotel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="editar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\editar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Impuestos1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Impuestos1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnRegistrar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnRegistrar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="agregar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\agregar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="registrar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\registrar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="edit2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="serivcios" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\serivcios.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logoHotel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logoHotel.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="4af43ce1082231cba5e5aa60fbb03f2f-iconos-de-circulo-de-personal (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\4af43ce1082231cba5e5aa60fbb03f2f-iconos-de-circulo-de-personal (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="registrar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\registrar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnCancelar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnCancelar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="medios_de_pago" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\medios_de_pago.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="img1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cancel1_77976" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cancel1_77976.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="img" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="4af43ce1082231cba5e5aa60fbb03f2f-iconos-de-circulo-de-personal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\4af43ce1082231cba5e5aa60fbb03f2f-iconos-de-circulo-de-personal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="habitac2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\habitac2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="off1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\off1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn-registrar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn-registrar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn-eliminar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn-eliminar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="servicios-adicionales-hotel1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\servicios-adicionales-hotel1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="on" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\on.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn-Cancelar (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn-Cancelar (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="habitac1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\habitac1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="edit1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="edit11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

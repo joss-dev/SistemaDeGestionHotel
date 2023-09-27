@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             btnRegistrarServicios = new FontAwesome.Sharp.IconButton();
             iconButton1 = new FontAwesome.Sharp.IconButton();
             panelContenedor = new Panel();
@@ -42,7 +41,6 @@
             btnAdmHabitaciones = new FontAwesome.Sharp.IconButton();
             btnUsuarios = new FontAwesome.Sharp.IconButton();
             panelLogo = new Panel();
-            sghDropDownMenu1 = new SGHControl.SGHDropDownMenu(components);
             panel1 = new Panel();
             btnMaximized = new FontAwesome.Sharp.IconButton();
             panelCont = new Panel();
@@ -81,7 +79,7 @@
             // iconButton1
             // 
             iconButton1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            iconButton1.BackColor = Color.YellowGreen;
+            iconButton1.BackColor = Color.LightGreen;
             iconButton1.FlatAppearance.BorderColor = Color.Black;
             iconButton1.FlatAppearance.BorderSize = 0;
             iconButton1.FlatStyle = FlatStyle.Flat;
@@ -108,7 +106,7 @@
             // btnExit
             // 
             btnExit.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnExit.BackColor = Color.YellowGreen;
+            btnExit.BackColor = Color.LightGreen;
             btnExit.FlatAppearance.BorderSize = 0;
             btnExit.FlatStyle = FlatStyle.Flat;
             btnExit.Flip = FontAwesome.Sharp.FlipOrientation.Horizontal;
@@ -310,19 +308,10 @@
             panelLogo.Size = new Size(220, 140);
             panelLogo.TabIndex = 0;
             // 
-            // sghDropDownMenu1
-            // 
-            sghDropDownMenu1.IsMainMenu = false;
-            sghDropDownMenu1.MenuItemHeight = 25;
-            sghDropDownMenu1.MenuItemTextColor = Color.DimGray;
-            sghDropDownMenu1.Name = "sghDropDownMenu1";
-            sghDropDownMenu1.PrimaryColor = Color.MediumSlateBlue;
-            sghDropDownMenu1.Size = new Size(61, 4);
-            // 
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            panel1.BackColor = Color.YellowGreen;
+            panel1.BackColor = Color.LightGreen;
             panel1.Controls.Add(btnMaximized);
             panel1.Controls.Add(iconButton1);
             panel1.Controls.Add(btnExit);
@@ -334,7 +323,7 @@
             // btnMaximized
             // 
             btnMaximized.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnMaximized.BackColor = Color.YellowGreen;
+            btnMaximized.BackColor = Color.LightGreen;
             btnMaximized.FlatAppearance.BorderSize = 0;
             btnMaximized.FlatStyle = FlatStyle.Flat;
             btnMaximized.Flip = FontAwesome.Sharp.FlipOrientation.Horizontal;
@@ -390,7 +379,6 @@
         private Panel panelLogo;
         private FontAwesome.Sharp.IconButton btnUsuarios;
         private FontAwesome.Sharp.IconButton btnAdmHabitaciones;
-        private SGHControl.SGHDropDownMenu sghDropDownMenu1;
         private Panel panel1;
         private FontAwesome.Sharp.IconButton btnMaximized;
         public Panel panelCont;

@@ -30,7 +30,6 @@
         {
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
-            label1 = new Label();
             txtNombre = new TextBox();
             label2 = new Label();
             txtApellido = new TextBox();
@@ -39,17 +38,20 @@
             label4 = new Label();
             txtPass = new TextBox();
             dataGridView1 = new DataGridView();
-            btnRegistrar = new Button();
             label5 = new Label();
-            btnCancelar = new Button();
             label6 = new Label();
-            button3 = new Button();
+            btnIMG = new Button();
             btnIMGPerfil = new Label();
             btnEditar = new Button();
             label7 = new Label();
             label8 = new Label();
             textBox1 = new TextBox();
             pictureBox2 = new PictureBox();
+            btnCancelar = new Button();
+            btnEliminar = new Button();
+            label9 = new Label();
+            label10 = new Label();
+            btnAgregar = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -62,32 +64,22 @@
             panel1.Controls.Add(pictureBox1);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(817, 116);
+            panel1.Size = new Size(664, 116);
             panel1.TabIndex = 22;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.logoHotel;
-            pictureBox1.Location = new Point(192, -16);
+            pictureBox1.Location = new Point(255, -16);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(133, 132);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 19;
             pictureBox1.TabStop = false;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(94, 132);
-            label1.Name = "label1";
-            label1.Size = new Size(77, 21);
-            label1.TabIndex = 24;
-            label1.Text = "Nombre:";
-            // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(36, 154);
+            txtNombre.Location = new Point(88, 154);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(207, 23);
             txtNombre.TabIndex = 25;
@@ -96,7 +88,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(95, 184);
+            label2.Location = new Point(150, 184);
             label2.Name = "label2";
             label2.Size = new Size(79, 21);
             label2.TabIndex = 26;
@@ -104,7 +96,7 @@
             // 
             // txtApellido
             // 
-            txtApellido.Location = new Point(36, 207);
+            txtApellido.Location = new Point(88, 207);
             txtApellido.Name = "txtApellido";
             txtApellido.Size = new Size(207, 23);
             txtApellido.TabIndex = 27;
@@ -113,7 +105,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(56, 241);
+            label3.Location = new Point(108, 241);
             label3.Name = "label3";
             label3.Size = new Size(164, 21);
             label3.TabIndex = 28;
@@ -121,7 +113,7 @@
             // 
             // txtUserName
             // 
-            txtUserName.Location = new Point(36, 262);
+            txtUserName.Location = new Point(88, 263);
             txtUserName.Name = "txtUserName";
             txtUserName.Size = new Size(207, 23);
             txtUserName.TabIndex = 29;
@@ -130,7 +122,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(81, 295);
+            label4.Location = new Point(137, 296);
             label4.Name = "label4";
             label4.Size = new Size(103, 21);
             label4.TabIndex = 30;
@@ -138,7 +130,7 @@
             // 
             // txtPass
             // 
-            txtPass.Location = new Point(36, 317);
+            txtPass.Location = new Point(88, 317);
             txtPass.Name = "txtPass";
             txtPass.Size = new Size(207, 23);
             txtPass.TabIndex = 31;
@@ -149,19 +141,8 @@
             dataGridView1.Location = new Point(0, 548);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(539, 164);
+            dataGridView1.Size = new Size(664, 164);
             dataGridView1.TabIndex = 32;
-            // 
-            // btnRegistrar
-            // 
-            btnRegistrar.BackColor = Color.DeepSkyBlue;
-            btnRegistrar.FlatStyle = FlatStyle.Popup;
-            btnRegistrar.Image = Properties.Resources.registrar;
-            btnRegistrar.Location = new Point(43, 438);
-            btnRegistrar.Name = "btnRegistrar";
-            btnRegistrar.Size = new Size(71, 71);
-            btnRegistrar.TabIndex = 33;
-            btnRegistrar.UseVisualStyleBackColor = false;
             // 
             // label5
             // 
@@ -173,18 +154,6 @@
             label5.TabIndex = 34;
             label5.Text = "Registrar";
             // 
-            // btnCancelar
-            // 
-            btnCancelar.BackColor = Color.Black;
-            btnCancelar.FlatStyle = FlatStyle.Popup;
-            btnCancelar.Image = Properties.Resources.cancelar;
-            btnCancelar.Location = new Point(165, 438);
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(71, 71);
-            btnCancelar.TabIndex = 35;
-            btnCancelar.UseVisualStyleBackColor = false;
-            btnCancelar.Click += btnCancelar_Click;
-            // 
             // label6
             // 
             label6.AutoSize = true;
@@ -195,17 +164,17 @@
             label6.TabIndex = 36;
             label6.Text = "Cancelar";
             // 
-            // button3
+            // btnIMG
             // 
-            button3.BackColor = Color.PaleGreen;
-            button3.FlatStyle = FlatStyle.Popup;
-            button3.Image = Properties.Resources.img;
-            button3.Location = new Point(292, 439);
-            button3.Name = "button3";
-            button3.Size = new Size(71, 71);
-            button3.TabIndex = 37;
-            button3.UseVisualStyleBackColor = false;
-            button3.Click += button3_Click;
+            btnIMG.BackColor = Color.PaleGreen;
+            btnIMG.FlatStyle = FlatStyle.Popup;
+            btnIMG.Image = Properties.Resources.img;
+            btnIMG.Location = new Point(292, 439);
+            btnIMG.Name = "btnIMG";
+            btnIMG.Size = new Size(71, 71);
+            btnIMG.TabIndex = 37;
+            btnIMG.UseVisualStyleBackColor = false;
+            btnIMG.Click += button3_Click;
             // 
             // btnIMGPerfil
             // 
@@ -220,12 +189,12 @@
             // 
             // btnEditar
             // 
-            btnEditar.BackColor = Color.PowderBlue;
+            btnEditar.BackColor = Color.PaleGreen;
             btnEditar.FlatStyle = FlatStyle.Popup;
             btnEditar.Image = Properties.Resources.editar;
             btnEditar.Location = new Point(421, 439);
             btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(72, 72);
+            btnEditar.Size = new Size(71, 71);
             btnEditar.TabIndex = 39;
             btnEditar.UseVisualStyleBackColor = false;
             // 
@@ -244,7 +213,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.Location = new Point(77, 353);
+            label8.Location = new Point(130, 353);
             label8.Name = "label8";
             label8.Size = new Size(121, 21);
             label8.TabIndex = 41;
@@ -252,39 +221,95 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(36, 375);
+            textBox1.Location = new Point(88, 375);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(207, 23);
             textBox1.TabIndex = 42;
             // 
             // pictureBox2
             // 
-            pictureBox2.BackColor = Color.DarkTurquoise;
+            pictureBox2.BackColor = Color.LightGreen;
             pictureBox2.Image = Properties.Resources.img1;
-            pictureBox2.Location = new Point(303, 173);
+            pictureBox2.Location = new Point(364, 173);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(200, 200);
             pictureBox2.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox2.TabIndex = 43;
             pictureBox2.TabStop = false;
             // 
+            // btnCancelar
+            // 
+            btnCancelar.BackColor = Color.PaleGreen;
+            btnCancelar.FlatStyle = FlatStyle.Popup;
+            btnCancelar.Image = Properties.Resources.cancel1_77976;
+            btnCancelar.Location = new Point(167, 440);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(71, 71);
+            btnCancelar.TabIndex = 44;
+            btnCancelar.UseVisualStyleBackColor = false;
+            // 
+            // btnEliminar
+            // 
+            btnEliminar.BackColor = Color.PaleGreen;
+            btnEliminar.FlatStyle = FlatStyle.Popup;
+            btnEliminar.Image = Properties.Resources.eliminar;
+            btnEliminar.Location = new Point(542, 439);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(71, 71);
+            btnEliminar.TabIndex = 45;
+            btnEliminar.UseVisualStyleBackColor = false;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Yu Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label9.Location = new Point(548, 511);
+            label9.Name = "label9";
+            label9.Size = new Size(61, 17);
+            label9.TabIndex = 46;
+            label9.Text = "Eliminar";
+            label9.UseWaitCursor = true;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label10.Location = new Point(151, 132);
+            label10.Name = "label10";
+            label10.Size = new Size(77, 21);
+            label10.TabIndex = 24;
+            label10.Text = "Nombre:";
+            // 
+            // btnAgregar
+            // 
+            btnAgregar.BackColor = Color.PaleGreen;
+            btnAgregar.FlatStyle = FlatStyle.Popup;
+            btnAgregar.Image = Properties.Resources.agregar;
+            btnAgregar.Location = new Point(42, 440);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(71, 71);
+            btnAgregar.TabIndex = 47;
+            btnAgregar.UseVisualStyleBackColor = false;
+            // 
             // registroUsuario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.YellowGreen;
-            ClientSize = new Size(540, 700);
+            BackColor = Color.LightGreen;
+            ClientSize = new Size(660, 700);
+            Controls.Add(btnAgregar);
+            Controls.Add(label9);
+            Controls.Add(btnEliminar);
+            Controls.Add(btnCancelar);
             Controls.Add(pictureBox2);
             Controls.Add(textBox1);
             Controls.Add(label8);
             Controls.Add(label7);
             Controls.Add(btnEditar);
             Controls.Add(btnIMGPerfil);
-            Controls.Add(button3);
+            Controls.Add(btnIMG);
             Controls.Add(label6);
-            Controls.Add(btnCancelar);
             Controls.Add(label5);
-            Controls.Add(btnRegistrar);
             Controls.Add(dataGridView1);
             Controls.Add(txtPass);
             Controls.Add(label4);
@@ -293,7 +318,7 @@
             Controls.Add(txtApellido);
             Controls.Add(label2);
             Controls.Add(txtNombre);
-            Controls.Add(label1);
+            Controls.Add(label10);
             Controls.Add(panel1);
             Name = "registroUsuario";
             Text = "Registro de Usuario";
@@ -309,7 +334,6 @@
 
         private Panel panel1;
         private PictureBox pictureBox1;
-        private Label label1;
         private TextBox txtNombre;
         private Label label2;
         private TextBox txtApellido;
@@ -318,16 +342,19 @@
         private Label label4;
         private TextBox txtPass;
         private DataGridView dataGridView1;
-        private Button btnRegistrar;
         private Label label5;
-        private Button btnCancelar;
         private Label label6;
-        private Button button3;
+        private Button btnIMG;
         private Label btnIMGPerfil;
         private Button btnEditar;
         private Label label7;
         private Label label8;
         private TextBox textBox1;
         private PictureBox pictureBox2;
+        private Button btnCancelar;
+        private Button btnEliminar;
+        private Label label9;
+        private Label label10;
+        private Button btnAgregar;
     }
 }

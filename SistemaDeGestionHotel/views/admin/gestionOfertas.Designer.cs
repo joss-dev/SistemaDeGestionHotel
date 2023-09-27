@@ -44,15 +44,15 @@
             label7 = new Label();
             textBox1 = new TextBox();
             label8 = new Label();
-            btnRegistrar = new FontAwesome.Sharp.IconButton();
-            label11 = new Label();
-            btnEditar = new FontAwesome.Sharp.IconButton();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
-            label10 = new Label();
-            label9 = new Label();
             dataGridView2 = new DataGridView();
             label12 = new Label();
             comboBoxEstado = new ComboBox();
+            btnEditar = new Button();
+            btnEliminar = new FontAwesome.Sharp.IconButton();
+            btnRegistrar = new FontAwesome.Sharp.IconButton();
+            label9 = new Label();
+            label10 = new Label();
+            label11 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
@@ -203,82 +203,6 @@
             label8.TabIndex = 35;
             label8.Text = "Vigencia:";
             // 
-            // btnRegistrar
-            // 
-            btnRegistrar.BackColor = Color.LimeGreen;
-            btnRegistrar.FlatAppearance.BorderColor = Color.White;
-            btnRegistrar.FlatAppearance.BorderSize = 0;
-            btnRegistrar.FlatStyle = FlatStyle.Popup;
-            btnRegistrar.IconChar = FontAwesome.Sharp.IconChar.Registered;
-            btnRegistrar.IconColor = Color.Black;
-            btnRegistrar.IconFont = FontAwesome.Sharp.IconFont.Regular;
-            btnRegistrar.Location = new Point(494, 378);
-            btnRegistrar.Name = "btnRegistrar";
-            btnRegistrar.Size = new Size(56, 50);
-            btnRegistrar.TabIndex = 36;
-            btnRegistrar.UseVisualStyleBackColor = false;
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Yu Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label11.Location = new Point(489, 430);
-            label11.Name = "label11";
-            label11.Size = new Size(67, 17);
-            label11.TabIndex = 37;
-            label11.Text = "Registrar";
-            // 
-            // btnEditar
-            // 
-            btnEditar.BackColor = Color.FromArgb(255, 128, 0);
-            btnEditar.BackgroundImageLayout = ImageLayout.Center;
-            btnEditar.FlatAppearance.BorderSize = 0;
-            btnEditar.FlatStyle = FlatStyle.Popup;
-            btnEditar.IconChar = FontAwesome.Sharp.IconChar.Pen;
-            btnEditar.IconColor = Color.Black;
-            btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnEditar.IconSize = 36;
-            btnEditar.Location = new Point(559, 378);
-            btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(55, 50);
-            btnEditar.TabIndex = 38;
-            btnEditar.UseVisualStyleBackColor = false;
-            // 
-            // iconButton1
-            // 
-            iconButton1.BackColor = Color.Red;
-            iconButton1.FlatStyle = FlatStyle.Flat;
-            iconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Horizontal;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
-            iconButton1.IconColor = Color.Black;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.IconSize = 36;
-            iconButton1.Location = new Point(622, 378);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(55, 50);
-            iconButton1.TabIndex = 39;
-            iconButton1.UseVisualStyleBackColor = false;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Yu Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label10.Location = new Point(565, 430);
-            label10.Name = "label10";
-            label10.Size = new Size(46, 17);
-            label10.TabIndex = 40;
-            label10.Text = "Editar";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Yu Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label9.Location = new Point(619, 430);
-            label9.Name = "label9";
-            label9.Size = new Size(61, 17);
-            label9.TabIndex = 41;
-            label9.Text = "Eliminar";
-            // 
             // dataGridView2
             // 
             dataGridView2.BackgroundColor = Color.MediumSeaGreen;
@@ -308,21 +232,92 @@
             comboBoxEstado.TabIndex = 44;
             comboBoxEstado.SelectedIndexChanged += comboBoxEstado_SelectedIndexChanged;
             // 
+            // btnEditar
+            // 
+            btnEditar.BackColor = Color.LightSalmon;
+            btnEditar.FlatStyle = FlatStyle.Popup;
+            btnEditar.Image = Properties.Resources.edit11;
+            btnEditar.Location = new Point(519, 363);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(54, 50);
+            btnEditar.TabIndex = 47;
+            btnEditar.UseVisualStyleBackColor = false;
+            // 
+            // btnEliminar
+            // 
+            btnEliminar.BackColor = Color.LightCoral;
+            btnEliminar.FlatStyle = FlatStyle.Flat;
+            btnEliminar.Flip = FontAwesome.Sharp.FlipOrientation.Horizontal;
+            btnEliminar.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            btnEliminar.IconColor = Color.Black;
+            btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnEliminar.IconSize = 36;
+            btnEliminar.Location = new Point(587, 363);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(54, 50);
+            btnEliminar.TabIndex = 46;
+            btnEliminar.UseVisualStyleBackColor = false;
+            // 
+            // btnRegistrar
+            // 
+            btnRegistrar.BackColor = Color.SpringGreen;
+            btnRegistrar.FlatAppearance.BorderColor = Color.White;
+            btnRegistrar.FlatAppearance.BorderSize = 0;
+            btnRegistrar.FlatStyle = FlatStyle.Popup;
+            btnRegistrar.IconChar = FontAwesome.Sharp.IconChar.Registered;
+            btnRegistrar.IconColor = Color.Black;
+            btnRegistrar.IconFont = FontAwesome.Sharp.IconFont.Regular;
+            btnRegistrar.Location = new Point(447, 363);
+            btnRegistrar.Name = "btnRegistrar";
+            btnRegistrar.Size = new Size(55, 50);
+            btnRegistrar.TabIndex = 45;
+            btnRegistrar.UseVisualStyleBackColor = false;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Yu Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label9.Location = new Point(584, 416);
+            label9.Name = "label9";
+            label9.Size = new Size(61, 17);
+            label9.TabIndex = 52;
+            label9.Text = "Eliminar";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Yu Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label10.Location = new Point(525, 416);
+            label10.Name = "label10";
+            label10.Size = new Size(46, 17);
+            label10.TabIndex = 51;
+            label10.Text = "Editar";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Yu Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label11.Location = new Point(442, 416);
+            label11.Name = "label11";
+            label11.Size = new Size(67, 17);
+            label11.TabIndex = 50;
+            label11.Text = "Registrar";
+            // 
             // gestionOfertas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.YellowGreen;
+            BackColor = Color.LightGreen;
             ClientSize = new Size(744, 613);
+            Controls.Add(label9);
+            Controls.Add(label10);
+            Controls.Add(label11);
+            Controls.Add(btnEditar);
+            Controls.Add(btnEliminar);
+            Controls.Add(btnRegistrar);
             Controls.Add(comboBoxEstado);
             Controls.Add(label12);
             Controls.Add(dataGridView2);
-            Controls.Add(label9);
-            Controls.Add(label10);
-            Controls.Add(iconButton1);
-            Controls.Add(btnEditar);
-            Controls.Add(label11);
-            Controls.Add(btnRegistrar);
             Controls.Add(label8);
             Controls.Add(textBox1);
             Controls.Add(label7);
@@ -365,14 +360,14 @@
         private Label label7;
         private TextBox textBox1;
         private Label label8;
-        private FontAwesome.Sharp.IconButton btnRegistrar;
-        private Label label11;
-        private FontAwesome.Sharp.IconButton btnEditar;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private Label label10;
-        private Label label9;
         private DataGridView dataGridView2;
         private Label label12;
         private ComboBox comboBoxEstado;
+        private Button btnEditar;
+        private FontAwesome.Sharp.IconButton btnEliminar;
+        private FontAwesome.Sharp.IconButton btnRegistrar;
+        private Label label9;
+        private Label label10;
+        private Label label11;
     }
 }

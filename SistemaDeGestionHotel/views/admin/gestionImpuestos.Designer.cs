@@ -38,8 +38,7 @@
             txtAlicuota = new TextBox();
             btnRegistrar = new FontAwesome.Sharp.IconButton();
             label1 = new Label();
-            btnEditar = new FontAwesome.Sharp.IconButton();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
+            btnEliminar = new FontAwesome.Sharp.IconButton();
             label6 = new Label();
             label7 = new Label();
             dataGridView1 = new DataGridView();
@@ -50,6 +49,7 @@
             dateTimeInicio = new DateTimePicker();
             comboBoxTipoImp = new ComboBox();
             comboBoxEstado = new ComboBox();
+            btnEditar = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
@@ -135,14 +135,14 @@
             // 
             // btnRegistrar
             // 
-            btnRegistrar.BackColor = Color.LimeGreen;
+            btnRegistrar.BackColor = Color.SpringGreen;
             btnRegistrar.FlatAppearance.BorderColor = Color.White;
             btnRegistrar.FlatAppearance.BorderSize = 0;
             btnRegistrar.FlatStyle = FlatStyle.Popup;
             btnRegistrar.IconChar = FontAwesome.Sharp.IconChar.Registered;
             btnRegistrar.IconColor = Color.Black;
             btnRegistrar.IconFont = FontAwesome.Sharp.IconFont.Regular;
-            btnRegistrar.Location = new Point(467, 315);
+            btnRegistrar.Location = new Point(467, 322);
             btnRegistrar.Name = "btnRegistrar";
             btnRegistrar.Size = new Size(56, 50);
             btnRegistrar.TabIndex = 12;
@@ -152,48 +152,32 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Yu Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(462, 369);
+            label1.Location = new Point(462, 376);
             label1.Name = "label1";
             label1.Size = new Size(67, 17);
             label1.TabIndex = 13;
             label1.Text = "Registrar";
             // 
-            // btnEditar
+            // btnEliminar
             // 
-            btnEditar.BackColor = Color.Peru;
-            btnEditar.BackgroundImageLayout = ImageLayout.Center;
-            btnEditar.FlatAppearance.BorderSize = 0;
-            btnEditar.FlatStyle = FlatStyle.Popup;
-            btnEditar.IconChar = FontAwesome.Sharp.IconChar.Pen;
-            btnEditar.IconColor = Color.Black;
-            btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnEditar.IconSize = 36;
-            btnEditar.Location = new Point(538, 315);
-            btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(55, 50);
-            btnEditar.TabIndex = 14;
-            btnEditar.UseVisualStyleBackColor = false;
-            // 
-            // iconButton1
-            // 
-            iconButton1.BackColor = Color.Red;
-            iconButton1.FlatStyle = FlatStyle.Flat;
-            iconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Horizontal;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
-            iconButton1.IconColor = Color.Black;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.IconSize = 36;
-            iconButton1.Location = new Point(607, 315);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(55, 50);
-            iconButton1.TabIndex = 15;
-            iconButton1.UseVisualStyleBackColor = false;
+            btnEliminar.BackColor = Color.LightCoral;
+            btnEliminar.FlatStyle = FlatStyle.Flat;
+            btnEliminar.Flip = FontAwesome.Sharp.FlipOrientation.Horizontal;
+            btnEliminar.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            btnEliminar.IconColor = Color.Black;
+            btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnEliminar.IconSize = 36;
+            btnEliminar.Location = new Point(607, 322);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(55, 50);
+            btnEliminar.TabIndex = 15;
+            btnEliminar.UseVisualStyleBackColor = false;
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Yu Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(543, 368);
+            label6.Location = new Point(545, 375);
             label6.Name = "label6";
             label6.Size = new Size(46, 17);
             label6.TabIndex = 16;
@@ -203,7 +187,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Yu Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(604, 368);
+            label7.Location = new Point(605, 375);
             label7.Name = "label7";
             label7.Size = new Size(61, 17);
             label7.TabIndex = 17;
@@ -213,10 +197,10 @@
             // 
             dataGridView1.BackgroundColor = Color.MediumSeaGreen;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(-3, 397);
+            dataGridView1.Location = new Point(-3, 411);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(767, 152);
+            dataGridView1.Size = new Size(767, 138);
             dataGridView1.TabIndex = 18;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -282,12 +266,24 @@
             comboBoxEstado.Size = new Size(121, 23);
             comboBoxEstado.TabIndex = 30;
             // 
+            // btnEditar
+            // 
+            btnEditar.BackColor = Color.LightSalmon;
+            btnEditar.FlatStyle = FlatStyle.Popup;
+            btnEditar.Image = Properties.Resources.edit11;
+            btnEditar.Location = new Point(539, 322);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(55, 50);
+            btnEditar.TabIndex = 31;
+            btnEditar.UseVisualStyleBackColor = false;
+            // 
             // gestionImpuestos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.YellowGreen;
+            BackColor = Color.LightGreen;
             ClientSize = new Size(757, 547);
+            Controls.Add(btnEditar);
             Controls.Add(comboBoxEstado);
             Controls.Add(comboBoxTipoImp);
             Controls.Add(dateTimeInicio);
@@ -297,8 +293,7 @@
             Controls.Add(dataGridView1);
             Controls.Add(label7);
             Controls.Add(label6);
-            Controls.Add(iconButton1);
-            Controls.Add(btnEditar);
+            Controls.Add(btnEliminar);
             Controls.Add(label1);
             Controls.Add(btnRegistrar);
             Controls.Add(txtAlicuota);
@@ -332,8 +327,7 @@
         private TextBox txtAlicuota;
         private FontAwesome.Sharp.IconButton btnRegistrar;
         private Label label1;
-        private FontAwesome.Sharp.IconButton btnEditar;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton btnEliminar;
         private Label label6;
         private Label label7;
         private DataGridView dataGridView1;
@@ -344,5 +338,6 @@
         private DateTimePicker dateTimeInicio;
         private ComboBox comboBoxTipoImp;
         private ComboBox comboBoxEstado;
+        private Button btnEditar;
     }
 }

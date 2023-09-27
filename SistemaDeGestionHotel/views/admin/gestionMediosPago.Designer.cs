@@ -42,9 +42,9 @@
             dataGridView2 = new DataGridView();
             label9 = new Label();
             label10 = new Label();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
-            btnEditar = new FontAwesome.Sharp.IconButton();
             label11 = new Label();
+            btnEditar = new Button();
+            btnEliminar = new FontAwesome.Sharp.IconButton();
             btnRegistrar = new FontAwesome.Sharp.IconButton();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -165,7 +165,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Yu Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label9.Location = new Point(473, 357);
+            label9.Location = new Point(485, 357);
             label9.Name = "label9";
             label9.Size = new Size(61, 17);
             label9.TabIndex = 49;
@@ -175,42 +175,11 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Yu Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label10.Location = new Point(419, 357);
+            label10.Location = new Point(425, 357);
             label10.Name = "label10";
             label10.Size = new Size(46, 17);
             label10.TabIndex = 48;
             label10.Text = "Editar";
-            // 
-            // iconButton1
-            // 
-            iconButton1.BackColor = Color.Red;
-            iconButton1.FlatStyle = FlatStyle.Flat;
-            iconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Horizontal;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
-            iconButton1.IconColor = Color.Black;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.IconSize = 36;
-            iconButton1.Location = new Point(476, 305);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(55, 50);
-            iconButton1.TabIndex = 47;
-            iconButton1.UseVisualStyleBackColor = false;
-            // 
-            // btnEditar
-            // 
-            btnEditar.BackColor = Color.FromArgb(255, 128, 0);
-            btnEditar.BackgroundImageLayout = ImageLayout.Center;
-            btnEditar.FlatAppearance.BorderSize = 0;
-            btnEditar.FlatStyle = FlatStyle.Popup;
-            btnEditar.IconChar = FontAwesome.Sharp.IconChar.Pen;
-            btnEditar.IconColor = Color.Black;
-            btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnEditar.IconSize = 36;
-            btnEditar.Location = new Point(413, 305);
-            btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(55, 50);
-            btnEditar.TabIndex = 46;
-            btnEditar.UseVisualStyleBackColor = false;
             // 
             // label11
             // 
@@ -222,33 +191,59 @@
             label11.TabIndex = 45;
             label11.Text = "Registrar";
             // 
+            // btnEditar
+            // 
+            btnEditar.BackColor = Color.LightSalmon;
+            btnEditar.FlatStyle = FlatStyle.Popup;
+            btnEditar.Image = Properties.Resources.edit11;
+            btnEditar.Location = new Point(419, 305);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(55, 50);
+            btnEditar.TabIndex = 52;
+            btnEditar.UseVisualStyleBackColor = false;
+            // 
+            // btnEliminar
+            // 
+            btnEliminar.BackColor = Color.LightCoral;
+            btnEliminar.FlatStyle = FlatStyle.Flat;
+            btnEliminar.Flip = FontAwesome.Sharp.FlipOrientation.Horizontal;
+            btnEliminar.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            btnEliminar.IconColor = Color.Black;
+            btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnEliminar.IconSize = 36;
+            btnEliminar.Location = new Point(487, 305);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(55, 50);
+            btnEliminar.TabIndex = 51;
+            btnEliminar.UseVisualStyleBackColor = false;
+            // 
             // btnRegistrar
             // 
-            btnRegistrar.BackColor = Color.LimeGreen;
+            btnRegistrar.BackColor = Color.SpringGreen;
             btnRegistrar.FlatAppearance.BorderColor = Color.White;
             btnRegistrar.FlatAppearance.BorderSize = 0;
             btnRegistrar.FlatStyle = FlatStyle.Popup;
             btnRegistrar.IconChar = FontAwesome.Sharp.IconChar.Registered;
             btnRegistrar.IconColor = Color.Black;
             btnRegistrar.IconFont = FontAwesome.Sharp.IconFont.Regular;
-            btnRegistrar.Location = new Point(348, 305);
+            btnRegistrar.Location = new Point(347, 305);
             btnRegistrar.Name = "btnRegistrar";
             btnRegistrar.Size = new Size(56, 50);
-            btnRegistrar.TabIndex = 44;
+            btnRegistrar.TabIndex = 50;
             btnRegistrar.UseVisualStyleBackColor = false;
             // 
             // gestionMediosPago
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.YellowGreen;
+            BackColor = Color.LightGreen;
             ClientSize = new Size(598, 542);
+            Controls.Add(btnEditar);
+            Controls.Add(btnEliminar);
+            Controls.Add(btnRegistrar);
             Controls.Add(label9);
             Controls.Add(label10);
-            Controls.Add(iconButton1);
-            Controls.Add(btnEditar);
             Controls.Add(label11);
-            Controls.Add(btnRegistrar);
             Controls.Add(dataGridView2);
             Controls.Add(txtBuscarMP);
             Controls.Add(label5);
@@ -285,9 +280,9 @@
         private DataGridView dataGridView2;
         private Label label9;
         private Label label10;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private FontAwesome.Sharp.IconButton btnEditar;
         private Label label11;
+        private Button btnEditar;
+        private FontAwesome.Sharp.IconButton btnEliminar;
         private FontAwesome.Sharp.IconButton btnRegistrar;
     }
 }

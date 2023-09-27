@@ -55,7 +55,7 @@
             // 
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             pictureBox1.Image = Properties.Resources.logoHotel;
-            pictureBox1.Location = new Point(276, -16);
+            pictureBox1.Location = new Point(228, -16);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(307, 132);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -65,23 +65,22 @@
             // btnMP
             // 
             btnMP.Anchor = AnchorStyles.None;
-            btnMP.BackColor = Color.ForestGreen;
+            btnMP.BackColor = Color.LimeGreen;
             btnMP.FlatAppearance.BorderColor = Color.Black;
             btnMP.FlatStyle = FlatStyle.Popup;
             btnMP.Image = Properties.Resources.medios_de_pago;
-            btnMP.Location = new Point(157, 286);
+            btnMP.Location = new Point(148, 286);
             btnMP.Name = "btnMP";
             btnMP.Size = new Size(111, 77);
             btnMP.TabIndex = 23;
             btnMP.UseVisualStyleBackColor = false;
-            btnMP.Click += button1_Click;
             // 
             // label1
             // 
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(148, 371);
+            label1.Location = new Point(139, 371);
             label1.Name = "label1";
             label1.Size = new Size(134, 21);
             label1.TabIndex = 24;
@@ -93,7 +92,7 @@
             btnImp.BackColor = Color.LightCoral;
             btnImp.FlatStyle = FlatStyle.Popup;
             btnImp.Image = Properties.Resources.Impuestos1;
-            btnImp.Location = new Point(357, 286);
+            btnImp.Location = new Point(348, 286);
             btnImp.Name = "btnImp";
             btnImp.Size = new Size(111, 77);
             btnImp.TabIndex = 25;
@@ -104,7 +103,7 @@
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(370, 371);
+            label2.Location = new Point(361, 371);
             label2.Name = "label2";
             label2.Size = new Size(92, 21);
             label2.TabIndex = 26;
@@ -116,7 +115,7 @@
             btnOR.BackColor = Color.DarkTurquoise;
             btnOR.FlatStyle = FlatStyle.Popup;
             btnOR.Image = Properties.Resources.Recargos;
-            btnOR.Location = new Point(548, 286);
+            btnOR.Location = new Point(539, 286);
             btnOR.Name = "btnOR";
             btnOR.Size = new Size(111, 77);
             btnOR.TabIndex = 27;
@@ -127,7 +126,7 @@
             label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
             label3.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(529, 371);
+            label3.Location = new Point(520, 371);
             label3.Name = "label3";
             label3.Size = new Size(155, 21);
             label3.TabIndex = 28;
@@ -137,7 +136,7 @@
             // 
             label4.Anchor = AnchorStyles.None;
             label4.Font = new Font("Yu Gothic", 27.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(132, 159);
+            label4.Location = new Point(114, 171);
             label4.Name = "label4";
             label4.Size = new Size(572, 54);
             label4.TabIndex = 29;
@@ -147,7 +146,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.YellowGreen;
+            BackColor = Color.LightGreen;
             ClientSize = new Size(798, 488);
             Controls.Add(label4);
             Controls.Add(label3);

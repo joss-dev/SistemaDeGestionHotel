@@ -152,7 +152,7 @@
             // 
             // btnEditar
             // 
-            btnEditar.BackColor = Color.PowderBlue;
+            btnEditar.BackColor = Color.LightGreen;
             btnEditar.FlatStyle = FlatStyle.Popup;
             btnEditar.Image = Properties.Resources.editar;
             btnEditar.Location = new Point(341, 402);
@@ -173,7 +173,7 @@
             // 
             // btnCancelar
             // 
-            btnCancelar.BackColor = Color.Black;
+            btnCancelar.BackColor = Color.LightGreen;
             btnCancelar.FlatStyle = FlatStyle.Popup;
             btnCancelar.Image = Properties.Resources.cancelar;
             btnCancelar.Location = new Point(221, 402);
@@ -194,7 +194,7 @@
             // 
             // btnRegistrar
             // 
-            btnRegistrar.BackColor = Color.DeepSkyBlue;
+            btnRegistrar.BackColor = Color.LightGreen;
             btnRegistrar.FlatStyle = FlatStyle.Popup;
             btnRegistrar.Image = Properties.Resources.registrar;
             btnRegistrar.Location = new Point(99, 402);
@@ -226,7 +226,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.YellowGreen;
+            BackColor = Color.LightGreen;
             ClientSize = new Size(507, 657);
             Controls.Add(dataGridView1);
             Controls.Add(pictureBoxSsAdic);
@@ -245,7 +245,7 @@
             Controls.Add(txtNombSs);
             Controls.Add(label1);
             Controls.Add(panel1);
-            FormBorderStyle = FormBorderStyle.Fixed3D;
+            FormBorderStyle = FormBorderStyle.None;
             Name = "registrarSsAdicionales";
             Text = "Registro de Servicios  Adicionales";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

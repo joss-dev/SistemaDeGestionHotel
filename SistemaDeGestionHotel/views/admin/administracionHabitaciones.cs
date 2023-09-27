@@ -10,16 +10,13 @@ using System.Windows.Forms;
 
 namespace SistemaDeGestionHotel.views.admin
 {
-    public partial class registroUsuario : Form
+    public partial class administracionHabitaciones : Form
     {
-        public registroUsuario()
+        public administracionHabitaciones()
         {
             InitializeComponent();
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
+     
     }
 }
