@@ -39,15 +39,17 @@
             button8 = new Button();
             button7 = new Button();
             label1 = new Label();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            button5 = new Button();
-            button6 = new Button();
+            btnFiltroPiso1 = new Button();
+            btnFiltroPiso2 = new Button();
+            btnFiltroPiso3 = new Button();
+            btnFiltroOcupado = new Button();
+            btnFiltroLibre = new Button();
+            btnFiltroReservado = new Button();
             btnBuscar = new Button();
             LDni = new Label();
             TNumHabitacion = new TextBox();
+            btnFiltroSimple = new Button();
+            btnFiltroDoble = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -189,80 +191,80 @@
             label1.TabIndex = 1;
             label1.Text = "Gestion Habitaciones ";
             // 
-            // button1
+            // btnFiltroPiso1
             // 
-            button1.BackColor = Color.LightCyan;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Yu Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(15, 120);
-            button1.Name = "button1";
-            button1.Size = new Size(95, 33);
-            button1.TabIndex = 2;
-            button1.Text = "Piso 1";
-            button1.UseVisualStyleBackColor = false;
+            btnFiltroPiso1.BackColor = Color.LightCyan;
+            btnFiltroPiso1.FlatStyle = FlatStyle.Flat;
+            btnFiltroPiso1.Font = new Font("Yu Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnFiltroPiso1.Location = new Point(15, 120);
+            btnFiltroPiso1.Name = "btnFiltroPiso1";
+            btnFiltroPiso1.Size = new Size(95, 33);
+            btnFiltroPiso1.TabIndex = 2;
+            btnFiltroPiso1.Text = "Piso 1";
+            btnFiltroPiso1.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnFiltroPiso2
             // 
-            button2.BackColor = Color.LightCyan;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Yu Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.Location = new Point(126, 120);
-            button2.Name = "button2";
-            button2.Size = new Size(95, 33);
-            button2.TabIndex = 3;
-            button2.Text = "Piso 2";
-            button2.UseVisualStyleBackColor = false;
+            btnFiltroPiso2.BackColor = Color.LightCyan;
+            btnFiltroPiso2.FlatStyle = FlatStyle.Flat;
+            btnFiltroPiso2.Font = new Font("Yu Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnFiltroPiso2.Location = new Point(126, 120);
+            btnFiltroPiso2.Name = "btnFiltroPiso2";
+            btnFiltroPiso2.Size = new Size(95, 33);
+            btnFiltroPiso2.TabIndex = 3;
+            btnFiltroPiso2.Text = "Piso 2";
+            btnFiltroPiso2.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnFiltroPiso3
             // 
-            button3.BackColor = Color.LightCyan;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Yu Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.Location = new Point(236, 120);
-            button3.Name = "button3";
-            button3.Size = new Size(95, 33);
-            button3.TabIndex = 4;
-            button3.Text = "Piso 3";
-            button3.UseVisualStyleBackColor = false;
+            btnFiltroPiso3.BackColor = Color.LightCyan;
+            btnFiltroPiso3.FlatStyle = FlatStyle.Flat;
+            btnFiltroPiso3.Font = new Font("Yu Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnFiltroPiso3.Location = new Point(236, 120);
+            btnFiltroPiso3.Name = "btnFiltroPiso3";
+            btnFiltroPiso3.Size = new Size(95, 33);
+            btnFiltroPiso3.TabIndex = 4;
+            btnFiltroPiso3.Text = "Piso 3";
+            btnFiltroPiso3.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // btnFiltroOcupado
             // 
-            button4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button4.BackColor = Color.Red;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Yu Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button4.Location = new Point(663, 120);
-            button4.Name = "button4";
-            button4.Size = new Size(95, 33);
-            button4.TabIndex = 5;
-            button4.Text = "Ocupado";
-            button4.UseVisualStyleBackColor = false;
+            btnFiltroOcupado.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnFiltroOcupado.BackColor = Color.Red;
+            btnFiltroOcupado.FlatStyle = FlatStyle.Flat;
+            btnFiltroOcupado.Font = new Font("Yu Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnFiltroOcupado.Location = new Point(663, 120);
+            btnFiltroOcupado.Name = "btnFiltroOcupado";
+            btnFiltroOcupado.Size = new Size(95, 33);
+            btnFiltroOcupado.TabIndex = 5;
+            btnFiltroOcupado.Text = "Ocupado";
+            btnFiltroOcupado.UseVisualStyleBackColor = false;
             // 
-            // button5
+            // btnFiltroLibre
             // 
-            button5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button5.BackColor = Color.MediumSpringGreen;
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Yu Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button5.Location = new Point(775, 120);
-            button5.Name = "button5";
-            button5.Size = new Size(95, 33);
-            button5.TabIndex = 6;
-            button5.Text = "Libre";
-            button5.UseVisualStyleBackColor = false;
+            btnFiltroLibre.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnFiltroLibre.BackColor = Color.MediumSpringGreen;
+            btnFiltroLibre.FlatStyle = FlatStyle.Flat;
+            btnFiltroLibre.Font = new Font("Yu Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnFiltroLibre.Location = new Point(764, 120);
+            btnFiltroLibre.Name = "btnFiltroLibre";
+            btnFiltroLibre.Size = new Size(95, 33);
+            btnFiltroLibre.TabIndex = 6;
+            btnFiltroLibre.Text = "Libre";
+            btnFiltroLibre.UseVisualStyleBackColor = false;
             // 
-            // button6
+            // btnFiltroReservado
             // 
-            button6.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button6.BackColor = Color.SandyBrown;
-            button6.FlatStyle = FlatStyle.Flat;
-            button6.Font = new Font("Yu Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button6.Location = new Point(548, 120);
-            button6.Name = "button6";
-            button6.Size = new Size(95, 33);
-            button6.TabIndex = 7;
-            button6.Text = "Reservado";
-            button6.UseVisualStyleBackColor = false;
+            btnFiltroReservado.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnFiltroReservado.BackColor = Color.SandyBrown;
+            btnFiltroReservado.FlatStyle = FlatStyle.Flat;
+            btnFiltroReservado.Font = new Font("Yu Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnFiltroReservado.Location = new Point(562, 120);
+            btnFiltroReservado.Name = "btnFiltroReservado";
+            btnFiltroReservado.Size = new Size(95, 33);
+            btnFiltroReservado.TabIndex = 7;
+            btnFiltroReservado.Text = "Reservado";
+            btnFiltroReservado.UseVisualStyleBackColor = false;
             // 
             // btnBuscar
             // 
@@ -294,6 +296,30 @@
             TNumHabitacion.Size = new Size(126, 23);
             TNumHabitacion.TabIndex = 30;
             // 
+            // btnFiltroSimple
+            // 
+            btnFiltroSimple.BackColor = Color.Yellow;
+            btnFiltroSimple.FlatStyle = FlatStyle.Flat;
+            btnFiltroSimple.Font = new Font("Yu Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnFiltroSimple.Location = new Point(346, 120);
+            btnFiltroSimple.Name = "btnFiltroSimple";
+            btnFiltroSimple.Size = new Size(95, 33);
+            btnFiltroSimple.TabIndex = 33;
+            btnFiltroSimple.Text = "Simple";
+            btnFiltroSimple.UseVisualStyleBackColor = false;
+            // 
+            // btnFiltroDoble
+            // 
+            btnFiltroDoble.BackColor = Color.Yellow;
+            btnFiltroDoble.FlatStyle = FlatStyle.Flat;
+            btnFiltroDoble.Font = new Font("Yu Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnFiltroDoble.Location = new Point(447, 120);
+            btnFiltroDoble.Name = "btnFiltroDoble";
+            btnFiltroDoble.Size = new Size(95, 33);
+            btnFiltroDoble.TabIndex = 34;
+            btnFiltroDoble.Text = "Doble";
+            btnFiltroDoble.UseVisualStyleBackColor = false;
+            // 
             // gestionHabitaciones
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -301,15 +327,17 @@
             AutoSize = true;
             BackColor = Color.SteelBlue;
             ClientSize = new Size(891, 564);
+            Controls.Add(btnFiltroDoble);
+            Controls.Add(btnFiltroSimple);
             Controls.Add(btnBuscar);
             Controls.Add(LDni);
             Controls.Add(TNumHabitacion);
-            Controls.Add(button6);
-            Controls.Add(button5);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btnFiltroReservado);
+            Controls.Add(btnFiltroLibre);
+            Controls.Add(btnFiltroOcupado);
+            Controls.Add(btnFiltroPiso3);
+            Controls.Add(btnFiltroPiso2);
+            Controls.Add(btnFiltroPiso1);
             Controls.Add(label1);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
@@ -326,12 +354,12 @@
 
         private Panel panel1;
         private Label label1;
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private Button button4;
-        private Button button5;
-        private Button button6;
+        private Button btnFiltroPiso1;
+        private Button btnFiltroPiso2;
+        private Button btnFiltroPiso3;
+        private Button btnFiltroOcupado;
+        private Button btnFiltroLibre;
+        private Button btnFiltroReservado;
         private Button button12;
         private Button button11;
         private Button button10;
@@ -344,5 +372,7 @@
         private Button btnBuscar;
         private Label LDni;
         private TextBox TNumHabitacion;
+        private Button btnFiltroSimple;
+        private Button btnFiltroDoble;
     }
 }
