@@ -24,6 +24,9 @@ namespace SistemaDeGestionHotel
             leftBorderBtn.Size = new Size(7, 60);
             panelMenu.Controls.Add(leftBorderBtn);
 
+            //abre el form home cuando principalAdmin se abre
+            FormsHijos.AbrirFormHija(new Home(), panelContenedor);
+
             // Establece que el formulario se inicie maximizado
             this.WindowState = FormWindowState.Maximized;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
