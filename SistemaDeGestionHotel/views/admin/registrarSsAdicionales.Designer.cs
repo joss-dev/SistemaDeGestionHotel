@@ -54,8 +54,9 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.Image = Properties.Resources.logoHotel;
-            pictureBox1.Location = new Point(144, -11);
+            pictureBox1.Location = new Point(333, -11);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(205, 132);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -64,18 +65,20 @@
             // 
             // panel1
             // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.FromArgb(39, 79, 193);
             panel1.Controls.Add(pictureBox1);
             panel1.Location = new Point(-1, -2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(817, 112);
+            panel1.Size = new Size(889, 112);
             panel1.TabIndex = 22;
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(62, 144);
+            label1.Location = new Point(212, 144);
             label1.Name = "label1";
             label1.Size = new Size(174, 21);
             label1.TabIndex = 23;
@@ -83,16 +86,18 @@
             // 
             // txtNombSs
             // 
-            txtNombSs.Location = new Point(47, 166);
+            txtNombSs.Anchor = AnchorStyles.None;
+            txtNombSs.Location = new Point(197, 166);
             txtNombSs.Name = "txtNombSs";
             txtNombSs.Size = new Size(203, 23);
             txtNombSs.TabIndex = 24;
             // 
             // label2
             // 
+            label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(103, 203);
+            label2.Location = new Point(253, 203);
             label2.Name = "label2";
             label2.Size = new Size(85, 21);
             label2.TabIndex = 25;
@@ -100,16 +105,18 @@
             // 
             // txtCantidad
             // 
-            txtCantidad.Location = new Point(47, 225);
+            txtCantidad.Anchor = AnchorStyles.None;
+            txtCantidad.Location = new Point(197, 225);
             txtCantidad.Name = "txtCantidad";
             txtCantidad.Size = new Size(203, 23);
             txtCantidad.TabIndex = 26;
             // 
             // label3
             // 
+            label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
             label3.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(83, 266);
+            label3.Location = new Point(233, 266);
             label3.Name = "label3";
             label3.Size = new Size(129, 21);
             label3.TabIndex = 27;
@@ -117,16 +124,18 @@
             // 
             // txtPrecioUnit
             // 
-            txtPrecioUnit.Location = new Point(47, 288);
+            txtPrecioUnit.Anchor = AnchorStyles.None;
+            txtPrecioUnit.Location = new Point(197, 288);
             txtPrecioUnit.Name = "txtPrecioUnit";
             txtPrecioUnit.Size = new Size(203, 23);
             txtPrecioUnit.TabIndex = 28;
             // 
             // label4
             // 
+            label4.Anchor = AnchorStyles.None;
             label4.AutoSize = true;
             label4.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(93, 326);
+            label4.Location = new Point(243, 326);
             label4.Name = "label4";
             label4.Size = new Size(104, 21);
             label4.TabIndex = 29;
@@ -134,16 +143,18 @@
             // 
             // txtPrecioTotal
             // 
-            txtPrecioTotal.Location = new Point(47, 348);
+            txtPrecioTotal.Anchor = AnchorStyles.None;
+            txtPrecioTotal.Location = new Point(197, 348);
             txtPrecioTotal.Name = "txtPrecioTotal";
             txtPrecioTotal.Size = new Size(203, 23);
             txtPrecioTotal.TabIndex = 30;
             // 
             // label7
             // 
+            label7.Anchor = AnchorStyles.None;
             label7.AutoSize = true;
             label7.Font = new Font("Yu Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(353, 475);
+            label7.Location = new Point(503, 475);
             label7.Name = "label7";
             label7.Size = new Size(46, 17);
             label7.TabIndex = 48;
@@ -152,10 +163,11 @@
             // 
             // btnEditar
             // 
+            btnEditar.Anchor = AnchorStyles.None;
             btnEditar.BackColor = Color.LightGreen;
             btnEditar.FlatStyle = FlatStyle.Popup;
             btnEditar.Image = Properties.Resources.editar;
-            btnEditar.Location = new Point(341, 402);
+            btnEditar.Location = new Point(491, 402);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(72, 72);
             btnEditar.TabIndex = 47;
@@ -163,9 +175,10 @@
             // 
             // label6
             // 
+            label6.Anchor = AnchorStyles.None;
             label6.AutoSize = true;
             label6.Font = new Font("Yu Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(224, 476);
+            label6.Location = new Point(374, 476);
             label6.Name = "label6";
             label6.Size = new Size(65, 17);
             label6.TabIndex = 44;
@@ -173,10 +186,11 @@
             // 
             // btnCancelar
             // 
+            btnCancelar.Anchor = AnchorStyles.None;
             btnCancelar.BackColor = Color.LightGreen;
             btnCancelar.FlatStyle = FlatStyle.Popup;
             btnCancelar.Image = Properties.Resources.cancelar;
-            btnCancelar.Location = new Point(221, 402);
+            btnCancelar.Location = new Point(371, 402);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(71, 71);
             btnCancelar.TabIndex = 43;
@@ -184,9 +198,10 @@
             // 
             // label5
             // 
+            label5.Anchor = AnchorStyles.None;
             label5.AutoSize = true;
             label5.Font = new Font("Yu Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(99, 476);
+            label5.Location = new Point(249, 476);
             label5.Name = "label5";
             label5.Size = new Size(67, 17);
             label5.TabIndex = 42;
@@ -194,10 +209,11 @@
             // 
             // btnRegistrar
             // 
+            btnRegistrar.Anchor = AnchorStyles.None;
             btnRegistrar.BackColor = Color.LightGreen;
             btnRegistrar.FlatStyle = FlatStyle.Popup;
             btnRegistrar.Image = Properties.Resources.registrar;
-            btnRegistrar.Location = new Point(99, 402);
+            btnRegistrar.Location = new Point(249, 402);
             btnRegistrar.Name = "btnRegistrar";
             btnRegistrar.Size = new Size(71, 71);
             btnRegistrar.TabIndex = 41;
@@ -205,8 +221,9 @@
             // 
             // pictureBoxSsAdic
             // 
+            pictureBoxSsAdic.Anchor = AnchorStyles.None;
             pictureBoxSsAdic.Image = Properties.Resources.servicios_adicionales_hotel1;
-            pictureBoxSsAdic.Location = new Point(295, 179);
+            pictureBoxSsAdic.Location = new Point(445, 179);
             pictureBoxSsAdic.Name = "pictureBoxSsAdic";
             pictureBoxSsAdic.Size = new Size(181, 180);
             pictureBoxSsAdic.SizeMode = PictureBoxSizeMode.Zoom;
@@ -215,11 +232,12 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.Anchor = AnchorStyles.None;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(-1, 516);
+            dataGridView1.Location = new Point(78, 520);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(510, 150);
+            dataGridView1.Size = new Size(716, 126);
             dataGridView1.TabIndex = 50;
             // 
             // registrarSsAdicionales
@@ -227,7 +245,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightGreen;
-            ClientSize = new Size(507, 657);
+            ClientSize = new Size(886, 657);
             Controls.Add(dataGridView1);
             Controls.Add(pictureBoxSsAdic);
             Controls.Add(label7);
