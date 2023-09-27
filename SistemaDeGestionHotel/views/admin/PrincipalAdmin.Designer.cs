@@ -140,7 +140,7 @@
             btnPagos.Padding = new Padding(20, 0, 10, 0);
             btnPagos.Size = new Size(220, 60);
             btnPagos.TabIndex = 4;
-            btnPagos.Text = "Pagos";
+            btnPagos.Text = "Gestión de Pagos";
             btnPagos.TextAlign = ContentAlignment.MiddleLeft;
             btnPagos.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnPagos.UseVisualStyleBackColor = true;

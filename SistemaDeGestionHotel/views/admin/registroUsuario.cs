@@ -21,5 +21,10 @@ namespace SistemaDeGestionHotel.views.admin
         {
 
         }
+
+        private void txtPass_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
