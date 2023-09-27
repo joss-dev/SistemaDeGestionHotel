@@ -351,7 +351,7 @@
             // panelCont
             // 
             panelCont.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panelCont.Location = new Point(222, 30);
+            panelCont.Location = new Point(220, 30);
             panelCont.Name = "panelCont";
             panelCont.Size = new Size(580, 549);
             panelCont.TabIndex = 10;

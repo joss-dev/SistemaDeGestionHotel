@@ -30,11 +30,11 @@
         {
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
-            button1 = new Button();
+            btnMP = new Button();
             label1 = new Label();
-            button2 = new Button();
+            btnImp = new Button();
             label2 = new Label();
-            button3 = new Button();
+            btnOR = new Button();
             label3 = new Label();
             label4 = new Label();
             panel1.SuspendLayout();
@@ -62,19 +62,19 @@
             pictureBox1.TabIndex = 19;
             pictureBox1.TabStop = false;
             // 
-            // button1
+            // btnMP
             // 
-            button1.Anchor = AnchorStyles.None;
-            button1.BackColor = Color.ForestGreen;
-            button1.FlatAppearance.BorderColor = Color.Black;
-            button1.FlatStyle = FlatStyle.Popup;
-            button1.Image = Properties.Resources.medios_de_pago;
-            button1.Location = new Point(157, 286);
-            button1.Name = "button1";
-            button1.Size = new Size(111, 77);
-            button1.TabIndex = 23;
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            btnMP.Anchor = AnchorStyles.None;
+            btnMP.BackColor = Color.ForestGreen;
+            btnMP.FlatAppearance.BorderColor = Color.Black;
+            btnMP.FlatStyle = FlatStyle.Popup;
+            btnMP.Image = Properties.Resources.medios_de_pago;
+            btnMP.Location = new Point(157, 286);
+            btnMP.Name = "btnMP";
+            btnMP.Size = new Size(111, 77);
+            btnMP.TabIndex = 23;
+            btnMP.UseVisualStyleBackColor = false;
+            btnMP.Click += button1_Click;
             // 
             // label1
             // 
@@ -87,17 +87,17 @@
             label1.TabIndex = 24;
             label1.Text = "Medios de Pago";
             // 
-            // button2
+            // btnImp
             // 
-            button2.Anchor = AnchorStyles.None;
-            button2.BackColor = Color.LightCoral;
-            button2.FlatStyle = FlatStyle.Popup;
-            button2.Image = Properties.Resources.Impuestos1;
-            button2.Location = new Point(357, 286);
-            button2.Name = "button2";
-            button2.Size = new Size(111, 77);
-            button2.TabIndex = 25;
-            button2.UseVisualStyleBackColor = false;
+            btnImp.Anchor = AnchorStyles.None;
+            btnImp.BackColor = Color.LightCoral;
+            btnImp.FlatStyle = FlatStyle.Popup;
+            btnImp.Image = Properties.Resources.Impuestos1;
+            btnImp.Location = new Point(357, 286);
+            btnImp.Name = "btnImp";
+            btnImp.Size = new Size(111, 77);
+            btnImp.TabIndex = 25;
+            btnImp.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
@@ -110,17 +110,17 @@
             label2.TabIndex = 26;
             label2.Text = "Impuestos";
             // 
-            // button3
+            // btnOR
             // 
-            button3.Anchor = AnchorStyles.None;
-            button3.BackColor = Color.DarkTurquoise;
-            button3.FlatStyle = FlatStyle.Popup;
-            button3.Image = Properties.Resources.Recargos;
-            button3.Location = new Point(548, 286);
-            button3.Name = "button3";
-            button3.Size = new Size(111, 77);
-            button3.TabIndex = 27;
-            button3.UseVisualStyleBackColor = false;
+            btnOR.Anchor = AnchorStyles.None;
+            btnOR.BackColor = Color.DarkTurquoise;
+            btnOR.FlatStyle = FlatStyle.Popup;
+            btnOR.Image = Properties.Resources.Recargos;
+            btnOR.Location = new Point(548, 286);
+            btnOR.Name = "btnOR";
+            btnOR.Size = new Size(111, 77);
+            btnOR.TabIndex = 27;
+            btnOR.UseVisualStyleBackColor = false;
             // 
             // label3
             // 
@@ -151,11 +151,11 @@
             ClientSize = new Size(798, 488);
             Controls.Add(label4);
             Controls.Add(label3);
-            Controls.Add(button3);
+            Controls.Add(btnOR);
             Controls.Add(label2);
-            Controls.Add(button2);
+            Controls.Add(btnImp);
             Controls.Add(label1);
-            Controls.Add(button1);
+            Controls.Add(btnMP);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "gestionDePagos";
@@ -170,11 +170,11 @@
 
         private Panel panel1;
         private PictureBox pictureBox1;
-        private Button button1;
+        private Button btnMP;
         private Label label1;
-        private Button button2;
+        private Button btnImp;
         private Label label2;
-        private Button button3;
+        private Button btnOR;
         private Label label3;
         private Label label4;
     }

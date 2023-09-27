@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace SistemaDeGestionHotel.views.admin
 {
-    public partial class registroUsuario : Form
+    public partial class registrarSsAdicionales : Form
     {
-        public registroUsuario()
+        public registrarSsAdicionales()
         {
             InitializeComponent();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
