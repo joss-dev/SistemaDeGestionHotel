@@ -30,6 +30,7 @@
         {
             components = new System.ComponentModel.Container();
             groupBox1 = new GroupBox();
+            label13 = new Label();
             label11 = new Label();
             label4 = new Label();
             label2 = new Label();
@@ -57,7 +58,6 @@
             errorProviderNumero = new ErrorProvider(components);
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
-            label13 = new Label();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProviderNumero).BeginInit();
@@ -80,6 +80,18 @@
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Datos de la Habitación";
+            // 
+            // label13
+            // 
+            label13.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            label13.AutoSize = true;
+            label13.BorderStyle = BorderStyle.FixedSingle;
+            label13.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label13.Location = new Point(463, 70);
+            label13.Name = "label13";
+            label13.Size = new Size(76, 18);
+            label13.TabIndex = 34;
+            label13.Text = "Precio : $";
             // 
             // label11
             // 
@@ -264,6 +276,7 @@
             // 
             TDni.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             TDni.Location = new Point(52, 133);
+            TDni.MaxLength = 8;
             TDni.Name = "TDni";
             TDni.Size = new Size(206, 25);
             TDni.TabIndex = 28;
@@ -393,18 +406,6 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 19;
             pictureBox1.TabStop = false;
-            // 
-            // label13
-            // 
-            label13.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            label13.AutoSize = true;
-            label13.BorderStyle = BorderStyle.FixedSingle;
-            label13.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label13.Location = new Point(463, 70);
-            label13.Name = "label13";
-            label13.Size = new Size(76, 18);
-            label13.TabIndex = 34;
-            label13.Text = "Precio : $";
             // 
             // AgregarHuesped
             // 

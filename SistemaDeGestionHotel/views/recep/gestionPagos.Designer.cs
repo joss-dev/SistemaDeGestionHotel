@@ -32,7 +32,6 @@
             lTitulo2 = new Label();
             LDni = new Label();
             TDni = new TextBox();
-            btnCobrar = new FontAwesome.Sharp.IconButton();
             btnBuscar = new Button();
             label3 = new Label();
             label4 = new Label();
@@ -44,6 +43,9 @@
             label2 = new Label();
             label1 = new Label();
             groupBox2 = new GroupBox();
+            label18 = new Label();
+            cbMetodoPago = new ComboBox();
+            label17 = new Label();
             label16 = new Label();
             label15 = new Label();
             label14 = new Label();
@@ -61,7 +63,7 @@
             errorProviderNumero = new ErrorProvider(components);
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
-            label17 = new Label();
+            btnContinuar = new FontAwesome.Sharp.IconButton();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewFactura).BeginInit();
@@ -100,26 +102,6 @@
             TDni.Size = new Size(206, 23);
             TDni.TabIndex = 21;
             TDni.KeyDown += ValidacionDni;
-            // 
-            // btnCobrar
-            // 
-            btnCobrar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnCobrar.BackColor = Color.DarkTurquoise;
-            btnCobrar.FlatAppearance.BorderSize = 0;
-            btnCobrar.FlatStyle = FlatStyle.Popup;
-            btnCobrar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnCobrar.ForeColor = SystemColors.ActiveCaptionText;
-            btnCobrar.IconChar = FontAwesome.Sharp.IconChar.MoneyBillAlt;
-            btnCobrar.IconColor = Color.Black;
-            btnCobrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnCobrar.ImageAlign = ContentAlignment.TopCenter;
-            btnCobrar.Location = new Point(804, 610);
-            btnCobrar.Name = "btnCobrar";
-            btnCobrar.Size = new Size(98, 78);
-            btnCobrar.TabIndex = 23;
-            btnCobrar.Text = "Cobrar";
-            btnCobrar.TextAlign = ContentAlignment.BottomCenter;
-            btnCobrar.UseVisualStyleBackColor = false;
             // 
             // btnBuscar
             // 
@@ -250,6 +232,8 @@
             // groupBox2
             // 
             groupBox2.Anchor = AnchorStyles.Top;
+            groupBox2.Controls.Add(label18);
+            groupBox2.Controls.Add(cbMetodoPago);
             groupBox2.Controls.Add(label17);
             groupBox2.Controls.Add(label16);
             groupBox2.Controls.Add(label15);
@@ -268,13 +252,48 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Factura";
             // 
+            // label18
+            // 
+            label18.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            label18.AutoSize = true;
+            label18.BorderStyle = BorderStyle.FixedSingle;
+            label18.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label18.Location = new Point(385, 251);
+            label18.Name = "label18";
+            label18.Size = new Size(235, 18);
+            label18.TabIndex = 45;
+            label18.Text = "Selecciona el metodo de pago :";
+            // 
+            // cbMetodoPago
+            // 
+            cbMetodoPago.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbMetodoPago.FormattingEnabled = true;
+            cbMetodoPago.Items.AddRange(new object[] { "Efectivo", "Tarjeta" });
+            cbMetodoPago.Location = new Point(635, 236);
+            cbMetodoPago.Name = "cbMetodoPago";
+            cbMetodoPago.Size = new Size(182, 33);
+            cbMetodoPago.TabIndex = 44;
+
+            // 
+            // label17
+            // 
+            label17.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            label17.AutoSize = true;
+            label17.BorderStyle = BorderStyle.FixedSingle;
+            label17.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label17.Location = new Point(587, 84);
+            label17.Name = "label17";
+            label17.Size = new Size(158, 18);
+            label17.TabIndex = 36;
+            label17.Text = "Precio Habitación : $";
+            // 
             // label16
             // 
             label16.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label16.AutoSize = true;
             label16.BorderStyle = BorderStyle.FixedSingle;
             label16.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label16.Location = new Point(323, 261);
+            label16.Location = new Point(75, 246);
             label16.Name = "label16";
             label16.Size = new Size(136, 18);
             label16.TabIndex = 43;
@@ -286,7 +305,7 @@
             label15.AutoSize = true;
             label15.BorderStyle = BorderStyle.FixedSingle;
             label15.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label15.Location = new Point(75, 261);
+            label15.Location = new Point(75, 194);
             label15.Name = "label15";
             label15.Size = new Size(105, 18);
             label15.TabIndex = 42;
@@ -310,7 +329,7 @@
             label13.AutoSize = true;
             label13.BorderStyle = BorderStyle.FixedSingle;
             label13.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label13.Location = new Point(75, 122);
+            label13.Location = new Point(75, 141);
             label13.Name = "label13";
             label13.Size = new Size(80, 18);
             label13.TabIndex = 40;
@@ -450,17 +469,26 @@
             pictureBox1.TabIndex = 19;
             pictureBox1.TabStop = false;
             // 
-            // label17
+            // btnContinuar
             // 
-            label17.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            label17.AutoSize = true;
-            label17.BorderStyle = BorderStyle.FixedSingle;
-            label17.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label17.Location = new Point(587, 84);
-            label17.Name = "label17";
-            label17.Size = new Size(158, 18);
-            label17.TabIndex = 36;
-            label17.Text = "Precio Habitación : $";
+            btnContinuar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnContinuar.BackColor = Color.DarkTurquoise;
+            btnContinuar.FlatAppearance.BorderSize = 0;
+            btnContinuar.FlatStyle = FlatStyle.Popup;
+            btnContinuar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnContinuar.ForeColor = SystemColors.ActiveCaptionText;
+            btnContinuar.IconChar = FontAwesome.Sharp.IconChar.RightToBracket;
+            btnContinuar.IconColor = Color.Black;
+            btnContinuar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnContinuar.ImageAlign = ContentAlignment.TopCenter;
+            btnContinuar.Location = new Point(804, 610);
+            btnContinuar.Name = "btnContinuar";
+            btnContinuar.Size = new Size(98, 78);
+            btnContinuar.TabIndex = 40;
+            btnContinuar.Text = "Continuar";
+            btnContinuar.TextAlign = ContentAlignment.BottomCenter;
+            btnContinuar.UseVisualStyleBackColor = false;
+            btnContinuar.Click += btnContinuar_Click;
             // 
             // gestionPagos
             // 
@@ -468,10 +496,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightGreen;
             ClientSize = new Size(914, 695);
+            Controls.Add(btnContinuar);
             Controls.Add(panel1);
             Controls.Add(btnCancelar);
             Controls.Add(btnBuscar);
-            Controls.Add(btnCobrar);
             Controls.Add(LDni);
             Controls.Add(TDni);
             Controls.Add(lTitulo2);
@@ -496,7 +524,6 @@
         private Label lTitulo2;
         private Label LDni;
         private TextBox TDni;
-        private FontAwesome.Sharp.IconButton btnCobrar;
         private Button btnBuscar;
         private Label label3;
         private Label label4;
@@ -526,5 +553,8 @@
         private Panel panel1;
         private PictureBox pictureBox1;
         private Label label17;
+        private FontAwesome.Sharp.IconButton btnContinuar;
+        private Label label18;
+        private ComboBox cbMetodoPago;
     }
 }
