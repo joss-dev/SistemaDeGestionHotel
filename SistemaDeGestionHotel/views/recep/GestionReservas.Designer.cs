@@ -30,7 +30,6 @@
         {
             components = new System.ComponentModel.Container();
             groupBox1 = new GroupBox();
-            label7 = new Label();
             lApellido = new Label();
             label1 = new Label();
             label5 = new Label();
@@ -43,14 +42,17 @@
             LDni = new Label();
             TDni = new TextBox();
             errorProviderNumero = new ErrorProvider(components);
+            panel1 = new Panel();
+            pictureBox1 = new PictureBox();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProviderNumero).BeginInit();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
             // 
-            groupBox1.Anchor = AnchorStyles.Top;
-            groupBox1.Controls.Add(label7);
+            groupBox1.Anchor = AnchorStyles.None;
             groupBox1.Controls.Add(lApellido);
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(label5);
@@ -58,25 +60,14 @@
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label4);
             groupBox1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            groupBox1.Location = new Point(48, 158);
+            groupBox1.ForeColor = SystemColors.ControlText;
+            groupBox1.Location = new Point(76, 203);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(691, 314);
+            groupBox1.Size = new Size(691, 316);
             groupBox1.TabIndex = 25;
             groupBox1.TabStop = false;
             groupBox1.Text = "Datos del Huesped";
             groupBox1.Enter += groupBox1_Enter;
-            // 
-            // label7
-            // 
-            label7.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            label7.AutoSize = true;
-            label7.BorderStyle = BorderStyle.FixedSingle;
-            label7.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(26, 271);
-            label7.Name = "label7";
-            label7.Size = new Size(124, 22);
-            label7.TabIndex = 24;
-            label7.Text = "Forma de Pago :";
             // 
             // lApellido
             // 
@@ -152,10 +143,10 @@
             // 
             // label6
             // 
-            label6.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            label6.Anchor = AnchorStyles.None;
             label6.AutoSize = true;
             label6.Font = new Font("Verdana", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(309, 20);
+            label6.Location = new Point(490, 149);
             label6.Name = "label6";
             label6.Size = new Size(328, 38);
             label6.TabIndex = 24;
@@ -164,23 +155,26 @@
             // btnConfirmaLLegada
             // 
             btnConfirmaLLegada.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnConfirmaLLegada.BackColor = Color.PowderBlue;
+            btnConfirmaLLegada.BackgroundImageLayout = ImageLayout.None;
             btnConfirmaLLegada.Cursor = Cursors.Hand;
             btnConfirmaLLegada.FlatAppearance.BorderSize = 0;
-            btnConfirmaLLegada.FlatStyle = FlatStyle.Flat;
+            btnConfirmaLLegada.FlatStyle = FlatStyle.Popup;
             btnConfirmaLLegada.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnConfirmaLLegada.Image = Properties.Resources.btn_guardar_;
             btnConfirmaLLegada.ImageAlign = ContentAlignment.TopCenter;
-            btnConfirmaLLegada.Location = new Point(792, 447);
+            btnConfirmaLLegada.Location = new Point(793, 450);
             btnConfirmaLLegada.Name = "btnConfirmaLLegada";
-            btnConfirmaLLegada.Size = new Size(112, 91);
+            btnConfirmaLLegada.Size = new Size(104, 91);
             btnConfirmaLLegada.TabIndex = 26;
             btnConfirmaLLegada.Text = "Registrar Asistencia";
             btnConfirmaLLegada.TextAlign = ContentAlignment.BottomCenter;
-            btnConfirmaLLegada.UseVisualStyleBackColor = true;
+            btnConfirmaLLegada.UseVisualStyleBackColor = false;
             // 
             // btnBuscar
             // 
-            btnBuscar.Location = new Point(280, 111);
+            btnBuscar.Anchor = AnchorStyles.None;
+            btnBuscar.Location = new Point(267, 156);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(85, 31);
             btnBuscar.TabIndex = 29;
@@ -190,10 +184,10 @@
             // 
             // LDni
             // 
-            LDni.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            LDni.Anchor = AnchorStyles.None;
             LDni.AutoSize = true;
             LDni.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            LDni.Location = new Point(48, 87);
+            LDni.Location = new Point(44, 133);
             LDni.Name = "LDni";
             LDni.Size = new Size(183, 20);
             LDni.TabIndex = 28;
@@ -201,8 +195,8 @@
             // 
             // TDni
             // 
-            TDni.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            TDni.Location = new Point(48, 116);
+            TDni.Anchor = AnchorStyles.None;
+            TDni.Location = new Point(44, 161);
             TDni.Name = "TDni";
             TDni.Size = new Size(206, 23);
             TDni.TabIndex = 27;
@@ -212,12 +206,34 @@
             // 
             errorProviderNumero.ContainerControl = this;
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(39, 79, 193);
+            panel1.Controls.Add(pictureBox1);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(909, 113);
+            panel1.TabIndex = 30;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = AnchorStyles.None;
+            pictureBox1.Image = Properties.Resources.logoHotel;
+            pictureBox1.Location = new Point(384, -9);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(116, 120);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 19;
+            pictureBox1.TabStop = false;
+            // 
             // GestionReservas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.SteelBlue;
-            ClientSize = new Size(928, 541);
+            BackColor = Color.LightGreen;
+            ClientSize = new Size(909, 553);
+            Controls.Add(panel1);
             Controls.Add(btnBuscar);
             Controls.Add(LDni);
             Controls.Add(TDni);
@@ -230,6 +246,8 @@
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)errorProviderNumero).EndInit();
+            panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -237,7 +255,6 @@
         #endregion
 
         private GroupBox groupBox1;
-        private Label label7;
         private Label lApellido;
         private Label label1;
         private Label label5;
@@ -250,5 +267,7 @@
         private Label LDni;
         private TextBox TDni;
         private ErrorProvider errorProviderNumero;
+        private Panel panel1;
+        private PictureBox pictureBox1;
     }
 }

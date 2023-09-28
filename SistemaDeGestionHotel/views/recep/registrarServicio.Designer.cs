@@ -158,7 +158,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.SteelBlue;
+            BackColor = Color.LightGreen;
             ClientSize = new Size(451, 564);
             Controls.Add(btnCancelar);
             Controls.Add(btnRegistrar);
