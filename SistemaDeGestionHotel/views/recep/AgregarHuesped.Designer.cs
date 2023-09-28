@@ -286,9 +286,10 @@
             // btnCancelar
             // 
             btnCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnCancelar.BackColor = Color.LightCoral;
             btnCancelar.Cursor = Cursors.Hand;
             btnCancelar.FlatAppearance.BorderSize = 0;
-            btnCancelar.FlatStyle = FlatStyle.Flat;
+            btnCancelar.FlatStyle = FlatStyle.Popup;
             btnCancelar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnCancelar.Image = Properties.Resources.btnCancelar;
             btnCancelar.ImageAlign = ContentAlignment.TopCenter;
@@ -298,15 +299,16 @@
             btnCancelar.TabIndex = 33;
             btnCancelar.Text = "Cancelar";
             btnCancelar.TextAlign = ContentAlignment.BottomCenter;
-            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.UseVisualStyleBackColor = false;
             btnCancelar.Click += btnCancelar_Click;
             // 
             // btnRegistrar
             // 
             btnRegistrar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnRegistrar.BackColor = Color.PowderBlue;
             btnRegistrar.Cursor = Cursors.Hand;
             btnRegistrar.FlatAppearance.BorderSize = 0;
-            btnRegistrar.FlatStyle = FlatStyle.Flat;
+            btnRegistrar.FlatStyle = FlatStyle.Popup;
             btnRegistrar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnRegistrar.Image = Properties.Resources.btn_guardar_;
             btnRegistrar.ImageAlign = ContentAlignment.TopCenter;
@@ -316,7 +318,7 @@
             btnRegistrar.TabIndex = 32;
             btnRegistrar.Text = "Registrar";
             btnRegistrar.TextAlign = ContentAlignment.BottomCenter;
-            btnRegistrar.UseVisualStyleBackColor = true;
+            btnRegistrar.UseVisualStyleBackColor = false;
             btnRegistrar.Click += btnRegistrar_Click;
             // 
             // errorProviderNumero
@@ -327,7 +329,7 @@
             // 
             AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.SteelBlue;
+            BackColor = Color.LightGreen;
             ClientSize = new Size(783, 600);
             Controls.Add(btnCancelar);
             Controls.Add(btnRegistrar);

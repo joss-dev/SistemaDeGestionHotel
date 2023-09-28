@@ -23,10 +23,11 @@ namespace SistemaDeGestionHotel.views.recep
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            if(ValidacionTextBox.ValidarNoVacio(TDni, TNombre, TApellido, TCantidadHuespedes))
+            if (ValidacionTextBox.ValidarNoVacio(TDni, TNombre, TApellido, TCantidadHuespedes))
             {
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }else
+            }
+            else
             {
                 MessageBox.Show("Registrado!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
