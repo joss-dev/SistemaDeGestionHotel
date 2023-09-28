@@ -61,6 +61,7 @@
             errorProviderNumero = new ErrorProvider(components);
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
+            label17 = new Label();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewFactura).BeginInit();
@@ -249,6 +250,7 @@
             // groupBox2
             // 
             groupBox2.Anchor = AnchorStyles.Top;
+            groupBox2.Controls.Add(label17);
             groupBox2.Controls.Add(label16);
             groupBox2.Controls.Add(label15);
             groupBox2.Controls.Add(label14);
@@ -274,9 +276,9 @@
             label16.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label16.Location = new Point(323, 261);
             label16.Name = "label16";
-            label16.Size = new Size(80, 18);
+            label16.Size = new Size(136, 18);
             label16.TabIndex = 43;
-            label16.Text = "TOTAL : $ ";
+            label16.Text = "MONTO TOTAL : $ ";
             // 
             // label15
             // 
@@ -286,9 +288,9 @@
             label15.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label15.Location = new Point(75, 261);
             label15.Name = "label15";
-            label15.Size = new Size(94, 18);
+            label15.Size = new Size(105, 18);
             label15.TabIndex = 42;
-            label15.Text = "SubTotal : $";
+            label15.Text = "SUBTOTAL : $";
             // 
             // label14
             // 
@@ -448,6 +450,18 @@
             pictureBox1.TabIndex = 19;
             pictureBox1.TabStop = false;
             // 
+            // label17
+            // 
+            label17.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            label17.AutoSize = true;
+            label17.BorderStyle = BorderStyle.FixedSingle;
+            label17.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label17.Location = new Point(587, 84);
+            label17.Name = "label17";
+            label17.Size = new Size(158, 18);
+            label17.TabIndex = 36;
+            label17.Text = "Precio Habitación : $";
+            // 
             // gestionPagos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -511,5 +525,6 @@
         private Label label14;
         private Panel panel1;
         private PictureBox pictureBox1;
+        private Label label17;
     }
 }

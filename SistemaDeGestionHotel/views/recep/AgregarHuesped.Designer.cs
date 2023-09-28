@@ -57,6 +57,7 @@
             errorProviderNumero = new ErrorProvider(components);
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
+            label13 = new Label();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProviderNumero).BeginInit();
@@ -66,6 +67,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(label13);
             groupBox1.Controls.Add(label11);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(label2);
@@ -392,6 +394,18 @@
             pictureBox1.TabIndex = 19;
             pictureBox1.TabStop = false;
             // 
+            // label13
+            // 
+            label13.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            label13.AutoSize = true;
+            label13.BorderStyle = BorderStyle.FixedSingle;
+            label13.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label13.Location = new Point(463, 70);
+            label13.Name = "label13";
+            label13.Size = new Size(76, 18);
+            label13.TabIndex = 34;
+            label13.Text = "Precio : $";
+            // 
             // AgregarHuesped
             // 
             AutoScaleDimensions = new SizeF(6F, 13F);
@@ -448,5 +462,6 @@
         private Label label7;
         private Label label12;
         private ComboBox comboBox1;
+        private Label label13;
     }
 }
