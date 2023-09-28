@@ -32,7 +32,6 @@
             lTitulo2 = new Label();
             LDni = new Label();
             TDni = new TextBox();
-            btnCobrar = new FontAwesome.Sharp.IconButton();
             btnBuscar = new Button();
             label3 = new Label();
             label4 = new Label();
@@ -103,26 +102,6 @@
             TDni.Size = new Size(206, 23);
             TDni.TabIndex = 21;
             TDni.KeyDown += ValidacionDni;
-            // 
-            // btnCobrar
-            // 
-            btnCobrar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnCobrar.BackColor = Color.DarkTurquoise;
-            btnCobrar.FlatAppearance.BorderSize = 0;
-            btnCobrar.FlatStyle = FlatStyle.Popup;
-            btnCobrar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnCobrar.ForeColor = SystemColors.ActiveCaptionText;
-            btnCobrar.IconChar = FontAwesome.Sharp.IconChar.MoneyBillAlt;
-            btnCobrar.IconColor = Color.Black;
-            btnCobrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnCobrar.ImageAlign = ContentAlignment.TopCenter;
-            btnCobrar.Location = new Point(603, 610);
-            btnCobrar.Name = "btnCobrar";
-            btnCobrar.Size = new Size(98, 78);
-            btnCobrar.TabIndex = 23;
-            btnCobrar.Text = "Cobrar";
-            btnCobrar.TextAlign = ContentAlignment.BottomCenter;
-            btnCobrar.UseVisualStyleBackColor = false;
             // 
             // btnBuscar
             // 
@@ -294,7 +273,7 @@
             cbMetodoPago.Name = "cbMetodoPago";
             cbMetodoPago.Size = new Size(182, 33);
             cbMetodoPago.TabIndex = 44;
-            cbMetodoPago.SelectedIndexChanged += cbMetodoPago_SelectedIndexChanged;
+
             // 
             // label17
             // 
@@ -509,6 +488,7 @@
             btnContinuar.Text = "Continuar";
             btnContinuar.TextAlign = ContentAlignment.BottomCenter;
             btnContinuar.UseVisualStyleBackColor = false;
+            btnContinuar.Click += btnContinuar_Click;
             // 
             // gestionPagos
             // 
@@ -520,7 +500,6 @@
             Controls.Add(panel1);
             Controls.Add(btnCancelar);
             Controls.Add(btnBuscar);
-            Controls.Add(btnCobrar);
             Controls.Add(LDni);
             Controls.Add(TDni);
             Controls.Add(lTitulo2);
@@ -545,7 +524,6 @@
         private Label lTitulo2;
         private Label LDni;
         private TextBox TDni;
-        private FontAwesome.Sharp.IconButton btnCobrar;
         private Button btnBuscar;
         private Label label3;
         private Label label4;

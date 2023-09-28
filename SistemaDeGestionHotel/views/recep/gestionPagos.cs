@@ -44,7 +44,9 @@ namespace SistemaDeGestionHotel.views.recep
 
         }
 
-        private void cbMetodoPago_SelectedIndexChanged(object sender, EventArgs e)
+
+
+        private void btnContinuar_Click(object sender, EventArgs e)
         {
             int indiceSeleccionado = cbMetodoPago.SelectedIndex;
 
