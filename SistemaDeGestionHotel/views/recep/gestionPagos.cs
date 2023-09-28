@@ -57,8 +57,8 @@ namespace SistemaDeGestionHotel.views.recep
             else if (indiceSeleccionado == 1)
             {
                 // Segundo índice, que corresponde a "Tarjeta de Débito"
-                FormTarjetaDebito formDebito = new FormTarjetaDebito();
-                formDebito.ShowDialog();
+                FormTarjeta form = new FormTarjeta();
+                form.ShowDialog();
             }
         }
     }
