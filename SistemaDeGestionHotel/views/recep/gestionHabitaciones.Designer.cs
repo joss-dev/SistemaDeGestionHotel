@@ -50,7 +50,11 @@
             TNumHabitacion = new TextBox();
             btnFiltroSimple = new Button();
             btnFiltroDoble = new Button();
+            panel2 = new Panel();
+            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -66,9 +70,9 @@
             panel1.Controls.Add(button9);
             panel1.Controls.Add(button8);
             panel1.Controls.Add(button7);
-            panel1.Location = new Point(14, 159);
+            panel1.Location = new Point(21, 189);
             panel1.Name = "panel1";
-            panel1.Size = new Size(856, 376);
+            panel1.Size = new Size(874, 394);
             panel1.TabIndex = 0;
             // 
             // button15
@@ -77,7 +81,7 @@
             button15.BackColor = Color.MediumSpringGreen;
             button15.FlatStyle = FlatStyle.Flat;
             button15.Font = new Font("Yu Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button15.Location = new Point(551, 139);
+            button15.Location = new Point(560, 148);
             button15.Name = "button15";
             button15.Size = new Size(139, 52);
             button15.TabIndex = 15;
@@ -90,7 +94,7 @@
             button14.BackColor = Color.SandyBrown;
             button14.FlatStyle = FlatStyle.Flat;
             button14.Font = new Font("Yu Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button14.Location = new Point(387, 139);
+            button14.Location = new Point(396, 148);
             button14.Name = "button14";
             button14.Size = new Size(139, 52);
             button14.TabIndex = 14;
@@ -103,7 +107,7 @@
             button13.BackColor = Color.SandyBrown;
             button13.FlatStyle = FlatStyle.Flat;
             button13.Font = new Font("Yu Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button13.Location = new Point(211, 139);
+            button13.Location = new Point(220, 148);
             button13.Name = "button13";
             button13.Size = new Size(139, 52);
             button13.TabIndex = 13;
@@ -116,7 +120,7 @@
             button12.BackColor = Color.Red;
             button12.FlatStyle = FlatStyle.Flat;
             button12.Font = new Font("Yu Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button12.Location = new Point(32, 139);
+            button12.Location = new Point(41, 148);
             button12.Name = "button12";
             button12.Size = new Size(139, 52);
             button12.TabIndex = 12;
@@ -129,7 +133,7 @@
             button11.BackColor = Color.Red;
             button11.FlatStyle = FlatStyle.Flat;
             button11.Font = new Font("Yu Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button11.Location = new Point(714, 47);
+            button11.Location = new Point(723, 56);
             button11.Name = "button11";
             button11.Size = new Size(139, 52);
             button11.TabIndex = 11;
@@ -142,7 +146,7 @@
             button10.BackColor = Color.MediumSpringGreen;
             button10.FlatStyle = FlatStyle.Flat;
             button10.Font = new Font("Yu Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button10.Location = new Point(551, 47);
+            button10.Location = new Point(560, 56);
             button10.Name = "button10";
             button10.Size = new Size(139, 52);
             button10.TabIndex = 10;
@@ -155,7 +159,7 @@
             button9.BackColor = Color.Red;
             button9.FlatStyle = FlatStyle.Flat;
             button9.Font = new Font("Yu Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button9.Location = new Point(387, 47);
+            button9.Location = new Point(396, 56);
             button9.Name = "button9";
             button9.Size = new Size(139, 52);
             button9.TabIndex = 9;
@@ -168,7 +172,7 @@
             button8.BackColor = Color.MediumSpringGreen;
             button8.FlatStyle = FlatStyle.Flat;
             button8.Font = new Font("Yu Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button8.Location = new Point(211, 47);
+            button8.Location = new Point(220, 56);
             button8.Name = "button8";
             button8.Size = new Size(139, 52);
             button8.TabIndex = 8;
@@ -181,7 +185,7 @@
             button7.BackColor = Color.MediumSpringGreen;
             button7.FlatStyle = FlatStyle.Flat;
             button7.Font = new Font("Yu Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button7.Location = new Point(32, 47);
+            button7.Location = new Point(41, 56);
             button7.Name = "button7";
             button7.Size = new Size(139, 52);
             button7.TabIndex = 7;
@@ -191,10 +195,9 @@
             // 
             // label1
             // 
-            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label1.AutoSize = true;
             label1.Font = new Font("Verdana", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(277, 59);
+            label1.Location = new Point(12, 112);
             label1.Name = "label1";
             label1.Size = new Size(303, 29);
             label1.TabIndex = 1;
@@ -205,7 +208,7 @@
             btnFiltroPiso1.BackColor = Color.LightCyan;
             btnFiltroPiso1.FlatStyle = FlatStyle.Flat;
             btnFiltroPiso1.Font = new Font("Yu Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnFiltroPiso1.Location = new Point(15, 120);
+            btnFiltroPiso1.Location = new Point(15, 150);
             btnFiltroPiso1.Name = "btnFiltroPiso1";
             btnFiltroPiso1.Size = new Size(95, 33);
             btnFiltroPiso1.TabIndex = 2;
@@ -217,7 +220,7 @@
             btnFiltroPiso2.BackColor = Color.LightCyan;
             btnFiltroPiso2.FlatStyle = FlatStyle.Flat;
             btnFiltroPiso2.Font = new Font("Yu Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnFiltroPiso2.Location = new Point(126, 120);
+            btnFiltroPiso2.Location = new Point(126, 150);
             btnFiltroPiso2.Name = "btnFiltroPiso2";
             btnFiltroPiso2.Size = new Size(95, 33);
             btnFiltroPiso2.TabIndex = 3;
@@ -229,7 +232,7 @@
             btnFiltroPiso3.BackColor = Color.LightCyan;
             btnFiltroPiso3.FlatStyle = FlatStyle.Flat;
             btnFiltroPiso3.Font = new Font("Yu Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnFiltroPiso3.Location = new Point(236, 120);
+            btnFiltroPiso3.Location = new Point(236, 150);
             btnFiltroPiso3.Name = "btnFiltroPiso3";
             btnFiltroPiso3.Size = new Size(95, 33);
             btnFiltroPiso3.TabIndex = 4;
@@ -242,7 +245,7 @@
             btnFiltroOcupado.BackColor = Color.Red;
             btnFiltroOcupado.FlatStyle = FlatStyle.Flat;
             btnFiltroOcupado.Font = new Font("Yu Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnFiltroOcupado.Location = new Point(663, 120);
+            btnFiltroOcupado.Location = new Point(693, 150);
             btnFiltroOcupado.Name = "btnFiltroOcupado";
             btnFiltroOcupado.Size = new Size(95, 33);
             btnFiltroOcupado.TabIndex = 5;
@@ -255,7 +258,7 @@
             btnFiltroLibre.BackColor = Color.MediumSpringGreen;
             btnFiltroLibre.FlatStyle = FlatStyle.Flat;
             btnFiltroLibre.Font = new Font("Yu Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnFiltroLibre.Location = new Point(764, 120);
+            btnFiltroLibre.Location = new Point(794, 150);
             btnFiltroLibre.Name = "btnFiltroLibre";
             btnFiltroLibre.Size = new Size(95, 33);
             btnFiltroLibre.TabIndex = 6;
@@ -268,7 +271,7 @@
             btnFiltroReservado.BackColor = Color.SandyBrown;
             btnFiltroReservado.FlatStyle = FlatStyle.Flat;
             btnFiltroReservado.Font = new Font("Yu Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnFiltroReservado.Location = new Point(562, 120);
+            btnFiltroReservado.Location = new Point(592, 150);
             btnFiltroReservado.Name = "btnFiltroReservado";
             btnFiltroReservado.Size = new Size(95, 33);
             btnFiltroReservado.TabIndex = 7;
@@ -278,7 +281,7 @@
             // btnBuscar
             // 
             btnBuscar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnBuscar.Location = new Point(806, 62);
+            btnBuscar.Location = new Point(836, 106);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(73, 29);
             btnBuscar.TabIndex = 32;
@@ -291,7 +294,7 @@
             LDni.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             LDni.AutoSize = true;
             LDni.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            LDni.Location = new Point(663, 45);
+            LDni.Location = new Point(693, 89);
             LDni.Name = "LDni";
             LDni.Size = new Size(96, 20);
             LDni.TabIndex = 31;
@@ -300,7 +303,7 @@
             // TNumHabitacion
             // 
             TNumHabitacion.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            TNumHabitacion.Location = new Point(663, 68);
+            TNumHabitacion.Location = new Point(693, 112);
             TNumHabitacion.Name = "TNumHabitacion";
             TNumHabitacion.Size = new Size(126, 23);
             TNumHabitacion.TabIndex = 30;
@@ -311,7 +314,7 @@
             btnFiltroSimple.BackColor = Color.Yellow;
             btnFiltroSimple.FlatStyle = FlatStyle.Flat;
             btnFiltroSimple.Font = new Font("Yu Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnFiltroSimple.Location = new Point(346, 120);
+            btnFiltroSimple.Location = new Point(361, 150);
             btnFiltroSimple.Name = "btnFiltroSimple";
             btnFiltroSimple.Size = new Size(95, 33);
             btnFiltroSimple.TabIndex = 33;
@@ -324,12 +327,33 @@
             btnFiltroDoble.BackColor = Color.Yellow;
             btnFiltroDoble.FlatStyle = FlatStyle.Flat;
             btnFiltroDoble.Font = new Font("Yu Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnFiltroDoble.Location = new Point(447, 120);
+            btnFiltroDoble.Location = new Point(462, 150);
             btnFiltroDoble.Name = "btnFiltroDoble";
             btnFiltroDoble.Size = new Size(95, 33);
             btnFiltroDoble.TabIndex = 34;
             btnFiltroDoble.Text = "Doble";
             btnFiltroDoble.UseVisualStyleBackColor = false;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(39, 79, 193);
+            panel2.Controls.Add(pictureBox1);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(921, 86);
+            panel2.TabIndex = 35;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = AnchorStyles.None;
+            pictureBox1.Image = Properties.Resources.logoHotel;
+            pictureBox1.Location = new Point(398, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(105, 86);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 19;
+            pictureBox1.TabStop = false;
             // 
             // gestionHabitaciones
             // 
@@ -337,7 +361,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             BackColor = Color.LightGreen;
-            ClientSize = new Size(891, 564);
+            ClientSize = new Size(921, 637);
+            Controls.Add(panel2);
             Controls.Add(btnFiltroDoble);
             Controls.Add(btnFiltroSimple);
             Controls.Add(btnBuscar);
@@ -357,6 +382,8 @@
             Text = "gestionHabitaciones";
             Load += gestionHabitaciones_Load;
             panel1.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -385,5 +412,7 @@
         private TextBox TNumHabitacion;
         private Button btnFiltroSimple;
         private Button btnFiltroDoble;
+        private Panel panel2;
+        private PictureBox pictureBox1;
     }
 }

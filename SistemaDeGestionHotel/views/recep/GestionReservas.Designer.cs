@@ -44,6 +44,7 @@
             errorProviderNumero = new ErrorProvider(components);
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
+            label7 = new Label();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProviderNumero).BeginInit();
             panel1.SuspendLayout();
@@ -53,6 +54,7 @@
             // groupBox1
             // 
             groupBox1.Anchor = AnchorStyles.None;
+            groupBox1.Controls.Add(label7);
             groupBox1.Controls.Add(lApellido);
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(label5);
@@ -99,7 +101,7 @@
             label5.AutoSize = true;
             label5.BorderStyle = BorderStyle.FixedSingle;
             label5.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(338, 183);
+            label5.Location = new Point(338, 247);
             label5.Name = "label5";
             label5.Size = new Size(125, 22);
             label5.TabIndex = 23;
@@ -135,7 +137,7 @@
             label4.AutoSize = true;
             label4.BorderStyle = BorderStyle.FixedSingle;
             label4.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(26, 183);
+            label4.Location = new Point(26, 247);
             label4.Name = "label4";
             label4.Size = new Size(137, 22);
             label4.TabIndex = 21;
@@ -174,7 +176,7 @@
             // btnBuscar
             // 
             btnBuscar.Anchor = AnchorStyles.None;
-            btnBuscar.Location = new Point(267, 156);
+            btnBuscar.Location = new Point(327, 161);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(85, 31);
             btnBuscar.TabIndex = 29;
@@ -187,16 +189,16 @@
             LDni.Anchor = AnchorStyles.None;
             LDni.AutoSize = true;
             LDni.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            LDni.Location = new Point(44, 133);
+            LDni.Location = new Point(76, 146);
             LDni.Name = "LDni";
-            LDni.Size = new Size(183, 20);
+            LDni.Size = new Size(189, 20);
             LDni.TabIndex = 28;
-            LDni.Text = "Ingrese dni del huesped :";
+            LDni.Text = "Ingrese DNI del huesped :";
             // 
             // TDni
             // 
             TDni.Anchor = AnchorStyles.None;
-            TDni.Location = new Point(44, 161);
+            TDni.Location = new Point(76, 169);
             TDni.Name = "TDni";
             TDni.Size = new Size(206, 23);
             TDni.TabIndex = 27;
@@ -226,6 +228,18 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 19;
             pictureBox1.TabStop = false;
+            // 
+            // label7
+            // 
+            label7.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            label7.AutoSize = true;
+            label7.BorderStyle = BorderStyle.FixedSingle;
+            label7.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.Location = new Point(26, 182);
+            label7.Name = "label7";
+            label7.Size = new Size(80, 22);
+            label7.TabIndex = 24;
+            label7.Text = "Telefono :";
             // 
             // GestionReservas
             // 
@@ -269,5 +283,6 @@
         private ErrorProvider errorProviderNumero;
         private Panel panel1;
         private PictureBox pictureBox1;
+        private Label label7;
     }
 }

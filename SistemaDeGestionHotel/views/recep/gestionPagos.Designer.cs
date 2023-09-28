@@ -44,33 +44,37 @@
             label2 = new Label();
             label1 = new Label();
             groupBox2 = new GroupBox();
+            label16 = new Label();
+            label15 = new Label();
+            label14 = new Label();
+            label13 = new Label();
+            label12 = new Label();
+            label11 = new Label();
+            label10 = new Label();
+            label9 = new Label();
             dataGridViewFactura = new DataGridView();
-            btnCancelar = new Button();
-            errorProviderNumero = new ErrorProvider(components);
             Servicio = new DataGridViewTextBoxColumn();
             Impuestos = new DataGridViewTextBoxColumn();
             Precio = new DataGridViewTextBoxColumn();
             SUBTOTAL = new DataGridViewTextBoxColumn();
-            label9 = new Label();
-            label10 = new Label();
-            label11 = new Label();
-            label12 = new Label();
-            label13 = new Label();
-            label14 = new Label();
-            label15 = new Label();
-            label16 = new Label();
+            btnCancelar = new Button();
+            errorProviderNumero = new ErrorProvider(components);
+            panel1 = new Panel();
+            pictureBox1 = new PictureBox();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewFactura).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProviderNumero).BeginInit();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // lTitulo2
             // 
-            lTitulo2.Anchor = AnchorStyles.Top;
+            lTitulo2.Anchor = AnchorStyles.None;
             lTitulo2.AutoSize = true;
             lTitulo2.Font = new Font("Verdana", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lTitulo2.Location = new Point(290, 20);
+            lTitulo2.Location = new Point(603, 123);
             lTitulo2.Name = "lTitulo2";
             lTitulo2.Size = new Size(271, 35);
             lTitulo2.TabIndex = 20;
@@ -78,19 +82,19 @@
             // 
             // LDni
             // 
-            LDni.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            LDni.Anchor = AnchorStyles.None;
             LDni.AutoSize = true;
             LDni.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            LDni.Location = new Point(31, 61);
+            LDni.Location = new Point(24, 118);
             LDni.Name = "LDni";
-            LDni.Size = new Size(183, 20);
+            LDni.Size = new Size(196, 20);
             LDni.TabIndex = 22;
-            LDni.Text = "Ingrese dni del huesped :";
+            LDni.Text = "Ingrese D.N.I del huesped :";
             // 
             // TDni
             // 
-            TDni.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            TDni.Location = new Point(31, 84);
+            TDni.Anchor = AnchorStyles.None;
+            TDni.Location = new Point(24, 141);
             TDni.Name = "TDni";
             TDni.Size = new Size(206, 23);
             TDni.TabIndex = 21;
@@ -99,18 +103,18 @@
             // btnCobrar
             // 
             btnCobrar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnCobrar.BackColor = Color.LawnGreen;
+            btnCobrar.BackColor = Color.DarkTurquoise;
             btnCobrar.FlatAppearance.BorderSize = 0;
-            btnCobrar.FlatStyle = FlatStyle.Flat;
+            btnCobrar.FlatStyle = FlatStyle.Popup;
             btnCobrar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnCobrar.ForeColor = SystemColors.ActiveCaptionText;
             btnCobrar.IconChar = FontAwesome.Sharp.IconChar.MoneyBillAlt;
             btnCobrar.IconColor = Color.Black;
             btnCobrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnCobrar.ImageAlign = ContentAlignment.TopCenter;
-            btnCobrar.Location = new Point(793, 557);
+            btnCobrar.Location = new Point(804, 610);
             btnCobrar.Name = "btnCobrar";
-            btnCobrar.Size = new Size(85, 67);
+            btnCobrar.Size = new Size(98, 78);
             btnCobrar.TabIndex = 23;
             btnCobrar.Text = "Cobrar";
             btnCobrar.TextAlign = ContentAlignment.BottomCenter;
@@ -118,7 +122,8 @@
             // 
             // btnBuscar
             // 
-            btnBuscar.Location = new Point(258, 79);
+            btnBuscar.Anchor = AnchorStyles.None;
+            btnBuscar.Location = new Point(236, 138);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(85, 31);
             btnBuscar.TabIndex = 24;
@@ -210,7 +215,7 @@
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label4);
             groupBox1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            groupBox1.Location = new Point(22, 116);
+            groupBox1.Location = new Point(24, 175);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(856, 133);
             groupBox1.TabIndex = 36;
@@ -237,9 +242,9 @@
             label1.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label1.Location = new Point(587, 29);
             label1.Name = "label1";
-            label1.Size = new Size(130, 18);
+            label1.Size = new Size(80, 18);
             label1.TabIndex = 34;
-            label1.Text = "Tipo Habitacion :";
+            label1.Text = "Telefono :";
             // 
             // groupBox2
             // 
@@ -254,12 +259,108 @@
             groupBox2.Controls.Add(label9);
             groupBox2.Controls.Add(dataGridViewFactura);
             groupBox2.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            groupBox2.Location = new Point(22, 255);
+            groupBox2.Location = new Point(24, 314);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(856, 296);
+            groupBox2.Size = new Size(856, 290);
             groupBox2.TabIndex = 37;
             groupBox2.TabStop = false;
             groupBox2.Text = "Factura";
+            // 
+            // label16
+            // 
+            label16.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            label16.AutoSize = true;
+            label16.BorderStyle = BorderStyle.FixedSingle;
+            label16.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label16.Location = new Point(323, 261);
+            label16.Name = "label16";
+            label16.Size = new Size(80, 18);
+            label16.TabIndex = 43;
+            label16.Text = "TOTAL : $ ";
+            // 
+            // label15
+            // 
+            label15.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            label15.AutoSize = true;
+            label15.BorderStyle = BorderStyle.FixedSingle;
+            label15.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label15.Location = new Point(75, 261);
+            label15.Name = "label15";
+            label15.Size = new Size(94, 18);
+            label15.TabIndex = 42;
+            label15.Text = "SubTotal : $";
+            // 
+            // label14
+            // 
+            label14.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            label14.AutoSize = true;
+            label14.BorderStyle = BorderStyle.FixedSingle;
+            label14.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label14.Location = new Point(323, 101);
+            label14.Name = "label14";
+            label14.Size = new Size(159, 18);
+            label14.TabIndex = 41;
+            label14.Text = "Servicios Utilizados :";
+            // 
+            // label13
+            // 
+            label13.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            label13.AutoSize = true;
+            label13.BorderStyle = BorderStyle.FixedSingle;
+            label13.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label13.Location = new Point(75, 122);
+            label13.Name = "label13";
+            label13.Size = new Size(80, 18);
+            label13.TabIndex = 40;
+            label13.Text = "Monto : $ ";
+            // 
+            // label12
+            // 
+            label12.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            label12.AutoSize = true;
+            label12.BorderStyle = BorderStyle.FixedSingle;
+            label12.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label12.Location = new Point(587, 29);
+            label12.Name = "label12";
+            label12.Size = new Size(180, 18);
+            label12.TabIndex = 39;
+            label12.Text = "Cant. de habitaciones : ";
+            // 
+            // label11
+            // 
+            label11.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            label11.AutoSize = true;
+            label11.BorderStyle = BorderStyle.FixedSingle;
+            label11.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label11.Location = new Point(323, 29);
+            label11.Name = "label11";
+            label11.Size = new Size(134, 18);
+            label11.TabIndex = 38;
+            label11.Text = "Tipo Habitación : ";
+            // 
+            // label10
+            // 
+            label10.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            label10.AutoSize = true;
+            label10.BorderStyle = BorderStyle.FixedSingle;
+            label10.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label10.Location = new Point(75, 71);
+            label10.Name = "label10";
+            label10.Size = new Size(117, 18);
+            label10.TabIndex = 37;
+            label10.Text = "Cant. de dias : ";
+            // 
+            // label9
+            // 
+            label9.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            label9.AutoSize = true;
+            label9.BorderStyle = BorderStyle.FixedSingle;
+            label9.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label9.Location = new Point(75, 29);
+            label9.Name = "label9";
+            label9.Size = new Size(100, 18);
+            label9.TabIndex = 36;
+            label9.Text = "Habitación : ";
             // 
             // dataGridViewFactura
             // 
@@ -271,35 +372,13 @@
             dataGridViewFactura.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewFactura.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewFactura.Columns.AddRange(new DataGridViewColumn[] { Servicio, Impuestos, Precio, SUBTOTAL });
-            dataGridViewFactura.Location = new Point(323, 122);
+            dataGridViewFactura.Location = new Point(323, 119);
             dataGridViewFactura.Name = "dataGridViewFactura";
             dataGridViewFactura.ReadOnly = true;
             dataGridViewFactura.RowTemplate.Height = 25;
             dataGridViewFactura.Size = new Size(511, 93);
             dataGridViewFactura.TabIndex = 35;
             dataGridViewFactura.CellContentClick += dataGridViewFactura_CellContentClick;
-            // 
-            // btnCancelar
-            // 
-            btnCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnCancelar.Cursor = Cursors.Hand;
-            btnCancelar.FlatAppearance.BorderSize = 0;
-            btnCancelar.FlatStyle = FlatStyle.Flat;
-            btnCancelar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnCancelar.Image = Properties.Resources.btnCancelar;
-            btnCancelar.ImageAlign = ContentAlignment.TopCenter;
-            btnCancelar.Location = new Point(12, 551);
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(98, 78);
-            btnCancelar.TabIndex = 38;
-            btnCancelar.Text = "Cancelar";
-            btnCancelar.TextAlign = ContentAlignment.BottomCenter;
-            btnCancelar.UseVisualStyleBackColor = true;
-            btnCancelar.Click += btnCancelar_Click;
-            // 
-            // errorProviderNumero
-            // 
-            errorProviderNumero.ContainerControl = this;
             // 
             // Servicio
             // 
@@ -325,108 +404,57 @@
             SUBTOTAL.Name = "SUBTOTAL";
             SUBTOTAL.ReadOnly = true;
             // 
-            // label9
+            // btnCancelar
             // 
-            label9.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            label9.AutoSize = true;
-            label9.BorderStyle = BorderStyle.FixedSingle;
-            label9.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label9.Location = new Point(75, 29);
-            label9.Name = "label9";
-            label9.Size = new Size(100, 18);
-            label9.TabIndex = 36;
-            label9.Text = "Habitación : ";
+            btnCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnCancelar.BackColor = Color.LightCoral;
+            btnCancelar.Cursor = Cursors.Hand;
+            btnCancelar.FlatAppearance.BorderSize = 0;
+            btnCancelar.FlatStyle = FlatStyle.Popup;
+            btnCancelar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCancelar.Image = Properties.Resources.btnCancelar;
+            btnCancelar.ImageAlign = ContentAlignment.TopCenter;
+            btnCancelar.Location = new Point(12, 610);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(98, 78);
+            btnCancelar.TabIndex = 38;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.TextAlign = ContentAlignment.BottomCenter;
+            btnCancelar.UseVisualStyleBackColor = false;
+            btnCancelar.Click += btnCancelar_Click;
             // 
-            // label10
+            // errorProviderNumero
             // 
-            label10.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            label10.AutoSize = true;
-            label10.BorderStyle = BorderStyle.FixedSingle;
-            label10.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label10.Location = new Point(75, 71);
-            label10.Name = "label10";
-            label10.Size = new Size(117, 18);
-            label10.TabIndex = 37;
-            label10.Text = "Cant. de dias : ";
+            errorProviderNumero.ContainerControl = this;
             // 
-            // label11
+            // panel1
             // 
-            label11.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            label11.AutoSize = true;
-            label11.BorderStyle = BorderStyle.FixedSingle;
-            label11.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label11.Location = new Point(323, 29);
-            label11.Name = "label11";
-            label11.Size = new Size(134, 18);
-            label11.TabIndex = 38;
-            label11.Text = "Tipo Habitación : ";
+            panel1.BackColor = Color.FromArgb(39, 79, 193);
+            panel1.Controls.Add(pictureBox1);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(914, 115);
+            panel1.TabIndex = 39;
             // 
-            // label12
+            // pictureBox1
             // 
-            label12.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            label12.AutoSize = true;
-            label12.BorderStyle = BorderStyle.FixedSingle;
-            label12.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label12.Location = new Point(587, 29);
-            label12.Name = "label12";
-            label12.Size = new Size(180, 18);
-            label12.TabIndex = 39;
-            label12.Text = "Cant. de habitaciones : ";
-            // 
-            // label13
-            // 
-            label13.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            label13.AutoSize = true;
-            label13.BorderStyle = BorderStyle.FixedSingle;
-            label13.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label13.Location = new Point(75, 122);
-            label13.Name = "label13";
-            label13.Size = new Size(80, 18);
-            label13.TabIndex = 40;
-            label13.Text = "Monto : $ ";
-            // 
-            // label14
-            // 
-            label14.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            label14.AutoSize = true;
-            label14.BorderStyle = BorderStyle.FixedSingle;
-            label14.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label14.Location = new Point(323, 101);
-            label14.Name = "label14";
-            label14.Size = new Size(159, 18);
-            label14.TabIndex = 41;
-            label14.Text = "Servicios Utilizados :";
-            // 
-            // label15
-            // 
-            label15.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            label15.AutoSize = true;
-            label15.BorderStyle = BorderStyle.FixedSingle;
-            label15.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label15.Location = new Point(75, 261);
-            label15.Name = "label15";
-            label15.Size = new Size(94, 18);
-            label15.TabIndex = 42;
-            label15.Text = "SubTotal : $";
-            // 
-            // label16
-            // 
-            label16.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            label16.AutoSize = true;
-            label16.BorderStyle = BorderStyle.FixedSingle;
-            label16.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label16.Location = new Point(323, 261);
-            label16.Name = "label16";
-            label16.Size = new Size(80, 18);
-            label16.TabIndex = 43;
-            label16.Text = "TOTAL : $ ";
+            pictureBox1.Anchor = AnchorStyles.None;
+            pictureBox1.Image = Properties.Resources.logoHotel;
+            pictureBox1.Location = new Point(375, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(116, 115);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 19;
+            pictureBox1.TabStop = false;
             // 
             // gestionPagos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.SteelBlue;
-            ClientSize = new Size(890, 636);
+            BackColor = Color.LightGreen;
+            ClientSize = new Size(914, 695);
+            Controls.Add(panel1);
             Controls.Add(btnCancelar);
             Controls.Add(btnBuscar);
             Controls.Add(btnCobrar);
@@ -443,6 +471,8 @@
             groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewFactura).EndInit();
             ((System.ComponentModel.ISupportInitialize)errorProviderNumero).EndInit();
+            panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -479,5 +509,7 @@
         private Label label16;
         private Label label15;
         private Label label14;
+        private Panel panel1;
+        private PictureBox pictureBox1;
     }
 }
