@@ -37,15 +37,13 @@
             label2 = new Label();
             txtCantCamas = new TextBox();
             label3 = new Label();
-            txtPrecio = new TextBox();
+            txtCosto = new TextBox();
             label4 = new Label();
             txtEstado = new TextBox();
             label5 = new Label();
             txtTipoHabitac = new TextBox();
-            label6 = new Label();
-            txtUbicacion = new TextBox();
             label7 = new Label();
-            Piso = new TextBox();
+            txtPiso = new TextBox();
             btnAgregarHabitac = new Button();
             label8 = new Label();
             label9 = new Label();
@@ -61,6 +59,9 @@
             btnEditar = new Button();
             dataGridView1 = new DataGridView();
             errorProvider1 = new ErrorProvider(components);
+            label16 = new Label();
+            btnCancelar = new Button();
+            label6 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -93,7 +94,7 @@
             // 
             pictureBox2.Anchor = AnchorStyles.None;
             pictureBox2.Image = Properties.Resources.habitac1;
-            pictureBox2.Location = new Point(457, 175);
+            pictureBox2.Location = new Point(448, 207);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(191, 190);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -105,7 +106,7 @@
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(48, 136);
+            label1.Location = new Point(67, 194);
             label1.Name = "label1";
             label1.Size = new Size(167, 19);
             label1.TabIndex = 25;
@@ -114,7 +115,7 @@
             // txtNroHab
             // 
             txtNroHab.Anchor = AnchorStyles.None;
-            txtNroHab.Location = new Point(221, 135);
+            txtNroHab.Location = new Point(239, 193);
             txtNroHab.Name = "txtNroHab";
             txtNroHab.Size = new Size(137, 23);
             txtNroHab.TabIndex = 26;
@@ -125,7 +126,7 @@
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(78, 215);
+            label2.Location = new Point(96, 272);
             label2.Name = "label2";
             label2.Size = new Size(140, 19);
             label2.TabIndex = 27;
@@ -134,7 +135,7 @@
             // txtCantCamas
             // 
             txtCantCamas.Anchor = AnchorStyles.None;
-            txtCantCamas.Location = new Point(221, 213);
+            txtCantCamas.Location = new Point(239, 270);
             txtCantCamas.Name = "txtCantCamas";
             txtCantCamas.Size = new Size(137, 23);
             txtCantCamas.TabIndex = 28;
@@ -145,26 +146,26 @@
             label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
             label3.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(156, 381);
+            label3.Location = new Point(181, 395);
             label3.Name = "label3";
-            label3.Size = new Size(56, 19);
+            label3.Size = new Size(51, 19);
             label3.TabIndex = 29;
-            label3.Text = "Precio:";
+            label3.Text = "Costo:";
             // 
-            // txtPrecio
+            // txtCosto
             // 
-            txtPrecio.Anchor = AnchorStyles.None;
-            txtPrecio.Location = new Point(221, 381);
-            txtPrecio.Name = "txtPrecio";
-            txtPrecio.Size = new Size(137, 23);
-            txtPrecio.TabIndex = 30;
+            txtCosto.Anchor = AnchorStyles.None;
+            txtCosto.Location = new Point(239, 395);
+            txtCosto.Name = "txtCosto";
+            txtCosto.Size = new Size(137, 23);
+            txtCosto.TabIndex = 30;
             // 
             // label4
             // 
             label4.Anchor = AnchorStyles.None;
             label4.AutoSize = true;
             label4.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(156, 339);
+            label4.Location = new Point(174, 354);
             label4.Name = "label4";
             label4.Size = new Size(59, 19);
             label4.TabIndex = 31;
@@ -173,7 +174,7 @@
             // txtEstado
             // 
             txtEstado.Anchor = AnchorStyles.None;
-            txtEstado.Location = new Point(221, 338);
+            txtEstado.Location = new Point(239, 353);
             txtEstado.Name = "txtEstado";
             txtEstado.Size = new Size(137, 23);
             txtEstado.TabIndex = 32;
@@ -183,7 +184,7 @@
             label5.Anchor = AnchorStyles.None;
             label5.AutoSize = true;
             label5.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(73, 175);
+            label5.Location = new Point(92, 231);
             label5.Name = "label5";
             label5.Size = new Size(142, 19);
             label5.TabIndex = 33;
@@ -192,48 +193,29 @@
             // txtTipoHabitac
             // 
             txtTipoHabitac.Anchor = AnchorStyles.None;
-            txtTipoHabitac.Location = new Point(221, 173);
+            txtTipoHabitac.Location = new Point(240, 230);
             txtTipoHabitac.Name = "txtTipoHabitac";
             txtTipoHabitac.Size = new Size(137, 23);
             txtTipoHabitac.TabIndex = 34;
-            // 
-            // label6
-            // 
-            label6.Anchor = AnchorStyles.None;
-            label6.AutoSize = true;
-            label6.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(138, 299);
-            label6.Name = "label6";
-            label6.Size = new Size(80, 19);
-            label6.TabIndex = 35;
-            label6.Text = "Ubicación:";
-            // 
-            // txtUbicacion
-            // 
-            txtUbicacion.Anchor = AnchorStyles.None;
-            txtUbicacion.Location = new Point(221, 297);
-            txtUbicacion.Name = "txtUbicacion";
-            txtUbicacion.Size = new Size(137, 23);
-            txtUbicacion.TabIndex = 36;
             // 
             // label7
             // 
             label7.Anchor = AnchorStyles.None;
             label7.AutoSize = true;
             label7.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(174, 257);
+            label7.Location = new Point(192, 314);
             label7.Name = "label7";
             label7.Size = new Size(41, 19);
             label7.TabIndex = 37;
             label7.Text = "Piso:";
             // 
-            // Piso
+            // txtPiso
             // 
-            Piso.Anchor = AnchorStyles.None;
-            Piso.Location = new Point(221, 254);
-            Piso.Name = "Piso";
-            Piso.Size = new Size(137, 23);
-            Piso.TabIndex = 38;
+            txtPiso.Anchor = AnchorStyles.None;
+            txtPiso.Location = new Point(239, 311);
+            txtPiso.Name = "txtPiso";
+            txtPiso.Size = new Size(137, 23);
+            txtPiso.TabIndex = 38;
             // 
             // btnAgregarHabitac
             // 
@@ -241,18 +223,19 @@
             btnAgregarHabitac.FlatAppearance.BorderColor = SystemColors.ActiveCaptionText;
             btnAgregarHabitac.FlatStyle = FlatStyle.Popup;
             btnAgregarHabitac.Image = Properties.Resources.agregar;
-            btnAgregarHabitac.Location = new Point(91, 449);
+            btnAgregarHabitac.Location = new Point(81, 451);
             btnAgregarHabitac.Name = "btnAgregarHabitac";
             btnAgregarHabitac.Size = new Size(71, 71);
             btnAgregarHabitac.TabIndex = 39;
             btnAgregarHabitac.UseVisualStyleBackColor = true;
+            btnAgregarHabitac.Click += btnAgregarHabitac_Click;
             // 
             // label8
             // 
             label8.Anchor = AnchorStyles.None;
             label8.AutoSize = true;
             label8.Font = new Font("Microsoft JhengHei", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.Location = new Point(98, 523);
+            label8.Location = new Point(90, 523);
             label8.Name = "label8";
             label8.Size = new Size(60, 17);
             label8.TabIndex = 40;
@@ -263,7 +246,7 @@
             label9.Anchor = AnchorStyles.None;
             label9.AutoSize = true;
             label9.Font = new Font("Microsoft JhengHei", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label9.Location = new Point(214, 523);
+            label9.Location = new Point(184, 523);
             label9.Name = "label9";
             label9.Size = new Size(83, 17);
             label9.TabIndex = 42;
@@ -274,7 +257,7 @@
             label10.Anchor = AnchorStyles.None;
             label10.AutoSize = true;
             label10.Font = new Font("Microsoft JhengHei", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label10.Location = new Point(477, 524);
+            label10.Location = new Point(423, 524);
             label10.Name = "label10";
             label10.Size = new Size(44, 17);
             label10.TabIndex = 50;
@@ -286,7 +269,7 @@
             label11.Anchor = AnchorStyles.None;
             label11.AutoSize = true;
             label11.Font = new Font("Microsoft JhengHei", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label11.Location = new Point(593, 522);
+            label11.Location = new Point(525, 523);
             label11.Name = "label11";
             label11.Size = new Size(59, 17);
             label11.TabIndex = 52;
@@ -299,7 +282,7 @@
             btnEliminar.BackColor = Color.LightGreen;
             btnEliminar.FlatStyle = FlatStyle.Popup;
             btnEliminar.Image = Properties.Resources.eliminar;
-            btnEliminar.Location = new Point(587, 450);
+            btnEliminar.Location = new Point(519, 450);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(71, 71);
             btnEliminar.TabIndex = 51;
@@ -310,7 +293,7 @@
             btnHabilitarHabitacion.Anchor = AnchorStyles.None;
             btnHabilitarHabitacion.FlatStyle = FlatStyle.Popup;
             btnHabilitarHabitacion.Image = Properties.Resources.on;
-            btnHabilitarHabitacion.Location = new Point(344, 450);
+            btnHabilitarHabitacion.Location = new Point(297, 450);
             btnHabilitarHabitacion.Name = "btnHabilitarHabitacion";
             btnHabilitarHabitacion.Size = new Size(71, 71);
             btnHabilitarHabitacion.TabIndex = 53;
@@ -321,7 +304,7 @@
             label12.Anchor = AnchorStyles.None;
             label12.AutoSize = true;
             label12.Font = new Font("Microsoft JhengHei", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label12.Location = new Point(350, 522);
+            label12.Location = new Point(303, 522);
             label12.Name = "label12";
             label12.Size = new Size(65, 17);
             label12.TabIndex = 54;
@@ -332,7 +315,7 @@
             label13.Anchor = AnchorStyles.None;
             label13.AutoSize = true;
             label13.Font = new Font("Microsoft JhengHei", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label13.Location = new Point(88, 540);
+            label13.Location = new Point(80, 540);
             label13.Name = "label13";
             label13.Size = new Size(76, 17);
             label13.TabIndex = 55;
@@ -343,7 +326,7 @@
             label14.Anchor = AnchorStyles.None;
             label14.AutoSize = true;
             label14.Font = new Font("Microsoft JhengHei", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label14.Location = new Point(218, 539);
+            label14.Location = new Point(188, 539);
             label14.Name = "label14";
             label14.Size = new Size(76, 17);
             label14.TabIndex = 56;
@@ -354,7 +337,7 @@
             label15.Anchor = AnchorStyles.None;
             label15.AutoSize = true;
             label15.Font = new Font("Microsoft JhengHei", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label15.Location = new Point(343, 539);
+            label15.Location = new Point(296, 539);
             label15.Name = "label15";
             label15.Size = new Size(76, 17);
             label15.TabIndex = 57;
@@ -365,7 +348,7 @@
             btnDeshabHabitacion.Anchor = AnchorStyles.None;
             btnDeshabHabitacion.FlatStyle = FlatStyle.Popup;
             btnDeshabHabitacion.Image = Properties.Resources.off1;
-            btnDeshabHabitacion.Location = new Point(219, 450);
+            btnDeshabHabitacion.Location = new Point(189, 450);
             btnDeshabHabitacion.Name = "btnDeshabHabitacion";
             btnDeshabHabitacion.Size = new Size(71, 71);
             btnDeshabHabitacion.TabIndex = 58;
@@ -376,7 +359,7 @@
             btnEditar.Anchor = AnchorStyles.None;
             btnEditar.FlatStyle = FlatStyle.Popup;
             btnEditar.Image = Properties.Resources.edit2;
-            btnEditar.Location = new Point(464, 451);
+            btnEditar.Location = new Point(409, 451);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(71, 71);
             btnEditar.TabIndex = 59;
@@ -396,12 +379,49 @@
             // 
             errorProvider1.ContainerControl = this;
             // 
+            // label16
+            // 
+            label16.Anchor = AnchorStyles.None;
+            label16.AutoSize = true;
+            label16.Font = new Font("Yu Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label16.Location = new Point(633, 524);
+            label16.Name = "label16";
+            label16.Size = new Size(65, 17);
+            label16.TabIndex = 62;
+            label16.Text = "Cancelar";
+            // 
+            // btnCancelar
+            // 
+            btnCancelar.Anchor = AnchorStyles.None;
+            btnCancelar.BackColor = Color.LightGreen;
+            btnCancelar.FlatStyle = FlatStyle.Popup;
+            btnCancelar.Image = Properties.Resources.cancelar;
+            btnCancelar.Location = new Point(630, 450);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(71, 71);
+            btnCancelar.TabIndex = 61;
+            btnCancelar.UseVisualStyleBackColor = false;
+            // 
+            // label6
+            // 
+            label6.Anchor = AnchorStyles.None;
+            label6.AutoSize = true;
+            label6.Font = new Font("Arial Rounded MT Bold", 32.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Location = new Point(90, 122);
+            label6.Name = "label6";
+            label6.Size = new Size(687, 50);
+            label6.TabIndex = 63;
+            label6.Text = "Administración de habitaciones";
+            // 
             // administracionHabitaciones
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightGreen;
             ClientSize = new Size(799, 749);
+            Controls.Add(label6);
+            Controls.Add(label16);
+            Controls.Add(btnCancelar);
             Controls.Add(dataGridView1);
             Controls.Add(btnEditar);
             Controls.Add(btnDeshabHabitacion);
@@ -416,15 +436,13 @@
             Controls.Add(label9);
             Controls.Add(label8);
             Controls.Add(btnAgregarHabitac);
-            Controls.Add(Piso);
+            Controls.Add(txtPiso);
             Controls.Add(label7);
-            Controls.Add(txtUbicacion);
-            Controls.Add(label6);
             Controls.Add(txtTipoHabitac);
             Controls.Add(label5);
             Controls.Add(txtEstado);
             Controls.Add(label4);
-            Controls.Add(txtPrecio);
+            Controls.Add(txtCosto);
             Controls.Add(label3);
             Controls.Add(txtCantCamas);
             Controls.Add(label2);
@@ -454,15 +472,13 @@
         private Label label2;
         private TextBox txtCantCamas;
         private Label label3;
-        private TextBox txtPrecio;
+        private TextBox txtCosto;
         private Label label4;
         private TextBox txtEstado;
         private Label label5;
         private TextBox txtTipoHabitac;
-        private Label label6;
-        private TextBox txtUbicacion;
         private Label label7;
-        private TextBox Piso;
+        private TextBox txtPiso;
         private Button btnAgregarHabitac;
         private Label label8;
         private Label label9;
@@ -478,5 +494,8 @@
         private Button btnEditar;
         private DataGridView dataGridView1;
         private ErrorProvider errorProvider1;
+        private Label label16;
+        private Button btnCancelar;
+        private Label label6;
     }
 }

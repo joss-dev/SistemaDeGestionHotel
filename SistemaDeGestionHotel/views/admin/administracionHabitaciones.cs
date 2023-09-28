@@ -26,5 +26,16 @@ namespace SistemaDeGestionHotel.views.admin
         {
             ValidacionTextBox.ValidarSoloNumeros(txtCantCamas, errorProvider1);
         }
+
+        private void btnAgregarHabitac_Click(object sender, EventArgs e)
+        {
+            // Verificar si alguno de los campos está incompleto
+            if (string.IsNullOrEmpty(txtNroHab.Text) || string.IsNullOrEmpty(txtTipoHabitac.Text) || string.IsNullOrEmpty(txtCantCamas.Text) || string.IsNullOrEmpty(txtPiso.Text) || string.IsNullOrEmpty(txtEstado.Text) || string.IsNullOrEmpty(txtCosto.Text))
+            {
+                // Mostrar un mensaje de error
+                MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
     }
 }
