@@ -120,18 +120,21 @@ namespace SistemaDeGestionHotel
                 if (TUsuario.Text == "admin")
                 {
                     Form form = new PrincipalAdmin();
-                    form.ShowDialog();
+                    form.Show();
+                    this.Hide();
                 }
                 if (TUsuario.Text == "recep")
                 {
                     Form form = new PrincipalRecep();
-                    form.ShowDialog();
+                    form.Show();
+                    this.Hide();
                 }
 
                 if (TUsuario.Text == "superadmin")
                 {
                     Form form = new PrincipalSuperAdmin();
-                    form.ShowDialog();
+                    form.Show();
+                    this.Hide();
                 }
             }
             else

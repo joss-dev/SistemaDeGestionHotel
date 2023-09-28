@@ -86,7 +86,7 @@ namespace SistemaDeGestionHotel
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void Login_MouseDown(object sender, MouseEventArgs e)

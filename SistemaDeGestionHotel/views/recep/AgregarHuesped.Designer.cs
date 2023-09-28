@@ -406,6 +406,7 @@
             Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.None;
             Name = "AgregarHuesped";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AgregarHuesped";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
