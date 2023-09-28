@@ -385,9 +385,9 @@
             // 
             pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.Image = Properties.Resources.logoHotel;
-            pictureBox1.Location = new Point(365, -23);
+            pictureBox1.Location = new Point(365, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(116, 120);
+            pictureBox1.Size = new Size(110, 90);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 19;
             pictureBox1.TabStop = false;
