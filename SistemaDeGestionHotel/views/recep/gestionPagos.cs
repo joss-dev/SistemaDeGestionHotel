@@ -43,5 +43,23 @@ namespace SistemaDeGestionHotel.views.recep
         {
 
         }
+
+        private void cbMetodoPago_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int indiceSeleccionado = cbMetodoPago.SelectedIndex;
+
+            if (indiceSeleccionado == 0)
+            {
+                // Primer índice, que corresponde a "Efectivo"
+                FormEfectivo formEfectivo = new FormEfectivo();
+                formEfectivo.ShowDialog();
+            }
+            else if (indiceSeleccionado == 1)
+            {
+                // Segundo índice, que corresponde a "Tarjeta de Débito"
+                FormTarjetaDebito formDebito = new FormTarjetaDebito();
+                formDebito.ShowDialog();
+            }
+        }
     }
 }
