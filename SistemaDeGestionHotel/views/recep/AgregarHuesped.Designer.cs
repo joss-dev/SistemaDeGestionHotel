@@ -52,6 +52,7 @@
             btnCancelar = new Button();
             btnRegistrar = new Button();
             errorProviderNumero = new ErrorProvider(components);
+            label11 = new Label();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProviderNumero).BeginInit();
@@ -59,6 +60,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(label11);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
@@ -325,6 +327,18 @@
             // 
             errorProviderNumero.ContainerControl = this;
             // 
+            // label11
+            // 
+            label11.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            label11.AutoSize = true;
+            label11.BorderStyle = BorderStyle.FixedSingle;
+            label11.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label11.Location = new Point(308, 70);
+            label11.Name = "label11";
+            label11.Size = new Size(72, 18);
+            label11.TabIndex = 33;
+            label11.Text = "Estado : ";
+            // 
             // AgregarHuesped
             // 
             AutoScaleDimensions = new SizeF(6F, 13F);
@@ -372,5 +386,6 @@
         private DateTimePicker dateTimeIngreso;
         private DateTimePicker dateTimeSalida;
         private ErrorProvider errorProviderNumero;
+        private Label label11;
     }
 }

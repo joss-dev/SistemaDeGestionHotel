@@ -30,7 +30,6 @@
         {
             panelMenu = new Panel();
             btnGestionarReservas = new FontAwesome.Sharp.IconButton();
-            btnAgregarReserva = new FontAwesome.Sharp.IconButton();
             btnCerrarSesion = new Button();
             btnGestionPagos = new FontAwesome.Sharp.IconButton();
             btnGestionHabitaciones = new FontAwesome.Sharp.IconButton();
@@ -50,7 +49,6 @@
             // 
             panelMenu.BackColor = Color.FromArgb(39, 79, 193);
             panelMenu.Controls.Add(btnGestionarReservas);
-            panelMenu.Controls.Add(btnAgregarReserva);
             panelMenu.Controls.Add(btnCerrarSesion);
             panelMenu.Controls.Add(btnGestionPagos);
             panelMenu.Controls.Add(btnGestionHabitaciones);
@@ -81,7 +79,7 @@
             btnGestionarReservas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnGestionarReservas.IconSize = 38;
             btnGestionarReservas.ImageAlign = ContentAlignment.MiddleLeft;
-            btnGestionarReservas.Location = new Point(0, 380);
+            btnGestionarReservas.Location = new Point(0, 320);
             btnGestionarReservas.Name = "btnGestionarReservas";
             btnGestionarReservas.Padding = new Padding(20, 0, 10, 0);
             btnGestionarReservas.Size = new Size(220, 60);
@@ -91,32 +89,6 @@
             btnGestionarReservas.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnGestionarReservas.UseVisualStyleBackColor = true;
             btnGestionarReservas.Click += btnGestionarReservas_Click;
-            // 
-            // btnAgregarReserva
-            // 
-            btnAgregarReserva.Cursor = Cursors.Hand;
-            btnAgregarReserva.Dock = DockStyle.Top;
-            btnAgregarReserva.FlatAppearance.BorderSize = 0;
-            btnAgregarReserva.FlatAppearance.MouseDownBackColor = Color.Gainsboro;
-            btnAgregarReserva.FlatAppearance.MouseOverBackColor = Color.Gray;
-            btnAgregarReserva.FlatStyle = FlatStyle.Flat;
-            btnAgregarReserva.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnAgregarReserva.ForeColor = Color.White;
-            btnAgregarReserva.IconChar = FontAwesome.Sharp.IconChar.Archive;
-            btnAgregarReserva.IconColor = Color.FromArgb(15, 15, 15);
-            btnAgregarReserva.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnAgregarReserva.IconSize = 38;
-            btnAgregarReserva.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAgregarReserva.Location = new Point(0, 320);
-            btnAgregarReserva.Name = "btnAgregarReserva";
-            btnAgregarReserva.Padding = new Padding(20, 0, 10, 0);
-            btnAgregarReserva.Size = new Size(220, 60);
-            btnAgregarReserva.TabIndex = 7;
-            btnAgregarReserva.Text = "Agregar Reserva";
-            btnAgregarReserva.TextAlign = ContentAlignment.MiddleLeft;
-            btnAgregarReserva.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnAgregarReserva.UseVisualStyleBackColor = true;
-            btnAgregarReserva.Click += btnAgregarReserva_Click_1;
             // 
             // btnCerrarSesion
             // 
@@ -247,7 +219,7 @@
             btnExit.IconColor = Color.Black;
             btnExit.IconFont = FontAwesome.Sharp.IconFont.Solid;
             btnExit.IconSize = 20;
-            btnExit.Location = new Point(864, 1);
+            btnExit.Location = new Point(864, 2);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(33, 30);
             btnExit.TabIndex = 1;
@@ -264,7 +236,7 @@
             btnMinimizar.IconFont = FontAwesome.Sharp.IconFont.Solid;
             btnMinimizar.IconSize = 20;
             btnMinimizar.ImageAlign = ContentAlignment.BottomRight;
-            btnMinimizar.Location = new Point(793, 1);
+            btnMinimizar.Location = new Point(793, 3);
             btnMinimizar.Name = "btnMinimizar";
             btnMinimizar.Size = new Size(29, 26);
             btnMinimizar.TabIndex = 2;
@@ -274,6 +246,7 @@
             // panelContenedor
             // 
             panelContenedor.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panelContenedor.BackColor = Color.White;
             panelContenedor.Location = new Point(220, 33);
             panelContenedor.Name = "panelContenedor";
             panelContenedor.Size = new Size(677, 531);
@@ -288,7 +261,7 @@
             btnPantallaCompleta.IconColor = Color.Black;
             btnPantallaCompleta.IconFont = FontAwesome.Sharp.IconFont.Solid;
             btnPantallaCompleta.IconSize = 20;
-            btnPantallaCompleta.Location = new Point(828, 1);
+            btnPantallaCompleta.Location = new Point(828, 5);
             btnPantallaCompleta.Name = "btnPantallaCompleta";
             btnPantallaCompleta.Size = new Size(33, 26);
             btnPantallaCompleta.TabIndex = 4;
@@ -300,6 +273,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
+            BackColor = Color.LightGreen;
             ClientSize = new Size(897, 564);
             Controls.Add(btnMinimizar);
             Controls.Add(btnExit);
@@ -331,7 +305,6 @@
         private FontAwesome.Sharp.IconButton btnMinimizar;
         private Panel panelContenedor;
         private FontAwesome.Sharp.IconButton btnPantallaCompleta;
-        private FontAwesome.Sharp.IconButton btnAgregarReserva;
         private FontAwesome.Sharp.IconButton btnGestionarReservas;
     }
 }

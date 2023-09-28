@@ -298,6 +298,7 @@
             // 
             // btnFiltroSimple
             // 
+            btnFiltroSimple.Anchor = AnchorStyles.None;
             btnFiltroSimple.BackColor = Color.Yellow;
             btnFiltroSimple.FlatStyle = FlatStyle.Flat;
             btnFiltroSimple.Font = new Font("Yu Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
@@ -310,6 +311,7 @@
             // 
             // btnFiltroDoble
             // 
+            btnFiltroDoble.Anchor = AnchorStyles.None;
             btnFiltroDoble.BackColor = Color.Yellow;
             btnFiltroDoble.FlatStyle = FlatStyle.Flat;
             btnFiltroDoble.Font = new Font("Yu Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
