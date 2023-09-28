@@ -62,5 +62,26 @@ namespace SistemaDeGestionHotel
 
             return false; // Ningún TextBox está vacío
         }
+
+
+        public static void ValidarPrecio(TextBox textBox, ErrorProvider errorProvider)
+        {
+            textBox.KeyPress += (sender, e) =>
+            {
+                // Permitir solo caracteres numéricos, comas, puntos y teclas de control como Backspace y Delete
+                if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.' && e.KeyChar != ',')
+                {
+                    e.Handled = true; // Cancelar la entrada del caracter
+                    errorProvider.SetError(textBox, "Ingrese un precio válido.");
+                }
+                else
+                {
+                    errorProvider.SetError(textBox, ""); // Limpiar el mensaje de error si es válido
+                }
+            };
+        }
+
+
+
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
             btnCobrar = new FontAwesome.Sharp.IconButton();
@@ -41,9 +42,11 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
+            errorProvider1 = new ErrorProvider(components);
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -151,6 +154,7 @@
             textBoxEfectivo.Name = "textBoxEfectivo";
             textBoxEfectivo.Size = new Size(180, 33);
             textBoxEfectivo.TabIndex = 39;
+            textBoxEfectivo.KeyDown += ValidarEfectivo;
             // 
             // label4
             // 
@@ -203,6 +207,10 @@
             label1.TabIndex = 34;
             label1.Text = "Telefono :";
             // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
+            // 
             // FormEfectivo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -221,6 +229,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
         }
 
@@ -239,5 +248,6 @@
         private Label label4;
         private TextBox textBox1;
         private Label label5;
+        private ErrorProvider errorProvider1;
     }
 }

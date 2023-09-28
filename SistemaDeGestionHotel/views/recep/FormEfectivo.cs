@@ -15,11 +15,17 @@ namespace SistemaDeGestionHotel.views.recep
         public FormEfectivo()
         {
             InitializeComponent();
+            
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ValidarEfectivo(object sender, KeyEventArgs e)
+        {
+            ValidacionTextBox.ValidarPrecio(textBoxEfectivo, errorProvider1);
         }
     }
 }
