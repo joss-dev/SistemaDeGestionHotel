@@ -73,6 +73,7 @@
             // 
             // button15
             // 
+            button15.Anchor = AnchorStyles.None;
             button15.BackColor = Color.MediumSpringGreen;
             button15.FlatStyle = FlatStyle.Flat;
             button15.Font = new Font("Yu Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
@@ -85,6 +86,7 @@
             // 
             // button14
             // 
+            button14.Anchor = AnchorStyles.None;
             button14.BackColor = Color.SandyBrown;
             button14.FlatStyle = FlatStyle.Flat;
             button14.Font = new Font("Yu Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
@@ -97,6 +99,7 @@
             // 
             // button13
             // 
+            button13.Anchor = AnchorStyles.None;
             button13.BackColor = Color.SandyBrown;
             button13.FlatStyle = FlatStyle.Flat;
             button13.Font = new Font("Yu Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
@@ -109,6 +112,7 @@
             // 
             // button12
             // 
+            button12.Anchor = AnchorStyles.None;
             button12.BackColor = Color.Red;
             button12.FlatStyle = FlatStyle.Flat;
             button12.Font = new Font("Yu Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
@@ -121,6 +125,7 @@
             // 
             // button11
             // 
+            button11.Anchor = AnchorStyles.None;
             button11.BackColor = Color.Red;
             button11.FlatStyle = FlatStyle.Flat;
             button11.Font = new Font("Yu Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
@@ -133,6 +138,7 @@
             // 
             // button10
             // 
+            button10.Anchor = AnchorStyles.None;
             button10.BackColor = Color.MediumSpringGreen;
             button10.FlatStyle = FlatStyle.Flat;
             button10.Font = new Font("Yu Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
@@ -145,6 +151,7 @@
             // 
             // button9
             // 
+            button9.Anchor = AnchorStyles.None;
             button9.BackColor = Color.Red;
             button9.FlatStyle = FlatStyle.Flat;
             button9.Font = new Font("Yu Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
@@ -157,6 +164,7 @@
             // 
             // button8
             // 
+            button8.Anchor = AnchorStyles.None;
             button8.BackColor = Color.MediumSpringGreen;
             button8.FlatStyle = FlatStyle.Flat;
             button8.Font = new Font("Yu Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
@@ -169,6 +177,7 @@
             // 
             // button7
             // 
+            button7.Anchor = AnchorStyles.None;
             button7.BackColor = Color.MediumSpringGreen;
             button7.FlatStyle = FlatStyle.Flat;
             button7.Font = new Font("Yu Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
@@ -185,7 +194,7 @@
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label1.AutoSize = true;
             label1.Font = new Font("Verdana", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(259, 9);
+            label1.Location = new Point(277, 59);
             label1.Name = "label1";
             label1.Size = new Size(303, 29);
             label1.TabIndex = 1;
@@ -298,7 +307,7 @@
             // 
             // btnFiltroSimple
             // 
-            btnFiltroSimple.Anchor = AnchorStyles.None;
+            btnFiltroSimple.Anchor = AnchorStyles.Top;
             btnFiltroSimple.BackColor = Color.Yellow;
             btnFiltroSimple.FlatStyle = FlatStyle.Flat;
             btnFiltroSimple.Font = new Font("Yu Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
@@ -311,7 +320,7 @@
             // 
             // btnFiltroDoble
             // 
-            btnFiltroDoble.Anchor = AnchorStyles.None;
+            btnFiltroDoble.Anchor = AnchorStyles.Top;
             btnFiltroDoble.BackColor = Color.Yellow;
             btnFiltroDoble.FlatStyle = FlatStyle.Flat;
             btnFiltroDoble.Font = new Font("Yu Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
@@ -327,7 +336,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
-            BackColor = Color.SteelBlue;
+            BackColor = Color.LightGreen;
             ClientSize = new Size(891, 564);
             Controls.Add(btnFiltroDoble);
             Controls.Add(btnFiltroSimple);

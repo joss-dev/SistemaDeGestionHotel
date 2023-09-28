@@ -30,12 +30,13 @@
         {
             components = new System.ComponentModel.Container();
             groupBox1 = new GroupBox();
+            label11 = new Label();
             label4 = new Label();
             label2 = new Label();
             label1 = new Label();
             label3 = new Label();
             groupBox2 = new GroupBox();
-            comboBox1 = new ComboBox();
+            textBox1 = new TextBox();
             label7 = new Label();
             lApellido = new Label();
             TApellido = new TextBox();
@@ -52,10 +53,15 @@
             btnCancelar = new Button();
             btnRegistrar = new Button();
             errorProviderNumero = new ErrorProvider(components);
-            label11 = new Label();
+            panel1 = new Panel();
+            pictureBox1 = new PictureBox();
+            comboBox1 = new ComboBox();
+            label12 = new Label();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProviderNumero).BeginInit();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
@@ -66,12 +72,24 @@
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(label3);
             groupBox1.Font = new Font("Georgia", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            groupBox1.Location = new Point(95, 12);
+            groupBox1.Location = new Point(95, 96);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(622, 118);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Datos de la Habitación";
+            // 
+            // label11
+            // 
+            label11.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            label11.AutoSize = true;
+            label11.BorderStyle = BorderStyle.FixedSingle;
+            label11.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label11.Location = new Point(308, 70);
+            label11.Name = "label11";
+            label11.Size = new Size(72, 18);
+            label11.TabIndex = 33;
+            label11.Text = "Estado : ";
             // 
             // label4
             // 
@@ -123,7 +141,9 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(label12);
             groupBox2.Controls.Add(comboBox1);
+            groupBox2.Controls.Add(textBox1);
             groupBox2.Controls.Add(label7);
             groupBox2.Controls.Add(lApellido);
             groupBox2.Controls.Add(TApellido);
@@ -138,38 +158,40 @@
             groupBox2.Controls.Add(dateTimeIngreso);
             groupBox2.Controls.Add(dateTimeSalida);
             groupBox2.Font = new Font("Georgia", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            groupBox2.Location = new Point(95, 151);
+            groupBox2.Location = new Point(95, 220);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(622, 361);
+            groupBox2.Size = new Size(668, 361);
             groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "Datos del Huesped";
             // 
-            // comboBox1
+            // textBox1
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(30, 314);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 26);
-            comboBox1.TabIndex = 39;
+            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            textBox1.Location = new Point(56, 212);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(206, 25);
+            textBox1.TabIndex = 38;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // label7
             // 
             label7.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(29, 280);
+            label7.Location = new Point(56, 180);
             label7.Name = "label7";
-            label7.Size = new Size(122, 20);
-            label7.TabIndex = 38;
-            label7.Text = "Forma de Pago :";
+            label7.Size = new Size(78, 20);
+            label7.TabIndex = 39;
+            label7.Text = "Telefono :";
+            label7.Click += label7_Click;
             // 
             // lApellido
             // 
             lApellido.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             lApellido.AutoSize = true;
             lApellido.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lApellido.Location = new Point(29, 37);
+            lApellido.Location = new Point(52, 37);
             lApellido.Name = "lApellido";
             lApellido.Size = new Size(75, 20);
             lApellido.TabIndex = 30;
@@ -179,7 +201,7 @@
             // 
             TApellido.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             TApellido.BorderStyle = BorderStyle.FixedSingle;
-            TApellido.Location = new Point(29, 60);
+            TApellido.Location = new Point(52, 60);
             TApellido.Name = "TApellido";
             TApellido.Size = new Size(206, 25);
             TApellido.TabIndex = 26;
@@ -188,7 +210,7 @@
             // TNombre
             // 
             TNombre.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            TNombre.Location = new Point(388, 60);
+            TNombre.Location = new Point(411, 60);
             TNombre.Name = "TNombre";
             TNombre.Size = new Size(206, 25);
             TNombre.TabIndex = 27;
@@ -199,7 +221,7 @@
             label5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(388, 37);
+            label5.Location = new Point(411, 37);
             label5.Name = "label5";
             label5.Size = new Size(75, 20);
             label5.TabIndex = 31;
@@ -208,7 +230,7 @@
             // TCantidadHuespedes
             // 
             TCantidadHuespedes.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            TCantidadHuespedes.Location = new Point(388, 133);
+            TCantidadHuespedes.Location = new Point(411, 133);
             TCantidadHuespedes.Name = "TCantidadHuespedes";
             TCantidadHuespedes.Size = new Size(206, 25);
             TCantidadHuespedes.TabIndex = 29;
@@ -217,7 +239,7 @@
             // TDni
             // 
             TDni.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            TDni.Location = new Point(29, 133);
+            TDni.Location = new Point(52, 133);
             TDni.Name = "TDni";
             TDni.Size = new Size(206, 25);
             TDni.TabIndex = 28;
@@ -228,7 +250,7 @@
             label6.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(388, 183);
+            label6.Location = new Point(411, 277);
             label6.Name = "label6";
             label6.Size = new Size(123, 20);
             label6.TabIndex = 37;
@@ -239,7 +261,7 @@
             label8.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.Location = new Point(29, 101);
+            label8.Location = new Point(52, 101);
             label8.Name = "label8";
             label8.Size = new Size(45, 20);
             label8.TabIndex = 32;
@@ -250,7 +272,7 @@
             label9.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label9.Location = new Point(388, 110);
+            label9.Location = new Point(411, 110);
             label9.Name = "label9";
             label9.Size = new Size(178, 20);
             label9.TabIndex = 33;
@@ -261,7 +283,7 @@
             label10.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label10.Location = new Point(29, 183);
+            label10.Location = new Point(56, 277);
             label10.Name = "label10";
             label10.Size = new Size(135, 20);
             label10.TabIndex = 35;
@@ -271,7 +293,7 @@
             // 
             dateTimeIngreso.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             dateTimeIngreso.Format = DateTimePickerFormat.Short;
-            dateTimeIngreso.Location = new Point(29, 224);
+            dateTimeIngreso.Location = new Point(56, 318);
             dateTimeIngreso.Name = "dateTimeIngreso";
             dateTimeIngreso.Size = new Size(135, 25);
             dateTimeIngreso.TabIndex = 34;
@@ -280,7 +302,7 @@
             // 
             dateTimeSalida.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             dateTimeSalida.Format = DateTimePickerFormat.Short;
-            dateTimeSalida.Location = new Point(388, 224);
+            dateTimeSalida.Location = new Point(411, 318);
             dateTimeSalida.Name = "dateTimeSalida";
             dateTimeSalida.Size = new Size(123, 25);
             dateTimeSalida.TabIndex = 36;
@@ -295,7 +317,7 @@
             btnCancelar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnCancelar.Image = Properties.Resources.btnCancelar;
             btnCancelar.ImageAlign = ContentAlignment.TopCenter;
-            btnCancelar.Location = new Point(12, 518);
+            btnCancelar.Location = new Point(12, 599);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(98, 79);
             btnCancelar.TabIndex = 33;
@@ -314,7 +336,7 @@
             btnRegistrar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnRegistrar.Image = Properties.Resources.btn_guardar_;
             btnRegistrar.ImageAlign = ContentAlignment.TopCenter;
-            btnRegistrar.Location = new Point(668, 518);
+            btnRegistrar.Location = new Point(773, 599);
             btnRegistrar.Name = "btnRegistrar";
             btnRegistrar.Size = new Size(96, 79);
             btnRegistrar.TabIndex = 32;
@@ -327,24 +349,56 @@
             // 
             errorProviderNumero.ContainerControl = this;
             // 
-            // label11
+            // panel1
             // 
-            label11.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            label11.AutoSize = true;
-            label11.BorderStyle = BorderStyle.FixedSingle;
-            label11.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label11.Location = new Point(308, 70);
-            label11.Name = "label11";
-            label11.Size = new Size(72, 18);
-            label11.TabIndex = 33;
-            label11.Text = "Estado : ";
+            panel1.BackColor = Color.FromArgb(39, 79, 193);
+            panel1.Controls.Add(pictureBox1);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(888, 90);
+            panel1.TabIndex = 34;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = AnchorStyles.None;
+            pictureBox1.Image = Properties.Resources.logoHotel;
+            pictureBox1.Location = new Point(365, -21);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(116, 120);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 19;
+            pictureBox1.TabStop = false;
+            // 
+            // comboBox1
+            // 
+            comboBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Reserva", "Estadia" });
+            comboBox1.Location = new Point(413, 211);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(121, 26);
+            comboBox1.TabIndex = 40;
+            // 
+            // label12
+            // 
+            label12.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            label12.AutoSize = true;
+            label12.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label12.Location = new Point(411, 180);
+            label12.Name = "label12";
+            label12.Size = new Size(64, 20);
+            label12.TabIndex = 41;
+            label12.Text = "Estado :";
             // 
             // AgregarHuesped
             // 
             AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightGreen;
-            ClientSize = new Size(783, 600);
+            ClientSize = new Size(888, 681);
+            Controls.Add(panel1);
             Controls.Add(btnCancelar);
             Controls.Add(btnRegistrar);
             Controls.Add(groupBox2);
@@ -358,6 +412,8 @@
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)errorProviderNumero).EndInit();
+            panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -371,8 +427,6 @@
         private Label label2;
         private Label label1;
         private Label label3;
-        private ComboBox comboBox1;
-        private Label label7;
         private Label lApellido;
         private TextBox TApellido;
         private TextBox TNombre;
@@ -387,5 +441,11 @@
         private DateTimePicker dateTimeSalida;
         private ErrorProvider errorProviderNumero;
         private Label label11;
+        private Panel panel1;
+        private PictureBox pictureBox1;
+        private TextBox textBox1;
+        private Label label7;
+        private Label label12;
+        private ComboBox comboBox1;
     }
 }
