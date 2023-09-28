@@ -119,7 +119,7 @@
             txtNroHab.Name = "txtNroHab";
             txtNroHab.Size = new Size(137, 23);
             txtNroHab.TabIndex = 26;
-            txtNroHab.TextChanged += txtNroHab_TextChanged;
+            txtNroHab.KeyDown += ValidacionNroHabitacion;
             // 
             // label2
             // 
@@ -139,7 +139,7 @@
             txtCantCamas.Name = "txtCantCamas";
             txtCantCamas.Size = new Size(137, 23);
             txtCantCamas.TabIndex = 28;
-            txtCantCamas.KeyDown += validarCantidadCamas;
+            txtCantCamas.KeyDown += ValidacionCantidadCamas;
             // 
             // label3
             // 
@@ -159,7 +159,7 @@
             txtCosto.Name = "txtCosto";
             txtCosto.Size = new Size(137, 23);
             txtCosto.TabIndex = 30;
-            txtCosto.TextChanged += txtCosto_TextChanged;
+            txtCosto.KeyDown += ValidacionCosto;
             // 
             // label4
             // 
@@ -201,7 +201,7 @@
             txtPiso.Name = "txtPiso";
             txtPiso.Size = new Size(137, 23);
             txtPiso.TabIndex = 38;
-            txtPiso.TextChanged += txtPiso_TextChanged;
+            txtPiso.KeyDown += ValidacionPiso;
             // 
             // btnAgregarHabitac
             // 
@@ -408,6 +408,7 @@
             comboBoxTipoHab.Size = new Size(137, 23);
             comboBoxTipoHab.TabIndex = 64;
             comboBoxTipoHab.SelectedIndexChanged += comboBoxTipoHab_SelectedIndexChanged;
+            comboBoxTipoHab.KeyDown += comboBoxTipoHab_SelectedIndexChanged;
             // 
             // comboBoxEstado
             // 
@@ -418,6 +419,7 @@
             comboBoxEstado.Size = new Size(138, 23);
             comboBoxEstado.TabIndex = 65;
             comboBoxEstado.SelectedIndexChanged += comboBoxEstado_SelectedIndexChanged;
+            comboBoxEstado.KeyDown += comboBoxEstado_SelectedIndexChanged;
             // 
             // administracionHabitaciones
             // 

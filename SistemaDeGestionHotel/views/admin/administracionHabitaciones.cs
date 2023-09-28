@@ -17,8 +17,8 @@ namespace SistemaDeGestionHotel.views.admin
             InitializeComponent();
 
             // Crear las listas de opciones
-            List<string> opciones = new List<string>() { "Sellecione", "Habitación simple", "Habitación doble", "Habitación triple" };
-            List<string> opciones2 = new List<string>() { "Sellecione", "Libre", "Ocupada", "Habilitada", "Deshabilitada", "Eliminada" };
+            List<string> opciones = new List<string>() { "Seleccione", "Habitación simple", "Habitación doble", "Habitación triple" };
+            List<string> opciones2 = new List<string>() { "Seleccione", "Libre", "Ocupada", "Habilitada", "Deshabilitada", "Eliminada" };
 
             // Limpiar los comboBox
             comboBoxTipoHab.Items.Clear();
@@ -37,7 +37,7 @@ namespace SistemaDeGestionHotel.views.admin
             }
         }
 
-        private void txtNroHab_TextChanged(object sender, EventArgs e)
+        private void ValidacionNroHabitacion(object sender, EventArgs e)
         {
             ValidacionTextBox.ValidarSoloNumeros(txtNroHab, errorProvider1);
         }
@@ -52,15 +52,22 @@ namespace SistemaDeGestionHotel.views.admin
             }
         }
 
-        private void txtPiso_TextChanged(object sender, EventArgs e)
+        private void ValidacionCantidadCamas(object sender, KeyEventArgs e)
+        {
+            ValidacionTextBox.ValidarSoloNumeros(txtCantCamas, errorProvider1);
+        }
+
+        private void ValidacionPiso(object sender, EventArgs e)
         {
             ValidacionTextBox.ValidarSoloNumeros(txtPiso, errorProvider1);
         }
 
-        private void validarCantidadCamas(object sender, KeyEventArgs e)
+        private void ValidacionCosto(object sender, EventArgs e)
         {
-            ValidacionTextBox.ValidarSoloNumeros(txtCantCamas, errorProvider1);
+            ValidacionTextBox.ValidarNoVacio(txtPiso);
         }
+
+
 
         private void comboBoxEstado_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -82,12 +89,5 @@ namespace SistemaDeGestionHotel.views.admin
                 return;
             }
         }
-
-        private void txtCosto_TextChanged(object sender, EventArgs e)
-        {
-           
-        }
-
-
     }
 }

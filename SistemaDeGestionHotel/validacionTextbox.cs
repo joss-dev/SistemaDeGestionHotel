@@ -62,10 +62,5 @@ namespace SistemaDeGestionHotel
 
             return false; // Ningún TextBox está vacío
         }
-
-        internal static void ValidarNoVacio(TextBox txtCosto, ErrorProvider errorProvider1)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
