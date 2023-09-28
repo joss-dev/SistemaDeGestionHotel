@@ -39,9 +39,7 @@
             label3 = new Label();
             txtCosto = new TextBox();
             label4 = new Label();
-            txtEstado = new TextBox();
             label5 = new Label();
-            txtTipoHabitac = new TextBox();
             label7 = new Label();
             txtPiso = new TextBox();
             btnAgregarHabitac = new Button();
@@ -62,6 +60,8 @@
             label16 = new Label();
             btnCancelar = new Button();
             label6 = new Label();
+            comboBoxTipoHab = new ComboBox();
+            comboBoxEstado = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -159,6 +159,7 @@
             txtCosto.Name = "txtCosto";
             txtCosto.Size = new Size(137, 23);
             txtCosto.TabIndex = 30;
+            txtCosto.TextChanged += txtCosto_TextChanged;
             // 
             // label4
             // 
@@ -171,14 +172,6 @@
             label4.TabIndex = 31;
             label4.Text = "Estado:";
             // 
-            // txtEstado
-            // 
-            txtEstado.Anchor = AnchorStyles.None;
-            txtEstado.Location = new Point(239, 353);
-            txtEstado.Name = "txtEstado";
-            txtEstado.Size = new Size(137, 23);
-            txtEstado.TabIndex = 32;
-            // 
             // label5
             // 
             label5.Anchor = AnchorStyles.None;
@@ -189,14 +182,6 @@
             label5.Size = new Size(142, 19);
             label5.TabIndex = 33;
             label5.Text = "Tipo de Habitación:";
-            // 
-            // txtTipoHabitac
-            // 
-            txtTipoHabitac.Anchor = AnchorStyles.None;
-            txtTipoHabitac.Location = new Point(240, 230);
-            txtTipoHabitac.Name = "txtTipoHabitac";
-            txtTipoHabitac.Size = new Size(137, 23);
-            txtTipoHabitac.TabIndex = 34;
             // 
             // label7
             // 
@@ -216,6 +201,7 @@
             txtPiso.Name = "txtPiso";
             txtPiso.Size = new Size(137, 23);
             txtPiso.TabIndex = 38;
+            txtPiso.TextChanged += txtPiso_TextChanged;
             // 
             // btnAgregarHabitac
             // 
@@ -413,12 +399,34 @@
             label6.TabIndex = 63;
             label6.Text = "Administración de habitaciones";
             // 
+            // comboBoxTipoHab
+            // 
+            comboBoxTipoHab.Anchor = AnchorStyles.None;
+            comboBoxTipoHab.FormattingEnabled = true;
+            comboBoxTipoHab.Location = new Point(239, 230);
+            comboBoxTipoHab.Name = "comboBoxTipoHab";
+            comboBoxTipoHab.Size = new Size(137, 23);
+            comboBoxTipoHab.TabIndex = 64;
+            comboBoxTipoHab.SelectedIndexChanged += comboBoxTipoHab_SelectedIndexChanged;
+            // 
+            // comboBoxEstado
+            // 
+            comboBoxEstado.Anchor = AnchorStyles.None;
+            comboBoxEstado.FormattingEnabled = true;
+            comboBoxEstado.Location = new Point(238, 354);
+            comboBoxEstado.Name = "comboBoxEstado";
+            comboBoxEstado.Size = new Size(138, 23);
+            comboBoxEstado.TabIndex = 65;
+            comboBoxEstado.SelectedIndexChanged += comboBoxEstado_SelectedIndexChanged;
+            // 
             // administracionHabitaciones
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightGreen;
             ClientSize = new Size(799, 749);
+            Controls.Add(comboBoxEstado);
+            Controls.Add(comboBoxTipoHab);
             Controls.Add(label6);
             Controls.Add(label16);
             Controls.Add(btnCancelar);
@@ -438,9 +446,7 @@
             Controls.Add(btnAgregarHabitac);
             Controls.Add(txtPiso);
             Controls.Add(label7);
-            Controls.Add(txtTipoHabitac);
             Controls.Add(label5);
-            Controls.Add(txtEstado);
             Controls.Add(label4);
             Controls.Add(txtCosto);
             Controls.Add(label3);
@@ -474,9 +480,7 @@
         private Label label3;
         private TextBox txtCosto;
         private Label label4;
-        private TextBox txtEstado;
         private Label label5;
-        private TextBox txtTipoHabitac;
         private Label label7;
         private TextBox txtPiso;
         private Button btnAgregarHabitac;
@@ -497,5 +501,7 @@
         private Label label16;
         private Button btnCancelar;
         private Label label6;
+        private ComboBox comboBoxTipoHab;
+        private ComboBox comboBoxEstado;
     }
 }
