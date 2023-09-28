@@ -36,6 +36,8 @@
             label1 = new Label();
             label3 = new Label();
             groupBox2 = new GroupBox();
+            label12 = new Label();
+            comboBox1 = new ComboBox();
             textBox1 = new TextBox();
             label7 = new Label();
             lApellido = new Label();
@@ -55,8 +57,6 @@
             errorProviderNumero = new ErrorProvider(components);
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
-            comboBox1 = new ComboBox();
-            label12 = new Label();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProviderNumero).BeginInit();
@@ -164,6 +164,28 @@
             groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "Datos del Huesped";
+            // 
+            // label12
+            // 
+            label12.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            label12.AutoSize = true;
+            label12.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label12.Location = new Point(411, 180);
+            label12.Name = "label12";
+            label12.Size = new Size(64, 20);
+            label12.TabIndex = 41;
+            label12.Text = "Estado :";
+            // 
+            // comboBox1
+            // 
+            comboBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Reserva", "Estadia" });
+            comboBox1.Location = new Point(413, 211);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(121, 26);
+            comboBox1.TabIndex = 40;
             // 
             // textBox1
             // 
@@ -356,41 +378,19 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(888, 90);
+            panel1.Size = new Size(888, 86);
             panel1.TabIndex = 34;
             // 
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.Image = Properties.Resources.logoHotel;
-            pictureBox1.Location = new Point(365, -21);
+            pictureBox1.Location = new Point(365, -23);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(116, 120);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 19;
             pictureBox1.TabStop = false;
-            // 
-            // comboBox1
-            // 
-            comboBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Reserva", "Estadia" });
-            comboBox1.Location = new Point(413, 211);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 26);
-            comboBox1.TabIndex = 40;
-            // 
-            // label12
-            // 
-            label12.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            label12.AutoSize = true;
-            label12.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label12.Location = new Point(411, 180);
-            label12.Name = "label12";
-            label12.Size = new Size(64, 20);
-            label12.TabIndex = 41;
-            label12.Text = "Estado :";
             // 
             // AgregarHuesped
             // 

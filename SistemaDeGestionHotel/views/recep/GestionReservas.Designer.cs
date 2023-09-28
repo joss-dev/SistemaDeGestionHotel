@@ -30,6 +30,7 @@
         {
             components = new System.ComponentModel.Container();
             groupBox1 = new GroupBox();
+            label7 = new Label();
             lApellido = new Label();
             label1 = new Label();
             label5 = new Label();
@@ -44,7 +45,6 @@
             errorProviderNumero = new ErrorProvider(components);
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
-            label7 = new Label();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProviderNumero).BeginInit();
             panel1.SuspendLayout();
@@ -70,6 +70,18 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Datos del Huesped";
             groupBox1.Enter += groupBox1_Enter;
+            // 
+            // label7
+            // 
+            label7.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            label7.AutoSize = true;
+            label7.BorderStyle = BorderStyle.FixedSingle;
+            label7.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.Location = new Point(26, 182);
+            label7.Name = "label7";
+            label7.Size = new Size(80, 22);
+            label7.TabIndex = 24;
+            label7.Text = "Telefono :";
             // 
             // lApellido
             // 
@@ -215,31 +227,19 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(909, 113);
+            panel1.Size = new Size(909, 86);
             panel1.TabIndex = 30;
             // 
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.Image = Properties.Resources.logoHotel;
-            pictureBox1.Location = new Point(384, -9);
+            pictureBox1.Location = new Point(384, -22);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(116, 120);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 19;
             pictureBox1.TabStop = false;
-            // 
-            // label7
-            // 
-            label7.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            label7.AutoSize = true;
-            label7.BorderStyle = BorderStyle.FixedSingle;
-            label7.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(26, 182);
-            label7.Name = "label7";
-            label7.Size = new Size(80, 22);
-            label7.TabIndex = 24;
-            label7.Text = "Telefono :";
             // 
             // GestionReservas
             // 
