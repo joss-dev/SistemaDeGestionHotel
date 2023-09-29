@@ -64,7 +64,7 @@
             btnRegistrarServicios.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnRegistrarServicios.IconSize = 38;
             btnRegistrarServicios.ImageAlign = ContentAlignment.MiddleLeft;
-            btnRegistrarServicios.Location = new Point(0, 200);
+            btnRegistrarServicios.Location = new Point(0, 254);
             btnRegistrarServicios.Name = "btnRegistrarServicios";
             btnRegistrarServicios.Padding = new Padding(20, 0, 10, 0);
             btnRegistrarServicios.Size = new Size(220, 60);
@@ -135,7 +135,7 @@
             btnPagos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnPagos.IconSize = 38;
             btnPagos.ImageAlign = ContentAlignment.MiddleLeft;
-            btnPagos.Location = new Point(0, 260);
+            btnPagos.Location = new Point(0, 314);
             btnPagos.Name = "btnPagos";
             btnPagos.Padding = new Padding(20, 0, 10, 0);
             btnPagos.Size = new Size(220, 60);
@@ -150,9 +150,9 @@
             // 
             pictureLogo.BackColor = Color.FromArgb(39, 79, 193);
             pictureLogo.Image = Properties.Resources.logoHotel;
-            pictureLogo.Location = new Point(0, 0);
+            pictureLogo.Location = new Point(-11, 0);
             pictureLogo.Name = "pictureLogo";
-            pictureLogo.Size = new Size(220, 140);
+            pictureLogo.Size = new Size(240, 185);
             pictureLogo.SizeMode = PictureBoxSizeMode.Zoom;
             pictureLogo.TabIndex = 0;
             pictureLogo.TabStop = false;
@@ -189,7 +189,7 @@
             btnHome.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnHome.IconSize = 38;
             btnHome.ImageAlign = ContentAlignment.MiddleLeft;
-            btnHome.Location = new Point(0, 140);
+            btnHome.Location = new Point(0, 194);
             btnHome.Name = "btnHome";
             btnHome.Padding = new Padding(20, 0, 10, 0);
             btnHome.Size = new Size(220, 60);
@@ -232,7 +232,7 @@
             btnAdmHabitaciones.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnAdmHabitaciones.IconSize = 38;
             btnAdmHabitaciones.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAdmHabitaciones.Location = new Point(0, 380);
+            btnAdmHabitaciones.Location = new Point(0, 434);
             btnAdmHabitaciones.Name = "btnAdmHabitaciones";
             btnAdmHabitaciones.Padding = new Padding(20, 0, 10, 0);
             btnAdmHabitaciones.Size = new Size(220, 60);
@@ -258,7 +258,7 @@
             btnUsuarios.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnUsuarios.IconSize = 38;
             btnUsuarios.ImageAlign = ContentAlignment.MiddleLeft;
-            btnUsuarios.Location = new Point(0, 320);
+            btnUsuarios.Location = new Point(0, 374);
             btnUsuarios.Name = "btnUsuarios";
             btnUsuarios.Padding = new Padding(20, 0, 10, 0);
             btnUsuarios.Size = new Size(220, 60);
@@ -277,7 +277,7 @@
             panelLogo.Location = new Point(0, 0);
             panelLogo.Name = "panelLogo";
             panelLogo.Padding = new Padding(20, 0, 10, 0);
-            panelLogo.Size = new Size(220, 140);
+            panelLogo.Size = new Size(220, 194);
             panelLogo.TabIndex = 0;
             // 
             // panel1
@@ -314,7 +314,7 @@
             panelCont.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panelCont.Location = new Point(220, 30);
             panelCont.Name = "panelCont";
-            panelCont.Size = new Size(580, 549);
+            panelCont.Size = new Size(580, 551);
             panelCont.TabIndex = 10;
             // 
             // PrincipalAdmin

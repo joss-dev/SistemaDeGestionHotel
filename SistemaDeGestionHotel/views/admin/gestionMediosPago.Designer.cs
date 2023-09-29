@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
-            pictureBox1 = new PictureBox();
+            components = new System.ComponentModel.Container();
             label1 = new Label();
             label2 = new Label();
             txtNombMP = new TextBox();
@@ -37,7 +36,6 @@
             comboBoxTipoMP = new ComboBox();
             label4 = new Label();
             comboBoxEstadoMP = new ComboBox();
-            label5 = new Label();
             txtBuscarMP = new TextBox();
             dataGridView2 = new DataGridView();
             label9 = new Label();
@@ -46,42 +44,25 @@
             btnEditar = new Button();
             btnEliminar = new FontAwesome.Sharp.IconButton();
             btnRegistrar = new FontAwesome.Sharp.IconButton();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            btnMaximized = new FontAwesome.Sharp.IconButton();
+            btnMinimized = new FontAwesome.Sharp.IconButton();
+            btnExit = new FontAwesome.Sharp.IconButton();
+            errorProvider1 = new ErrorProvider(components);
+            btnBuscar = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
-            // 
-            // panel1
-            // 
-            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            panel1.BackColor = Color.FromArgb(39, 79, 193);
-            panel1.Controls.Add(pictureBox1);
-            panel1.Location = new Point(-2, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(809, 116);
-            panel1.TabIndex = 21;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            pictureBox1.Image = Properties.Resources.logoHotel;
-            pictureBox1.Location = new Point(185, -16);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(411, 132);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 19;
-            pictureBox1.TabStop = false;
             // 
             // label1
             // 
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
-            label1.Font = new Font("Verdana", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(243, 131);
+            label1.Font = new Font("Arial Rounded MT Bold", 32.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(111, 81);
             label1.Name = "label1";
-            label1.Size = new Size(306, 29);
+            label1.Size = new Size(609, 50);
             label1.TabIndex = 22;
-            label1.Text = "CRUD Medios de Pago";
+            label1.Text = "Registro de Medios de Pago";
             // 
             // label2
             // 
@@ -101,6 +82,7 @@
             txtNombMP.Name = "txtNombMP";
             txtNombMP.Size = new Size(141, 23);
             txtNombMP.TabIndex = 24;
+            txtNombMP.KeyDown += ValidacionNombre;
             // 
             // label3
             // 
@@ -143,21 +125,10 @@
             comboBoxEstadoMP.Size = new Size(121, 23);
             comboBoxEstadoMP.TabIndex = 28;
             // 
-            // label5
-            // 
-            label5.Anchor = AnchorStyles.None;
-            label5.AutoSize = true;
-            label5.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(433, 209);
-            label5.Name = "label5";
-            label5.Size = new Size(74, 21);
-            label5.TabIndex = 29;
-            label5.Text = "Buscar: ";
-            // 
             // txtBuscarMP
             // 
             txtBuscarMP.Anchor = AnchorStyles.None;
-            txtBuscarMP.Location = new Point(500, 209);
+            txtBuscarMP.Location = new Point(450, 205);
             txtBuscarMP.Name = "txtBuscarMP";
             txtBuscarMP.Size = new Size(141, 23);
             txtBuscarMP.TabIndex = 30;
@@ -167,10 +138,10 @@
             dataGridView2.Anchor = AnchorStyles.None;
             dataGridView2.BackgroundColor = Color.MediumSeaGreen;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(91, 378);
+            dataGridView2.Location = new Point(91, 395);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowTemplate.Height = 25;
-            dataGridView2.Size = new Size(603, 152);
+            dataGridView2.Size = new Size(603, 135);
             dataGridView2.TabIndex = 43;
             // 
             // label9
@@ -233,6 +204,7 @@
             btnEliminar.Size = new Size(55, 50);
             btnEliminar.TabIndex = 51;
             btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnRegistrar
             // 
@@ -250,12 +222,89 @@
             btnRegistrar.TabIndex = 50;
             btnRegistrar.UseVisualStyleBackColor = false;
             // 
+            // btnMaximized
+            // 
+            btnMaximized.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnMaximized.BackColor = Color.LightGreen;
+            btnMaximized.FlatAppearance.BorderSize = 0;
+            btnMaximized.FlatStyle = FlatStyle.Flat;
+            btnMaximized.Flip = FontAwesome.Sharp.FlipOrientation.Horizontal;
+            btnMaximized.IconChar = FontAwesome.Sharp.IconChar.Square;
+            btnMaximized.IconColor = Color.Black;
+            btnMaximized.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            btnMaximized.IconSize = 20;
+            btnMaximized.Location = new Point(733, 7);
+            btnMaximized.Name = "btnMaximized";
+            btnMaximized.Size = new Size(33, 23);
+            btnMaximized.TabIndex = 58;
+            btnMaximized.UseVisualStyleBackColor = false;
+            btnMaximized.Click += btnMaximized_Click;
+            // 
+            // btnMinimized
+            // 
+            btnMinimized.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnMinimized.BackColor = Color.LightGreen;
+            btnMinimized.FlatAppearance.BorderColor = Color.Black;
+            btnMinimized.FlatAppearance.BorderSize = 0;
+            btnMinimized.FlatStyle = FlatStyle.Flat;
+            btnMinimized.Flip = FontAwesome.Sharp.FlipOrientation.Horizontal;
+            btnMinimized.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
+            btnMinimized.IconColor = Color.Black;
+            btnMinimized.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            btnMinimized.IconSize = 20;
+            btnMinimized.ImageAlign = ContentAlignment.BottomRight;
+            btnMinimized.Location = new Point(698, 9);
+            btnMinimized.Name = "btnMinimized";
+            btnMinimized.Size = new Size(32, 18);
+            btnMinimized.TabIndex = 57;
+            btnMinimized.UseVisualStyleBackColor = false;
+            btnMinimized.Click += btnMinimized_Click;
+            // 
+            // btnExit
+            // 
+            btnExit.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnExit.BackColor = Color.LightGreen;
+            btnExit.FlatAppearance.BorderSize = 0;
+            btnExit.FlatStyle = FlatStyle.Flat;
+            btnExit.Flip = FontAwesome.Sharp.FlipOrientation.Horizontal;
+            btnExit.IconChar = FontAwesome.Sharp.IconChar.X;
+            btnExit.IconColor = Color.Black;
+            btnExit.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            btnExit.IconSize = 20;
+            btnExit.Location = new Point(766, 7);
+            btnExit.Name = "btnExit";
+            btnExit.Size = new Size(33, 23);
+            btnExit.TabIndex = 56;
+            btnExit.UseVisualStyleBackColor = false;
+            btnExit.Click += btnExit_Click;
+            // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
+            // 
+            // btnBuscar
+            // 
+            btnBuscar.Anchor = AnchorStyles.None;
+            btnBuscar.BackColor = Color.DeepSkyBlue;
+            btnBuscar.FlatStyle = FlatStyle.Popup;
+            btnBuscar.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnBuscar.Location = new Point(597, 205);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Size = new Size(97, 23);
+            btnBuscar.TabIndex = 59;
+            btnBuscar.Text = "Buscar";
+            btnBuscar.UseVisualStyleBackColor = false;
+            // 
             // gestionMediosPago
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightGreen;
             ClientSize = new Size(804, 542);
+            Controls.Add(btnBuscar);
+            Controls.Add(btnMaximized);
+            Controls.Add(btnMinimized);
+            Controls.Add(btnExit);
             Controls.Add(btnEditar);
             Controls.Add(btnEliminar);
             Controls.Add(btnRegistrar);
@@ -264,7 +313,6 @@
             Controls.Add(label11);
             Controls.Add(dataGridView2);
             Controls.Add(txtBuscarMP);
-            Controls.Add(label5);
             Controls.Add(comboBoxEstadoMP);
             Controls.Add(label4);
             Controls.Add(comboBoxTipoMP);
@@ -272,21 +320,19 @@
             Controls.Add(txtNombMP);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "gestionMediosPago";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "gestionMediosPago";
-            panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            Load += gestionMediosPago_Load;
+            MouseDown += GestioMediosPago_MouseDown;
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Panel panel1;
-        private PictureBox pictureBox1;
         private Label label1;
         private Label label2;
         private TextBox txtNombMP;
@@ -294,7 +340,6 @@
         private ComboBox comboBoxTipoMP;
         private Label label4;
         private ComboBox comboBoxEstadoMP;
-        private Label label5;
         private TextBox txtBuscarMP;
         private DataGridView dataGridView2;
         private Label label9;
@@ -303,5 +348,10 @@
         private Button btnEditar;
         private FontAwesome.Sharp.IconButton btnEliminar;
         private FontAwesome.Sharp.IconButton btnRegistrar;
+        private FontAwesome.Sharp.IconButton btnMaximized;
+        private FontAwesome.Sharp.IconButton btnMinimized;
+        private FontAwesome.Sharp.IconButton btnExit;
+        private ErrorProvider errorProvider1;
+        private Button btnBuscar;
     }
 }
