@@ -28,29 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
             label2 = new Label();
             folderBrowserDialog1 = new FolderBrowserDialog();
             label3 = new Label();
             txtFolderDestino = new Button();
-            comboBoxBD = new ComboBox();
-            label4 = new Label();
-            dateTimeFin = new DateTimePicker();
             pictureBox2 = new PictureBox();
             button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
-            // 
-            // label1
-            // 
-            label1.Anchor = AnchorStyles.None;
-            label1.AutoSize = true;
-            label1.Font = new Font("Bahnschrift", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(200, 158);
-            label1.Name = "label1";
-            label1.Size = new Size(219, 19);
-            label1.TabIndex = 25;
-            label1.Text = "Seleccione la Base de Datos:";
             // 
             // label2
             // 
@@ -68,7 +53,7 @@
             label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
             label3.Font = new Font("Bahnschrift", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(186, 222);
+            label3.Location = new Point(194, 171);
             label3.Name = "label3";
             label3.Size = new Size(250, 19);
             label3.TabIndex = 28;
@@ -80,42 +65,11 @@
             txtFolderDestino.FlatAppearance.BorderColor = Color.Black;
             txtFolderDestino.FlatStyle = FlatStyle.Popup;
             txtFolderDestino.Image = Properties.Resources.foldered;
-            txtFolderDestino.Location = new Point(194, 246);
+            txtFolderDestino.Location = new Point(204, 202);
             txtFolderDestino.Name = "txtFolderDestino";
             txtFolderDestino.Size = new Size(232, 47);
             txtFolderDestino.TabIndex = 31;
             txtFolderDestino.UseVisualStyleBackColor = true;
-            // 
-            // comboBoxBD
-            // 
-            comboBoxBD.Anchor = AnchorStyles.None;
-            comboBoxBD.BackColor = Color.Silver;
-            comboBoxBD.FlatStyle = FlatStyle.Popup;
-            comboBoxBD.FormattingEnabled = true;
-            comboBoxBD.Location = new Point(194, 183);
-            comboBoxBD.Name = "comboBoxBD";
-            comboBoxBD.Size = new Size(232, 23);
-            comboBoxBD.TabIndex = 32;
-            // 
-            // label4
-            // 
-            label4.Anchor = AnchorStyles.None;
-            label4.AutoSize = true;
-            label4.Font = new Font("Bahnschrift", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(173, 311);
-            label4.Name = "label4";
-            label4.Size = new Size(164, 19);
-            label4.TabIndex = 33;
-            label4.Text = "Fecha de realización:";
-            // 
-            // dateTimeFin
-            // 
-            dateTimeFin.Anchor = AnchorStyles.None;
-            dateTimeFin.Format = DateTimePickerFormat.Short;
-            dateTimeFin.Location = new Point(341, 311);
-            dateTimeFin.Name = "dateTimeFin";
-            dateTimeFin.Size = new Size(95, 23);
-            dateTimeFin.TabIndex = 34;
             // 
             // pictureBox2
             // 
@@ -148,13 +102,9 @@
             ClientSize = new Size(961, 498);
             Controls.Add(button1);
             Controls.Add(pictureBox2);
-            Controls.Add(dateTimeFin);
-            Controls.Add(label4);
-            Controls.Add(comboBoxBD);
             Controls.Add(txtFolderDestino);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormBackUp";
             Text = "Back-Up Base de Datos";
@@ -165,14 +115,10 @@
         }
 
         #endregion
-        private Label label1;
         private Label label2;
         private FolderBrowserDialog folderBrowserDialog1;
         private Label label3;
         private Button txtFolderDestino;
-        private ComboBox comboBoxBD;
-        private Label label4;
-        private DateTimePicker dateTimeFin;
         private PictureBox pictureBox2;
         private Button button1;
     }

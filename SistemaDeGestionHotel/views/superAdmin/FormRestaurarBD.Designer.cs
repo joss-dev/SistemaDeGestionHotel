@@ -29,12 +29,8 @@
         private void InitializeComponent()
         {
             pictureBox2 = new PictureBox();
-            label1 = new Label();
-            comboBoxBD = new ComboBox();
             label3 = new Label();
             txtFolderCopia = new Button();
-            dateTimeFin = new DateTimePicker();
-            label4 = new Label();
             button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -48,28 +44,6 @@
             pictureBox2.Size = new Size(197, 198);
             pictureBox2.TabIndex = 29;
             pictureBox2.TabStop = false;
-            // 
-            // label1
-            // 
-            label1.Anchor = AnchorStyles.None;
-            label1.AutoSize = true;
-            label1.Font = new Font("Bahnschrift", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(240, 108);
-            label1.Name = "label1";
-            label1.Size = new Size(219, 19);
-            label1.TabIndex = 30;
-            label1.Text = "Seleccione la Base de Datos:";
-            // 
-            // comboBoxBD
-            // 
-            comboBoxBD.Anchor = AnchorStyles.None;
-            comboBoxBD.BackColor = Color.Silver;
-            comboBoxBD.FlatStyle = FlatStyle.Popup;
-            comboBoxBD.FormattingEnabled = true;
-            comboBoxBD.Location = new Point(236, 132);
-            comboBoxBD.Name = "comboBoxBD";
-            comboBoxBD.Size = new Size(232, 23);
-            comboBoxBD.TabIndex = 33;
             // 
             // label3
             // 
@@ -94,26 +68,6 @@
             txtFolderCopia.TabIndex = 35;
             txtFolderCopia.UseVisualStyleBackColor = true;
             // 
-            // dateTimeFin
-            // 
-            dateTimeFin.Anchor = AnchorStyles.None;
-            dateTimeFin.Format = DateTimePickerFormat.Short;
-            dateTimeFin.Location = new Point(405, 270);
-            dateTimeFin.Name = "dateTimeFin";
-            dateTimeFin.Size = new Size(95, 23);
-            dateTimeFin.TabIndex = 37;
-            // 
-            // label4
-            // 
-            label4.Anchor = AnchorStyles.None;
-            label4.AutoSize = true;
-            label4.Font = new Font("Bahnschrift", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(217, 271);
-            label4.Name = "label4";
-            label4.Size = new Size(176, 19);
-            label4.TabIndex = 36;
-            label4.Text = "Fecha de restauración:";
-            // 
             // button1
             // 
             button1.Anchor = AnchorStyles.None;
@@ -134,12 +88,8 @@
             BackColor = Color.LightGreen;
             ClientSize = new Size(976, 462);
             Controls.Add(button1);
-            Controls.Add(dateTimeFin);
-            Controls.Add(label4);
             Controls.Add(txtFolderCopia);
             Controls.Add(label3);
-            Controls.Add(comboBoxBD);
-            Controls.Add(label1);
             Controls.Add(pictureBox2);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormRestaurarBD";
@@ -151,12 +101,8 @@
 
         #endregion
         private PictureBox pictureBox2;
-        private Label label1;
-        private ComboBox comboBoxBD;
         private Label label3;
         private Button txtFolderCopia;
-        private DateTimePicker dateTimeFin;
-        private Label label4;
         private Button button1;
     }
 }
