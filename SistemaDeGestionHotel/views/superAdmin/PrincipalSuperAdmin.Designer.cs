@@ -96,7 +96,7 @@
             btnUsuarios.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnUsuarios.IconSize = 38;
             btnUsuarios.ImageAlign = ContentAlignment.MiddleLeft;
-            btnUsuarios.Location = new Point(0, 320);
+            btnUsuarios.Location = new Point(0, 358);
             btnUsuarios.Name = "btnUsuarios";
             btnUsuarios.Padding = new Padding(20, 0, 10, 0);
             btnUsuarios.Size = new Size(220, 60);
@@ -122,7 +122,7 @@
             btnRestaurarBD.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnRestaurarBD.IconSize = 38;
             btnRestaurarBD.ImageAlign = ContentAlignment.MiddleLeft;
-            btnRestaurarBD.Location = new Point(0, 260);
+            btnRestaurarBD.Location = new Point(0, 298);
             btnRestaurarBD.Name = "btnRestaurarBD";
             btnRestaurarBD.Padding = new Padding(20, 0, 10, 0);
             btnRestaurarBD.Size = new Size(220, 60);
@@ -147,7 +147,7 @@
             btnBackUpBD.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnBackUpBD.IconSize = 38;
             btnBackUpBD.ImageAlign = ContentAlignment.MiddleLeft;
-            btnBackUpBD.Location = new Point(0, 200);
+            btnBackUpBD.Location = new Point(0, 238);
             btnBackUpBD.Name = "btnBackUpBD";
             btnBackUpBD.Padding = new Padding(20, 0, 10, 0);
             btnBackUpBD.Size = new Size(220, 60);
@@ -189,7 +189,7 @@
             btnHome.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnHome.IconSize = 38;
             btnHome.ImageAlign = ContentAlignment.MiddleLeft;
-            btnHome.Location = new Point(0, 140);
+            btnHome.Location = new Point(0, 178);
             btnHome.Name = "btnHome";
             btnHome.Padding = new Padding(20, 0, 10, 0);
             btnHome.Size = new Size(220, 60);
@@ -207,16 +207,16 @@
             panelLogo.Location = new Point(0, 0);
             panelLogo.Name = "panelLogo";
             panelLogo.Padding = new Padding(20, 0, 10, 0);
-            panelLogo.Size = new Size(220, 140);
+            panelLogo.Size = new Size(220, 178);
             panelLogo.TabIndex = 0;
             // 
             // pictureLogo
             // 
             pictureLogo.BackColor = Color.FromArgb(39, 79, 193);
             pictureLogo.Image = Properties.Resources.logoHotel;
-            pictureLogo.Location = new Point(0, 0);
+            pictureLogo.Location = new Point(-28, 1);
             pictureLogo.Name = "pictureLogo";
-            pictureLogo.Size = new Size(220, 140);
+            pictureLogo.Size = new Size(268, 160);
             pictureLogo.SizeMode = PictureBoxSizeMode.Zoom;
             pictureLogo.TabIndex = 0;
             pictureLogo.TabStop = false;
