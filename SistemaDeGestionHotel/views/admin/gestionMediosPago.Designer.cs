@@ -57,6 +57,7 @@
             // 
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
+            label1.BackColor = Color.PaleGreen;
             label1.Font = new Font("Arial Rounded MT Bold", 32.25F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(111, 81);
             label1.Name = "label1";
@@ -221,6 +222,7 @@
             btnRegistrar.Size = new Size(56, 50);
             btnRegistrar.TabIndex = 50;
             btnRegistrar.UseVisualStyleBackColor = false;
+            btnRegistrar.Click += btnRegistrar_Click;
             // 
             // btnMaximized
             // 

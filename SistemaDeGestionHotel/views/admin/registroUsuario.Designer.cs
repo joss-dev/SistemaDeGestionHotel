@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
-            pictureBox1 = new PictureBox();
+            components = new System.ComponentModel.Container();
             txtNombre = new TextBox();
             label2 = new Label();
             txtApellido = new TextBox();
@@ -45,7 +44,6 @@
             btnEditar = new Button();
             label7 = new Label();
             label8 = new Label();
-            textBox1 = new TextBox();
             pictureBox2 = new PictureBox();
             btnCancelar = new Button();
             btnEliminar = new Button();
@@ -58,32 +56,14 @@
             txtDireccion = new TextBox();
             label13 = new Label();
             txtDNI = new TextBox();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            label12 = new Label();
+            errorProvider1 = new ErrorProvider(components);
+            comboBoxTipoPerfil = new ComboBox();
+            btnLimpiar = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
-            // 
-            // panel1
-            // 
-            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            panel1.BackColor = Color.FromArgb(39, 79, 193);
-            panel1.Controls.Add(pictureBox1);
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(866, 116);
-            panel1.TabIndex = 22;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Anchor = AnchorStyles.None;
-            pictureBox1.Image = Properties.Resources.logoHotel;
-            pictureBox1.Location = new Point(356, -17);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(142, 146);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 19;
-            pictureBox1.TabStop = false;
             // 
             // txtNombre
             // 
@@ -92,6 +72,7 @@
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(207, 23);
             txtNombre.TabIndex = 25;
+            txtNombre.KeyDown += ValidacionNombre;
             // 
             // label2
             // 
@@ -111,13 +92,14 @@
             txtApellido.Name = "txtApellido";
             txtApellido.Size = new Size(207, 23);
             txtApellido.TabIndex = 27;
+            txtApellido.KeyDown += ValidacionApellido;
             // 
             // label3
             // 
             label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
             label3.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(337, 183);
+            label3.Location = new Point(335, 170);
             label3.Name = "label3";
             label3.Size = new Size(164, 21);
             label3.TabIndex = 28;
@@ -126,7 +108,7 @@
             // txtUserName
             // 
             txtUserName.Anchor = AnchorStyles.None;
-            txtUserName.Location = new Point(313, 207);
+            txtUserName.Location = new Point(313, 194);
             txtUserName.Name = "txtUserName";
             txtUserName.Size = new Size(207, 23);
             txtUserName.TabIndex = 29;
@@ -136,7 +118,7 @@
             label4.Anchor = AnchorStyles.None;
             label4.AutoSize = true;
             label4.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(364, 241);
+            label4.Location = new Point(364, 229);
             label4.Name = "label4";
             label4.Size = new Size(103, 21);
             label4.TabIndex = 30;
@@ -145,11 +127,10 @@
             // txtPass
             // 
             txtPass.Anchor = AnchorStyles.None;
-            txtPass.Location = new Point(313, 265);
+            txtPass.Location = new Point(313, 252);
             txtPass.Name = "txtPass";
             txtPass.Size = new Size(207, 23);
             txtPass.TabIndex = 31;
-            txtPass.TextChanged += txtPass_TextChanged;
             // 
             // dataGridView1
             // 
@@ -166,7 +147,7 @@
             label5.Anchor = AnchorStyles.None;
             label5.AutoSize = true;
             label5.Font = new Font("Yu Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(115, 512);
+            label5.Location = new Point(121, 531);
             label5.Name = "label5";
             label5.Size = new Size(67, 17);
             label5.TabIndex = 34;
@@ -177,7 +158,7 @@
             label6.Anchor = AnchorStyles.None;
             label6.AutoSize = true;
             label6.Font = new Font("Yu Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(240, 512);
+            label6.Location = new Point(246, 531);
             label6.Name = "label6";
             label6.Size = new Size(65, 17);
             label6.TabIndex = 36;
@@ -189,19 +170,18 @@
             btnIMG.BackColor = Color.PaleGreen;
             btnIMG.FlatStyle = FlatStyle.Popup;
             btnIMG.Image = Properties.Resources.img;
-            btnIMG.Location = new Point(364, 439);
+            btnIMG.Location = new Point(370, 458);
             btnIMG.Name = "btnIMG";
             btnIMG.Size = new Size(71, 71);
             btnIMG.TabIndex = 37;
             btnIMG.UseVisualStyleBackColor = false;
-            btnIMG.Click += button3_Click;
             // 
             // btnIMGPerfil
             // 
             btnIMGPerfil.Anchor = AnchorStyles.None;
             btnIMGPerfil.AutoSize = true;
             btnIMGPerfil.Font = new Font("Yu Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnIMGPerfil.Location = new Point(347, 511);
+            btnIMGPerfil.Location = new Point(353, 530);
             btnIMGPerfil.Name = "btnIMGPerfil";
             btnIMGPerfil.Size = new Size(109, 17);
             btnIMGPerfil.TabIndex = 38;
@@ -214,7 +194,7 @@
             btnEditar.BackColor = Color.PaleGreen;
             btnEditar.FlatStyle = FlatStyle.Popup;
             btnEditar.Image = Properties.Resources.editar;
-            btnEditar.Location = new Point(493, 439);
+            btnEditar.Location = new Point(499, 458);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(71, 71);
             btnEditar.TabIndex = 39;
@@ -225,7 +205,7 @@
             label7.Anchor = AnchorStyles.None;
             label7.AutoSize = true;
             label7.Font = new Font("Yu Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(505, 512);
+            label7.Location = new Point(511, 531);
             label7.Name = "label7";
             label7.Size = new Size(46, 17);
             label7.TabIndex = 40;
@@ -237,19 +217,11 @@
             label8.Anchor = AnchorStyles.None;
             label8.AutoSize = true;
             label8.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.Location = new Point(356, 303);
+            label8.Location = new Point(356, 289);
             label8.Name = "label8";
             label8.Size = new Size(121, 21);
             label8.TabIndex = 41;
             label8.Text = "Tipo de Perfil:";
-            // 
-            // textBox1
-            // 
-            textBox1.Anchor = AnchorStyles.None;
-            textBox1.Location = new Point(313, 327);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(207, 23);
-            textBox1.TabIndex = 42;
             // 
             // pictureBox2
             // 
@@ -269,7 +241,7 @@
             btnCancelar.BackColor = Color.PaleGreen;
             btnCancelar.FlatStyle = FlatStyle.Popup;
             btnCancelar.Image = Properties.Resources.cancel1_77976;
-            btnCancelar.Location = new Point(239, 440);
+            btnCancelar.Location = new Point(245, 459);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(71, 71);
             btnCancelar.TabIndex = 44;
@@ -281,7 +253,7 @@
             btnEliminar.BackColor = Color.PaleGreen;
             btnEliminar.FlatStyle = FlatStyle.Popup;
             btnEliminar.Image = Properties.Resources.eliminar;
-            btnEliminar.Location = new Point(614, 439);
+            btnEliminar.Location = new Point(620, 458);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(71, 71);
             btnEliminar.TabIndex = 45;
@@ -292,7 +264,7 @@
             label9.Anchor = AnchorStyles.None;
             label9.AutoSize = true;
             label9.Font = new Font("Yu Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label9.Location = new Point(620, 511);
+            label9.Location = new Point(626, 530);
             label9.Name = "label9";
             label9.Size = new Size(61, 17);
             label9.TabIndex = 46;
@@ -305,11 +277,12 @@
             btnAgregar.BackColor = Color.PaleGreen;
             btnAgregar.FlatStyle = FlatStyle.Popup;
             btnAgregar.Image = Properties.Resources.agregar;
-            btnAgregar.Location = new Point(114, 440);
+            btnAgregar.Location = new Point(120, 459);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(71, 71);
             btnAgregar.TabIndex = 47;
             btnAgregar.UseVisualStyleBackColor = false;
+            btnAgregar.Click += btnAgregar_Click;
             // 
             // label10
             // 
@@ -359,6 +332,7 @@
             txtDireccion.Name = "txtDireccion";
             txtDireccion.Size = new Size(207, 23);
             txtDireccion.TabIndex = 51;
+            txtDireccion.KeyDown += ValidarDireccion;
             // 
             // label13
             // 
@@ -378,6 +352,47 @@
             txtDNI.Name = "txtDNI";
             txtDNI.Size = new Size(207, 23);
             txtDNI.TabIndex = 54;
+            txtDNI.KeyDown += ValidacionDNI;
+            // 
+            // label12
+            // 
+            label12.Anchor = AnchorStyles.None;
+            label12.AutoSize = true;
+            label12.BackColor = Color.PaleGreen;
+            label12.Font = new Font("Arial Rounded MT Bold", 32.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label12.Location = new Point(206, 41);
+            label12.Name = "label12";
+            label12.Size = new Size(464, 50);
+            label12.TabIndex = 55;
+            label12.Text = "Registro de Usuarios";
+            // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
+            // 
+            // comboBoxTipoPerfil
+            // 
+            comboBoxTipoPerfil.Anchor = AnchorStyles.None;
+            comboBoxTipoPerfil.FormattingEnabled = true;
+            comboBoxTipoPerfil.Location = new Point(313, 316);
+            comboBoxTipoPerfil.Name = "comboBoxTipoPerfil";
+            comboBoxTipoPerfil.Size = new Size(203, 23);
+            comboBoxTipoPerfil.TabIndex = 56;
+            comboBoxTipoPerfil.SelectedIndexChanged += comboBoxTipoPerfil_SelectedIndexChanged;
+            // 
+            // btnLimpiar
+            // 
+            btnLimpiar.Anchor = AnchorStyles.None;
+            btnLimpiar.BackColor = Color.DodgerBlue;
+            btnLimpiar.FlatStyle = FlatStyle.Popup;
+            btnLimpiar.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnLimpiar.Location = new Point(343, 363);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.Size = new Size(152, 23);
+            btnLimpiar.TabIndex = 57;
+            btnLimpiar.Text = "Limpiar";
+            btnLimpiar.UseVisualStyleBackColor = false;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
             // registroUsuario
             // 
@@ -385,6 +400,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightGreen;
             ClientSize = new Size(862, 700);
+            Controls.Add(btnLimpiar);
+            Controls.Add(comboBoxTipoPerfil);
+            Controls.Add(label12);
             Controls.Add(txtDNI);
             Controls.Add(label13);
             Controls.Add(txtDireccion);
@@ -396,7 +414,6 @@
             Controls.Add(btnEliminar);
             Controls.Add(btnCancelar);
             Controls.Add(pictureBox2);
-            Controls.Add(textBox1);
             Controls.Add(label8);
             Controls.Add(label7);
             Controls.Add(btnEditar);
@@ -413,22 +430,17 @@
             Controls.Add(label2);
             Controls.Add(txtNombre);
             Controls.Add(label10);
-            Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "registroUsuario";
             Text = "Registro de Usuario";
-            panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Panel panel1;
-        private PictureBox pictureBox1;
         private TextBox txtNombre;
         private Label label2;
         private TextBox txtApellido;
@@ -444,7 +456,6 @@
         private Button btnEditar;
         private Label label7;
         private Label label8;
-        private TextBox textBox1;
         private PictureBox pictureBox2;
         private Button btnCancelar;
         private Button btnEliminar;
@@ -457,5 +468,9 @@
         private TextBox txtDireccion;
         private Label label13;
         private TextBox txtDNI;
+        private Label label12;
+        private ErrorProvider errorProvider1;
+        private ComboBox comboBoxTipoPerfil;
+        private Button btnLimpiar;
     }
 }

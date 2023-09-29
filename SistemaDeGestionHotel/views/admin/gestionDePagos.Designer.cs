@@ -87,6 +87,7 @@
             // label4
             // 
             label4.Anchor = AnchorStyles.None;
+            label4.BackColor = Color.PaleGreen;
             label4.Font = new Font("Yu Gothic", 27.75F, FontStyle.Bold, GraphicsUnit.Point);
             label4.Location = new Point(134, 102);
             label4.Name = "label4";

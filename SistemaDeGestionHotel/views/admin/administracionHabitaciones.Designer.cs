@@ -365,11 +365,13 @@
             btnCancelar.Size = new Size(71, 71);
             btnCancelar.TabIndex = 61;
             btnCancelar.UseVisualStyleBackColor = false;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // label6
             // 
             label6.Anchor = AnchorStyles.None;
             label6.AutoSize = true;
+            label6.BackColor = Color.PaleGreen;
             label6.Font = new Font("Arial Rounded MT Bold", 32.25F, FontStyle.Regular, GraphicsUnit.Point);
             label6.Location = new Point(67, 58);
             label6.Name = "label6";
