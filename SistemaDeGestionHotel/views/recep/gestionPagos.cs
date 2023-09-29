@@ -15,6 +15,7 @@ namespace SistemaDeGestionHotel.views.recep
         public gestionPagos()
         {
             InitializeComponent();
+            cbMetodoPago.SelectedIndex = 0;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

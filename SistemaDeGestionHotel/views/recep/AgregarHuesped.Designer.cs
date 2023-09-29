@@ -38,7 +38,7 @@
             label3 = new Label();
             groupBox2 = new GroupBox();
             label12 = new Label();
-            comboBox1 = new ComboBox();
+            comboBoxEstado = new ComboBox();
             textBox1 = new TextBox();
             label7 = new Label();
             lApellido = new Label();
@@ -156,7 +156,7 @@
             // groupBox2
             // 
             groupBox2.Controls.Add(label12);
-            groupBox2.Controls.Add(comboBox1);
+            groupBox2.Controls.Add(comboBoxEstado);
             groupBox2.Controls.Add(textBox1);
             groupBox2.Controls.Add(label7);
             groupBox2.Controls.Add(lApellido);
@@ -190,16 +190,17 @@
             label12.TabIndex = 41;
             label12.Text = "Estado :";
             // 
-            // comboBox1
+            // comboBoxEstado
             // 
-            comboBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Reserva", "Estadia" });
-            comboBox1.Location = new Point(413, 211);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 26);
-            comboBox1.TabIndex = 40;
+            comboBoxEstado.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            comboBoxEstado.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxEstado.FormattingEnabled = true;
+            comboBoxEstado.Items.AddRange(new object[] { "Reserva", "Estadia" });
+            comboBoxEstado.Location = new Point(413, 211);
+            comboBoxEstado.Name = "comboBoxEstado";
+            comboBoxEstado.Size = new Size(121, 26);
+            comboBoxEstado.TabIndex = 40;
+            comboBoxEstado.SelectedIndexChanged += estado_selectedIndex;
             // 
             // textBox1
             // 
@@ -462,7 +463,7 @@
         private TextBox textBox1;
         private Label label7;
         private Label label12;
-        private ComboBox comboBox1;
+        private ComboBox comboBoxEstado;
         private Label label13;
     }
 }
