@@ -1,13 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SistemaDeGestionHotel.Models;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,13 +15,17 @@ namespace SistemaDeGestionHotel.views.admin
     public partial class registroUsuario : Form
     {
 
-        HotelParanaContext dbHotelParana;
+        private readonly HotelParanaContext dbHotelParana;
 
         public registroUsuario()
         {
             InitializeComponent();
-
             dbHotelParana = new HotelParanaContext();
+        }
+
+        private void conectarbase()
+        {
+            
 
             // Crear las listas de opciones
             List<string> opciones = dbHotelParana.PerfilUsuarios
