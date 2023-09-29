@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -32,10 +33,15 @@ namespace SistemaDeGestionHotel.views.recep
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
 
-            // Cerrar el formulario secundario
-            this.Close();
+            MsgBoxResult result = (MsgBoxResult)MessageBox.Show("¿Está seguro de que desea cerrar el formulario?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+            if (result == MsgBoxResult.Yes)
+            {
+                this.DialogResult = DialogResult.OK;
+
+                // Cerrar el formulario secundario
+                this.Close();
+            }
         }
 
         private void ValidacionNombre(object sender, KeyEventArgs e)
@@ -88,6 +94,21 @@ namespace SistemaDeGestionHotel.views.recep
                 // Establecer la fecha de salida como mínimo un día después de la fecha de ingreso
                 dateTimeSalida.MinDate = DateTime.Today.AddDays(1);
 
+            }
+        }
+
+        private void btnServiciosAd_Click(object sender, EventArgs e)
+        {
+            Form registrarServ = new registrarServicio();
+
+            registrarServ.StartPosition = FormStartPosition.CenterScreen;
+
+            DialogResult result = registrarServ.ShowDialog();
+
+            // Verificar si se cerró el formulario secundario
+            if (result == DialogResult.OK)
+            {
+                // Realizar acciones después de cerrar el formulario secundario si es necesario
             }
         }
     }

@@ -37,6 +37,7 @@
             label1 = new Label();
             label3 = new Label();
             groupBox2 = new GroupBox();
+            btnServiciosAd = new Button();
             label12 = new Label();
             comboBoxEstado = new ComboBox();
             textBox1 = new TextBox();
@@ -155,6 +156,7 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(btnServiciosAd);
             groupBox2.Controls.Add(label12);
             groupBox2.Controls.Add(comboBoxEstado);
             groupBox2.Controls.Add(textBox1);
@@ -174,10 +176,20 @@
             groupBox2.Font = new Font("Georgia", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             groupBox2.Location = new Point(95, 220);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(668, 361);
+            groupBox2.Size = new Size(668, 368);
             groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "Datos del Huesped";
+            // 
+            // btnServiciosAd
+            // 
+            btnServiciosAd.Location = new Point(229, 293);
+            btnServiciosAd.Name = "btnServiciosAd";
+            btnServiciosAd.Size = new Size(151, 50);
+            btnServiciosAd.TabIndex = 42;
+            btnServiciosAd.Text = "Servicios Adicionales";
+            btnServiciosAd.UseVisualStyleBackColor = true;
+            btnServiciosAd.Click += btnServiciosAd_Click;
             // 
             // label12
             // 
@@ -288,7 +300,7 @@
             label6.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(411, 277);
+            label6.Location = new Point(416, 277);
             label6.Name = "label6";
             label6.Size = new Size(123, 20);
             label6.TabIndex = 37;
@@ -340,7 +352,7 @@
             // 
             dateTimeSalida.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             dateTimeSalida.Format = DateTimePickerFormat.Short;
-            dateTimeSalida.Location = new Point(411, 318);
+            dateTimeSalida.Location = new Point(416, 318);
             dateTimeSalida.Name = "dateTimeSalida";
             dateTimeSalida.Size = new Size(123, 25);
             dateTimeSalida.TabIndex = 36;
@@ -355,7 +367,7 @@
             btnCancelar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnCancelar.Image = Properties.Resources.btnCancelar;
             btnCancelar.ImageAlign = ContentAlignment.TopCenter;
-            btnCancelar.Location = new Point(12, 599);
+            btnCancelar.Location = new Point(12, 592);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(98, 79);
             btnCancelar.TabIndex = 33;
@@ -374,7 +386,7 @@
             btnRegistrar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnRegistrar.Image = Properties.Resources.btn_guardar_;
             btnRegistrar.ImageAlign = ContentAlignment.TopCenter;
-            btnRegistrar.Location = new Point(773, 599);
+            btnRegistrar.Location = new Point(773, 592);
             btnRegistrar.Name = "btnRegistrar";
             btnRegistrar.Size = new Size(96, 79);
             btnRegistrar.TabIndex = 32;
@@ -413,7 +425,7 @@
             AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightGreen;
-            ClientSize = new Size(888, 681);
+            ClientSize = new Size(888, 674);
             Controls.Add(panel1);
             Controls.Add(btnCancelar);
             Controls.Add(btnRegistrar);
@@ -465,5 +477,6 @@
         private Label label12;
         private ComboBox comboBoxEstado;
         private Label label13;
+        private Button btnServiciosAd;
     }
 }

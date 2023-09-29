@@ -166,7 +166,7 @@
             Controls.Add(btnRegistrar);
             Controls.Add(lTitulo2);
             Controls.Add(groupBox1);
-            FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "registrarServicio";
             Text = "registrarServicio";
             ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();
