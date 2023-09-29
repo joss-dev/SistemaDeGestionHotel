@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using SistemaDeGestionHotel.Models;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Migrations;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,12 +16,19 @@ namespace SistemaDeGestionHotel.views.admin
 {
     public partial class registroUsuario : Form
     {
+
+        HotelParanaContext dbHotelParana;
+
         public registroUsuario()
         {
             InitializeComponent();
 
+            dbHotelParana = new HotelParanaContext();
+
             // Crear las listas de opciones
-            List<string> opciones = new List<string>() { "", "SuperAdmin", "Admin", "Recepcionista" };
+            List<string> opciones = dbHotelParana.PerfilUsuarios
+                                    .Select(perfil => perfil.Nombre) // Proyecta solo el campo Nombre
+                                    .ToList();
 
             // Limpiar los comboBox
             comboBoxTipoPerfil.Items.Clear();
@@ -68,6 +79,11 @@ namespace SistemaDeGestionHotel.views.admin
                 // Mostrar un mensaje de error
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
+            }else
+            {
+
+
+
             }
         }
 
