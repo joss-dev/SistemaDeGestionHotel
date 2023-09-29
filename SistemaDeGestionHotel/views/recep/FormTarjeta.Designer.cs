@@ -33,20 +33,20 @@
             btnVolver = new FontAwesome.Sharp.IconButton();
             btnCobrar = new FontAwesome.Sharp.IconButton();
             groupBox1 = new GroupBox();
+            label8 = new Label();
+            textBoxCvv = new TextBox();
+            label7 = new Label();
+            textBoxTitular = new TextBox();
+            label6 = new Label();
+            textBoxFechaCad = new TextBox();
+            label5 = new Label();
+            textBoxNroTarjeta = new TextBox();
+            label4 = new Label();
+            comboBoxTarjeta = new ComboBox();
             textBoxTotalApagar = new TextBox();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            comboBoxEstado = new ComboBox();
-            label4 = new Label();
-            textBoxNroTarjeta = new TextBox();
-            label5 = new Label();
-            textBoxFechaCad = new TextBox();
-            label6 = new Label();
-            label7 = new Label();
-            textBoxTitular = new TextBox();
-            label8 = new Label();
-            textBoxCvv = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox1.SuspendLayout();
@@ -126,7 +126,7 @@
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(textBoxNroTarjeta);
             groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(comboBoxEstado);
+            groupBox1.Controls.Add(comboBoxTarjeta);
             groupBox1.Controls.Add(textBoxTotalApagar);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label2);
@@ -138,6 +138,93 @@
             groupBox1.TabIndex = 45;
             groupBox1.TabStop = false;
             groupBox1.Text = "Cobrar con tarjeta";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(30, 340);
+            label8.Name = "label8";
+            label8.Size = new Size(42, 17);
+            label8.TabIndex = 50;
+            label8.Text = "CVV :";
+            // 
+            // textBoxCvv
+            // 
+            textBoxCvv.Location = new Point(31, 360);
+            textBoxCvv.Name = "textBoxCvv";
+            textBoxCvv.PlaceholderText = "XXX";
+            textBoxCvv.Size = new Size(75, 25);
+            textBoxCvv.TabIndex = 49;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(30, 278);
+            label7.Name = "label7";
+            label7.Size = new Size(135, 17);
+            label7.TabIndex = 48;
+            label7.Text = "Titular de la tarjeta :";
+            // 
+            // textBoxTitular
+            // 
+            textBoxTitular.Location = new Point(31, 298);
+            textBoxTitular.Name = "textBoxTitular";
+            textBoxTitular.Size = new Size(315, 25);
+            textBoxTitular.TabIndex = 47;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(30, 221);
+            label6.Name = "label6";
+            label6.Size = new Size(136, 17);
+            label6.TabIndex = 46;
+            label6.Text = "Fecha de caducidad :";
+            // 
+            // textBoxFechaCad
+            // 
+            textBoxFechaCad.Location = new Point(31, 241);
+            textBoxFechaCad.Name = "textBoxFechaCad";
+            textBoxFechaCad.PlaceholderText = "MM/AA";
+            textBoxFechaCad.Size = new Size(61, 25);
+            textBoxFechaCad.TabIndex = 45;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(30, 161);
+            label5.Name = "label5";
+            label5.Size = new Size(110, 17);
+            label5.TabIndex = 44;
+            label5.Text = "Nro  de tarjeta : ";
+            // 
+            // textBoxNroTarjeta
+            // 
+            textBoxNroTarjeta.Location = new Point(30, 181);
+            textBoxNroTarjeta.Name = "textBoxNroTarjeta";
+            textBoxNroTarjeta.PlaceholderText = "XXXX-XXXX-XXXX-XXXX";
+            textBoxNroTarjeta.Size = new Size(316, 25);
+            textBoxNroTarjeta.TabIndex = 43;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(30, 103);
+            label4.Name = "label4";
+            label4.Size = new Size(92, 17);
+            label4.TabIndex = 42;
+            label4.Text = "Tipo tarjeta : ";
+            // 
+            // comboBoxTarjeta
+            // 
+            comboBoxTarjeta.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            comboBoxTarjeta.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxTarjeta.FormattingEnabled = true;
+            comboBoxTarjeta.Items.AddRange(new object[] { "Débito", "Crédito" });
+            comboBoxTarjeta.Location = new Point(30, 123);
+            comboBoxTarjeta.Name = "comboBoxTarjeta";
+            comboBoxTarjeta.Size = new Size(121, 25);
+            comboBoxTarjeta.TabIndex = 41;
             // 
             // textBoxTotalApagar
             // 
@@ -181,93 +268,6 @@
             label1.TabIndex = 34;
             label1.Text = "Telefono :";
             // 
-            // comboBoxEstado
-            // 
-            comboBoxEstado.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            comboBoxEstado.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBoxEstado.FormattingEnabled = true;
-            comboBoxEstado.Items.AddRange(new object[] { "Débito", "Crédito" });
-            comboBoxEstado.Location = new Point(30, 123);
-            comboBoxEstado.Name = "comboBoxEstado";
-            comboBoxEstado.Size = new Size(121, 25);
-            comboBoxEstado.TabIndex = 41;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(30, 103);
-            label4.Name = "label4";
-            label4.Size = new Size(92, 17);
-            label4.TabIndex = 42;
-            label4.Text = "Tipo tarjeta : ";
-            // 
-            // textBoxNroTarjeta
-            // 
-            textBoxNroTarjeta.Location = new Point(30, 181);
-            textBoxNroTarjeta.Name = "textBoxNroTarjeta";
-            textBoxNroTarjeta.PlaceholderText = "XXXX-XXXX-XXXX-XXXX";
-            textBoxNroTarjeta.Size = new Size(316, 25);
-            textBoxNroTarjeta.TabIndex = 43;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(30, 161);
-            label5.Name = "label5";
-            label5.Size = new Size(110, 17);
-            label5.TabIndex = 44;
-            label5.Text = "Nro  de tarjeta : ";
-            // 
-            // textBoxFechaCad
-            // 
-            textBoxFechaCad.Location = new Point(31, 241);
-            textBoxFechaCad.Name = "textBoxFechaCad";
-            textBoxFechaCad.PlaceholderText = "MM/AA";
-            textBoxFechaCad.Size = new Size(61, 25);
-            textBoxFechaCad.TabIndex = 45;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(30, 221);
-            label6.Name = "label6";
-            label6.Size = new Size(136, 17);
-            label6.TabIndex = 46;
-            label6.Text = "Fecha de caducidad :";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(30, 278);
-            label7.Name = "label7";
-            label7.Size = new Size(135, 17);
-            label7.TabIndex = 48;
-            label7.Text = "Titular de la tarjeta :";
-            // 
-            // textBoxTitular
-            // 
-            textBoxTitular.Location = new Point(31, 298);
-            textBoxTitular.Name = "textBoxTitular";
-            textBoxTitular.Size = new Size(315, 25);
-            textBoxTitular.TabIndex = 47;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(30, 340);
-            label8.Name = "label8";
-            label8.Size = new Size(42, 17);
-            label8.TabIndex = 50;
-            label8.Text = "CVV :";
-            // 
-            // textBoxCvv
-            // 
-            textBoxCvv.Location = new Point(31, 360);
-            textBoxCvv.Name = "textBoxCvv";
-            textBoxCvv.PlaceholderText = "XXX";
-            textBoxCvv.Size = new Size(75, 25);
-            textBoxCvv.TabIndex = 49;
-            // 
             // FormTarjeta
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -305,7 +305,7 @@
         private Label label5;
         private TextBox textBoxNroTarjeta;
         private Label label4;
-        private ComboBox comboBoxEstado;
+        private ComboBox comboBoxTarjeta;
         private Label label8;
         private TextBox textBoxCvv;
         private Label label7;

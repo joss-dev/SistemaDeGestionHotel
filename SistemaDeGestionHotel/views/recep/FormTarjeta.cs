@@ -16,6 +16,7 @@ namespace SistemaDeGestionHotel.views.recep
         public FormTarjeta()
         {
             InitializeComponent();
+            comboBoxTarjeta.SelectedIndex = 0;
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
