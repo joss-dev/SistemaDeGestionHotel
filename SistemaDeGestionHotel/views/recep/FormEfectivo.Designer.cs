@@ -221,7 +221,7 @@
             Controls.Add(btnVolver);
             Controls.Add(btnCobrar);
             Controls.Add(panel1);
-            FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "FormEfectivo";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormEfectivo";

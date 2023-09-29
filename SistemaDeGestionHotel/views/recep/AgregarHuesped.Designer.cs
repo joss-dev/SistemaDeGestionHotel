@@ -420,7 +420,7 @@
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "AgregarHuesped";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AgregarHuesped";

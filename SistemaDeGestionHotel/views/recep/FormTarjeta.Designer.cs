@@ -107,7 +107,7 @@
             Controls.Add(btnVolver);
             Controls.Add(btnCobrar);
             Controls.Add(panel1);
-            FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "FormTarjeta";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormTarjeta";
