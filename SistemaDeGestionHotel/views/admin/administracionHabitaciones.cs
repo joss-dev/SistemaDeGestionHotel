@@ -17,8 +17,8 @@ namespace SistemaDeGestionHotel.views.admin
             InitializeComponent();
 
             // Crear las listas de opciones
-            List<string> opciones = new List<string>() { "Seleccione", "Habitación simple", "Habitación doble", "Habitación triple" };
-            List<string> opciones2 = new List<string>() { "Seleccione", "Libre", "Ocupada", "Habilitada", "Deshabilitada", "Eliminada" };
+            List<string> opciones = new List<string>() { "", "Habitación simple", "Habitación doble", "Habitación triple" };
+            List<string> opciones2 = new List<string>() { "", "Libre", "Ocupada", "Habilitada", "Deshabilitada", "Eliminada" };
 
             // Limpiar los comboBox
             comboBoxTipoHab.Items.Clear();
@@ -85,6 +85,37 @@ namespace SistemaDeGestionHotel.views.admin
                 // Mostrar un mensaje de error
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            LimpiarCampos(this);
+        }
+
+        private void LimpiarCampos(Control control)
+        {
+            foreach (Control c in control.Controls)
+            {
+                if (c is TextBox)
+                {
+                    // Si el control es un TextBox, limpiar su contenido
+                    ((TextBox)c).Text = string.Empty;
+                }
+                else if (c is ComboBox)
+                {
+                    // Si el control es un ComboBox, seleccionar el primer elemento (o dejar en blanco)
+                    ((ComboBox)c).SelectedIndex = 0;
+                }
+                else if (c is CheckBox)
+                {
+
+                    // Llamar recursivamente a LimpiarCampos para los controles secundarios (si los hay)
+                    if (c.HasChildren)
+                    {
+                        LimpiarCampos(c);
+                    }
+                }
             }
         }
     }

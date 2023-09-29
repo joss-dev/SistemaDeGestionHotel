@@ -114,5 +114,16 @@ namespace SistemaDeGestionHotel.views.admin
                 SendMessage(this.Handle, 0x112, 0xf012, 0);
             }
         }
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            // Verificar si alguno de los campos está incompleto
+            if (ValidacionTextBox.ValidarNoVacio(txtNombMP))
+            {
+                // Mostrar un mensaje de error
+                MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
     }
 }

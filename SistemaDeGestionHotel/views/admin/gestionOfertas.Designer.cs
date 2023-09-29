@@ -205,6 +205,7 @@
             // 
             label12.Anchor = AnchorStyles.None;
             label12.AutoSize = true;
+            label12.BackColor = Color.PaleGreen;
             label12.Font = new Font("Arial Rounded MT Bold", 32.25F, FontStyle.Regular, GraphicsUnit.Point);
             label12.Location = new Point(218, 88);
             label12.Name = "label12";
@@ -265,6 +266,7 @@
             btnRegistrar.Size = new Size(55, 50);
             btnRegistrar.TabIndex = 45;
             btnRegistrar.UseVisualStyleBackColor = false;
+            btnRegistrar.Click += btnRegistrar_Click;
             // 
             // label9
             // 
@@ -406,6 +408,7 @@
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "gestionOfertas";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "gestionOfertas";
             Load += gestionOfertas_Load;
             MouseDown += GestioMediosPago_MouseDown;
