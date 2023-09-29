@@ -25,3 +25,19 @@ CREATE TABLE Usuario(
 	CONSTRAINT FK_Id_perfil_usuario FOREIGN KEY(ID_perfil_usuario) REFERENCES Perfil_usuario(ID_perfil_usuario),
 	CONSTRAINT PK_ID_usuario PRIMARY KEY(ID_usuario)
 );
+
+
+
+INSERT INTO Perfil_usuario(Nombre)
+VALUES ('SUPERADMIN');
+
+
+INSERT INTO Perfil_usuario(Nombre)
+VALUES ('ADMIN');
+
+
+INSERT INTO Perfil_usuario(Nombre)
+VALUES ('RECEPCIONISTA');
+
+
+SELECT * FROM Perfil_usuario;
