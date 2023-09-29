@@ -44,6 +44,7 @@
   <ItemGroup>
     <Folder Include="controllers\" />
     <Folder Include="models\" />
+    <Folder Include="database\" />
   </ItemGroup>
 
 </Project>
