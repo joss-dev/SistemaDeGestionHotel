@@ -98,6 +98,7 @@
             // 
             TDni.Anchor = AnchorStyles.None;
             TDni.Location = new Point(24, 141);
+            TDni.MaxLength = 8;
             TDni.Name = "TDni";
             TDni.Size = new Size(206, 23);
             TDni.TabIndex = 21;
@@ -273,7 +274,6 @@
             cbMetodoPago.Name = "cbMetodoPago";
             cbMetodoPago.Size = new Size(182, 33);
             cbMetodoPago.TabIndex = 44;
-
             // 
             // label17
             // 

@@ -15,10 +15,7 @@ namespace SistemaDeGestionHotel.views.recep
         public AgregarHuesped()
         {
             InitializeComponent();
-
-            //establece la fecha minima para seleccionar
-            dateTimeIngreso.MinDate = DateTime.Today;
-            dateTimeSalida.MinDate = DateTime.Today;
+            comboBoxEstado.SelectedIndex = 0;
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
@@ -68,6 +65,30 @@ namespace SistemaDeGestionHotel.views.recep
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+        }
+
+        private void estado_selectedIndex(object sender, EventArgs e)
+        {
+            int indiceSeleccionado = comboBoxEstado.SelectedIndex;
+
+            if (indiceSeleccionado == 0)
+            {
+                // Establecer la fecha mínima de reserva como mañana
+                dateTimeIngreso.MinDate = DateTime.Today.AddDays(1);
+
+                // Establecer la fecha de salida como mínimo un día después de la fecha de ingreso
+                dateTimeSalida.MinDate = dateTimeIngreso.Value.AddDays(1);
+
+            }
+            else if (indiceSeleccionado == 1)
+            {
+                // Establecer la fecha mínima de estadia hoy
+                dateTimeIngreso.MinDate = DateTime.Today;
+
+                // Establecer la fecha de salida como mínimo un día después de la fecha de ingreso
+                dateTimeSalida.MinDate = DateTime.Today.AddDays(1);
+
+            }
         }
     }
 }

@@ -15,7 +15,7 @@ namespace SistemaDeGestionHotel.views.recep
         public FormEfectivo()
         {
             InitializeComponent();
-            
+
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
