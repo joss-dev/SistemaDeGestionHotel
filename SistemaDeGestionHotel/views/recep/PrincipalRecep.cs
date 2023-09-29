@@ -160,6 +160,5 @@ namespace SistemaDeGestionHotel
             FormsHijos.AbrirFormHija(new GestionReservas(), panelContenedor);
         }
 
-
     }
 }

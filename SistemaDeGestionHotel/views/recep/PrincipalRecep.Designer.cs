@@ -273,7 +273,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
-            BackColor = Color.LightGreen;
+            BackColor = Color.FromArgb(39, 79, 193);
             ClientSize = new Size(897, 564);
             Controls.Add(btnMinimizar);
             Controls.Add(btnExit);

@@ -61,25 +61,21 @@
             SUBTOTAL = new DataGridViewTextBoxColumn();
             btnCancelar = new Button();
             errorProviderNumero = new ErrorProvider(components);
-            panel1 = new Panel();
-            pictureBox1 = new PictureBox();
             btnContinuar = new FontAwesome.Sharp.IconButton();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewFactura).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProviderNumero).BeginInit();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // lTitulo2
             // 
             lTitulo2.Anchor = AnchorStyles.None;
             lTitulo2.AutoSize = true;
-            lTitulo2.Font = new Font("Verdana", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lTitulo2.Location = new Point(603, 123);
+            lTitulo2.Font = new Font("Arial Rounded MT Bold", 26.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lTitulo2.Location = new Point(567, 43);
             lTitulo2.Name = "lTitulo2";
-            lTitulo2.Size = new Size(271, 35);
+            lTitulo2.Size = new Size(291, 40);
             lTitulo2.TabIndex = 20;
             lTitulo2.Text = "Registrar Pagos";
             // 
@@ -87,17 +83,17 @@
             // 
             LDni.Anchor = AnchorStyles.None;
             LDni.AutoSize = true;
-            LDni.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            LDni.Location = new Point(24, 118);
+            LDni.Font = new Font("Arial Rounded MT Bold", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            LDni.Location = new Point(24, 43);
             LDni.Name = "LDni";
-            LDni.Size = new Size(196, 20);
+            LDni.Size = new Size(206, 17);
             LDni.TabIndex = 22;
             LDni.Text = "Ingrese D.N.I del huesped :";
             // 
             // TDni
             // 
             TDni.Anchor = AnchorStyles.None;
-            TDni.Location = new Point(24, 141);
+            TDni.Location = new Point(24, 66);
             TDni.MaxLength = 8;
             TDni.Name = "TDni";
             TDni.Size = new Size(206, 23);
@@ -107,7 +103,7 @@
             // btnBuscar
             // 
             btnBuscar.Anchor = AnchorStyles.None;
-            btnBuscar.Location = new Point(236, 138);
+            btnBuscar.Location = new Point(236, 63);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(85, 31);
             btnBuscar.TabIndex = 24;
@@ -120,10 +116,10 @@
             label3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label3.AutoSize = true;
             label3.BorderStyle = BorderStyle.FixedSingle;
-            label3.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label3.Location = new Point(24, 35);
             label3.Name = "label3";
-            label3.Size = new Size(79, 18);
+            label3.Size = new Size(71, 17);
             label3.TabIndex = 28;
             label3.Text = "Nombre : ";
             // 
@@ -132,10 +128,10 @@
             label4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label4.AutoSize = true;
             label4.BorderStyle = BorderStyle.FixedSingle;
-            label4.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label4.Location = new Point(323, 35);
             label4.Name = "label4";
-            label4.Size = new Size(76, 18);
+            label4.Size = new Size(69, 17);
             label4.TabIndex = 29;
             label4.Text = "Apellido :";
             // 
@@ -144,10 +140,10 @@
             label5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label5.AutoSize = true;
             label5.BorderStyle = BorderStyle.FixedSingle;
-            label5.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label5.Location = new Point(24, 70);
             label5.Name = "label5";
-            label5.Size = new Size(45, 18);
+            label5.Size = new Size(41, 17);
             label5.TabIndex = 30;
             label5.Text = "Dni : ";
             // 
@@ -156,10 +152,10 @@
             label6.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label6.AutoSize = true;
             label6.BorderStyle = BorderStyle.FixedSingle;
-            label6.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label6.Location = new Point(323, 70);
             label6.Name = "label6";
-            label6.Size = new Size(144, 18);
+            label6.Size = new Size(127, 17);
             label6.TabIndex = 31;
             label6.Text = "Fecha de Ingreso :";
             // 
@@ -168,10 +164,10 @@
             label7.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label7.AutoSize = true;
             label7.BorderStyle = BorderStyle.FixedSingle;
-            label7.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label7.Location = new Point(24, 103);
             label7.Name = "label7";
-            label7.Size = new Size(96, 18);
+            label7.Size = new Size(87, 17);
             label7.TabIndex = 32;
             label7.Text = "Habitación :";
             // 
@@ -180,10 +176,10 @@
             label8.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label8.AutoSize = true;
             label8.BorderStyle = BorderStyle.FixedSingle;
-            label8.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label8.Location = new Point(323, 103);
             label8.Name = "label8";
-            label8.Size = new Size(190, 18);
+            label8.Size = new Size(169, 17);
             label8.TabIndex = 33;
             label8.Text = "Cantidad de Huespedes :";
             // 
@@ -198,7 +194,7 @@
             groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label4);
-            groupBox1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox1.Font = new Font("Arial Rounded MT Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox1.Location = new Point(24, 175);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(856, 133);
@@ -211,10 +207,10 @@
             label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label2.AutoSize = true;
             label2.BorderStyle = BorderStyle.FixedSingle;
-            label2.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label2.Location = new Point(587, 70);
             label2.Name = "label2";
-            label2.Size = new Size(132, 18);
+            label2.Size = new Size(119, 17);
             label2.TabIndex = 35;
             label2.Text = "Fecha de Salida :";
             // 
@@ -223,10 +219,10 @@
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label1.AutoSize = true;
             label1.BorderStyle = BorderStyle.FixedSingle;
-            label1.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(587, 29);
             label1.Name = "label1";
-            label1.Size = new Size(80, 18);
+            label1.Size = new Size(72, 17);
             label1.TabIndex = 34;
             label1.Text = "Telefono :";
             // 
@@ -245,7 +241,7 @@
             groupBox2.Controls.Add(label10);
             groupBox2.Controls.Add(label9);
             groupBox2.Controls.Add(dataGridViewFactura);
-            groupBox2.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox2.Font = new Font("Arial Rounded MT Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox2.Location = new Point(24, 314);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(856, 290);
@@ -259,20 +255,20 @@
             label18.AutoSize = true;
             label18.BorderStyle = BorderStyle.FixedSingle;
             label18.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label18.Location = new Point(385, 251);
+            label18.Location = new Point(385, 248);
             label18.Name = "label18";
             label18.Size = new Size(235, 18);
             label18.TabIndex = 45;
-            label18.Text = "Selecciona el metodo de pago :";
+            label18.Text = "Selecciona el método de pago :";
             // 
             // cbMetodoPago
             // 
             cbMetodoPago.DropDownStyle = ComboBoxStyle.DropDownList;
             cbMetodoPago.FormattingEnabled = true;
             cbMetodoPago.Items.AddRange(new object[] { "Efectivo", "Tarjeta" });
-            cbMetodoPago.Location = new Point(635, 236);
+            cbMetodoPago.Location = new Point(631, 239);
             cbMetodoPago.Name = "cbMetodoPago";
-            cbMetodoPago.Size = new Size(182, 33);
+            cbMetodoPago.Size = new Size(182, 30);
             cbMetodoPago.TabIndex = 44;
             // 
             // label17
@@ -280,10 +276,10 @@
             label17.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label17.AutoSize = true;
             label17.BorderStyle = BorderStyle.FixedSingle;
-            label17.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label17.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label17.Location = new Point(587, 84);
             label17.Name = "label17";
-            label17.Size = new Size(158, 18);
+            label17.Size = new Size(144, 17);
             label17.TabIndex = 36;
             label17.Text = "Precio Habitación : $";
             // 
@@ -292,10 +288,10 @@
             label16.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label16.AutoSize = true;
             label16.BorderStyle = BorderStyle.FixedSingle;
-            label16.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label16.Font = new Font("Arial Rounded MT Bold", 9.7F, FontStyle.Regular, GraphicsUnit.Point);
             label16.Location = new Point(75, 246);
             label16.Name = "label16";
-            label16.Size = new Size(136, 18);
+            label16.Size = new Size(125, 17);
             label16.TabIndex = 43;
             label16.Text = "MONTO TOTAL : $ ";
             // 
@@ -304,10 +300,10 @@
             label15.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label15.AutoSize = true;
             label15.BorderStyle = BorderStyle.FixedSingle;
-            label15.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label15.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label15.Location = new Point(75, 194);
             label15.Name = "label15";
-            label15.Size = new Size(105, 18);
+            label15.Size = new Size(98, 17);
             label15.TabIndex = 42;
             label15.Text = "SUBTOTAL : $";
             // 
@@ -316,10 +312,10 @@
             label14.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label14.AutoSize = true;
             label14.BorderStyle = BorderStyle.FixedSingle;
-            label14.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label14.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label14.Location = new Point(323, 101);
             label14.Name = "label14";
-            label14.Size = new Size(159, 18);
+            label14.Size = new Size(145, 17);
             label14.TabIndex = 41;
             label14.Text = "Servicios Utilizados :";
             // 
@@ -328,10 +324,10 @@
             label13.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label13.AutoSize = true;
             label13.BorderStyle = BorderStyle.FixedSingle;
-            label13.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label13.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label13.Location = new Point(75, 141);
             label13.Name = "label13";
-            label13.Size = new Size(80, 18);
+            label13.Size = new Size(70, 17);
             label13.TabIndex = 40;
             label13.Text = "Monto : $ ";
             // 
@@ -340,10 +336,10 @@
             label12.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label12.AutoSize = true;
             label12.BorderStyle = BorderStyle.FixedSingle;
-            label12.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label12.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label12.Location = new Point(587, 29);
             label12.Name = "label12";
-            label12.Size = new Size(180, 18);
+            label12.Size = new Size(160, 17);
             label12.TabIndex = 39;
             label12.Text = "Cant. de habitaciones : ";
             // 
@@ -352,10 +348,10 @@
             label11.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label11.AutoSize = true;
             label11.BorderStyle = BorderStyle.FixedSingle;
-            label11.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label11.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label11.Location = new Point(323, 29);
             label11.Name = "label11";
-            label11.Size = new Size(134, 18);
+            label11.Size = new Size(121, 17);
             label11.TabIndex = 38;
             label11.Text = "Tipo Habitación : ";
             // 
@@ -364,10 +360,10 @@
             label10.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label10.AutoSize = true;
             label10.BorderStyle = BorderStyle.FixedSingle;
-            label10.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label10.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label10.Location = new Point(75, 71);
             label10.Name = "label10";
-            label10.Size = new Size(117, 18);
+            label10.Size = new Size(103, 17);
             label10.TabIndex = 37;
             label10.Text = "Cant. de dias : ";
             // 
@@ -376,10 +372,10 @@
             label9.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label9.AutoSize = true;
             label9.BorderStyle = BorderStyle.FixedSingle;
-            label9.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label9.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label9.Location = new Point(75, 29);
             label9.Name = "label9";
-            label9.Size = new Size(100, 18);
+            label9.Size = new Size(90, 17);
             label9.TabIndex = 36;
             label9.Text = "Habitación : ";
             // 
@@ -393,7 +389,7 @@
             dataGridViewFactura.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewFactura.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewFactura.Columns.AddRange(new DataGridViewColumn[] { Servicio, Impuestos, Precio, SUBTOTAL });
-            dataGridViewFactura.Location = new Point(323, 119);
+            dataGridViewFactura.Location = new Point(323, 123);
             dataGridViewFactura.Name = "dataGridViewFactura";
             dataGridViewFactura.ReadOnly = true;
             dataGridViewFactura.RowTemplate.Height = 25;
@@ -432,10 +428,10 @@
             btnCancelar.Cursor = Cursors.Hand;
             btnCancelar.FlatAppearance.BorderSize = 0;
             btnCancelar.FlatStyle = FlatStyle.Popup;
-            btnCancelar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCancelar.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnCancelar.Image = Properties.Resources.btnCancelar;
             btnCancelar.ImageAlign = ContentAlignment.TopCenter;
-            btnCancelar.Location = new Point(12, 610);
+            btnCancelar.Location = new Point(48, 610);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(98, 78);
             btnCancelar.TabIndex = 38;
@@ -448,40 +444,19 @@
             // 
             errorProviderNumero.ContainerControl = this;
             // 
-            // panel1
-            // 
-            panel1.BackColor = Color.FromArgb(39, 79, 193);
-            panel1.Controls.Add(pictureBox1);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(914, 86);
-            panel1.TabIndex = 39;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Anchor = AnchorStyles.None;
-            pictureBox1.Image = Properties.Resources.logoHotel;
-            pictureBox1.Location = new Point(375, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(116, 86);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 19;
-            pictureBox1.TabStop = false;
-            // 
             // btnContinuar
             // 
             btnContinuar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnContinuar.BackColor = Color.DarkTurquoise;
             btnContinuar.FlatAppearance.BorderSize = 0;
             btnContinuar.FlatStyle = FlatStyle.Popup;
-            btnContinuar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnContinuar.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnContinuar.ForeColor = SystemColors.ActiveCaptionText;
             btnContinuar.IconChar = FontAwesome.Sharp.IconChar.RightToBracket;
             btnContinuar.IconColor = Color.Black;
             btnContinuar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnContinuar.ImageAlign = ContentAlignment.TopCenter;
-            btnContinuar.Location = new Point(804, 610);
+            btnContinuar.Location = new Point(760, 610);
             btnContinuar.Name = "btnContinuar";
             btnContinuar.Size = new Size(98, 78);
             btnContinuar.TabIndex = 40;
@@ -497,7 +472,6 @@
             BackColor = Color.LightGreen;
             ClientSize = new Size(914, 695);
             Controls.Add(btnContinuar);
-            Controls.Add(panel1);
             Controls.Add(btnCancelar);
             Controls.Add(btnBuscar);
             Controls.Add(LDni);
@@ -513,8 +487,6 @@
             groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewFactura).EndInit();
             ((System.ComponentModel.ISupportInitialize)errorProviderNumero).EndInit();
-            panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -550,8 +522,6 @@
         private Label label16;
         private Label label15;
         private Label label14;
-        private Panel panel1;
-        private PictureBox pictureBox1;
         private Label label17;
         private FontAwesome.Sharp.IconButton btnContinuar;
         private Label label18;

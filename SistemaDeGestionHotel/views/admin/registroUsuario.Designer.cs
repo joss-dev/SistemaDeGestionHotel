@@ -79,7 +79,7 @@
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(99, 184);
+            label2.Location = new Point(99, 186);
             label2.Name = "label2";
             label2.Size = new Size(79, 21);
             label2.TabIndex = 26;
@@ -88,7 +88,7 @@
             // txtApellido
             // 
             txtApellido.Anchor = AnchorStyles.None;
-            txtApellido.Location = new Point(37, 207);
+            txtApellido.Location = new Point(37, 209);
             txtApellido.Name = "txtApellido";
             txtApellido.Size = new Size(207, 23);
             txtApellido.TabIndex = 27;

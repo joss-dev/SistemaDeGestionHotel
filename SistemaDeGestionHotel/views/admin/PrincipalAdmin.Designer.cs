@@ -78,7 +78,7 @@
             // iconButton1
             // 
             iconButton1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            iconButton1.BackColor = Color.LightGreen;
+            iconButton1.BackColor = Color.FromArgb(39, 79, 193);
             iconButton1.FlatAppearance.BorderColor = Color.Black;
             iconButton1.FlatAppearance.BorderSize = 0;
             iconButton1.FlatStyle = FlatStyle.Flat;
@@ -105,7 +105,7 @@
             // btnExit
             // 
             btnExit.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnExit.BackColor = Color.LightGreen;
+            btnExit.BackColor = Color.FromArgb(39, 79, 193);
             btnExit.FlatAppearance.BorderSize = 0;
             btnExit.FlatStyle = FlatStyle.Flat;
             btnExit.Flip = FontAwesome.Sharp.FlipOrientation.Horizontal;
@@ -283,7 +283,7 @@
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            panel1.BackColor = Color.LightGreen;
+            panel1.BackColor = Color.FromArgb(39, 79, 193);
             panel1.Controls.Add(btnMaximized);
             panel1.Controls.Add(iconButton1);
             panel1.Controls.Add(btnExit);
@@ -295,7 +295,7 @@
             // btnMaximized
             // 
             btnMaximized.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnMaximized.BackColor = Color.LightGreen;
+            btnMaximized.BackColor = Color.FromArgb(39, 79, 193);
             btnMaximized.FlatAppearance.BorderSize = 0;
             btnMaximized.FlatStyle = FlatStyle.Flat;
             btnMaximized.Flip = FontAwesome.Sharp.FlipOrientation.Horizontal;

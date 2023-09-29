@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
-            pictureBox1 = new PictureBox();
             btnVolver = new FontAwesome.Sharp.IconButton();
             btnCobrar = new FontAwesome.Sharp.IconButton();
             groupBox1 = new GroupBox();
@@ -47,31 +45,8 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.FromArgb(39, 79, 193);
-            panel1.Controls.Add(pictureBox1);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(690, 86);
-            panel1.TabIndex = 40;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Anchor = AnchorStyles.None;
-            pictureBox1.Image = Properties.Resources.logoHotel;
-            pictureBox1.Location = new Point(273, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(116, 86);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 19;
-            pictureBox1.TabStop = false;
             // 
             // btnVolver
             // 
@@ -79,13 +54,13 @@
             btnVolver.BackColor = Color.LightCoral;
             btnVolver.FlatAppearance.BorderSize = 0;
             btnVolver.FlatStyle = FlatStyle.Popup;
-            btnVolver.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnVolver.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnVolver.ForeColor = SystemColors.ActiveCaptionText;
             btnVolver.IconChar = FontAwesome.Sharp.IconChar.ArrowAltCircleLeft;
             btnVolver.IconColor = Color.Black;
             btnVolver.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnVolver.ImageAlign = ContentAlignment.TopCenter;
-            btnVolver.Location = new Point(12, 514);
+            btnVolver.Location = new Point(12, 515);
             btnVolver.Name = "btnVolver";
             btnVolver.Size = new Size(98, 78);
             btnVolver.TabIndex = 44;
@@ -97,18 +72,18 @@
             // btnCobrar
             // 
             btnCobrar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnCobrar.BackColor = Color.DarkTurquoise;
+            btnCobrar.BackColor = Color.SeaGreen;
             btnCobrar.FlatAppearance.BorderSize = 0;
             btnCobrar.FlatStyle = FlatStyle.Popup;
-            btnCobrar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCobrar.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnCobrar.ForeColor = SystemColors.ActiveCaptionText;
             btnCobrar.IconChar = FontAwesome.Sharp.IconChar.MoneyBillAlt;
             btnCobrar.IconColor = Color.Black;
             btnCobrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnCobrar.ImageAlign = ContentAlignment.TopCenter;
-            btnCobrar.Location = new Point(580, 514);
+            btnCobrar.Location = new Point(227, 514);
             btnCobrar.Name = "btnCobrar";
-            btnCobrar.Size = new Size(98, 78);
+            btnCobrar.Size = new Size(255, 78);
             btnCobrar.TabIndex = 43;
             btnCobrar.Text = "Cobrar";
             btnCobrar.TextAlign = ContentAlignment.BottomCenter;
@@ -131,7 +106,7 @@
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
-            groupBox1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox1.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox1.Location = new Point(115, 92);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(451, 405);
@@ -144,7 +119,7 @@
             label8.AutoSize = true;
             label8.Location = new Point(30, 340);
             label8.Name = "label8";
-            label8.Size = new Size(42, 17);
+            label8.Size = new Size(42, 15);
             label8.TabIndex = 50;
             label8.Text = "CVV :";
             // 
@@ -153,7 +128,7 @@
             textBoxCvv.Location = new Point(31, 360);
             textBoxCvv.Name = "textBoxCvv";
             textBoxCvv.PlaceholderText = "XXX";
-            textBoxCvv.Size = new Size(75, 25);
+            textBoxCvv.Size = new Size(75, 23);
             textBoxCvv.TabIndex = 49;
             // 
             // label7
@@ -161,7 +136,7 @@
             label7.AutoSize = true;
             label7.Location = new Point(30, 278);
             label7.Name = "label7";
-            label7.Size = new Size(135, 17);
+            label7.Size = new Size(138, 15);
             label7.TabIndex = 48;
             label7.Text = "Titular de la tarjeta :";
             // 
@@ -169,7 +144,7 @@
             // 
             textBoxTitular.Location = new Point(31, 298);
             textBoxTitular.Name = "textBoxTitular";
-            textBoxTitular.Size = new Size(315, 25);
+            textBoxTitular.Size = new Size(315, 23);
             textBoxTitular.TabIndex = 47;
             // 
             // label6
@@ -177,7 +152,7 @@
             label6.AutoSize = true;
             label6.Location = new Point(30, 221);
             label6.Name = "label6";
-            label6.Size = new Size(136, 17);
+            label6.Size = new Size(144, 15);
             label6.TabIndex = 46;
             label6.Text = "Fecha de caducidad :";
             // 
@@ -186,7 +161,7 @@
             textBoxFechaCad.Location = new Point(31, 241);
             textBoxFechaCad.Name = "textBoxFechaCad";
             textBoxFechaCad.PlaceholderText = "MM/AA";
-            textBoxFechaCad.Size = new Size(61, 25);
+            textBoxFechaCad.Size = new Size(61, 23);
             textBoxFechaCad.TabIndex = 45;
             // 
             // label5
@@ -194,7 +169,7 @@
             label5.AutoSize = true;
             label5.Location = new Point(30, 161);
             label5.Name = "label5";
-            label5.Size = new Size(110, 17);
+            label5.Size = new Size(110, 15);
             label5.TabIndex = 44;
             label5.Text = "Nro  de tarjeta : ";
             // 
@@ -203,7 +178,7 @@
             textBoxNroTarjeta.Location = new Point(30, 181);
             textBoxNroTarjeta.Name = "textBoxNroTarjeta";
             textBoxNroTarjeta.PlaceholderText = "XXXX-XXXX-XXXX-XXXX";
-            textBoxNroTarjeta.Size = new Size(316, 25);
+            textBoxNroTarjeta.Size = new Size(316, 23);
             textBoxNroTarjeta.TabIndex = 43;
             // 
             // label4
@@ -211,7 +186,7 @@
             label4.AutoSize = true;
             label4.Location = new Point(30, 103);
             label4.Name = "label4";
-            label4.Size = new Size(92, 17);
+            label4.Size = new Size(92, 15);
             label4.TabIndex = 42;
             label4.Text = "Tipo tarjeta : ";
             // 
@@ -223,7 +198,7 @@
             comboBoxTarjeta.Items.AddRange(new object[] { "Débito", "Crédito" });
             comboBoxTarjeta.Location = new Point(30, 123);
             comboBoxTarjeta.Name = "comboBoxTarjeta";
-            comboBoxTarjeta.Size = new Size(121, 25);
+            comboBoxTarjeta.Size = new Size(121, 23);
             comboBoxTarjeta.TabIndex = 41;
             // 
             // textBoxTotalApagar
@@ -232,7 +207,7 @@
             textBoxTotalApagar.Location = new Point(30, 55);
             textBoxTotalApagar.Name = "textBoxTotalApagar";
             textBoxTotalApagar.ReadOnly = true;
-            textBoxTotalApagar.Size = new Size(180, 25);
+            textBoxTotalApagar.Size = new Size(180, 23);
             textBoxTotalApagar.TabIndex = 37;
             // 
             // label3
@@ -240,7 +215,7 @@
             label3.AutoSize = true;
             label3.Location = new Point(30, 35);
             label3.Name = "label3";
-            label3.Size = new Size(101, 17);
+            label3.Size = new Size(102, 15);
             label3.TabIndex = 36;
             label3.Text = "Total a pagar : ";
             // 
@@ -277,22 +252,16 @@
             Controls.Add(groupBox1);
             Controls.Add(btnVolver);
             Controls.Add(btnCobrar);
-            Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "FormTarjeta";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FormTarjeta";
-            panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            Text = "Pago con Tarjeta";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Panel panel1;
-        private PictureBox pictureBox1;
         private FontAwesome.Sharp.IconButton btnVolver;
         private FontAwesome.Sharp.IconButton btnCobrar;
         private GroupBox groupBox1;

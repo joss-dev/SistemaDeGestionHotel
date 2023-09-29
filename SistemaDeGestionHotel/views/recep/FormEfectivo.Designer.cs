@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            panel1 = new Panel();
-            pictureBox1 = new PictureBox();
             btnCobrar = new FontAwesome.Sharp.IconButton();
             btnVolver = new FontAwesome.Sharp.IconButton();
             groupBox1 = new GroupBox();
@@ -43,48 +41,25 @@
             label2 = new Label();
             label1 = new Label();
             errorProvider1 = new ErrorProvider(components);
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
-            // panel1
-            // 
-            panel1.BackColor = Color.FromArgb(39, 79, 193);
-            panel1.Controls.Add(pictureBox1);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(731, 86);
-            panel1.TabIndex = 40;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Anchor = AnchorStyles.None;
-            pictureBox1.Image = Properties.Resources.logoHotel;
-            pictureBox1.Location = new Point(310, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(116, 86);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 19;
-            pictureBox1.TabStop = false;
-            // 
             // btnCobrar
             // 
             btnCobrar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnCobrar.BackColor = Color.DarkTurquoise;
+            btnCobrar.BackColor = Color.SeaGreen;
             btnCobrar.FlatAppearance.BorderSize = 0;
             btnCobrar.FlatStyle = FlatStyle.Popup;
-            btnCobrar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCobrar.Font = new Font("Segoe UI Emoji", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnCobrar.ForeColor = SystemColors.ActiveCaptionText;
             btnCobrar.IconChar = FontAwesome.Sharp.IconChar.MoneyBillAlt;
             btnCobrar.IconColor = Color.Black;
             btnCobrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnCobrar.ImageAlign = ContentAlignment.TopCenter;
-            btnCobrar.Location = new Point(621, 423);
+            btnCobrar.Location = new Point(244, 423);
             btnCobrar.Name = "btnCobrar";
-            btnCobrar.Size = new Size(98, 78);
+            btnCobrar.Size = new Size(247, 78);
             btnCobrar.TabIndex = 41;
             btnCobrar.Text = "Cobrar";
             btnCobrar.TextAlign = ContentAlignment.BottomCenter;
@@ -96,13 +71,13 @@
             btnVolver.BackColor = Color.LightCoral;
             btnVolver.FlatAppearance.BorderSize = 0;
             btnVolver.FlatStyle = FlatStyle.Popup;
-            btnVolver.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnVolver.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnVolver.ForeColor = SystemColors.ActiveCaptionText;
             btnVolver.IconChar = FontAwesome.Sharp.IconChar.ArrowAltCircleLeft;
             btnVolver.IconColor = Color.Black;
             btnVolver.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnVolver.ImageAlign = ContentAlignment.TopCenter;
-            btnVolver.Location = new Point(15, 423);
+            btnVolver.Location = new Point(23, 423);
             btnVolver.Name = "btnVolver";
             btnVolver.Size = new Size(98, 78);
             btnVolver.TabIndex = 42;
@@ -123,7 +98,7 @@
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
             groupBox1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            groupBox1.Location = new Point(130, 111);
+            groupBox1.Location = new Point(130, 80);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(451, 297);
             groupBox1.TabIndex = 43;
@@ -220,13 +195,10 @@
             Controls.Add(groupBox1);
             Controls.Add(btnVolver);
             Controls.Add(btnCobrar);
-            Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "FormEfectivo";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FormEfectivo";
-            panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            Text = "Efectivo";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
@@ -234,9 +206,6 @@
         }
 
         #endregion
-
-        private Panel panel1;
-        private PictureBox pictureBox1;
         private FontAwesome.Sharp.IconButton btnCobrar;
         private FontAwesome.Sharp.IconButton btnVolver;
         private GroupBox groupBox1;

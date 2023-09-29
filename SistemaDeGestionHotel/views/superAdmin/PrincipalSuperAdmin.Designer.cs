@@ -232,7 +232,7 @@
             btnMinimizar.IconFont = FontAwesome.Sharp.IconFont.Solid;
             btnMinimizar.IconSize = 20;
             btnMinimizar.ImageAlign = ContentAlignment.BottomRight;
-            btnMinimizar.Location = new Point(831, 0);
+            btnMinimizar.Location = new Point(827, 1);
             btnMinimizar.Name = "btnMinimizar";
             btnMinimizar.Size = new Size(29, 26);
             btnMinimizar.TabIndex = 6;
@@ -248,7 +248,7 @@
             btnExit.IconColor = Color.Black;
             btnExit.IconFont = FontAwesome.Sharp.IconFont.Solid;
             btnExit.IconSize = 20;
-            btnExit.Location = new Point(902, 0);
+            btnExit.Location = new Point(898, 1);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(33, 30);
             btnExit.TabIndex = 5;
@@ -264,7 +264,7 @@
             btnPantallaCompleta.IconColor = Color.Black;
             btnPantallaCompleta.IconFont = FontAwesome.Sharp.IconFont.Solid;
             btnPantallaCompleta.IconSize = 20;
-            btnPantallaCompleta.Location = new Point(866, 0);
+            btnPantallaCompleta.Location = new Point(862, 1);
             btnPantallaCompleta.Name = "btnPantallaCompleta";
             btnPantallaCompleta.Size = new Size(33, 26);
             btnPantallaCompleta.TabIndex = 7;
@@ -285,7 +285,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
-            BackColor = Color.LightGreen;
+            BackColor = Color.FromArgb(39, 79, 193);
             ClientSize = new Size(934, 567);
             Controls.Add(panelContenedor);
             Controls.Add(btnMinimizar);

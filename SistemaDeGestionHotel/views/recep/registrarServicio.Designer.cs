@@ -46,10 +46,10 @@
             // 
             lTitulo2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             lTitulo2.AutoSize = true;
-            lTitulo2.Font = new Font("Yu Gothic", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lTitulo2.Location = new Point(99, 43);
+            lTitulo2.Font = new Font("Arial Rounded MT Bold", 26.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lTitulo2.Location = new Point(57, 50);
             lTitulo2.Name = "lTitulo2";
-            lTitulo2.Size = new Size(263, 38);
+            lTitulo2.Size = new Size(323, 40);
             lTitulo2.TabIndex = 19;
             lTitulo2.Text = "Registrar Servicio";
             // 
@@ -64,7 +64,7 @@
             btnCancelar.Cursor = Cursors.Hand;
             btnCancelar.FlatAppearance.BorderSize = 0;
             btnCancelar.FlatStyle = FlatStyle.Popup;
-            btnCancelar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCancelar.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnCancelar.Image = Properties.Resources.btnCancelar;
             btnCancelar.ImageAlign = ContentAlignment.TopCenter;
             btnCancelar.Location = new Point(64, 448);
@@ -83,7 +83,7 @@
             btnRegistrar.Cursor = Cursors.Hand;
             btnRegistrar.FlatAppearance.BorderSize = 0;
             btnRegistrar.FlatStyle = FlatStyle.Popup;
-            btnRegistrar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnRegistrar.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnRegistrar.Image = Properties.Resources.btn_guardar_;
             btnRegistrar.ImageAlign = ContentAlignment.TopCenter;
             btnRegistrar.Location = new Point(250, 448);
@@ -100,7 +100,7 @@
             groupBox1.Controls.Add(checkBox2);
             groupBox1.Controls.Add(checkBox3);
             groupBox1.Controls.Add(checkBox4);
-            groupBox1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox1.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox1.Location = new Point(48, 118);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(331, 305);
@@ -168,7 +168,7 @@
             Controls.Add(groupBox1);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "registrarServicio";
-            Text = "registrarServicio";
+            Text = "Registrar Servicio";
             ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

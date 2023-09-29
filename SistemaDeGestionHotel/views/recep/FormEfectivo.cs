@@ -29,7 +29,7 @@ namespace SistemaDeGestionHotel.views.recep
                 // Cerrar el formulario secundario
                 this.Close();
             }
-            
+
         }
 
         private void ValidarEfectivo(object sender, KeyEventArgs e)
