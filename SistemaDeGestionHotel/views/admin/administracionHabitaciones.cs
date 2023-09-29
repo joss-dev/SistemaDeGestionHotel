@@ -64,10 +64,8 @@ namespace SistemaDeGestionHotel.views.admin
 
         private void ValidacionCosto(object sender, EventArgs e)
         {
-            ValidacionTextBox.ValidarNoVacio(txtPiso);
+            ValidacionTextBox.ValidarPrecio(txtCosto, errorProvider1);
         }
-
-
 
         private void comboBoxEstado_SelectedIndexChanged(object sender, EventArgs e)
         {

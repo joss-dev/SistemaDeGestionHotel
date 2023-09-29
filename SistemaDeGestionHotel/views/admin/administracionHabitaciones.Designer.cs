@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            pictureBox1 = new PictureBox();
-            panel1 = new Panel();
             pictureBox2 = new PictureBox();
             label1 = new Label();
             txtNroHab = new TextBox();
@@ -62,39 +60,16 @@
             label6 = new Label();
             comboBoxTipoHab = new ComboBox();
             comboBoxEstado = new ComboBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            pictureBox1.Image = Properties.Resources.logoHotel;
-            pictureBox1.Location = new Point(272, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(253, 103);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 19;
-            pictureBox1.TabStop = false;
-            // 
-            // panel1
-            // 
-            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            panel1.BackColor = Color.FromArgb(39, 79, 193);
-            panel1.Controls.Add(pictureBox1);
-            panel1.Location = new Point(-1, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(801, 103);
-            panel1.TabIndex = 23;
-            // 
             // pictureBox2
             // 
             pictureBox2.Anchor = AnchorStyles.None;
             pictureBox2.Image = Properties.Resources.habitac1;
-            pictureBox2.Location = new Point(448, 207);
+            pictureBox2.Location = new Point(499, 175);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(191, 190);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -106,7 +81,7 @@
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(67, 194);
+            label1.Location = new Point(118, 162);
             label1.Name = "label1";
             label1.Size = new Size(167, 19);
             label1.TabIndex = 25;
@@ -115,8 +90,9 @@
             // txtNroHab
             // 
             txtNroHab.Anchor = AnchorStyles.None;
-            txtNroHab.Location = new Point(239, 193);
+            txtNroHab.Location = new Point(290, 161);
             txtNroHab.Name = "txtNroHab";
+            txtNroHab.PlaceholderText = "Números sin punto";
             txtNroHab.Size = new Size(137, 23);
             txtNroHab.TabIndex = 26;
             txtNroHab.KeyDown += ValidacionNroHabitacion;
@@ -126,7 +102,7 @@
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(96, 272);
+            label2.Location = new Point(147, 240);
             label2.Name = "label2";
             label2.Size = new Size(140, 19);
             label2.TabIndex = 27;
@@ -135,8 +111,9 @@
             // txtCantCamas
             // 
             txtCantCamas.Anchor = AnchorStyles.None;
-            txtCantCamas.Location = new Point(239, 270);
+            txtCantCamas.Location = new Point(290, 238);
             txtCantCamas.Name = "txtCantCamas";
+            txtCantCamas.PlaceholderText = "Solo números";
             txtCantCamas.Size = new Size(137, 23);
             txtCantCamas.TabIndex = 28;
             txtCantCamas.KeyDown += ValidacionCantidadCamas;
@@ -146,7 +123,7 @@
             label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
             label3.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(181, 395);
+            label3.Location = new Point(232, 363);
             label3.Name = "label3";
             label3.Size = new Size(51, 19);
             label3.TabIndex = 29;
@@ -155,7 +132,7 @@
             // txtCosto
             // 
             txtCosto.Anchor = AnchorStyles.None;
-            txtCosto.Location = new Point(239, 395);
+            txtCosto.Location = new Point(290, 363);
             txtCosto.Name = "txtCosto";
             txtCosto.Size = new Size(137, 23);
             txtCosto.TabIndex = 30;
@@ -166,7 +143,7 @@
             label4.Anchor = AnchorStyles.None;
             label4.AutoSize = true;
             label4.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(174, 354);
+            label4.Location = new Point(225, 322);
             label4.Name = "label4";
             label4.Size = new Size(59, 19);
             label4.TabIndex = 31;
@@ -177,7 +154,7 @@
             label5.Anchor = AnchorStyles.None;
             label5.AutoSize = true;
             label5.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(92, 231);
+            label5.Location = new Point(143, 199);
             label5.Name = "label5";
             label5.Size = new Size(142, 19);
             label5.TabIndex = 33;
@@ -188,7 +165,7 @@
             label7.Anchor = AnchorStyles.None;
             label7.AutoSize = true;
             label7.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(192, 314);
+            label7.Location = new Point(243, 282);
             label7.Name = "label7";
             label7.Size = new Size(41, 19);
             label7.TabIndex = 37;
@@ -197,8 +174,9 @@
             // txtPiso
             // 
             txtPiso.Anchor = AnchorStyles.None;
-            txtPiso.Location = new Point(239, 311);
+            txtPiso.Location = new Point(290, 279);
             txtPiso.Name = "txtPiso";
+            txtPiso.PlaceholderText = "Solo números";
             txtPiso.Size = new Size(137, 23);
             txtPiso.TabIndex = 38;
             txtPiso.KeyDown += ValidacionPiso;
@@ -209,7 +187,7 @@
             btnAgregarHabitac.FlatAppearance.BorderColor = SystemColors.ActiveCaptionText;
             btnAgregarHabitac.FlatStyle = FlatStyle.Popup;
             btnAgregarHabitac.Image = Properties.Resources.agregar;
-            btnAgregarHabitac.Location = new Point(81, 451);
+            btnAgregarHabitac.Location = new Point(92, 447);
             btnAgregarHabitac.Name = "btnAgregarHabitac";
             btnAgregarHabitac.Size = new Size(71, 71);
             btnAgregarHabitac.TabIndex = 39;
@@ -221,7 +199,7 @@
             label8.Anchor = AnchorStyles.None;
             label8.AutoSize = true;
             label8.Font = new Font("Microsoft JhengHei", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.Location = new Point(90, 523);
+            label8.Location = new Point(101, 519);
             label8.Name = "label8";
             label8.Size = new Size(60, 17);
             label8.TabIndex = 40;
@@ -232,7 +210,7 @@
             label9.Anchor = AnchorStyles.None;
             label9.AutoSize = true;
             label9.Font = new Font("Microsoft JhengHei", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label9.Location = new Point(184, 523);
+            label9.Location = new Point(195, 519);
             label9.Name = "label9";
             label9.Size = new Size(83, 17);
             label9.TabIndex = 42;
@@ -243,7 +221,7 @@
             label10.Anchor = AnchorStyles.None;
             label10.AutoSize = true;
             label10.Font = new Font("Microsoft JhengHei", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label10.Location = new Point(423, 524);
+            label10.Location = new Point(434, 520);
             label10.Name = "label10";
             label10.Size = new Size(44, 17);
             label10.TabIndex = 50;
@@ -255,7 +233,7 @@
             label11.Anchor = AnchorStyles.None;
             label11.AutoSize = true;
             label11.Font = new Font("Microsoft JhengHei", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label11.Location = new Point(525, 523);
+            label11.Location = new Point(536, 519);
             label11.Name = "label11";
             label11.Size = new Size(59, 17);
             label11.TabIndex = 52;
@@ -268,7 +246,7 @@
             btnEliminar.BackColor = Color.LightGreen;
             btnEliminar.FlatStyle = FlatStyle.Popup;
             btnEliminar.Image = Properties.Resources.eliminar;
-            btnEliminar.Location = new Point(519, 450);
+            btnEliminar.Location = new Point(530, 446);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(71, 71);
             btnEliminar.TabIndex = 51;
@@ -279,7 +257,7 @@
             btnHabilitarHabitacion.Anchor = AnchorStyles.None;
             btnHabilitarHabitacion.FlatStyle = FlatStyle.Popup;
             btnHabilitarHabitacion.Image = Properties.Resources.on;
-            btnHabilitarHabitacion.Location = new Point(297, 450);
+            btnHabilitarHabitacion.Location = new Point(308, 446);
             btnHabilitarHabitacion.Name = "btnHabilitarHabitacion";
             btnHabilitarHabitacion.Size = new Size(71, 71);
             btnHabilitarHabitacion.TabIndex = 53;
@@ -290,7 +268,7 @@
             label12.Anchor = AnchorStyles.None;
             label12.AutoSize = true;
             label12.Font = new Font("Microsoft JhengHei", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label12.Location = new Point(303, 522);
+            label12.Location = new Point(314, 518);
             label12.Name = "label12";
             label12.Size = new Size(65, 17);
             label12.TabIndex = 54;
@@ -301,7 +279,7 @@
             label13.Anchor = AnchorStyles.None;
             label13.AutoSize = true;
             label13.Font = new Font("Microsoft JhengHei", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label13.Location = new Point(80, 540);
+            label13.Location = new Point(91, 536);
             label13.Name = "label13";
             label13.Size = new Size(76, 17);
             label13.TabIndex = 55;
@@ -312,7 +290,7 @@
             label14.Anchor = AnchorStyles.None;
             label14.AutoSize = true;
             label14.Font = new Font("Microsoft JhengHei", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label14.Location = new Point(188, 539);
+            label14.Location = new Point(199, 535);
             label14.Name = "label14";
             label14.Size = new Size(76, 17);
             label14.TabIndex = 56;
@@ -323,7 +301,7 @@
             label15.Anchor = AnchorStyles.None;
             label15.AutoSize = true;
             label15.Font = new Font("Microsoft JhengHei", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label15.Location = new Point(296, 539);
+            label15.Location = new Point(307, 535);
             label15.Name = "label15";
             label15.Size = new Size(76, 17);
             label15.TabIndex = 57;
@@ -334,7 +312,7 @@
             btnDeshabHabitacion.Anchor = AnchorStyles.None;
             btnDeshabHabitacion.FlatStyle = FlatStyle.Popup;
             btnDeshabHabitacion.Image = Properties.Resources.off1;
-            btnDeshabHabitacion.Location = new Point(189, 450);
+            btnDeshabHabitacion.Location = new Point(200, 446);
             btnDeshabHabitacion.Name = "btnDeshabHabitacion";
             btnDeshabHabitacion.Size = new Size(71, 71);
             btnDeshabHabitacion.TabIndex = 58;
@@ -345,7 +323,7 @@
             btnEditar.Anchor = AnchorStyles.None;
             btnEditar.FlatStyle = FlatStyle.Popup;
             btnEditar.Image = Properties.Resources.edit2;
-            btnEditar.Location = new Point(409, 451);
+            btnEditar.Location = new Point(420, 447);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(71, 71);
             btnEditar.TabIndex = 59;
@@ -355,7 +333,7 @@
             // 
             dataGridView1.Anchor = AnchorStyles.None;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(48, 579);
+            dataGridView1.Location = new Point(59, 575);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(679, 133);
@@ -370,7 +348,7 @@
             label16.Anchor = AnchorStyles.None;
             label16.AutoSize = true;
             label16.Font = new Font("Yu Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label16.Location = new Point(633, 524);
+            label16.Location = new Point(644, 520);
             label16.Name = "label16";
             label16.Size = new Size(65, 17);
             label16.TabIndex = 62;
@@ -382,7 +360,7 @@
             btnCancelar.BackColor = Color.LightGreen;
             btnCancelar.FlatStyle = FlatStyle.Popup;
             btnCancelar.Image = Properties.Resources.cancelar;
-            btnCancelar.Location = new Point(630, 450);
+            btnCancelar.Location = new Point(641, 446);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(71, 71);
             btnCancelar.TabIndex = 61;
@@ -393,7 +371,7 @@
             label6.Anchor = AnchorStyles.None;
             label6.AutoSize = true;
             label6.Font = new Font("Arial Rounded MT Bold", 32.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(90, 122);
+            label6.Location = new Point(67, 58);
             label6.Name = "label6";
             label6.Size = new Size(687, 50);
             label6.TabIndex = 63;
@@ -403,7 +381,7 @@
             // 
             comboBoxTipoHab.Anchor = AnchorStyles.None;
             comboBoxTipoHab.FormattingEnabled = true;
-            comboBoxTipoHab.Location = new Point(239, 230);
+            comboBoxTipoHab.Location = new Point(290, 198);
             comboBoxTipoHab.Name = "comboBoxTipoHab";
             comboBoxTipoHab.Size = new Size(137, 23);
             comboBoxTipoHab.TabIndex = 64;
@@ -414,7 +392,7 @@
             // 
             comboBoxEstado.Anchor = AnchorStyles.None;
             comboBoxEstado.FormattingEnabled = true;
-            comboBoxEstado.Location = new Point(238, 354);
+            comboBoxEstado.Location = new Point(289, 322);
             comboBoxEstado.Name = "comboBoxEstado";
             comboBoxEstado.Size = new Size(138, 23);
             comboBoxEstado.TabIndex = 65;
@@ -457,12 +435,9 @@
             Controls.Add(txtNroHab);
             Controls.Add(label1);
             Controls.Add(pictureBox2);
-            Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "administracionHabitaciones";
             Text = "administracionHabitaciones";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
@@ -471,9 +446,6 @@
         }
 
         #endregion
-
-        private PictureBox pictureBox1;
-        private Panel panel1;
         private PictureBox pictureBox2;
         private Label label1;
         private TextBox txtNroHab;

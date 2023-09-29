@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pictureBox1 = new PictureBox();
-            panel1 = new Panel();
             label1 = new Label();
             txtNombSs = new TextBox();
             label2 = new Label();
@@ -46,39 +44,17 @@
             btnRegistrar = new Button();
             pictureBoxSsAdic = new PictureBox();
             dataGridView1 = new DataGridView();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel1.SuspendLayout();
+            label8 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBoxSsAdic).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Anchor = AnchorStyles.None;
-            pictureBox1.Image = Properties.Resources.logoHotel;
-            pictureBox1.Location = new Point(333, -11);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(205, 132);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 19;
-            pictureBox1.TabStop = false;
-            // 
-            // panel1
-            // 
-            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            panel1.BackColor = Color.FromArgb(39, 79, 193);
-            panel1.Controls.Add(pictureBox1);
-            panel1.Location = new Point(-1, -2);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(889, 112);
-            panel1.TabIndex = 22;
             // 
             // label1
             // 
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(212, 144);
+            label1.Location = new Point(212, 105);
             label1.Name = "label1";
             label1.Size = new Size(174, 21);
             label1.TabIndex = 23;
@@ -87,7 +63,7 @@
             // txtNombSs
             // 
             txtNombSs.Anchor = AnchorStyles.None;
-            txtNombSs.Location = new Point(197, 166);
+            txtNombSs.Location = new Point(197, 127);
             txtNombSs.Name = "txtNombSs";
             txtNombSs.Size = new Size(203, 23);
             txtNombSs.TabIndex = 24;
@@ -97,7 +73,7 @@
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(253, 203);
+            label2.Location = new Point(253, 164);
             label2.Name = "label2";
             label2.Size = new Size(85, 21);
             label2.TabIndex = 25;
@@ -106,7 +82,7 @@
             // txtCantidad
             // 
             txtCantidad.Anchor = AnchorStyles.None;
-            txtCantidad.Location = new Point(197, 225);
+            txtCantidad.Location = new Point(197, 186);
             txtCantidad.Name = "txtCantidad";
             txtCantidad.Size = new Size(203, 23);
             txtCantidad.TabIndex = 26;
@@ -116,7 +92,7 @@
             label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
             label3.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(233, 266);
+            label3.Location = new Point(233, 227);
             label3.Name = "label3";
             label3.Size = new Size(129, 21);
             label3.TabIndex = 27;
@@ -125,7 +101,7 @@
             // txtPrecioUnit
             // 
             txtPrecioUnit.Anchor = AnchorStyles.None;
-            txtPrecioUnit.Location = new Point(197, 288);
+            txtPrecioUnit.Location = new Point(197, 249);
             txtPrecioUnit.Name = "txtPrecioUnit";
             txtPrecioUnit.Size = new Size(203, 23);
             txtPrecioUnit.TabIndex = 28;
@@ -135,7 +111,7 @@
             label4.Anchor = AnchorStyles.None;
             label4.AutoSize = true;
             label4.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(243, 326);
+            label4.Location = new Point(243, 287);
             label4.Name = "label4";
             label4.Size = new Size(104, 21);
             label4.TabIndex = 29;
@@ -144,7 +120,7 @@
             // txtPrecioTotal
             // 
             txtPrecioTotal.Anchor = AnchorStyles.None;
-            txtPrecioTotal.Location = new Point(197, 348);
+            txtPrecioTotal.Location = new Point(197, 309);
             txtPrecioTotal.Name = "txtPrecioTotal";
             txtPrecioTotal.Size = new Size(203, 23);
             txtPrecioTotal.TabIndex = 30;
@@ -154,7 +130,7 @@
             label7.Anchor = AnchorStyles.None;
             label7.AutoSize = true;
             label7.Font = new Font("Yu Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(503, 475);
+            label7.Location = new Point(503, 436);
             label7.Name = "label7";
             label7.Size = new Size(46, 17);
             label7.TabIndex = 48;
@@ -167,7 +143,7 @@
             btnEditar.BackColor = Color.LightGreen;
             btnEditar.FlatStyle = FlatStyle.Popup;
             btnEditar.Image = Properties.Resources.editar;
-            btnEditar.Location = new Point(491, 402);
+            btnEditar.Location = new Point(491, 363);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(72, 72);
             btnEditar.TabIndex = 47;
@@ -178,7 +154,7 @@
             label6.Anchor = AnchorStyles.None;
             label6.AutoSize = true;
             label6.Font = new Font("Yu Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(374, 476);
+            label6.Location = new Point(374, 437);
             label6.Name = "label6";
             label6.Size = new Size(65, 17);
             label6.TabIndex = 44;
@@ -190,7 +166,7 @@
             btnCancelar.BackColor = Color.LightGreen;
             btnCancelar.FlatStyle = FlatStyle.Popup;
             btnCancelar.Image = Properties.Resources.cancelar;
-            btnCancelar.Location = new Point(371, 402);
+            btnCancelar.Location = new Point(371, 363);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(71, 71);
             btnCancelar.TabIndex = 43;
@@ -201,7 +177,7 @@
             label5.Anchor = AnchorStyles.None;
             label5.AutoSize = true;
             label5.Font = new Font("Yu Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(249, 476);
+            label5.Location = new Point(249, 437);
             label5.Name = "label5";
             label5.Size = new Size(67, 17);
             label5.TabIndex = 42;
@@ -213,7 +189,7 @@
             btnRegistrar.BackColor = Color.LightGreen;
             btnRegistrar.FlatStyle = FlatStyle.Popup;
             btnRegistrar.Image = Properties.Resources.registrar;
-            btnRegistrar.Location = new Point(249, 402);
+            btnRegistrar.Location = new Point(249, 363);
             btnRegistrar.Name = "btnRegistrar";
             btnRegistrar.Size = new Size(71, 71);
             btnRegistrar.TabIndex = 41;
@@ -223,7 +199,7 @@
             // 
             pictureBoxSsAdic.Anchor = AnchorStyles.None;
             pictureBoxSsAdic.Image = Properties.Resources.servicios_adicionales_hotel1;
-            pictureBoxSsAdic.Location = new Point(445, 179);
+            pictureBoxSsAdic.Location = new Point(445, 140);
             pictureBoxSsAdic.Name = "pictureBoxSsAdic";
             pictureBoxSsAdic.Size = new Size(181, 180);
             pictureBoxSsAdic.SizeMode = PictureBoxSizeMode.Zoom;
@@ -234,18 +210,30 @@
             // 
             dataGridView1.Anchor = AnchorStyles.None;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(78, 520);
+            dataGridView1.Location = new Point(78, 481);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(716, 126);
             dataGridView1.TabIndex = 50;
+            // 
+            // label8
+            // 
+            label8.Anchor = AnchorStyles.None;
+            label8.AutoSize = true;
+            label8.Font = new Font("Arial Rounded MT Bold", 32.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.Location = new Point(104, 25);
+            label8.Name = "label8";
+            label8.Size = new Size(730, 50);
+            label8.TabIndex = 51;
+            label8.Text = "Registro de Servicios Adicionales";
             // 
             // registrarSsAdicionales
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightGreen;
-            ClientSize = new Size(886, 657);
+            ClientSize = new Size(886, 815);
+            Controls.Add(label8);
             Controls.Add(dataGridView1);
             Controls.Add(pictureBoxSsAdic);
             Controls.Add(label7);
@@ -262,12 +250,9 @@
             Controls.Add(label2);
             Controls.Add(txtNombSs);
             Controls.Add(label1);
-            Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "registrarSsAdicionales";
             Text = "Registro de Servicios  Adicionales";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBoxSsAdic).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
@@ -275,9 +260,6 @@
         }
 
         #endregion
-
-        private PictureBox pictureBox1;
-        private Panel panel1;
         private Label label1;
         private TextBox txtNombSs;
         private Label label2;
@@ -294,5 +276,6 @@
         private Button btnRegistrar;
         private PictureBox pictureBoxSsAdic;
         private DataGridView dataGridView1;
+        private Label label8;
     }
 }
