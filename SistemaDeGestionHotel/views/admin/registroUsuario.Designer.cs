@@ -134,10 +134,14 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AllowUserToOrderColumns = true;
             dataGridView1.Anchor = AnchorStyles.None;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(74, 562);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(664, 106);
             dataGridView1.TabIndex = 32;
@@ -359,10 +363,10 @@
             label12.Anchor = AnchorStyles.None;
             label12.AutoSize = true;
             label12.BackColor = Color.PaleGreen;
-            label12.Font = new Font("Arial Rounded MT Bold", 32.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label12.Font = new Font("Microsoft Sans Serif", 32.25F, FontStyle.Regular, GraphicsUnit.Point);
             label12.Location = new Point(206, 41);
             label12.Name = "label12";
-            label12.Size = new Size(464, 50);
+            label12.Size = new Size(424, 51);
             label12.TabIndex = 55;
             label12.Text = "Registro de Usuarios";
             // 
@@ -373,6 +377,7 @@
             // comboBoxTipoPerfil
             // 
             comboBoxTipoPerfil.Anchor = AnchorStyles.None;
+            comboBoxTipoPerfil.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxTipoPerfil.FormattingEnabled = true;
             comboBoxTipoPerfil.Location = new Point(313, 316);
             comboBoxTipoPerfil.Name = "comboBoxTipoPerfil";
@@ -385,7 +390,7 @@
             btnLimpiar.Anchor = AnchorStyles.None;
             btnLimpiar.BackColor = Color.DodgerBlue;
             btnLimpiar.FlatStyle = FlatStyle.Popup;
-            btnLimpiar.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnLimpiar.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             btnLimpiar.Location = new Point(343, 363);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(152, 23);

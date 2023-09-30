@@ -20,16 +20,13 @@ namespace SistemaDeGestionHotel.views.admin
         public registroUsuario()
         {
             InitializeComponent();
+
             dbHotelParana = new HotelParanaContext();
-        }
 
-        private void conectarbase()
-        {
-            
 
-            // Crear las listas de opciones
+
             List<string> opciones = dbHotelParana.PerfilUsuarios
-                                    .Select(perfil => perfil.Nombre) // Proyecta solo el campo Nombre
+                                    .Select(perfil => perfil.Nombre)
                                     .ToList();
 
             // Limpiar los comboBox
@@ -40,6 +37,8 @@ namespace SistemaDeGestionHotel.views.admin
             {
                 comboBoxTipoPerfil.Items.Add(opcion);
             }
+
+
         }
 
         private void ValidacionNombre(object sender, KeyEventArgs e)
@@ -81,7 +80,8 @@ namespace SistemaDeGestionHotel.views.admin
                 // Mostrar un mensaje de error
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
-            }else
+            }
+            else
             {
 
 
