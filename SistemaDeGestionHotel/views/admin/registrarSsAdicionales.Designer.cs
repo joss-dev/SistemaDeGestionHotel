@@ -56,10 +56,10 @@
             // 
             // label1
             // 
-            label1.Anchor = AnchorStyles.None;
+            label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
             label1.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(243, 105);
+            label1.Location = new Point(243, 92);
             label1.Name = "label1";
             label1.Size = new Size(174, 21);
             label1.TabIndex = 23;
@@ -67,8 +67,8 @@
             // 
             // txtNombSs
             // 
-            txtNombSs.Anchor = AnchorStyles.None;
-            txtNombSs.Location = new Point(228, 127);
+            txtNombSs.Anchor = AnchorStyles.Top;
+            txtNombSs.Location = new Point(228, 114);
             txtNombSs.Name = "txtNombSs";
             txtNombSs.Size = new Size(203, 23);
             txtNombSs.TabIndex = 24;
@@ -76,10 +76,10 @@
             // 
             // label2
             // 
-            label2.Anchor = AnchorStyles.None;
+            label2.Anchor = AnchorStyles.Top;
             label2.AutoSize = true;
             label2.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(284, 164);
+            label2.Location = new Point(284, 151);
             label2.Name = "label2";
             label2.Size = new Size(85, 21);
             label2.TabIndex = 25;
@@ -87,8 +87,8 @@
             // 
             // txtCantidad
             // 
-            txtCantidad.Anchor = AnchorStyles.None;
-            txtCantidad.Location = new Point(228, 186);
+            txtCantidad.Anchor = AnchorStyles.Top;
+            txtCantidad.Location = new Point(228, 173);
             txtCantidad.Name = "txtCantidad";
             txtCantidad.Size = new Size(203, 23);
             txtCantidad.TabIndex = 26;
@@ -96,10 +96,10 @@
             // 
             // label3
             // 
-            label3.Anchor = AnchorStyles.None;
+            label3.Anchor = AnchorStyles.Top;
             label3.AutoSize = true;
             label3.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(264, 227);
+            label3.Location = new Point(264, 214);
             label3.Name = "label3";
             label3.Size = new Size(129, 21);
             label3.TabIndex = 27;
@@ -107,8 +107,8 @@
             // 
             // txtPrecioUnit
             // 
-            txtPrecioUnit.Anchor = AnchorStyles.None;
-            txtPrecioUnit.Location = new Point(228, 249);
+            txtPrecioUnit.Anchor = AnchorStyles.Top;
+            txtPrecioUnit.Location = new Point(228, 236);
             txtPrecioUnit.Name = "txtPrecioUnit";
             txtPrecioUnit.Size = new Size(203, 23);
             txtPrecioUnit.TabIndex = 28;
@@ -116,10 +116,10 @@
             // 
             // label4
             // 
-            label4.Anchor = AnchorStyles.None;
+            label4.Anchor = AnchorStyles.Top;
             label4.AutoSize = true;
             label4.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(274, 287);
+            label4.Location = new Point(274, 274);
             label4.Name = "label4";
             label4.Size = new Size(104, 21);
             label4.TabIndex = 29;
@@ -127,8 +127,8 @@
             // 
             // txtPrecioTotal
             // 
-            txtPrecioTotal.Anchor = AnchorStyles.None;
-            txtPrecioTotal.Location = new Point(228, 309);
+            txtPrecioTotal.Anchor = AnchorStyles.Top;
+            txtPrecioTotal.Location = new Point(228, 296);
             txtPrecioTotal.Name = "txtPrecioTotal";
             txtPrecioTotal.Size = new Size(203, 23);
             txtPrecioTotal.TabIndex = 30;
@@ -136,10 +136,10 @@
             // 
             // label7
             // 
-            label7.Anchor = AnchorStyles.None;
+            label7.Anchor = AnchorStyles.Top;
             label7.AutoSize = true;
             label7.Font = new Font("Yu Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(484, 443);
+            label7.Location = new Point(484, 426);
             label7.Name = "label7";
             label7.Size = new Size(46, 17);
             label7.TabIndex = 48;
@@ -148,11 +148,11 @@
             // 
             // btnEditar
             // 
-            btnEditar.Anchor = AnchorStyles.None;
+            btnEditar.Anchor = AnchorStyles.Top;
             btnEditar.BackColor = Color.LightGreen;
             btnEditar.FlatStyle = FlatStyle.Popup;
             btnEditar.Image = Properties.Resources.editar;
-            btnEditar.Location = new Point(470, 370);
+            btnEditar.Location = new Point(470, 353);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(72, 72);
             btnEditar.TabIndex = 47;
@@ -160,10 +160,10 @@
             // 
             // label6
             // 
-            label6.Anchor = AnchorStyles.None;
+            label6.Anchor = AnchorStyles.Top;
             label6.AutoSize = true;
             label6.Font = new Font("Yu Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(354, 444);
+            label6.Location = new Point(354, 427);
             label6.Name = "label6";
             label6.Size = new Size(65, 17);
             label6.TabIndex = 44;
@@ -171,11 +171,11 @@
             // 
             // btnCancelar
             // 
-            btnCancelar.Anchor = AnchorStyles.None;
+            btnCancelar.Anchor = AnchorStyles.Top;
             btnCancelar.BackColor = Color.LightGreen;
             btnCancelar.FlatStyle = FlatStyle.Popup;
             btnCancelar.Image = Properties.Resources.cancelar;
-            btnCancelar.Location = new Point(350, 370);
+            btnCancelar.Location = new Point(350, 353);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(71, 71);
             btnCancelar.TabIndex = 43;
@@ -184,10 +184,10 @@
             // 
             // label5
             // 
-            label5.Anchor = AnchorStyles.None;
+            label5.Anchor = AnchorStyles.Top;
             label5.AutoSize = true;
             label5.Font = new Font("Yu Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(230, 444);
+            label5.Location = new Point(230, 427);
             label5.Name = "label5";
             label5.Size = new Size(67, 17);
             label5.TabIndex = 42;
@@ -195,11 +195,11 @@
             // 
             // btnRegistrar
             // 
-            btnRegistrar.Anchor = AnchorStyles.None;
+            btnRegistrar.Anchor = AnchorStyles.Top;
             btnRegistrar.BackColor = Color.LightGreen;
             btnRegistrar.FlatStyle = FlatStyle.Popup;
             btnRegistrar.Image = Properties.Resources.registrar;
-            btnRegistrar.Location = new Point(228, 370);
+            btnRegistrar.Location = new Point(228, 353);
             btnRegistrar.Name = "btnRegistrar";
             btnRegistrar.Size = new Size(71, 71);
             btnRegistrar.TabIndex = 41;
@@ -208,9 +208,9 @@
             // 
             // pictureBoxSsAdic
             // 
-            pictureBoxSsAdic.Anchor = AnchorStyles.None;
+            pictureBoxSsAdic.Anchor = AnchorStyles.Top;
             pictureBoxSsAdic.Image = Properties.Resources.servicios_adicionales_hotel1;
-            pictureBoxSsAdic.Location = new Point(476, 140);
+            pictureBoxSsAdic.Location = new Point(476, 127);
             pictureBoxSsAdic.Name = "pictureBoxSsAdic";
             pictureBoxSsAdic.Size = new Size(181, 180);
             pictureBoxSsAdic.SizeMode = PictureBoxSizeMode.Zoom;
@@ -219,9 +219,9 @@
             // 
             // dataGridView1
             // 
-            dataGridView1.Anchor = AnchorStyles.None;
+            dataGridView1.Anchor = AnchorStyles.Top;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(85, 481);
+            dataGridView1.Location = new Point(85, 467);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(716, 126);
@@ -229,22 +229,22 @@
             // 
             // label8
             // 
-            label8.Anchor = AnchorStyles.None;
+            label8.Anchor = AnchorStyles.Top;
             label8.AutoSize = true;
             label8.BackColor = Color.PaleGreen;
-            label8.Font = new Font("Arial Rounded MT Bold", 32.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Location = new Point(104, 25);
+            label8.Font = new Font("Microsoft Sans Serif", 32.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.Location = new Point(107, 21);
             label8.Name = "label8";
-            label8.Size = new Size(730, 50);
+            label8.Size = new Size(664, 51);
             label8.TabIndex = 51;
             label8.Text = "Registro de Servicios Adicionales";
             // 
             // label9
             // 
-            label9.Anchor = AnchorStyles.None;
+            label9.Anchor = AnchorStyles.Top;
             label9.AutoSize = true;
             label9.Font = new Font("Yu Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label9.Location = new Point(596, 442);
+            label9.Location = new Point(596, 425);
             label9.Name = "label9";
             label9.Size = new Size(61, 17);
             label9.TabIndex = 53;
@@ -253,11 +253,11 @@
             // 
             // btnEliminar
             // 
-            btnEliminar.Anchor = AnchorStyles.None;
+            btnEliminar.Anchor = AnchorStyles.Top;
             btnEliminar.BackColor = Color.PaleGreen;
             btnEliminar.FlatStyle = FlatStyle.Popup;
             btnEliminar.Image = Properties.Resources.eliminar;
-            btnEliminar.Location = new Point(590, 370);
+            btnEliminar.Location = new Point(590, 353);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(71, 71);
             btnEliminar.TabIndex = 52;
@@ -272,7 +272,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightGreen;
-            ClientSize = new Size(886, 815);
+            ClientSize = new Size(886, 646);
             Controls.Add(label9);
             Controls.Add(btnEliminar);
             Controls.Add(label8);

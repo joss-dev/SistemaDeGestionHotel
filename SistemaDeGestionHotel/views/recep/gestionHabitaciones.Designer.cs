@@ -196,10 +196,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Arial Rounded MT Bold", 32.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Font = new Font("Microsoft Sans Serif", 32.25F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(236, 21);
             label1.Name = "label1";
-            label1.Size = new Size(541, 50);
+            label1.Size = new Size(496, 51);
             label1.TabIndex = 1;
             label1.Text = "Gestión de habitaciones ";
             // 
@@ -207,7 +207,7 @@
             // 
             btnFiltroPiso1.BackColor = Color.LightCyan;
             btnFiltroPiso1.FlatStyle = FlatStyle.Flat;
-            btnFiltroPiso1.Font = new Font("Arial Rounded MT Bold", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnFiltroPiso1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnFiltroPiso1.Location = new Point(20, 157);
             btnFiltroPiso1.Name = "btnFiltroPiso1";
             btnFiltroPiso1.Size = new Size(95, 33);
@@ -219,7 +219,7 @@
             // 
             btnFiltroPiso2.BackColor = Color.LightCyan;
             btnFiltroPiso2.FlatStyle = FlatStyle.Flat;
-            btnFiltroPiso2.Font = new Font("Arial Rounded MT Bold", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnFiltroPiso2.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnFiltroPiso2.Location = new Point(121, 157);
             btnFiltroPiso2.Name = "btnFiltroPiso2";
             btnFiltroPiso2.Size = new Size(95, 33);
@@ -231,7 +231,7 @@
             // 
             btnFiltroPiso3.BackColor = Color.LightCyan;
             btnFiltroPiso3.FlatStyle = FlatStyle.Flat;
-            btnFiltroPiso3.Font = new Font("Arial Rounded MT Bold", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnFiltroPiso3.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnFiltroPiso3.Location = new Point(224, 157);
             btnFiltroPiso3.Name = "btnFiltroPiso3";
             btnFiltroPiso3.Size = new Size(95, 33);
@@ -244,7 +244,7 @@
             btnFiltroOcupado.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnFiltroOcupado.BackColor = Color.Red;
             btnFiltroOcupado.FlatStyle = FlatStyle.Flat;
-            btnFiltroOcupado.Font = new Font("Arial Rounded MT Bold", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnFiltroOcupado.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnFiltroOcupado.Location = new Point(740, 157);
             btnFiltroOcupado.Name = "btnFiltroOcupado";
             btnFiltroOcupado.Size = new Size(95, 33);
@@ -257,7 +257,7 @@
             btnFiltroLibre.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnFiltroLibre.BackColor = Color.MediumSpringGreen;
             btnFiltroLibre.FlatStyle = FlatStyle.Flat;
-            btnFiltroLibre.Font = new Font("Arial Rounded MT Bold", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnFiltroLibre.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnFiltroLibre.Location = new Point(841, 157);
             btnFiltroLibre.Name = "btnFiltroLibre";
             btnFiltroLibre.Size = new Size(95, 33);
@@ -270,7 +270,7 @@
             btnFiltroReservado.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnFiltroReservado.BackColor = Color.SandyBrown;
             btnFiltroReservado.FlatStyle = FlatStyle.Flat;
-            btnFiltroReservado.Font = new Font("Arial Rounded MT Bold", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnFiltroReservado.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnFiltroReservado.Location = new Point(639, 157);
             btnFiltroReservado.Name = "btnFiltroReservado";
             btnFiltroReservado.Size = new Size(95, 33);
@@ -281,7 +281,7 @@
             // btnBuscar
             // 
             btnBuscar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnBuscar.Font = new Font("Arial Rounded MT Bold", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnBuscar.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnBuscar.Location = new Point(866, 116);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(73, 29);
@@ -294,10 +294,10 @@
             // 
             LDni.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             LDni.AutoSize = true;
-            LDni.Font = new Font("Arial Rounded MT Bold", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            LDni.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             LDni.Location = new Point(735, 96);
             LDni.Name = "LDni";
-            LDni.Size = new Size(130, 17);
+            LDni.Size = new Size(119, 18);
             LDni.TabIndex = 31;
             LDni.Text = "Nro Habitación : ";
             // 
@@ -314,7 +314,7 @@
             btnFiltroSimple.Anchor = AnchorStyles.Top;
             btnFiltroSimple.BackColor = Color.Yellow;
             btnFiltroSimple.FlatStyle = FlatStyle.Flat;
-            btnFiltroSimple.Font = new Font("Arial Rounded MT Bold", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnFiltroSimple.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnFiltroSimple.Location = new Point(332, 157);
             btnFiltroSimple.Name = "btnFiltroSimple";
             btnFiltroSimple.Size = new Size(95, 33);
@@ -327,7 +327,7 @@
             btnFiltroDoble.Anchor = AnchorStyles.Top;
             btnFiltroDoble.BackColor = Color.Yellow;
             btnFiltroDoble.FlatStyle = FlatStyle.Flat;
-            btnFiltroDoble.Font = new Font("Arial Rounded MT Bold", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnFiltroDoble.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnFiltroDoble.Location = new Point(431, 157);
             btnFiltroDoble.Name = "btnFiltroDoble";
             btnFiltroDoble.Size = new Size(95, 33);
@@ -340,7 +340,7 @@
             btnFiltroTriple.Anchor = AnchorStyles.Top;
             btnFiltroTriple.BackColor = Color.Yellow;
             btnFiltroTriple.FlatStyle = FlatStyle.Flat;
-            btnFiltroTriple.Font = new Font("Arial Rounded MT Bold", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnFiltroTriple.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnFiltroTriple.Location = new Point(530, 157);
             btnFiltroTriple.Name = "btnFiltroTriple";
             btnFiltroTriple.Size = new Size(95, 33);
@@ -352,10 +352,10 @@
             // 
             label6.Anchor = AnchorStyles.None;
             label6.AutoSize = true;
-            label6.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label6.Location = new Point(56, 805);
             label6.Name = "label6";
-            label6.Size = new Size(59, 18);
+            label6.Size = new Size(53, 20);
             label6.TabIndex = 70;
             label6.Text = "Volver";
             label6.Click += label6_Click;
@@ -366,7 +366,7 @@
             btnVolver.BackColor = Color.CornflowerBlue;
             btnVolver.FlatStyle = FlatStyle.Popup;
             btnVolver.Image = (Image)resources.GetObject("btnVolver.Image");
-            btnVolver.Location = new Point(50, 730);
+            btnVolver.Location = new Point(44, 696);
             btnVolver.Name = "btnVolver";
             btnVolver.Size = new Size(71, 71);
             btnVolver.TabIndex = 69;
@@ -379,7 +379,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             BackColor = Color.LightGreen;
-            ClientSize = new Size(963, 920);
+            ClientSize = new Size(963, 788);
             Controls.Add(label6);
             Controls.Add(btnVolver);
             Controls.Add(btnFiltroTriple);

@@ -65,9 +65,9 @@
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label4);
-            groupBox1.Font = new Font("Arial Rounded MT Bold", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBox1.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox1.ForeColor = SystemColors.ControlText;
-            groupBox1.Location = new Point(115, 320);
+            groupBox1.Location = new Point(115, 293);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(669, 284);
             groupBox1.TabIndex = 25;
@@ -80,10 +80,10 @@
             label7.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label7.AutoSize = true;
             label7.BorderStyle = BorderStyle.FixedSingle;
-            label7.Font = new Font("Arial Rounded MT Bold", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             label7.Location = new Point(15, 182);
             label7.Name = "label7";
-            label7.Size = new Size(82, 19);
+            label7.Size = new Size(76, 20);
             label7.TabIndex = 24;
             label7.Text = "Teléfono :";
             // 
@@ -92,10 +92,10 @@
             lApellido.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             lApellido.AutoSize = true;
             lApellido.BorderStyle = BorderStyle.FixedSingle;
-            lApellido.Font = new Font("Arial Rounded MT Bold", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lApellido.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             lApellido.Location = new Point(15, 37);
             lApellido.Name = "lApellido";
-            lApellido.Size = new Size(78, 19);
+            lApellido.Size = new Size(69, 20);
             lApellido.TabIndex = 16;
             lApellido.Text = "Apellido :";
             // 
@@ -104,10 +104,10 @@
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label1.AutoSize = true;
             label1.BorderStyle = BorderStyle.FixedSingle;
-            label1.Font = new Font("Arial Rounded MT Bold", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(327, 36);
             label1.Name = "label1";
-            label1.Size = new Size(77, 19);
+            label1.Size = new Size(72, 20);
             label1.TabIndex = 17;
             label1.Text = "Nombre :";
             // 
@@ -116,10 +116,10 @@
             label5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label5.AutoSize = true;
             label5.BorderStyle = BorderStyle.FixedSingle;
-            label5.Font = new Font("Arial Rounded MT Bold", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             label5.Location = new Point(327, 247);
             label5.Name = "label5";
-            label5.Size = new Size(135, 19);
+            label5.Size = new Size(123, 20);
             label5.TabIndex = 23;
             label5.Text = "Fecha de Salida :";
             // 
@@ -128,10 +128,10 @@
             label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label2.AutoSize = true;
             label2.BorderStyle = BorderStyle.FixedSingle;
-            label2.Font = new Font("Arial Rounded MT Bold", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             label2.Location = new Point(15, 110);
             label2.Name = "label2";
-            label2.Size = new Size(46, 19);
+            label2.Size = new Size(43, 20);
             label2.TabIndex = 18;
             label2.Text = "DNI :";
             // 
@@ -140,10 +140,10 @@
             label3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label3.AutoSize = true;
             label3.BorderStyle = BorderStyle.FixedSingle;
-            label3.Font = new Font("Arial Rounded MT Bold", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             label3.Location = new Point(327, 110);
             label3.Name = "label3";
-            label3.Size = new Size(189, 19);
+            label3.Size = new Size(172, 20);
             label3.TabIndex = 19;
             label3.Text = "Cantidad de huespedes :";
             // 
@@ -152,10 +152,10 @@
             label4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label4.AutoSize = true;
             label4.BorderStyle = BorderStyle.FixedSingle;
-            label4.Font = new Font("Arial Rounded MT Bold", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             label4.Location = new Point(15, 247);
             label4.Name = "label4";
-            label4.Size = new Size(146, 19);
+            label4.Size = new Size(132, 20);
             label4.TabIndex = 21;
             label4.Text = "Fecha de Ingreso :";
             // 
@@ -163,25 +163,25 @@
             // 
             label6.Anchor = AnchorStyles.None;
             label6.AutoSize = true;
-            label6.Font = new Font("Arial Rounded MT Bold", 26.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(485, 121);
+            label6.Font = new Font("Microsoft Sans Serif", 26.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Location = new Point(485, 94);
             label6.Name = "label6";
-            label6.Size = new Size(369, 40);
+            label6.Size = new Size(341, 39);
             label6.TabIndex = 24;
             label6.Text = "Gestión de Reservas";
             // 
             // btnConfirmaLLegada
             // 
-            btnConfirmaLLegada.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnConfirmaLLegada.Anchor = AnchorStyles.None;
             btnConfirmaLLegada.BackColor = Color.PowderBlue;
             btnConfirmaLLegada.BackgroundImageLayout = ImageLayout.None;
             btnConfirmaLLegada.Cursor = Cursors.Hand;
             btnConfirmaLLegada.FlatAppearance.BorderSize = 0;
             btnConfirmaLLegada.FlatStyle = FlatStyle.Popup;
-            btnConfirmaLLegada.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnConfirmaLLegada.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnConfirmaLLegada.Image = Properties.Resources.btn_guardar_;
             btnConfirmaLLegada.ImageAlign = ContentAlignment.TopCenter;
-            btnConfirmaLLegada.Location = new Point(549, 653);
+            btnConfirmaLLegada.Location = new Point(546, 621);
             btnConfirmaLLegada.Name = "btnConfirmaLLegada";
             btnConfirmaLLegada.Size = new Size(104, 90);
             btnConfirmaLLegada.TabIndex = 26;
@@ -192,7 +192,7 @@
             // btnBuscar
             // 
             btnBuscar.Anchor = AnchorStyles.None;
-            btnBuscar.Location = new Point(334, 134);
+            btnBuscar.Location = new Point(334, 107);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(85, 31);
             btnBuscar.TabIndex = 29;
@@ -204,17 +204,17 @@
             // 
             LDni.Anchor = AnchorStyles.None;
             LDni.AutoSize = true;
-            LDni.Font = new Font("Arial Rounded MT Bold", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            LDni.Location = new Point(124, 114);
+            LDni.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            LDni.Location = new Point(124, 87);
             LDni.Name = "LDni";
-            LDni.Size = new Size(196, 17);
+            LDni.Size = new Size(176, 18);
             LDni.TabIndex = 28;
             LDni.Text = "Ingrese DNI del huesped :";
             // 
             // TDni
             // 
             TDni.Anchor = AnchorStyles.None;
-            TDni.Location = new Point(124, 137);
+            TDni.Location = new Point(124, 110);
             TDni.MaxLength = 8;
             TDni.Name = "TDni";
             TDni.Size = new Size(206, 23);
@@ -233,8 +233,8 @@
             groupBox2.Controls.Add(label9);
             groupBox2.Controls.Add(label10);
             groupBox2.Controls.Add(label12);
-            groupBox2.Font = new Font("Arial Rounded MT Bold", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox2.Location = new Point(115, 189);
+            groupBox2.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBox2.Location = new Point(115, 162);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(669, 118);
             groupBox2.TabIndex = 31;
@@ -246,10 +246,10 @@
             label13.Anchor = AnchorStyles.None;
             label13.AutoSize = true;
             label13.BorderStyle = BorderStyle.FixedSingle;
-            label13.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label13.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label13.Location = new Point(447, 36);
             label13.Name = "label13";
-            label13.Size = new Size(70, 17);
+            label13.Size = new Size(64, 18);
             label13.TabIndex = 34;
             label13.Text = "Precio : $";
             // 
@@ -258,10 +258,10 @@
             label8.Anchor = AnchorStyles.None;
             label8.AutoSize = true;
             label8.BorderStyle = BorderStyle.FixedSingle;
-            label8.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label8.Location = new Point(15, 77);
             label8.Name = "label8";
-            label8.Size = new Size(143, 17);
+            label8.Size = new Size(135, 18);
             label8.TabIndex = 32;
             label8.Text = "Cantidad de camas : ";
             // 
@@ -270,10 +270,10 @@
             label9.Anchor = AnchorStyles.None;
             label9.AutoSize = true;
             label9.BorderStyle = BorderStyle.FixedSingle;
-            label9.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label9.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label9.Location = new Point(295, 77);
             label9.Name = "label9";
-            label9.Size = new Size(47, 17);
+            label9.Size = new Size(45, 18);
             label9.TabIndex = 31;
             label9.Text = "Piso : ";
             // 
@@ -282,10 +282,10 @@
             label10.Anchor = AnchorStyles.None;
             label10.AutoSize = true;
             label10.BorderStyle = BorderStyle.FixedSingle;
-            label10.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label10.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label10.Location = new Point(295, 36);
             label10.Name = "label10";
-            label10.Size = new Size(47, 17);
+            label10.Size = new Size(46, 18);
             label10.TabIndex = 30;
             label10.Text = "Tipo : ";
             // 
@@ -294,24 +294,24 @@
             label12.Anchor = AnchorStyles.None;
             label12.AutoSize = true;
             label12.BorderStyle = BorderStyle.FixedSingle;
-            label12.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label12.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label12.Location = new Point(15, 36);
             label12.Name = "label12";
-            label12.Size = new Size(71, 17);
+            label12.Size = new Size(66, 18);
             label12.TabIndex = 29;
             label12.Text = "Numero : ";
             // 
             // btnCancelar
             // 
-            btnCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnCancelar.Anchor = AnchorStyles.None;
             btnCancelar.BackColor = Color.LightCoral;
             btnCancelar.Cursor = Cursors.Hand;
             btnCancelar.FlatAppearance.BorderSize = 0;
             btnCancelar.FlatStyle = FlatStyle.Popup;
-            btnCancelar.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCancelar.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnCancelar.Image = Properties.Resources.btnCancelar;
             btnCancelar.ImageAlign = ContentAlignment.TopCenter;
-            btnCancelar.Location = new Point(226, 653);
+            btnCancelar.Location = new Point(211, 625);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(104, 90);
             btnCancelar.TabIndex = 34;
@@ -324,7 +324,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightGreen;
-            ClientSize = new Size(928, 821);
+            ClientSize = new Size(928, 767);
             Controls.Add(btnCancelar);
             Controls.Add(groupBox2);
             Controls.Add(btnBuscar);
