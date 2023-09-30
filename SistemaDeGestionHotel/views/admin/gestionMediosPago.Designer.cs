@@ -44,11 +44,10 @@
             btnEditar = new Button();
             btnEliminar = new FontAwesome.Sharp.IconButton();
             btnRegistrar = new FontAwesome.Sharp.IconButton();
-            btnMaximized = new FontAwesome.Sharp.IconButton();
-            btnMinimized = new FontAwesome.Sharp.IconButton();
-            btnExit = new FontAwesome.Sharp.IconButton();
             errorProvider1 = new ErrorProvider(components);
             btnBuscar = new Button();
+            label5 = new Label();
+            iconButton1 = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
@@ -57,9 +56,9 @@
             // 
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
-            label1.BackColor = Color.PaleGreen;
-            label1.Font = new Font("Arial Rounded MT Bold", 32.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(111, 81);
+            label1.BackColor = Color.Aquamarine;
+            label1.Font = new Font("Arial Rounded MT Bold", 32.25F, FontStyle.Underline, GraphicsUnit.Point);
+            label1.Location = new Point(101, 81);
             label1.Name = "label1";
             label1.Size = new Size(609, 50);
             label1.TabIndex = 22;
@@ -70,7 +69,7 @@
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(143, 187);
+            label2.Location = new Point(133, 187);
             label2.Name = "label2";
             label2.Size = new Size(82, 21);
             label2.TabIndex = 23;
@@ -79,7 +78,7 @@
             // txtNombMP
             // 
             txtNombMP.Anchor = AnchorStyles.None;
-            txtNombMP.Location = new Point(223, 188);
+            txtNombMP.Location = new Point(213, 188);
             txtNombMP.Name = "txtNombMP";
             txtNombMP.Size = new Size(141, 23);
             txtNombMP.TabIndex = 24;
@@ -90,7 +89,7 @@
             label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
             label3.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(169, 230);
+            label3.Location = new Point(159, 230);
             label3.Name = "label3";
             label3.Size = new Size(55, 21);
             label3.TabIndex = 25;
@@ -100,7 +99,7 @@
             // 
             comboBoxTipoMP.Anchor = AnchorStyles.None;
             comboBoxTipoMP.FormattingEnabled = true;
-            comboBoxTipoMP.Location = new Point(223, 231);
+            comboBoxTipoMP.Location = new Point(213, 231);
             comboBoxTipoMP.Name = "comboBoxTipoMP";
             comboBoxTipoMP.Size = new Size(121, 23);
             comboBoxTipoMP.TabIndex = 26;
@@ -111,7 +110,7 @@
             label4.Anchor = AnchorStyles.None;
             label4.AutoSize = true;
             label4.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(150, 273);
+            label4.Location = new Point(140, 273);
             label4.Name = "label4";
             label4.Size = new Size(73, 21);
             label4.TabIndex = 27;
@@ -121,7 +120,7 @@
             // 
             comboBoxEstadoMP.Anchor = AnchorStyles.None;
             comboBoxEstadoMP.FormattingEnabled = true;
-            comboBoxEstadoMP.Location = new Point(223, 273);
+            comboBoxEstadoMP.Location = new Point(213, 273);
             comboBoxEstadoMP.Name = "comboBoxEstadoMP";
             comboBoxEstadoMP.Size = new Size(121, 23);
             comboBoxEstadoMP.TabIndex = 28;
@@ -129,7 +128,7 @@
             // txtBuscarMP
             // 
             txtBuscarMP.Anchor = AnchorStyles.None;
-            txtBuscarMP.Location = new Point(450, 205);
+            txtBuscarMP.Location = new Point(440, 205);
             txtBuscarMP.Name = "txtBuscarMP";
             txtBuscarMP.Size = new Size(141, 23);
             txtBuscarMP.TabIndex = 30;
@@ -137,12 +136,12 @@
             // dataGridView2
             // 
             dataGridView2.Anchor = AnchorStyles.None;
-            dataGridView2.BackgroundColor = Color.MediumSeaGreen;
+            dataGridView2.BackgroundColor = Color.Gainsboro;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(91, 395);
+            dataGridView2.Location = new Point(51, 395);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowTemplate.Height = 25;
-            dataGridView2.Size = new Size(603, 135);
+            dataGridView2.Size = new Size(701, 135);
             dataGridView2.TabIndex = 43;
             // 
             // label9
@@ -150,7 +149,7 @@
             label9.Anchor = AnchorStyles.None;
             label9.AutoSize = true;
             label9.Font = new Font("Yu Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label9.Location = new Point(588, 357);
+            label9.Location = new Point(619, 357);
             label9.Name = "label9";
             label9.Size = new Size(61, 17);
             label9.TabIndex = 49;
@@ -161,7 +160,7 @@
             label10.Anchor = AnchorStyles.None;
             label10.AutoSize = true;
             label10.Font = new Font("Yu Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label10.Location = new Point(528, 357);
+            label10.Location = new Point(559, 357);
             label10.Name = "label10";
             label10.Size = new Size(46, 17);
             label10.TabIndex = 48;
@@ -172,7 +171,7 @@
             label11.Anchor = AnchorStyles.None;
             label11.AutoSize = true;
             label11.Font = new Font("Yu Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label11.Location = new Point(446, 357);
+            label11.Location = new Point(477, 357);
             label11.Name = "label11";
             label11.Size = new Size(67, 17);
             label11.TabIndex = 45;
@@ -184,7 +183,7 @@
             btnEditar.BackColor = Color.LightSalmon;
             btnEditar.FlatStyle = FlatStyle.Popup;
             btnEditar.Image = Properties.Resources.edit11;
-            btnEditar.Location = new Point(522, 305);
+            btnEditar.Location = new Point(553, 305);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(55, 50);
             btnEditar.TabIndex = 52;
@@ -200,7 +199,7 @@
             btnEliminar.IconColor = Color.Black;
             btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnEliminar.IconSize = 36;
-            btnEliminar.Location = new Point(590, 305);
+            btnEliminar.Location = new Point(621, 305);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(55, 50);
             btnEliminar.TabIndex = 51;
@@ -217,68 +216,12 @@
             btnRegistrar.IconChar = FontAwesome.Sharp.IconChar.Registered;
             btnRegistrar.IconColor = Color.Black;
             btnRegistrar.IconFont = FontAwesome.Sharp.IconFont.Regular;
-            btnRegistrar.Location = new Point(450, 305);
+            btnRegistrar.Location = new Point(481, 305);
             btnRegistrar.Name = "btnRegistrar";
             btnRegistrar.Size = new Size(56, 50);
             btnRegistrar.TabIndex = 50;
             btnRegistrar.UseVisualStyleBackColor = false;
             btnRegistrar.Click += btnRegistrar_Click;
-            // 
-            // btnMaximized
-            // 
-            btnMaximized.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnMaximized.BackColor = Color.LightGreen;
-            btnMaximized.FlatAppearance.BorderSize = 0;
-            btnMaximized.FlatStyle = FlatStyle.Flat;
-            btnMaximized.Flip = FontAwesome.Sharp.FlipOrientation.Horizontal;
-            btnMaximized.IconChar = FontAwesome.Sharp.IconChar.Square;
-            btnMaximized.IconColor = Color.Black;
-            btnMaximized.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            btnMaximized.IconSize = 20;
-            btnMaximized.Location = new Point(733, 7);
-            btnMaximized.Name = "btnMaximized";
-            btnMaximized.Size = new Size(33, 23);
-            btnMaximized.TabIndex = 58;
-            btnMaximized.UseVisualStyleBackColor = false;
-            btnMaximized.Click += btnMaximized_Click;
-            // 
-            // btnMinimized
-            // 
-            btnMinimized.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnMinimized.BackColor = Color.LightGreen;
-            btnMinimized.FlatAppearance.BorderColor = Color.Black;
-            btnMinimized.FlatAppearance.BorderSize = 0;
-            btnMinimized.FlatStyle = FlatStyle.Flat;
-            btnMinimized.Flip = FontAwesome.Sharp.FlipOrientation.Horizontal;
-            btnMinimized.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
-            btnMinimized.IconColor = Color.Black;
-            btnMinimized.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            btnMinimized.IconSize = 20;
-            btnMinimized.ImageAlign = ContentAlignment.BottomRight;
-            btnMinimized.Location = new Point(698, 9);
-            btnMinimized.Name = "btnMinimized";
-            btnMinimized.Size = new Size(32, 18);
-            btnMinimized.TabIndex = 57;
-            btnMinimized.UseVisualStyleBackColor = false;
-            btnMinimized.Click += btnMinimized_Click;
-            // 
-            // btnExit
-            // 
-            btnExit.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnExit.BackColor = Color.LightGreen;
-            btnExit.FlatAppearance.BorderSize = 0;
-            btnExit.FlatStyle = FlatStyle.Flat;
-            btnExit.Flip = FontAwesome.Sharp.FlipOrientation.Horizontal;
-            btnExit.IconChar = FontAwesome.Sharp.IconChar.X;
-            btnExit.IconColor = Color.Black;
-            btnExit.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            btnExit.IconSize = 20;
-            btnExit.Location = new Point(766, 7);
-            btnExit.Name = "btnExit";
-            btnExit.Size = new Size(33, 23);
-            btnExit.TabIndex = 56;
-            btnExit.UseVisualStyleBackColor = false;
-            btnExit.Click += btnExit_Click;
             // 
             // errorProvider1
             // 
@@ -290,23 +233,53 @@
             btnBuscar.BackColor = Color.DeepSkyBlue;
             btnBuscar.FlatStyle = FlatStyle.Popup;
             btnBuscar.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            btnBuscar.Location = new Point(597, 205);
+            btnBuscar.Location = new Point(587, 205);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(97, 23);
             btnBuscar.TabIndex = 59;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = false;
             // 
+            // label5
+            // 
+            label5.Anchor = AnchorStyles.None;
+            label5.AutoSize = true;
+            label5.Font = new Font("Yu Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.Location = new Point(693, 358);
+            label5.Name = "label5";
+            label5.Size = new Size(48, 17);
+            label5.TabIndex = 61;
+            label5.Text = "Volver";
+            // 
+            // iconButton1
+            // 
+            iconButton1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            iconButton1.BackColor = Color.Teal;
+            iconButton1.FlatAppearance.BorderSize = 0;
+            iconButton1.FlatStyle = FlatStyle.Popup;
+            iconButton1.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            iconButton1.ForeColor = SystemColors.ActiveCaptionText;
+            iconButton1.IconChar = FontAwesome.Sharp.IconChar.ArrowAltCircleLeft;
+            iconButton1.IconColor = Color.Black;
+            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton1.ImageAlign = ContentAlignment.TopCenter;
+            iconButton1.Location = new Point(688, 305);
+            iconButton1.Name = "iconButton1";
+            iconButton1.Size = new Size(55, 50);
+            iconButton1.TabIndex = 62;
+            iconButton1.TextAlign = ContentAlignment.BottomCenter;
+            iconButton1.UseVisualStyleBackColor = false;
+            iconButton1.Click += iconButton1_Click;
+            // 
             // gestionMediosPago
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.LightGreen;
+            BackColor = Color.Aquamarine;
             ClientSize = new Size(804, 542);
+            Controls.Add(iconButton1);
+            Controls.Add(label5);
             Controls.Add(btnBuscar);
-            Controls.Add(btnMaximized);
-            Controls.Add(btnMinimized);
-            Controls.Add(btnExit);
             Controls.Add(btnEditar);
             Controls.Add(btnEliminar);
             Controls.Add(btnRegistrar);
@@ -327,7 +300,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "gestionMediosPago";
             Load += gestionMediosPago_Load;
-            MouseDown += GestioMediosPago_MouseDown;
+            MouseDown += GestionMediosPago_MouseDown;
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
@@ -350,10 +323,9 @@
         private Button btnEditar;
         private FontAwesome.Sharp.IconButton btnEliminar;
         private FontAwesome.Sharp.IconButton btnRegistrar;
-        private FontAwesome.Sharp.IconButton btnMaximized;
-        private FontAwesome.Sharp.IconButton btnMinimized;
-        private FontAwesome.Sharp.IconButton btnExit;
         private ErrorProvider errorProvider1;
         private Button btnBuscar;
+        private Label label5;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }

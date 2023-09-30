@@ -43,6 +43,7 @@
             panel1 = new Panel();
             btnMaximized = new FontAwesome.Sharp.IconButton();
             panelCont = new Panel();
+            btnConsultas = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)pictureLogo).BeginInit();
             panelMenu.SuspendLayout();
             panelLogo.SuspendLayout();
@@ -167,7 +168,7 @@
             btnCerrarSesion.FlatStyle = FlatStyle.Flat;
             btnCerrarSesion.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnCerrarSesion.ForeColor = SystemColors.GrayText;
-            btnCerrarSesion.Location = new Point(39, 517);
+            btnCerrarSesion.Location = new Point(39, 590);
             btnCerrarSesion.Name = "btnCerrarSesion";
             btnCerrarSesion.Size = new Size(134, 39);
             btnCerrarSesion.TabIndex = 5;
@@ -203,6 +204,7 @@
             // panelMenu
             // 
             panelMenu.BackColor = Color.FromArgb(39, 79, 193);
+            panelMenu.Controls.Add(btnConsultas);
             panelMenu.Controls.Add(btnAdmHabitaciones);
             panelMenu.Controls.Add(btnUsuarios);
             panelMenu.Controls.Add(btnCerrarSesion);
@@ -214,7 +216,7 @@
             panelMenu.ForeColor = SystemColors.ActiveCaptionText;
             panelMenu.Location = new Point(0, 0);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(220, 579);
+            panelMenu.Size = new Size(220, 652);
             panelMenu.TabIndex = 4;
             // 
             // btnAdmHabitaciones
@@ -314,14 +316,40 @@
             panelCont.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panelCont.Location = new Point(220, 30);
             panelCont.Name = "panelCont";
-            panelCont.Size = new Size(580, 551);
+            panelCont.Size = new Size(580, 622);
             panelCont.TabIndex = 10;
+            // 
+            // btnConsultas
+            // 
+            btnConsultas.Cursor = Cursors.Hand;
+            btnConsultas.Dock = DockStyle.Top;
+            btnConsultas.FlatAppearance.BorderSize = 0;
+            btnConsultas.FlatAppearance.MouseDownBackColor = Color.Gainsboro;
+            btnConsultas.FlatAppearance.MouseOverBackColor = Color.Gray;
+            btnConsultas.FlatStyle = FlatStyle.Flat;
+            btnConsultas.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnConsultas.ForeColor = Color.White;
+            btnConsultas.IconChar = FontAwesome.Sharp.IconChar.Question;
+            btnConsultas.IconColor = Color.FromArgb(20, 20, 20);
+            btnConsultas.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnConsultas.IconSize = 38;
+            btnConsultas.ImageAlign = ContentAlignment.MiddleLeft;
+            btnConsultas.Location = new Point(0, 494);
+            btnConsultas.Name = "btnConsultas";
+            btnConsultas.Padding = new Padding(20, 0, 10, 0);
+            btnConsultas.Size = new Size(220, 60);
+            btnConsultas.TabIndex = 8;
+            btnConsultas.Text = "Consultas";
+            btnConsultas.TextAlign = ContentAlignment.MiddleLeft;
+            btnConsultas.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnConsultas.UseVisualStyleBackColor = true;
+            btnConsultas.Click += btnConsultas_Click;
             // 
             // PrincipalAdmin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 579);
+            ClientSize = new Size(800, 652);
             Controls.Add(panelCont);
             Controls.Add(panelMenu);
             Controls.Add(panel1);
@@ -353,5 +381,6 @@
         private Panel panel1;
         private FontAwesome.Sharp.IconButton btnMaximized;
         public Panel panelCont;
+        private FontAwesome.Sharp.IconButton btnConsultas;
     }
 }

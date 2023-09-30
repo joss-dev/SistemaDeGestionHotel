@@ -12,6 +12,7 @@ namespace SistemaDeGestionHotel.views.admin
 {
     public partial class gestionDePagos : Form
     {
+        private Form formularioAbierto = null;
 
         public gestionDePagos()
         {
@@ -19,28 +20,39 @@ namespace SistemaDeGestionHotel.views.admin
             this.FormBorderStyle = FormBorderStyle.None;
         }
 
+        private void AbrirFormulario(Form formulario)
+        {
+            if (formularioAbierto == null || formularioAbierto.IsDisposed)
+            {
+                // El formulario no está abierto o está cerrado, abre el formulario especificado
+                formularioAbierto = formulario;
+                formularioAbierto.Owner = this; // Establecer el formulario principal como propietario
+                formularioAbierto.FormClosed += Formulario_FormClosed; // Manejar el evento FormClosed
+                formularioAbierto.Show();
+            }
+            else
+            {
+                // El formulario ya está abierto, trae el formulario existente al frente
+                formularioAbierto.BringToFront();
+            }
+        }
+
+        private void Formulario_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // Cuando se cierra el formulario, establece la variable formularioAbierto como nula
+            formularioAbierto = null;
+        }
+
         private void btnMP_Click(object sender, EventArgs e)
         {
-            // Crear una instancia del formulario de gestioMediosPago
-            gestionMediosPago GestionMediosPago = new gestionMediosPago();
-
-            // Establecer el formulario principal como el propietario (owner) del GestionMedioPago
-            GestionMediosPago.Owner = this;
-
-            // Mostrar el gestionMediosPago
-            GestionMediosPago.Show();
+            // Llama a AbrirFormulario con el formulario gestionMediosPago
+            AbrirFormulario(new gestionMediosPago());
         }
 
         private void btnOR_Click(object sender, EventArgs e)
         {
-            // Crear una instancia del primer gestionOfertas
-            gestionOfertas GestionOfertas = new gestionOfertas();
-
-            // Establecer el formulario principal como el propietario (owner) del GestionMedioPago
-            GestionOfertas.Owner = this;
-
-            // Mostrar el gestionMediosPago
-            GestionOfertas.Show();
+            // Llama a AbrirFormulario con el formulario gestionOfertas
+            AbrirFormulario(new gestionOfertas());
         }
     }
 }

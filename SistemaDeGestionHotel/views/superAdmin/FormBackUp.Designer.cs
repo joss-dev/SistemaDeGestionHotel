@@ -42,7 +42,7 @@
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 32.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(221, 82);
+            label2.Location = new Point(217, 67);
             label2.Name = "label2";
             label2.Size = new Size(481, 51);
             label2.TabIndex = 26;
@@ -53,7 +53,7 @@
             label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
             label3.Font = new Font("Bahnschrift", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(194, 171);
+            label3.Location = new Point(185, 222);
             label3.Name = "label3";
             label3.Size = new Size(250, 19);
             label3.TabIndex = 28;
@@ -65,7 +65,7 @@
             txtFolderDestino.FlatAppearance.BorderColor = Color.Black;
             txtFolderDestino.FlatStyle = FlatStyle.Popup;
             txtFolderDestino.Image = Properties.Resources.foldered;
-            txtFolderDestino.Location = new Point(204, 202);
+            txtFolderDestino.Location = new Point(193, 246);
             txtFolderDestino.Name = "txtFolderDestino";
             txtFolderDestino.Size = new Size(232, 47);
             txtFolderDestino.TabIndex = 31;
@@ -75,7 +75,7 @@
             // 
             pictureBox2.Anchor = AnchorStyles.None;
             pictureBox2.Image = Properties.Resources.backup;
-            pictureBox2.Location = new Point(518, 158);
+            pictureBox2.Location = new Point(517, 149);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(201, 208);
             pictureBox2.TabIndex = 35;

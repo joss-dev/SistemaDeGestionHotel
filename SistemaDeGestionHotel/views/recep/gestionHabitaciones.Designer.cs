@@ -369,6 +369,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "gestionHabitaciones";
             ShowIcon = false;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Registraciones y Reservas";
             Load += gestionHabitaciones_Load;
             panel1.ResumeLayout(false);

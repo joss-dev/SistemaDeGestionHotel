@@ -144,5 +144,11 @@ namespace SistemaDeGestionHotel
             ActivateButton(sender, Color.FromArgb(34, 81, 111));
             FormsHijos.AbrirFormHija(new administracionHabitaciones(), panelCont);
         }
+
+        private void btnConsultas_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, Color.FromArgb(34, 81, 111));
+            FormsHijos.AbrirFormHija(new Consultas(), panelCont);
+        }
     }
 }

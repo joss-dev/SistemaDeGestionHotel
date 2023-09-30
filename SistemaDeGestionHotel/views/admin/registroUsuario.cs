@@ -81,11 +81,6 @@ namespace SistemaDeGestionHotel.views.admin
                 // Mostrar un mensaje de error
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
-            }else
-            {
-
-
-
             }
         }
 

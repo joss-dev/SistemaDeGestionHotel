@@ -28,50 +28,85 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            label2 = new Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
+            monthCalendar1 = new MonthCalendar();
+            pictureBox1 = new PictureBox();
+            btnEstadoHab = new Button();
+            btnContacto = new Button();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // label1
+            // monthCalendar1
             // 
-            label1.Anchor = AnchorStyles.None;
-            label1.AutoSize = true;
-            label1.Font = new Font("SimSun", 36F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(325, 42);
-            label1.Name = "label1";
-            label1.Size = new Size(270, 48);
-            label1.TabIndex = 7;
-            label1.Text = "Bienvenido";
+            monthCalendar1.Anchor = AnchorStyles.None;
+            monthCalendar1.BackColor = Color.IndianRed;
+            monthCalendar1.Font = new Font("Arial Rounded MT Bold", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            monthCalendar1.ForeColor = SystemColors.MenuHighlight;
+            monthCalendar1.Location = new Point(580, 183);
+            monthCalendar1.Name = "monthCalendar1";
+            monthCalendar1.TabIndex = 10;
+            monthCalendar1.TitleBackColor = SystemColors.Highlight;
             // 
-            // label2
+            // pictureBox1
             // 
-            label2.Anchor = AnchorStyles.None;
-            label2.AutoSize = true;
-            label2.Font = new Font("SimSun", 36F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(302, 90);
-            label2.Name = "label2";
-            label2.Size = new Size(320, 48);
-            label2.TabIndex = 6;
-            label2.Text = "Hotel Paraná";
+            pictureBox1.Anchor = AnchorStyles.None;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(25, 23);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(839, 517);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 11;
+            pictureBox1.TabStop = false;
+            // 
+            // btnEstadoHab
+            // 
+            btnEstadoHab.Anchor = AnchorStyles.None;
+            btnEstadoHab.BackColor = Color.LightCoral;
+            btnEstadoHab.FlatStyle = FlatStyle.Popup;
+            btnEstadoHab.Font = new Font("Broadway", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            btnEstadoHab.Location = new Point(580, 369);
+            btnEstadoHab.Name = "btnEstadoHab";
+            btnEstadoHab.Size = new Size(248, 48);
+            btnEstadoHab.TabIndex = 12;
+            btnEstadoHab.Text = "Consultar estados de habitaciones";
+            btnEstadoHab.UseVisualStyleBackColor = false;
+            btnEstadoHab.Click += btnEstadoHab_Click;
+            // 
+            // btnContacto
+            // 
+            btnContacto.Anchor = AnchorStyles.None;
+            btnContacto.BackColor = Color.SpringGreen;
+            btnContacto.FlatStyle = FlatStyle.Popup;
+            btnContacto.Font = new Font("Broadway", 15.75F, FontStyle.Underline, GraphicsUnit.Point);
+            btnContacto.Location = new Point(580, 438);
+            btnContacto.Name = "btnContacto";
+            btnContacto.Size = new Size(248, 48);
+            btnContacto.TabIndex = 13;
+            btnContacto.Text = "Contacto a soporte";
+            btnContacto.UseVisualStyleBackColor = false;
+            btnContacto.Click += btnContacto_Click;
             // 
             // Home
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.SteelBlue;
+            BackColor = Color.PaleGreen;
             ClientSize = new Size(888, 564);
-            Controls.Add(label1);
-            Controls.Add(label2);
+            Controls.Add(btnContacto);
+            Controls.Add(btnEstadoHab);
+            Controls.Add(monthCalendar1);
+            Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Home";
             Text = "Home";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private Label label1;
-        private Label label2;
+        private MonthCalendar monthCalendar1;
+        private PictureBox pictureBox1;
+        private Button btnEstadoHab;
+        private Button btnContacto;
     }
 }

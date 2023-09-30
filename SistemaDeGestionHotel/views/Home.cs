@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SistemaDeGestionHotel.views.admin;
+using SistemaDeGestionHotel.views.recep;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,5 +19,29 @@ namespace SistemaDeGestionHotel.views
             InitializeComponent();
         }
 
+        private void btnEstadoHab_Click(object sender, EventArgs e)
+        {
+
+            // Crear una instancia del formulario de gestioMediosPago
+            gestionHabitaciones GestionHabitaciones = new gestionHabitaciones();
+
+            // Establecer el formulario principal como el propietario (owner) del GestionMedioPago
+            GestionHabitaciones.Owner = this;
+
+            // Mostrar el gestionMediosPago
+            GestionHabitaciones.Show();
+        }
+
+        private void btnContacto_Click(object sender, EventArgs e)
+        {
+            // Crear una instancia del formulario de gestioMediosPago
+            consultaSoporte ConsultaSoporte = new consultaSoporte();
+
+            // Establecer el formulario principal como el propietario (owner) del GestionMedioPago
+            ConsultaSoporte.Owner = this;
+
+            // Mostrar el gestionMediosPago
+            ConsultaSoporte.Show();
+        }
     }
 }
