@@ -82,6 +82,12 @@ namespace SistemaDeGestionHotel.views.admin
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            else
+            {
+
+
+
+            }
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
