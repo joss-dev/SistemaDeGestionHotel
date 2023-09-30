@@ -28,7 +28,7 @@ namespace SistemaDeGestionHotel.views.admin
                 formularioAbierto = formulario;
                 formularioAbierto.Owner = this; // Establecer el formulario principal como propietario
                 formularioAbierto.FormClosed += Formulario_FormClosed; // Manejar el evento FormClosed
-                formularioAbierto.Show();
+                formularioAbierto.ShowDialog();
             }
             else
             {

@@ -1,5 +1,4 @@
 ﻿using SistemaDeGestionHotel.views.admin;
-using SistemaDeGestionHotel.views.recep;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,17 +8,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
-namespace SistemaDeGestionHotel.views
+namespace SistemaDeGestionHotel.views.recep
 {
-    public partial class Home : Form
+    public partial class HomeRecep : Form
     {
 
         private Form formularioAbierto = null;
 
-        public Home()
+        public HomeRecep()
         {
             InitializeComponent();
+        }
+
+        private void btnEstadoHab_Click(object sender, EventArgs e)
+        {
+            // Llama a AbrirFormulario con el formulario gestionMediosPago
+            AbrirFormulario(new gestionHabitaciones());
         }
 
         private void AbrirFormulario(Form formulario)
@@ -30,7 +36,7 @@ namespace SistemaDeGestionHotel.views
                 formularioAbierto = formulario;
                 formularioAbierto.Owner = this; // Establecer el formulario principal como propietario
                 formularioAbierto.FormClosed += Formulario_FormClosed; // Manejar el evento FormClosed
-                formularioAbierto.ShowDialog();
+                formularioAbierto.ShowDialog(); // Muestra Formulario
             }
             else
             {
@@ -38,17 +44,15 @@ namespace SistemaDeGestionHotel.views
                 formularioAbierto.BringToFront();
             }
         }
-
         private void Formulario_FormClosed(object sender, FormClosedEventArgs e)
         {
             // Cuando se cierra el formulario, establece la variable formularioAbierto como nula
             formularioAbierto = null;
         }
-
-        private void btnEstadoHab_Click(object sender, EventArgs e)
+        private void btnContacto_Click(object sender, EventArgs e)
         {
             // Llama a AbrirFormulario con el formulario gestionMediosPago
-            AbrirFormulario(new gestionHabitaciones());
+            AbrirFormulario(new consultaSoporte());
         }
     }
 }

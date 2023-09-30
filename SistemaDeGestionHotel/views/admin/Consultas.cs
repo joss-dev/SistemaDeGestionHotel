@@ -56,5 +56,10 @@ namespace SistemaDeGestionHotel.views.admin
                 return;
             }
         }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

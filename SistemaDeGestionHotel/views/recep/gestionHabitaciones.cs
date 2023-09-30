@@ -1,4 +1,5 @@
-﻿using SistemaDeGestionHotel.views.recep;
+﻿using Microsoft.VisualBasic;
+using SistemaDeGestionHotel.views.recep;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -58,6 +59,22 @@ namespace SistemaDeGestionHotel.views.admin
             {
                 MessageBox.Show("Exito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            MsgBoxResult result = (MsgBoxResult)MessageBox.Show("¿Está seguro de que desea cerrar el formulario?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+            if (result == MsgBoxResult.Yes)
+            {
+                this.DialogResult = DialogResult.OK;
+
+                // Cerrar el formulario secundario
+                this.Close();
+            }
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
         }
     }
 }

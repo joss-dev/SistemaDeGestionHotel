@@ -231,6 +231,7 @@
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "consultaSoporte";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "consultaSoporte";
             MouseDown += ConsultaSoporte_MouseDown;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

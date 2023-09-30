@@ -147,6 +147,7 @@
             label6.Size = new Size(59, 18);
             label6.TabIndex = 68;
             label6.Text = "Volver";
+            label6.Click += label6_Click;
             // 
             // btnVolver
             // 

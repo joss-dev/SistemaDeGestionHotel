@@ -154,5 +154,10 @@ namespace SistemaDeGestionHotel.views
             ActivateButton(sender, Color.FromArgb(34, 81, 111));
             FormsHijos.AbrirFormHija(new registroUsuario(), panelContenedor);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

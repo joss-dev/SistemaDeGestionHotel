@@ -37,13 +37,13 @@
             btnCerrarSesion = new Button();
             btnHome = new FontAwesome.Sharp.IconButton();
             panelMenu = new Panel();
+            btnConsultas = new FontAwesome.Sharp.IconButton();
             btnAdmHabitaciones = new FontAwesome.Sharp.IconButton();
             btnUsuarios = new FontAwesome.Sharp.IconButton();
             panelLogo = new Panel();
             panel1 = new Panel();
             btnMaximized = new FontAwesome.Sharp.IconButton();
             panelCont = new Panel();
-            btnConsultas = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)pictureLogo).BeginInit();
             panelMenu.SuspendLayout();
             panelLogo.SuspendLayout();
@@ -174,6 +174,7 @@
             btnCerrarSesion.TabIndex = 5;
             btnCerrarSesion.Text = "Cerrar Sesión";
             btnCerrarSesion.UseVisualStyleBackColor = false;
+            btnCerrarSesion.Click += btnCerrarSesion_Click;
             // 
             // btnHome
             // 
@@ -218,6 +219,32 @@
             panelMenu.Name = "panelMenu";
             panelMenu.Size = new Size(220, 652);
             panelMenu.TabIndex = 4;
+            // 
+            // btnConsultas
+            // 
+            btnConsultas.Cursor = Cursors.Hand;
+            btnConsultas.Dock = DockStyle.Top;
+            btnConsultas.FlatAppearance.BorderSize = 0;
+            btnConsultas.FlatAppearance.MouseDownBackColor = Color.Gainsboro;
+            btnConsultas.FlatAppearance.MouseOverBackColor = Color.Gray;
+            btnConsultas.FlatStyle = FlatStyle.Flat;
+            btnConsultas.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnConsultas.ForeColor = Color.White;
+            btnConsultas.IconChar = FontAwesome.Sharp.IconChar.Question;
+            btnConsultas.IconColor = Color.FromArgb(20, 20, 20);
+            btnConsultas.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnConsultas.IconSize = 38;
+            btnConsultas.ImageAlign = ContentAlignment.MiddleLeft;
+            btnConsultas.Location = new Point(0, 494);
+            btnConsultas.Name = "btnConsultas";
+            btnConsultas.Padding = new Padding(20, 0, 10, 0);
+            btnConsultas.Size = new Size(220, 60);
+            btnConsultas.TabIndex = 8;
+            btnConsultas.Text = "Consultas";
+            btnConsultas.TextAlign = ContentAlignment.MiddleLeft;
+            btnConsultas.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnConsultas.UseVisualStyleBackColor = true;
+            btnConsultas.Click += btnConsultas_Click;
             // 
             // btnAdmHabitaciones
             // 
@@ -318,32 +345,6 @@
             panelCont.Name = "panelCont";
             panelCont.Size = new Size(580, 622);
             panelCont.TabIndex = 10;
-            // 
-            // btnConsultas
-            // 
-            btnConsultas.Cursor = Cursors.Hand;
-            btnConsultas.Dock = DockStyle.Top;
-            btnConsultas.FlatAppearance.BorderSize = 0;
-            btnConsultas.FlatAppearance.MouseDownBackColor = Color.Gainsboro;
-            btnConsultas.FlatAppearance.MouseOverBackColor = Color.Gray;
-            btnConsultas.FlatStyle = FlatStyle.Flat;
-            btnConsultas.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnConsultas.ForeColor = Color.White;
-            btnConsultas.IconChar = FontAwesome.Sharp.IconChar.Question;
-            btnConsultas.IconColor = Color.FromArgb(20, 20, 20);
-            btnConsultas.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnConsultas.IconSize = 38;
-            btnConsultas.ImageAlign = ContentAlignment.MiddleLeft;
-            btnConsultas.Location = new Point(0, 494);
-            btnConsultas.Name = "btnConsultas";
-            btnConsultas.Padding = new Padding(20, 0, 10, 0);
-            btnConsultas.Size = new Size(220, 60);
-            btnConsultas.TabIndex = 8;
-            btnConsultas.Text = "Consultas";
-            btnConsultas.TextAlign = ContentAlignment.MiddleLeft;
-            btnConsultas.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnConsultas.UseVisualStyleBackColor = true;
-            btnConsultas.Click += btnConsultas_Click;
             // 
             // PrincipalAdmin
             // 

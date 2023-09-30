@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(gestionHabitaciones));
             panel1 = new Panel();
             button15 = new Button();
             button14 = new Button();
@@ -51,6 +52,8 @@
             btnFiltroSimple = new Button();
             btnFiltroDoble = new Button();
             btnFiltroTriple = new Button();
+            label6 = new Label();
+            btnVolver = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -69,7 +72,7 @@
             panel1.Controls.Add(button7);
             panel1.Location = new Point(21, 196);
             panel1.Name = "panel1";
-            panel1.Size = new Size(916, 429);
+            panel1.Size = new Size(916, 482);
             panel1.TabIndex = 0;
             // 
             // button15
@@ -78,7 +81,7 @@
             button15.BackColor = Color.MediumSpringGreen;
             button15.FlatStyle = FlatStyle.Flat;
             button15.Font = new Font("Yu Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button15.Location = new Point(581, 165);
+            button15.Location = new Point(581, 192);
             button15.Name = "button15";
             button15.Size = new Size(139, 52);
             button15.TabIndex = 15;
@@ -91,7 +94,7 @@
             button14.BackColor = Color.SandyBrown;
             button14.FlatStyle = FlatStyle.Flat;
             button14.Font = new Font("Yu Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button14.Location = new Point(417, 165);
+            button14.Location = new Point(417, 192);
             button14.Name = "button14";
             button14.Size = new Size(139, 52);
             button14.TabIndex = 14;
@@ -104,7 +107,7 @@
             button13.BackColor = Color.SandyBrown;
             button13.FlatStyle = FlatStyle.Flat;
             button13.Font = new Font("Yu Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button13.Location = new Point(241, 165);
+            button13.Location = new Point(241, 192);
             button13.Name = "button13";
             button13.Size = new Size(139, 52);
             button13.TabIndex = 13;
@@ -117,7 +120,7 @@
             button12.BackColor = Color.Red;
             button12.FlatStyle = FlatStyle.Flat;
             button12.Font = new Font("Yu Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button12.Location = new Point(62, 165);
+            button12.Location = new Point(62, 192);
             button12.Name = "button12";
             button12.Size = new Size(139, 52);
             button12.TabIndex = 12;
@@ -130,7 +133,7 @@
             button11.BackColor = Color.Red;
             button11.FlatStyle = FlatStyle.Flat;
             button11.Font = new Font("Yu Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button11.Location = new Point(744, 73);
+            button11.Location = new Point(744, 100);
             button11.Name = "button11";
             button11.Size = new Size(139, 52);
             button11.TabIndex = 11;
@@ -143,7 +146,7 @@
             button10.BackColor = Color.MediumSpringGreen;
             button10.FlatStyle = FlatStyle.Flat;
             button10.Font = new Font("Yu Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button10.Location = new Point(581, 73);
+            button10.Location = new Point(581, 100);
             button10.Name = "button10";
             button10.Size = new Size(139, 52);
             button10.TabIndex = 10;
@@ -156,7 +159,7 @@
             button9.BackColor = Color.Red;
             button9.FlatStyle = FlatStyle.Flat;
             button9.Font = new Font("Yu Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button9.Location = new Point(417, 73);
+            button9.Location = new Point(417, 100);
             button9.Name = "button9";
             button9.Size = new Size(139, 52);
             button9.TabIndex = 9;
@@ -169,7 +172,7 @@
             button8.BackColor = Color.MediumSpringGreen;
             button8.FlatStyle = FlatStyle.Flat;
             button8.Font = new Font("Yu Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button8.Location = new Point(241, 73);
+            button8.Location = new Point(241, 100);
             button8.Name = "button8";
             button8.Size = new Size(139, 52);
             button8.TabIndex = 8;
@@ -182,7 +185,7 @@
             button7.BackColor = Color.MediumSpringGreen;
             button7.FlatStyle = FlatStyle.Flat;
             button7.Font = new Font("Yu Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button7.Location = new Point(62, 73);
+            button7.Location = new Point(62, 100);
             button7.Name = "button7";
             button7.Size = new Size(139, 52);
             button7.TabIndex = 7;
@@ -345,13 +348,40 @@
             btnFiltroTriple.Text = "Triple";
             btnFiltroTriple.UseVisualStyleBackColor = false;
             // 
+            // label6
+            // 
+            label6.Anchor = AnchorStyles.None;
+            label6.AutoSize = true;
+            label6.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Location = new Point(56, 805);
+            label6.Name = "label6";
+            label6.Size = new Size(59, 18);
+            label6.TabIndex = 70;
+            label6.Text = "Volver";
+            label6.Click += label6_Click;
+            // 
+            // btnVolver
+            // 
+            btnVolver.Anchor = AnchorStyles.None;
+            btnVolver.BackColor = Color.CornflowerBlue;
+            btnVolver.FlatStyle = FlatStyle.Popup;
+            btnVolver.Image = (Image)resources.GetObject("btnVolver.Image");
+            btnVolver.Location = new Point(50, 730);
+            btnVolver.Name = "btnVolver";
+            btnVolver.Size = new Size(71, 71);
+            btnVolver.TabIndex = 69;
+            btnVolver.UseVisualStyleBackColor = false;
+            btnVolver.Click += btnVolver_Click;
+            // 
             // gestionHabitaciones
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             BackColor = Color.LightGreen;
-            ClientSize = new Size(963, 672);
+            ClientSize = new Size(963, 920);
+            Controls.Add(label6);
+            Controls.Add(btnVolver);
             Controls.Add(btnFiltroTriple);
             Controls.Add(btnFiltroDoble);
             Controls.Add(btnFiltroSimple);
@@ -402,5 +432,7 @@
         private Button btnFiltroSimple;
         private Button btnFiltroDoble;
         private Button btnFiltroTriple;
+        private Label label6;
+        private Button btnVolver;
     }
 }

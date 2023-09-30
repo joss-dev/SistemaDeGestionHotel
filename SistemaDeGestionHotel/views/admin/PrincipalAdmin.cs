@@ -150,5 +150,10 @@ namespace SistemaDeGestionHotel
             ActivateButton(sender, Color.FromArgb(34, 81, 111));
             FormsHijos.AbrirFormHija(new Consultas(), panelCont);
         }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

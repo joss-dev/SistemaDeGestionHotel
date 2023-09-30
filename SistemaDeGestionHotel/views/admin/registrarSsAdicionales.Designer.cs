@@ -294,6 +294,7 @@
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "registrarSsAdicionales";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Registro de Servicios  Adicionales";
             ((System.ComponentModel.ISupportInitialize)pictureBoxSsAdic).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
