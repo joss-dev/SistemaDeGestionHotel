@@ -23,11 +23,13 @@ namespace SistemaDeGestionHotel.views.admin
 
             dbHotelParana = new HotelParanaContext();
 
-
+            dataGridView1.DataSource = dbHotelParana.Usuarios.ToList();
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             List<string> opciones = dbHotelParana.PerfilUsuarios
                                     .Select(perfil => perfil.Nombre)
                                     .ToList();
+
 
             // Limpiar los comboBox
             comboBoxTipoPerfil.Items.Clear();
@@ -75,7 +77,7 @@ namespace SistemaDeGestionHotel.views.admin
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             // Verificar si alguno de los campos está incompleto
-            if (ValidacionTextBox.ValidarNoVacio(txtNombre, txtApellido, txtDNI, txtCorreoElec, txtDireccion, txtUserName, txtPass))
+            if (ValidacionTextBox.ValidarNoVacio(txtNombre, txtApellido, txtDNI, txtCorreoElec, txtDireccion, txtUserName, txtPass) || comboBoxTipoPerfil.SelectedIndex < 0)
             {
                 // Mostrar un mensaje de error
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -83,8 +85,32 @@ namespace SistemaDeGestionHotel.views.admin
             }
             else
             {
+                Usuario user = new Usuario()
+                {
+                    Nombre = txtNombre.Text,
+                    Apellido = txtApellido.Text,
+                    Dni = int.Parse(txtDNI.Text),
+                    CorreoElectronico = txtCorreoElec.Text,
+                    Direccion = txtDireccion.Text,
+                    NombreUsuario = txtUserName.Text,
+                    Contraseña = txtPass.Text,
+                    FotoPerfil = "NO IMAGEN",
+                    IdPerfilUsuario = comboBoxTipoPerfil.SelectedIndex + 1
+                };
 
+                dbHotelParana.Add(user);
+                dbHotelParana.SaveChanges();
+                MessageBox.Show("El usuario se registro correctamente", "Guardar", MessageBoxButtons.OK);
 
+                txtApellido.Text = string.Empty;
+                txtNombre.Text = string.Empty;
+                txtDNI.Text = string.Empty;
+                txtCorreoElec.Text = string.Empty;
+                txtDireccion.Text = string.Empty;
+                txtUserName.Text = string.Empty;
+                txtPass.Text = string.Empty;
+                // Para restablecer el ComboBox a la opción predeterminada
+                comboBoxTipoPerfil.SelectedItem = null;
 
             }
         }
