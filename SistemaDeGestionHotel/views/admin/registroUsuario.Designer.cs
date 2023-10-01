@@ -145,6 +145,7 @@
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(664, 106);
             dataGridView1.TabIndex = 32;
+            dataGridView1.CellClick += CargaTextboxsDelDataGrid;
             // 
             // label5
             // 

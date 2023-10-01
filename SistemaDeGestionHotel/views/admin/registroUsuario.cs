@@ -145,5 +145,26 @@ namespace SistemaDeGestionHotel.views.admin
                 }
             }
         }
+
+        private void CargaTextboxsDelDataGrid(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.RowIndex < dataGridView1.Rows.Count)
+            {
+                // Obtiene la fila seleccionada
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+
+                // Accede a los datos de la fila y carga en los TextBox y ComboBox
+                txtNombre.Text = row.Cells["Nombre"].Value.ToString();
+                txtApellido.Text = row.Cells["Apellido"].Value.ToString();
+                txtDNI.Text = row.Cells["DNI"].Value.ToString();
+                txtCorreoElec.Text = row.Cells["CorreoElectronico"].Value.ToString();
+                txtDireccion.Text = row.Cells["Direccion"].Value.ToString();
+                txtUserName.Text = row.Cells["NombreUsuario"].Value.ToString();
+                txtPass.Text = row.Cells["Contraseña"].Value.ToString();
+
+                // Aquí asumimos que el ComboBox muestra el nombre del perfil de usuario
+                comboBoxTipoPerfil.SelectedIndex = int.Parse(row.Cells["IdPerfilUsuario"].Value.ToString()) - 1 ;
+            }
+        }
     }
 }
