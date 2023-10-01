@@ -204,6 +204,7 @@
             btnEditar.Size = new Size(71, 71);
             btnEditar.TabIndex = 39;
             btnEditar.UseVisualStyleBackColor = false;
+            btnEditar.Click += btnEditar_Click;
             // 
             // label7
             // 

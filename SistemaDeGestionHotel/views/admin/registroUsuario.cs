@@ -101,6 +101,7 @@ namespace SistemaDeGestionHotel.views.admin
                 dbHotelParana.Add(user);
                 dbHotelParana.SaveChanges();
                 MessageBox.Show("El usuario se registro correctamente", "Guardar", MessageBoxButtons.OK);
+                dataGridView1.DataSource = dbHotelParana.Usuarios.ToList();
 
                 txtApellido.Text = string.Empty;
                 txtNombre.Text = string.Empty;
@@ -163,7 +164,56 @@ namespace SistemaDeGestionHotel.views.admin
                 txtPass.Text = row.Cells["Contraseña"].Value.ToString();
 
                 // Aquí asumimos que el ComboBox muestra el nombre del perfil de usuario
-                comboBoxTipoPerfil.SelectedIndex = int.Parse(row.Cells["IdPerfilUsuario"].Value.ToString()) - 1 ;
+                comboBoxTipoPerfil.SelectedIndex = int.Parse(row.Cells["IdPerfilUsuario"].Value.ToString()) - 1;
+            }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+
+
+            if((ValidacionTextBox.ValidarNoVacio(txtNombre, txtApellido, txtDNI, txtCorreoElec, txtDireccion, txtUserName, txtPass) || comboBoxTipoPerfil.SelectedIndex < 0))
+            {
+                MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+                // Obtiene los valores de los textbox.
+                string nombre = txtNombre.Text;
+                string apellido = txtApellido.Text;
+                int dni = int.Parse(txtDNI.Text);
+                string correoElectronico = txtCorreoElec.Text;
+                string direccion = txtDireccion.Text;
+                string nombreUsuario = txtUserName.Text;
+                string contraseña = txtPass.Text;
+                int idPerfilUsuario = comboBoxTipoPerfil.SelectedIndex + 1; // Suponiendo que el índice comienza en 1
+
+                // Realiza la actualización en la base de datos.
+                Usuario usuario = dbHotelParana.Usuarios.FirstOrDefault(u => u.NombreUsuario == nombreUsuario);
+
+                if (usuario != null)
+                {
+                    usuario.Nombre = nombre;
+                    usuario.Apellido = apellido;
+                    usuario.Dni = dni;
+                    usuario.CorreoElectronico = correoElectronico;
+                    usuario.Direccion = direccion;
+                    usuario.NombreUsuario = nombreUsuario;
+                    usuario.Contraseña = contraseña;
+                    usuario.IdPerfilUsuario = idPerfilUsuario;
+
+                    // Guarda los cambios en la base de datos.
+                    dbHotelParana.SaveChanges();
+                    // Actualiza el DataGridView
+                    dataGridView1.DataSource = dbHotelParana.Usuarios.ToList();
+                    // Muestra un mensaje de éxito.
+                    MessageBox.Show("Usuario actualizado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo encontrar el usuario para actualizar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }
