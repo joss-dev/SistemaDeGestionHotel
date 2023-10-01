@@ -64,6 +64,7 @@
             btnCobrar.Text = "Cobrar";
             btnCobrar.TextAlign = ContentAlignment.BottomCenter;
             btnCobrar.UseVisualStyleBackColor = false;
+            btnCobrar.Click += btnCobrar_Click;
             // 
             // btnVolver
             // 
@@ -71,7 +72,7 @@
             btnVolver.BackColor = Color.LightCoral;
             btnVolver.FlatAppearance.BorderSize = 0;
             btnVolver.FlatStyle = FlatStyle.Popup;
-            btnVolver.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnVolver.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnVolver.ForeColor = SystemColors.ActiveCaptionText;
             btnVolver.IconChar = FontAwesome.Sharp.IconChar.ArrowAltCircleLeft;
             btnVolver.IconColor = Color.Black;

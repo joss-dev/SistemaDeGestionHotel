@@ -40,7 +40,7 @@
             btnServiciosAd = new Button();
             label12 = new Label();
             comboBoxEstado = new ComboBox();
-            textBox1 = new TextBox();
+            textBoxTelefono = new TextBox();
             label7 = new Label();
             lApellido = new Label();
             TApellido = new TextBox();
@@ -155,7 +155,7 @@
             groupBox2.Controls.Add(btnServiciosAd);
             groupBox2.Controls.Add(label12);
             groupBox2.Controls.Add(comboBoxEstado);
-            groupBox2.Controls.Add(textBox1);
+            groupBox2.Controls.Add(textBoxTelefono);
             groupBox2.Controls.Add(label7);
             groupBox2.Controls.Add(lApellido);
             groupBox2.Controls.Add(TApellido);
@@ -169,7 +169,7 @@
             groupBox2.Controls.Add(label10);
             groupBox2.Controls.Add(dateTimeIngreso);
             groupBox2.Controls.Add(dateTimeSalida);
-            groupBox2.Font = new Font("Arial Rounded MT Bold", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBox2.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox2.Location = new Point(95, 190);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(668, 368);
@@ -191,10 +191,10 @@
             // 
             label12.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label12.AutoSize = true;
-            label12.Font = new Font("Arial Rounded MT Bold", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label12.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             label12.Location = new Point(411, 186);
             label12.Name = "label12";
-            label12.Size = new Size(67, 17);
+            label12.Size = new Size(63, 18);
             label12.TabIndex = 41;
             label12.Text = "Estado :";
             // 
@@ -206,28 +206,28 @@
             comboBoxEstado.Items.AddRange(new object[] { "Reserva", "Estadia" });
             comboBoxEstado.Location = new Point(413, 212);
             comboBoxEstado.Name = "comboBoxEstado";
-            comboBoxEstado.Size = new Size(121, 25);
+            comboBoxEstado.Size = new Size(121, 26);
             comboBoxEstado.TabIndex = 40;
             comboBoxEstado.SelectedIndexChanged += estado_selectedIndex;
             // 
-            // textBox1
+            // textBoxTelefono
             // 
-            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            textBox1.Location = new Point(53, 210);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Solo números";
-            textBox1.Size = new Size(206, 25);
-            textBox1.TabIndex = 38;
-            textBox1.TextChanged += textBox1_TextChanged;
+            textBoxTelefono.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            textBoxTelefono.Location = new Point(53, 210);
+            textBoxTelefono.Name = "textBoxTelefono";
+            textBoxTelefono.PlaceholderText = "Solo números";
+            textBoxTelefono.Size = new Size(206, 24);
+            textBoxTelefono.TabIndex = 38;
+            textBoxTelefono.TextChanged += textBox1_TextChanged;
             // 
             // label7
             // 
             label7.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label7.AutoSize = true;
-            label7.Font = new Font("Arial Rounded MT Bold", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             label7.Location = new Point(51, 184);
             label7.Name = "label7";
-            label7.Size = new Size(80, 17);
+            label7.Size = new Size(74, 18);
             label7.TabIndex = 39;
             label7.Text = "Telefono :";
             label7.Click += label7_Click;
@@ -236,10 +236,10 @@
             // 
             lApellido.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             lApellido.AutoSize = true;
-            lApellido.Font = new Font("Arial Rounded MT Bold", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lApellido.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             lApellido.Location = new Point(52, 37);
             lApellido.Name = "lApellido";
-            lApellido.Size = new Size(76, 17);
+            lApellido.Size = new Size(67, 18);
             lApellido.TabIndex = 30;
             lApellido.Text = "Apellido :";
             // 
@@ -249,7 +249,7 @@
             TApellido.BorderStyle = BorderStyle.FixedSingle;
             TApellido.Location = new Point(52, 60);
             TApellido.Name = "TApellido";
-            TApellido.Size = new Size(206, 25);
+            TApellido.Size = new Size(206, 24);
             TApellido.TabIndex = 26;
             TApellido.KeyDown += ValidacionApellido;
             // 
@@ -258,7 +258,7 @@
             TNombre.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             TNombre.Location = new Point(411, 60);
             TNombre.Name = "TNombre";
-            TNombre.Size = new Size(206, 25);
+            TNombre.Size = new Size(206, 24);
             TNombre.TabIndex = 27;
             TNombre.KeyDown += ValidacionNombre;
             // 
@@ -266,10 +266,10 @@
             // 
             label5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label5.AutoSize = true;
-            label5.Font = new Font("Arial Rounded MT Bold", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             label5.Location = new Point(411, 37);
             label5.Name = "label5";
-            label5.Size = new Size(75, 17);
+            label5.Size = new Size(70, 18);
             label5.TabIndex = 31;
             label5.Text = "Nombre :";
             // 
@@ -278,7 +278,7 @@
             TCantidadHuespedes.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             TCantidadHuespedes.Location = new Point(411, 133);
             TCantidadHuespedes.Name = "TCantidadHuespedes";
-            TCantidadHuespedes.Size = new Size(206, 25);
+            TCantidadHuespedes.Size = new Size(206, 24);
             TCantidadHuespedes.TabIndex = 29;
             TCantidadHuespedes.KeyDown += ValidacionCantHuesped;
             // 
@@ -289,7 +289,7 @@
             TDni.MaxLength = 8;
             TDni.Name = "TDni";
             TDni.PlaceholderText = "Solo números";
-            TDni.Size = new Size(206, 25);
+            TDni.Size = new Size(206, 24);
             TDni.TabIndex = 28;
             TDni.KeyDown += ValidacionDni;
             // 
@@ -297,10 +297,10 @@
             // 
             label6.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label6.AutoSize = true;
-            label6.Font = new Font("Arial Rounded MT Bold", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             label6.Location = new Point(416, 277);
             label6.Name = "label6";
-            label6.Size = new Size(133, 17);
+            label6.Size = new Size(121, 18);
             label6.TabIndex = 37;
             label6.Text = "Fecha de Salida :";
             // 
@@ -308,10 +308,10 @@
             // 
             label8.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label8.AutoSize = true;
-            label8.Font = new Font("Arial Rounded MT Bold", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             label8.Location = new Point(52, 107);
             label8.Name = "label8";
-            label8.Size = new Size(44, 17);
+            label8.Size = new Size(41, 18);
             label8.TabIndex = 32;
             label8.Text = "DNI :";
             // 
@@ -319,10 +319,10 @@
             // 
             label9.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label9.AutoSize = true;
-            label9.Font = new Font("Arial Rounded MT Bold", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label9.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             label9.Location = new Point(411, 106);
             label9.Name = "label9";
-            label9.Size = new Size(187, 17);
+            label9.Size = new Size(170, 18);
             label9.TabIndex = 33;
             label9.Text = "Cantidad de huespedes :";
             // 
@@ -330,10 +330,10 @@
             // 
             label10.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label10.AutoSize = true;
-            label10.Font = new Font("Arial Rounded MT Bold", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label10.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             label10.Location = new Point(56, 277);
             label10.Name = "label10";
-            label10.Size = new Size(144, 17);
+            label10.Size = new Size(130, 18);
             label10.TabIndex = 35;
             label10.Text = "Fecha de Ingreso :";
             // 
@@ -343,7 +343,7 @@
             dateTimeIngreso.Format = DateTimePickerFormat.Short;
             dateTimeIngreso.Location = new Point(56, 318);
             dateTimeIngreso.Name = "dateTimeIngreso";
-            dateTimeIngreso.Size = new Size(135, 25);
+            dateTimeIngreso.Size = new Size(135, 24);
             dateTimeIngreso.TabIndex = 34;
             // 
             // dateTimeSalida
@@ -352,7 +352,7 @@
             dateTimeSalida.Format = DateTimePickerFormat.Short;
             dateTimeSalida.Location = new Point(416, 318);
             dateTimeSalida.Name = "dateTimeSalida";
-            dateTimeSalida.Size = new Size(123, 25);
+            dateTimeSalida.Size = new Size(123, 24);
             dateTimeSalida.TabIndex = 36;
             // 
             // btnCancelar
@@ -362,7 +362,7 @@
             btnCancelar.Cursor = Cursors.Hand;
             btnCancelar.FlatAppearance.BorderSize = 0;
             btnCancelar.FlatStyle = FlatStyle.Popup;
-            btnCancelar.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCancelar.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnCancelar.Image = Properties.Resources.btnCancelar;
             btnCancelar.ImageAlign = ContentAlignment.TopCenter;
             btnCancelar.Location = new Point(167, 580);
@@ -381,7 +381,7 @@
             btnRegistrar.Cursor = Cursors.Hand;
             btnRegistrar.FlatAppearance.BorderSize = 0;
             btnRegistrar.FlatStyle = FlatStyle.Popup;
-            btnRegistrar.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnRegistrar.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnRegistrar.Image = Properties.Resources.btn_guardar_;
             btnRegistrar.ImageAlign = ContentAlignment.TopCenter;
             btnRegistrar.Location = new Point(598, 581);
@@ -444,7 +444,7 @@
         private DateTimePicker dateTimeSalida;
         private ErrorProvider errorProviderNumero;
         private Label label11;
-        private TextBox textBox1;
+        private TextBox textBoxTelefono;
         private Label label7;
         private Label label12;
         private ComboBox comboBoxEstado;

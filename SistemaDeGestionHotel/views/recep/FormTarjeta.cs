@@ -30,5 +30,32 @@ namespace SistemaDeGestionHotel.views.recep
                 this.Close();
             }
         }
+
+        private void ValidarNroTarjeta(object sender, KeyEventArgs e)
+        {
+            ValidacionTextBox.ValidarSoloNumeros(textBoxNroTarjeta, errorProviderNumero);
+        }
+
+        private void ValidarFecha(object sender, KeyEventArgs e)
+        {
+            ValidacionTextBox.ValidarSoloNumeros(textBoxFechaCad, errorProviderNumero);
+        }
+
+        private void ValidarTitular(object sender, KeyEventArgs e)
+        {
+            ValidacionTextBox.ValidarTextoConEspacios(textBoxTitular, errorProviderNumero);
+        }
+
+        private void ValidarCvv(object sender, KeyEventArgs e)
+        {
+            ValidacionTextBox.ValidarSoloNumeros(textBoxCvv, errorProviderNumero);
+        }
+
+        private void btnCobrar_Click(object sender, EventArgs e)
+        {
+            if(ValidacionTextBox.ValidarNoVacio(textBoxCvv, textBoxFechaCad, textBoxNroTarjeta, textBoxTitular)) {
+                MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

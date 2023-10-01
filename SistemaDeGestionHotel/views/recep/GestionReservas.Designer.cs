@@ -217,6 +217,7 @@
             TDni.Location = new Point(124, 110);
             TDni.MaxLength = 8;
             TDni.Name = "TDni";
+            TDni.PlaceholderText = "Solo Números";
             TDni.Size = new Size(206, 23);
             TDni.TabIndex = 27;
             TDni.KeyDown += ValidacionDni;

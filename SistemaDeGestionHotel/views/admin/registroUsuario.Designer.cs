@@ -353,7 +353,9 @@
             // 
             txtDNI.Anchor = AnchorStyles.None;
             txtDNI.Location = new Point(37, 265);
+            txtDNI.MaxLength = 8;
             txtDNI.Name = "txtDNI";
+            txtDNI.PlaceholderText = "Solo Números";
             txtDNI.Size = new Size(207, 23);
             txtDNI.TabIndex = 54;
             txtDNI.KeyDown += ValidacionDNI;

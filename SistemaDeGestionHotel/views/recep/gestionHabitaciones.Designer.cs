@@ -305,7 +305,9 @@
             // 
             TNumHabitacion.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             TNumHabitacion.Location = new Point(735, 119);
+            TNumHabitacion.MaxLength = 3;
             TNumHabitacion.Name = "TNumHabitacion";
+            TNumHabitacion.PlaceholderText = "Solo Números";
             TNumHabitacion.Size = new Size(126, 23);
             TNumHabitacion.TabIndex = 30;
             // 

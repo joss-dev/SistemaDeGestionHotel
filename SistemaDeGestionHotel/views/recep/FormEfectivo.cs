@@ -36,5 +36,17 @@ namespace SistemaDeGestionHotel.views.recep
         {
             ValidacionTextBox.ValidarPrecio(textBoxEfectivo, errorProvider1);
         }
+
+        private void btnCobrar_Click(object sender, EventArgs e)
+        {
+            if (ValidacionTextBox.ValidarNoVacio(textBoxEfectivo))
+            {
+                MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                MessageBox.Show("Exito!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }

@@ -21,7 +21,7 @@ namespace SistemaDeGestionHotel.views.recep
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            if (ValidacionTextBox.ValidarNoVacio(TDni, TNombre, TApellido, TCantidadHuespedes))
+            if (ValidacionTextBox.ValidarNoVacio(TDni, TNombre, TApellido, TCantidadHuespedes, textBoxTelefono))
             {
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
