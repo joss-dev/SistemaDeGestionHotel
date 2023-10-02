@@ -111,7 +111,7 @@ namespace SistemaDeGestionHotel.views.admin
                 txtUserName.Text = string.Empty;
                 txtPass.Text = string.Empty;
                 // Para restablecer el ComboBox a la opción predeterminada
-                comboBoxTipoPerfil.SelectedItem = null;
+                comboBoxTipoPerfil.SelectedItem = 0;
 
             }
         }
@@ -207,6 +207,17 @@ namespace SistemaDeGestionHotel.views.admin
                     dbHotelParana.SaveChanges();
                     // Actualiza el DataGridView
                     dataGridView1.DataSource = dbHotelParana.Usuarios.ToList();
+
+                    txtApellido.Text = string.Empty;
+                    txtNombre.Text = string.Empty;
+                    txtDNI.Text = string.Empty;
+                    txtCorreoElec.Text = string.Empty;
+                    txtDireccion.Text = string.Empty;
+                    txtUserName.Text = string.Empty;
+                    txtPass.Text = string.Empty;
+                    // Para restablecer el ComboBox a la opción predeterminada
+                    comboBoxTipoPerfil.SelectedItem = 0;
+
                     // Muestra un mensaje de éxito.
                     MessageBox.Show("Usuario actualizado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
