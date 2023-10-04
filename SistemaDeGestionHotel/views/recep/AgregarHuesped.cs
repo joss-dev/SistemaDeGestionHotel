@@ -89,7 +89,7 @@ namespace SistemaDeGestionHotel.views.recep
             }
             else if (indiceSeleccionado == 1)
             {
-                // Establecer la fecha mínima y maxima como la fecha de hoy
+                // Establecer la fecha mínima como la fecha de hoy
                 dateTimeIngreso.MinDate = DateTime.Today;
 
                 dateTimeIngreso.Value = DateTime.Today;
