@@ -1,5 +1,6 @@
 CREATE DATABASE HotelParana;
 
+USE HotelParana;
 
 CREATE TABLE Perfil_usuario (
 	ID_perfil_usuario INT NOT NULL IDENTITY(1, 1),
