@@ -81,6 +81,22 @@ namespace SistemaDeGestionHotel
             };
         }
 
+        public static void ValidarTextoConEspaciosYNumeros(TextBox textBox, ErrorProvider errorProvider)
+        {
+            textBox.KeyPress += (sender, e) =>
+            {
+                // Permitir solo caracteres de letras, números, espacios y teclas de control como Backspace y Delete
+                if (!char.IsControl(e.KeyChar) && !char.IsLetterOrDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                {
+                    e.Handled = true; // Cancelar la entrada del carácter
+                    errorProvider.SetError(textBox, "Solo se permiten letras, números y espacios.");
+                }
+                else
+                {
+                    errorProvider.SetError(textBox, ""); // Limpiar el mensaje de error si es válido
+                }
+            };
+        }
 
 
     }
