@@ -110,6 +110,7 @@ CREATE TABLE Habitacion(
 CREATE TABLE Registro(
 	ID_registro INT NOT NULL IDENTITY(1, 1),
 	Cantidad_huespedes INT NOT NULL,
+	Precio_HabPactado FLOAT NOT NULL,
 	Estado_ocupacion INT NOT NULL,
 	Fecha_ingreso DATE NOT NULL,
 	Fecha_salida DATE NOT NULL,
@@ -132,6 +133,8 @@ CREATE TABLE Detalle_Servicios(
 CREATE TABLE Pago(
 	ID_pago INT NOT NULL IDENTITY(1,1),
 	Monto_pago FLOAT NOT NULL,
+	Fecha_horaPago DATETIME NOT NULL,
+	Estado_pago INT NOT NULL,
 	ID_ofertaRecargo INT NULL,
 	ID_registro INT NOT NULL,
 	ID_medio_pago INT NOT NULL,
