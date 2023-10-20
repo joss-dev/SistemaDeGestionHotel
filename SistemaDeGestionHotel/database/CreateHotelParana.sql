@@ -74,7 +74,9 @@ CREATE TABLE Medios_pago(
 	ID_medio_pago INT NOT NULL IDENTITY(1, 1),
 	Nombre VARCHAR (100) NOT NULL,
 	Estado INT NOT NULL,
-	CONSTRAINT PK_ID_medio_pago PRIMARY KEY (ID_medio_pago)
+	ID_tipo_medioPago INT NOT NULL,
+	CONSTRAINT PK_ID_medio_pago PRIMARY KEY (ID_medio_pago),
+	CONSTRAINT FK_ID_tipo_medioPago FOREIGN KEY(ID_tipo_medioPago) REFERENCES Tipo_medioPago(ID_tipo_medioPago)
 );
 
 CREATE TABLE Cliente(
@@ -131,7 +133,7 @@ CREATE TABLE Pago(
 	ID_medio_pago INT NOT NULL,
 	CONSTRAINT PK_ID_pago PRIMARY KEY (ID_pago),
 	CONSTRAINT FK_ID_ofertaRecargo FOREIGN KEY (ID_ofertaRecargo) REFERENCES Ofertas_recargo(ID_ofertaRecargo),
-	CONSTRAINT FK_ID_registro FOREIGN KEY (ID_registro) REFERENCES Registro (ID_registro),
+	CONSTRAINT FK_ID_registro_pago FOREIGN KEY (ID_registro) REFERENCES Registro (ID_registro),
 	CONSTRAINT FK_ID_medio_pago FOREIGN KEY (ID_medio_pago) REFERENCES Medios_pago(ID_medio_pago),
 );
 
