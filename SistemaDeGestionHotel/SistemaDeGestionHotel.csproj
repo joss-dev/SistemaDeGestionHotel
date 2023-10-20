@@ -42,9 +42,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="controllers\" />
-    <Folder Include="models\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="Entidades\" />
     <Folder Include="database\" />
+    <Folder Include="Datos\" />
   </ItemGroup>
 
 </Project>

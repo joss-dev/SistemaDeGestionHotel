@@ -85,6 +85,8 @@ namespace SistemaDeGestionHotel.views.admin
             }
             else
             {
+
+                //CONTROLLER SE LE PASA SOLO LOS DATOS DEL TEXTBOX Y EL CONTROLLER GENERA EL OBJETO Y LO PASA 
                 Usuario user = new Usuario()
                 {
                     Nombre = txtNombre.Text,
@@ -97,6 +99,8 @@ namespace SistemaDeGestionHotel.views.admin
                     FotoPerfil = "NO IMAGEN",
                     IdPerfilUsuario = comboBoxTipoPerfil.SelectedIndex + 1
                 };
+
+
 
                 dbHotelParana.Add(user);
                 dbHotelParana.SaveChanges();
