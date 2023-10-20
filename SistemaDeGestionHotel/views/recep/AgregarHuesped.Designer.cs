@@ -71,9 +71,9 @@
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(label3);
             groupBox1.Font = new Font("Georgia", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            groupBox1.Location = new Point(95, 66);
+            groupBox1.Location = new Point(95, 42);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(622, 118);
+            groupBox1.Size = new Size(659, 118);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Datos de la Habitación";
@@ -84,7 +84,7 @@
             label13.AutoSize = true;
             label13.BorderStyle = BorderStyle.FixedSingle;
             label13.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label13.Location = new Point(463, 70);
+            label13.Location = new Point(481, 70);
             label13.Name = "label13";
             label13.Size = new Size(76, 18);
             label13.TabIndex = 34;
@@ -96,7 +96,7 @@
             label11.AutoSize = true;
             label11.BorderStyle = BorderStyle.FixedSingle;
             label11.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label11.Location = new Point(308, 70);
+            label11.Location = new Point(326, 70);
             label11.Name = "label11";
             label11.Size = new Size(72, 18);
             label11.TabIndex = 33;
@@ -108,7 +108,7 @@
             label4.AutoSize = true;
             label4.BorderStyle = BorderStyle.FixedSingle;
             label4.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(72, 70);
+            label4.Location = new Point(90, 70);
             label4.Name = "label4";
             label4.Size = new Size(161, 18);
             label4.TabIndex = 32;
@@ -120,7 +120,7 @@
             label2.AutoSize = true;
             label2.BorderStyle = BorderStyle.FixedSingle;
             label2.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(463, 23);
+            label2.Location = new Point(481, 23);
             label2.Name = "label2";
             label2.Size = new Size(52, 18);
             label2.TabIndex = 31;
@@ -132,7 +132,7 @@
             label1.AutoSize = true;
             label1.BorderStyle = BorderStyle.FixedSingle;
             label1.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(308, 23);
+            label1.Location = new Point(326, 23);
             label1.Name = "label1";
             label1.Size = new Size(52, 18);
             label1.TabIndex = 30;
@@ -144,7 +144,7 @@
             label3.AutoSize = true;
             label3.BorderStyle = BorderStyle.FixedSingle;
             label3.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(72, 34);
+            label3.Location = new Point(90, 34);
             label3.Name = "label3";
             label3.Size = new Size(79, 18);
             label3.TabIndex = 29;

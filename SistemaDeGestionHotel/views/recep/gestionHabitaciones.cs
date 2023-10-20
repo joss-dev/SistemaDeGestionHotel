@@ -36,17 +36,12 @@ namespace SistemaDeGestionHotel.views.admin
 
         private void button7_Click(object sender, EventArgs e)
         {
-            Form agregarHues = new AgregarHuesped();
+            Form buscarHuesped = new ConsultaDni();
 
-            agregarHues.StartPosition = FormStartPosition.CenterScreen;
+            buscarHuesped.StartPosition = FormStartPosition.CenterScreen;
 
-            DialogResult result = agregarHues.ShowDialog();
+            DialogResult result = buscarHuesped.ShowDialog();
 
-            // Verificar si se cerró el formulario secundario
-            if (result == DialogResult.OK)
-            {
-                // Realizar acciones después de cerrar el formulario secundario si es necesario
-            }
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -75,6 +70,11 @@ namespace SistemaDeGestionHotel.views.admin
 
         private void label6_Click(object sender, EventArgs e)
         {
+        }
+
+        private void ValidarTextboxNroHabitacion(object sender, KeyEventArgs e)
+        {
+            ValidacionTextBox.ValidarSoloNumeros(TNumHabitacion, errorProvider1);
         }
     }
 }

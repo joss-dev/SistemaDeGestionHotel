@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(gestionHabitaciones));
             panel1 = new Panel();
             button15 = new Button();
@@ -54,7 +55,9 @@
             btnFiltroTriple = new Button();
             label6 = new Label();
             btnVolver = new Button();
+            errorProvider1 = new ErrorProvider(components);
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -310,6 +313,7 @@
             TNumHabitacion.PlaceholderText = "Solo Números";
             TNumHabitacion.Size = new Size(126, 23);
             TNumHabitacion.TabIndex = 30;
+            TNumHabitacion.KeyDown += ValidarTextboxNroHabitacion;
             // 
             // btnFiltroSimple
             // 
@@ -375,6 +379,10 @@
             btnVolver.UseVisualStyleBackColor = false;
             btnVolver.Click += btnVolver_Click;
             // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
+            // 
             // gestionHabitaciones
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -405,6 +413,7 @@
             Text = "Registraciones y Reservas";
             Load += gestionHabitaciones_Load;
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -436,5 +445,6 @@
         private Button btnFiltroTriple;
         private Label label6;
         private Button btnVolver;
+        private ErrorProvider errorProvider1;
     }
 }
