@@ -70,6 +70,13 @@ CREATE TABLE Tipo_medioPago(
 	CONSTRAINT PK_ID_tipo_medioPago PRIMARY KEY(ID_tipo_medioPago)
 );
 
+CREATE TABLE Medios_pago(
+	ID_medio_pago INT NOT NULL IDENTITY(1, 1),
+	Nombre VARCHAR (100) NOT NULL,
+	Estado INT NOT NULL,
+	CONSTRAINT PK_ID_medio_pago PRIMARY KEY (ID_medio_pago)
+);
+
 CREATE TABLE Cliente(
 	ID_cliente INT NOT NULL IDENTITY(1, 1),
 	Apellido_cliente VARCHAR(100) NOT NULL,
@@ -94,6 +101,40 @@ CREATE TABLE Habitacion(
 	CONSTRAINT FK_ID_piso FOREIGN KEY (ID_piso) REFERENCES Piso(ID_piso)
 );
 
+CREATE TABLE Registro(
+	ID_registro INT NOT NULL IDENTITY(1, 1),
+	Cantidad_huespedes INT NOT NULL,
+	Estado_ocupacion INT NOT NULL,
+	Fecha_ingreso DATE NOT NULL,
+	Fecha_salida DATE NOT NULL,
+	ID_usuario INT NOT NULL,
+	Nro_habitacion INT NOT NULL,
+	ID_cliente INT NOT NULL,
+	CONSTRAINT PK_ID_registro PRIMARY KEY (ID_registro),
+	CONSTRAINT FK_ID_usuario FOREIGN KEY (ID_usuario) REFERENCES Usuario(ID_usuario),
+	CONSTRAINT FK_Nro_habitacion FOREIGN KEY (Nro_habitacion) REFERENCES Habitacion (Nro_habitacion),
+	CONSTRAINT FK_ID_cliente FOREIGN KEY (ID_cliente) REFERENCES Cliente(ID_cliente),
+);
+
+CREATE TABLE Detalle_Servicios(
+	ID_registro INT NOT NULL,
+	ID_servicioAdic INT NOT NULL,
+	CONSTRAINT FK_ID_registro FOREIGN KEY (ID_registro) REFERENCES Registro (ID_registro),
+	CONSTRAINT FK_ID_servicioAdic FOREIGN KEY(ID_servicioAdic) REFERENCES Servicios_adicionales(ID_servicioAdic)
+);
+
+CREATE TABLE Pago(
+	ID_pago INT NOT NULL IDENTITY(1,1),
+	Monto_pago FLOAT NOT NULL,
+	ID_ofertaRecargo INT NULL,
+	ID_registro INT NOT NULL,
+	ID_medio_pago INT NOT NULL,
+	CONSTRAINT PK_ID_pago PRIMARY KEY (ID_pago),
+	CONSTRAINT FK_ID_ofertaRecargo FOREIGN KEY (ID_ofertaRecargo) REFERENCES Ofertas_recargo(ID_ofertaRecargo),
+	CONSTRAINT FK_ID_registro FOREIGN KEY (ID_registro) REFERENCES Registro (ID_registro),
+	CONSTRAINT FK_ID_medio_pago FOREIGN KEY (ID_medio_pago) REFERENCES Medios_pago(ID_medio_pago),
+);
+
 
 INSERT INTO Perfil_usuario(Nombre)
 VALUES ('SUPERADMIN');
@@ -106,10 +147,5 @@ VALUES ('ADMIN');
 INSERT INTO Perfil_usuario(Nombre)
 VALUES ('RECEPCIONISTA');
 
-
 SELECT * FROM Perfil_usuario;
 
-/*Cantidad_huespedes INT NOT NULL,	
-	Estado_ocupacion INT NOT NULL,
-	Fecha_ingreso DATE NOT NULL,
-	Fecha_salida DATE NOT NULL,*/
