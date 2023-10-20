@@ -61,7 +61,7 @@ namespace SistemaDeGestionHotel.views.admin
 
         private void ValidarDireccion(object sender, KeyEventArgs e)
         {
-            ValidacionTextBox.ValidarTextoConEspacios(txtDireccion, errorProvider1);
+            ValidacionTextBox.ValidarTextoConEspaciosYNumeros(txtDireccion, errorProvider1);
         }
 
         private void comboBoxTipoPerfil_SelectedIndexChanged(object sender, EventArgs e)

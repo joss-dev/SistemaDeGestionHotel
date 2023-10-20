@@ -100,15 +100,15 @@ namespace SistemaDeGestionHotel
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            if (TPass.UseSystemPasswordChar == true)
+            if (TPass.UseSystemPasswordChar == false)
             {
-                TPass.UseSystemPasswordChar = false;
-                iconButton1.IconChar = FontAwesome.Sharp.IconChar.Eye;
+                TPass.UseSystemPasswordChar = true;
+                iconButton1.IconChar = FontAwesome.Sharp.IconChar.EyeSlash;
             }
             else
             {
                 TPass.UseSystemPasswordChar = true;
-                iconButton1.IconChar = FontAwesome.Sharp.IconChar.EyeSlash;
+                iconButton1.IconChar = FontAwesome.Sharp.IconChar.Eye;
             }
 
         }

@@ -79,6 +79,7 @@ namespace SistemaDeGestionHotel.views.recep
 
             if (indiceSeleccionado == 0)
             {
+                dateTimeIngreso.Enabled = true;
                 // Establecer la fecha mínima de reserva como mañana
                 dateTimeIngreso.MinDate = DateTime.Today.AddDays(1);
 
@@ -88,8 +89,14 @@ namespace SistemaDeGestionHotel.views.recep
             }
             else if (indiceSeleccionado == 1)
             {
-                // Establecer la fecha mínima de estadia hoy
+                // Establecer la fecha mínima como la fecha de hoy
                 dateTimeIngreso.MinDate = DateTime.Today;
+
+                dateTimeIngreso.Value = DateTime.Today;
+
+
+                // Deshabilitar el control para que el usuario no pueda cambiar la fecha
+                dateTimeIngreso.Enabled = false;
 
                 // Establecer la fecha de salida como mínimo un día después de la fecha de ingreso
                 dateTimeSalida.MinDate = DateTime.Today.AddDays(1);

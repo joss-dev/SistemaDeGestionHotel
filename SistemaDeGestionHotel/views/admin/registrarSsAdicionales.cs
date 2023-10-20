@@ -22,17 +22,9 @@ namespace SistemaDeGestionHotel.views.admin
             ValidacionTextBox.ValidarTextoConEspacios(txtNombSs, errorProvider1);
         }
 
-        private void ValidacionCantidad(object sender, KeyEventArgs e)
-        {
-            ValidacionTextBox.ValidarSoloNumeros(txtCantidad, errorProvider1);
-        }
 
-        private void ValidacionPrecioUnitario(object sender, EventArgs e)
-        {
-            ValidacionTextBox.ValidarSoloNumeros(txtPrecioUnit, errorProvider1);
-        }
 
-        private void ValidacionPrecioTotal(object sender, KeyEventArgs e)
+        private void ValidacionCosto(object sender, KeyEventArgs e)
         {
             ValidacionTextBox.ValidarSoloNumeros(txtPrecioTotal, errorProvider1);
         }
@@ -63,7 +55,7 @@ namespace SistemaDeGestionHotel.views.admin
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             // Verificar si alguno de los campos está incompleto
-            if (ValidacionTextBox.ValidarNoVacio(txtNombSs, txtCantidad, txtPrecioUnit, txtPrecioTotal))
+            if (ValidacionTextBox.ValidarNoVacio(txtNombSs, txtPrecioTotal))
             {
                 // Mostrar un mensaje de error
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

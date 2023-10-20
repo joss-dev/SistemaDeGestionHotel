@@ -91,6 +91,12 @@ namespace SistemaDeGestionHotel.views.admin
         private void gestionOfertas_Load(object sender, EventArgs e)
         {
             this.KeyDown += new KeyEventHandler(cerrar);
+            
+            // Establecer la fecha mínima de hoy
+            dateTimeInicio.MinDate = DateTime.Today;
+
+            // Establecer la fecha de salida como mínimo un día después de la fecha de ingreso
+            dateTimeFin.MinDate = dateTimeFin.Value.AddDays(1);
         }
 
         void cerrar(object sender, KeyEventArgs e)
