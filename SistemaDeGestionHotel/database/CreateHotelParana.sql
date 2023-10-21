@@ -2,10 +2,6 @@ CREATE DATABASE HotelParana;
 
 USE HotelParana;
 
---AGREGAR FECHA Y HORA DE PAGO
---AGREGAR UN ESTADO EN PAGO
---AGREGAR PRECIO DE HABITACION PACTADO EN REGISTRO
-
 CREATE TABLE Perfil_usuario(
 	ID_perfil_usuario INT NOT NULL IDENTITY(1, 1),
 	Nombre VARCHAR(100) NOT NULL,
@@ -145,16 +141,21 @@ CREATE TABLE Pago(
 );
 
 
+
+INSERT INTO Tipo_habitacion(Nomb_tipo) 
+VALUES ('Simple'), ('Doble'), ('Triple');
+
+INSERT INTO Piso(Nro_piso) 
+VALUES (1), (2), (3);
+
+INSERT INTO Estado_habitacion(Nomb_estado)
+VALUES ('Libre'), ('Ocupado'), ('Reservado'), ('Deshabilitada'), ('Eliminada');
+
 INSERT INTO Perfil_usuario(Nombre)
-VALUES ('SUPERADMIN');
-
-
-INSERT INTO Perfil_usuario(Nombre)
-VALUES ('ADMIN');
-
-
-INSERT INTO Perfil_usuario(Nombre)
-VALUES ('RECEPCIONISTA');
+VALUES ('SUPERADMIN'), ('ADMIN'), ('RECEPCIONISTA');
 
 SELECT * FROM Perfil_usuario;
+SELECT * FROM Tipo_habitacion;
+SELECT * FROM Piso;
+SELECT * FROM Estado_habitacion;
 
