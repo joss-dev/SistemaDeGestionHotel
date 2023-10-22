@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace SistemaDeGestionHotel.Models;
+namespace SistemaDeGestionHotel.LO;
 
 public partial class PerfilUsuario
 {

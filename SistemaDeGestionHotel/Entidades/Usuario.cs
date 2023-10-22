@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace SistemaDeGestionHotel.Models;
+namespace SistemaDeGestionHotel.LO;
 
 public partial class Usuario
 {
@@ -26,4 +26,6 @@ public partial class Usuario
     public int? IdPerfilUsuario { get; set; }
 
     public virtual PerfilUsuario? IdPerfilUsuarioNavigation { get; set; }
+
+    public virtual ICollection<Registro> Registros { get; set; } = new List<Registro>();
 }

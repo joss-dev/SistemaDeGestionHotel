@@ -1,14 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SistemaDeGestionHotel.Models;
 using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using SistemaDeGestionHotel.LO;
 
 namespace SistemaDeGestionHotel.views.admin
 {

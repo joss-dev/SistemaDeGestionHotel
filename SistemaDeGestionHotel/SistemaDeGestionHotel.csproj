@@ -43,9 +43,9 @@
 
   <ItemGroup>
     <Folder Include="Controllers\" />
-    <Folder Include="Entidades\" />
     <Folder Include="database\" />
     <Folder Include="Datos\" />
+    <Folder Include="Entidades\" />
   </ItemGroup>
 
 </Project>
