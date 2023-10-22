@@ -46,7 +46,6 @@
     <Folder Include="Entidades\" />
     <Folder Include="database\" />
     <Folder Include="Datos\" />
-    <Folder Include="imagenesPerfil\" />
   </ItemGroup>
 
 </Project>
