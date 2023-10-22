@@ -176,7 +176,7 @@ namespace SistemaDeGestionHotel.views.admin
         {
 
 
-            if((ValidacionTextBox.ValidarNoVacio(txtNombre, txtApellido, txtDNI, txtCorreoElec, txtDireccion, txtUserName, txtPass) || comboBoxTipoPerfil.SelectedIndex < 0))
+            if ((ValidacionTextBox.ValidarNoVacio(txtNombre, txtApellido, txtDNI, txtCorreoElec, txtDireccion, txtUserName, txtPass) || comboBoxTipoPerfil.SelectedIndex < 0))
             {
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -230,6 +230,46 @@ namespace SistemaDeGestionHotel.views.admin
                     MessageBox.Show("No se pudo encontrar el usuario para actualizar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void btnIMG_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Archivos de imagen|*.jpg;*.jpeg;*.png;*.gif|Todos los archivos|*.*";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                // Generar un nombre de archivo único
+                string nombreAleatorio = Path.GetRandomFileName();
+
+                // Obtener la extensión de la imagen original
+                string extension = Path.GetExtension(openFileDialog.FileName);
+
+                // Combinar el nombre único con la extensión
+                string nuevoNombreArchivo = nombreAleatorio + extension;
+
+                // Ruta de destino en la carpeta "imagenesPerfil" en el directorio de tu proyecto
+                string rutaDestino = Path.Combine(Application.StartupPath, "imagenesPerfil", nuevoNombreArchivo);
+
+                // Verificar si la carpeta de destino existe, si no, crearla
+                if (!Directory.Exists(rutaDestino))
+                {
+                    Directory.CreateDirectory(rutaDestino);
+                }
+
+
+                // Mostrar la imagen seleccionada en el PictureBox
+                pictureBoxUsuario.Image = new Bitmap(openFileDialog.FileName);
+
+                // Obtiene la ruta completa del archivo seleccionado
+                string archivoSeleccionado = openFileDialog.FileName;
+
+                // Copia el archivo a la carpeta "imagenesPerfil" usando el nuevo nombre y la ruta completa de destino
+                File.Copy(archivoSeleccionado, rutaDestino);
+
+                // Puedes usar el nuevo nombre de archivo (nuevoNombreArchivo) o la ruta de destino (rutaDestino) según tus necesidades.
+            }
+
         }
     }
 }

@@ -44,7 +44,7 @@
             btnEditar = new Button();
             label7 = new Label();
             label8 = new Label();
-            pictureBox2 = new PictureBox();
+            pictureBoxUsuario = new PictureBox();
             btnCancelar = new Button();
             btnEliminar = new Button();
             label9 = new Label();
@@ -60,8 +60,9 @@
             errorProvider1 = new ErrorProvider(components);
             comboBoxTipoPerfil = new ComboBox();
             btnLimpiar = new Button();
+            openFileDialogFotoPerfil = new OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxUsuario).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
@@ -180,6 +181,7 @@
             btnIMG.Size = new Size(71, 71);
             btnIMG.TabIndex = 37;
             btnIMG.UseVisualStyleBackColor = false;
+            btnIMG.Click += btnIMG_Click;
             // 
             // btnIMGPerfil
             // 
@@ -229,17 +231,17 @@
             label8.TabIndex = 41;
             label8.Text = "Tipo de Perfil:";
             // 
-            // pictureBox2
+            // pictureBoxUsuario
             // 
-            pictureBox2.Anchor = AnchorStyles.None;
-            pictureBox2.BackColor = Color.LightGreen;
-            pictureBox2.Image = Properties.Resources.img1;
-            pictureBox2.Location = new Point(583, 174);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(200, 200);
-            pictureBox2.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox2.TabIndex = 43;
-            pictureBox2.TabStop = false;
+            pictureBoxUsuario.Anchor = AnchorStyles.None;
+            pictureBoxUsuario.BackColor = Color.LightGreen;
+            pictureBoxUsuario.Image = Properties.Resources.img1;
+            pictureBoxUsuario.Location = new Point(583, 174);
+            pictureBoxUsuario.Name = "pictureBoxUsuario";
+            pictureBoxUsuario.Size = new Size(200, 200);
+            pictureBoxUsuario.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBoxUsuario.TabIndex = 43;
+            pictureBoxUsuario.TabStop = false;
             // 
             // btnCancelar
             // 
@@ -403,6 +405,10 @@
             btnLimpiar.UseVisualStyleBackColor = false;
             btnLimpiar.Click += btnLimpiar_Click;
             // 
+            // openFileDialogFotoPerfil
+            // 
+            openFileDialogFotoPerfil.FileName = "openFileDialogFotoPerfil";
+            // 
             // registroUsuario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -422,7 +428,7 @@
             Controls.Add(label9);
             Controls.Add(btnEliminar);
             Controls.Add(btnCancelar);
-            Controls.Add(pictureBox2);
+            Controls.Add(pictureBoxUsuario);
             Controls.Add(label8);
             Controls.Add(label7);
             Controls.Add(btnEditar);
@@ -443,7 +449,7 @@
             Name = "registroUsuario";
             Text = "Registro de Usuario";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxUsuario).EndInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -465,7 +471,7 @@
         private Button btnEditar;
         private Label label7;
         private Label label8;
-        private PictureBox pictureBox2;
+        private PictureBox pictureBoxUsuario;
         private Button btnCancelar;
         private Button btnEliminar;
         private Label label9;
@@ -481,5 +487,6 @@
         private ErrorProvider errorProvider1;
         private ComboBox comboBoxTipoPerfil;
         private Button btnLimpiar;
+        private OpenFileDialog openFileDialogFotoPerfil;
     }
 }
