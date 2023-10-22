@@ -247,11 +247,7 @@ namespace SistemaDeGestionHotel.views.admin
                 // Ruta de destino en la carpeta "imagenesPerfil" en el directorio de tu proyecto
                 string rutaDestino = Path.Combine(Application.StartupPath, "imagenesPerfil", nuevoNombreArchivo);
 
-                // Verificar si la carpeta de destino existe, si no, crearla
-                if (!Directory.Exists(rutaDestino))
-                {
-                    Directory.CreateDirectory(rutaDestino);
-                }
+                
 
 
                 // Mostrar la imagen seleccionada en el PictureBox
