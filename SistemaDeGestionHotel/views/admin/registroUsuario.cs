@@ -14,12 +14,8 @@ namespace SistemaDeGestionHotel.views.admin
         {
             InitializeComponent();
 
-
-
             dataGridView1.DataSource = usuario_controller.GetUsuarios();
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-
 
             // Limpiar los comboBox
             comboBoxTipoPerfil.Items.Clear();
@@ -251,6 +247,32 @@ namespace SistemaDeGestionHotel.views.admin
 
             }
 
+        }
+
+        private void FormatoIdPerfil(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridView1.Columns["IdPerfilUsuario"].Index && e.RowIndex >= 0)
+            {
+                // Obtener el valor en la celda actual
+                int idPerfil = (int)dataGridView1.Rows[e.RowIndex].Cells["IdPerfilUsuario"].Value;
+
+                // Asignar el valor que deseas mostrar
+                if (idPerfil == 1)
+                {
+                    e.Value = "Superadmin";
+                }
+                else if (idPerfil == 2)
+                {
+                    e.Value = "admin";
+                }
+                else if (idPerfil == 3)
+                {
+                    e.Value = "Recepcionista";
+                }
+
+                // Establecer Handled en true para indicar que hemos manejado la formateo de la celda
+                e.FormattingApplied = true;
+            }
         }
     }
 }
