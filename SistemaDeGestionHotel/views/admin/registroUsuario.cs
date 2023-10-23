@@ -80,7 +80,7 @@ namespace SistemaDeGestionHotel.views.admin
                 }
 
 
-                //dataGridView1.DataSource = dbHotelParana.Usuarios.ToList();
+                dataGridView1.DataSource = usuario_controller.GetUsuarios();
 
                 txtApellido.Text = string.Empty;
                 txtNombre.Text = string.Empty;
@@ -262,7 +262,7 @@ namespace SistemaDeGestionHotel.views.admin
                 }
                 else if (idPerfil == 2)
                 {
-                    e.Value = "admin";
+                    e.Value = "Admin";
                 }
                 else if (idPerfil == 3)
                 {
