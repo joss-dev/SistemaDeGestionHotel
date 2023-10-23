@@ -149,7 +149,17 @@ CREATE TABLE Consulta(
 	Estado INT NOT NULL DEFAULT 0,
 	ID_usuario INT NOT NULL,
 	CONSTRAINT PK_ID_consulta PRIMARY KEY(ID_consulta),
-	CONSTRAINT FK_ID_usuario FOREIGN KEY(ID_usuario) REFERENCES Usuario(ID_usuario)
+	CONSTRAINT FK_ID_usuarioCons FOREIGN KEY(ID_usuario) REFERENCES Usuario(ID_usuario)
+);
+
+CREATE TABLE Historial_registros(
+	ID_historial INT NOT NULL IDENTITY(1, 1),	
+	Fecha_creacion DATE NOT NULL DEFAULT GETDATE(),
+	ID_registro INT NOT NULL,
+	ID_pago INT NOT NULL,
+	CONSTRAINT PK_ID_historial PRIMARY KEY (ID_historial),
+	CONSTRAINT FK_ID_registroHistorial FOREIGN KEY (ID_registro) REFERENCES Registro (ID_registro),
+	CONSTRAINT FK_ID_pagoHistorial FOREIGN KEY (ID_pago) REFERENCES Pago (ID_pago)
 );
 
 
