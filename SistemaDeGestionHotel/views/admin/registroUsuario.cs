@@ -1,5 +1,4 @@
-﻿using SistemaDeGestionHotel.LO;
-using SistemaDeGestionHotel.Controllers;
+﻿using SistemaDeGestionHotel.Controllers;
 using SistemaDeGestionHotel.Datos;
 
 namespace SistemaDeGestionHotel.views.admin

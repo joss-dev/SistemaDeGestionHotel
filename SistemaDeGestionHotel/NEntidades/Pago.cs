@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace SistemaDeGestionHotel.LO;
+namespace SistemaDeGestionHotel.NEntidades;
 
 public partial class Pago
 {
@@ -18,6 +18,8 @@ public partial class Pago
     public int IdRegistro { get; set; }
 
     public int IdMedioPago { get; set; }
+
+    public virtual ICollection<HistorialRegistro> HistorialRegistros { get; set; } = new List<HistorialRegistro>();
 
     public virtual MediosPago IdMedioPagoNavigation { get; set; } = null!;
 

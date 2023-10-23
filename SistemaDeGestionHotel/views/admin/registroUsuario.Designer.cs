@@ -236,7 +236,7 @@
             // 
             // usuarioBindingSource
             // 
-            usuarioBindingSource.DataSource = typeof(LO.Usuario);
+            usuarioBindingSource.DataSource = typeof(NEntidades.Usuario);
             // 
             // label5
             // 

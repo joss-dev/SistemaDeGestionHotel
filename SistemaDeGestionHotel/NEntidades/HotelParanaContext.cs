@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace SistemaDeGestionHotel.LO;
+namespace SistemaDeGestionHotel.NEntidades;
 
 public partial class HotelParanaContext : DbContext
 {
@@ -17,11 +17,15 @@ public partial class HotelParanaContext : DbContext
 
     public virtual DbSet<Cliente> Clientes { get; set; }
 
+    public virtual DbSet<Consultum> Consulta { get; set; }
+
     public virtual DbSet<DetalleServicio> DetalleServicios { get; set; }
 
     public virtual DbSet<EstadoHabitacion> EstadoHabitacions { get; set; }
 
     public virtual DbSet<Habitacion> Habitacions { get; set; }
+
+    public virtual DbSet<HistorialRegistro> HistorialRegistros { get; set; }
 
     public virtual DbSet<MediosPago> MediosPagos { get; set; }
 
@@ -44,8 +48,7 @@ public partial class HotelParanaContext : DbContext
     public virtual DbSet<Usuario> Usuarios { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=LAPTOP-2ULFU3L6\\SQLEXPRESS;Database=HotelParana;Integrated Security=True;TrustServerCertificate=True;");
+        => optionsBuilder.UseSqlServer("Server=DESKTOP-G7GUADO\\SQLEXPRESS;Database=HotelParana;Integrated Security=True; TrustServerCertificate=True;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -70,6 +73,30 @@ public partial class HotelParanaContext : DbContext
             entity.Property(e => e.Telefono)
                 .HasMaxLength(15)
                 .IsUnicode(false);
+        });
+
+        modelBuilder.Entity<Consultum>(entity =>
+        {
+            entity.HasKey(e => e.IdConsulta).HasName("PK_ID_consulta");
+
+            entity.Property(e => e.IdConsulta).HasColumnName("ID_consulta");
+            entity.Property(e => e.Asunto)
+                .HasMaxLength(200)
+                .IsUnicode(false);
+            entity.Property(e => e.Email)
+                .HasMaxLength(100)
+                .IsUnicode(false);
+            entity.Property(e => e.FechaMensaje)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("date")
+                .HasColumnName("Fecha_mensaje");
+            entity.Property(e => e.IdUsuario).HasColumnName("ID_usuario");
+            entity.Property(e => e.Mensaje).IsUnicode(false);
+
+            entity.HasOne(d => d.IdUsuarioNavigation).WithMany(p => p.Consulta)
+                .HasForeignKey(d => d.IdUsuario)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_ID_usuarioCons");
         });
 
         modelBuilder.Entity<DetalleServicio>(entity =>
@@ -131,6 +158,31 @@ public partial class HotelParanaContext : DbContext
                 .HasForeignKey(d => d.IdTipoHab)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_ID_tipoHab");
+        });
+
+        modelBuilder.Entity<HistorialRegistro>(entity =>
+        {
+            entity.HasKey(e => e.IdHistorial).HasName("PK_ID_historial");
+
+            entity.ToTable("Historial_registros");
+
+            entity.Property(e => e.IdHistorial).HasColumnName("ID_historial");
+            entity.Property(e => e.FechaCreacion)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("date")
+                .HasColumnName("Fecha_creacion");
+            entity.Property(e => e.IdPago).HasColumnName("ID_pago");
+            entity.Property(e => e.IdRegistro).HasColumnName("ID_registro");
+
+            entity.HasOne(d => d.IdPagoNavigation).WithMany(p => p.HistorialRegistros)
+                .HasForeignKey(d => d.IdPago)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_ID_pagoHistorial");
+
+            entity.HasOne(d => d.IdRegistroNavigation).WithMany(p => p.HistorialRegistros)
+                .HasForeignKey(d => d.IdRegistro)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_ID_registroHistorial");
         });
 
         modelBuilder.Entity<MediosPago>(entity =>

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace SistemaDeGestionHotel.LO;
+namespace SistemaDeGestionHotel.NEntidades;
 
 public partial class Registro
 {
@@ -22,6 +22,8 @@ public partial class Registro
     public int NroHabitacion { get; set; }
 
     public int IdCliente { get; set; }
+
+    public virtual ICollection<HistorialRegistro> HistorialRegistros { get; set; } = new List<HistorialRegistro>();
 
     public virtual Cliente IdClienteNavigation { get; set; } = null!;
 

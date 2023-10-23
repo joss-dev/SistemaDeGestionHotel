@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace SistemaDeGestionHotel.LO;
+namespace SistemaDeGestionHotel.NEntidades;
 
 public partial class Usuario
 {
@@ -24,6 +24,8 @@ public partial class Usuario
     public string FotoPerfil { get; set; } = null!;
 
     public int? IdPerfilUsuario { get; set; }
+
+    public virtual ICollection<Consultum> Consulta { get; set; } = new List<Consultum>();
 
     public virtual PerfilUsuario? IdPerfilUsuarioNavigation { get; set; }
 

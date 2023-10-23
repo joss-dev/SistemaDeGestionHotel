@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace SistemaDeGestionHotel.LO;
+namespace SistemaDeGestionHotel.NEntidades;
 
 public partial class MediosPago
 {

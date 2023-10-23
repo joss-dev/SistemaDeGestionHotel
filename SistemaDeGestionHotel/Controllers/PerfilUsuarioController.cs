@@ -1,5 +1,4 @@
 ﻿using SistemaDeGestionHotel.Datos;
-using SistemaDeGestionHotel.LO;
 using System;
 using System.Collections.Generic;
 using System.Linq;

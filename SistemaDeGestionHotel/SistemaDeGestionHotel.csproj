@@ -43,7 +43,7 @@
 
   <ItemGroup>
     <Folder Include="database\" />
-    <Folder Include="Entidades\" />
+    <Folder Include="NEntidades\" />
   </ItemGroup>
 
 </Project>
