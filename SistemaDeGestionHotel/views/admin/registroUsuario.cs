@@ -244,10 +244,15 @@ namespace SistemaDeGestionHotel.views.admin
                 // Combinar el nombre único con la extensión
                 string nuevoNombreArchivo = nombreAleatorio + extension;
 
+                string crearuta = Path.Combine(Application.StartupPath, "imagenesPerfil");
+
                 // Ruta de destino en la carpeta "imagenesPerfil" en el directorio de tu proyecto
                 string rutaDestino = Path.Combine(Application.StartupPath, "imagenesPerfil", nuevoNombreArchivo);
 
-                
+                if (!Directory.Exists(crearuta))
+                {
+                    Directory.CreateDirectory(crearuta);
+                }
 
 
                 // Mostrar la imagen seleccionada en el PictureBox
