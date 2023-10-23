@@ -1,10 +1,14 @@
-﻿using SistemaDeGestionHotel.views;
+﻿using SistemaDeGestionHotel.Controllers;
+using SistemaDeGestionHotel.NEntidades;
+using SistemaDeGestionHotel.views;
 using System.Runtime.InteropServices;
 
 namespace SistemaDeGestionHotel
 {
     public partial class Login : Form
     {
+
+        LoginController login = new LoginController();
         public Login()
         {
             InitializeComponent();
@@ -115,32 +119,41 @@ namespace SistemaDeGestionHotel
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (TPass.Text == "123")
+            if (ValidacionTextBox.ValidarNoVacio(TUsuario, TPass))
             {
-                if (TUsuario.Text == "admin")
-                {
-                    Form form = new PrincipalAdmin();
-                    form.Show();
-                    this.Hide();
-                }
-                if (TUsuario.Text == "recep")
-                {
-                    Form form = new PrincipalRecep();
-                    form.Show();
-                    this.Hide();
-                }
+                // Mostrar un mensaje de error
+                MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }else
+            {
+                Usuario usuario = login.IniciarSesion(TUsuario.Text, TPass.Text);
 
-                if (TUsuario.Text == "superadmin")
+                if (usuario != null)
                 {
-                    Form form = new PrincipalSuperAdmin();
-                    form.Show();
-                    this.Hide();
+                    if(usuario.IdPerfilUsuario == 1)
+                    {
+                        Form form = new PrincipalSuperAdmin();
+                        form.Show();
+                        this.Hide();
+                    }
+                    else if(usuario.IdPerfilUsuario == 2)
+                    {
+                        Form form = new PrincipalAdmin();
+                        form.Show();
+                        this.Hide();
+                    }
+                    else if(usuario.IdPerfilUsuario == 3)
+                    {
+                        Form form = new PrincipalRecep();
+                        form.Show();
+                        this.Hide();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Contraseña incorrecta o Usuario incorrecto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else
-            {
-                MessageBox.Show("Contraseña incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
         }
       }
     internal class DLLImportAttribute : Attribute

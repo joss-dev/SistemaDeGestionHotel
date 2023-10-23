@@ -37,7 +37,10 @@ namespace SistemaDeGestionHotel.Controllers
            return d_usuario.GetUsuarios();
         }
 
-
+        public Usuario GetUsuarioByNombreUsuario(string nombreUsuario)
+        {
+           return d_usuario.GetUsuarioByNombreUsuario(nombreUsuario);
+        }
 
     }
 }

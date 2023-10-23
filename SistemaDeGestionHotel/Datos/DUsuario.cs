@@ -23,5 +23,11 @@ namespace SistemaDeGestionHotel.Datos
             return dbHotelParana.Usuarios.ToList();
         }
 
+        public Usuario GetUsuarioByNombreUsuario(string nombreUsuario)
+        {
+            return dbHotelParana.Usuarios
+                                .FirstOrDefault(u => u.NombreUsuario == nombreUsuario);
+        }
+
     }
 }
