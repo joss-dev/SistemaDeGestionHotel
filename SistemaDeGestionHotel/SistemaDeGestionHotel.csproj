@@ -42,9 +42,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
     <Folder Include="database\" />
-    <Folder Include="Datos\" />
     <Folder Include="Entidades\" />
   </ItemGroup>
 

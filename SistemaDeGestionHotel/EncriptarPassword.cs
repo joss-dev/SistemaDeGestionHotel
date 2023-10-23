@@ -8,7 +8,7 @@ using System.Security.Cryptography;
 
 namespace SistemaDeGestionHotel
 {
-    public static class PasswordHasher
+    public static class EncriptarPassword
     {
         public static string HashPassword(string password)
         {
