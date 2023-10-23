@@ -27,16 +27,6 @@ CREATE TABLE Usuario(
 	CONSTRAINT PK_ID_usuario PRIMARY KEY(ID_usuario)
 );
 
-CREATE TABLE Consulta(
-    ID_consulta INT NOT NULL IDENTITY(1, 1),
-	Email VARCHAR(100) NOT NULL,
-	Asunto VARCHAR(200) NOT NULL,
-	Mensaje VARCHAR(MAX) NOT NULL,
-	Fecha_mensaje DATE NOT NULL DEFAULT GETDATE(),
-	Estado INT NOT NULL,
-	CONSTRAINT PK_ID_consulta PRIMARY KEY(ID_consulta)
-);
-
 CREATE TABLE Estado_habitacion(
     ID_estado INT NOT NULL IDENTITY(1, 1),
 	Nomb_estado VARCHAR(50) NOT NULL,
@@ -150,6 +140,15 @@ CREATE TABLE Pago(
 	CONSTRAINT FK_ID_medio_pago FOREIGN KEY (ID_medio_pago) REFERENCES Medios_pago(ID_medio_pago),
 );
 
+CREATE TABLE Consulta(
+    ID_consulta INT NOT NULL IDENTITY(1, 1),
+	Email VARCHAR(100) NOT NULL,
+	Asunto VARCHAR(200) NOT NULL,
+	Mensaje VARCHAR(MAX) NOT NULL,
+	Fecha_mensaje DATE NOT NULL DEFAULT GETDATE(),
+	Estado INT NOT NULL DEFAULT 0,
+	CONSTRAINT PK_ID_consulta PRIMARY KEY(ID_consulta)
+);
 
 
 INSERT INTO Tipo_habitacion(Nomb_tipo) 
