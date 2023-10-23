@@ -141,7 +141,7 @@ namespace SistemaDeGestionHotel.views.admin
                 txtCorreoElec.Text = row.Cells["CorreoElectronico"].Value.ToString();
                 txtDireccion.Text = row.Cells["Direccion"].Value.ToString();
                 txtUserName.Text = row.Cells["NombreUsuario"].Value.ToString();
-                txtPass.Text = row.Cells["Contraseña"].Value.ToString();
+                
 
                 // Aquí asumimos que el ComboBox muestra el nombre del perfil de usuario
                 comboBoxTipoPerfil.SelectedIndex = int.Parse(row.Cells["IdPerfilUsuario"].Value.ToString()) - 1;
@@ -152,7 +152,7 @@ namespace SistemaDeGestionHotel.views.admin
         {
 
 
-            if ((ValidacionTextBox.ValidarNoVacio(txtNombre, txtApellido, txtDNI, txtCorreoElec, txtDireccion, txtUserName, txtPass) || comboBoxTipoPerfil.SelectedIndex < 0))
+            if ((ValidacionTextBox.ValidarNoVacio(txtNombre, txtApellido, txtDNI, txtCorreoElec, txtDireccion, txtUserName) || comboBoxTipoPerfil.SelectedIndex < 0))
             {
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
