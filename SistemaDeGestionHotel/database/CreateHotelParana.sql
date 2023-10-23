@@ -147,7 +147,9 @@ CREATE TABLE Consulta(
 	Mensaje VARCHAR(MAX) NOT NULL,
 	Fecha_mensaje DATE NOT NULL DEFAULT GETDATE(),
 	Estado INT NOT NULL DEFAULT 0,
-	CONSTRAINT PK_ID_consulta PRIMARY KEY(ID_consulta)
+	ID_usuario INT NOT NULL,
+	CONSTRAINT PK_ID_consulta PRIMARY KEY(ID_consulta),
+	CONSTRAINT FK_ID_usuario FOREIGN KEY(ID_usuario) REFERENCES Usuario(ID_usuario)
 );
 
 
