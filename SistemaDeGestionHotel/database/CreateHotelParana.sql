@@ -178,10 +178,10 @@ VALUES ('Libre'), ('Ocupado'), ('Reservado'), ('Deshabilitada'), ('Eliminada');
 INSERT INTO Perfil_usuario(Nombre)
 VALUES ('SUPERADMIN'), ('ADMIN'), ('RECEPCIONISTA');
 
-INSERT INTO Usuario(Nombre, Apellido, DNI, Correo_electronico, Direccion, Nombre_usuario, Contraseña, Foto_perfil, ID_perfil_usuario)
-VALUES ('Jose', 'Corrales', 39234123, 'joselo@gmail.com', 'Rivadavia 1234', 'superadmin', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 'NO IMAGEN', 1),
-		('Jose', 'Candia', 43787475, 'josecandia@gmail.com', 'Alsina 1234', 'admin', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 'NO IMAGEN', 2),
-		('Eduardo', 'Lopez', 17567890, 'lopez@gmail.com', 'Bolivar 1234', 'recep', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 'NO IMAGEN', 3)
+INSERT INTO Usuario(Nombre, Apellido, DNI, Correo_electronico, Estado, Direccion, Nombre_usuario, Contraseña, Foto_perfil, ID_perfil_usuario)
+VALUES ('Jose', 'Corrales', 39234123, 'joselo@gmail.com',1 ,'Rivadavia 1234', 'superadmin', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 'NO IMAGEN', 1),
+		('Jose', 'Candia', 43787475, 'josecandia@gmail.com', 1,'Alsina 1234', 'admin', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 'NO IMAGEN', 2),
+		('Eduardo', 'Lopez', 17567890, 'lopez@gmail.com',1 ,'Bolivar 1234', 'recep', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 'NO IMAGEN', 3)
 
 SELECT * FROM Perfil_usuario;
 SELECT * FROM Tipo_habitacion;
