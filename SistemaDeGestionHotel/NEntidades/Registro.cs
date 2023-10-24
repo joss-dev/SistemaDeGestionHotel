@@ -17,6 +17,8 @@ public partial class Registro
 
     public DateTime FechaSalida { get; set; }
 
+    public int Estado { get; set; }
+
     public int IdUsuario { get; set; }
 
     public int NroHabitacion { get; set; }

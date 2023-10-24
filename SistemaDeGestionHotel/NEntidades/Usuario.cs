@@ -15,6 +15,8 @@ public partial class Usuario
 
     public string CorreoElectronico { get; set; } = null!;
 
+    public int Estado { get; set; }
+
     public string Direccion { get; set; } = null!;
 
     public string NombreUsuario { get; set; } = null!;
