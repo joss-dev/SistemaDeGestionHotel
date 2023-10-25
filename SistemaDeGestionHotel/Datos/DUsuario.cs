@@ -29,5 +29,15 @@ namespace SistemaDeGestionHotel.Datos
                                 .FirstOrDefault(u => u.NombreUsuario == nombreUsuario);
         }
 
+        public Usuario GetUsuarioByID(int id)
+        {
+            return dbHotelParana.Usuarios
+                                .FirstOrDefault(u => u.IdUsuario == id);
+        }
+
+        public void GuardarCambios()
+        {
+            dbHotelParana.SaveChanges();
+        }
     }
 }

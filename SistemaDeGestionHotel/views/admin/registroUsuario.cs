@@ -1,5 +1,7 @@
-﻿using SistemaDeGestionHotel.Controllers;
+﻿using Microsoft.VisualBasic;
+using SistemaDeGestionHotel.Controllers;
 using SistemaDeGestionHotel.Datos;
+using SistemaDeGestionHotel.NEntidades;
 
 namespace SistemaDeGestionHotel.views.admin
 {
@@ -156,6 +158,58 @@ namespace SistemaDeGestionHotel.views.admin
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            else
+            {
+                int idUsuario = -1; // Valor predeterminado si no se selecciona ningún usuario
+
+                if (dataGridView1.SelectedRows.Count > 0)
+                {
+                    // Si al menos una fila está seleccionada, obtén el índice de la primera fila seleccionada
+                    int rowIndex = dataGridView1.SelectedRows[0].Index;
+
+                    DataGridViewRow row = dataGridView1.Rows[rowIndex];
+                    idUsuario = int.Parse(row.Cells["IdUsuario"].Value.ToString());
+                }
+                if(idUsuario != -1)
+                {
+                    Usuario usuarioEditar = usuario_controller.GetUsuarioByID(idUsuario);
+
+                    MsgBoxResult ask = (MsgBoxResult)MessageBox.Show("Seguro desea editar el usuario con DNI: " + usuarioEditar.Dni.ToString() +"?", "Confirmacion de edición", MessageBoxButtons.YesNo);
+                    if (ask == MsgBoxResult.Yes)
+                    {
+                        bool result = usuario_controller.EditarUsuario(usuarioEditar.IdUsuario, txtNombre.Text, txtApellido.Text, txtDNI.Text,txtCorreoElec.Text, txtDireccion.Text, txtUserName.Text, txtPass.Text, "No imagen", comboBoxTipoPerfil.SelectedIndex);
+                        if (result)
+                        {
+                            MessageBox.Show("El Usuario con DNI: " + usuarioEditar.Dni.ToString() + " se edito correctamente", "Confirmado", MessageBoxButtons.OK);
+                           
+                            idUsuario = -1;
+                            dataGridView1.DataSource = usuario_controller.GetUsuarios();
+
+                            txtApellido.Text = string.Empty;
+                            txtNombre.Text = string.Empty;
+                            txtDNI.Text = string.Empty;
+                            txtCorreoElec.Text = string.Empty;
+                            txtDireccion.Text = string.Empty;
+                            txtUserName.Text = string.Empty;
+                            txtPass.Text = string.Empty;
+                            // Para restablecer el ComboBox a la opción predeterminada
+                            comboBoxTipoPerfil.SelectedItem = 0;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ocurrio un error");
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No selecciono ningun usuario");
+                }
+            }
+            
+
+           
+
             //else
             //{
             //    // Obtiene los valores de los textbox.
