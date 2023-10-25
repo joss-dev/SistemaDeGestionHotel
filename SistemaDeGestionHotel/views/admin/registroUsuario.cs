@@ -142,7 +142,7 @@ namespace SistemaDeGestionHotel.views.admin
                 txtCorreoElec.Text = row.Cells["CorreoElectronico"].Value.ToString();
                 txtDireccion.Text = row.Cells["Direccion"].Value.ToString();
                 txtUserName.Text = row.Cells["NombreUsuario"].Value.ToString();
-                
+
 
                 // Aquí asumimos que el ComboBox muestra el nombre del perfil de usuario
                 comboBoxTipoPerfil.SelectedIndex = int.Parse(row.Cells["IdPerfilUsuario"].Value.ToString()) - 1;
@@ -170,18 +170,18 @@ namespace SistemaDeGestionHotel.views.admin
                     DataGridViewRow row = dataGridView1.Rows[rowIndex];
                     idUsuario = int.Parse(row.Cells["IdUsuario"].Value.ToString());
                 }
-                if(idUsuario != -1)
+                if (idUsuario != -1)
                 {
                     Usuario usuarioEditar = usuario_controller.GetUsuarioByID(idUsuario);
 
-                    MsgBoxResult ask = (MsgBoxResult)MessageBox.Show("Seguro desea editar el usuario con DNI: " + usuarioEditar.Dni.ToString() +"?", "Confirmacion de edición", MessageBoxButtons.YesNo);
+                    MsgBoxResult ask = (MsgBoxResult)MessageBox.Show("Seguro desea editar el usuario con DNI: " + usuarioEditar.Dni.ToString() + "?", "Confirmacion de edición", MessageBoxButtons.YesNo);
                     if (ask == MsgBoxResult.Yes)
                     {
-                        bool result = usuario_controller.EditarUsuario(usuarioEditar.IdUsuario, txtNombre.Text, txtApellido.Text, txtDNI.Text,txtCorreoElec.Text, txtDireccion.Text, txtUserName.Text, txtPass.Text, "No imagen", comboBoxTipoPerfil.SelectedIndex);
+                        bool result = usuario_controller.EditarUsuario(usuarioEditar.IdUsuario, txtNombre.Text, txtApellido.Text, txtDNI.Text, txtCorreoElec.Text, txtDireccion.Text, txtUserName.Text, txtPass.Text, "No imagen", comboBoxTipoPerfil.SelectedIndex);
                         if (result)
                         {
                             MessageBox.Show("El Usuario con DNI: " + usuarioEditar.Dni.ToString() + " se edito correctamente", "Confirmado", MessageBoxButtons.OK);
-                           
+
                             idUsuario = -1;
                             dataGridView1.DataSource = usuario_controller.GetUsuarios();
 
@@ -206,9 +206,9 @@ namespace SistemaDeGestionHotel.views.admin
                     MessageBox.Show("No selecciono ningun usuario");
                 }
             }
-            
 
-           
+
+
 
             //else
             //{
