@@ -182,28 +182,36 @@ namespace SistemaDeGestionHotel.views.admin
                     MsgBoxResult ask = (MsgBoxResult)MessageBox.Show("Seguro desea editar el usuario con DNI: " + usuarioEditar.Dni.ToString() + "?", "Confirmacion de edición", MessageBoxButtons.YesNo);
                     if (ask == MsgBoxResult.Yes)
                     {
-                        bool result = usuario_controller.EditarUsuario(usuarioEditar.IdUsuario, txtNombre.Text, txtApellido.Text, txtDNI.Text, txtCorreoElec.Text, txtDireccion.Text, txtUserName.Text, txtPass.Text, "No imagen", comboBoxTipoPerfil.SelectedIndex);
-                        if (result)
+                        if (VerificarEmail.Verificar_Email(txtCorreoElec.Text))
                         {
-                            MessageBox.Show("El Usuario con DNI: " + usuarioEditar.Dni.ToString() + " se edito correctamente", "Confirmado", MessageBoxButtons.OK);
+                            bool result = usuario_controller.EditarUsuario(usuarioEditar.IdUsuario, txtNombre.Text, txtApellido.Text, txtDNI.Text, txtCorreoElec.Text, txtDireccion.Text, txtUserName.Text, txtPass.Text, "No imagen", comboBoxTipoPerfil.SelectedIndex);
+                            if (result)
+                            {
+                                MessageBox.Show("El Usuario con DNI: " + usuarioEditar.Dni.ToString() + " se edito correctamente", "Confirmado", MessageBoxButtons.OK);
 
-                            idUsuario = -1;
-                            dataGridView1.DataSource = usuario_controller.GetUsuarios();
+                                idUsuario = -1;
+                                dataGridView1.DataSource = usuario_controller.GetUsuarios();
 
-                            txtApellido.Text = string.Empty;
-                            txtNombre.Text = string.Empty;
-                            txtDNI.Text = string.Empty;
-                            txtCorreoElec.Text = string.Empty;
-                            txtDireccion.Text = string.Empty;
-                            txtUserName.Text = string.Empty;
-                            txtPass.Text = string.Empty;
-                            // Para restablecer el ComboBox a la opción predeterminada
-                            comboBoxTipoPerfil.SelectedItem = 0;
+                                txtApellido.Text = string.Empty;
+                                txtNombre.Text = string.Empty;
+                                txtDNI.Text = string.Empty;
+                                txtCorreoElec.Text = string.Empty;
+                                txtDireccion.Text = string.Empty;
+                                txtUserName.Text = string.Empty;
+                                txtPass.Text = string.Empty;
+                                // Para restablecer el ComboBox a la opción predeterminada
+                                comboBoxTipoPerfil.SelectedItem = 0;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Ocurrio un error");
+                            }
                         }
                         else
                         {
-                            MessageBox.Show("Ocurrio un error");
+                            MessageBox.Show("El correo electronico no es valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
+                            
                     }
                 }
                 else
