@@ -1,4 +1,5 @@
-﻿using SistemaDeGestionHotel.Datos;
+﻿using Microsoft.IdentityModel.Tokens;
+using SistemaDeGestionHotel.Datos;
 using SistemaDeGestionHotel.NEntidades;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -9,7 +10,7 @@ namespace SistemaDeGestionHotel.Controllers
 
         DUsuario d_usuario = new DUsuario();
 
-        public void AgregarUsuario(String nombre, String apellido, string dni, string correoElectronico, string direccion, string nombreUsuario, string password, string rutaFoto, int idPerfil)
+        public bool AgregarUsuario(String nombre, String apellido, string dni, string correoElectronico, string direccion, string nombreUsuario, string password, string rutaFoto, int idPerfil)
         {
 
             string hashPass = EncriptarPassword.HashPassword(password);
@@ -29,7 +30,7 @@ namespace SistemaDeGestionHotel.Controllers
                 IdPerfilUsuario = idPerfil + 1
             };
 
-            d_usuario.AgregarUsuario(user);
+            return d_usuario.AgregarUsuario(user);
         }
 
 
@@ -58,15 +59,35 @@ namespace SistemaDeGestionHotel.Controllers
                 return false;
             }
 
-            // El usuario existe, actualiza sus propiedades
-            usuarioExistente.Nombre = nombre;
-            usuarioExistente.Apellido = apellido;
-            usuarioExistente.Dni = int.Parse(dni);
-            usuarioExistente.CorreoElectronico = correoElectronico;
-            usuarioExistente.Direccion = direccion;
-            usuarioExistente.NombreUsuario = nombreUsuario;
-            usuarioExistente.FotoPerfil = rutaFoto;
-            usuarioExistente.IdPerfilUsuario = idPerfil + 1;
+            if (password.IsNullOrEmpty())
+            {
+                // El usuario existe, actualiza sus propiedades
+                usuarioExistente.Nombre = nombre;
+                usuarioExistente.Apellido = apellido;
+                usuarioExistente.Dni = int.Parse(dni);
+                usuarioExistente.CorreoElectronico = correoElectronico;
+                usuarioExistente.Direccion = direccion;
+                usuarioExistente.NombreUsuario = nombreUsuario;
+                usuarioExistente.FotoPerfil = rutaFoto;
+                usuarioExistente.IdPerfilUsuario = idPerfil + 1;
+            }
+            else
+            {
+                string hash = EncriptarPassword.HashPassword(password);
+
+                // El usuario existe, actualiza sus propiedades
+                usuarioExistente.Nombre = nombre;
+                usuarioExistente.Apellido = apellido;
+                usuarioExistente.Dni = int.Parse(dni);
+                usuarioExistente.CorreoElectronico = correoElectronico;
+                usuarioExistente.Direccion = direccion;
+                usuarioExistente.Contraseña = hash;
+                usuarioExistente.NombreUsuario = nombreUsuario;
+                usuarioExistente.FotoPerfil = rutaFoto;
+                usuarioExistente.IdPerfilUsuario = idPerfil + 1;
+            }
+
+            
 
             d_usuario.GuardarCambios();
             

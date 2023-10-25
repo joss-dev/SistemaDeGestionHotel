@@ -70,29 +70,25 @@ namespace SistemaDeGestionHotel.views.admin
             }
             else
             {
-
-                try
+                if (usuario_controller.AgregarUsuario(txtNombre.Text, txtApellido.Text, txtDNI.Text, txtCorreoElec.Text, txtDireccion.Text, txtUserName.Text, txtPass.Text, "No imagen", comboBoxTipoPerfil.SelectedIndex))
                 {
-                    usuario_controller.AgregarUsuario(txtNombre.Text, txtApellido.Text, txtDNI.Text, txtCorreoElec.Text, txtDireccion.Text, txtUserName.Text, txtPass.Text, "No imagen", comboBoxTipoPerfil.SelectedIndex);
                     MessageBox.Show("El usuario se registro correctamente", "Guardar", MessageBoxButtons.OK);
+                    txtApellido.Text = string.Empty;
+                    txtNombre.Text = string.Empty;
+                    txtDNI.Text = string.Empty;
+                    txtCorreoElec.Text = string.Empty;
+                    txtDireccion.Text = string.Empty;
+                    txtUserName.Text = string.Empty;
+                    txtPass.Text = string.Empty;
+                    // Para restablecer el ComboBox a la opción predeterminada
+                    comboBoxTipoPerfil.SelectedItem = 0;
                 }
-                catch (FormatException ec)
+                else
                 {
-                    MessageBox.Show("Ocurrio un error al agregar el usuario" + ec.Message);
+                    MessageBox.Show("El usuario ya se encuentra registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
 
                 dataGridView1.DataSource = usuario_controller.GetUsuarios();
-
-                txtApellido.Text = string.Empty;
-                txtNombre.Text = string.Empty;
-                txtDNI.Text = string.Empty;
-                txtCorreoElec.Text = string.Empty;
-                txtDireccion.Text = string.Empty;
-                txtUserName.Text = string.Empty;
-                txtPass.Text = string.Empty;
-                // Para restablecer el ComboBox a la opción predeterminada
-                comboBoxTipoPerfil.SelectedItem = 0;
 
             }
         }

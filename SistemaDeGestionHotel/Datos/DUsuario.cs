@@ -1,4 +1,6 @@
-﻿using SistemaDeGestionHotel.NEntidades;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
+using SistemaDeGestionHotel.NEntidades;
 
 
 namespace SistemaDeGestionHotel.Datos
@@ -12,10 +14,21 @@ namespace SistemaDeGestionHotel.Datos
             dbHotelParana = new HotelParanaContext();
         }
 
-        public void AgregarUsuario(Usuario usuario)
+        public bool AgregarUsuario(Usuario usuario)
         {
-            dbHotelParana.Add(usuario);
-            dbHotelParana.SaveChanges();
+            bool result = true;
+            try
+            {
+                // Intenta insertar el nuevo usuario en la base de datos
+                dbHotelParana.Add(usuario);
+                dbHotelParana.SaveChanges();
+                return result;
+            }
+            catch (DbUpdateException ex)
+            {
+                result = false;
+                return result;
+            }
         }
 
         public List<Usuario> GetUsuarios()
