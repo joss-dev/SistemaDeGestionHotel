@@ -70,23 +70,32 @@ namespace SistemaDeGestionHotel.views.admin
             }
             else
             {
-                if (usuario_controller.AgregarUsuario(txtNombre.Text, txtApellido.Text, txtDNI.Text, txtCorreoElec.Text, txtDireccion.Text, txtUserName.Text, txtPass.Text, "No imagen", comboBoxTipoPerfil.SelectedIndex))
+
+                if(VerificarEmail.Verificar_Email(txtCorreoElec.Text))
                 {
-                    MessageBox.Show("El usuarioo se registro correctamente", "Guardar", MessageBoxButtons.OK);
-                    txtApellido.Text = string.Empty;
-                    txtNombre.Text = string.Empty;
-                    txtDNI.Text = string.Empty;
-                    txtCorreoElec.Text = string.Empty;
-                    txtDireccion.Text = string.Empty;
-                    txtUserName.Text = string.Empty;
-                    txtPass.Text = string.Empty;
-                    // Para restablecer el ComboBox a la opción predeterminada
-                    comboBoxTipoPerfil.SelectedItem = 0;
+                    if (usuario_controller.AgregarUsuario(txtNombre.Text, txtApellido.Text, txtDNI.Text, txtCorreoElec.Text, txtDireccion.Text, txtUserName.Text, txtPass.Text, "No imagen", comboBoxTipoPerfil.SelectedIndex))
+                    {
+                        MessageBox.Show("El usuarioo se registro correctamente", "Guardar", MessageBoxButtons.OK);
+                        txtApellido.Text = string.Empty;
+                        txtNombre.Text = string.Empty;
+                        txtDNI.Text = string.Empty;
+                        txtCorreoElec.Text = string.Empty;
+                        txtDireccion.Text = string.Empty;
+                        txtUserName.Text = string.Empty;
+                        txtPass.Text = string.Empty;
+                        // Para restablecer el ComboBox a la opción predeterminada
+                        comboBoxTipoPerfil.SelectedItem = 0;
+                    }
+                    else
+                    {
+                        MessageBox.Show("El usuario ya se encuentra registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("El usuario ya se encuentra registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("El correo electronico no es valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                
 
                 dataGridView1.DataSource = usuario_controller.GetUsuarios();
 
@@ -321,6 +330,38 @@ namespace SistemaDeGestionHotel.views.admin
 
                 // Establecer Handled en true para indicar que hemos manejado la formateo de la celda
                 e.FormattingApplied = true;
+            }
+
+            //agrega color a las filas
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                // Especifica el nombre de la columna que contiene el valor para determinar el color
+                string columnName = "Estado";
+
+                // Comprueba si la columna actual es la que deseas evaluar
+                if (dataGridView1.Columns[e.ColumnIndex].Name == columnName)
+                {
+                    // Obtiene el valor de la celda actual
+                    int cellValue = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
+
+                    // Cambia el color de fondo de la fila en función del valor de la celda
+                    if (cellValue == 1)
+                    {
+                        dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Green;
+                        dataGridView1.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.White;
+                    }
+                    else if (cellValue == 0)
+                    {
+                        dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Red;
+                        dataGridView1.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.White;
+                    }
+                    else
+                    {
+                        // Restablece los colores predeterminados si no se cumple ninguna condición
+                        dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = dataGridView1.DefaultCellStyle.BackColor;
+                        dataGridView1.Rows[e.RowIndex].DefaultCellStyle.ForeColor = dataGridView1.DefaultCellStyle.ForeColor;
+                    }
+                }
             }
         }
     }
