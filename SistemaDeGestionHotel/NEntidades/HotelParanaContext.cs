@@ -25,8 +25,6 @@ public partial class HotelParanaContext : DbContext
 
     public virtual DbSet<Habitacion> Habitacions { get; set; }
 
-    public virtual DbSet<HistorialRegistro> HistorialRegistros { get; set; }
-
     public virtual DbSet<MediosPago> MediosPagos { get; set; }
 
     public virtual DbSet<OfertasRecargo> OfertasRecargos { get; set; }
@@ -48,8 +46,7 @@ public partial class HotelParanaContext : DbContext
     public virtual DbSet<Usuario> Usuarios { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=LAPTOP-2ULFU3L6\\SQLEXPRESS;Database=HotelParana;Integrated Security=True; TrustServerCertificate=True;");
+        => optionsBuilder.UseSqlServer("Server=DESKTOP-G7GUADO\\SQLEXPRESS;Database=HotelParana;Integrated Security=True; TrustServerCertificate=True;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -67,6 +64,7 @@ public partial class HotelParanaContext : DbContext
                 .IsUnicode(false)
                 .HasColumnName("Apellido_cliente");
             entity.Property(e => e.DniCliente).HasColumnName("DNI_cliente");
+            entity.Property(e => e.Estado).HasDefaultValueSql("((1))");
             entity.Property(e => e.NombreCliente)
                 .HasMaxLength(100)
                 .IsUnicode(false)
@@ -162,31 +160,6 @@ public partial class HotelParanaContext : DbContext
                 .HasConstraintName("FK_ID_tipoHab");
         });
 
-        modelBuilder.Entity<HistorialRegistro>(entity =>
-        {
-            entity.HasKey(e => e.IdHistorial).HasName("PK_ID_historial");
-
-            entity.ToTable("Historial_registros");
-
-            entity.Property(e => e.IdHistorial).HasColumnName("ID_historial");
-            entity.Property(e => e.FechaCreacion)
-                .HasDefaultValueSql("(getdate())")
-                .HasColumnType("date")
-                .HasColumnName("Fecha_creacion");
-            entity.Property(e => e.IdPago).HasColumnName("ID_pago");
-            entity.Property(e => e.IdRegistro).HasColumnName("ID_registro");
-
-            entity.HasOne(d => d.IdPagoNavigation).WithMany(p => p.HistorialRegistros)
-                .HasForeignKey(d => d.IdPago)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_ID_pagoHistorial");
-
-            entity.HasOne(d => d.IdRegistroNavigation).WithMany(p => p.HistorialRegistros)
-                .HasForeignKey(d => d.IdRegistro)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_ID_registroHistorial");
-        });
-
         modelBuilder.Entity<MediosPago>(entity =>
         {
             entity.HasKey(e => e.IdMedioPago).HasName("PK_ID_medio_pago");
@@ -194,6 +167,7 @@ public partial class HotelParanaContext : DbContext
             entity.ToTable("Medios_pago");
 
             entity.Property(e => e.IdMedioPago).HasColumnName("ID_medio_pago");
+            entity.Property(e => e.Estado).HasDefaultValueSql("((1))");
             entity.Property(e => e.IdTipoMedioPago).HasColumnName("ID_tipo_medioPago");
             entity.Property(e => e.Nombre)
                 .HasMaxLength(100)
@@ -212,6 +186,7 @@ public partial class HotelParanaContext : DbContext
             entity.ToTable("Ofertas_recargo");
 
             entity.Property(e => e.IdOfertaRecargo).HasColumnName("ID_ofertaRecargo");
+            entity.Property(e => e.Estado).HasDefaultValueSql("((1))");
             entity.Property(e => e.FechaDesde)
                 .HasColumnType("date")
                 .HasColumnName("Fecha_desde");
@@ -233,7 +208,9 @@ public partial class HotelParanaContext : DbContext
             entity.ToTable("Pago");
 
             entity.Property(e => e.IdPago).HasColumnName("ID_pago");
-            entity.Property(e => e.EstadoPago).HasColumnName("Estado_pago");
+            entity.Property(e => e.EstadoPago)
+                .HasDefaultValueSql("((1))")
+                .HasColumnName("Estado_pago");
             entity.Property(e => e.FechaHoraPago)
                 .HasColumnType("datetime")
                 .HasColumnName("Fecha_horaPago");
@@ -322,6 +299,7 @@ public partial class HotelParanaContext : DbContext
             entity.ToTable("Servicios_adicionales");
 
             entity.Property(e => e.IdServicioAdic).HasColumnName("ID_servicioAdic");
+            entity.Property(e => e.Estado).HasDefaultValueSql("((1))");
             entity.Property(e => e.NombServicio)
                 .HasMaxLength(50)
                 .IsUnicode(false)
@@ -381,6 +359,7 @@ public partial class HotelParanaContext : DbContext
                 .HasMaxLength(120)
                 .IsUnicode(false);
             entity.Property(e => e.Dni).HasColumnName("DNI");
+            entity.Property(e => e.Estado).HasDefaultValueSql("((1))");
             entity.Property(e => e.FotoPerfil)
                 .HasMaxLength(300)
                 .IsUnicode(false)

@@ -17,15 +17,11 @@ public partial class Registro
 
     public DateTime FechaSalida { get; set; }
 
-    public int Estado { get; set; }
-
     public int IdUsuario { get; set; }
 
     public int NroHabitacion { get; set; }
 
     public int IdCliente { get; set; }
-
-    public virtual ICollection<HistorialRegistro> HistorialRegistros { get; set; } = new List<HistorialRegistro>();
 
     public virtual Cliente IdClienteNavigation { get; set; } = null!;
 

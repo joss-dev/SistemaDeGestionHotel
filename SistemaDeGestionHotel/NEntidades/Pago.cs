@@ -19,8 +19,6 @@ public partial class Pago
 
     public int IdMedioPago { get; set; }
 
-    public virtual ICollection<HistorialRegistro> HistorialRegistros { get; set; } = new List<HistorialRegistro>();
-
     public virtual MediosPago IdMedioPagoNavigation { get; set; } = null!;
 
     public virtual OfertasRecargo? IdOfertaRecargoNavigation { get; set; }
