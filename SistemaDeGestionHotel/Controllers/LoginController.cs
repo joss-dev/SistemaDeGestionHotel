@@ -12,7 +12,7 @@ namespace SistemaDeGestionHotel.Controllers
     {
         DUsuario d_usuario = new DUsuario();
 
-        public Usuario IniciarSesion(string nombreUsuario, string pass)
+        public Usuario? IniciarSesion(string nombreUsuario, string pass)
         {
             Usuario usuario = d_usuario.GetUsuarioByNombreUsuario(nombreUsuario);
 
@@ -35,9 +35,6 @@ namespace SistemaDeGestionHotel.Controllers
                 // El usuario no fue encontrado en la base de datos.
                 return null;
             }
-
-            // no se pudo autenticar al usuario
-            return null;
         }
 
     }
