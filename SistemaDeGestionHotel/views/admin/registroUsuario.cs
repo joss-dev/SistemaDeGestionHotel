@@ -71,7 +71,7 @@ namespace SistemaDeGestionHotel.views.admin
             else
             {
 
-                if(VerificarEmail.Verificar_Email(txtCorreoElec.Text))
+                if (VerificarEmail.Verificar_Email(txtCorreoElec.Text))
                 {
                     if (usuario_controller.AgregarUsuario(txtNombre.Text, txtApellido.Text, txtDNI.Text, txtCorreoElec.Text, txtDireccion.Text, txtUserName.Text, txtPass.Text, "No imagen", comboBoxTipoPerfil.SelectedIndex))
                     {
@@ -95,7 +95,7 @@ namespace SistemaDeGestionHotel.views.admin
                 {
                     MessageBox.Show("El correo electronico no es valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                
+
 
                 dataGridView1.DataSource = usuario_controller.GetUsuarios();
 
@@ -211,58 +211,6 @@ namespace SistemaDeGestionHotel.views.admin
                     MessageBox.Show("No selecciono ningun usuario");
                 }
             }
-
-
-
-
-            //else
-            //{
-            //    // Obtiene los valores de los textbox.
-            //    string nombre = txtNombre.Text;
-            //    string apellido = txtApellido.Text;
-            //    int dni = int.Parse(txtDNI.Text);
-            //    string correoElectronico = txtCorreoElec.Text;
-            //    string direccion = txtDireccion.Text;
-            //    string nombreUsuario = txtUserName.Text;
-            //    string contraseña = txtPass.Text;
-            //    int idPerfilUsuario = comboBoxTipoPerfil.SelectedIndex + 1; // Suponiendo que el índice comienza en 1
-
-            //    // Realiza la actualización en la base de datos.
-            //    Usuario usuario = dbHotelParana.Usuarios.FirstOrDefault(u => u.NombreUsuario == nombreUsuario);
-
-            //    if (usuario != null)
-            //    {
-            //        usuario.Nombre = nombre;
-            //        usuario.Apellido = apellido;
-            //        usuario.Dni = dni;
-            //        usuario.CorreoElectronico = correoElectronico;
-            //        usuario.Direccion = direccion;
-            //        usuario.NombreUsuario = nombreUsuario;
-            //        usuario.Contraseña = contraseña;
-            //        usuario.IdPerfilUsuario = idPerfilUsuario;
-
-            //        // Guarda los cambios en la base de datos.
-            //        dbHotelParana.SaveChanges();
-            //        // Actualiza el DataGridView
-            //        dataGridView1.DataSource = dbHotelParana.Usuarios.ToList();
-
-            //        txtApellido.Text = string.Empty;
-            //        txtNombre.Text = string.Empty;
-            //        txtDNI.Text = string.Empty;
-            //        txtCorreoElec.Text = string.Empty;
-            //        txtDireccion.Text = string.Empty;
-            //        txtUserName.Text = string.Empty;
-            //        txtPass.Text = string.Empty;
-            //        // Para restablecer el ComboBox a la opción predeterminada
-            //        comboBoxTipoPerfil.SelectedItem = 0;
-
-            //        // Muestra un mensaje de éxito.
-            //        MessageBox.Show("Usuario actualizado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //    }
-            //    else
-            //    {
-            //MessageBox.Show("No se pudo encontrar el usuario para actualizar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    }
         }
 
 
@@ -362,6 +310,55 @@ namespace SistemaDeGestionHotel.views.admin
                         dataGridView1.Rows[e.RowIndex].DefaultCellStyle.ForeColor = dataGridView1.DefaultCellStyle.ForeColor;
                     }
                 }
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            int idUsuario = -1; // Valor predeterminado si no se selecciona ningún usuario
+
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                // Si al menos una fila está seleccionada, obtén el índice de la primera fila seleccionada
+                int rowIndex = dataGridView1.SelectedRows[0].Index;
+
+                DataGridViewRow row = dataGridView1.Rows[rowIndex];
+                idUsuario = int.Parse(row.Cells["IdUsuario"].Value.ToString());
+            }
+            if (idUsuario != -1)
+            {
+                Usuario usuarioBaja = usuario_controller.GetUsuarioByID(idUsuario);
+
+                MsgBoxResult ask = (MsgBoxResult)MessageBox.Show("Seguro desea dar de baja el usuario con DNI: " + usuarioBaja.Dni.ToString() + "?", "Confirmacion de edición", MessageBoxButtons.YesNo);
+                if (ask == MsgBoxResult.Yes)
+                {
+                    bool result = usuario_controller.BajaUsuario(usuarioBaja.IdUsuario);
+                    if (result)
+                    {
+                        MessageBox.Show("El Usuario con DNI: " + usuarioBaja.Dni.ToString() + " se dio de baja correctamente", "Confirmado", MessageBoxButtons.OK);
+
+                        idUsuario = -1;
+                        dataGridView1.DataSource = usuario_controller.GetUsuarios();
+
+                        txtApellido.Text = string.Empty;
+                        txtNombre.Text = string.Empty;
+                        txtDNI.Text = string.Empty;
+                        txtCorreoElec.Text = string.Empty;
+                        txtDireccion.Text = string.Empty;
+                        txtUserName.Text = string.Empty;
+                        txtPass.Text = string.Empty;
+                        // Para restablecer el ComboBox a la opción predeterminada
+                        comboBoxTipoPerfil.SelectedItem = 0;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ocurrio un error");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("No selecciono ningun usuario");
             }
         }
     }

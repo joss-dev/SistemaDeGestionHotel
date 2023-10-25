@@ -37,6 +37,17 @@
             label4 = new Label();
             txtPass = new TextBox();
             dataGridView1 = new DataGridView();
+            IdUsuario = new DataGridViewTextBoxColumn();
+            Nombre = new DataGridViewTextBoxColumn();
+            Apellido = new DataGridViewTextBoxColumn();
+            Dni = new DataGridViewTextBoxColumn();
+            CorreoElectronico = new DataGridViewTextBoxColumn();
+            Direccion = new DataGridViewTextBoxColumn();
+            NombreUsuario = new DataGridViewTextBoxColumn();
+            Contraseña = new DataGridViewTextBoxColumn();
+            fotoPerfil = new DataGridViewTextBoxColumn();
+            idPerfilUsuario = new DataGridViewTextBoxColumn();
+            Estado = new DataGridViewTextBoxColumn();
             usuarioBindingSource = new BindingSource(components);
             label5 = new Label();
             label6 = new Label();
@@ -62,17 +73,6 @@
             comboBoxTipoPerfil = new ComboBox();
             btnLimpiar = new Button();
             openFileDialogFotoPerfil = new OpenFileDialog();
-            IdUsuario = new DataGridViewTextBoxColumn();
-            Nombre = new DataGridViewTextBoxColumn();
-            Apellido = new DataGridViewTextBoxColumn();
-            Dni = new DataGridViewTextBoxColumn();
-            CorreoElectronico = new DataGridViewTextBoxColumn();
-            Direccion = new DataGridViewTextBoxColumn();
-            NombreUsuario = new DataGridViewTextBoxColumn();
-            Contraseña = new DataGridViewTextBoxColumn();
-            fotoPerfil = new DataGridViewTextBoxColumn();
-            idPerfilUsuario = new DataGridViewTextBoxColumn();
-            Estado = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)usuarioBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxUsuario).BeginInit();
@@ -164,6 +164,83 @@
             dataGridView1.TabIndex = 32;
             dataGridView1.CellClick += CargaTextboxsDelDataGrid;
             dataGridView1.CellFormatting += FormatoIdPerfil;
+            // 
+            // IdUsuario
+            // 
+            IdUsuario.DataPropertyName = "IdUsuario";
+            IdUsuario.HeaderText = "Id";
+            IdUsuario.Name = "IdUsuario";
+            IdUsuario.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            Nombre.DataPropertyName = "Nombre";
+            Nombre.HeaderText = "Nombre";
+            Nombre.Name = "Nombre";
+            Nombre.ReadOnly = true;
+            // 
+            // Apellido
+            // 
+            Apellido.DataPropertyName = "Apellido";
+            Apellido.HeaderText = "Apellido";
+            Apellido.Name = "Apellido";
+            Apellido.ReadOnly = true;
+            // 
+            // Dni
+            // 
+            Dni.DataPropertyName = "Dni";
+            Dni.HeaderText = "Dni";
+            Dni.Name = "Dni";
+            Dni.ReadOnly = true;
+            // 
+            // CorreoElectronico
+            // 
+            CorreoElectronico.DataPropertyName = "CorreoElectronico";
+            CorreoElectronico.HeaderText = "Email";
+            CorreoElectronico.Name = "CorreoElectronico";
+            CorreoElectronico.ReadOnly = true;
+            // 
+            // Direccion
+            // 
+            Direccion.DataPropertyName = "Direccion";
+            Direccion.HeaderText = "Direccion";
+            Direccion.Name = "Direccion";
+            Direccion.ReadOnly = true;
+            // 
+            // NombreUsuario
+            // 
+            NombreUsuario.DataPropertyName = "NombreUsuario";
+            NombreUsuario.HeaderText = "Usuario";
+            NombreUsuario.Name = "NombreUsuario";
+            NombreUsuario.ReadOnly = true;
+            // 
+            // Contraseña
+            // 
+            Contraseña.DataPropertyName = "Contraseña";
+            Contraseña.HeaderText = "Contraseña";
+            Contraseña.Name = "Contraseña";
+            Contraseña.ReadOnly = true;
+            // 
+            // fotoPerfil
+            // 
+            fotoPerfil.DataPropertyName = "FotoPerfil";
+            fotoPerfil.HeaderText = "Foto";
+            fotoPerfil.Name = "fotoPerfil";
+            fotoPerfil.ReadOnly = true;
+            // 
+            // idPerfilUsuario
+            // 
+            idPerfilUsuario.DataPropertyName = "IdPerfilUsuario";
+            idPerfilUsuario.HeaderText = "Perfil";
+            idPerfilUsuario.Name = "idPerfilUsuario";
+            idPerfilUsuario.ReadOnly = true;
+            // 
+            // Estado
+            // 
+            Estado.DataPropertyName = "Estado";
+            Estado.HeaderText = "Estado";
+            Estado.Name = "Estado";
+            Estado.ReadOnly = true;
             // 
             // usuarioBindingSource
             // 
@@ -287,6 +364,7 @@
             btnEliminar.Size = new Size(71, 71);
             btnEliminar.TabIndex = 45;
             btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // label9
             // 
@@ -429,83 +507,6 @@
             // openFileDialogFotoPerfil
             // 
             openFileDialogFotoPerfil.FileName = "openFileDialogFotoPerfil";
-            // 
-            // IdUsuario
-            // 
-            IdUsuario.DataPropertyName = "IdUsuario";
-            IdUsuario.HeaderText = "Id";
-            IdUsuario.Name = "IdUsuario";
-            IdUsuario.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            Nombre.DataPropertyName = "Nombre";
-            Nombre.HeaderText = "Nombre";
-            Nombre.Name = "Nombre";
-            Nombre.ReadOnly = true;
-            // 
-            // Apellido
-            // 
-            Apellido.DataPropertyName = "Apellido";
-            Apellido.HeaderText = "Apellido";
-            Apellido.Name = "Apellido";
-            Apellido.ReadOnly = true;
-            // 
-            // Dni
-            // 
-            Dni.DataPropertyName = "Dni";
-            Dni.HeaderText = "Dni";
-            Dni.Name = "Dni";
-            Dni.ReadOnly = true;
-            // 
-            // CorreoElectronico
-            // 
-            CorreoElectronico.DataPropertyName = "CorreoElectronico";
-            CorreoElectronico.HeaderText = "Email";
-            CorreoElectronico.Name = "CorreoElectronico";
-            CorreoElectronico.ReadOnly = true;
-            // 
-            // Direccion
-            // 
-            Direccion.DataPropertyName = "Direccion";
-            Direccion.HeaderText = "Direccion";
-            Direccion.Name = "Direccion";
-            Direccion.ReadOnly = true;
-            // 
-            // NombreUsuario
-            // 
-            NombreUsuario.DataPropertyName = "NombreUsuario";
-            NombreUsuario.HeaderText = "Usuario";
-            NombreUsuario.Name = "NombreUsuario";
-            NombreUsuario.ReadOnly = true;
-            // 
-            // Contraseña
-            // 
-            Contraseña.DataPropertyName = "Contraseña";
-            Contraseña.HeaderText = "Contraseña";
-            Contraseña.Name = "Contraseña";
-            Contraseña.ReadOnly = true;
-            // 
-            // fotoPerfil
-            // 
-            fotoPerfil.DataPropertyName = "FotoPerfil";
-            fotoPerfil.HeaderText = "Foto";
-            fotoPerfil.Name = "fotoPerfil";
-            fotoPerfil.ReadOnly = true;
-            // 
-            // idPerfilUsuario
-            // 
-            idPerfilUsuario.DataPropertyName = "IdPerfilUsuario";
-            idPerfilUsuario.HeaderText = "Perfil";
-            idPerfilUsuario.Name = "idPerfilUsuario";
-            idPerfilUsuario.ReadOnly = true;
-            // 
-            // Estado
-            // 
-            Estado.DataPropertyName = "Estado";
-            Estado.HeaderText = "Estado";
-            Estado.Name = "Estado";
-            Estado.ReadOnly = true;
             // 
             // registroUsuario
             // 
