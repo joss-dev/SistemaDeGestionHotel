@@ -72,7 +72,7 @@ namespace SistemaDeGestionHotel.views.admin
             {
                 if (usuario_controller.AgregarUsuario(txtNombre.Text, txtApellido.Text, txtDNI.Text, txtCorreoElec.Text, txtDireccion.Text, txtUserName.Text, txtPass.Text, "No imagen", comboBoxTipoPerfil.SelectedIndex))
                 {
-                    MessageBox.Show("El usuario se registro correctamente", "Guardar", MessageBoxButtons.OK);
+                    MessageBox.Show("El usuarioo se registro correctamente", "Guardar", MessageBoxButtons.OK);
                     txtApellido.Text = string.Empty;
                     txtNombre.Text = string.Empty;
                     txtDNI.Text = string.Empty;
