@@ -73,7 +73,7 @@
             lTitulo2.Anchor = AnchorStyles.None;
             lTitulo2.AutoSize = true;
             lTitulo2.Font = new Font("Microsoft Sans Serif", 26.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lTitulo2.Location = new Point(567, 43);
+            lTitulo2.Location = new Point(567, 62);
             lTitulo2.Name = "lTitulo2";
             lTitulo2.Size = new Size(266, 39);
             lTitulo2.TabIndex = 20;
@@ -84,7 +84,7 @@
             LDni.Anchor = AnchorStyles.None;
             LDni.AutoSize = true;
             LDni.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            LDni.Location = new Point(24, 43);
+            LDni.Location = new Point(24, 62);
             LDni.Name = "LDni";
             LDni.Size = new Size(184, 18);
             LDni.TabIndex = 22;
@@ -93,7 +93,7 @@
             // TDni
             // 
             TDni.Anchor = AnchorStyles.None;
-            TDni.Location = new Point(24, 66);
+            TDni.Location = new Point(24, 85);
             TDni.MaxLength = 8;
             TDni.Name = "TDni";
             TDni.PlaceholderText = "Solo Números";
@@ -104,7 +104,7 @@
             // btnBuscar
             // 
             btnBuscar.Anchor = AnchorStyles.None;
-            btnBuscar.Location = new Point(236, 63);
+            btnBuscar.Location = new Point(236, 82);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(85, 31);
             btnBuscar.TabIndex = 24;
@@ -245,7 +245,7 @@
             groupBox2.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox2.Location = new Point(24, 314);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(856, 290);
+            groupBox2.Size = new Size(856, 304);
             groupBox2.TabIndex = 37;
             groupBox2.TabStop = false;
             groupBox2.Text = "Factura";
@@ -256,7 +256,7 @@
             label18.AutoSize = true;
             label18.BorderStyle = BorderStyle.FixedSingle;
             label18.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label18.Location = new Point(385, 248);
+            label18.Location = new Point(385, 258);
             label18.Name = "label18";
             label18.Size = new Size(235, 18);
             label18.TabIndex = 45;
@@ -267,7 +267,7 @@
             cbMetodoPago.DropDownStyle = ComboBoxStyle.DropDownList;
             cbMetodoPago.FormattingEnabled = true;
             cbMetodoPago.Items.AddRange(new object[] { "Efectivo", "Tarjeta" });
-            cbMetodoPago.Location = new Point(631, 239);
+            cbMetodoPago.Location = new Point(631, 249);
             cbMetodoPago.Name = "cbMetodoPago";
             cbMetodoPago.Size = new Size(182, 32);
             cbMetodoPago.TabIndex = 44;
@@ -278,7 +278,7 @@
             label17.AutoSize = true;
             label17.BorderStyle = BorderStyle.FixedSingle;
             label17.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label17.Location = new Point(587, 84);
+            label17.Location = new Point(587, 81);
             label17.Name = "label17";
             label17.Size = new Size(132, 18);
             label17.TabIndex = 36;
@@ -290,7 +290,7 @@
             label16.AutoSize = true;
             label16.BorderStyle = BorderStyle.FixedSingle;
             label16.Font = new Font("Microsoft Sans Serif", 9.7F, FontStyle.Regular, GraphicsUnit.Point);
-            label16.Location = new Point(75, 246);
+            label16.Location = new Point(75, 232);
             label16.Name = "label16";
             label16.Size = new Size(125, 18);
             label16.TabIndex = 43;
@@ -302,7 +302,7 @@
             label15.AutoSize = true;
             label15.BorderStyle = BorderStyle.FixedSingle;
             label15.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label15.Location = new Point(75, 194);
+            label15.Location = new Point(75, 186);
             label15.Name = "label15";
             label15.Size = new Size(97, 18);
             label15.TabIndex = 42;
@@ -314,7 +314,7 @@
             label14.AutoSize = true;
             label14.BorderStyle = BorderStyle.FixedSingle;
             label14.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label14.Location = new Point(323, 101);
+            label14.Location = new Point(323, 81);
             label14.Name = "label14";
             label14.Size = new Size(133, 18);
             label14.TabIndex = 41;
@@ -326,7 +326,7 @@
             label13.AutoSize = true;
             label13.BorderStyle = BorderStyle.FixedSingle;
             label13.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label13.Location = new Point(75, 141);
+            label13.Location = new Point(75, 133);
             label13.Name = "label13";
             label13.Size = new Size(65, 18);
             label13.TabIndex = 40;
@@ -338,7 +338,7 @@
             label12.AutoSize = true;
             label12.BorderStyle = BorderStyle.FixedSingle;
             label12.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label12.Location = new Point(587, 29);
+            label12.Location = new Point(587, 39);
             label12.Name = "label12";
             label12.Size = new Size(147, 18);
             label12.TabIndex = 39;
@@ -350,7 +350,7 @@
             label11.AutoSize = true;
             label11.BorderStyle = BorderStyle.FixedSingle;
             label11.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label11.Location = new Point(323, 29);
+            label11.Location = new Point(323, 39);
             label11.Name = "label11";
             label11.Size = new Size(114, 18);
             label11.TabIndex = 38;
@@ -362,7 +362,7 @@
             label10.AutoSize = true;
             label10.BorderStyle = BorderStyle.FixedSingle;
             label10.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label10.Location = new Point(75, 71);
+            label10.Location = new Point(75, 81);
             label10.Name = "label10";
             label10.Size = new Size(96, 18);
             label10.TabIndex = 37;
@@ -374,7 +374,7 @@
             label9.AutoSize = true;
             label9.BorderStyle = BorderStyle.FixedSingle;
             label9.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.Location = new Point(75, 29);
+            label9.Location = new Point(75, 39);
             label9.Name = "label9";
             label9.Size = new Size(83, 18);
             label9.TabIndex = 36;
@@ -390,7 +390,7 @@
             dataGridViewFactura.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewFactura.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewFactura.Columns.AddRange(new DataGridViewColumn[] { Servicio, Impuestos, Precio, SUBTOTAL });
-            dataGridViewFactura.Location = new Point(323, 123);
+            dataGridViewFactura.Location = new Point(323, 140);
             dataGridViewFactura.Name = "dataGridViewFactura";
             dataGridViewFactura.ReadOnly = true;
             dataGridViewFactura.RowTemplate.Height = 25;
@@ -432,7 +432,7 @@
             btnCancelar.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnCancelar.Image = Properties.Resources.btnCancelar;
             btnCancelar.ImageAlign = ContentAlignment.TopCenter;
-            btnCancelar.Location = new Point(48, 610);
+            btnCancelar.Location = new Point(48, 648);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(98, 78);
             btnCancelar.TabIndex = 38;
@@ -457,7 +457,7 @@
             btnContinuar.IconColor = Color.Black;
             btnContinuar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnContinuar.ImageAlign = ContentAlignment.TopCenter;
-            btnContinuar.Location = new Point(760, 610);
+            btnContinuar.Location = new Point(760, 648);
             btnContinuar.Name = "btnContinuar";
             btnContinuar.Size = new Size(98, 78);
             btnContinuar.TabIndex = 40;
@@ -471,7 +471,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightGreen;
-            ClientSize = new Size(914, 695);
+            ClientSize = new Size(914, 733);
             Controls.Add(btnContinuar);
             Controls.Add(btnCancelar);
             Controls.Add(btnBuscar);

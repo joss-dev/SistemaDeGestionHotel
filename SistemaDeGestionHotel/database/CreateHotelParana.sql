@@ -8,14 +8,13 @@ CREATE TABLE Perfil_usuario(
 	CONSTRAINT PK_ID_perfil_usuario PRIMARY KEY(ID_perfil_usuario)
 );
 
-
 CREATE TABLE Usuario(
 	ID_usuario INT NOT NULL IDENTITY(1, 1),
 	Nombre VARCHAR(100) NOT NULL,
 	Apellido VARCHAR(100) NOT NULL,
 	DNI INT NOT NULL,
 	Correo_electronico VARCHAR(200) NOT NULL, 
-	Estado INT NOT NULL,
+	Estado INT NOT NULL DEFAULT 1,
 	Direccion VARCHAR(120) NOT NULL,
 	Nombre_usuario VARCHAR(100) NOT NULL,
 	Contraseña VARCHAR(200) NOT NULL,
@@ -50,7 +49,7 @@ CREATE TABLE Servicios_adicionales(
     ID_servicioAdic INT NOT NULL IDENTITY(1, 1),
 	Nomb_servicio VARCHAR(50) NOT NULL,
 	Precio FLOAT NOT NULL,
-	Estado INT NOT NULL,
+	Estado INT NOT NULL DEFAULT 1,
 	CONSTRAINT PK_ID_servicioAdic PRIMARY KEY (ID_servicioAdic)
 );
 
@@ -59,7 +58,7 @@ CREATE TABLE Ofertas_recargo(
 	Nomb_ofertaRecargo VARCHAR(100) NOT NULL,
 	Fecha_desde DATE NOT NULL,
 	Fecha_hasta DATE NOT NULL,
-	Estado INT NOT NULL,
+	Estado INT NOT NULL DEFAULT 1,
 	Porcentaje_descuento FLOAT NULL,
 	Porcentaje_recargo FLOAT NULL,
 	CONSTRAINT PK_ID_ofertaRecargo PRIMARY KEY (ID_ofertaRecargo)
@@ -74,7 +73,7 @@ CREATE TABLE Tipo_medioPago(
 CREATE TABLE Medios_pago(
 	ID_medio_pago INT NOT NULL IDENTITY(1, 1),
 	Nombre VARCHAR (100) NOT NULL,
-	Estado INT NOT NULL,
+	Estado INT NOT NULL DEFAULT 1,
 	ID_tipo_medioPago INT NOT NULL,
 	CONSTRAINT PK_ID_medio_pago PRIMARY KEY (ID_medio_pago),
 	CONSTRAINT FK_ID_tipo_medioPago FOREIGN KEY(ID_tipo_medioPago) REFERENCES Tipo_medioPago(ID_tipo_medioPago)
@@ -85,7 +84,7 @@ CREATE TABLE Cliente(
 	Apellido_cliente VARCHAR(100) NOT NULL,
 	Nombre_cliente VARCHAR(100) NOT NULL,
 	DNI_cliente INT NOT NULL,
-	Estado INT NOT NULL,
+	Estado INT NOT NULL DEFAULT 1,
 	Telefono VARCHAR(15) NOT NULL,	
 	CONSTRAINT PK_ID_cliente PRIMARY KEY (ID_cliente),
 	CONSTRAINT CK_DNI_cliente CHECK (LEN(DNI_cliente) <=9),
@@ -111,8 +110,7 @@ CREATE TABLE Registro(
 	Precio_HabPactado FLOAT NOT NULL,
 	Estado_ocupacion INT NOT NULL,
 	Fecha_ingreso DATE NOT NULL,
-	Fecha_salida DATE NOT NULL,
-	Estado INT NOT NULL,
+	Fecha_salida DATE NOT NULL,	
 	ID_usuario INT NOT NULL,
 	Nro_habitacion INT NOT NULL,
 	ID_cliente INT NOT NULL,
@@ -133,7 +131,7 @@ CREATE TABLE Pago(
 	ID_pago INT NOT NULL IDENTITY(1,1),
 	Monto_pago FLOAT NOT NULL,
 	Fecha_horaPago DATETIME NOT NULL,
-	Estado_pago INT NOT NULL,
+	Estado_pago INT NOT NULL DEFAULT 1,
 	ID_ofertaRecargo INT NULL,
 	ID_registro INT NOT NULL,
 	ID_medio_pago INT NOT NULL,
@@ -154,17 +152,6 @@ CREATE TABLE Consulta(
 	CONSTRAINT PK_ID_consulta PRIMARY KEY(ID_consulta),
 	CONSTRAINT FK_ID_usuarioCons FOREIGN KEY(ID_usuario) REFERENCES Usuario(ID_usuario)
 );
-
-CREATE TABLE Historial_registros(
-	ID_historial INT NOT NULL IDENTITY(1, 1),	
-	Fecha_creacion DATE NOT NULL DEFAULT GETDATE(),
-	ID_registro INT NOT NULL,
-	ID_pago INT NOT NULL,
-	CONSTRAINT PK_ID_historial PRIMARY KEY (ID_historial),
-	CONSTRAINT FK_ID_registroHistorial FOREIGN KEY (ID_registro) REFERENCES Registro (ID_registro),
-	CONSTRAINT FK_ID_pagoHistorial FOREIGN KEY (ID_pago) REFERENCES Pago (ID_pago)
-);
-
 
 INSERT INTO Tipo_habitacion(Nomb_tipo) 
 VALUES ('Simple'), ('Doble'), ('Triple');
