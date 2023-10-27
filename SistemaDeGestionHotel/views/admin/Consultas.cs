@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualBasic;
+using SistemaDeGestionHotel.Controllers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace SistemaDeGestionHotel.views.admin
 {
     public partial class Consultas : Form
     {
+        ConsultaController consultaController = new ConsultaController();
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -23,6 +25,7 @@ namespace SistemaDeGestionHotel.views.admin
         public Consultas()
         {
             InitializeComponent();
+            dataGridView1.DataSource = consultaController.ObtenerConsultas();
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
