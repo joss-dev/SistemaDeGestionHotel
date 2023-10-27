@@ -20,7 +20,7 @@ namespace SistemaDeGestionHotel.Controllers
             {
                 bool passCorrecta = EncriptarPassword.VerifyPassword(pass, usuario.Contraseña);
 
-                if (passCorrecta)
+                if (passCorrecta && usuario.Estado == 1)
                 {
                     // La contraseña es correcta, el usuario ha iniciado sesion.
                     return usuario;

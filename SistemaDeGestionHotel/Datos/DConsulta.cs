@@ -1,6 +1,8 @@
 ﻿using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using SistemaDeGestionHotel.NEntidades;
+using System.Collections.Generic;
+
 
 namespace SistemaDeGestionHotel.Datos
 {
@@ -55,6 +57,27 @@ namespace SistemaDeGestionHotel.Datos
                 result = false;
                 return result;
             }
+        }
+
+        public List<Generic> ObtenerConsultasConUsuarios()
+        {
+            // Recupera las consultas con los datos de usuario relacionados
+            var consultas = dbHotelParana.Consulta
+                .Include(c => c.IdUsuarioNavigation) // Carga la entidad Usuario relacionada
+                .ToList();
+
+            // Crea una lista anónima para mostrar en el DataGridView
+            List<Consultum, Usuario> consultaData = consultas.Select(c => new
+            {
+                c.IdConsulta,
+                c.Asunto,
+                c.Mensaje,
+                c.FechaMensaje,
+                c.IdUsuarioNavigation.Nombre,
+                c.IdUsuarioNavigation.Apellido,
+                c.IdUsuarioNavigation.CorreoElectronico
+            }).ToList();
+            return consultaData;
         }
     }
 }
