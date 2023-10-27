@@ -8,8 +8,9 @@ namespace SistemaDeGestionHotel.Controllers
     public class ConsultaController
     {
         DConsulta dconsulta = new DConsulta();
+        DUsuario DUsuario = new DUsuario();
 
-        public bool EnviarMensaje(int idConsulta, string nombre, string apellido, string correoElectronico, string motivo, string mensaje)
+        public void EnviarMensaje(int idConsulta, string nombre, string apellido, string correoElectronico, string motivo, string mensaje)
         {
             dconsulta.GetRecepcionistaPorId(Id);
             dconsulta.ObtenerTodasLasConsultas();
