@@ -26,7 +26,7 @@ namespace SistemaDeGestionHotel.views.admin
         {
             InitializeComponent();
 
-           
+
 
         }
 
@@ -84,6 +84,21 @@ namespace SistemaDeGestionHotel.views.admin
 
             dataGridView1.DataSource = datosParaMostrar;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
+        private void CargaDatosAlTextBox(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.RowIndex < dataGridView1.Rows.Count)
+            {
+                // Obtiene la fila seleccionada
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+
+                // Accede a los datos de la fila y carga en los TextBox y ComboBox
+                txtMail.Text = row.Cells["CorreoElectronico"].Value.ToString();
+                txtMotivoConsulta.Text = row.Cells["Asunto"].Value.ToString();
+                txtMsjeRecibido.Text = row.Cells["Mensaje"].Value.ToString();
+               
+            }
         }
     }
 }

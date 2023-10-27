@@ -93,6 +93,7 @@
             txtMail.Anchor = AnchorStyles.None;
             txtMail.Location = new Point(220, 147);
             txtMail.Name = "txtMail";
+            txtMail.ReadOnly = true;
             txtMail.Size = new Size(342, 23);
             txtMail.TabIndex = 4;
             // 
@@ -101,6 +102,7 @@
             txtMotivoConsulta.Anchor = AnchorStyles.None;
             txtMotivoConsulta.Location = new Point(220, 212);
             txtMotivoConsulta.Name = "txtMotivoConsulta";
+            txtMotivoConsulta.ReadOnly = true;
             txtMotivoConsulta.Size = new Size(342, 23);
             txtMotivoConsulta.TabIndex = 5;
             // 
@@ -110,6 +112,7 @@
             txtMsjeRecibido.Location = new Point(220, 278);
             txtMsjeRecibido.Multiline = true;
             txtMsjeRecibido.Name = "txtMsjeRecibido";
+            txtMsjeRecibido.ReadOnly = true;
             txtMsjeRecibido.Size = new Size(582, 113);
             txtMsjeRecibido.TabIndex = 6;
             txtMsjeRecibido.Text = " ";
@@ -176,6 +179,7 @@
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(904, 203);
             dataGridView1.TabIndex = 69;
+            dataGridView1.CellClick += CargaDatosAlTextBox;
             // 
             // Consultas
             // 
