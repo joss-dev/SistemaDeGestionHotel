@@ -44,10 +44,9 @@ public partial class HotelParanaContext : DbContext
     public virtual DbSet<TipoMedioPago> TipoMedioPagos { get; set; }
 
     public virtual DbSet<Usuario> Usuarios { get; set; }
-    public object Consultum { get; internal set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Server=LAPTOP-2ULFU3L6\\SQLEXPRESS;Database=HotelParana;Integrated Security=True; TrustServerCertificate=True;");
+        => optionsBuilder.UseSqlServer("Server=DESKTOP-G7GUADO\\SQLEXPRESS;Database=HotelParana;Integrated Security=True; TrustServerCertificate=True;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -82,9 +81,6 @@ public partial class HotelParanaContext : DbContext
             entity.Property(e => e.IdConsulta).HasColumnName("ID_consulta");
             entity.Property(e => e.Asunto)
                 .HasMaxLength(200)
-                .IsUnicode(false);
-            entity.Property(e => e.Email)
-                .HasMaxLength(100)
                 .IsUnicode(false);
             entity.Property(e => e.Estado).HasDefaultValueSql("((1))");
             entity.Property(e => e.FechaMensaje)

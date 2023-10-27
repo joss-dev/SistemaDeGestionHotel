@@ -7,8 +7,6 @@ public partial class Consultum
 {
     public int IdConsulta { get; set; }
 
-    public string Email { get; set; } = null!;
-
     public string Asunto { get; set; } = null!;
 
     public string Mensaje { get; set; } = null!;

@@ -12,30 +12,30 @@ namespace SistemaDeGestionHotel.Controllers
 
         public void EnviarMensaje(int idConsulta, string nombre, string apellido, string correoElectronico, string motivo, string mensaje)
         {
-            dconsulta.GetRecepcionistaPorId(Id);
-            dconsulta.ObtenerTodasLasConsultas();
+            //dconsulta.GetRecepcionistaPorId(Id);
+            //dconsulta.ObtenerTodasLasConsultas();
 
             
         }
 
-        public bool BajaConsulta(int idConsulta)
-        {
+        //public bool BajaConsulta(int idConsulta)
+        //{
 
-            Consultum consultaExistente = d_usuario.GetUsuarioByID(idUsuario);
+            //Consultum consultaExistente = d_usuario.GetUsuarioByID(idUsuario);
 
-            if (usuarioExistente == null)
-            {
-                // El usuario no existe, por lo tanto no se puede editar
-                return false;
-            }
+            //if (usuarioExistente == null)
+            //{
+            //    // El usuario no existe, por lo tanto no se puede editar
+            //    return false;
+            //}
 
 
-            usuarioExistente.Estado = 0;
+            //usuarioExistente.Estado = 0;
 
-            d_usuario.GuardarCambios();
+            //d_usuario.GuardarCambios();
 
-            return true;
-        }
+            //return true;
+        //}
     }
 
 
