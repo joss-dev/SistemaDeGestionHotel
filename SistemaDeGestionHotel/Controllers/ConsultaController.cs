@@ -30,6 +30,12 @@ namespace SistemaDeGestionHotel.Controllers
         {
             return dconsulta.MarcarConsultaComoResuelta(idConsulta);
         }
+
+        public List<Consultum> ObtenerConsultasConUsuarios()
+        {
+               return dconsulta.ObtenerConsultasConUsuarios();
+        }
+
     }
 
 
