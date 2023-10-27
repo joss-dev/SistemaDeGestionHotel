@@ -45,6 +45,10 @@
             btnVolver = new Button();
             label6 = new Label();
             errorProvider1 = new ErrorProvider(components);
+            LBNombre = new Label();
+            LBApellido = new Label();
+            textBox1 = new TextBox();
+            textBox2 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
@@ -54,7 +58,7 @@
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.Font = new Font("Arial Rounded MT Bold", 32.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(118, 25);
+            label1.Location = new Point(118, 40);
             label1.Name = "label1";
             label1.Size = new Size(590, 50);
             label1.TabIndex = 0;
@@ -65,7 +69,7 @@
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Underline, GraphicsUnit.Point);
-            label2.Location = new Point(75, 182);
+            label2.Location = new Point(75, 282);
             label2.Name = "label2";
             label2.Size = new Size(180, 18);
             label2.TabIndex = 1;
@@ -74,7 +78,7 @@
             // txtMotivo
             // 
             txtMotivo.Anchor = AnchorStyles.None;
-            txtMotivo.Location = new Point(100, 211);
+            txtMotivo.Location = new Point(75, 313);
             txtMotivo.Name = "txtMotivo";
             txtMotivo.Size = new Size(321, 23);
             txtMotivo.TabIndex = 2;
@@ -85,7 +89,7 @@
             label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
             label3.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Underline, GraphicsUnit.Point);
-            label3.Location = new Point(75, 250);
+            label3.Location = new Point(75, 350);
             label3.Name = "label3";
             label3.Size = new Size(208, 18);
             label3.TabIndex = 3;
@@ -94,7 +98,7 @@
             // txtMsje
             // 
             txtMsje.Anchor = AnchorStyles.None;
-            txtMsje.Location = new Point(100, 284);
+            txtMsje.Location = new Point(75, 387);
             txtMsje.Multiline = true;
             txtMsje.Name = "txtMsje";
             txtMsje.Size = new Size(597, 105);
@@ -106,16 +110,16 @@
             label4.Anchor = AnchorStyles.None;
             label4.AutoSize = true;
             label4.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Underline, GraphicsUnit.Point);
-            label4.Location = new Point(75, 108);
+            label4.Location = new Point(75, 208);
             label4.Name = "label4";
-            label4.Size = new Size(281, 18);
+            label4.Size = new Size(184, 18);
             label4.TabIndex = 5;
-            label4.Text = "Correo electronónico corporativo:";
+            label4.Text = "Correo electronónico:";
             // 
             // txtMail
             // 
             txtMail.Anchor = AnchorStyles.None;
-            txtMail.Location = new Point(100, 138);
+            txtMail.Location = new Point(75, 242);
             txtMail.Name = "txtMail";
             txtMail.Size = new Size(321, 23);
             txtMail.TabIndex = 6;
@@ -125,7 +129,7 @@
             // 
             pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(483, 106);
+            pictureBox1.Location = new Point(483, 119);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(184, 172);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -138,7 +142,7 @@
             button1.BackColor = Color.Teal;
             button1.FlatStyle = FlatStyle.Popup;
             button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.Location = new Point(247, 418);
+            button1.Location = new Point(247, 518);
             button1.Name = "button1";
             button1.Size = new Size(71, 71);
             button1.TabIndex = 8;
@@ -151,7 +155,7 @@
             label5.AutoSize = true;
             label5.FlatStyle = FlatStyle.Popup;
             label5.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(254, 494);
+            label5.Location = new Point(254, 594);
             label5.Name = "label5";
             label5.Size = new Size(59, 18);
             label5.TabIndex = 9;
@@ -162,7 +166,7 @@
             label16.Anchor = AnchorStyles.None;
             label16.AutoSize = true;
             label16.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label16.Location = new Point(373, 495);
+            label16.Location = new Point(373, 593);
             label16.Name = "label16";
             label16.Size = new Size(81, 18);
             label16.TabIndex = 64;
@@ -174,7 +178,7 @@
             btnCancelar.BackColor = Color.PaleGreen;
             btnCancelar.FlatStyle = FlatStyle.Popup;
             btnCancelar.Image = Properties.Resources.cancelar;
-            btnCancelar.Location = new Point(378, 418);
+            btnCancelar.Location = new Point(378, 517);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(71, 71);
             btnCancelar.TabIndex = 63;
@@ -187,7 +191,7 @@
             btnVolver.BackColor = Color.CornflowerBlue;
             btnVolver.FlatStyle = FlatStyle.Popup;
             btnVolver.Image = (Image)resources.GetObject("btnVolver.Image");
-            btnVolver.Location = new Point(514, 419);
+            btnVolver.Location = new Point(514, 517);
             btnVolver.Name = "btnVolver";
             btnVolver.Size = new Size(71, 71);
             btnVolver.TabIndex = 65;
@@ -199,7 +203,7 @@
             label6.Anchor = AnchorStyles.None;
             label6.AutoSize = true;
             label6.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(520, 494);
+            label6.Location = new Point(520, 592);
             label6.Name = "label6";
             label6.Size = new Size(59, 18);
             label6.TabIndex = 66;
@@ -209,12 +213,54 @@
             // 
             errorProvider1.ContainerControl = this;
             // 
+            // LBNombre
+            // 
+            LBNombre.Anchor = AnchorStyles.None;
+            LBNombre.AutoSize = true;
+            LBNombre.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Underline, GraphicsUnit.Point);
+            LBNombre.Location = new Point(75, 131);
+            LBNombre.Name = "LBNombre";
+            LBNombre.Size = new Size(76, 18);
+            LBNombre.TabIndex = 68;
+            LBNombre.Text = "Nombre:";
+            // 
+            // LBApellido
+            // 
+            LBApellido.Anchor = AnchorStyles.None;
+            LBApellido.AutoSize = true;
+            LBApellido.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Underline, GraphicsUnit.Point);
+            LBApellido.Location = new Point(268, 131);
+            LBApellido.Name = "LBApellido";
+            LBApellido.Size = new Size(77, 18);
+            LBApellido.TabIndex = 69;
+            LBApellido.Text = "Apellido:";
+            // 
+            // textBox1
+            // 
+            textBox1.Anchor = AnchorStyles.None;
+            textBox1.Location = new Point(75, 164);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(180, 23);
+            textBox1.TabIndex = 70;
+            // 
+            // textBox2
+            // 
+            textBox2.Anchor = AnchorStyles.None;
+            textBox2.Location = new Point(269, 164);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(180, 23);
+            textBox2.TabIndex = 71;
+            // 
             // consultaSoporte
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightGreen;
-            ClientSize = new Size(800, 549);
+            ClientSize = new Size(800, 662);
+            Controls.Add(textBox2);
+            Controls.Add(textBox1);
+            Controls.Add(LBApellido);
+            Controls.Add(LBNombre);
             Controls.Add(label6);
             Controls.Add(btnVolver);
             Controls.Add(label16);
@@ -257,5 +303,9 @@
         private Button btnVolver;
         private Label label6;
         private ErrorProvider errorProvider1;
+        private TextBox textBox2;
+        private TextBox textBox1;
+        private Label LBApellido;
+        private Label LBNombre;
     }
 }
