@@ -131,19 +131,19 @@ namespace SistemaDeGestionHotel
                 {
                     if(usuario.IdPerfilUsuario == 1)
                     {
-                        Form form = new PrincipalSuperAdmin();
+                        Form form = new PrincipalSuperAdmin(usuario);
                         form.Show();
                         this.Hide();
                     }
                     else if(usuario.IdPerfilUsuario == 2)
                     {
-                        Form form = new PrincipalAdmin();
+                        Form form = new PrincipalAdmin(usuario);
                         form.Show();
                         this.Hide();
                     }
                     else if(usuario.IdPerfilUsuario == 3)
                     {
-                        Form form = new PrincipalRecep();
+                        Form form = new PrincipalRecep(usuario);
                         form.Show();
                         this.Hide();
                     }

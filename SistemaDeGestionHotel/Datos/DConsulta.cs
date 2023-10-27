@@ -13,11 +13,6 @@ namespace SistemaDeGestionHotel.Datos
             dbHotelParana = new HotelParanaContext();
         }
 
-        public Usuario GetRecepcionistaPorId(int Id)
-        {
-            return dbHotelParana.Usuarios.FirstOrDefault(u => u.IdUsuario == Id);
-        }
-
         public bool AgregarConsulta(Consultum consulta)
         {
             bool result = true;
@@ -35,18 +30,30 @@ namespace SistemaDeGestionHotel.Datos
             }
         }
 
+        public Consultum ObtenerConsultaPorID(int idConsulta)
+        {
+            return  dbHotelParana.Consulta.FirstOrDefault(c => c.IdConsulta == idConsulta); // Busca una consulta activa por ID
+        }
+
         public List<Consultum> ObtenerTodasLasConsultas()
         {
             return dbHotelParana.Consulta.ToList();
         }
 
-        public void MarcarConsultaComoDesactivada(int consultaId)
+        public bool MarcarConsultaComoResuelta(int consultaId)
         {
-            var consulta = dbHotelParana.Consulta.FirstOrDefault(c => c.IdConsulta == consultaId); // Busca una consulta activa por ID
+            bool result = true;
+
+            Consultum consulta = ObtenerConsultaPorID(consultaId);
             if (consulta != null)
             {
                 consulta.Estado = 0; // Cambia el estado a "desactivado"
                 dbHotelParana.SaveChanges(); // Guarda los cambios en la base de datos
+                return result;
+            }else
+            {
+                result = false;
+                return result;
             }
         }
     }

@@ -1,4 +1,5 @@
-﻿using SistemaDeGestionHotel.views.admin;
+﻿using SistemaDeGestionHotel.NEntidades;
+using SistemaDeGestionHotel.views.admin;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,10 +17,13 @@ namespace SistemaDeGestionHotel.views.recep
     {
 
         private Form formularioAbierto = null;
+        private Usuario usuarioInicioSesion;
 
-        public HomeRecep()
+
+        public HomeRecep(Usuario usuarioInicioSesion)
         {
             InitializeComponent();
+            this.usuarioInicioSesion = usuarioInicioSesion; 
         }
 
         private void btnEstadoHab_Click(object sender, EventArgs e)
@@ -52,7 +56,7 @@ namespace SistemaDeGestionHotel.views.recep
         private void btnContacto_Click(object sender, EventArgs e)
         {
             // Llama a AbrirFormulario con el formulario gestionMediosPago
-            AbrirFormulario(new consultaSoporte());
+            AbrirFormulario(new consultaSoporte(usuarioInicioSesion));
         }
     }
 }

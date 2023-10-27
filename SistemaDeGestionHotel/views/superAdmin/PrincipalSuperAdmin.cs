@@ -2,22 +2,28 @@
 using System.Runtime.InteropServices;
 using SistemaDeGestionHotel.views.superAdmin;
 using SistemaDeGestionHotel.views.admin;
+using SistemaDeGestionHotel.NEntidades;
 
 namespace SistemaDeGestionHotel.views
 {
     public partial class PrincipalSuperAdmin : Form
     {
+
+        private Usuario usuarioInicioSesion;
+
         //declaracion de icono y boton 
         private IconButton currentBtn;
         private Panel leftBorderBtn;
 
 
-        public PrincipalSuperAdmin()
+        public PrincipalSuperAdmin(Usuario usuario)
         {
             InitializeComponent();
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 60);
             panelMenu.Controls.Add(leftBorderBtn);
+
+            usuarioInicioSesion = usuario;
 
             //abre el form home cuando principalAdmin se abre
             FormsHijos.AbrirFormHija(new Home(), panelContenedor);

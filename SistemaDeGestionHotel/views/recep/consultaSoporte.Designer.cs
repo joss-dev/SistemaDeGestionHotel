@@ -47,8 +47,8 @@
             errorProvider1 = new ErrorProvider(components);
             LBNombre = new Label();
             LBApellido = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            txtNombre = new TextBox();
+            txtApellido = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
@@ -57,10 +57,10 @@
             // 
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
-            label1.Font = new Font("Arial Rounded MT Bold", 32.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Font = new Font("Microsoft Sans Serif", 32.25F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(118, 40);
             label1.Name = "label1";
-            label1.Size = new Size(590, 50);
+            label1.Size = new Size(540, 51);
             label1.TabIndex = 0;
             label1.Text = "Consultas Soporte Técnico";
             // 
@@ -68,10 +68,10 @@
             // 
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
-            label2.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Underline, GraphicsUnit.Point);
+            label2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Underline, GraphicsUnit.Point);
             label2.Location = new Point(75, 282);
             label2.Name = "label2";
-            label2.Size = new Size(180, 18);
+            label2.Size = new Size(161, 20);
             label2.TabIndex = 1;
             label2.Text = "Motivo de la consulta:";
             // 
@@ -88,10 +88,10 @@
             // 
             label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
-            label3.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Underline, GraphicsUnit.Point);
+            label3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Underline, GraphicsUnit.Point);
             label3.Location = new Point(75, 350);
             label3.Name = "label3";
-            label3.Size = new Size(208, 18);
+            label3.Size = new Size(185, 20);
             label3.TabIndex = 3;
             label3.Text = "Escriba aquí su consulta:";
             // 
@@ -109,10 +109,10 @@
             // 
             label4.Anchor = AnchorStyles.None;
             label4.AutoSize = true;
-            label4.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Underline, GraphicsUnit.Point);
+            label4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Underline, GraphicsUnit.Point);
             label4.Location = new Point(75, 208);
             label4.Name = "label4";
-            label4.Size = new Size(184, 18);
+            label4.Size = new Size(160, 20);
             label4.TabIndex = 5;
             label4.Text = "Correo electronónico:";
             // 
@@ -121,6 +121,7 @@
             txtMail.Anchor = AnchorStyles.None;
             txtMail.Location = new Point(75, 242);
             txtMail.Name = "txtMail";
+            txtMail.ReadOnly = true;
             txtMail.Size = new Size(321, 23);
             txtMail.TabIndex = 6;
             txtMail.KeyDown += ValidarMail;
@@ -154,10 +155,10 @@
             label5.Anchor = AnchorStyles.None;
             label5.AutoSize = true;
             label5.FlatStyle = FlatStyle.Popup;
-            label5.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label5.Location = new Point(254, 594);
             label5.Name = "label5";
-            label5.Size = new Size(59, 18);
+            label5.Size = new Size(53, 20);
             label5.TabIndex = 9;
             label5.Text = "Enviar";
             // 
@@ -165,10 +166,10 @@
             // 
             label16.Anchor = AnchorStyles.None;
             label16.AutoSize = true;
-            label16.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label16.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label16.Location = new Point(373, 593);
             label16.Name = "label16";
-            label16.Size = new Size(81, 18);
+            label16.Size = new Size(72, 20);
             label16.TabIndex = 64;
             label16.Text = "Cancelar";
             // 
@@ -202,10 +203,10 @@
             // 
             label6.Anchor = AnchorStyles.None;
             label6.AutoSize = true;
-            label6.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label6.Location = new Point(520, 592);
             label6.Name = "label6";
-            label6.Size = new Size(59, 18);
+            label6.Size = new Size(53, 20);
             label6.TabIndex = 66;
             label6.Text = "Volver";
             // 
@@ -217,10 +218,10 @@
             // 
             LBNombre.Anchor = AnchorStyles.None;
             LBNombre.AutoSize = true;
-            LBNombre.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Underline, GraphicsUnit.Point);
+            LBNombre.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Underline, GraphicsUnit.Point);
             LBNombre.Location = new Point(75, 131);
             LBNombre.Name = "LBNombre";
-            LBNombre.Size = new Size(76, 18);
+            LBNombre.Size = new Size(69, 20);
             LBNombre.TabIndex = 68;
             LBNombre.Text = "Nombre:";
             // 
@@ -228,28 +229,30 @@
             // 
             LBApellido.Anchor = AnchorStyles.None;
             LBApellido.AutoSize = true;
-            LBApellido.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Underline, GraphicsUnit.Point);
+            LBApellido.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Underline, GraphicsUnit.Point);
             LBApellido.Location = new Point(268, 131);
             LBApellido.Name = "LBApellido";
-            LBApellido.Size = new Size(77, 18);
+            LBApellido.Size = new Size(69, 20);
             LBApellido.TabIndex = 69;
             LBApellido.Text = "Apellido:";
             // 
-            // textBox1
+            // txtNombre
             // 
-            textBox1.Anchor = AnchorStyles.None;
-            textBox1.Location = new Point(75, 164);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(180, 23);
-            textBox1.TabIndex = 70;
+            txtNombre.Anchor = AnchorStyles.None;
+            txtNombre.Location = new Point(75, 164);
+            txtNombre.Name = "txtNombre";
+            txtNombre.ReadOnly = true;
+            txtNombre.Size = new Size(180, 23);
+            txtNombre.TabIndex = 70;
             // 
-            // textBox2
+            // txtApellido
             // 
-            textBox2.Anchor = AnchorStyles.None;
-            textBox2.Location = new Point(269, 164);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(180, 23);
-            textBox2.TabIndex = 71;
+            txtApellido.Anchor = AnchorStyles.None;
+            txtApellido.Location = new Point(269, 164);
+            txtApellido.Name = "txtApellido";
+            txtApellido.ReadOnly = true;
+            txtApellido.Size = new Size(180, 23);
+            txtApellido.TabIndex = 71;
             // 
             // consultaSoporte
             // 
@@ -257,8 +260,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightGreen;
             ClientSize = new Size(800, 662);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txtApellido);
+            Controls.Add(txtNombre);
             Controls.Add(LBApellido);
             Controls.Add(LBNombre);
             Controls.Add(label6);
@@ -303,8 +306,8 @@
         private Button btnVolver;
         private Label label6;
         private ErrorProvider errorProvider1;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox txtApellido;
+        private TextBox txtNombre;
         private Label LBApellido;
         private Label LBNombre;
     }

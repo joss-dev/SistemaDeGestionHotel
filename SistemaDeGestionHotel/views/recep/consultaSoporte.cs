@@ -1,4 +1,6 @@
 ﻿using Microsoft.VisualBasic;
+using SistemaDeGestionHotel.Controllers;
+using SistemaDeGestionHotel.NEntidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,17 +14,29 @@ using System.Windows.Forms;
 
 namespace SistemaDeGestionHotel.views.recep
 {
+    
+
     public partial class consultaSoporte : Form
     {
+
+        ConsultaController c_consulta = new ConsultaController();
+
+        private Usuario usuarioInicioSesion;
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
 
-        public consultaSoporte()
+        public consultaSoporte(Usuario usuario)
         {
             InitializeComponent();
+            usuarioInicioSesion = usuario;
+
+            txtNombre.Text = usuarioInicioSesion.Nombre;
+            txtApellido.Text = usuarioInicioSesion.Apellido;
+            txtMail.Text = usuarioInicioSesion.CorreoElectronico;
+
         }
 
         private void ValidarMail(object sender, KeyEventArgs e)
@@ -53,7 +67,6 @@ namespace SistemaDeGestionHotel.views.recep
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.txtMail.Clear();
             this.txtMotivo.Clear();
             this.txtMsje.Clear();
         }
@@ -61,11 +74,24 @@ namespace SistemaDeGestionHotel.views.recep
         private void button1_Click(object sender, EventArgs e)
         {
             // Verificar si alguno de los campos está incompleto
-            if (ValidacionTextBox.ValidarNoVacio(txtMail, txtMotivo, txtMsje))
+            if (ValidacionTextBox.ValidarNoVacio(txtMail, txtMotivo, txtMsje, txtNombre, txtApellido))
             {
                 // Mostrar un mensaje de error
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
+            }else
+            {
+                if(c_consulta.EnviarMensaje(usuarioInicioSesion.IdUsuario, txtMotivo.Text, txtMsje.Text))
+                {
+                    MessageBox.Show("El mensaje se envio correctamente!");
+                    txtMotivo.Text = string.Empty;
+                    txtMsje.Text = string.Empty;
+                }
+                else
+                {
+                    MessageBox.Show("Ocurrio un error al enviar el mensaje!","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                
             }
         }
 

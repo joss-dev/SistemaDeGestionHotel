@@ -3,11 +3,15 @@ using SistemaDeGestionHotel.views.admin;
 using SistemaDeGestionHotel.views.recep;
 using System.Drawing.Text;
 using SistemaDeGestionHotel.views;
+using SistemaDeGestionHotel.NEntidades;
 
 namespace SistemaDeGestionHotel
 {
     public partial class PrincipalRecep : Form
     {
+
+        private Usuario usuarioInicioSesion;
+
         //declaracion de icono y boton 
         private IconButton currentBtn;
         private Panel leftBorderBtn;
@@ -17,15 +21,17 @@ namespace SistemaDeGestionHotel
         private Point dragCursorPoint;
         private Point dragFormPoint;
 
-        public PrincipalRecep()
+        public PrincipalRecep(Usuario usuario)
         {
             InitializeComponent();
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 60);
             panelMenu.Controls.Add(leftBorderBtn);
 
+            usuarioInicioSesion = usuario;
+
             //abre el form home cuando principalAdmin se abre
-            FormsHijos.AbrirFormHija(new HomeRecep(), panelContenedor);
+            FormsHijos.AbrirFormHija(new HomeRecep(usuarioInicioSesion), panelContenedor);
 
             // Establece que el formulario se inicie maximizado
             this.WindowState = FormWindowState.Maximized;
@@ -106,7 +112,7 @@ namespace SistemaDeGestionHotel
         private void btnHome_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, Color.FromArgb(34, 81, 111));
-            FormsHijos.AbrirFormHija(new HomeRecep(), panelContenedor);
+            FormsHijos.AbrirFormHija(new HomeRecep(usuarioInicioSesion), panelContenedor);
         }
 
         private void btnGestionHabitaciones_Click(object sender, EventArgs e)

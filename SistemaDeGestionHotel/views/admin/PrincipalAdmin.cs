@@ -3,6 +3,7 @@ using System.Runtime.InteropServices;
 using SistemaDeGestionHotel.views;
 using SistemaDeGestionHotel.views.admin;
 using FontAwesome.Sharp;
+using SistemaDeGestionHotel.NEntidades;
 
 namespace SistemaDeGestionHotel
 {
@@ -10,16 +11,21 @@ namespace SistemaDeGestionHotel
 
     public partial class PrincipalAdmin : Form
     {
+
+        private Usuario usuarioInicioSesion;
+
         //declaracion de icono y boton 
         private IconButton currentBtn;
         private Panel leftBorderBtn;
 
-        public PrincipalAdmin()
+        public PrincipalAdmin(Usuario usuario)
         {
             InitializeComponent();
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 60);
             panelMenu.Controls.Add(leftBorderBtn);
+
+            usuarioInicioSesion = usuario;
 
             //abre el form home cuando principalAdmin se abre
             FormsHijos.AbrirFormHija(new Home(), panelCont);

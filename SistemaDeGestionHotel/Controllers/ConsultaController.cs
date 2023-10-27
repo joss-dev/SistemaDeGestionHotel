@@ -8,34 +8,28 @@ namespace SistemaDeGestionHotel.Controllers
     public class ConsultaController
     {
         DConsulta dconsulta = new DConsulta();
-        DUsuario DUsuario = new DUsuario();
 
-        public void EnviarMensaje(int idConsulta, string nombre, string apellido, string correoElectronico, string motivo, string mensaje)
+        public bool EnviarMensaje(int idUsuario, string motivo, string mensaje)
         {
-            //dconsulta.GetRecepcionistaPorId(Id);
-            //dconsulta.ObtenerTodasLasConsultas();
+            Consultum consulta = new Consultum()
+            {
+                IdUsuario = idUsuario,
+                Asunto = motivo,
+                Mensaje = mensaje
+            };
 
-            
+            return dconsulta.AgregarConsulta(consulta);
         }
 
-        //public bool BajaConsulta(int idConsulta)
-        //{
+        public List<Consultum> ObtenerConsultas()
+        {
+            return dconsulta.ObtenerTodasLasConsultas();
+        }
 
-            //Consultum consultaExistente = d_usuario.GetUsuarioByID(idUsuario);
-
-            //if (usuarioExistente == null)
-            //{
-            //    // El usuario no existe, por lo tanto no se puede editar
-            //    return false;
-            //}
-
-
-            //usuarioExistente.Estado = 0;
-
-            //d_usuario.GuardarCambios();
-
-            //return true;
-        //}
+        public bool ConsultaResuelta(int idConsulta)
+        {
+            return dconsulta.MarcarConsultaComoResuelta(idConsulta);
+        }
     }
 
 
