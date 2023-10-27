@@ -199,6 +199,7 @@
             Name = "Consultas";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Consultas";
+            Load += CargarDatos;
             MouseDown += Consulta_MouseDown;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);

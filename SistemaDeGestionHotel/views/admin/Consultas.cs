@@ -26,21 +26,7 @@ namespace SistemaDeGestionHotel.views.admin
         {
             InitializeComponent();
 
-            var consultas = consultaController.ObtenerConsultasConUsuarios();
-
-            var datosParaMostrar = consultas.Select(c => new
-            {
-                IdConsulta = c.IdConsulta,
-                Asunto = c.Asunto,
-                Mensaje = c.Mensaje,
-                FechaMensaje = c.FechaMensaje,
-                Nombre = c.IdUsuarioNavigation.Nombre,
-                Apellido = c.IdUsuarioNavigation.Apellido,
-                CorreoElectronico = c.IdUsuarioNavigation.CorreoElectronico
-            }).ToList();
-
-            dataGridView1.DataSource = datosParaMostrar;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+           
 
         }
 
@@ -79,6 +65,25 @@ namespace SistemaDeGestionHotel.views.admin
         private void label6_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void CargarDatos(object sender, EventArgs e)
+        {
+            var consultas = consultaController.ObtenerConsultasConUsuarios();
+
+            var datosParaMostrar = consultas.Select(c => new
+            {
+                IdConsulta = c.IdConsulta,
+                Asunto = c.Asunto,
+                Mensaje = c.Mensaje,
+                FechaMensaje = c.FechaMensaje,
+                Nombre = c.IdUsuarioNavigation.Nombre,
+                Apellido = c.IdUsuarioNavigation.Apellido,
+                CorreoElectronico = c.IdUsuarioNavigation.CorreoElectronico
+            }).ToList();
+
+            dataGridView1.DataSource = datosParaMostrar;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
     }
 }
