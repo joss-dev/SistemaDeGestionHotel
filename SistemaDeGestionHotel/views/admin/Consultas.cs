@@ -1,5 +1,7 @@
 ﻿using Microsoft.VisualBasic;
 using SistemaDeGestionHotel.Controllers;
+using SistemaDeGestionHotel.Datos;
+using SistemaDeGestionHotel.NEntidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,8 +28,7 @@ namespace SistemaDeGestionHotel.views.admin
         {
             InitializeComponent();
 
-
-
+            dataGridView1.CellFormatting += dataGridView1_CellFormatting;
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -51,7 +52,7 @@ namespace SistemaDeGestionHotel.views.admin
             }
         }
 
-        private void btnCheck_Click(object sender, EventArgs e)
+        private void BtnResuelto_Click(object sender, EventArgs e)
         {
             // Verificar si alguno de los campos está incompleto
             if (ValidacionTextBox.ValidarNoVacio(txtMail, txtMotivoConsulta, txtMsjeRecibido))
@@ -60,11 +61,75 @@ namespace SistemaDeGestionHotel.views.admin
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            else
+            {
+                int idConsulta = -1; // Valor predeterminado si no se selecciona ningún usuario
+
+                if (dataGridView1.SelectedRows.Count > 0)
+                {
+                    // Si al menos una fila está seleccionada, obtiene el índice de la primera fila seleccionada
+                    int rowIndex = dataGridView1.SelectedRows[0].Index;
+
+                    DataGridViewRow row = dataGridView1.Rows[rowIndex];
+                    idConsulta = int.Parse(row.Cells["IdConsulta"].Value.ToString());
+                }
+                if (idConsulta != -1)
+                {
+                    Consultum ConsultaCambioEstado = consultaController.TraerConsultaPorID(idConsulta);
+
+                    MsgBoxResult ask = (MsgBoxResult)MessageBox.Show("¿Seguro desea marcar como resuelta?: " + "?", "Confirmacion de edición", MessageBoxButtons.YesNo);
+                    if (ask == MsgBoxResult.Yes)
+                    {
+                        bool result = consultaController.ConsultaResuelta(ConsultaCambioEstado.IdConsulta);
+                        if (result)
+                        {
+                            MessageBox.Show("La consulta ha sido marcada como resuelta", "Confirmado", MessageBoxButtons.OK);
+
+                            idConsulta = -1;
+                            dataGridView1.DataSource = consultaController.ObtenerConsultas();
+
+                            ConsultaCambioEstado.Estado = 0;
+                            CargarDatos(this, EventArgs.Empty);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ocurrio un error");
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No selecciono ningun usuario");
+                }
+            }
         }
 
-        private void label6_Click(object sender, EventArgs e)
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
+            if (e.RowIndex >= 0 && e.ColumnIndex == dataGridView1.Columns["Estado_consulta"].Index)
+            {
+                // Obtén el valor del estado en la celda actual.
+                string Estado = dataGridView1.Rows[e.RowIndex].Cells["Estado_consulta"].Value.ToString();
 
+                // Define los colores para "activo" y "resuelto".
+                Color colorActiva = Color.Red; // Cambia esto al color que desees.
+                Color colorResuelta = Color.Green; // Cambia esto al color que desees.
+
+                // Establece el color de fondo basado en el valor del estado.
+                if (Estado.Equals("Activa", StringComparison.OrdinalIgnoreCase))
+                {
+                    e.CellStyle.BackColor = colorActiva;
+                }
+                else if (Estado.Equals("Resuelta", StringComparison.OrdinalIgnoreCase))
+                {
+                    e.CellStyle.BackColor = colorResuelta;
+                }
+                else
+                {
+                    // Restaura el color de fondo predeterminado para otros valores de estado.
+                    e.CellStyle.BackColor = dataGridView1.DefaultCellStyle.BackColor;
+                }
+            }            
         }
 
         private void CargarDatos(object sender, EventArgs e)
@@ -74,12 +139,13 @@ namespace SistemaDeGestionHotel.views.admin
             var datosParaMostrar = consultas.Select(c => new
             {
                 IdConsulta = c.IdConsulta,
+                Nombre = c.IdUsuarioNavigation.Nombre,
+                Apellido = c.IdUsuarioNavigation.Apellido,
+                CorreoElectronico = c.IdUsuarioNavigation.CorreoElectronico,
                 Asunto = c.Asunto,
                 Mensaje = c.Mensaje,
                 FechaMensaje = c.FechaMensaje,
-                Nombre = c.IdUsuarioNavigation.Nombre,
-                Apellido = c.IdUsuarioNavigation.Apellido,
-                CorreoElectronico = c.IdUsuarioNavigation.CorreoElectronico
+                Estado_consulta = c.Estado == 1 ? "Activa" : "Resuelta"
             }).ToList();
 
             dataGridView1.DataSource = datosParaMostrar;
@@ -97,7 +163,7 @@ namespace SistemaDeGestionHotel.views.admin
                 txtMail.Text = row.Cells["CorreoElectronico"].Value.ToString();
                 txtMotivoConsulta.Text = row.Cells["Asunto"].Value.ToString();
                 txtMsjeRecibido.Text = row.Cells["Mensaje"].Value.ToString();
-               
+
             }
         }
     }

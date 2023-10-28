@@ -26,6 +26,11 @@ namespace SistemaDeGestionHotel.Controllers
             return dconsulta.ObtenerTodasLasConsultas();
         }
 
+        public Consultum TraerConsultaPorID(int id)
+        {
+            return dconsulta.ObtenerConsultaPorID(id);
+        }
+
         public bool ConsultaResuelta(int idConsulta)
         {
             return dconsulta.MarcarConsultaComoResuelta(idConsulta);

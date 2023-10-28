@@ -36,7 +36,7 @@
             txtMail = new TextBox();
             txtMotivoConsulta = new TextBox();
             txtMsjeRecibido = new TextBox();
-            btnCheck = new Button();
+            BtnResuelto = new Button();
             label5 = new Label();
             label6 = new Label();
             btnVolver = new Button();
@@ -117,19 +117,19 @@
             txtMsjeRecibido.TabIndex = 6;
             txtMsjeRecibido.Text = " ";
             // 
-            // btnCheck
+            // BtnResuelto
             // 
-            btnCheck.Anchor = AnchorStyles.None;
-            btnCheck.BackColor = Color.SteelBlue;
-            btnCheck.FlatStyle = FlatStyle.Popup;
-            btnCheck.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCheck.Image = (Image)resources.GetObject("btnCheck.Image");
-            btnCheck.Location = new Point(377, 667);
-            btnCheck.Name = "btnCheck";
-            btnCheck.Size = new Size(71, 71);
-            btnCheck.TabIndex = 7;
-            btnCheck.UseVisualStyleBackColor = false;
-            btnCheck.Click += btnCheck_Click;
+            BtnResuelto.Anchor = AnchorStyles.None;
+            BtnResuelto.BackColor = Color.SteelBlue;
+            BtnResuelto.FlatStyle = FlatStyle.Popup;
+            BtnResuelto.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            BtnResuelto.Image = (Image)resources.GetObject("BtnResuelto.Image");
+            BtnResuelto.Location = new Point(377, 667);
+            BtnResuelto.Name = "BtnResuelto";
+            BtnResuelto.Size = new Size(71, 71);
+            BtnResuelto.TabIndex = 7;
+            BtnResuelto.UseVisualStyleBackColor = false;
+            BtnResuelto.Click += BtnResuelto_Click;
             // 
             // label5
             // 
@@ -152,7 +152,6 @@
             label6.Size = new Size(53, 20);
             label6.TabIndex = 68;
             label6.Text = "Volver";
-            label6.Click += label6_Click;
             // 
             // btnVolver
             // 
@@ -172,6 +171,7 @@
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.AllowUserToOrderColumns = true;
+            dataGridView1.Anchor = AnchorStyles.None;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(21, 420);
             dataGridView1.Name = "dataGridView1";
@@ -191,7 +191,7 @@
             Controls.Add(label6);
             Controls.Add(btnVolver);
             Controls.Add(label5);
-            Controls.Add(btnCheck);
+            Controls.Add(BtnResuelto);
             Controls.Add(txtMsjeRecibido);
             Controls.Add(txtMotivoConsulta);
             Controls.Add(txtMail);
@@ -219,7 +219,7 @@
         private TextBox txtMail;
         private TextBox txtMotivoConsulta;
         private TextBox txtMsjeRecibido;
-        private Button btnCheck;
+        private Button BtnResuelto;
         private Label label5;
         private Label label6;
         private Button btnVolver;
