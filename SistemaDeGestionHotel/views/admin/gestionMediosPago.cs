@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualBasic;
+using SistemaDeGestionHotel.Controllers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace SistemaDeGestionHotel.views.admin
 {
     public partial class gestionMediosPago : Form
     {
+        MedioPagoController Medio_pagoController = new MedioPagoController();
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();

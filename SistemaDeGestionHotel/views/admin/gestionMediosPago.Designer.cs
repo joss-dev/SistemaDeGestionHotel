@@ -36,7 +36,6 @@
             comboBoxTipoMP = new ComboBox();
             label4 = new Label();
             comboBoxEstadoMP = new ComboBox();
-            txtBuscarMP = new TextBox();
             dataGridView2 = new DataGridView();
             label9 = new Label();
             label10 = new Label();
@@ -45,7 +44,6 @@
             btnEliminar = new FontAwesome.Sharp.IconButton();
             btnRegistrar = new FontAwesome.Sharp.IconButton();
             errorProvider1 = new ErrorProvider(components);
-            btnBuscar = new Button();
             label5 = new Label();
             iconButton1 = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
@@ -58,7 +56,7 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Aquamarine;
             label1.Font = new Font("Arial Rounded MT Bold", 32.25F, FontStyle.Underline, GraphicsUnit.Point);
-            label1.Location = new Point(101, 81);
+            label1.Location = new Point(105, 66);
             label1.Name = "label1";
             label1.Size = new Size(609, 50);
             label1.TabIndex = 22;
@@ -69,7 +67,7 @@
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(133, 187);
+            label2.Location = new Point(185, 215);
             label2.Name = "label2";
             label2.Size = new Size(82, 21);
             label2.TabIndex = 23;
@@ -78,7 +76,7 @@
             // txtNombMP
             // 
             txtNombMP.Anchor = AnchorStyles.None;
-            txtNombMP.Location = new Point(213, 188);
+            txtNombMP.Location = new Point(272, 213);
             txtNombMP.Name = "txtNombMP";
             txtNombMP.Size = new Size(141, 23);
             txtNombMP.TabIndex = 24;
@@ -89,7 +87,7 @@
             label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
             label3.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(159, 230);
+            label3.Location = new Point(185, 277);
             label3.Name = "label3";
             label3.Size = new Size(55, 21);
             label3.TabIndex = 25;
@@ -99,7 +97,7 @@
             // 
             comboBoxTipoMP.Anchor = AnchorStyles.None;
             comboBoxTipoMP.FormattingEnabled = true;
-            comboBoxTipoMP.Location = new Point(213, 231);
+            comboBoxTipoMP.Location = new Point(272, 278);
             comboBoxTipoMP.Name = "comboBoxTipoMP";
             comboBoxTipoMP.Size = new Size(121, 23);
             comboBoxTipoMP.TabIndex = 26;
@@ -110,7 +108,7 @@
             label4.Anchor = AnchorStyles.None;
             label4.AutoSize = true;
             label4.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(140, 273);
+            label4.Location = new Point(185, 352);
             label4.Name = "label4";
             label4.Size = new Size(73, 21);
             label4.TabIndex = 27;
@@ -120,25 +118,17 @@
             // 
             comboBoxEstadoMP.Anchor = AnchorStyles.None;
             comboBoxEstadoMP.FormattingEnabled = true;
-            comboBoxEstadoMP.Location = new Point(213, 273);
+            comboBoxEstadoMP.Location = new Point(272, 350);
             comboBoxEstadoMP.Name = "comboBoxEstadoMP";
             comboBoxEstadoMP.Size = new Size(121, 23);
             comboBoxEstadoMP.TabIndex = 28;
-            // 
-            // txtBuscarMP
-            // 
-            txtBuscarMP.Anchor = AnchorStyles.None;
-            txtBuscarMP.Location = new Point(440, 205);
-            txtBuscarMP.Name = "txtBuscarMP";
-            txtBuscarMP.Size = new Size(141, 23);
-            txtBuscarMP.TabIndex = 30;
             // 
             // dataGridView2
             // 
             dataGridView2.Anchor = AnchorStyles.None;
             dataGridView2.BackgroundColor = Color.Gainsboro;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(51, 395);
+            dataGridView2.Location = new Point(55, 488);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowTemplate.Height = 25;
             dataGridView2.Size = new Size(701, 135);
@@ -149,7 +139,7 @@
             label9.Anchor = AnchorStyles.None;
             label9.AutoSize = true;
             label9.Font = new Font("Yu Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label9.Location = new Point(619, 357);
+            label9.Location = new Point(538, 425);
             label9.Name = "label9";
             label9.Size = new Size(61, 17);
             label9.TabIndex = 49;
@@ -160,7 +150,7 @@
             label10.Anchor = AnchorStyles.None;
             label10.AutoSize = true;
             label10.Font = new Font("Yu Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label10.Location = new Point(559, 357);
+            label10.Location = new Point(544, 334);
             label10.Name = "label10";
             label10.Size = new Size(46, 17);
             label10.TabIndex = 48;
@@ -171,7 +161,7 @@
             label11.Anchor = AnchorStyles.None;
             label11.AutoSize = true;
             label11.Font = new Font("Yu Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label11.Location = new Point(477, 357);
+            label11.Location = new Point(534, 239);
             label11.Name = "label11";
             label11.Size = new Size(67, 17);
             label11.TabIndex = 45;
@@ -183,7 +173,7 @@
             btnEditar.BackColor = Color.LightSalmon;
             btnEditar.FlatStyle = FlatStyle.Popup;
             btnEditar.Image = Properties.Resources.edit11;
-            btnEditar.Location = new Point(553, 305);
+            btnEditar.Location = new Point(540, 281);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(55, 50);
             btnEditar.TabIndex = 52;
@@ -199,7 +189,7 @@
             btnEliminar.IconColor = Color.Black;
             btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnEliminar.IconSize = 36;
-            btnEliminar.Location = new Point(621, 305);
+            btnEliminar.Location = new Point(541, 372);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(55, 50);
             btnEliminar.TabIndex = 51;
@@ -216,7 +206,7 @@
             btnRegistrar.IconChar = FontAwesome.Sharp.IconChar.Registered;
             btnRegistrar.IconColor = Color.Black;
             btnRegistrar.IconFont = FontAwesome.Sharp.IconFont.Regular;
-            btnRegistrar.Location = new Point(481, 305);
+            btnRegistrar.Location = new Point(539, 186);
             btnRegistrar.Name = "btnRegistrar";
             btnRegistrar.Size = new Size(56, 50);
             btnRegistrar.TabIndex = 50;
@@ -227,25 +217,12 @@
             // 
             errorProvider1.ContainerControl = this;
             // 
-            // btnBuscar
-            // 
-            btnBuscar.Anchor = AnchorStyles.None;
-            btnBuscar.BackColor = Color.DeepSkyBlue;
-            btnBuscar.FlatStyle = FlatStyle.Popup;
-            btnBuscar.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            btnBuscar.Location = new Point(587, 205);
-            btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(97, 23);
-            btnBuscar.TabIndex = 59;
-            btnBuscar.Text = "Buscar";
-            btnBuscar.UseVisualStyleBackColor = false;
-            // 
             // label5
             // 
             label5.Anchor = AnchorStyles.None;
             label5.AutoSize = true;
             label5.Font = new Font("Yu Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(693, 358);
+            label5.Location = new Point(684, 715);
             label5.Name = "label5";
             label5.Size = new Size(48, 17);
             label5.TabIndex = 61;
@@ -263,7 +240,7 @@
             iconButton1.IconColor = Color.Black;
             iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton1.ImageAlign = ContentAlignment.TopCenter;
-            iconButton1.Location = new Point(688, 305);
+            iconButton1.Location = new Point(680, 662);
             iconButton1.Name = "iconButton1";
             iconButton1.Size = new Size(55, 50);
             iconButton1.TabIndex = 62;
@@ -276,10 +253,9 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Aquamarine;
-            ClientSize = new Size(804, 542);
+            ClientSize = new Size(804, 781);
             Controls.Add(iconButton1);
             Controls.Add(label5);
-            Controls.Add(btnBuscar);
             Controls.Add(btnEditar);
             Controls.Add(btnEliminar);
             Controls.Add(btnRegistrar);
@@ -287,7 +263,6 @@
             Controls.Add(label10);
             Controls.Add(label11);
             Controls.Add(dataGridView2);
-            Controls.Add(txtBuscarMP);
             Controls.Add(comboBoxEstadoMP);
             Controls.Add(label4);
             Controls.Add(comboBoxTipoMP);
@@ -315,7 +290,6 @@
         private ComboBox comboBoxTipoMP;
         private Label label4;
         private ComboBox comboBoxEstadoMP;
-        private TextBox txtBuscarMP;
         private DataGridView dataGridView2;
         private Label label9;
         private Label label10;
@@ -324,7 +298,6 @@
         private FontAwesome.Sharp.IconButton btnEliminar;
         private FontAwesome.Sharp.IconButton btnRegistrar;
         private ErrorProvider errorProvider1;
-        private Button btnBuscar;
         private Label label5;
         private FontAwesome.Sharp.IconButton iconButton1;
     }

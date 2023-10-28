@@ -44,6 +44,7 @@ public partial class HotelParanaContext : DbContext
     public virtual DbSet<TipoMedioPago> TipoMedioPagos { get; set; }
 
     public virtual DbSet<Usuario> Usuarios { get; set; }
+    public object MediosPago { get; internal set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         => optionsBuilder.UseSqlServer("Server=LAPTOP-2ULFU3L6\\SQLEXPRESS;Database=HotelParana;Integrated Security=True; TrustServerCertificate=True;");
