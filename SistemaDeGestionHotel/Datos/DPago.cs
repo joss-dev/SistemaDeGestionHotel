@@ -4,22 +4,22 @@ using SistemaDeGestionHotel.NEntidades;
 
 namespace SistemaDeGestionHotel.Datos
 {
-    internal class DServiciosAdicionales
+    internal class DPago
     {
         private HotelParanaContext dbHotelParana;
 
-        public DServiciosAdicionales()
+        public DPago()
         {
             dbHotelParana = new HotelParanaContext();
         }
 
-        public bool AgregarServicioAdicional(ServiciosAdicionale servicio)
+        public bool AgregarPago(Pago pago)
         {
             bool result = true;
             try
             {
-                // Intenta insertar el nuevo servicio adicional en la base de datos
-                dbHotelParana.Add(servicio);
+                // Intenta insertar el nuevo pago en la base de datos
+                dbHotelParana.Add(pago);
                 dbHotelParana.SaveChanges();
                 return result;
             }
@@ -30,15 +30,15 @@ namespace SistemaDeGestionHotel.Datos
             }
         }
 
-        public List<ServiciosAdicionale> GetServiciosAdicionales()
+        public List<Pago> GetPagos()
         {
-            return dbHotelParana.ServiciosAdicionales.ToList();
+            return dbHotelParana.Pagos.ToList();
         }
 
-        public ServiciosAdicionale GetServicioAdicionalByID(int id)
+        public Pago GetPagoByID(int id)
         {
-            return dbHotelParana.ServiciosAdicionales
-                                 .FirstOrDefault(s => s.IdServicioAdic == id);
+            return dbHotelParana.Pagos
+                                 .FirstOrDefault(p => p.IdPago == id);
         }
 
         public void GuardarCambios()
