@@ -120,6 +120,8 @@ CREATE TABLE Registro(
 	CONSTRAINT FK_ID_cliente FOREIGN KEY (ID_cliente) REFERENCES Cliente(ID_cliente),
 );
 
+
+//falto el pk
 CREATE TABLE Detalle_Servicios(
 	ID_registro INT NOT NULL,
 	ID_servicioAdic INT NOT NULL,
