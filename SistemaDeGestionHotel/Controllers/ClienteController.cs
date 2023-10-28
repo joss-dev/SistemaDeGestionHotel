@@ -30,7 +30,7 @@ namespace SistemaDeGestionHotel.Controllers
             return d_cliente.GetClientes();
         }
 
-        public Cliente GetClienteByDNI(string dni)
+        public Cliente GetClienteByDNI(int dni)
         {
             return d_cliente.GetClienteByDNI(dni);
         }
@@ -51,9 +51,9 @@ namespace SistemaDeGestionHotel.Controllers
             }
 
             // El cliente existe, actualiza sus propiedades
-            clienteExistente.Apellido = apellido;
-            clienteExistente.Nombre = nombre;
-            clienteExistente.Dni = int.Parse(dni);
+            clienteExistente.ApellidoCliente = apellido;
+            clienteExistente.NombreCliente = nombre;
+            clienteExistente.DniCliente = int.Parse(dni);
             clienteExistente.Estado = estado;
             clienteExistente.Telefono = telefono;
 
