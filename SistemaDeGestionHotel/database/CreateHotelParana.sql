@@ -121,7 +121,7 @@ CREATE TABLE Registro(
 );
 
 
-//falto el pk
+--falto el pk
 CREATE TABLE Detalle_Servicios(
 	ID_registro INT NOT NULL,
 	ID_servicioAdic INT NOT NULL,
