@@ -17,7 +17,7 @@ namespace SistemaDeGestionHotel.Controllers
             return d_tipoHabitacion.AgregarTipoHabitacion(tipoHabitacion);
         }
 
-        public List<TipoHabitacion> GetTiposHabitacion()
+        public List<String> GetTiposHabitacion()
         {
             return d_tipoHabitacion.GetTiposHabitacion();
         }

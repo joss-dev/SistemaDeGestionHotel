@@ -92,13 +92,14 @@ CREATE TABLE Cliente(
 );
 
 CREATE TABLE Habitacion(
-	Nro_habitacion INT NOT NULL IDENTITY(1, 1),
+	ID_Habitacion INT NOT NULL IDENTITY(1, 1),
+	Nro_habitacion INT NOT NULL,
 	Cantidad_camas INT NOT NULL,
 	Precio FLOAT NOT NULL,
 	ID_estado INT NOT NULL,
 	ID_tipoHab INT NOT NULL,
 	ID_piso INT NOT NULL,
-	CONSTRAINT PK_Nro_habitacion PRIMARY KEY (Nro_habitacion),
+	CONSTRAINT PK_ID_Habitacion PRIMARY KEY (ID_Habitacion),
 	CONSTRAINT FK_ID_estado FOREIGN KEY (ID_estado) REFERENCES Estado_habitacion(ID_estado),
 	CONSTRAINT FK_ID_tipoHab FOREIGN KEY (ID_tipoHab) REFERENCES Tipo_habitacion(ID_tipoHab),
 	CONSTRAINT FK_ID_piso FOREIGN KEY (ID_piso) REFERENCES Piso(ID_piso)
@@ -121,10 +122,11 @@ CREATE TABLE Registro(
 );
 
 
---falto el pk
+
 CREATE TABLE Detalle_Servicios(
 	ID_registro INT NOT NULL,
 	ID_servicioAdic INT NOT NULL,
+	CONSTRAINT PK_Detalle_servicios PRIMARY KEY (ID_registro, ID_servicioAdic),
 	CONSTRAINT FK_ID_registro FOREIGN KEY (ID_registro) REFERENCES Registro (ID_registro),
 	CONSTRAINT FK_ID_servicioAdic FOREIGN KEY(ID_servicioAdic) REFERENCES Servicios_adicionales(ID_servicioAdic)
 );
@@ -157,8 +159,6 @@ CREATE TABLE Consulta(
 INSERT INTO Tipo_habitacion(Nomb_tipo) 
 VALUES ('Simple'), ('Doble'), ('Triple');
 
-INSERT INTO Tipo_medioPago(Nomb_medioPago) 
-VALUES ('Tarjeta de Credito'), ('Tarjeta de debito'), ('Efectivo'), ('Transferencia');
 
 INSERT INTO Piso(Nro_piso) 
 VALUES (1), (2), (3);

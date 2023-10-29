@@ -30,9 +30,11 @@ namespace SistemaDeGestionHotel.Datos
             }
         }
 
-        public List<TipoHabitacion> GetTiposHabitacion()
+        public List<String> GetTiposHabitacion()
         {
-            return dbHotelParana.TipoHabitacions.ToList();
+            return dbHotelParana.TipoHabitacions
+                                .Select(hab => hab.NombTipo)
+                                .ToList();
         }
 
         public TipoHabitacion GetTipoHabitacionByID(int id)

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SistemaDeGestionHotel.Controllers;
+using SistemaDeGestionHotel.NEntidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,13 +14,17 @@ namespace SistemaDeGestionHotel.views.admin
 {
     public partial class administracionHabitaciones : Form
     {
+
+        TipoHabitacionController c_tipoHabitacion = new TipoHabitacionController();
+        EstadoHabitacionController c_estadoHabitacion = new EstadoHabitacionController();
+
         public administracionHabitaciones()
         {
             InitializeComponent();
 
-            // Crear las listas de opciones
-            List<string> opciones = new List<string>() { "", "Habitación simple", "Habitación doble", "Habitación triple" };
-            List<string> opciones2 = new List<string>() { "", "Libre", "Ocupada", "Habilitada", "Deshabilitada", "Eliminada" };
+
+            List<String> tipoHabitaciones = c_tipoHabitacion.GetTiposHabitacion();
+            List<EstadoHabitacion> estadoHabitaciones = c_estadoHabitacion.GetEstadosHabitaciones();
 
             // Limpiar los comboBox
             comboBoxTipoHab.Items.Clear();
@@ -26,12 +32,12 @@ namespace SistemaDeGestionHotel.views.admin
 
 
             // Agregar las opciones a los comboBoxTipoHab & comoBoxEstado
-            foreach (string opcion in opciones)
+            foreach (string opcion in tipoHabitaciones)
             {
                 comboBoxTipoHab.Items.Add(opcion);
             }
 
-            foreach (string opcion2 in opciones2)
+            foreach (string opcion2 in estadoHabitaciones)
             {
                 comboBoxEstado.Items.Add(opcion2);
             }
