@@ -1,4 +1,6 @@
 ﻿using Microsoft.VisualBasic;
+using SistemaDeGestionHotel.Controllers;
+using SistemaDeGestionHotel.NEntidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +16,7 @@ namespace SistemaDeGestionHotel.views.admin
 {
     public partial class gestionOfertas : Form
     {
+        OfertaRecargoControllers oferta_recargoController = new OfertaRecargoControllers();
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -23,6 +26,9 @@ namespace SistemaDeGestionHotel.views.admin
         public gestionOfertas()
         {
             InitializeComponent();
+
+            dataGridView2.DataSource = oferta_recargoController.ObtenerOfertaRecargo();
+            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             // Agregar elementos a la lista desplegable.
             comboBoxEstado.Items.Add("Activo");
@@ -55,6 +61,130 @@ namespace SistemaDeGestionHotel.views.admin
         private void ValidacionRecargo(object sender, KeyEventArgs e)
         {
             ValidacionTextBox.ValidarSoloNumeros(txtRecargo, errorProvider1);
+        }
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            // Verificar si alguno de los campos está incompleto
+            if (ValidacionTextBox.ValidarNoVacio(txtNombre, txtDescuento, txtRecargo))
+            {
+                // Mostrar un mensaje de error
+                MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Obtener los valores de los campos de la vista
+            string nombre = txtNombre.Text;
+            DateTime fechaDesde = dateTimeInicio.Value;
+            DateTime fechaHasta = dateTimeInicio.Value;
+            float porcentajeDescuento = float.Parse(txtDescuento.Text);
+            float porcentajeRecargo = float.Parse(txtRecargo.Text);
+
+            // Llamar al controlador para cargar la oferta o recargo
+            bool exito = oferta_recargoController.CargarOfertaRecargo(nombre, fechaDesde, fechaHasta, porcentajeDescuento, porcentajeRecargo);
+
+            if (exito)
+            {
+                MessageBox.Show("Oferta o recargo registrado con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Limpia los campos de entrada después de una inserción exitosa si es necesario
+                LimpiarCampos();
+            }
+            else
+            {
+                MessageBox.Show("Error al registrar la oferta o recargo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void LimpiarCampos()
+        {
+            txtNombre.Clear();
+            txtDescuento.Clear();
+            txtRecargo.Clear();
+            // Limpia otros campos si es necesario
+        }
+
+        public void CargarDataGrid(object sender, EventArgs e)
+        {
+            var ofertaRecargo = oferta_recargoController.ObtenerOfertaRecargo();
+
+            var datosParaMostrar = ofertaRecargo.Select(or => new
+            {
+                IdOfertaRecargo = or.IdOfertaRecargo,
+                NombOfertaRecargo = or.NombOfertaRecargo,
+                FechaDesde = or.FechaDesde,
+                FechaHasta = or.FechaHasta,
+                Estado = or.Estado == 1 ? "Activo" : "Desactivado",
+                PorcentajeDescuento = or.PorcentajeDescuento,
+                PorcentajeRecargo = or.PorcentajeRecargo
+            }).ToList();
+
+            dataGridView2.DataSource = datosParaMostrar;
+            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (ValidacionTextBox.ValidarNoVacio(txtNombre, txtDescuento, txtRecargo))
+            {
+                MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+                int idOfertaRecargo = -1; // Valor predeterminado si no se selecciona ninguna oferta
+
+                if (dataGridView2.SelectedRows.Count > 0)
+                {
+                    // Si al menos una fila está seleccionada, obtén el índice de la primera fila seleccionada
+                    int rowIndex = dataGridView2.SelectedRows[0].Index;
+
+                    DataGridViewRow row = dataGridView2.Rows[rowIndex];
+                    idOfertaRecargo = int.Parse(row.Cells["IdOfertaRecargo"].Value.ToString());
+                }
+                if (idOfertaRecargo != -1)
+                {
+                    OfertasRecargo OREditar = oferta_recargoController.TraerORPorID(idOfertaRecargo);
+
+                    MsgBoxResult ask = (MsgBoxResult)MessageBox.Show("Seguro desea editar este concepto?", "Confirmacion de edición", MessageBoxButtons.YesNo);
+                    if (ask == MsgBoxResult.Yes)
+                    {
+                        // Para convertir los valores de descuento y recargo a float.
+                        if (float.TryParse(txtDescuento.Text, out float descuento) &&
+                            float.TryParse(txtRecargo.Text, out float recargo))
+                        {
+                            // Para establecer los valores de los controles adecuadamente.
+                            DateTime fechaInicio = dateTimeInicio.Value;
+                            DateTime fechaFin = dateTimeFin.Value;
+                            int estado = comboBoxEstado.SelectedIndex;
+
+                            bool result = oferta_recargoController.EditarOfertaRecargo(OREditar.IdOfertaRecargo, txtNombre.Text, fechaInicio, fechaFin, estado, descuento, recargo);
+                            if (result)
+                            {
+                                idOfertaRecargo = -1;
+                                dataGridView2.DataSource = oferta_recargoController.ObtenerOfertaRecargo();
+                                txtNombre.Text = string.Empty;
+                                dateTimeInicio.Value = DateTime.Now; // Establece la fecha actual o la deseada.
+                                dateTimeFin.Value = DateTime.Now; // Establece la fecha actual o la deseada.
+                                comboBoxEstado.SelectedIndex = 0; // Establece el índice deseado.
+                                txtDescuento.Text = string.Empty;
+                                txtRecargo.Text = string.Empty;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Ocurrio un error");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("El correo electronico no es valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("No selecciono ningun usuario");
+                    }
+                }
+            }
         }
 
         private void btnMinimized_Click(object sender, EventArgs e)
@@ -91,7 +221,7 @@ namespace SistemaDeGestionHotel.views.admin
         private void gestionOfertas_Load(object sender, EventArgs e)
         {
             this.KeyDown += new KeyEventHandler(cerrar);
-            
+
             // Establecer la fecha mínima de hoy
             dateTimeInicio.MinDate = DateTime.Today;
 
@@ -106,18 +236,6 @@ namespace SistemaDeGestionHotel.views.admin
                 this.Close();
             }
         }
-
-        private void btnRegistrar_Click(object sender, EventArgs e)
-        {
-            // Verificar si alguno de los campos está incompleto
-            if (ValidacionTextBox.ValidarNoVacio(txtNombre, txtDescuento, txtRecargo))
-            {
-                // Mostrar un mensaje de error
-                MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-        }
-
         private void btnVolver_Click(object sender, EventArgs e)
         {
             MsgBoxResult result = (MsgBoxResult)MessageBox.Show("¿Está seguro de que desea cerrar el formulario?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
