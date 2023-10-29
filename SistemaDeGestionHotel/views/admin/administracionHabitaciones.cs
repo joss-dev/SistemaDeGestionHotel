@@ -37,10 +37,10 @@ namespace SistemaDeGestionHotel.views.admin
                 comboBoxTipoHab.Items.Add(opcion);
             }
 
-            foreach (string opcion2 in estadoHabitaciones)
-            {
-                comboBoxEstado.Items.Add(opcion2);
-            }
+            //foreach (string opcion2 in estadoHabitaciones)
+            //{
+            //    comboBoxEstado.Items.Add(opcion2);
+            //}
         }
 
         private void ValidacionNroHabitacion(object sender, EventArgs e)

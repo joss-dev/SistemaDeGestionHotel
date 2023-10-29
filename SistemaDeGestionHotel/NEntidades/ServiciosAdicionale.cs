@@ -12,4 +12,6 @@ public partial class ServiciosAdicionale
     public double Precio { get; set; }
 
     public int Estado { get; set; }
+
+    public virtual ICollection<Registro> IdRegistros { get; set; } = new List<Registro>();
 }

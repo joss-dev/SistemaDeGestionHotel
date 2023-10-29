@@ -30,4 +30,6 @@ public partial class Registro
     public virtual Habitacion NroHabitacionNavigation { get; set; } = null!;
 
     public virtual ICollection<Pago> Pagos { get; set; } = new List<Pago>();
+
+    public virtual ICollection<ServiciosAdicionale> IdServicioAdics { get; set; } = new List<ServiciosAdicionale>();
 }

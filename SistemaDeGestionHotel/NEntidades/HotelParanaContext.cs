@@ -19,8 +19,6 @@ public partial class HotelParanaContext : DbContext
 
     public virtual DbSet<Consultum> Consulta { get; set; }
 
-    public virtual DbSet<DetalleServicio> DetalleServicios { get; set; }
-
     public virtual DbSet<EstadoHabitacion> EstadoHabitacions { get; set; }
 
     public virtual DbSet<Habitacion> Habitacions { get; set; }
@@ -44,10 +42,10 @@ public partial class HotelParanaContext : DbContext
     public virtual DbSet<TipoMedioPago> TipoMedioPagos { get; set; }
 
     public virtual DbSet<Usuario> Usuarios { get; set; }
-    public object MediosPago { get; internal set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Server=LAPTOP-2ULFU3L6\\SQLEXPRESS;Database=HotelParana;Integrated Security=True; TrustServerCertificate=True;");
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+        => optionsBuilder.UseSqlServer("Server=DESKTOP-G7GUADO\\SQLEXPRESS;Database=HotelParana;Integrated Security=True; TrustServerCertificate=True;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -97,26 +95,6 @@ public partial class HotelParanaContext : DbContext
                 .HasConstraintName("FK_ID_usuarioCons");
         });
 
-        modelBuilder.Entity<DetalleServicio>(entity =>
-        {
-            entity
-                .HasNoKey()
-                .ToTable("Detalle_Servicios");
-
-            entity.Property(e => e.IdRegistro).HasColumnName("ID_registro");
-            entity.Property(e => e.IdServicioAdic).HasColumnName("ID_servicioAdic");
-
-            entity.HasOne(d => d.IdRegistroNavigation).WithMany()
-                .HasForeignKey(d => d.IdRegistro)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_ID_registro");
-
-            entity.HasOne(d => d.IdServicioAdicNavigation).WithMany()
-                .HasForeignKey(d => d.IdServicioAdic)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_ID_servicioAdic");
-        });
-
         modelBuilder.Entity<EstadoHabitacion>(entity =>
         {
             entity.HasKey(e => e.IdEstado).HasName("PK_ID_estado");
@@ -132,15 +110,16 @@ public partial class HotelParanaContext : DbContext
 
         modelBuilder.Entity<Habitacion>(entity =>
         {
-            entity.HasKey(e => e.NroHabitacion).HasName("PK_Nro_habitacion");
+            entity.HasKey(e => e.IdHabitacion).HasName("PK_ID_Habitacion");
 
             entity.ToTable("Habitacion");
 
-            entity.Property(e => e.NroHabitacion).HasColumnName("Nro_habitacion");
+            entity.Property(e => e.IdHabitacion).HasColumnName("ID_Habitacion");
             entity.Property(e => e.CantidadCamas).HasColumnName("Cantidad_camas");
             entity.Property(e => e.IdEstado).HasColumnName("ID_estado");
             entity.Property(e => e.IdPiso).HasColumnName("ID_piso");
             entity.Property(e => e.IdTipoHab).HasColumnName("ID_tipoHab");
+            entity.Property(e => e.NroHabitacion).HasColumnName("Nro_habitacion");
 
             entity.HasOne(d => d.IdEstadoNavigation).WithMany(p => p.Habitacions)
                 .HasForeignKey(d => d.IdEstado)
@@ -287,7 +266,26 @@ public partial class HotelParanaContext : DbContext
             entity.HasOne(d => d.NroHabitacionNavigation).WithMany(p => p.Registros)
                 .HasForeignKey(d => d.NroHabitacion)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Nro_habitacion");
+                .HasConstraintName("FK_ID_habitacion");
+
+            entity.HasMany(d => d.IdServicioAdics).WithMany(p => p.IdRegistros)
+                .UsingEntity<Dictionary<string, object>>(
+                    "DetalleServicio",
+                    r => r.HasOne<ServiciosAdicionale>().WithMany()
+                        .HasForeignKey("IdServicioAdic")
+                        .OnDelete(DeleteBehavior.ClientSetNull)
+                        .HasConstraintName("FK_ID_servicioAdic"),
+                    l => l.HasOne<Registro>().WithMany()
+                        .HasForeignKey("IdRegistro")
+                        .OnDelete(DeleteBehavior.ClientSetNull)
+                        .HasConstraintName("FK_ID_registro"),
+                    j =>
+                    {
+                        j.HasKey("IdRegistro", "IdServicioAdic").HasName("PK_Detalle_servicios");
+                        j.ToTable("Detalle_Servicios");
+                        j.IndexerProperty<int>("IdRegistro").HasColumnName("ID_registro");
+                        j.IndexerProperty<int>("IdServicioAdic").HasColumnName("ID_servicioAdic");
+                    });
         });
 
         modelBuilder.Entity<ServiciosAdicionale>(entity =>

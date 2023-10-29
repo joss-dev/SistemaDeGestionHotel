@@ -5,6 +5,8 @@ namespace SistemaDeGestionHotel.NEntidades;
 
 public partial class Habitacion
 {
+    public int IdHabitacion { get; set; }
+
     public int NroHabitacion { get; set; }
 
     public int CantidadCamas { get; set; }
