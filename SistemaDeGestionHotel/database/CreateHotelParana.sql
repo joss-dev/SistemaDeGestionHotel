@@ -117,7 +117,7 @@ CREATE TABLE Registro(
 	ID_cliente INT NOT NULL,
 	CONSTRAINT PK_ID_registro PRIMARY KEY (ID_registro),
 	CONSTRAINT FK_ID_usuario FOREIGN KEY (ID_usuario) REFERENCES Usuario(ID_usuario),
-	CONSTRAINT FK_Nro_habitacion FOREIGN KEY (Nro_habitacion) REFERENCES Habitacion (Nro_habitacion),
+	CONSTRAINT FK_ID_habitacion FOREIGN KEY (Nro_habitacion) REFERENCES Habitacion (ID_Habitacion),
 	CONSTRAINT FK_ID_cliente FOREIGN KEY (ID_cliente) REFERENCES Cliente(ID_cliente),
 );
 
