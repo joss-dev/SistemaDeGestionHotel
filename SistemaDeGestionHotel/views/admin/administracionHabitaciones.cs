@@ -246,24 +246,33 @@ namespace SistemaDeGestionHotel.views.admin
 
         private void FormatoDataGrid(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.ColumnIndex == dataGridView1.Columns["EstadoNro"].Index)
+            //agrega color a las filas
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
-                // Obtén el valor del estado en la celda actual.
-                string Estado = dataGridView1.Rows[e.RowIndex].Cells["EstadoNro"].Value.ToString();
+                // Especifica el nombre de la columna que contiene el valor para determinar el color
+                string columnName = "EstadoNro";
 
-                Color colordesh = Color.Red;
+                // Comprueba si la columna actual es la que deseas evaluar
+                if (dataGridView1.Columns[e.ColumnIndex].Name == columnName)
+                {
+                    // Obtiene el valor de la celda actual
+                    int cellValue = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
 
-                // Establece el color de fondo basado en el valor del estado.
-                if (Estado.Equals("Deshabilitada", StringComparison.OrdinalIgnoreCase))
-                {
-                    e.CellStyle.BackColor = colordesh;
-                }
-                else
-                {
-                    // Restaura el color de fondo predeterminado para otros valores de estado.
-                    e.CellStyle.BackColor = dataGridView1.DefaultCellStyle.BackColor;
+                    // Cambia el color de fondo de la fila en función del valor de la celda
+                    if (cellValue == 5)
+                    {
+                        dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Red;
+                        dataGridView1.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.White;
+                    }
+                    else
+                    {
+                        // Restablece los colores predeterminados si no se cumple ninguna condición
+                        dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = dataGridView1.DefaultCellStyle.BackColor;
+                        dataGridView1.Rows[e.RowIndex].DefaultCellStyle.ForeColor = dataGridView1.DefaultCellStyle.ForeColor;
+                    }
                 }
             }
+            
         }
 
         private void btnHabilitarHabitacion_Click(object sender, EventArgs e)
