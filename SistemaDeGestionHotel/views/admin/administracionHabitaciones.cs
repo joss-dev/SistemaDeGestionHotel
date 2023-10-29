@@ -1,4 +1,5 @@
-﻿using SistemaDeGestionHotel.Controllers;
+﻿using Microsoft.VisualBasic;
+using SistemaDeGestionHotel.Controllers;
 using SistemaDeGestionHotel.Datos;
 using SistemaDeGestionHotel.NEntidades;
 using System;
@@ -157,6 +158,7 @@ namespace SistemaDeGestionHotel.views.admin
                 CantidadCamas = c.CantidadCamas,
                 Precio = c.Precio,
                 NroPiso = c.IdPiso,
+                EstadoNro = c.IdEstado,
                 Estado = c.IdEstadoNavigation.NombEstado,
                 TipoHabitacion = c.IdTipoHabNavigation.NombTipo
             }).ToList();
@@ -184,6 +186,247 @@ namespace SistemaDeGestionHotel.views.admin
                 txtCosto.Text = row.Cells["Precio"].Value.ToString();
                 comboBoxEstado.SelectedItem = row.Cells["Estado"].Value.ToString();
                 comboBoxTipoHab.SelectedItem = row.Cells["TipoHabitacion"].Value.ToString();
+            }
+        }
+
+        private void btnDeshabHabitacion_Click(object sender, EventArgs e)
+        {
+            int idHab = -1; // Valor predeterminado si no se selecciona ningúna habitacion
+
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                // Si al menos una fila está seleccionada, obtén el índice de la primera fila seleccionada
+                int rowIndex = dataGridView1.SelectedRows[0].Index;
+
+                DataGridViewRow row = dataGridView1.Rows[rowIndex];
+                idHab = int.Parse(row.Cells["IDHabitacion"].Value.ToString());
+            }
+            if (idHab != -1)
+            {
+                Habitacion habitacion = c_habitacion.GetHabitacionByID(idHab);
+
+                MsgBoxResult ask = (MsgBoxResult)MessageBox.Show("Seguro desea deshabilitar la habitacion ID " + habitacion.IdHabitacion.ToString() + "?", "Confirmacion de edición", MessageBoxButtons.YesNo);
+                if (ask == MsgBoxResult.Yes)
+                {
+                    if (c_habitacion.GetHabitacionByID(idHab).IdEstado != 4)
+                    {
+                        bool result = c_habitacion.DeshabilitarHabitacion(idHab);
+                        if (result)
+                        {
+                            MessageBox.Show("La habitacion: " + habitacion.IdHabitacion.ToString() + " se deshabilito correctamente", "Confirmado", MessageBoxButtons.OK);
+
+                            idHab = -1;
+
+                            this.CargarDatosDataGrid();
+
+                            txtCantCamas.Text = String.Empty;
+                            txtCosto.Text = String.Empty;
+                            txtNroHab.Text = String.Empty;
+                            txtPiso.Text = String.Empty;
+                            comboBoxEstado.SelectedIndex = 0;
+                            comboBoxTipoHab.SelectedIndex = 0;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ocurrio un error");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("La habitacion ya se encuentra deshabilitada");
+                    }
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("No selecciono ninguna habitacion");
+            }
+        }
+
+        private void FormatoDataGrid(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex == dataGridView1.Columns["EstadoNro"].Index)
+            {
+                // Obtén el valor del estado en la celda actual.
+                string Estado = dataGridView1.Rows[e.RowIndex].Cells["EstadoNro"].Value.ToString();
+
+                Color colordesh = Color.Red;
+
+                // Establece el color de fondo basado en el valor del estado.
+                if (Estado.Equals("Deshabilitada", StringComparison.OrdinalIgnoreCase))
+                {
+                    e.CellStyle.BackColor = colordesh;
+                }
+                else
+                {
+                    // Restaura el color de fondo predeterminado para otros valores de estado.
+                    e.CellStyle.BackColor = dataGridView1.DefaultCellStyle.BackColor;
+                }
+            }
+        }
+
+        private void btnHabilitarHabitacion_Click(object sender, EventArgs e)
+        {
+            int idHab = -1; // Valor predeterminado si no se selecciona ningúna habitacion
+
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                // Si al menos una fila está seleccionada, obtén el índice de la primera fila seleccionada
+                int rowIndex = dataGridView1.SelectedRows[0].Index;
+
+                DataGridViewRow row = dataGridView1.Rows[rowIndex];
+                idHab = int.Parse(row.Cells["IDHabitacion"].Value.ToString());
+            }
+            if (idHab != -1)
+            {
+                Habitacion habitacion = c_habitacion.GetHabitacionByID(idHab);
+
+                MsgBoxResult ask = (MsgBoxResult)MessageBox.Show("Seguro desea habilitar la habitacion ID " + habitacion.IdHabitacion.ToString() + "?", "Confirmacion de edición", MessageBoxButtons.YesNo);
+                if (ask == MsgBoxResult.Yes)
+                {
+                    if (c_habitacion.GetHabitacionByID(idHab).IdEstado == 4 || c_habitacion.GetHabitacionByID(idHab).IdEstado == 5)
+                    {
+                        bool result = c_habitacion.AltaHabitacion(idHab);
+                        if (result)
+                        {
+                            MessageBox.Show("La habitacion: " + habitacion.IdHabitacion.ToString() + " se habilito correctamente", "Confirmado", MessageBoxButtons.OK);
+
+                            idHab = -1;
+
+                            this.CargarDatosDataGrid();
+
+                            txtCantCamas.Text = String.Empty;
+                            txtCosto.Text = String.Empty;
+                            txtNroHab.Text = String.Empty;
+                            txtPiso.Text = String.Empty;
+                            comboBoxEstado.SelectedIndex = 0;
+                            comboBoxTipoHab.SelectedIndex = 0;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ocurrio un error");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("La habitacion ya se encuentra habilitada");
+                    }
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("No selecciono ninguna habitacion");
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            int idHab = -1; // Valor predeterminado si no se selecciona ningúna habitacion
+
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                // Si al menos una fila está seleccionada, obtén el índice de la primera fila seleccionada
+                int rowIndex = dataGridView1.SelectedRows[0].Index;
+
+                DataGridViewRow row = dataGridView1.Rows[rowIndex];
+                idHab = int.Parse(row.Cells["IDHabitacion"].Value.ToString());
+            }
+            if (idHab != -1)
+            {
+                Habitacion habitacion = c_habitacion.GetHabitacionByID(idHab);
+
+                MsgBoxResult ask = (MsgBoxResult)MessageBox.Show("Seguro desea eliminar la habitacion ID " + habitacion.IdHabitacion.ToString() + "?", "Confirmacion de edición", MessageBoxButtons.YesNo);
+                if (ask == MsgBoxResult.Yes)
+                {
+                    if (c_habitacion.GetHabitacionByID(idHab).IdEstado != 5)
+                    {
+                        bool result = c_habitacion.BajaHabitacion(idHab);
+                        if (result)
+                        {
+                            MessageBox.Show("La habitacion: " + habitacion.IdHabitacion.ToString() + " se elimino correctamente", "Confirmado", MessageBoxButtons.OK);
+
+                            idHab = -1;
+
+                            this.CargarDatosDataGrid();
+
+                            txtCantCamas.Text = String.Empty;
+                            txtCosto.Text = String.Empty;
+                            txtNroHab.Text = String.Empty;
+                            txtPiso.Text = String.Empty;
+                            comboBoxEstado.SelectedIndex = 0;
+                            comboBoxTipoHab.SelectedIndex = 0;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ocurrio un error");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("La habitacion ya se encuentra eliminada");
+                    }
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("No selecciono ninguna habitacion");
+            }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (ValidacionTextBox.ValidarNoVacio(txtNroHab, txtCosto, txtCantCamas, txtPiso))
+            { 
+                MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+                int idhab = -1; // Valor predeterminado si no se selecciona ningúna habitacion
+
+                if (dataGridView1.SelectedRows.Count > 0)
+                {
+                    // Si al menos una fila está seleccionada, obtén el índice de la primera fila seleccionada
+                    int rowIndex = dataGridView1.SelectedRows[0].Index;
+
+                    DataGridViewRow row = dataGridView1.Rows[rowIndex];
+                    idhab = int.Parse(row.Cells["IDHabitacion"].Value.ToString());
+                }
+                if (idhab != -1)
+                {
+                    Habitacion habitacionEditar = c_habitacion.GetHabitacionByID(idhab);
+
+                    MsgBoxResult ask = (MsgBoxResult)MessageBox.Show("Seguro desea editar la habitacion con ID " + habitacionEditar.IdHabitacion.ToString() + "?", "Confirmacion de edición", MessageBoxButtons.YesNo);
+                    if (ask == MsgBoxResult.Yes)
+                    {
+
+                        bool result = c_habitacion.EditarHabitacion(habitacionEditar.IdHabitacion, int.Parse(txtNroHab.Text), int.Parse(txtCantCamas.Text), float.Parse(txtCosto.Text), comboBoxEstado.SelectedIndex + 1, comboBoxTipoHab.SelectedIndex + 1, int.Parse(txtPiso.Text));
+                            if (result)
+                            {
+                                MessageBox.Show("La habitacion con ID: " + habitacionEditar.IdHabitacion.ToString() + " se edito correctamente", "Confirmado", MessageBoxButtons.OK);
+
+                                idhab = -1;
+                                this.CargarDatosDataGrid();
+                                txtCantCamas.Text = String.Empty;
+                                txtCosto.Text = String.Empty;
+                                txtNroHab.Text = String.Empty;
+                                txtPiso.Text = String.Empty;
+                                comboBoxEstado.SelectedIndex = 0;
+                                comboBoxTipoHab.SelectedIndex = 0;
+                        }
+                            else
+                            {
+                                MessageBox.Show("Ocurrio un error");
+                            }
+                        }
+                    }
+                else
+                {
+                    MessageBox.Show("No selecciono ninguna habitacion");
+                }
             }
         }
     }

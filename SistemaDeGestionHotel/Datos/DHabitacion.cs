@@ -38,10 +38,10 @@ namespace SistemaDeGestionHotel.Datos
                     .ToList();
         }
 
-        public Habitacion GetHabitacionByNro(int nrodehabitation)
+        public Habitacion GetHabitacionByID(int iddehabitation)
         {
             return dbHotelParana.Habitacions
-                                 .FirstOrDefault(h => h.NroHabitacion == nrodehabitation);
+                                 .FirstOrDefault(h => h.IdHabitacion == iddehabitation);
         }
 
 

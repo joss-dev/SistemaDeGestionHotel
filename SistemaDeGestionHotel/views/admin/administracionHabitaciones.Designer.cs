@@ -253,6 +253,7 @@
             btnEliminar.Size = new Size(71, 71);
             btnEliminar.TabIndex = 51;
             btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnHabilitarHabitacion
             // 
@@ -264,6 +265,7 @@
             btnHabilitarHabitacion.Size = new Size(71, 71);
             btnHabilitarHabitacion.TabIndex = 53;
             btnHabilitarHabitacion.UseVisualStyleBackColor = true;
+            btnHabilitarHabitacion.Click += btnHabilitarHabitacion_Click;
             // 
             // label12
             // 
@@ -319,6 +321,7 @@
             btnDeshabHabitacion.Size = new Size(71, 71);
             btnDeshabHabitacion.TabIndex = 58;
             btnDeshabHabitacion.UseVisualStyleBackColor = true;
+            btnDeshabHabitacion.Click += btnDeshabHabitacion_Click;
             // 
             // btnEditar
             // 
@@ -330,6 +333,7 @@
             btnEditar.Size = new Size(71, 71);
             btnEditar.TabIndex = 59;
             btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.Click += btnEditar_Click;
             // 
             // dataGridView1
             // 
@@ -341,6 +345,7 @@
             dataGridView1.Size = new Size(741, 158);
             dataGridView1.TabIndex = 60;
             dataGridView1.CellClick += CargaDatosTextBox;
+            dataGridView1.CellFormatting += FormatoDataGrid;
             // 
             // habitacionBindingSource
             // 

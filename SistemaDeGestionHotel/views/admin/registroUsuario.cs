@@ -156,8 +156,6 @@ namespace SistemaDeGestionHotel.views.admin
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-
-
             if ((ValidacionTextBox.ValidarNoVacio(txtNombre, txtApellido, txtDNI, txtCorreoElec, txtDireccion, txtUserName) || comboBoxTipoPerfil.SelectedIndex < 0))
             {
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
