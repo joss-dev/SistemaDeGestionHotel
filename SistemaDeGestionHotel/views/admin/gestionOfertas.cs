@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualBasic;
 using SistemaDeGestionHotel.Controllers;
+using SistemaDeGestionHotel.Datos;
 using SistemaDeGestionHotel.NEntidades;
 using System;
 using System.Collections.Generic;
@@ -30,9 +31,11 @@ namespace SistemaDeGestionHotel.views.admin
             dataGridView2.DataSource = oferta_recargoController.ObtenerOfertaRecargo();
             dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
+            this.dataGridView2.SelectionChanged += new System.EventHandler(this.dataGridView2_SelectionChanged);
+
             // Agregar elementos a la lista desplegable.
-            comboBoxEstado.Items.Add("Activo");
-            comboBoxEstado.Items.Add("Inactivo");
+            comboBoxEstado.Items.Add("Finalizada");
+            comboBoxEstado.Items.Add("Activa");
 
             // Establecer los elementos seleccionados por defecto.
             comboBoxEstado.SelectedIndex = 0;
@@ -75,10 +78,14 @@ namespace SistemaDeGestionHotel.views.admin
 
             // Obtener los valores de los campos de la vista
             string nombre = txtNombre.Text;
-            DateTime fechaDesde = dateTimeInicio.Value;
-            DateTime fechaHasta = dateTimeInicio.Value;
+            DateTime fechaDesde = dateTimeInicio.Value;  // Debes usar Value para obtener la fecha seleccionada
+            DateTime fechaHasta = dateTimeFin.Value;
             float porcentajeDescuento = float.Parse(txtDescuento.Text);
             float porcentajeRecargo = float.Parse(txtRecargo.Text);
+
+            // Realizar la conversión de DateTime a DATE antes de llamar a CargarOfertaRecargo
+            DateTime fechaDesdeConvertida = fechaDesde.Date;
+            DateTime fechaHastaConvertida = fechaHasta.Date;
 
             // Llamar al controlador para cargar la oferta o recargo
             bool exito = oferta_recargoController.CargarOfertaRecargo(nombre, fechaDesde, fechaHasta, porcentajeDescuento, porcentajeRecargo);
@@ -93,6 +100,7 @@ namespace SistemaDeGestionHotel.views.admin
             {
                 MessageBox.Show("Error al registrar la oferta o recargo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            dataGridView2.DataSource = oferta_recargoController.ObtenerOfertaRecargo();
         }
 
         private void LimpiarCampos()
@@ -113,7 +121,7 @@ namespace SistemaDeGestionHotel.views.admin
                 NombOfertaRecargo = or.NombOfertaRecargo,
                 FechaDesde = or.FechaDesde,
                 FechaHasta = or.FechaHasta,
-                Estado = or.Estado == 1 ? "Activo" : "Desactivado",
+                Estado = or.Estado == 1 ? "Activo" : "Finalizada",
                 PorcentajeDescuento = or.PorcentajeDescuento,
                 PorcentajeRecargo = or.PorcentajeRecargo
             }).ToList();
@@ -139,7 +147,7 @@ namespace SistemaDeGestionHotel.views.admin
                     int rowIndex = dataGridView2.SelectedRows[0].Index;
 
                     DataGridViewRow row = dataGridView2.Rows[rowIndex];
-                    idOfertaRecargo = int.Parse(row.Cells["IdOfertaRecargo"].Value.ToString());
+                    idOfertaRecargo = int.Parse(row.Cells["idOfertaRecargoDataGridViewTextBoxColumn"].Value.ToString());
                 }
                 if (idOfertaRecargo != -1)
                 {
@@ -153,8 +161,8 @@ namespace SistemaDeGestionHotel.views.admin
                             float.TryParse(txtRecargo.Text, out float recargo))
                         {
                             // Para establecer los valores de los controles adecuadamente.
-                            DateTime fechaInicio = dateTimeInicio.Value;
-                            DateTime fechaFin = dateTimeFin.Value;
+                            DateTime fechaInicio = dateTimeInicio.MinDate;
+                            DateTime fechaFin = dateTimeFin.MinDate;
                             int estado = comboBoxEstado.SelectedIndex;
 
                             bool result = oferta_recargoController.EditarOfertaRecargo(OREditar.IdOfertaRecargo, txtNombre.Text, fechaInicio, fechaFin, estado, descuento, recargo);
@@ -184,6 +192,25 @@ namespace SistemaDeGestionHotel.views.admin
                         MessageBox.Show("No selecciono ningun usuario");
                     }
                 }
+            }
+        }
+
+        private void dataGridView2_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridView2.SelectedRows.Count > 0)
+            {
+                int rowIndex = dataGridView2.SelectedRows[0].Index;
+                DataGridViewRow row = dataGridView2.Rows[rowIndex];
+                int idOfertaRecargo = int.Parse(row.Cells["idOfertaRecargoDataGridViewTextBoxColumn"].Value.ToString());
+
+                OfertasRecargo OREditar = oferta_recargoController.TraerORPorID(idOfertaRecargo);
+
+                txtNombre.Text = OREditar.NombOfertaRecargo;
+                dateTimeInicio.Value = OREditar.FechaDesde;
+                dateTimeFin.MinDate = OREditar.FechaHasta;
+                comboBoxEstado.SelectedIndex = OREditar.Estado;
+                txtDescuento.Text = OREditar.PorcentajeDescuento.ToString();
+                txtRecargo.Text = OREditar.PorcentajeRecargo.ToString();
             }
         }
 
@@ -247,5 +274,11 @@ namespace SistemaDeGestionHotel.views.admin
                 this.Close();
             }
         }
+
+        private void BTNLimpiar_Click(object sender, EventArgs e)
+        {
+            this.LimpiarCampos();
+        }
     }
 }
+

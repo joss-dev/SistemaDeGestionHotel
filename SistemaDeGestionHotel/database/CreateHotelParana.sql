@@ -181,4 +181,5 @@ SELECT * FROM Estado_habitacion;
 SELECT * FROM Usuario;
 Select * FROM Medios_pago;
 SELECT * FROM Tipo_medioPago;
+SELECT * FROM Ofertas_recargo;
 
