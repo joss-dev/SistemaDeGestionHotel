@@ -77,7 +77,7 @@ namespace SistemaDeGestionHotel.views.admin
                 {
                     Consultum ConsultaCambioEstado = consultaController.TraerConsultaPorID(idConsulta);
 
-                    MsgBoxResult ask = (MsgBoxResult)MessageBox.Show("¿Seguro desea marcar como resuelta?: " + "?", "Confirmacion de edición", MessageBoxButtons.YesNo);
+                    MsgBoxResult ask = (MsgBoxResult)MessageBox.Show("¿Seguro desea marcar como resuelta?", "Confirmacion", MessageBoxButtons.YesNo);
                     if (ask == MsgBoxResult.Yes)
                     {
                         bool result = consultaController.ConsultaResuelta(ConsultaCambioEstado.IdConsulta);
@@ -86,10 +86,9 @@ namespace SistemaDeGestionHotel.views.admin
                             MessageBox.Show("La consulta ha sido marcada como resuelta", "Confirmado", MessageBoxButtons.OK);
 
                             idConsulta = -1;
-                            dataGridView1.DataSource = consultaController.ObtenerConsultas();
+                            this.CargarDatosDataGrid();
 
                             ConsultaCambioEstado.Estado = 0;
-                            CargarDatos(this, EventArgs.Empty);
                         }
                         else
                         {
@@ -132,7 +131,7 @@ namespace SistemaDeGestionHotel.views.admin
             }            
         }
 
-        private void CargarDatos(object sender, EventArgs e)
+        private void CargarDatosDataGrid()
         {
             var consultas = consultaController.ObtenerConsultasConUsuarios();
 
@@ -150,6 +149,11 @@ namespace SistemaDeGestionHotel.views.admin
 
             dataGridView1.DataSource = datosParaMostrar;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
+        private void CargarDatos(object sender, EventArgs e)
+        {
+            this.CargarDatosDataGrid();
         }
 
         private void CargaDatosAlTextBox(object sender, DataGridViewCellEventArgs e)

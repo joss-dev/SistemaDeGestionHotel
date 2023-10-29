@@ -30,9 +30,11 @@ namespace SistemaDeGestionHotel.Datos
             }
         }
 
-        public List<EstadoHabitacion> GetEstadosHabitaciones()
+        public List<String> GetEstadosHabitaciones()
         {
-            return dbHotelParana.EstadoHabitacions.ToList();
+            return dbHotelParana.EstadoHabitacions
+                                 .Select(esthab => esthab.NombEstado)
+                                .ToList();
         }
 
         public EstadoHabitacion GetEstadoHabitacionByID(int id)

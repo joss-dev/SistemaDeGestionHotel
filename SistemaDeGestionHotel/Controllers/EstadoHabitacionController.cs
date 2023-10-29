@@ -17,7 +17,7 @@ namespace SistemaDeGestionHotel.Controllers
             return d_estadoHabitacion.AgregarEstadoHabitacion(estadoHabitacion);
         }
 
-        public List<EstadoHabitacion> GetEstadosHabitaciones()
+        public List<String> GetEstadosHabitaciones()
         {
             return d_estadoHabitacion.GetEstadosHabitaciones();
         }

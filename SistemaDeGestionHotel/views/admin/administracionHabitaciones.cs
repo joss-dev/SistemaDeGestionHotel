@@ -1,4 +1,5 @@
 ﻿using SistemaDeGestionHotel.Controllers;
+using SistemaDeGestionHotel.Datos;
 using SistemaDeGestionHotel.NEntidades;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,7 @@ namespace SistemaDeGestionHotel.views.admin
 
         TipoHabitacionController c_tipoHabitacion = new TipoHabitacionController();
         EstadoHabitacionController c_estadoHabitacion = new EstadoHabitacionController();
+        HabitacionController c_habitacion = new HabitacionController();
 
         public administracionHabitaciones()
         {
@@ -24,12 +26,11 @@ namespace SistemaDeGestionHotel.views.admin
 
 
             List<String> tipoHabitaciones = c_tipoHabitacion.GetTiposHabitacion();
-            List<EstadoHabitacion> estadoHabitaciones = c_estadoHabitacion.GetEstadosHabitaciones();
+            List<String> estadoHabitaciones = c_estadoHabitacion.GetEstadosHabitaciones();
 
             // Limpiar los comboBox
             comboBoxTipoHab.Items.Clear();
             comboBoxEstado.Items.Clear();
-
 
             // Agregar las opciones a los comboBoxTipoHab & comoBoxEstado
             foreach (string opcion in tipoHabitaciones)
@@ -37,10 +38,10 @@ namespace SistemaDeGestionHotel.views.admin
                 comboBoxTipoHab.Items.Add(opcion);
             }
 
-            //foreach (string opcion2 in estadoHabitaciones)
-            //{
-            //    comboBoxEstado.Items.Add(opcion2);
-            //}
+            foreach (string opcion2 in estadoHabitaciones)
+            {
+                comboBoxEstado.Items.Add(opcion2);
+            }
         }
 
         private void ValidacionNroHabitacion(object sender, EventArgs e)
@@ -92,6 +93,25 @@ namespace SistemaDeGestionHotel.views.admin
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            else
+            {
+                if (c_habitacion.AgregarHabitacion(int.Parse(txtNroHab.Text), int.Parse(txtCantCamas.Text), float.Parse(txtCosto.Text), comboBoxEstado.SelectedIndex + 1, comboBoxTipoHab.SelectedIndex + 1, int.Parse(txtPiso.Text)))
+                {
+                    MessageBox.Show("La habitación se registro correctamente!");
+                    this.CargarDatosDataGrid();
+                    txtNroHab.Text = String.Empty;
+                    txtCantCamas.Text = String.Empty;
+                    txtCosto.Text = String.Empty;
+                    txtPiso.Text = String.Empty;
+                    comboBoxEstado.SelectedIndex = 0;
+                    comboBoxTipoHab.SelectedIndex = 0;
+
+                }
+                else
+                {
+                    MessageBox.Show("Ocurrio un error al registrar la habitacion!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -122,6 +142,48 @@ namespace SistemaDeGestionHotel.views.admin
                         LimpiarCampos(c);
                     }
                 }
+            }
+        }
+
+        private void CargarDatosDataGrid()
+        {
+            var habitaciones = c_habitacion.GetHabitaciones();
+
+
+            var habitacionesParaMostrar = habitaciones.Select(c => new
+            {
+                IDHabitacion = c.IdHabitacion,
+                NroHabitacion = c.NroHabitacion,
+                CantidadCamas = c.CantidadCamas,
+                Precio = c.Precio,
+                NroPiso = c.IdPiso,
+                Estado = c.IdEstadoNavigation.NombEstado,
+                TipoHabitacion = c.IdTipoHabNavigation.NombTipo
+            }).ToList();
+
+            dataGridView1.DataSource = habitacionesParaMostrar;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
+        private void CargarDatos(object sender, EventArgs e)
+        {
+            this.CargarDatosDataGrid();
+        }
+
+        private void CargaDatosTextBox(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.RowIndex < dataGridView1.Rows.Count)
+            {
+                // Obtiene la fila seleccionada
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+
+                // Accede a los datos de la fila y carga en los TextBox y ComboBox
+                txtNroHab.Text = row.Cells["NroHabitacion"].Value.ToString();
+                txtPiso.Text = row.Cells["NroPiso"].Value.ToString();
+                txtCantCamas.Text = row.Cells["CantidadCamas"].Value.ToString();
+                txtCosto.Text = row.Cells["Precio"].Value.ToString();
+                comboBoxEstado.SelectedItem = row.Cells["Estado"].Value.ToString();
+                comboBoxTipoHab.SelectedItem = row.Cells["TipoHabitacion"].Value.ToString();
             }
         }
     }

@@ -30,10 +30,10 @@ namespace SistemaDeGestionHotel.Datos
             }
         }
 
-        public List<DetalleServicio> GetDetallesServicios()
-        {
-            return dbHotelParana.DetalleServicios.ToList();
-        }
+        //public List<DetalleServicio> GetDetallesServicios()
+        //{
+        //    return dbHotelParana.DetalleServicios.ToList();
+        //}
 
         //falto el pk enn esta tabla
         //public DetalleServicio GetDetalleServicioByID(int id)

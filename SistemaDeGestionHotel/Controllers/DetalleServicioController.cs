@@ -18,10 +18,10 @@ namespace SistemaDeGestionHotel.Controllers
             return d_detalleServicio.AgregarDetalleServicio(detalleServicio);
         }
 
-        public List<DetalleServicio> GetDetallesServicios()
-        {
-            return d_detalleServicio.GetDetallesServicios();
-        }
+        //public List<DetalleServicio> GetDetallesServicios()
+        //{
+        //    return d_detalleServicio.GetDetallesServicios();
+        //}
 
         //falto el pk de esta tabla
         //public DetalleServicio GetDetalleServicioByID(int id)

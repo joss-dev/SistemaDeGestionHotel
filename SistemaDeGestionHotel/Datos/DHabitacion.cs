@@ -32,7 +32,10 @@ namespace SistemaDeGestionHotel.Datos
 
         public List<Habitacion> GetHabitaciones()
         {
-            return dbHotelParana.Habitacions.ToList();
+            return dbHotelParana.Habitacions
+                    .Include(c => c.IdEstadoNavigation)
+                    .Include(c => c.IdTipoHabNavigation)
+                    .ToList();
         }
 
         public Habitacion GetHabitacionByNro(int nrodehabitation)
