@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualBasic;
 using SistemaDeGestionHotel.Controllers;
+using SistemaDeGestionHotel.NEntidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,7 @@ namespace SistemaDeGestionHotel.views.admin
     public partial class gestionMediosPago : Form
     {
         MedioPagoController Medio_pagoController = new MedioPagoController();
+        TipoMedioPagoController Tipo_medioPago = new TipoMedioPagoController();
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -26,41 +28,25 @@ namespace SistemaDeGestionHotel.views.admin
         {
             InitializeComponent();
 
+            dataGridView2.DataSource = Medio_pagoController.ObtenerMedioPago();
+            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            this.dataGridView2.SelectionChanged += new System.EventHandler(this.dataGridView2_SelectionChanged);
+
             // Agregar elementos a las listas desplegables.
             comboBoxTipoMP.Items.Add("Tarjeta de crédito");
             comboBoxTipoMP.Items.Add("Tarjeta de débito");
             comboBoxTipoMP.Items.Add("Efectivo");
             comboBoxTipoMP.Items.Add("Transferencia");
 
-            comboBoxEstadoMP.Items.Add("Activo");
             comboBoxEstadoMP.Items.Add("Inactivo");
+            comboBoxEstadoMP.Items.Add("Activo");
 
             // Establecer los elementos seleccionados por defecto.
             comboBoxTipoMP.SelectedIndex = 0;
-            comboBoxEstadoMP.SelectedIndex = 0;
 
-        }
-
-
-
-        private void comboBoxTipoMP_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (comboBoxTipoMP.SelectedItem == null || string.IsNullOrEmpty(comboBoxTipoMP.Text))
-            {
-                // Mostrar un mensaje de error
-                MessageBox.Show("Seleccione una opción", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-        }
-
-        private void comboBoxEstadoMP_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (comboBoxEstadoMP.SelectedItem == null || string.IsNullOrEmpty(comboBoxEstadoMP.Text))
-            {
-                // Mostrar un mensaje de error
-                MessageBox.Show("Seleccione una opción", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+            // Establecer el valor predeterminado en el ComboBox de Estado basado en la base de datos
+            comboBoxEstadoMP.SelectedIndex = 1; // Asume que 1   representa "Activo" en tu ComboBox
 
         }
 
@@ -69,31 +55,129 @@ namespace SistemaDeGestionHotel.views.admin
             ValidacionTextBox.ValidarTextoConEspacios(txtNombMP, errorProvider1);
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void btnMinimized_Click(object sender, EventArgs e)
+        private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void btnMaximized_Click(object sender, EventArgs e)
-        {
-            if (this.WindowState == FormWindowState.Maximized)
+            // Verificar si alguno de los campos está incompleto
+            if (ValidacionTextBox.ValidarNoVacio(txtNombMP) || comboBoxTipoMP.SelectedIndex < 0 || comboBoxEstadoMP.SelectedIndex < 0)
             {
-                this.WindowState = FormWindowState.Normal;
+                // Mostrar un mensaje de error
+                MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            bool registroExitoso = Medio_pagoController.RegistrarMedioPago(txtNombMP.Text, comboBoxTipoMP.SelectedIndex);
+
+            if (registroExitoso)
+            {
+                MessageBox.Show("El medio de pago se registró correctamente", "Guardar", MessageBoxButtons.OK);
+                txtNombMP.Text = string.Empty;
+                comboBoxTipoMP.SelectedIndex = 0;
             }
             else
             {
-                this.WindowState = FormWindowState.Maximized;
+                MessageBox.Show("Hubo un error al registrar el medio de pago", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            dataGridView2.DataSource = Medio_pagoController.ObtenerMedioPago();
+        }
+
+        public void CargarDataGrid(object sender, EventArgs e)
+        {
+            var mediosPago = Medio_pagoController.ObtenerMedioPago();
+
+            var datosParaMostrar = mediosPago.Select(mp => new
+            {
+                IdMedioPago = mp.IdMedioPago,
+                Nombre = mp.Nombre,
+                Tipo_medioPago = mp.IdTipoMedioPagoNavigation.NombMedioPago,
+                Estado_MP = mp.Estado == 1 ? "Activo" : "Desactivado"
+            }).ToList();
+
+            dataGridView2.DataSource = datosParaMostrar;
+            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+
+            if (ValidacionTextBox.ValidarNoVacio(txtNombMP) || comboBoxTipoMP.SelectedIndex < 0 || comboBoxEstadoMP.SelectedIndex < 0)
+            {
+                MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+                int idMedioPago = -1; // Valor predeterminado si no se selecciona ningún usuario
+
+                if (dataGridView2.SelectedRows.Count > 0)
+                {
+                    // Si al menos una fila está seleccionada, obtén el índice de la primera fila seleccionada
+                    int rowIndex = dataGridView2.SelectedRows[0].Index;
+
+                    DataGridViewRow row = dataGridView2.Rows[rowIndex];
+                    idMedioPago = int.Parse(row.Cells["IdMedioPago"].Value.ToString());
+                }
+                if (idMedioPago != -1)
+                {
+                    MediosPago MPEditar = Medio_pagoController.TraerMPPorID(idMedioPago);
+
+                    MsgBoxResult ask = (MsgBoxResult)MessageBox.Show("Seguro desea editar este Medio de Pago?", "Confirmacion de edición", MessageBoxButtons.YesNo);
+                    if (ask == MsgBoxResult.Yes)
+                    {
+                        bool result = Medio_pagoController.EditarMedioPago(MPEditar.IdMedioPago, txtNombMP.Text, comboBoxTipoMP.SelectedIndex, comboBoxEstadoMP.SelectedIndex);
+                        if (result)
+                        {
+                            idMedioPago = -1;
+                            dataGridView2.DataSource = Medio_pagoController.ObtenerMedioPago();
+
+                            txtNombMP.Text = string.Empty;
+                            comboBoxTipoMP.SelectedIndex = 0;
+                            comboBoxEstadoMP.SelectedIndex = 0;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ocurrio un error");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("El correo electronico no es valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No selecciono ningun usuario");
+                }
             }
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
+        private void dataGridView2_SelectionChanged(object sender, EventArgs e)
         {
-            this.Close();
+            if (dataGridView2.SelectedRows.Count > 0)
+            {
+                int rowIndex = dataGridView2.SelectedRows[0].Index;
+                DataGridViewRow row = dataGridView2.Rows[rowIndex];
+                int idMedioPago = int.Parse(row.Cells["IdMedioPago"].Value.ToString());
+
+                MediosPago MPEditar = Medio_pagoController.TraerMPPorID(idMedioPago);
+
+                txtNombMP.Text = MPEditar.Nombre;
+                comboBoxTipoMP.SelectedIndex = MPEditar.IdTipoMedioPago;
+                comboBoxEstadoMP.SelectedIndex = MPEditar.Estado;
+            }
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            MsgBoxResult result = (MsgBoxResult)MessageBox.Show("¿Está seguro de que desea cerrar el formulario?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+            if (result == MsgBoxResult.Yes)
+            {
+                this.DialogResult = DialogResult.OK;
+
+                // Cerrar el formulario secundario
+                this.Close();
+            }
         }
 
         private void gestionMediosPago_Load(object sender, EventArgs e)
@@ -118,18 +202,29 @@ namespace SistemaDeGestionHotel.views.admin
             }
         }
 
-        private void btnRegistrar_Click(object sender, EventArgs e)
+        private void btnMinimized_Click(object sender, EventArgs e)
         {
-            // Verificar si alguno de los campos está incompleto
-            if (ValidacionTextBox.ValidarNoVacio(txtNombMP))
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnMaximized_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Maximized)
             {
-                // Mostrar un mensaje de error
-                MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                this.WindowState = FormWindowState.Normal;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Maximized;
             }
         }
 
-        private void iconButton1_Click(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void iconButton1_Click_1(object sender, EventArgs e)
         {
             MsgBoxResult result = (MsgBoxResult)MessageBox.Show("¿Está seguro de que desea cerrar el formulario?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
             if (result == MsgBoxResult.Yes)

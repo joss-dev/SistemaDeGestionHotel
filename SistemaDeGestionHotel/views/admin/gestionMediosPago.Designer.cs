@@ -37,16 +37,25 @@
             label4 = new Label();
             comboBoxEstadoMP = new ComboBox();
             dataGridView2 = new DataGridView();
-            label9 = new Label();
+            IdMedioPago = new DataGridViewTextBoxColumn();
+            NombMedioPago = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            Estado = new DataGridViewTextBoxColumn();
+            nombreDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            idTipoMedioPagoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            idTipoMedioPagoNavigationDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            mediosPagoBindingSource = new BindingSource(components);
+            tipoMedioPagoBindingSource = new BindingSource(components);
             label10 = new Label();
             label11 = new Label();
             btnEditar = new Button();
-            btnEliminar = new FontAwesome.Sharp.IconButton();
             btnRegistrar = new FontAwesome.Sharp.IconButton();
             errorProvider1 = new ErrorProvider(components);
             label5 = new Label();
             iconButton1 = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)mediosPagoBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tipoMedioPagoBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
@@ -101,7 +110,6 @@
             comboBoxTipoMP.Name = "comboBoxTipoMP";
             comboBoxTipoMP.Size = new Size(121, 23);
             comboBoxTipoMP.TabIndex = 26;
-            comboBoxTipoMP.SelectedIndexChanged += comboBoxTipoMP_SelectedIndexChanged;
             // 
             // label4
             // 
@@ -125,32 +133,85 @@
             // 
             // dataGridView2
             // 
+            dataGridView2.AllowUserToAddRows = false;
+            dataGridView2.AllowUserToDeleteRows = false;
+            dataGridView2.AllowUserToOrderColumns = true;
             dataGridView2.Anchor = AnchorStyles.None;
+            dataGridView2.AutoGenerateColumns = false;
             dataGridView2.BackgroundColor = Color.Gainsboro;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(55, 488);
+            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { IdMedioPago, NombMedioPago, dataGridViewTextBoxColumn1, Estado, nombreDataGridViewTextBoxColumn, idTipoMedioPagoDataGridViewTextBoxColumn, idTipoMedioPagoNavigationDataGridViewTextBoxColumn });
+            dataGridView2.DataSource = mediosPagoBindingSource;
+            dataGridView2.Location = new Point(59, 483);
             dataGridView2.Name = "dataGridView2";
+            dataGridView2.ReadOnly = true;
             dataGridView2.RowTemplate.Height = 25;
             dataGridView2.Size = new Size(701, 135);
             dataGridView2.TabIndex = 43;
             // 
-            // label9
+            // IdMedioPago
             // 
-            label9.Anchor = AnchorStyles.None;
-            label9.AutoSize = true;
-            label9.Font = new Font("Yu Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label9.Location = new Point(538, 425);
-            label9.Name = "label9";
-            label9.Size = new Size(61, 17);
-            label9.TabIndex = 49;
-            label9.Text = "Eliminar";
+            IdMedioPago.DataPropertyName = "IdMedioPago";
+            IdMedioPago.HeaderText = "IdMedioPago";
+            IdMedioPago.Name = "IdMedioPago";
+            IdMedioPago.ReadOnly = true;
+            // 
+            // NombMedioPago
+            // 
+            NombMedioPago.DataPropertyName = "NombMedioPago";
+            NombMedioPago.HeaderText = "NombMedioPago";
+            NombMedioPago.Name = "NombMedioPago";
+            NombMedioPago.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewTextBoxColumn1.DataPropertyName = "NombMedioPago";
+            dataGridViewTextBoxColumn1.HeaderText = "NombMedioPago";
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // Estado
+            // 
+            Estado.DataPropertyName = "Estado";
+            Estado.HeaderText = "Estado";
+            Estado.Name = "Estado";
+            Estado.ReadOnly = true;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idTipoMedioPagoDataGridViewTextBoxColumn
+            // 
+            idTipoMedioPagoDataGridViewTextBoxColumn.DataPropertyName = "IdTipoMedioPago";
+            idTipoMedioPagoDataGridViewTextBoxColumn.HeaderText = "IdTipoMedioPago";
+            idTipoMedioPagoDataGridViewTextBoxColumn.Name = "idTipoMedioPagoDataGridViewTextBoxColumn";
+            idTipoMedioPagoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idTipoMedioPagoNavigationDataGridViewTextBoxColumn
+            // 
+            idTipoMedioPagoNavigationDataGridViewTextBoxColumn.DataPropertyName = "IdTipoMedioPagoNavigation";
+            idTipoMedioPagoNavigationDataGridViewTextBoxColumn.HeaderText = "IdTipoMedioPagoNavigation";
+            idTipoMedioPagoNavigationDataGridViewTextBoxColumn.Name = "idTipoMedioPagoNavigationDataGridViewTextBoxColumn";
+            idTipoMedioPagoNavigationDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // mediosPagoBindingSource
+            // 
+            mediosPagoBindingSource.DataSource = typeof(NEntidades.MediosPago);
+            // 
+            // tipoMedioPagoBindingSource
+            // 
+            tipoMedioPagoBindingSource.DataSource = typeof(NEntidades.TipoMedioPago);
             // 
             // label10
             // 
             label10.Anchor = AnchorStyles.None;
             label10.AutoSize = true;
             label10.Font = new Font("Yu Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label10.Location = new Point(544, 334);
+            label10.Location = new Point(617, 316);
             label10.Name = "label10";
             label10.Size = new Size(46, 17);
             label10.TabIndex = 48;
@@ -161,7 +222,7 @@
             label11.Anchor = AnchorStyles.None;
             label11.AutoSize = true;
             label11.Font = new Font("Yu Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label11.Location = new Point(534, 239);
+            label11.Location = new Point(508, 316);
             label11.Name = "label11";
             label11.Size = new Size(67, 17);
             label11.TabIndex = 45;
@@ -173,28 +234,12 @@
             btnEditar.BackColor = Color.LightSalmon;
             btnEditar.FlatStyle = FlatStyle.Popup;
             btnEditar.Image = Properties.Resources.edit11;
-            btnEditar.Location = new Point(540, 281);
+            btnEditar.Location = new Point(613, 263);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(55, 50);
             btnEditar.TabIndex = 52;
             btnEditar.UseVisualStyleBackColor = false;
-            // 
-            // btnEliminar
-            // 
-            btnEliminar.Anchor = AnchorStyles.None;
-            btnEliminar.BackColor = Color.LightCoral;
-            btnEliminar.FlatStyle = FlatStyle.Flat;
-            btnEliminar.Flip = FontAwesome.Sharp.FlipOrientation.Horizontal;
-            btnEliminar.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
-            btnEliminar.IconColor = Color.Black;
-            btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnEliminar.IconSize = 36;
-            btnEliminar.Location = new Point(541, 372);
-            btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(55, 50);
-            btnEliminar.TabIndex = 51;
-            btnEliminar.UseVisualStyleBackColor = false;
-            btnEliminar.Click += btnEliminar_Click;
+            btnEditar.Click += btnEditar_Click;
             // 
             // btnRegistrar
             // 
@@ -206,7 +251,7 @@
             btnRegistrar.IconChar = FontAwesome.Sharp.IconChar.Registered;
             btnRegistrar.IconColor = Color.Black;
             btnRegistrar.IconFont = FontAwesome.Sharp.IconFont.Regular;
-            btnRegistrar.Location = new Point(539, 186);
+            btnRegistrar.Location = new Point(514, 263);
             btnRegistrar.Name = "btnRegistrar";
             btnRegistrar.Size = new Size(56, 50);
             btnRegistrar.TabIndex = 50;
@@ -246,7 +291,7 @@
             iconButton1.TabIndex = 62;
             iconButton1.TextAlign = ContentAlignment.BottomCenter;
             iconButton1.UseVisualStyleBackColor = false;
-            iconButton1.Click += iconButton1_Click;
+            iconButton1.Click += iconButton1_Click_1;
             // 
             // gestionMediosPago
             // 
@@ -257,9 +302,7 @@
             Controls.Add(iconButton1);
             Controls.Add(label5);
             Controls.Add(btnEditar);
-            Controls.Add(btnEliminar);
             Controls.Add(btnRegistrar);
-            Controls.Add(label9);
             Controls.Add(label10);
             Controls.Add(label11);
             Controls.Add(dataGridView2);
@@ -277,6 +320,8 @@
             Load += gestionMediosPago_Load;
             MouseDown += GestionMediosPago_MouseDown;
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)mediosPagoBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tipoMedioPagoBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -291,14 +336,21 @@
         private Label label4;
         private ComboBox comboBoxEstadoMP;
         private DataGridView dataGridView2;
-        private Label label9;
         private Label label10;
         private Label label11;
         private Button btnEditar;
-        private FontAwesome.Sharp.IconButton btnEliminar;
         private FontAwesome.Sharp.IconButton btnRegistrar;
         private ErrorProvider errorProvider1;
         private Label label5;
         private FontAwesome.Sharp.IconButton iconButton1;
+        private BindingSource mediosPagoBindingSource;
+        private BindingSource tipoMedioPagoBindingSource;
+        private DataGridViewTextBoxColumn IdMedioPago;
+        private DataGridViewTextBoxColumn NombMedioPago;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn Estado;
+        private DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn idTipoMedioPagoDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn idTipoMedioPagoNavigationDataGridViewTextBoxColumn;
     }
 }
