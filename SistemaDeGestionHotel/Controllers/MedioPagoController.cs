@@ -10,11 +10,12 @@ namespace SistemaDeGestionHotel.Controllers
     {
         DMediosPago dMediosPago = new DMediosPago();
 
-        public bool RegistrarMedioPago(string nombre, int idTipoMP)
+        public bool RegistrarMedioPago(string nombre, int idTipoMP, int estado)
         {
             MediosPago medio_pago = new MediosPago()
             {
                 Nombre = nombre,
+                Estado = estado,
                 IdTipoMedioPago = idTipoMP
             };
 

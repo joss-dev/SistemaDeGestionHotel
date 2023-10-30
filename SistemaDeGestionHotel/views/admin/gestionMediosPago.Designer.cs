@@ -37,13 +37,6 @@
             label4 = new Label();
             comboBoxEstadoMP = new ComboBox();
             dataGridView2 = new DataGridView();
-            IdMedioPago = new DataGridViewTextBoxColumn();
-            NombMedioPago = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-            Estado = new DataGridViewTextBoxColumn();
-            nombreDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            idTipoMedioPagoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            idTipoMedioPagoNavigationDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             mediosPagoBindingSource = new BindingSource(components);
             tipoMedioPagoBindingSource = new BindingSource(components);
             label10 = new Label();
@@ -53,6 +46,10 @@
             errorProvider1 = new ErrorProvider(components);
             label5 = new Label();
             iconButton1 = new FontAwesome.Sharp.IconButton();
+            IdMedioPago = new DataGridViewTextBoxColumn();
+            Nombre = new DataGridViewTextBoxColumn();
+            Estado = new DataGridViewTextBoxColumn();
+            IdTipoMedioPago = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)mediosPagoBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tipoMedioPagoBindingSource).BeginInit();
@@ -64,10 +61,10 @@
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.BackColor = Color.Aquamarine;
-            label1.Font = new Font("Arial Rounded MT Bold", 32.25F, FontStyle.Underline, GraphicsUnit.Point);
+            label1.Font = new Font("Microsoft Sans Serif", 32.25F, FontStyle.Underline, GraphicsUnit.Point);
             label1.Location = new Point(105, 66);
             label1.Name = "label1";
-            label1.Size = new Size(609, 50);
+            label1.Size = new Size(564, 51);
             label1.TabIndex = 22;
             label1.Text = "Registro de Medios de Pago";
             // 
@@ -105,6 +102,7 @@
             // comboBoxTipoMP
             // 
             comboBoxTipoMP.Anchor = AnchorStyles.None;
+            comboBoxTipoMP.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxTipoMP.FormattingEnabled = true;
             comboBoxTipoMP.Location = new Point(272, 278);
             comboBoxTipoMP.Name = "comboBoxTipoMP";
@@ -125,6 +123,7 @@
             // comboBoxEstadoMP
             // 
             comboBoxEstadoMP.Anchor = AnchorStyles.None;
+            comboBoxEstadoMP.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxEstadoMP.FormattingEnabled = true;
             comboBoxEstadoMP.Location = new Point(272, 350);
             comboBoxEstadoMP.Name = "comboBoxEstadoMP";
@@ -140,7 +139,7 @@
             dataGridView2.AutoGenerateColumns = false;
             dataGridView2.BackgroundColor = Color.Gainsboro;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { IdMedioPago, NombMedioPago, dataGridViewTextBoxColumn1, Estado, nombreDataGridViewTextBoxColumn, idTipoMedioPagoDataGridViewTextBoxColumn, idTipoMedioPagoNavigationDataGridViewTextBoxColumn });
+            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { IdMedioPago, Nombre, Estado, IdTipoMedioPago });
             dataGridView2.DataSource = mediosPagoBindingSource;
             dataGridView2.Location = new Point(59, 483);
             dataGridView2.Name = "dataGridView2";
@@ -148,55 +147,6 @@
             dataGridView2.RowTemplate.Height = 25;
             dataGridView2.Size = new Size(701, 135);
             dataGridView2.TabIndex = 43;
-            // 
-            // IdMedioPago
-            // 
-            IdMedioPago.DataPropertyName = "IdMedioPago";
-            IdMedioPago.HeaderText = "IdMedioPago";
-            IdMedioPago.Name = "IdMedioPago";
-            IdMedioPago.ReadOnly = true;
-            // 
-            // NombMedioPago
-            // 
-            NombMedioPago.DataPropertyName = "NombMedioPago";
-            NombMedioPago.HeaderText = "NombMedioPago";
-            NombMedioPago.Name = "NombMedioPago";
-            NombMedioPago.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            dataGridViewTextBoxColumn1.DataPropertyName = "NombMedioPago";
-            dataGridViewTextBoxColumn1.HeaderText = "NombMedioPago";
-            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // Estado
-            // 
-            Estado.DataPropertyName = "Estado";
-            Estado.HeaderText = "Estado";
-            Estado.Name = "Estado";
-            Estado.ReadOnly = true;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idTipoMedioPagoDataGridViewTextBoxColumn
-            // 
-            idTipoMedioPagoDataGridViewTextBoxColumn.DataPropertyName = "IdTipoMedioPago";
-            idTipoMedioPagoDataGridViewTextBoxColumn.HeaderText = "IdTipoMedioPago";
-            idTipoMedioPagoDataGridViewTextBoxColumn.Name = "idTipoMedioPagoDataGridViewTextBoxColumn";
-            idTipoMedioPagoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idTipoMedioPagoNavigationDataGridViewTextBoxColumn
-            // 
-            idTipoMedioPagoNavigationDataGridViewTextBoxColumn.DataPropertyName = "IdTipoMedioPagoNavigation";
-            idTipoMedioPagoNavigationDataGridViewTextBoxColumn.HeaderText = "IdTipoMedioPagoNavigation";
-            idTipoMedioPagoNavigationDataGridViewTextBoxColumn.Name = "idTipoMedioPagoNavigationDataGridViewTextBoxColumn";
-            idTipoMedioPagoNavigationDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // mediosPagoBindingSource
             // 
@@ -279,7 +229,7 @@
             iconButton1.BackColor = Color.Teal;
             iconButton1.FlatAppearance.BorderSize = 0;
             iconButton1.FlatStyle = FlatStyle.Popup;
-            iconButton1.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            iconButton1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             iconButton1.ForeColor = SystemColors.ActiveCaptionText;
             iconButton1.IconChar = FontAwesome.Sharp.IconChar.ArrowAltCircleLeft;
             iconButton1.IconColor = Color.Black;
@@ -292,6 +242,34 @@
             iconButton1.TextAlign = ContentAlignment.BottomCenter;
             iconButton1.UseVisualStyleBackColor = false;
             iconButton1.Click += iconButton1_Click_1;
+            // 
+            // IdMedioPago
+            // 
+            IdMedioPago.DataPropertyName = "IdMedioPago";
+            IdMedioPago.HeaderText = "ID";
+            IdMedioPago.Name = "IdMedioPago";
+            IdMedioPago.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            Nombre.DataPropertyName = "Nombre";
+            Nombre.HeaderText = "Nombre";
+            Nombre.Name = "Nombre";
+            Nombre.ReadOnly = true;
+            // 
+            // Estado
+            // 
+            Estado.DataPropertyName = "Estado";
+            Estado.HeaderText = "Estado";
+            Estado.Name = "Estado";
+            Estado.ReadOnly = true;
+            // 
+            // IdTipoMedioPago
+            // 
+            IdTipoMedioPago.DataPropertyName = "IdTipoMedioPago";
+            IdTipoMedioPago.HeaderText = "ID TipoMedioPago";
+            IdTipoMedioPago.Name = "IdTipoMedioPago";
+            IdTipoMedioPago.ReadOnly = true;
             // 
             // gestionMediosPago
             // 
@@ -346,11 +324,8 @@
         private BindingSource mediosPagoBindingSource;
         private BindingSource tipoMedioPagoBindingSource;
         private DataGridViewTextBoxColumn IdMedioPago;
-        private DataGridViewTextBoxColumn NombMedioPago;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn Nombre;
         private DataGridViewTextBoxColumn Estado;
-        private DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn idTipoMedioPagoDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn idTipoMedioPagoNavigationDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn IdTipoMedioPago;
     }
 }

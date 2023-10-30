@@ -17,7 +17,7 @@ namespace SistemaDeGestionHotel.Controllers
             return d_tipoMedioPago.AgregarTipoMedioPago(tipoMedioPago);
         }
 
-        public List<TipoMedioPago> GetTiposMediosPagos()
+        public List<String> GetTiposMediosPagos()
         {
             return d_tipoMedioPago.GetTiposMediosPagos();
         }

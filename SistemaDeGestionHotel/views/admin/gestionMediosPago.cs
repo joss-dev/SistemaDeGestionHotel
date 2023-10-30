@@ -33,11 +33,14 @@ namespace SistemaDeGestionHotel.views.admin
 
             this.dataGridView2.SelectionChanged += new System.EventHandler(this.dataGridView2_SelectionChanged);
 
-            // Agregar elementos a las listas desplegables.
-            comboBoxTipoMP.Items.Add("Tarjeta de crédito");
-            comboBoxTipoMP.Items.Add("Tarjeta de débito");
-            comboBoxTipoMP.Items.Add("Efectivo");
-            comboBoxTipoMP.Items.Add("Transferencia");
+            List<String> tiposMedioPago = Tipo_medioPago.GetTiposMediosPagos();
+
+
+            foreach (string opcion in tiposMedioPago)
+            {
+                comboBoxTipoMP.Items.Add(opcion);
+            }
+
 
             comboBoxEstadoMP.Items.Add("Inactivo");
             comboBoxEstadoMP.Items.Add("Activo");
@@ -66,7 +69,7 @@ namespace SistemaDeGestionHotel.views.admin
                 return;
             }
 
-            bool registroExitoso = Medio_pagoController.RegistrarMedioPago(txtNombMP.Text, comboBoxTipoMP.SelectedIndex);
+            bool registroExitoso = Medio_pagoController.RegistrarMedioPago(txtNombMP.Text, comboBoxTipoMP.SelectedIndex, comboBoxEstadoMP.SelectedIndex);
 
             if (registroExitoso)
             {

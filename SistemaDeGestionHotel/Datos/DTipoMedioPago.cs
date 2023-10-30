@@ -30,9 +30,11 @@ namespace SistemaDeGestionHotel.Datos
             }
         }
 
-        public List<TipoMedioPago> GetTiposMediosPagos()
+        public List<String> GetTiposMediosPagos()
         {
-            return dbHotelParana.TipoMedioPagos.ToList();
+            return dbHotelParana.TipoMedioPagos
+                                .Select(c => c.NombMedioPago)
+                                .ToList();
         }
 
         public TipoMedioPago GetTipoMedioPagoByID(int id)
