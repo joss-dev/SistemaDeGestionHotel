@@ -69,7 +69,7 @@ namespace SistemaDeGestionHotel.views.admin
                 return;
             }
 
-            bool registroExitoso = Medio_pagoController.RegistrarMedioPago(txtNombMP.Text, comboBoxTipoMP.SelectedIndex, comboBoxEstadoMP.SelectedIndex);
+            bool registroExitoso = Medio_pagoController.RegistrarMedioPago(txtNombMP.Text, comboBoxTipoMP.SelectedIndex + 1, comboBoxEstadoMP.SelectedIndex);
 
             if (registroExitoso)
             {
@@ -128,7 +128,7 @@ namespace SistemaDeGestionHotel.views.admin
                     MsgBoxResult ask = (MsgBoxResult)MessageBox.Show("Seguro desea editar este Medio de Pago?", "Confirmacion de edición", MessageBoxButtons.YesNo);
                     if (ask == MsgBoxResult.Yes)
                     {
-                        bool result = Medio_pagoController.EditarMedioPago(MPEditar.IdMedioPago, txtNombMP.Text, comboBoxTipoMP.SelectedIndex, comboBoxEstadoMP.SelectedIndex);
+                        bool result = Medio_pagoController.EditarMedioPago(MPEditar.IdMedioPago, txtNombMP.Text, comboBoxTipoMP.SelectedIndex + 1, comboBoxEstadoMP.SelectedIndex);
                         if (result)
                         {
                             idMedioPago = -1;
@@ -166,7 +166,7 @@ namespace SistemaDeGestionHotel.views.admin
                 MediosPago MPEditar = Medio_pagoController.TraerMPPorID(idMedioPago);
 
                 txtNombMP.Text = MPEditar.Nombre;
-                comboBoxTipoMP.SelectedIndex = MPEditar.IdTipoMedioPago;
+                comboBoxTipoMP.SelectedIndex = MPEditar.IdTipoMedioPago - 1;
                 comboBoxEstadoMP.SelectedIndex = MPEditar.Estado;
             }
         }
