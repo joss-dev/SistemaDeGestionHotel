@@ -46,7 +46,7 @@ namespace SistemaDeGestionHotel.Controllers
             else
             {
                 ORExistente.NombOfertaRecargo = nombre;
-                ORExistente.FechaHasta = fecha_desde;
+                ORExistente.FechaDesde = fecha_desde;
                 ORExistente.FechaHasta = fecha_hasta;
                 ORExistente.Estado = estado;
                 ORExistente.PorcentajeDescuento = porcentajeDesc;

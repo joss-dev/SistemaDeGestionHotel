@@ -116,6 +116,7 @@
             dateTimeInicio.Name = "dateTimeInicio";
             dateTimeInicio.Size = new Size(95, 23);
             dateTimeInicio.TabIndex = 27;
+            dateTimeInicio.ValueChanged += FechaCambia;
             // 
             // dateTimeFin
             // 
@@ -190,6 +191,8 @@
             // 
             // dataGridView2
             // 
+            dataGridView2.AllowUserToAddRows = false;
+            dataGridView2.AllowUserToDeleteRows = false;
             dataGridView2.Anchor = AnchorStyles.None;
             dataGridView2.AutoGenerateColumns = false;
             dataGridView2.BackgroundColor = Color.Gainsboro;
@@ -203,6 +206,7 @@
             dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView2.Size = new Size(759, 152);
             dataGridView2.TabIndex = 42;
+            dataGridView2.CellClick += CargaDatosAlTextBox;
             // 
             // idOfertaRecargoDataGridViewTextBoxColumn
             // 
@@ -262,10 +266,10 @@
             label12.Anchor = AnchorStyles.None;
             label12.AutoSize = true;
             label12.BackColor = Color.Aquamarine;
-            label12.Font = new Font("Arial Rounded MT Bold", 32.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label12.Font = new Font("Microsoft Sans Serif", 32.25F, FontStyle.Regular, GraphicsUnit.Point);
             label12.Location = new Point(231, 40);
             label12.Name = "label12";
-            label12.Size = new Size(419, 50);
+            label12.Size = new Size(384, 51);
             label12.TabIndex = 43;
             label12.Text = "Ofertas - Recargos";
             // 
@@ -341,7 +345,7 @@
             btnVolver.BackColor = Color.Teal;
             btnVolver.FlatAppearance.BorderSize = 0;
             btnVolver.FlatStyle = FlatStyle.Popup;
-            btnVolver.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnVolver.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnVolver.ForeColor = SystemColors.ActiveCaptionText;
             btnVolver.IconChar = FontAwesome.Sharp.IconChar.ArrowAltCircleLeft;
             btnVolver.IconColor = Color.Black;
@@ -370,7 +374,7 @@
             // 
             BTNLimpiar.BackColor = Color.DeepSkyBlue;
             BTNLimpiar.FlatStyle = FlatStyle.Popup;
-            BTNLimpiar.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            BTNLimpiar.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             BTNLimpiar.Location = new Point(478, 309);
             BTNLimpiar.Name = "BTNLimpiar";
             BTNLimpiar.Size = new Size(146, 27);

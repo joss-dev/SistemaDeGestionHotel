@@ -31,7 +31,19 @@ namespace SistemaDeGestionHotel.views.admin
             dataGridView2.DataSource = oferta_recargoController.ObtenerOfertaRecargo();
             dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-            this.dataGridView2.SelectionChanged += new System.EventHandler(this.dataGridView2_SelectionChanged);
+
+            dateTimeInicio.Format = DateTimePickerFormat.Custom;
+            dateTimeInicio.CustomFormat = "dd/MM/yyyy"; // Formato de fecha
+
+            dateTimeFin.Format = DateTimePickerFormat.Custom;
+            dateTimeFin.CustomFormat = "dd/MM/yyyy"; // Formato de fecha
+
+            // Establecer la fecha mínima de reserva como mañana
+            dateTimeInicio.MinDate = DateTime.Today;
+
+            // Establecer la fecha de salida como mínimo un día después de la fecha de ingreso
+            dateTimeFin.MinDate = dateTimeInicio.Value.Date.AddDays(1);
+
 
             // Agregar elementos a la lista desplegable.
             comboBoxEstado.Items.Add("Finalizada");
@@ -78,7 +90,7 @@ namespace SistemaDeGestionHotel.views.admin
 
             // Obtener los valores de los campos de la vista
             string nombre = txtNombre.Text;
-            DateTime fechaDesde = dateTimeInicio.Value;  // Debes usar Value para obtener la fecha seleccionada
+            DateTime fechaDesde = dateTimeInicio.Value;  //Value para obtener la fecha seleccionada
             DateTime fechaHasta = dateTimeFin.Value;
             float porcentajeDescuento = float.Parse(txtDescuento.Text);
             float porcentajeRecargo = float.Parse(txtRecargo.Text);
@@ -88,7 +100,7 @@ namespace SistemaDeGestionHotel.views.admin
             DateTime fechaHastaConvertida = fechaHasta.Date;
 
             // Llamar al controlador para cargar la oferta o recargo
-            bool exito = oferta_recargoController.CargarOfertaRecargo(nombre, fechaDesde, fechaHasta, porcentajeDescuento, porcentajeRecargo);
+            bool exito = oferta_recargoController.CargarOfertaRecargo(nombre, fechaDesdeConvertida, fechaHastaConvertida, porcentajeDescuento, porcentajeRecargo);
 
             if (exito)
             {
@@ -160,31 +172,34 @@ namespace SistemaDeGestionHotel.views.admin
                         if (float.TryParse(txtDescuento.Text, out float descuento) &&
                             float.TryParse(txtRecargo.Text, out float recargo))
                         {
-                            // Para establecer los valores de los controles adecuadamente.
-                            DateTime fechaInicio = dateTimeInicio.MinDate;
-                            DateTime fechaFin = dateTimeFin.MinDate;
+
+                            DateTime fechaDesde = dateTimeInicio.Value;  //Value para obtener la fecha seleccionada
+                            DateTime fechaHasta = dateTimeFin.Value;
+
+                            // Realizar la conversión de DateTime a DATE
+                            DateTime fechaDesdeConvertida = fechaDesde.Date;
+                            DateTime fechaHastaConvertida = fechaHasta.Date;
+
                             int estado = comboBoxEstado.SelectedIndex;
 
-                            bool result = oferta_recargoController.EditarOfertaRecargo(OREditar.IdOfertaRecargo, txtNombre.Text, fechaInicio, fechaFin, estado, descuento, recargo);
+                            bool result = oferta_recargoController.EditarOfertaRecargo(OREditar.IdOfertaRecargo, txtNombre.Text, fechaDesdeConvertida, fechaHastaConvertida, estado, descuento, recargo);
                             if (result)
                             {
                                 idOfertaRecargo = -1;
                                 dataGridView2.DataSource = oferta_recargoController.ObtenerOfertaRecargo();
                                 txtNombre.Text = string.Empty;
-                                dateTimeInicio.Value = DateTime.Now; // Establece la fecha actual o la deseada.
-                                dateTimeFin.Value = DateTime.Now; // Establece la fecha actual o la deseada.
                                 comboBoxEstado.SelectedIndex = 0; // Establece el índice deseado.
                                 txtDescuento.Text = string.Empty;
                                 txtRecargo.Text = string.Empty;
+                                // Establecer la fecha mínima de hoy
+                                dateTimeInicio.MinDate = DateTime.Today;
+
+                                dateTimeFin.MinDate = dateTimeInicio.Value.AddDays(1);
                             }
                             else
                             {
                                 MessageBox.Show("Ocurrio un error");
                             }
-                        }
-                        else
-                        {
-                            MessageBox.Show("El correo electronico no es valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     else
@@ -199,18 +214,7 @@ namespace SistemaDeGestionHotel.views.admin
         {
             if (dataGridView2.SelectedRows.Count > 0)
             {
-                int rowIndex = dataGridView2.SelectedRows[0].Index;
-                DataGridViewRow row = dataGridView2.Rows[rowIndex];
-                int idOfertaRecargo = int.Parse(row.Cells["idOfertaRecargoDataGridViewTextBoxColumn"].Value.ToString());
 
-                OfertasRecargo OREditar = oferta_recargoController.TraerORPorID(idOfertaRecargo);
-
-                txtNombre.Text = OREditar.NombOfertaRecargo;
-                dateTimeInicio.Value = OREditar.FechaDesde;
-                dateTimeFin.MinDate = OREditar.FechaHasta;
-                comboBoxEstado.SelectedIndex = OREditar.Estado;
-                txtDescuento.Text = OREditar.PorcentajeDescuento.ToString();
-                txtRecargo.Text = OREditar.PorcentajeRecargo.ToString();
             }
         }
 
@@ -249,11 +253,7 @@ namespace SistemaDeGestionHotel.views.admin
         {
             this.KeyDown += new KeyEventHandler(cerrar);
 
-            // Establecer la fecha mínima de hoy
-            dateTimeInicio.MinDate = DateTime.Today;
 
-            // Establecer la fecha de salida como mínimo un día después de la fecha de ingreso
-            dateTimeFin.MinDate = dateTimeFin.Value.AddDays(1);
         }
 
         void cerrar(object sender, KeyEventArgs e)
@@ -278,6 +278,35 @@ namespace SistemaDeGestionHotel.views.admin
         private void BTNLimpiar_Click(object sender, EventArgs e)
         {
             this.LimpiarCampos();
+        }
+
+        private void CargaDatosAlTextBox(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.RowIndex < dataGridView2.Rows.Count)
+            {
+                int rowIndex = dataGridView2.SelectedRows[0].Index;
+                DataGridViewRow row = dataGridView2.Rows[rowIndex];
+                int idOfertaRecargo = int.Parse(row.Cells["idOfertaRecargoDataGridViewTextBoxColumn"].Value.ToString());
+
+                OfertasRecargo OREditar = oferta_recargoController.TraerORPorID(idOfertaRecargo);
+
+
+
+                txtNombre.Text = OREditar.NombOfertaRecargo;
+                dateTimeInicio.Value = OREditar.FechaDesde;
+                dateTimeFin.Value = OREditar.FechaHasta;
+                comboBoxEstado.SelectedIndex = OREditar.Estado;
+                txtDescuento.Text = OREditar.PorcentajeDescuento.ToString();
+                txtRecargo.Text = OREditar.PorcentajeRecargo.ToString();
+            }
+        }
+
+        private void FechaCambia(object sender, EventArgs e)
+        {
+            
+
+            // Establecer la fecha de salida como mínimo un día después de la fecha de ingreso
+            dateTimeFin.MinDate = dateTimeInicio.Value.Date.AddDays(1);
         }
     }
 }
