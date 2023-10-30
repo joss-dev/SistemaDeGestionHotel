@@ -28,8 +28,7 @@ namespace SistemaDeGestionHotel.views.admin
         {
             InitializeComponent();
 
-            dataGridView2.DataSource = Medio_pagoController.ObtenerMedioPago();
-            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            this.CargarDatosDataGrid();
 
             this.dataGridView2.SelectionChanged += new System.EventHandler(this.dataGridView2_SelectionChanged);
 
@@ -97,8 +96,7 @@ namespace SistemaDeGestionHotel.views.admin
                 Estado_MP = mp.Estado == 1 ? "Activo" : "Desactivado"
             }).ToList();
 
-            dataGridView2.DataSource = datosParaMostrar;
-            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            this.CargarDatosDataGrid();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -132,7 +130,7 @@ namespace SistemaDeGestionHotel.views.admin
                         if (result)
                         {
                             idMedioPago = -1;
-                            dataGridView2.DataSource = Medio_pagoController.ObtenerMedioPago();
+                            this.CargarDatosDataGrid();
 
                             txtNombMP.Text = string.Empty;
                             comboBoxTipoMP.SelectedIndex = 0;
@@ -140,19 +138,32 @@ namespace SistemaDeGestionHotel.views.admin
                         }
                         else
                         {
-                            MessageBox.Show("Ocurrio un error");
+                            MessageBox.Show("Ocurrio un error al editar el medio de pago");
                         }
-                    }
-                    else
-                    {
-                        MessageBox.Show("El correo electronico no es valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("No selecciono ningun usuario");
+                    MessageBox.Show("No selecciono ningun medio de pago");
                 }
             }
+        }
+
+
+        private void CargarDatosDataGrid()
+        {
+            var tipoMediosPago = Medio_pagoController.ObtenerMedioPago();
+
+            var datosParaMostrar = tipoMediosPago.Select(c => new
+            {
+                IdMedioPago = c.IdMedioPago,
+                Nombre = c.Nombre,
+                MedioPagoNombre = c.IdTipoMedioPagoNavigation.NombMedioPago,
+                Estado = c.Estado == 1 ? "Activo" : "Inactivo"
+            }).ToList();
+
+            dataGridView2.DataSource = datosParaMostrar;
+            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void dataGridView2_SelectionChanged(object sender, EventArgs e)

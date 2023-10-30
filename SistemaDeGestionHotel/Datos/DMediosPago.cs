@@ -41,7 +41,9 @@ namespace SistemaDeGestionHotel.Datos
 
         public List<MediosPago> ObtenerTodosLosMediosPago()
         {
-            return dbHotelParana.MediosPagos.ToList();
+            return dbHotelParana.MediosPagos
+                                 .Include(c => c.IdTipoMedioPagoNavigation)
+                                 .ToList();
         }
 
         /*public bool MarcarMPDesactivado(int MPId)
