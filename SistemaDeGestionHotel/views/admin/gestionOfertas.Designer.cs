@@ -42,13 +42,6 @@
             txtRecargo = new TextBox();
             label8 = new Label();
             dataGridView2 = new DataGridView();
-            idOfertaRecargoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            nombOfertaRecargoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            fechaDesdeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            fechaHastaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            porcentajeDescuentoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            porcentajeRecargoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            estadoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             ofertasRecargoBindingSource = new BindingSource(components);
             label12 = new Label();
             comboBoxEstado = new ComboBox();
@@ -61,6 +54,13 @@
             label2 = new Label();
             sqlCommandBuilder1 = new Microsoft.Data.SqlClient.SqlCommandBuilder();
             BTNLimpiar = new Button();
+            idOfertaRecargoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            nombOfertaRecargoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            fechaDesdeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            fechaHastaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            porcentajeDescuentoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            porcentajeRecargoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            estadoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ofertasRecargoBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
@@ -193,6 +193,7 @@
             // 
             dataGridView2.AllowUserToAddRows = false;
             dataGridView2.AllowUserToDeleteRows = false;
+            dataGridView2.AllowUserToOrderColumns = true;
             dataGridView2.Anchor = AnchorStyles.None;
             dataGridView2.AutoGenerateColumns = false;
             dataGridView2.BackgroundColor = Color.Gainsboro;
@@ -207,55 +208,6 @@
             dataGridView2.Size = new Size(759, 152);
             dataGridView2.TabIndex = 42;
             dataGridView2.CellClick += CargaDatosAlTextBox;
-            // 
-            // idOfertaRecargoDataGridViewTextBoxColumn
-            // 
-            idOfertaRecargoDataGridViewTextBoxColumn.DataPropertyName = "IdOfertaRecargo";
-            idOfertaRecargoDataGridViewTextBoxColumn.HeaderText = "IdOfertaRecargo";
-            idOfertaRecargoDataGridViewTextBoxColumn.Name = "idOfertaRecargoDataGridViewTextBoxColumn";
-            idOfertaRecargoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nombOfertaRecargoDataGridViewTextBoxColumn
-            // 
-            nombOfertaRecargoDataGridViewTextBoxColumn.DataPropertyName = "NombOfertaRecargo";
-            nombOfertaRecargoDataGridViewTextBoxColumn.HeaderText = "NombOfertaRecargo";
-            nombOfertaRecargoDataGridViewTextBoxColumn.Name = "nombOfertaRecargoDataGridViewTextBoxColumn";
-            nombOfertaRecargoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fechaDesdeDataGridViewTextBoxColumn
-            // 
-            fechaDesdeDataGridViewTextBoxColumn.DataPropertyName = "FechaDesde";
-            fechaDesdeDataGridViewTextBoxColumn.HeaderText = "FechaDesde";
-            fechaDesdeDataGridViewTextBoxColumn.Name = "fechaDesdeDataGridViewTextBoxColumn";
-            fechaDesdeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fechaHastaDataGridViewTextBoxColumn
-            // 
-            fechaHastaDataGridViewTextBoxColumn.DataPropertyName = "FechaHasta";
-            fechaHastaDataGridViewTextBoxColumn.HeaderText = "FechaHasta";
-            fechaHastaDataGridViewTextBoxColumn.Name = "fechaHastaDataGridViewTextBoxColumn";
-            fechaHastaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // porcentajeDescuentoDataGridViewTextBoxColumn
-            // 
-            porcentajeDescuentoDataGridViewTextBoxColumn.DataPropertyName = "PorcentajeDescuento";
-            porcentajeDescuentoDataGridViewTextBoxColumn.HeaderText = "PorcentajeDescuento";
-            porcentajeDescuentoDataGridViewTextBoxColumn.Name = "porcentajeDescuentoDataGridViewTextBoxColumn";
-            porcentajeDescuentoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // porcentajeRecargoDataGridViewTextBoxColumn
-            // 
-            porcentajeRecargoDataGridViewTextBoxColumn.DataPropertyName = "PorcentajeRecargo";
-            porcentajeRecargoDataGridViewTextBoxColumn.HeaderText = "PorcentajeRecargo";
-            porcentajeRecargoDataGridViewTextBoxColumn.Name = "porcentajeRecargoDataGridViewTextBoxColumn";
-            porcentajeRecargoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // estadoDataGridViewTextBoxColumn
-            // 
-            estadoDataGridViewTextBoxColumn.DataPropertyName = "Estado";
-            estadoDataGridViewTextBoxColumn.HeaderText = "Estado";
-            estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
-            estadoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // ofertasRecargoBindingSource
             // 
@@ -383,6 +335,56 @@
             BTNLimpiar.UseVisualStyleBackColor = false;
             BTNLimpiar.Click += BTNLimpiar_Click;
             // 
+            // idOfertaRecargoDataGridViewTextBoxColumn
+            // 
+            idOfertaRecargoDataGridViewTextBoxColumn.DataPropertyName = "IdOfertaRecargo";
+            idOfertaRecargoDataGridViewTextBoxColumn.HeaderText = "IdOfertaRecargo";
+            idOfertaRecargoDataGridViewTextBoxColumn.Name = "idOfertaRecargoDataGridViewTextBoxColumn";
+            idOfertaRecargoDataGridViewTextBoxColumn.ReadOnly = true;
+            idOfertaRecargoDataGridViewTextBoxColumn.Resizable = DataGridViewTriState.False;
+            // 
+            // nombOfertaRecargoDataGridViewTextBoxColumn
+            // 
+            nombOfertaRecargoDataGridViewTextBoxColumn.DataPropertyName = "NombOfertaRecargo";
+            nombOfertaRecargoDataGridViewTextBoxColumn.HeaderText = "NombOfertaRecargo";
+            nombOfertaRecargoDataGridViewTextBoxColumn.Name = "nombOfertaRecargoDataGridViewTextBoxColumn";
+            nombOfertaRecargoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fechaDesdeDataGridViewTextBoxColumn
+            // 
+            fechaDesdeDataGridViewTextBoxColumn.DataPropertyName = "FechaDesde";
+            fechaDesdeDataGridViewTextBoxColumn.HeaderText = "FechaDesde";
+            fechaDesdeDataGridViewTextBoxColumn.Name = "fechaDesdeDataGridViewTextBoxColumn";
+            fechaDesdeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fechaHastaDataGridViewTextBoxColumn
+            // 
+            fechaHastaDataGridViewTextBoxColumn.DataPropertyName = "FechaHasta";
+            fechaHastaDataGridViewTextBoxColumn.HeaderText = "FechaHasta";
+            fechaHastaDataGridViewTextBoxColumn.Name = "fechaHastaDataGridViewTextBoxColumn";
+            fechaHastaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // porcentajeDescuentoDataGridViewTextBoxColumn
+            // 
+            porcentajeDescuentoDataGridViewTextBoxColumn.DataPropertyName = "PorcentajeDescuento";
+            porcentajeDescuentoDataGridViewTextBoxColumn.HeaderText = "PorcentajeDescuento";
+            porcentajeDescuentoDataGridViewTextBoxColumn.Name = "porcentajeDescuentoDataGridViewTextBoxColumn";
+            porcentajeDescuentoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // porcentajeRecargoDataGridViewTextBoxColumn
+            // 
+            porcentajeRecargoDataGridViewTextBoxColumn.DataPropertyName = "PorcentajeRecargo";
+            porcentajeRecargoDataGridViewTextBoxColumn.HeaderText = "PorcentajeRecargo";
+            porcentajeRecargoDataGridViewTextBoxColumn.Name = "porcentajeRecargoDataGridViewTextBoxColumn";
+            porcentajeRecargoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // estadoDataGridViewTextBoxColumn
+            // 
+            estadoDataGridViewTextBoxColumn.DataPropertyName = "Estado";
+            estadoDataGridViewTextBoxColumn.HeaderText = "Estado";
+            estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
+            estadoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // gestionOfertas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -449,6 +451,7 @@
         private Label label2;
         private Microsoft.Data.SqlClient.SqlCommandBuilder sqlCommandBuilder1;
         private BindingSource ofertasRecargoBindingSource;
+        private Button BTNLimpiar;
         private DataGridViewTextBoxColumn idOfertaRecargoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn nombOfertaRecargoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn fechaDesdeDataGridViewTextBoxColumn;
@@ -456,6 +459,5 @@
         private DataGridViewTextBoxColumn porcentajeDescuentoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn porcentajeRecargoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn;
-        private Button BTNLimpiar;
     }
 }

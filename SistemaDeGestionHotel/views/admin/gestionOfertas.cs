@@ -303,7 +303,7 @@ namespace SistemaDeGestionHotel.views.admin
 
         private void FechaCambia(object sender, EventArgs e)
         {
-            
+
 
             // Establecer la fecha de salida como mínimo un día después de la fecha de ingreso
             dateTimeFin.MinDate = dateTimeInicio.Value.Date.AddDays(1);
