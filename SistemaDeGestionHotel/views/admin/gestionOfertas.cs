@@ -100,7 +100,7 @@ namespace SistemaDeGestionHotel.views.admin
             DateTime fechaHastaConvertida = fechaHasta.Date;
 
             // Llamar al controlador para cargar la oferta o recargo
-            bool exito = oferta_recargoController.CargarOfertaRecargo(nombre, fechaDesdeConvertida, fechaHastaConvertida, porcentajeDescuento, porcentajeRecargo);
+            bool exito = oferta_recargoController.CargarOfertaRecargo(nombre, fechaDesdeConvertida, fechaHastaConvertida, comboBoxEstado.SelectedIndex, porcentajeDescuento, porcentajeRecargo);
 
             if (exito)
             {

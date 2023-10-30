@@ -159,6 +159,8 @@ CREATE TABLE Consulta(
 INSERT INTO Tipo_habitacion(Nomb_tipo) 
 VALUES ('Simple'), ('Doble'), ('Triple');
 
+INSERT INTO Tipo_medioPago(Nomb_medioPago) 
+VALUES ('Tarjeta de Credito'), ('Tarjeta de debito'), ('Efectivo'), ('Transferencia');
 
 INSERT INTO Piso(Nro_piso) 
 VALUES (1), (2), (3);

@@ -10,12 +10,13 @@ namespace SistemaDeGestionHotel.Controllers
     {
         DOfertaRecargo d_ofertaRecargo = new DOfertaRecargo();
 
-        public bool CargarOfertaRecargo(string nombre, DateTime fecha_desde, DateTime fecha_hasta, float porcentajeDesc, float porcentajeRecargo)
+        public bool CargarOfertaRecargo(string nombre, DateTime fecha_desde, DateTime fecha_hasta,int estado ,float porcentajeDesc, float porcentajeRecargo)
         {
             OfertasRecargo oferta_recargo = new OfertasRecargo()
             {
                 NombOfertaRecargo = nombre,
                 FechaDesde = fecha_desde,
+                Estado = estado,
                 FechaHasta = fecha_hasta,
                 PorcentajeDescuento = porcentajeDesc,
                 PorcentajeRecargo = porcentajeRecargo
