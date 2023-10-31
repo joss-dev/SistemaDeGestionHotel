@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaDeGestionHotel.Controllers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,20 @@ namespace SistemaDeGestionHotel.views.admin
 {
     public partial class registrarSsAdicionales : Form
     {
+
+        ServiciosAdicionalesController servicio_controller = new ServiciosAdicionalesController();
+
         public registrarSsAdicionales()
         {
             InitializeComponent();
+
+            dataGridView1.DataSource = servicio_controller.GetServiciosAdicionales();
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            // Agregar elementos a la lista desplegable.
+            comboBoxEstado.Items.Add("Inactivo");
+            comboBoxEstado.Items.Add("Activo");
+
         }
 
         private void ValidacionNombreSs(object sender, EventArgs e)
@@ -60,6 +72,23 @@ namespace SistemaDeGestionHotel.views.admin
                 // Mostrar un mensaje de error
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
+            }
+            else
+            {
+                bool result = servicio_controller.AgregarServicioAdicional(txtNombSs.Text, float.Parse(txtPrecioTotal.Text), comboBoxEstado.SelectedIndex);
+
+                if (result)
+                {
+                    MessageBox.Show("El servicio fue registrado correctamente", "Notificación", MessageBoxButtons.OK);
+                    txtNombSs.Text = String.Empty;
+                    txtPrecioTotal.Text = String.Empty;
+                    dataGridView1.DataSource = servicio_controller.GetServiciosAdicionales();
+                    dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                }
+                else
+                {
+                    MessageBox.Show("Ocurrio un error al cargar el servicio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }
