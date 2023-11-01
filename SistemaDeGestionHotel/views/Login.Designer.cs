@@ -33,7 +33,6 @@
             label1 = new Label();
             btnLogin = new Button();
             btnSalir = new Button();
-            linkPass = new LinkLabel();
             TUsuario = new TextBox();
             TPass = new TextBox();
             btnMinimizar = new FontAwesome.Sharp.IconButton();
@@ -111,19 +110,6 @@
             btnSalir.UseVisualStyleBackColor = false;
             btnSalir.Click += btnSalir_Click;
             // 
-            // linkPass
-            // 
-            linkPass.ActiveLinkColor = Color.FromArgb(0, 122, 204);
-            linkPass.AutoSize = true;
-            linkPass.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            linkPass.LinkColor = Color.Gray;
-            linkPass.Location = new Point(433, 239);
-            linkPass.Name = "linkPass";
-            linkPass.Size = new Size(149, 13);
-            linkPass.TabIndex = 0;
-            linkPass.TabStop = true;
-            linkPass.Text = "¿Has olvidado tu contraseña?";
-            // 
             // TUsuario
             // 
             TUsuario.BackColor = Color.Black;
@@ -198,7 +184,6 @@
             Controls.Add(btnMinimizar);
             Controls.Add(TPass);
             Controls.Add(TUsuario);
-            Controls.Add(linkPass);
             Controls.Add(btnSalir);
             Controls.Add(btnLogin);
             Controls.Add(label1);
@@ -223,7 +208,6 @@
         private Label label1;
         private Button btnLogin;
         private Button btnSalir;
-        private LinkLabel linkPass;
         private TextBox TPass;
         private FontAwesome.Sharp.IconButton btnMinimizar;
         private FontAwesome.Sharp.IconButton iconButton1;

@@ -339,10 +339,10 @@
             // 
             dataGridView1.Anchor = AnchorStyles.None;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(96, 579);
+            dataGridView1.Location = new Point(92, 573);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(741, 145);
+            dataGridView1.Size = new Size(741, 205);
             dataGridView1.TabIndex = 60;
             dataGridView1.CellClick += CargaDatosTextBox;
             dataGridView1.CellFormatting += FormatoDataGrid;
@@ -419,6 +419,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
             BackColor = Color.LightGreen;
             ClientSize = new Size(928, 749);
             Controls.Add(comboBoxEstado);

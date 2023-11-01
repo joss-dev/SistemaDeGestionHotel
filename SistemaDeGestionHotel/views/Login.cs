@@ -14,6 +14,11 @@ namespace SistemaDeGestionHotel
             InitializeComponent();
             // Establece la posición de inicio en el centro de la pantalla
             this.StartPosition = FormStartPosition.CenterScreen;
+
+
+            // oculta la contraseña
+            TPass.UseSystemPasswordChar = true;
+            iconButton1.IconChar = FontAwesome.Sharp.IconChar.Eye;
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -107,12 +112,13 @@ namespace SistemaDeGestionHotel
             if (TPass.UseSystemPasswordChar == false)
             {
                 TPass.UseSystemPasswordChar = true;
-                iconButton1.IconChar = FontAwesome.Sharp.IconChar.EyeSlash;
+                iconButton1.IconChar = FontAwesome.Sharp.IconChar.Eye;
             }
             else
             {
-                TPass.UseSystemPasswordChar = true;
-                iconButton1.IconChar = FontAwesome.Sharp.IconChar.Eye;
+                TPass.UseSystemPasswordChar = false;
+                iconButton1.IconChar = FontAwesome.Sharp.IconChar.EyeSlash;
+
             }
 
         }
@@ -123,25 +129,26 @@ namespace SistemaDeGestionHotel
             {
                 // Mostrar un mensaje de error
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }else
+            }
+            else
             {
                 Usuario usuario = login.IniciarSesion(TUsuario.Text, TPass.Text);
 
                 if (usuario != null)
                 {
-                    if(usuario.IdPerfilUsuario == 1)
+                    if (usuario.IdPerfilUsuario == 1)
                     {
                         Form form = new PrincipalSuperAdmin(usuario);
                         form.Show();
                         this.Hide();
                     }
-                    else if(usuario.IdPerfilUsuario == 2)
+                    else if (usuario.IdPerfilUsuario == 2)
                     {
                         Form form = new PrincipalAdmin(usuario);
                         form.Show();
                         this.Hide();
                     }
-                    else if(usuario.IdPerfilUsuario == 3)
+                    else if (usuario.IdPerfilUsuario == 3)
                     {
                         Form form = new PrincipalRecep(usuario);
                         form.Show();
@@ -153,9 +160,9 @@ namespace SistemaDeGestionHotel
                     MessageBox.Show("Contraseña incorrecta o Usuario incorrecto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            
+
         }
-      }
+    }
     internal class DLLImportAttribute : Attribute
     {
 
