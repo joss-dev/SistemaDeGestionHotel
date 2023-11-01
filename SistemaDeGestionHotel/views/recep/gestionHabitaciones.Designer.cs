@@ -31,15 +31,6 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(gestionHabitaciones));
             panel1 = new Panel();
-            button15 = new Button();
-            button14 = new Button();
-            button13 = new Button();
-            button12 = new Button();
-            button11 = new Button();
-            button10 = new Button();
-            button9 = new Button();
-            button8 = new Button();
-            button7 = new Button();
             label1 = new Label();
             btnFiltroPiso1 = new Button();
             btnFiltroPiso2 = new Button();
@@ -56,145 +47,18 @@
             label6 = new Label();
             btnVolver = new Button();
             errorProvider1 = new ErrorProvider(components);
-            panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.AutoScroll = true;
             panel1.BackColor = Color.PaleTurquoise;
-            panel1.Controls.Add(button15);
-            panel1.Controls.Add(button14);
-            panel1.Controls.Add(button13);
-            panel1.Controls.Add(button12);
-            panel1.Controls.Add(button11);
-            panel1.Controls.Add(button10);
-            panel1.Controls.Add(button9);
-            panel1.Controls.Add(button8);
-            panel1.Controls.Add(button7);
             panel1.Location = new Point(21, 196);
             panel1.Name = "panel1";
             panel1.Size = new Size(916, 482);
             panel1.TabIndex = 0;
-            // 
-            // button15
-            // 
-            button15.Anchor = AnchorStyles.None;
-            button15.BackColor = Color.MediumSpringGreen;
-            button15.FlatStyle = FlatStyle.Flat;
-            button15.Font = new Font("Yu Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button15.Location = new Point(581, 192);
-            button15.Name = "button15";
-            button15.Size = new Size(139, 52);
-            button15.TabIndex = 15;
-            button15.Text = "101";
-            button15.UseVisualStyleBackColor = false;
-            // 
-            // button14
-            // 
-            button14.Anchor = AnchorStyles.None;
-            button14.BackColor = Color.SandyBrown;
-            button14.FlatStyle = FlatStyle.Flat;
-            button14.Font = new Font("Yu Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button14.Location = new Point(417, 192);
-            button14.Name = "button14";
-            button14.Size = new Size(139, 52);
-            button14.TabIndex = 14;
-            button14.Text = "101";
-            button14.UseVisualStyleBackColor = false;
-            // 
-            // button13
-            // 
-            button13.Anchor = AnchorStyles.None;
-            button13.BackColor = Color.SandyBrown;
-            button13.FlatStyle = FlatStyle.Flat;
-            button13.Font = new Font("Yu Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button13.Location = new Point(241, 192);
-            button13.Name = "button13";
-            button13.Size = new Size(139, 52);
-            button13.TabIndex = 13;
-            button13.Text = "101";
-            button13.UseVisualStyleBackColor = false;
-            // 
-            // button12
-            // 
-            button12.Anchor = AnchorStyles.None;
-            button12.BackColor = Color.Red;
-            button12.FlatStyle = FlatStyle.Flat;
-            button12.Font = new Font("Yu Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button12.Location = new Point(62, 192);
-            button12.Name = "button12";
-            button12.Size = new Size(139, 52);
-            button12.TabIndex = 12;
-            button12.Text = "101";
-            button12.UseVisualStyleBackColor = false;
-            // 
-            // button11
-            // 
-            button11.Anchor = AnchorStyles.None;
-            button11.BackColor = Color.Red;
-            button11.FlatStyle = FlatStyle.Flat;
-            button11.Font = new Font("Yu Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button11.Location = new Point(744, 100);
-            button11.Name = "button11";
-            button11.Size = new Size(139, 52);
-            button11.TabIndex = 11;
-            button11.Text = "101";
-            button11.UseVisualStyleBackColor = false;
-            // 
-            // button10
-            // 
-            button10.Anchor = AnchorStyles.None;
-            button10.BackColor = Color.MediumSpringGreen;
-            button10.FlatStyle = FlatStyle.Flat;
-            button10.Font = new Font("Yu Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button10.Location = new Point(581, 100);
-            button10.Name = "button10";
-            button10.Size = new Size(139, 52);
-            button10.TabIndex = 10;
-            button10.Text = "101";
-            button10.UseVisualStyleBackColor = false;
-            // 
-            // button9
-            // 
-            button9.Anchor = AnchorStyles.None;
-            button9.BackColor = Color.Red;
-            button9.FlatStyle = FlatStyle.Flat;
-            button9.Font = new Font("Yu Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button9.Location = new Point(417, 100);
-            button9.Name = "button9";
-            button9.Size = new Size(139, 52);
-            button9.TabIndex = 9;
-            button9.Text = "101";
-            button9.UseVisualStyleBackColor = false;
-            // 
-            // button8
-            // 
-            button8.Anchor = AnchorStyles.None;
-            button8.BackColor = Color.MediumSpringGreen;
-            button8.FlatStyle = FlatStyle.Flat;
-            button8.Font = new Font("Yu Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button8.Location = new Point(241, 100);
-            button8.Name = "button8";
-            button8.Size = new Size(139, 52);
-            button8.TabIndex = 8;
-            button8.Text = "101";
-            button8.UseVisualStyleBackColor = false;
-            // 
-            // button7
-            // 
-            button7.Anchor = AnchorStyles.None;
-            button7.BackColor = Color.MediumSpringGreen;
-            button7.FlatStyle = FlatStyle.Flat;
-            button7.Font = new Font("Yu Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button7.Location = new Point(62, 100);
-            button7.Name = "button7";
-            button7.Size = new Size(139, 52);
-            button7.TabIndex = 7;
-            button7.Text = "101";
-            button7.UseVisualStyleBackColor = false;
-            button7.Click += button7_Click;
             // 
             // label1
             // 
@@ -217,6 +81,7 @@
             btnFiltroPiso1.TabIndex = 2;
             btnFiltroPiso1.Text = "Piso 1";
             btnFiltroPiso1.UseVisualStyleBackColor = false;
+            btnFiltroPiso1.Click += btnFiltroPiso1_Click;
             // 
             // btnFiltroPiso2
             // 
@@ -229,6 +94,7 @@
             btnFiltroPiso2.TabIndex = 3;
             btnFiltroPiso2.Text = "Piso 2";
             btnFiltroPiso2.UseVisualStyleBackColor = false;
+            btnFiltroPiso2.Click += btnFiltroPiso2_Click;
             // 
             // btnFiltroPiso3
             // 
@@ -241,6 +107,7 @@
             btnFiltroPiso3.TabIndex = 4;
             btnFiltroPiso3.Text = "Piso 3";
             btnFiltroPiso3.UseVisualStyleBackColor = false;
+            btnFiltroPiso3.Click += btnFiltroPiso3_Click;
             // 
             // btnFiltroOcupado
             // 
@@ -412,7 +279,6 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Registraciones y Reservas";
             Load += gestionHabitaciones_Load;
-            panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -428,15 +294,6 @@
         private Button btnFiltroOcupado;
         private Button btnFiltroLibre;
         private Button btnFiltroReservado;
-        private Button button12;
-        private Button button11;
-        private Button button10;
-        private Button button9;
-        private Button button8;
-        private Button button7;
-        private Button button15;
-        private Button button14;
-        private Button button13;
         private Button btnBuscar;
         private Label LDni;
         private TextBox TNumHabitacion;
