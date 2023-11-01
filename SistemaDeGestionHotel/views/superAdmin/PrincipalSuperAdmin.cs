@@ -163,7 +163,9 @@ namespace SistemaDeGestionHotel.views
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Form login = new Login();
+            login.Show();
+            this.Hide();
         }
     }
 }
