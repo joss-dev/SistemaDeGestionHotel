@@ -49,6 +49,27 @@ namespace SistemaDeGestionHotel.Datos
             return habitacionesFiltradas;
         }
 
+        public List<Habitacion> GetHabitacionesByEstado(int idEstado)
+        {
+            // Obtener todas las habitaciones
+            List<Habitacion> todasLasHabitaciones = dbHotelParana.Habitacions.Include(h => h.IdEstadoNavigation).ToList();
+
+            // Filtrar las habitaciones por el número de piso
+            List<Habitacion> habitacionesFiltradas = todasLasHabitaciones.Where(h => h.IdEstadoNavigation.IdEstado == idEstado).ToList();
+
+            return habitacionesFiltradas;
+        }
+
+        public List<Habitacion> GetHabitacionesByTipoHabitacion(int idTipo)
+        {
+            // Obtener todas las habitaciones
+            List<Habitacion> todasLasHabitaciones = dbHotelParana.Habitacions.Include(h => h.IdTipoHabNavigation).ToList();
+
+            // Filtrar las habitaciones por el número de piso
+            List<Habitacion> habitacionesFiltradas = todasLasHabitaciones.Where(h => h.IdTipoHabNavigation.IdTipoHab == idTipo).ToList();
+
+            return habitacionesFiltradas;
+        }
 
         public Habitacion GetHabitacionByID(int iddehabitation)
         {
