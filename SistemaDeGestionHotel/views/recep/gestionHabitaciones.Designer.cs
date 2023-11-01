@@ -47,6 +47,7 @@
             label6 = new Label();
             btnVolver = new Button();
             errorProvider1 = new ErrorProvider(components);
+            todasLasHabitaciones = new Button();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
@@ -64,7 +65,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 32.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(236, 21);
+            label1.Location = new Point(274, 18);
             label1.Name = "label1";
             label1.Size = new Size(496, 51);
             label1.TabIndex = 1;
@@ -256,6 +257,19 @@
             // 
             errorProvider1.ContainerControl = this;
             // 
+            // todasLasHabitaciones
+            // 
+            todasLasHabitaciones.BackColor = Color.Turquoise;
+            todasLasHabitaciones.FlatStyle = FlatStyle.Flat;
+            todasLasHabitaciones.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            todasLasHabitaciones.Location = new Point(21, 96);
+            todasLasHabitaciones.Name = "todasLasHabitaciones";
+            todasLasHabitaciones.Size = new Size(95, 33);
+            todasLasHabitaciones.TabIndex = 71;
+            todasLasHabitaciones.Text = "Todos";
+            todasLasHabitaciones.UseVisualStyleBackColor = false;
+            todasLasHabitaciones.Click += todasLasHabitaciones_Click;
+            // 
             // gestionHabitaciones
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -263,6 +277,7 @@
             AutoSize = true;
             BackColor = Color.LightGreen;
             ClientSize = new Size(963, 788);
+            Controls.Add(todasLasHabitaciones);
             Controls.Add(label6);
             Controls.Add(btnVolver);
             Controls.Add(btnFiltroTriple);
@@ -309,5 +324,6 @@
         private Label label6;
         private Button btnVolver;
         private ErrorProvider errorProvider1;
+        private Button todasLasHabitaciones;
     }
 }
