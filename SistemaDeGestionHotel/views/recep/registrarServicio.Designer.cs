@@ -42,7 +42,7 @@
             lTitulo2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             lTitulo2.AutoSize = true;
             lTitulo2.Font = new Font("Microsoft Sans Serif", 26.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lTitulo2.Location = new Point(57, 50);
+            lTitulo2.Location = new Point(114, 31);
             lTitulo2.Name = "lTitulo2";
             lTitulo2.Size = new Size(293, 39);
             lTitulo2.TabIndex = 19;
@@ -62,7 +62,7 @@
             btnCancelar.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnCancelar.Image = Properties.Resources.btnCancelar;
             btnCancelar.ImageAlign = ContentAlignment.TopCenter;
-            btnCancelar.Location = new Point(64, 448);
+            btnCancelar.Location = new Point(109, 591);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(111, 83);
             btnCancelar.TabIndex = 31;
@@ -81,7 +81,7 @@
             btnRegistrar.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnRegistrar.Image = Properties.Resources.btn_guardar_;
             btnRegistrar.ImageAlign = ContentAlignment.TopCenter;
-            btnRegistrar.Location = new Point(250, 448);
+            btnRegistrar.Location = new Point(295, 591);
             btnRegistrar.Name = "btnRegistrar";
             btnRegistrar.Size = new Size(112, 83);
             btnRegistrar.TabIndex = 30;
@@ -91,10 +91,11 @@
             // 
             // groupBox1
             // 
+            groupBox1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             groupBox1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox1.Location = new Point(48, 118);
+            groupBox1.Location = new Point(42, 112);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(331, 305);
+            groupBox1.Size = new Size(454, 446);
             groupBox1.TabIndex = 36;
             groupBox1.TabStop = false;
             groupBox1.Text = "Servicios Adicionales";
@@ -104,7 +105,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightGreen;
-            ClientSize = new Size(451, 564);
+            ClientSize = new Size(540, 707);
             Controls.Add(btnCancelar);
             Controls.Add(btnRegistrar);
             Controls.Add(lTitulo2);
