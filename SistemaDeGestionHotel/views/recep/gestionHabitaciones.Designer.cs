@@ -194,6 +194,7 @@
             btnFiltroSimple.TabIndex = 33;
             btnFiltroSimple.Text = "Simple";
             btnFiltroSimple.UseVisualStyleBackColor = false;
+            btnFiltroSimple.Click += btnFiltroSimple_Click;
             // 
             // btnFiltroDoble
             // 
@@ -207,6 +208,7 @@
             btnFiltroDoble.TabIndex = 34;
             btnFiltroDoble.Text = "Doble";
             btnFiltroDoble.UseVisualStyleBackColor = false;
+            btnFiltroDoble.Click += btnFiltroDoble_Click;
             // 
             // btnFiltroTriple
             // 
@@ -220,6 +222,7 @@
             btnFiltroTriple.TabIndex = 35;
             btnFiltroTriple.Text = "Triple";
             btnFiltroTriple.UseVisualStyleBackColor = false;
+            btnFiltroTriple.Click += btnFiltroTriple_Click;
             // 
             // label6
             // 
