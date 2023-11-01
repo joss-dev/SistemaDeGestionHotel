@@ -121,6 +121,7 @@
             btnFiltroOcupado.TabIndex = 5;
             btnFiltroOcupado.Text = "Ocupado";
             btnFiltroOcupado.UseVisualStyleBackColor = false;
+            btnFiltroOcupado.Click += btnFiltroOcupado_Click;
             // 
             // btnFiltroLibre
             // 
@@ -134,6 +135,7 @@
             btnFiltroLibre.TabIndex = 6;
             btnFiltroLibre.Text = "Libre";
             btnFiltroLibre.UseVisualStyleBackColor = false;
+            btnFiltroLibre.Click += btnFiltroLibre_Click;
             // 
             // btnFiltroReservado
             // 
@@ -147,6 +149,7 @@
             btnFiltroReservado.TabIndex = 7;
             btnFiltroReservado.Text = "Reservado";
             btnFiltroReservado.UseVisualStyleBackColor = false;
+            btnFiltroReservado.Click += btnFiltroReservado_Click;
             // 
             // btnBuscar
             // 
