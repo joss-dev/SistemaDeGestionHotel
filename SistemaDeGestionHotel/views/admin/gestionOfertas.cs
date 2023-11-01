@@ -44,6 +44,12 @@ namespace SistemaDeGestionHotel.views.admin
             // Establecer la fecha de salida como mínimo un día después de la fecha de ingreso
             dateTimeFin.MinDate = dateTimeInicio.Value.Date.AddDays(1);
 
+            // Agregar elementos a la lista desplegable.
+            comboBoxTipo.Items.Add("Oferta");
+            comboBoxTipo.Items.Add("Recargo");
+
+            // Establecer los elementos seleccionados por defecto.
+            comboBoxTipo.SelectedIndex = 1;
 
             // Agregar elementos a la lista desplegable.
             comboBoxEstado.Items.Add("Finalizada");
@@ -307,6 +313,31 @@ namespace SistemaDeGestionHotel.views.admin
 
             // Establecer la fecha de salida como mínimo un día después de la fecha de ingreso
             dateTimeFin.MinDate = dateTimeInicio.Value.Date.AddDays(1);
+        }
+
+        private void CambiaValorTipo(object sender, EventArgs e)
+        {
+            if(comboBoxTipo.SelectedIndex == 1)
+            {
+                txtRecargo.Enabled = true;
+                txtRecargo.Text = String.Empty;
+
+                txtDescuento.Enabled = false;
+                txtDescuento.Text = 0.ToString();
+
+            }else if(comboBoxTipo.SelectedIndex == 0) {
+
+                txtDescuento.Enabled = true;
+                txtDescuento.Text = String.Empty;
+
+                txtRecargo.Enabled = false;
+                txtRecargo.Text = 0.ToString();
+            }
+            else
+            {
+                txtDescuento.Enabled = false;
+                txtRecargo.Enabled = false;
+            }
         }
     }
 }
