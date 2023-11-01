@@ -2,16 +2,6 @@
 using SistemaDeGestionHotel.Controllers;
 using SistemaDeGestionHotel.NEntidades;
 using SistemaDeGestionHotel.views.recep;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Controls;
-using System.Windows.Forms;
 using Button = System.Windows.Forms.Button;
 
 namespace SistemaDeGestionHotel.views.admin
