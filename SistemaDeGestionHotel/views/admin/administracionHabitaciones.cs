@@ -272,7 +272,7 @@ namespace SistemaDeGestionHotel.views.admin
                     }
                 }
             }
-            
+
         }
 
         private void btnHabilitarHabitacion_Click(object sender, EventArgs e)
@@ -388,7 +388,7 @@ namespace SistemaDeGestionHotel.views.admin
         private void btnEditar_Click(object sender, EventArgs e)
         {
             if (ValidacionTextBox.ValidarNoVacio(txtNroHab, txtCosto, txtCantCamas, txtPiso))
-            { 
+            {
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
@@ -413,25 +413,25 @@ namespace SistemaDeGestionHotel.views.admin
                     {
 
                         bool result = c_habitacion.EditarHabitacion(habitacionEditar.IdHabitacion, int.Parse(txtNroHab.Text), int.Parse(txtCantCamas.Text), float.Parse(txtCosto.Text), comboBoxEstado.SelectedIndex + 1, comboBoxTipoHab.SelectedIndex + 1, int.Parse(txtPiso.Text));
-                            if (result)
-                            {
-                                MessageBox.Show("La habitacion con ID: " + habitacionEditar.IdHabitacion.ToString() + " se edito correctamente", "Confirmado", MessageBoxButtons.OK);
+                        if (result)
+                        {
+                            MessageBox.Show("La habitacion con ID: " + habitacionEditar.IdHabitacion.ToString() + " se edito correctamente", "Confirmado", MessageBoxButtons.OK);
 
-                                idhab = -1;
-                                this.CargarDatosDataGrid();
-                                txtCantCamas.Text = String.Empty;
-                                txtCosto.Text = String.Empty;
-                                txtNroHab.Text = String.Empty;
-                                txtPiso.Text = String.Empty;
-                                comboBoxEstado.SelectedIndex = 0;
-                                comboBoxTipoHab.SelectedIndex = 0;
+                            idhab = -1;
+                            this.CargarDatosDataGrid();
+                            txtCantCamas.Text = String.Empty;
+                            txtCosto.Text = String.Empty;
+                            txtNroHab.Text = String.Empty;
+                            txtPiso.Text = String.Empty;
+                            comboBoxEstado.SelectedIndex = 0;
+                            comboBoxTipoHab.SelectedIndex = 0;
                         }
-                            else
-                            {
-                                MessageBox.Show("Ocurrio un error");
-                            }
+                        else
+                        {
+                            MessageBox.Show("Ocurrio un error");
                         }
                     }
+                }
                 else
                 {
                     MessageBox.Show("No selecciono ninguna habitacion");

@@ -342,7 +342,7 @@
             dataGridView1.Location = new Point(96, 579);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(741, 158);
+            dataGridView1.Size = new Size(741, 145);
             dataGridView1.TabIndex = 60;
             dataGridView1.CellClick += CargaDatosTextBox;
             dataGridView1.CellFormatting += FormatoDataGrid;

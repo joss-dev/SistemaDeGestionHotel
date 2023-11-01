@@ -1,4 +1,6 @@
-﻿using SistemaDeGestionHotel.Controllers;
+﻿using Microsoft.VisualBasic;
+using SistemaDeGestionHotel.Controllers;
+using SistemaDeGestionHotel.NEntidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,9 +25,6 @@ namespace SistemaDeGestionHotel.views.admin
             dataGridView1.DataSource = servicio_controller.GetServiciosAdicionales();
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-            // Agregar elementos a la lista desplegable.
-            comboBoxEstado.Items.Add("Inactivo");
-            comboBoxEstado.Items.Add("Activo");
 
         }
 
@@ -75,7 +74,7 @@ namespace SistemaDeGestionHotel.views.admin
             }
             else
             {
-                bool result = servicio_controller.AgregarServicioAdicional(txtNombSs.Text, float.Parse(txtPrecioTotal.Text), comboBoxEstado.SelectedIndex);
+                bool result = servicio_controller.AgregarServicioAdicional(txtNombSs.Text, float.Parse(txtPrecioTotal.Text));
 
                 if (result)
                 {
@@ -89,6 +88,160 @@ namespace SistemaDeGestionHotel.views.admin
                 {
                     MessageBox.Show("Ocurrio un error al cargar el servicio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            // Verificar si alguno de los campos está incompleto
+            if (ValidacionTextBox.ValidarNoVacio(txtNombSs, txtPrecioTotal))
+            {
+                // Mostrar un mensaje de error
+                MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+                int idServicio = -1; // Valor predeterminado si no se selecciona ningún usuario
+
+                if (dataGridView1.SelectedRows.Count > 0)
+                {
+                    // Si al menos una fila está seleccionada, obtén el índice de la primera fila seleccionada
+                    int rowIndex = dataGridView1.SelectedRows[0].Index;
+
+                    DataGridViewRow row = dataGridView1.Rows[rowIndex];
+                    idServicio = int.Parse(row.Cells["IdServicioAdic"].Value.ToString());
+                }
+                if (idServicio != -1)
+                {
+                    ServiciosAdicionale servicioEditar = servicio_controller.GetServicioAdicionalByID(idServicio);
+
+                    MsgBoxResult ask = (MsgBoxResult)MessageBox.Show("Seguro desea editar este Servicio?", "Confirmacion de edición", MessageBoxButtons.YesNo);
+
+                    if (ask == MsgBoxResult.Yes)
+                    {
+                        bool result = servicio_controller.EditarServicioAdicional(servicioEditar.IdServicioAdic, txtNombSs.Text, float.Parse(txtPrecioTotal.Text));
+
+                        if (result)
+                        {
+                            idServicio = -1;
+                            MessageBox.Show("El servicio fue editado correctamente", "Notificación", MessageBoxButtons.OK);
+                            txtNombSs.Text = String.Empty;
+                            txtPrecioTotal.Text = String.Empty;
+                            dataGridView1.DataSource = servicio_controller.GetServiciosAdicionales();
+                            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ocurrio un error al editar el servicio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No selecciono ningun servicio");
+                }
+
+            }
+        }
+
+        private void CargarDataGrid(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.RowIndex < dataGridView1.Rows.Count)
+            {
+                // Obtiene la fila seleccionada
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+
+                // Accede a los datos de la fila y carga en los TextBox y ComboBox
+                txtNombSs.Text = row.Cells["NombServicio"].Value.ToString();
+                txtPrecioTotal.Text = row.Cells["Precio"].Value.ToString();
+
+            }
+        }
+
+        private void btnDeshabHabitacion_Click(object sender, EventArgs e)
+        {
+            int idServicio = -1; // Valor predeterminado si no se selecciona ningún usuario
+
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                // Si al menos una fila está seleccionada, obtén el índice de la primera fila seleccionada
+                int rowIndex = dataGridView1.SelectedRows[0].Index;
+
+                DataGridViewRow row = dataGridView1.Rows[rowIndex];
+                idServicio = int.Parse(row.Cells["IdServicioAdic"].Value.ToString());
+            }
+            if (idServicio != -1)
+            {
+                ServiciosAdicionale servicioBaja = servicio_controller.GetServicioAdicionalByID(idServicio);
+
+                MsgBoxResult ask = (MsgBoxResult)MessageBox.Show("Seguro desea deshabilitar este Servicio?", "Confirmacion de edición", MessageBoxButtons.YesNo);
+
+                if (ask == MsgBoxResult.Yes)
+                {
+                    bool result = servicio_controller.BajaServicioAdicional(servicioBaja.IdServicioAdic);
+
+                    if (result)
+                    {
+                        idServicio = -1;
+                        MessageBox.Show("El servicio fue deshabilitado correctamente", "Notificación", MessageBoxButtons.OK);
+                        txtNombSs.Text = String.Empty;
+                        txtPrecioTotal.Text = String.Empty;
+                        dataGridView1.DataSource = servicio_controller.GetServiciosAdicionales();
+                        dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ocurrio un error al deshabilitar el servicio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("No selecciono ningun servicio");
+            }
+        }
+
+        private void btnHabilitarHabitacion_Click(object sender, EventArgs e)
+        {
+            int idServicio = -1; // Valor predeterminado si no se selecciona ningún usuario
+
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                // Si al menos una fila está seleccionada, obtén el índice de la primera fila seleccionada
+                int rowIndex = dataGridView1.SelectedRows[0].Index;
+
+                DataGridViewRow row = dataGridView1.Rows[rowIndex];
+                idServicio = int.Parse(row.Cells["IdServicioAdic"].Value.ToString());
+            }
+            if (idServicio != -1)
+            {
+                ServiciosAdicionale servicioAlta = servicio_controller.GetServicioAdicionalByID(idServicio);
+
+                MsgBoxResult ask = (MsgBoxResult)MessageBox.Show("Seguro desea habilitar este Servicio?", "Confirmacion de edición", MessageBoxButtons.YesNo);
+
+                if (ask == MsgBoxResult.Yes)
+                {
+                    bool result = servicio_controller.AltaServicioAdicional(servicioAlta.IdServicioAdic);
+
+                    if (result)
+                    {
+                        idServicio = -1;
+                        MessageBox.Show("El servicio fue habilitado correctamente", "Notificación", MessageBoxButtons.OK);
+                        txtNombSs.Text = String.Empty;
+                        txtPrecioTotal.Text = String.Empty;
+                        dataGridView1.DataSource = servicio_controller.GetServiciosAdicionales();
+                        dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ocurrio un error al habilitar el servicio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("No selecciono ningun servicio");
             }
         }
     }

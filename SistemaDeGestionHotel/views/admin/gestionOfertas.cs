@@ -50,7 +50,7 @@ namespace SistemaDeGestionHotel.views.admin
             comboBoxEstado.Items.Add("Activa");
 
             // Establecer los elementos seleccionados por defecto.
-            comboBoxEstado.SelectedIndex = 0;
+            comboBoxEstado.SelectedIndex = 1;
         }
 
         private void comboBoxEstado_SelectedIndexChanged(object sender, EventArgs e)
