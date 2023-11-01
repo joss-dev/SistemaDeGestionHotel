@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualBasic;
 using SistemaDeGestionHotel.Controllers;
+using SistemaDeGestionHotel.Datos;
 using SistemaDeGestionHotel.NEntidades;
 using SistemaDeGestionHotel.views.recep;
 using Button = System.Windows.Forms.Button;
@@ -97,7 +98,52 @@ namespace SistemaDeGestionHotel.views.admin
             }
             else
             {
-                MessageBox.Show("Exito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                int nroHabitacion = int.Parse(TNumHabitacion.Text);
+                Habitacion habitacionBuscada = habitacion_controller.GetHabitacionByNroHabitacion(nroHabitacion);
+
+                if(habitacionBuscada != null && habitacionBuscada.IdEstado != 4 && habitacionBuscada.IdEstado != 5)
+                {
+                    panel1.Controls.Clear();
+                    // Crear un nuevo botón
+                    Button boton = new Button();
+
+                    //propiedades del boton 
+                    boton.AutoSize = true;
+                    boton.Anchor = AnchorStyles.None;
+                    boton.Size = new Size(140, 55);
+                    boton.FlatAppearance.BorderSize = 0;
+                    //boton.FlatAppearance.BorderColor = Color.Black;
+                    //boton.FlatAppearance.BorderSize = 1;
+
+                    if (habitacionBuscada.IdEstado == 1)
+                    {
+                        boton.BackColor = Color.MediumSpringGreen;
+                    }
+                    if (habitacionBuscada.IdEstado == 2)
+                    {
+                        boton.BackColor = Color.Red;
+                    }
+                    if (habitacionBuscada.IdEstado == 3)
+                    {
+                        boton.BackColor = Color.SandyBrown;
+                    }
+
+                    // Establecer el texto del botón con el número de habitación
+                    boton.Text = $"{habitacionBuscada.NroHabitacion}";
+
+                    // Establecer el nombre del botón con el ID de la habitación
+                    boton.Name = $"{habitacionBuscada.IdHabitacion}";
+
+                    // Establecer la ubicación del botón
+                    boton.Location = new Point(50, 80);
+
+                    // Añadir el botón al panel
+                    panel1.Controls.Add(boton);
+                }else
+                {
+                    MessageBox.Show("Habitación no encontrada");
+                }
+
             }
         }
 

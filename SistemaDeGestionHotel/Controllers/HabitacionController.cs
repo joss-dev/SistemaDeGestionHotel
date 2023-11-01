@@ -22,6 +22,11 @@ namespace SistemaDeGestionHotel.Controllers
             return d_habitacion.AgregarHabitacion(habitacion);
         }
 
+        public Habitacion GetHabitacionByNroHabitacion(int nroHabitacion)
+        {
+            return d_habitacion.GetHabitacionByNroHabitacion(nroHabitacion);
+        }
+
         public List<Habitacion> GetHabitaciones()
         {
             return d_habitacion.GetHabitaciones();
