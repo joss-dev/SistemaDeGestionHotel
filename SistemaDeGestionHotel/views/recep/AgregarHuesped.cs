@@ -21,6 +21,7 @@ namespace SistemaDeGestionHotel.views.recep
         private int dniCliente;
         private Usuario usuarioInicioSesion;
 
+
         HabitacionController habitacion_controller = new HabitacionController();
         RegistroController registro_controller = new RegistroController();
 
@@ -32,6 +33,11 @@ namespace SistemaDeGestionHotel.views.recep
             habitacionAgregar = habitacion;
             dniCliente = dni;
             usuarioInicioSesion = usuario;
+        }
+
+        private void CambiarEstadoDeHabitacion(int habitacionId, int nuevoEstado)
+        {
+           
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
@@ -47,6 +53,7 @@ namespace SistemaDeGestionHotel.views.recep
                 if(comboBoxEstado.SelectedIndex == 0)
                 {
                     habitacion_controller.MarcarReservadaHabitacion(habitacionAgregar.IdHabitacion);
+
                 }else
                 {
                     habitacion_controller.MarcarOcupadaHabitacion(habitacionAgregar.IdHabitacion);

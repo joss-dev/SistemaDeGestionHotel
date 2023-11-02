@@ -299,6 +299,7 @@
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Registraciones y Reservas";
+            Activated += ActualizarHabitaciones;
             Load += gestionHabitaciones_Load;
             ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
