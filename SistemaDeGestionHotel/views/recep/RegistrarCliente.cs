@@ -16,5 +16,25 @@ namespace SistemaDeGestionHotel.views.recep
         {
             InitializeComponent();
         }
+
+        private void ValidacionApellido(object sender, KeyEventArgs e)
+        {
+            ValidacionTextBox.ValidarTextoConEspacios(TApellido, errorProvider1);
+        }
+
+        private void ValidacionNombre(object sender, KeyEventArgs e)
+        {
+            ValidacionTextBox.ValidarTextoConEspacios(TNombre, errorProvider1);
+        }
+
+        private void ValidacionDni(object sender, KeyEventArgs e)
+        {
+            ValidacionTextBox.ValidarSoloNumeros(TDni, errorProvider1);
+        }
+
+        private void ValidacionTelefono(object sender, KeyEventArgs e)
+        {
+            ValidacionTextBox.ValidarSoloNumeros(textBoxTelefono, errorProvider1);
+        }
     }
 }

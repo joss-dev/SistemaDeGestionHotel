@@ -424,7 +424,7 @@ namespace SistemaDeGestionHotel.views.admin
             {
                 if (int.TryParse(botonClicado.Name, out int idHabitacion))
                 {
-                    Form form = new ConsultaDni(idHabitacion);
+                    Form form = new ConsultaDni(idHabitacion, usuarioInicioSesion);
                     form.ShowDialog();
                 }
             }
