@@ -118,7 +118,7 @@ namespace SistemaDeGestionHotel
         private void btnGestionHabitaciones_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, Color.FromArgb(34, 81, 111));
-            FormsHijos.AbrirFormHija(new gestionHabitaciones(), panelContenedor);
+            FormsHijos.AbrirFormHija(new gestionHabitaciones(usuarioInicioSesion), panelContenedor);
         }
 
         private void btnRegistrarServicios_Click(object sender, EventArgs e)

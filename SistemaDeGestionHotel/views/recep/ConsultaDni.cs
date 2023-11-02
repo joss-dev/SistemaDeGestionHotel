@@ -18,11 +18,13 @@ namespace SistemaDeGestionHotel.views.recep
 
         ClienteController cliente_controller = new ClienteController();
         HabitacionController habitacion_controller = new HabitacionController();
+        Usuario usuarioInicioSesion;
 
-        public ConsultaDni(int IDHabitacion)
+        public ConsultaDni(int IDHabitacion, Usuario usuario)
         {
             InitializeComponent();
             idHabitacion = IDHabitacion;
+            usuarioInicioSesion = usuario;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

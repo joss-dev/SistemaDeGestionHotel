@@ -39,7 +39,7 @@
             // TDni
             // 
             TDni.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            TDni.Location = new Point(162, 90);
+            TDni.Location = new Point(158, 90);
             TDni.MaxLength = 8;
             TDni.Name = "TDni";
             TDni.PlaceholderText = "Solo números";
@@ -52,7 +52,7 @@
             label8.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             label8.AutoSize = true;
             label8.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Location = new Point(174, 56);
+            label8.Location = new Point(170, 56);
             label8.Name = "label8";
             label8.Size = new Size(194, 18);
             label8.TabIndex = 34;
@@ -77,7 +77,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightGreen;
-            ClientSize = new Size(573, 226);
+            ClientSize = new Size(565, 236);
             Controls.Add(btnBuscar);
             Controls.Add(TDni);
             Controls.Add(label8);

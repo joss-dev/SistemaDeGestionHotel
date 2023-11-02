@@ -30,6 +30,11 @@
         {
             components = new System.ComponentModel.Container();
             groupBox1 = new GroupBox();
+            labelPrecio = new Label();
+            labelEstado = new Label();
+            labelCantCamas = new Label();
+            labelNroPiso = new Label();
+            labelTipoHabitacion = new Label();
             labelNroHabitacion = new Label();
             label13 = new Label();
             label11 = new Label();
@@ -38,7 +43,6 @@
             label1 = new Label();
             label3 = new Label();
             groupBox2 = new GroupBox();
-            btnServiciosAd = new Button();
             label12 = new Label();
             comboBoxEstado = new ComboBox();
             textBoxTelefono = new TextBox();
@@ -58,11 +62,6 @@
             btnCancelar = new Button();
             btnRegistrar = new Button();
             errorProviderNumero = new ErrorProvider(components);
-            labelTipoHabitacion = new Label();
-            labelNroPiso = new Label();
-            labelCantCamas = new Label();
-            labelEstado = new Label();
-            labelPrecio = new Label();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProviderNumero).BeginInit();
@@ -89,6 +88,46 @@
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Datos de la Habitación";
+            // 
+            // labelPrecio
+            // 
+            labelPrecio.AutoSize = true;
+            labelPrecio.Location = new Point(563, 70);
+            labelPrecio.Name = "labelPrecio";
+            labelPrecio.Size = new Size(0, 18);
+            labelPrecio.TabIndex = 40;
+            // 
+            // labelEstado
+            // 
+            labelEstado.AutoSize = true;
+            labelEstado.Location = new Point(404, 70);
+            labelEstado.Name = "labelEstado";
+            labelEstado.Size = new Size(0, 18);
+            labelEstado.TabIndex = 39;
+            // 
+            // labelCantCamas
+            // 
+            labelCantCamas.AutoSize = true;
+            labelCantCamas.Location = new Point(257, 68);
+            labelCantCamas.Name = "labelCantCamas";
+            labelCantCamas.Size = new Size(0, 18);
+            labelCantCamas.TabIndex = 38;
+            // 
+            // labelNroPiso
+            // 
+            labelNroPiso.AutoSize = true;
+            labelNroPiso.Location = new Point(539, 34);
+            labelNroPiso.Name = "labelNroPiso";
+            labelNroPiso.Size = new Size(0, 18);
+            labelNroPiso.TabIndex = 37;
+            // 
+            // labelTipoHabitacion
+            // 
+            labelTipoHabitacion.AutoSize = true;
+            labelTipoHabitacion.Location = new Point(384, 34);
+            labelTipoHabitacion.Name = "labelTipoHabitacion";
+            labelTipoHabitacion.Size = new Size(0, 18);
+            labelTipoHabitacion.TabIndex = 36;
             // 
             // labelNroHabitacion
             // 
@@ -172,7 +211,6 @@
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(btnServiciosAd);
             groupBox2.Controls.Add(label12);
             groupBox2.Controls.Add(comboBoxEstado);
             groupBox2.Controls.Add(textBoxTelefono);
@@ -196,16 +234,6 @@
             groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "Datos del Huesped";
-            // 
-            // btnServiciosAd
-            // 
-            btnServiciosAd.Location = new Point(229, 293);
-            btnServiciosAd.Name = "btnServiciosAd";
-            btnServiciosAd.Size = new Size(151, 50);
-            btnServiciosAd.TabIndex = 42;
-            btnServiciosAd.Text = "Servicios Adicionales";
-            btnServiciosAd.UseVisualStyleBackColor = true;
-            btnServiciosAd.Click += btnServiciosAd_Click;
             // 
             // label12
             // 
@@ -418,46 +446,6 @@
             // 
             errorProviderNumero.ContainerControl = this;
             // 
-            // labelTipoHabitacion
-            // 
-            labelTipoHabitacion.AutoSize = true;
-            labelTipoHabitacion.Location = new Point(384, 34);
-            labelTipoHabitacion.Name = "labelTipoHabitacion";
-            labelTipoHabitacion.Size = new Size(0, 18);
-            labelTipoHabitacion.TabIndex = 36;
-            // 
-            // labelNroPiso
-            // 
-            labelNroPiso.AutoSize = true;
-            labelNroPiso.Location = new Point(539, 34);
-            labelNroPiso.Name = "labelNroPiso";
-            labelNroPiso.Size = new Size(0, 18);
-            labelNroPiso.TabIndex = 37;
-            // 
-            // labelCantCamas
-            // 
-            labelCantCamas.AutoSize = true;
-            labelCantCamas.Location = new Point(257, 68);
-            labelCantCamas.Name = "labelCantCamas";
-            labelCantCamas.Size = new Size(0, 18);
-            labelCantCamas.TabIndex = 38;
-            // 
-            // labelEstado
-            // 
-            labelEstado.AutoSize = true;
-            labelEstado.Location = new Point(404, 70);
-            labelEstado.Name = "labelEstado";
-            labelEstado.Size = new Size(0, 18);
-            labelEstado.TabIndex = 39;
-            // 
-            // labelPrecio
-            // 
-            labelPrecio.AutoSize = true;
-            labelPrecio.Location = new Point(563, 70);
-            labelPrecio.Name = "labelPrecio";
-            labelPrecio.Size = new Size(0, 18);
-            labelPrecio.TabIndex = 40;
-            // 
             // AgregarHuesped
             // 
             AutoScaleDimensions = new SizeF(6F, 13F);
@@ -511,7 +499,6 @@
         private Label label12;
         private ComboBox comboBoxEstado;
         private Label label13;
-        private Button btnServiciosAd;
         private Label labelNroHabitacion;
         private Label labelTipoHabitacion;
         private Label labelPrecio;

@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualBasic;
+using SistemaDeGestionHotel.Controllers;
 using SistemaDeGestionHotel.NEntidades;
 using System;
 using System.Collections.Generic;
@@ -18,14 +19,19 @@ namespace SistemaDeGestionHotel.views.recep
         private Habitacion habitacionAgregar;
         private Cliente clienteAgregar;
         private int dniCliente;
+        private Usuario usuarioInicioSesion;
 
-        public AgregarHuesped(Cliente cliente, Habitacion habitacion, int dni)
+
+        RegistroController registro_controller = new RegistroController();
+
+        public AgregarHuesped(Usuario usuario, Cliente cliente, Habitacion habitacion, int dni)
         {
             InitializeComponent();
             comboBoxEstado.SelectedIndex = 0;
             clienteAgregar = cliente;
             habitacionAgregar = habitacion;
             dniCliente = dni;
+            usuarioInicioSesion = usuario;
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
@@ -36,7 +42,8 @@ namespace SistemaDeGestionHotel.views.recep
             }
             else
             {
-                MessageBox.Show("Registrado!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                bool result = registro_controller.AgregarRegistro(int.Parse(TCantidadHuespedes.Text), habitacionAgregar.Precio, comboBoxEstado.SelectedIndex, dateTimeIngreso.Value, dateTimeSalida.Value, usuarioInicioSesion.IdUsuario, habitacionAgregar.IdHabitacion, clienteAgregar.IdCliente);
+            
             }
         }
 
@@ -136,17 +143,18 @@ namespace SistemaDeGestionHotel.views.recep
         private void CargarDatos(object sender, EventArgs e)
         {
             //carga los datos del cliente
-            if (clienteAgregar == null) {
+            if (clienteAgregar == null)
+            {
                 TDni.Text = dniCliente.ToString();
             }
             else
             {
-                TDni.Text = clienteAgregar.DniCliente.ToString();   
+                TDni.Text = clienteAgregar.DniCliente.ToString();
                 TApellido.Text = clienteAgregar.ApellidoCliente.ToString();
                 TNombre.Text = clienteAgregar.NombreCliente.ToString();
-                textBoxTelefono.Text = clienteAgregar.Telefono.ToString();   
+                textBoxTelefono.Text = clienteAgregar.Telefono.ToString();
             }
-            
+
 
             //carga datos de la habitacion
             labelNroHabitacion.Text = habitacionAgregar.NroHabitacion.ToString();
@@ -154,8 +162,8 @@ namespace SistemaDeGestionHotel.views.recep
             labelEstado.Text = habitacionAgregar.IdEstadoNavigation.NombEstado.ToString();
             labelPrecio.Text = habitacionAgregar.Precio.ToString("N2");
             labelNroPiso.Text = habitacionAgregar.IdPisoNavigation.NroPiso.ToString();
-            labelTipoHabitacion.Text = habitacionAgregar.IdTipoHabNavigation.NombTipo.ToString();   
+            labelTipoHabitacion.Text = habitacionAgregar.IdTipoHabNavigation.NombTipo.ToString();
         }
     }
-    
+
 }

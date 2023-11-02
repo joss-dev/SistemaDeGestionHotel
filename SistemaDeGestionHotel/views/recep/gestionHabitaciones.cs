@@ -11,10 +11,13 @@ namespace SistemaDeGestionHotel.views.admin
     {
 
         HabitacionController habitacion_controller = new HabitacionController();
+        private Usuario usuarioInicioSesion;
 
-        public gestionHabitaciones()
+        public gestionHabitaciones(Usuario usuario)
         {
             InitializeComponent();
+
+            usuarioInicioSesion = usuario;
         }
 
         private void gestionHabitaciones_Load(object sender, EventArgs e)
@@ -423,7 +426,6 @@ namespace SistemaDeGestionHotel.views.admin
                 {
                     Form form = new ConsultaDni(idHabitacion);
                     form.ShowDialog();
-                    this.Hide();
                 }
             }
 
