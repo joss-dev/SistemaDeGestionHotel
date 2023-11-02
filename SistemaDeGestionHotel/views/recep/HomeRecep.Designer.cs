@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeRecep));
             btnContacto = new Button();
-            btnEstadoHab = new Button();
             monthCalendar1 = new MonthCalendar();
             pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -41,8 +40,8 @@
             btnContacto.Anchor = AnchorStyles.None;
             btnContacto.BackColor = Color.SpringGreen;
             btnContacto.FlatStyle = FlatStyle.Popup;
-            btnContacto.Font = new Font("Broadway", 15.75F, FontStyle.Underline, GraphicsUnit.Point);
-            btnContacto.Location = new Point(577, 449);
+            btnContacto.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Underline, GraphicsUnit.Point);
+            btnContacto.Location = new Point(577, 431);
             btnContacto.Name = "btnContacto";
             btnContacto.Size = new Size(248, 48);
             btnContacto.TabIndex = 17;
@@ -50,25 +49,11 @@
             btnContacto.UseVisualStyleBackColor = false;
             btnContacto.Click += btnContacto_Click;
             // 
-            // btnEstadoHab
-            // 
-            btnEstadoHab.Anchor = AnchorStyles.None;
-            btnEstadoHab.BackColor = Color.LightCoral;
-            btnEstadoHab.FlatStyle = FlatStyle.Popup;
-            btnEstadoHab.Font = new Font("Broadway", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
-            btnEstadoHab.Location = new Point(577, 380);
-            btnEstadoHab.Name = "btnEstadoHab";
-            btnEstadoHab.Size = new Size(248, 48);
-            btnEstadoHab.TabIndex = 16;
-            btnEstadoHab.Text = "Consultar estado de habitaciones";
-            btnEstadoHab.UseVisualStyleBackColor = false;
-            btnEstadoHab.Click += btnEstadoHab_Click;
-            // 
             // monthCalendar1
             // 
             monthCalendar1.Anchor = AnchorStyles.None;
             monthCalendar1.BackColor = Color.IndianRed;
-            monthCalendar1.Font = new Font("Arial Rounded MT Bold", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            monthCalendar1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             monthCalendar1.ForeColor = SystemColors.MenuHighlight;
             monthCalendar1.Location = new Point(577, 194);
             monthCalendar1.Name = "monthCalendar1";
@@ -93,7 +78,6 @@
             BackColor = Color.LightGreen;
             ClientSize = new Size(882, 585);
             Controls.Add(btnContacto);
-            Controls.Add(btnEstadoHab);
             Controls.Add(monthCalendar1);
             Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.None;
@@ -106,7 +90,6 @@
         #endregion
 
         private Button btnContacto;
-        private Button btnEstadoHab;
         private MonthCalendar monthCalendar1;
         private PictureBox pictureBox1;
     }

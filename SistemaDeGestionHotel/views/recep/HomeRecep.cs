@@ -23,7 +23,7 @@ namespace SistemaDeGestionHotel.views.recep
         public HomeRecep(Usuario usuarioInicioSesion)
         {
             InitializeComponent();
-            this.usuarioInicioSesion = usuarioInicioSesion; 
+            this.usuarioInicioSesion = usuarioInicioSesion;
         }
 
         private void btnEstadoHab_Click(object sender, EventArgs e)
