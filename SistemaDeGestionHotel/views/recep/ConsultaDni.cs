@@ -19,7 +19,7 @@ namespace SistemaDeGestionHotel.views.recep
         ClienteController cliente_controller = new ClienteController();
         HabitacionController habitacion_controller = new HabitacionController();
         Usuario usuarioInicioSesion;
-        RegistroController registro_controller = new RegistroController();  
+        RegistroController registro_controller = new RegistroController();
 
         public ConsultaDni(int IDHabitacion, Usuario usuario)
         {
@@ -38,16 +38,17 @@ namespace SistemaDeGestionHotel.views.recep
             {
 
                 Cliente clienteBuscado = cliente_controller.GetClienteByDNI(int.Parse(TDni.Text));
-                
+
                 Habitacion habitacion = habitacion_controller.GetHabitacionByID(idHabitacion);
 
-                if(clienteBuscado == null)
+                if (clienteBuscado == null)
                 {
-                    Form registrarCliente = new RegistrarCliente(usuarioInicioSesion,idHabitacion, int.Parse(TDni.Text));
+                    Form registrarCliente = new RegistrarCliente(usuarioInicioSesion, idHabitacion, int.Parse(TDni.Text));
                     registrarCliente.StartPosition = FormStartPosition.CenterScreen;
                     DialogResult result = registrarCliente.ShowDialog();
                     this.Hide();
-                }else
+                }
+                else
                 {
                     if (registro_controller.ClienteEnEstadiaOReserva(clienteBuscado.IdCliente) == null)
                     {
@@ -58,27 +59,29 @@ namespace SistemaDeGestionHotel.views.recep
                         DialogResult result = agregarHues.ShowDialog();
 
                         this.Hide();
-                    }else
+                    }
+                    else
                     {
                         Registro registroCliente = registro_controller.ClienteEnEstadiaOReserva(clienteBuscado.IdCliente);
 
-                        if(registroCliente.EstadoOcupacion == 0)
+                        if (registroCliente.EstadoOcupacion == 0)
                         {
                             string mensaje = $"El cliente se encuetra con una reserva en la habitacion : {registroCliente.NroHabitacionNavigation.NroHabitacion.ToString()}\n";
 
 
                             MessageBox.Show(mensaje, "detalles", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }else
+                        }
+                        else
                         {
                             string mensaje = $"El cliente se encuentra registrado en la habitacion : {registroCliente.NroHabitacionNavigation.NroHabitacion.ToString()}\n";
 
 
                             MessageBox.Show(mensaje, "detalles", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
-                        
+
                         this.Close();
                     }
-                    
+
                 }
             }
         }
@@ -87,6 +90,20 @@ namespace SistemaDeGestionHotel.views.recep
         private void ValidarDni(object sender, KeyEventArgs e)
         {
             ValidacionTextBox.ValidarSoloNumeros(TDni, errorProvider1);
+        }
+
+        private void CargarDATOS(object sender, EventArgs e)
+        {
+            Habitacion habitacionInfo = habitacion_controller.GetHabitacionByID(idHabitacion);
+
+            habitacionInfo = habitacion_controller.GetHabitacionByID(idHabitacion);
+
+            //carga datos de la habitacion
+            labelNroHabitacion.Text = habitacionInfo.NroHabitacion.ToString();
+            labelCantidadCamas.Text = habitacionInfo.CantidadCamas.ToString();
+            labelPrecio.Text = habitacionInfo.Precio.ToString("N2");
+            labelNroPiso.Text = habitacionInfo.IdPisoNavigation.NroPiso.ToString();
+            labelTipo.Text = habitacionInfo.IdTipoHabNavigation.NombTipo.ToString();
         }
     }
 }
