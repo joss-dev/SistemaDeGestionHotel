@@ -32,14 +32,24 @@ namespace SistemaDeGestionHotel.Datos
 
         public List<Habitacion> GetHabitaciones()
         {
-            return dbHotelParana.Habitacions
-                    .Include(c => c.IdEstadoNavigation)
-                    .Include(c => c.IdTipoHabNavigation)
-                    .ToList();
+            // Obtener todas las habitaciones
+            List<Habitacion> todasLasHabitaciones = dbHotelParana.Habitacions
+                .Include(c => c.IdEstadoNavigation)
+                .Include(c => c.IdTipoHabNavigation)
+                .ToList();
+
+            // Recargar cada entidad en todasLasHabitaciones desde la base de datos
+            foreach (var habitacion in todasLasHabitaciones)
+            {
+                dbHotelParana.Entry(habitacion).Reload();
+            }
+
+            return todasLasHabitaciones;
         }
 
         public Habitacion GetHabitacionByNroHabitacion(int nroHabitacion)
         {
+            this.ReloadAllEntities();
             return dbHotelParana.Habitacions
                                  .FirstOrDefault(h => h.NroHabitacion == nroHabitacion);
         }
@@ -51,6 +61,12 @@ namespace SistemaDeGestionHotel.Datos
 
             // Filtrar las habitaciones por el número de piso
             List<Habitacion> habitacionesFiltradas = todasLasHabitaciones.Where(h => h.IdPisoNavigation.NroPiso == nroPiso).ToList();
+
+            // Recarga cada entidad en habitacionesFiltradas desde la base de datos
+            foreach (var habitacion in habitacionesFiltradas)
+            {
+                dbHotelParana.Entry(habitacion).Reload();
+            }
 
             return habitacionesFiltradas;
         }
@@ -64,6 +80,12 @@ namespace SistemaDeGestionHotel.Datos
             // Filtrar las habitaciones por el número de piso
             List<Habitacion> habitacionesFiltradas = todasLasHabitaciones.Where(h => h.IdEstadoNavigation.IdEstado == idEstado).ToList();
 
+            // Recarga cada entidad en habitacionesFiltradas desde la base de datos
+            foreach (var habitacion in habitacionesFiltradas)
+            {
+                dbHotelParana.Entry(habitacion).Reload();
+            }
+
             return habitacionesFiltradas;
         }
 
@@ -75,11 +97,30 @@ namespace SistemaDeGestionHotel.Datos
             // Filtrar las habitaciones por el número de piso
             List<Habitacion> habitacionesFiltradas = todasLasHabitaciones.Where(h => h.IdTipoHabNavigation.IdTipoHab == idTipo).ToList();
 
+            // Recarga cada entidad en habitacionesFiltradas desde la base de datos
+            foreach (var habitacion in habitacionesFiltradas)
+            {
+                dbHotelParana.Entry(habitacion).Reload();
+            }
+
             return habitacionesFiltradas;
+        }
+
+        public void ReloadAllEntities()
+        {
+            var changedEntries = dbHotelParana.ChangeTracker.Entries()
+                .Where(e => e.State != EntityState.Unchanged)
+                .ToList();
+
+            foreach (var entry in changedEntries)
+            {
+                entry.Reload();
+            }
         }
 
         public Habitacion GetHabitacionByID(int iddehabitation)
         {
+            this.ReloadAllEntities();
             return dbHotelParana.Habitacions
                                 .Include(h => h.IdEstadoNavigation)   // Incluye la relación a IdEstadoNavigation
                                 .Include(h => h.IdPisoNavigation)     // Incluye la relación a IdPisoNavigation
