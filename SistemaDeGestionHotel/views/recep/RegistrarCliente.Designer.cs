@@ -164,6 +164,7 @@
             btnCancelar.Text = "Cancelar";
             btnCancelar.TextAlign = ContentAlignment.BottomCenter;
             btnCancelar.UseVisualStyleBackColor = false;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // btnRegistrar
             // 
@@ -182,6 +183,7 @@
             btnRegistrar.Text = "Registrar";
             btnRegistrar.TextAlign = ContentAlignment.BottomCenter;
             btnRegistrar.UseVisualStyleBackColor = false;
+            btnRegistrar.Click += btnRegistrar_Click;
             // 
             // errorProvider1
             // 
@@ -198,7 +200,8 @@
             Controls.Add(groupBox2);
             FormBorderStyle = FormBorderStyle.SizableToolWindow;
             Name = "RegistrarCliente";
-            Text = "RegistrarCliente";
+            Text = "Registrar Cliente";
+            Load += CargarDatos;
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();

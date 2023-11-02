@@ -45,16 +45,8 @@
             groupBox2 = new GroupBox();
             label12 = new Label();
             comboBoxEstado = new ComboBox();
-            textBoxTelefono = new TextBox();
-            label7 = new Label();
-            lApellido = new Label();
-            TApellido = new TextBox();
-            TNombre = new TextBox();
-            label5 = new Label();
             TCantidadHuespedes = new TextBox();
-            TDni = new TextBox();
             label6 = new Label();
-            label8 = new Label();
             label9 = new Label();
             label10 = new Label();
             dateTimeIngreso = new DateTimePicker();
@@ -62,9 +54,19 @@
             btnCancelar = new Button();
             btnRegistrar = new Button();
             errorProviderNumero = new ErrorProvider(components);
+            groupBox3 = new GroupBox();
+            textBoxTelefono = new TextBox();
+            label7 = new Label();
+            lApellido = new Label();
+            TApellido = new TextBox();
+            TNombre = new TextBox();
+            label5 = new Label();
+            TDni = new TextBox();
+            label8 = new Label();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProviderNumero).BeginInit();
+            groupBox3.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
@@ -82,7 +84,7 @@
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(label3);
             groupBox1.Font = new Font("Georgia", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            groupBox1.Location = new Point(95, 42);
+            groupBox1.Location = new Point(95, 59);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(659, 118);
             groupBox1.TabIndex = 0;
@@ -213,34 +215,26 @@
             // 
             groupBox2.Controls.Add(label12);
             groupBox2.Controls.Add(comboBoxEstado);
-            groupBox2.Controls.Add(textBoxTelefono);
-            groupBox2.Controls.Add(label7);
-            groupBox2.Controls.Add(lApellido);
-            groupBox2.Controls.Add(TApellido);
-            groupBox2.Controls.Add(TNombre);
-            groupBox2.Controls.Add(label5);
             groupBox2.Controls.Add(TCantidadHuespedes);
-            groupBox2.Controls.Add(TDni);
             groupBox2.Controls.Add(label6);
-            groupBox2.Controls.Add(label8);
             groupBox2.Controls.Add(label9);
             groupBox2.Controls.Add(label10);
             groupBox2.Controls.Add(dateTimeIngreso);
             groupBox2.Controls.Add(dateTimeSalida);
             groupBox2.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox2.Location = new Point(95, 190);
+            groupBox2.Location = new Point(95, 362);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(668, 368);
+            groupBox2.Size = new Size(659, 189);
             groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
-            groupBox2.Text = "Datos del Huesped";
+            groupBox2.Text = "Datos del Registro";
             // 
             // label12
             // 
-            label12.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            label12.Anchor = AnchorStyles.Bottom;
             label12.AutoSize = true;
             label12.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label12.Location = new Point(411, 186);
+            label12.Location = new Point(405, 33);
             label12.Name = "label12";
             label12.Size = new Size(63, 18);
             label12.TabIndex = 41;
@@ -248,128 +242,42 @@
             // 
             // comboBoxEstado
             // 
-            comboBoxEstado.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            comboBoxEstado.Anchor = AnchorStyles.Bottom;
             comboBoxEstado.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxEstado.FormattingEnabled = true;
             comboBoxEstado.Items.AddRange(new object[] { "Reserva", "Estadia" });
-            comboBoxEstado.Location = new Point(413, 212);
+            comboBoxEstado.Location = new Point(407, 59);
             comboBoxEstado.Name = "comboBoxEstado";
             comboBoxEstado.Size = new Size(121, 26);
             comboBoxEstado.TabIndex = 40;
             comboBoxEstado.SelectedIndexChanged += estado_selectedIndex;
             // 
-            // textBoxTelefono
-            // 
-            textBoxTelefono.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            textBoxTelefono.Location = new Point(53, 210);
-            textBoxTelefono.Name = "textBoxTelefono";
-            textBoxTelefono.PlaceholderText = "Solo números";
-            textBoxTelefono.Size = new Size(206, 24);
-            textBoxTelefono.TabIndex = 38;
-            textBoxTelefono.TextChanged += textBox1_TextChanged;
-            // 
-            // label7
-            // 
-            label7.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            label7.AutoSize = true;
-            label7.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(51, 184);
-            label7.Name = "label7";
-            label7.Size = new Size(74, 18);
-            label7.TabIndex = 39;
-            label7.Text = "Telefono :";
-            label7.Click += label7_Click;
-            // 
-            // lApellido
-            // 
-            lApellido.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            lApellido.AutoSize = true;
-            lApellido.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lApellido.Location = new Point(52, 37);
-            lApellido.Name = "lApellido";
-            lApellido.Size = new Size(67, 18);
-            lApellido.TabIndex = 30;
-            lApellido.Text = "Apellido :";
-            // 
-            // TApellido
-            // 
-            TApellido.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            TApellido.BorderStyle = BorderStyle.FixedSingle;
-            TApellido.Location = new Point(52, 60);
-            TApellido.Name = "TApellido";
-            TApellido.Size = new Size(206, 24);
-            TApellido.TabIndex = 26;
-            TApellido.KeyDown += ValidacionApellido;
-            // 
-            // TNombre
-            // 
-            TNombre.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            TNombre.Location = new Point(411, 60);
-            TNombre.Name = "TNombre";
-            TNombre.Size = new Size(206, 24);
-            TNombre.TabIndex = 27;
-            TNombre.TextChanged += TNombre_TextChanged;
-            TNombre.KeyDown += ValidacionNombre;
-            // 
-            // label5
-            // 
-            label5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            label5.AutoSize = true;
-            label5.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(411, 37);
-            label5.Name = "label5";
-            label5.Size = new Size(70, 18);
-            label5.TabIndex = 31;
-            label5.Text = "Nombre :";
-            // 
             // TCantidadHuespedes
             // 
-            TCantidadHuespedes.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            TCantidadHuespedes.Location = new Point(411, 133);
+            TCantidadHuespedes.Anchor = AnchorStyles.Bottom;
+            TCantidadHuespedes.Location = new Point(46, 59);
             TCantidadHuespedes.Name = "TCantidadHuespedes";
             TCantidadHuespedes.Size = new Size(206, 24);
             TCantidadHuespedes.TabIndex = 29;
             TCantidadHuespedes.KeyDown += ValidacionCantHuesped;
             // 
-            // TDni
-            // 
-            TDni.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            TDni.Location = new Point(52, 131);
-            TDni.MaxLength = 8;
-            TDni.Name = "TDni";
-            TDni.PlaceholderText = "Solo números";
-            TDni.Size = new Size(206, 24);
-            TDni.TabIndex = 28;
-            TDni.KeyDown += ValidacionDni;
-            // 
             // label6
             // 
-            label6.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            label6.Anchor = AnchorStyles.Bottom;
             label6.AutoSize = true;
             label6.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(416, 277);
+            label6.Location = new Point(411, 113);
             label6.Name = "label6";
             label6.Size = new Size(121, 18);
             label6.TabIndex = 37;
             label6.Text = "Fecha de Salida :";
             // 
-            // label8
-            // 
-            label8.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            label8.AutoSize = true;
-            label8.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Location = new Point(52, 107);
-            label8.Name = "label8";
-            label8.Size = new Size(41, 18);
-            label8.TabIndex = 32;
-            label8.Text = "DNI :";
-            // 
             // label9
             // 
-            label9.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            label9.Anchor = AnchorStyles.Bottom;
             label9.AutoSize = true;
             label9.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.Location = new Point(411, 106);
+            label9.Location = new Point(46, 32);
             label9.Name = "label9";
             label9.Size = new Size(170, 18);
             label9.TabIndex = 33;
@@ -377,10 +285,10 @@
             // 
             // label10
             // 
-            label10.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            label10.Anchor = AnchorStyles.Bottom;
             label10.AutoSize = true;
             label10.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label10.Location = new Point(56, 277);
+            label10.Location = new Point(52, 104);
             label10.Name = "label10";
             label10.Size = new Size(130, 18);
             label10.TabIndex = 35;
@@ -388,18 +296,18 @@
             // 
             // dateTimeIngreso
             // 
-            dateTimeIngreso.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            dateTimeIngreso.Anchor = AnchorStyles.Bottom;
             dateTimeIngreso.Format = DateTimePickerFormat.Short;
-            dateTimeIngreso.Location = new Point(56, 318);
+            dateTimeIngreso.Location = new Point(52, 145);
             dateTimeIngreso.Name = "dateTimeIngreso";
             dateTimeIngreso.Size = new Size(135, 24);
             dateTimeIngreso.TabIndex = 34;
             // 
             // dateTimeSalida
             // 
-            dateTimeSalida.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            dateTimeSalida.Anchor = AnchorStyles.Bottom;
             dateTimeSalida.Format = DateTimePickerFormat.Short;
-            dateTimeSalida.Location = new Point(416, 318);
+            dateTimeSalida.Location = new Point(411, 154);
             dateTimeSalida.Name = "dateTimeSalida";
             dateTimeSalida.Size = new Size(123, 24);
             dateTimeSalida.TabIndex = 36;
@@ -446,12 +354,115 @@
             // 
             errorProviderNumero.ContainerControl = this;
             // 
+            // groupBox3
+            // 
+            groupBox3.Controls.Add(textBoxTelefono);
+            groupBox3.Controls.Add(label7);
+            groupBox3.Controls.Add(lApellido);
+            groupBox3.Controls.Add(TApellido);
+            groupBox3.Controls.Add(TNombre);
+            groupBox3.Controls.Add(label5);
+            groupBox3.Controls.Add(TDni);
+            groupBox3.Controls.Add(label8);
+            groupBox3.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBox3.Location = new Point(95, 183);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new Size(659, 173);
+            groupBox3.TabIndex = 34;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Datos del Huesped";
+            // 
+            // textBoxTelefono
+            // 
+            textBoxTelefono.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            textBoxTelefono.Enabled = false;
+            textBoxTelefono.Location = new Point(320, 131);
+            textBoxTelefono.Name = "textBoxTelefono";
+            textBoxTelefono.PlaceholderText = "Solo números";
+            textBoxTelefono.Size = new Size(206, 24);
+            textBoxTelefono.TabIndex = 38;
+            // 
+            // label7
+            // 
+            label7.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            label7.AutoSize = true;
+            label7.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.Location = new Point(318, 105);
+            label7.Name = "label7";
+            label7.Size = new Size(74, 18);
+            label7.TabIndex = 39;
+            label7.Text = "Telefono :";
+            // 
+            // lApellido
+            // 
+            lApellido.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            lApellido.AutoSize = true;
+            lApellido.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lApellido.Location = new Point(48, 37);
+            lApellido.Name = "lApellido";
+            lApellido.Size = new Size(67, 18);
+            lApellido.TabIndex = 30;
+            lApellido.Text = "Apellido :";
+            // 
+            // TApellido
+            // 
+            TApellido.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            TApellido.BorderStyle = BorderStyle.FixedSingle;
+            TApellido.Enabled = false;
+            TApellido.Location = new Point(48, 60);
+            TApellido.Name = "TApellido";
+            TApellido.Size = new Size(206, 24);
+            TApellido.TabIndex = 26;
+            // 
+            // TNombre
+            // 
+            TNombre.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            TNombre.Enabled = false;
+            TNombre.Location = new Point(320, 61);
+            TNombre.Name = "TNombre";
+            TNombre.Size = new Size(206, 24);
+            TNombre.TabIndex = 27;
+            // 
+            // label5
+            // 
+            label5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            label5.AutoSize = true;
+            label5.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(320, 38);
+            label5.Name = "label5";
+            label5.Size = new Size(70, 18);
+            label5.TabIndex = 31;
+            label5.Text = "Nombre :";
+            // 
+            // TDni
+            // 
+            TDni.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            TDni.Enabled = false;
+            TDni.Location = new Point(48, 131);
+            TDni.MaxLength = 8;
+            TDni.Name = "TDni";
+            TDni.PlaceholderText = "Solo números";
+            TDni.Size = new Size(206, 24);
+            TDni.TabIndex = 28;
+            // 
+            // label8
+            // 
+            label8.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            label8.AutoSize = true;
+            label8.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.Location = new Point(48, 107);
+            label8.Name = "label8";
+            label8.Size = new Size(41, 18);
+            label8.TabIndex = 32;
+            label8.Text = "DNI :";
+            // 
             // AgregarHuesped
             // 
             AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightGreen;
             ClientSize = new Size(888, 674);
+            Controls.Add(groupBox3);
             Controls.Add(btnCancelar);
             Controls.Add(btnRegistrar);
             Controls.Add(groupBox2);
@@ -467,6 +478,8 @@
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)errorProviderNumero).EndInit();
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -480,22 +493,14 @@
         private Label label2;
         private Label label1;
         private Label label3;
-        private Label lApellido;
-        private TextBox TApellido;
-        private TextBox TNombre;
-        private Label label5;
         private TextBox TCantidadHuespedes;
-        private TextBox TDni;
         private Label label6;
-        private Label label8;
         private Label label9;
         private Label label10;
         private DateTimePicker dateTimeIngreso;
         private DateTimePicker dateTimeSalida;
         private ErrorProvider errorProviderNumero;
         private Label label11;
-        private TextBox textBoxTelefono;
-        private Label label7;
         private Label label12;
         private ComboBox comboBoxEstado;
         private Label label13;
@@ -505,5 +510,14 @@
         private Label labelEstado;
         private Label labelCantCamas;
         private Label labelNroPiso;
+        private GroupBox groupBox3;
+        private TextBox textBoxTelefono;
+        private Label label7;
+        private Label lApellido;
+        private TextBox TApellido;
+        private TextBox TNombre;
+        private Label label5;
+        private TextBox TDni;
+        private Label label8;
     }
 }

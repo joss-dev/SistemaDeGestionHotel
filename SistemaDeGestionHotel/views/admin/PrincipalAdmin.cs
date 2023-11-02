@@ -28,7 +28,7 @@ namespace SistemaDeGestionHotel
             usuarioInicioSesion = usuario;
 
             //abre el form home cuando principalAdmin se abre
-            FormsHijos.AbrirFormHija(new Home(), panelCont);
+            FormsHijos.AbrirFormHija(new Home(usuarioInicioSesion), panelCont);
 
             // Establece que el formulario se inicie maximizado
             this.WindowState = FormWindowState.Maximized;
@@ -136,7 +136,7 @@ namespace SistemaDeGestionHotel
         private void btnHome_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, Color.FromArgb(34, 81, 111));
-            FormsHijos.AbrirFormHija(new Home(), panelCont);
+            FormsHijos.AbrirFormHija(new Home(usuarioInicioSesion), panelCont);
         }
 
         private void btnRegistrarServicios_Click(object sender, EventArgs e)

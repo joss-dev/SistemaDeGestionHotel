@@ -29,7 +29,7 @@ namespace SistemaDeGestionHotel.views.recep
         private void btnEstadoHab_Click(object sender, EventArgs e)
         {
             // Llama a AbrirFormulario con el formulario gestionMediosPago
-            AbrirFormulario(new gestionHabitaciones());
+            AbrirFormulario(new gestionHabitaciones(usuarioInicioSesion));
         }
 
         private void AbrirFormulario(Form formulario)

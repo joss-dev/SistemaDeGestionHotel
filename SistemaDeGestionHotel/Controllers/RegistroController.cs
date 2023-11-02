@@ -6,9 +6,11 @@ namespace SistemaDeGestionHotel.Controllers
     public class RegistroController
     {
         DRegistro d_registro = new DRegistro();
+        HabitacionController habitacionController = new HabitacionController();
 
         public bool AgregarRegistro(int cantidadHuespedes, double precioHabPactado, int estadoOcupacion, DateTime fechaIngreso, DateTime fechaSalida, int idUsuario, int nroHabitacion, int idCliente)
         {
+            
             Registro registro = new Registro()
             {
                 CantidadHuespedes = cantidadHuespedes,

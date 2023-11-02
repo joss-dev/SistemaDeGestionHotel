@@ -35,16 +35,27 @@ namespace SistemaDeGestionHotel.views.recep
             }
             else
             {
+
                 Cliente clienteBuscado = cliente_controller.GetClienteByDNI(int.Parse(TDni.Text));
 
                 Habitacion habitacion = habitacion_controller.GetHabitacionByID(idHabitacion);
 
+                if(clienteBuscado == null)
+                {
+                    Form registrarCliente = new RegistrarCliente(usuarioInicioSesion,idHabitacion, int.Parse(TDni.Text));
+                    registrarCliente.StartPosition = FormStartPosition.CenterScreen;
+                    DialogResult result = registrarCliente.ShowDialog();
+                    this.Hide();
+                }else
+                {
+                    Form agregarHues = new AgregarHuesped(usuarioInicioSesion, clienteBuscado, habitacion, int.Parse(TDni.Text));
 
-                Form agregarHues = new AgregarHuesped(clienteBuscado, habitacion, int.Parse(TDni.Text));
+                    agregarHues.StartPosition = FormStartPosition.CenterScreen;
 
-                agregarHues.StartPosition = FormStartPosition.CenterScreen;
+                    DialogResult result = agregarHues.ShowDialog();
 
-                DialogResult result = agregarHues.ShowDialog();
+                    this.Hide();
+                }
             }
         }
 

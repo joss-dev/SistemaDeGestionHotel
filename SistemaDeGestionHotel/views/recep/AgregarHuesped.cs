@@ -21,7 +21,7 @@ namespace SistemaDeGestionHotel.views.recep
         private int dniCliente;
         private Usuario usuarioInicioSesion;
 
-
+        HabitacionController habitacion_controller = new HabitacionController();
         RegistroController registro_controller = new RegistroController();
 
         public AgregarHuesped(Usuario usuario, Cliente cliente, Habitacion habitacion, int dni)
@@ -36,14 +36,41 @@ namespace SistemaDeGestionHotel.views.recep
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            if (ValidacionTextBox.ValidarNoVacio(TDni, TNombre, TApellido, TCantidadHuespedes, textBoxTelefono))
+            if (ValidacionTextBox.ValidarNoVacio(TCantidadHuespedes))
             {
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
                 bool result = registro_controller.AgregarRegistro(int.Parse(TCantidadHuespedes.Text), habitacionAgregar.Precio, comboBoxEstado.SelectedIndex, dateTimeIngreso.Value, dateTimeSalida.Value, usuarioInicioSesion.IdUsuario, habitacionAgregar.IdHabitacion, clienteAgregar.IdCliente);
+                
+                if(comboBoxEstado.SelectedIndex == 0)
+                {
+                    habitacion_controller.MarcarReservadaHabitacion(habitacionAgregar.IdHabitacion);
+                }else
+                {
+                    habitacion_controller.MarcarOcupadaHabitacion(habitacionAgregar.IdHabitacion);
+                }
 
+                if (result)
+                {
+                    string mensaje = $"Cantidad de Huéspedes: {TCantidadHuespedes.Text}\n" +
+                                     $"Precio: {habitacionAgregar.Precio}\n" +
+                                     $"Estado: {comboBoxEstado.SelectedItem.ToString()}\n" +
+                                     $"Fecha de Ingreso: {dateTimeIngreso.Value.ToString()}\n" +
+                                     $"Fecha de Salida: {dateTimeSalida.Value.ToString()}\n" +
+                                     $"Teléfono: {textBoxTelefono.Text}\n" +
+                                     $"DNI: {TDni.Text}\n" +
+                                     $"Apellido: {TApellido.Text}\n" +
+                                     $"Nombre: {TNombre.Text}";
+
+                    MessageBox.Show(mensaje, "Se registro con exito, detalles del registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Ocurrio un error al cargar el registro", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -60,33 +87,10 @@ namespace SistemaDeGestionHotel.views.recep
             }
         }
 
-        private void ValidacionNombre(object sender, KeyEventArgs e)
-        {
-            ValidacionTextBox.ValidarTextoConEspacios(TNombre, errorProviderNumero);
-        }
-
-        private void ValidacionApellido(object sender, KeyEventArgs e)
-        {
-            ValidacionTextBox.ValidarTextoConEspacios(TApellido, errorProviderNumero);
-        }
-
-        private void ValidacionDni(object sender, KeyEventArgs e)
-        {
-            ValidacionTextBox.ValidarSoloNumeros(TDni, errorProviderNumero);
-        }
 
         private void ValidacionCantHuesped(object sender, KeyEventArgs e)
         {
             ValidacionTextBox.ValidarSoloNumeros(TCantidadHuespedes, errorProviderNumero);
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
         }
 
         private void estado_selectedIndex(object sender, EventArgs e)
@@ -135,26 +139,13 @@ namespace SistemaDeGestionHotel.views.recep
             }
         }
 
-        private void TNombre_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void CargarDatos(object sender, EventArgs e)
         {
-            //carga los datos del cliente
-            if (clienteAgregar == null)
-            {
-                TDni.Text = dniCliente.ToString();
-            }
-            else
-            {
-                TDni.Text = clienteAgregar.DniCliente.ToString();
-                TApellido.Text = clienteAgregar.ApellidoCliente.ToString();
-                TNombre.Text = clienteAgregar.NombreCliente.ToString();
-                textBoxTelefono.Text = clienteAgregar.Telefono.ToString();
-            }
 
+            TDni.Text = clienteAgregar.DniCliente.ToString();
+            TApellido.Text = clienteAgregar.ApellidoCliente.ToString(); 
+            TNombre.Text = clienteAgregar.NombreCliente.ToString();
+            textBoxTelefono.Text = clienteAgregar.Telefono.ToString();
 
             //carga datos de la habitacion
             labelNroHabitacion.Text = habitacionAgregar.NroHabitacion.ToString();

@@ -125,6 +125,40 @@ namespace SistemaDeGestionHotel.Controllers
 
             return true;
         }
+        public bool MarcarOcupadaHabitacion(int idHabitacion)
+        {
+            Habitacion habitacionExistente = d_habitacion.GetHabitacionByID(idHabitacion);
+
+            if (habitacionExistente == null)
+            {
+                // La habitación no existe, por lo tanto no se puede editar
+                return false;
+            }
+
+            habitacionExistente.IdEstado = 2;
+
+            d_habitacion.GuardarCambios();
+
+            return true;
+        }
+
+        public bool MarcarReservadaHabitacion(int idHabitacion)
+        {
+            Habitacion habitacionExistente = d_habitacion.GetHabitacionByID(idHabitacion);
+
+            if (habitacionExistente == null)
+            {
+                // La habitación no existe, por lo tanto no se puede editar
+                return false;
+            }
+
+            habitacionExistente.IdEstado = 3;
+
+            d_habitacion.GuardarCambios();
+
+            return true;
+        }
+
     }
 }
 
