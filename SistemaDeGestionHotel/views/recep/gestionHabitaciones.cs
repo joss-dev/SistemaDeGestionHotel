@@ -492,6 +492,7 @@ namespace SistemaDeGestionHotel.views.admin
                 {
                     Form form = new InfoRegistro(idHabitacion);
                     form.ShowDialog();
+                    this.CargaTodasLasHabitacionesAlPanel();
                 }
             }
         }
@@ -506,6 +507,7 @@ namespace SistemaDeGestionHotel.views.admin
                 {
                     Form form = new InfoRegistro(idHabitacion);
                     form.ShowDialog();
+                    this.CargaTodasLasHabitacionesAlPanel();
                 }
             }
         }
@@ -520,6 +522,7 @@ namespace SistemaDeGestionHotel.views.admin
                 {
                     Form form = new ConsultaDni(idHabitacion, usuarioInicioSesion);
                     form.ShowDialog();
+                    this.CargaTodasLasHabitacionesAlPanel();
                 }
             }
 
