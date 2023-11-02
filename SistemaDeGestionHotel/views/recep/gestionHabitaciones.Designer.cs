@@ -30,7 +30,6 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(gestionHabitaciones));
-            panel1 = new Panel();
             label1 = new Label();
             btnFiltroPiso1 = new Button();
             btnFiltroPiso2 = new Button();
@@ -48,18 +47,9 @@
             btnVolver = new Button();
             errorProvider1 = new ErrorProvider(components);
             todasLasHabitaciones = new Button();
+            panel1 = new FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
-            // 
-            // panel1
-            // 
-            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel1.AutoScroll = true;
-            panel1.BackColor = Color.PaleTurquoise;
-            panel1.Location = new Point(21, 196);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(916, 482);
-            panel1.TabIndex = 0;
             // 
             // label1
             // 
@@ -270,13 +260,24 @@
             todasLasHabitaciones.UseVisualStyleBackColor = false;
             todasLasHabitaciones.Click += todasLasHabitaciones_Click;
             // 
+            // panel1
+            // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.BackColor = Color.PaleTurquoise;
+            panel1.Location = new Point(21, 207);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(915, 483);
+            panel1.TabIndex = 72;
+            // 
             // gestionHabitaciones
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
             AutoSize = true;
             BackColor = Color.LightGreen;
             ClientSize = new Size(963, 788);
+            Controls.Add(panel1);
             Controls.Add(todasLasHabitaciones);
             Controls.Add(label6);
             Controls.Add(btnVolver);
@@ -293,7 +294,6 @@
             Controls.Add(btnFiltroPiso2);
             Controls.Add(btnFiltroPiso1);
             Controls.Add(label1);
-            Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "gestionHabitaciones";
             ShowIcon = false;
@@ -306,8 +306,6 @@
         }
 
         #endregion
-
-        private Panel panel1;
         private Label label1;
         private Button btnFiltroPiso1;
         private Button btnFiltroPiso2;
@@ -325,5 +323,6 @@
         private Button btnVolver;
         private ErrorProvider errorProvider1;
         private Button todasLasHabitaciones;
+        private FlowLayoutPanel panel1;
     }
 }
