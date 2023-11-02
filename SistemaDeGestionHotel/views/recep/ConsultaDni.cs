@@ -19,6 +19,7 @@ namespace SistemaDeGestionHotel.views.recep
         ClienteController cliente_controller = new ClienteController();
         HabitacionController habitacion_controller = new HabitacionController();
         Usuario usuarioInicioSesion;
+        RegistroController registro_controller = new RegistroController();  
 
         public ConsultaDni(int IDHabitacion, Usuario usuario)
         {
@@ -37,7 +38,7 @@ namespace SistemaDeGestionHotel.views.recep
             {
 
                 Cliente clienteBuscado = cliente_controller.GetClienteByDNI(int.Parse(TDni.Text));
-
+                
                 Habitacion habitacion = habitacion_controller.GetHabitacionByID(idHabitacion);
 
                 if(clienteBuscado == null)
@@ -48,13 +49,36 @@ namespace SistemaDeGestionHotel.views.recep
                     this.Hide();
                 }else
                 {
-                    Form agregarHues = new AgregarHuesped(usuarioInicioSesion, clienteBuscado, habitacion, int.Parse(TDni.Text));
+                    if (registro_controller.ClienteEnEstadiaOReserva(clienteBuscado.IdCliente) == null)
+                    {
+                        Form agregarHues = new AgregarHuesped(usuarioInicioSesion, clienteBuscado, habitacion, int.Parse(TDni.Text));
 
-                    agregarHues.StartPosition = FormStartPosition.CenterScreen;
+                        agregarHues.StartPosition = FormStartPosition.CenterScreen;
 
-                    DialogResult result = agregarHues.ShowDialog();
+                        DialogResult result = agregarHues.ShowDialog();
 
-                    this.Hide();
+                        this.Hide();
+                    }else
+                    {
+                        Registro registroCliente = registro_controller.ClienteEnEstadiaOReserva(clienteBuscado.IdCliente);
+
+                        if(registroCliente.EstadoOcupacion == 0)
+                        {
+                            string mensaje = $"El cliente se encuetra con una reserva en la habitacion : {registroCliente.NroHabitacionNavigation.NroHabitacion.ToString()}\n";
+
+
+                            MessageBox.Show(mensaje, "detalles", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }else
+                        {
+                            string mensaje = $"El cliente se encuentra registrado en la habitacion : {registroCliente.NroHabitacionNavigation.NroHabitacion.ToString()}\n";
+
+
+                            MessageBox.Show(mensaje, "detalles", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        
+                        this.Close();
+                    }
+                    
                 }
             }
         }

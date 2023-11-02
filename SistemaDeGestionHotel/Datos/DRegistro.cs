@@ -41,6 +41,14 @@ namespace SistemaDeGestionHotel.Datos
                                  .FirstOrDefault(r => r.IdRegistro == id);
         }
 
+        public Registro ClienteEnEstadiaOReserva(int idCliente)
+        {
+            return dbHotelParana.Registros
+                                 .Include(r => r.IdClienteNavigation)
+                                 .Include(h => h.NroHabitacionNavigation)
+                                 .FirstOrDefault(r => r.IdCliente == idCliente);
+        }
+
         public void GuardarCambios()
         {
             dbHotelParana.SaveChanges();

@@ -55,6 +55,7 @@ namespace SistemaDeGestionHotel.Datos
             return habitacionesFiltradas;
         }
 
+
         public List<Habitacion> GetHabitacionesByEstado(int idEstado)
         {
             // Obtener todas las habitaciones
