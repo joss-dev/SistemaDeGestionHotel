@@ -74,6 +74,9 @@ namespace SistemaDeGestionHotel.views.admin
                     // Añadir el botón al panel
                     panel1.Controls.Add(boton);
 
+                    // Agrega el mismo manejador de eventos Click a todos los botones
+                    boton.Click += Habitacion_Click;
+
                     // Incrementar la posición x para el siguiente botón
                     x += boton.Width + 10;
                 }
@@ -139,6 +142,9 @@ namespace SistemaDeGestionHotel.views.admin
 
                     // Añadir el botón al panel
                     panel1.Controls.Add(boton);
+
+                    // Agrega el mismo manejador de eventos Click a todos los botones
+                    boton.Click += Habitacion_Click;
                 }
                 else
                 {
@@ -219,6 +225,9 @@ namespace SistemaDeGestionHotel.views.admin
                     // Añade el botón al panel
                     panel1.Controls.Add(boton);
 
+                    // Agrega el mismo manejador de eventos Click a todos los botones
+                    boton.Click += Habitacion_Click;
+
                     // Incrementa la posición x para el siguiente botón
                     x += boton.Width + 10;
                 }
@@ -294,6 +303,9 @@ namespace SistemaDeGestionHotel.views.admin
                     // Añadir el botón al panel
                     panel1.Controls.Add(boton);
 
+                    // Agrega el mismo manejador de eventos Click a todos los botones
+                    boton.Click += Habitacion_Click;
+
                     // Incrementar la posición x para el siguiente botón
                     x += boton.Width + 10;
                 }
@@ -367,6 +379,9 @@ namespace SistemaDeGestionHotel.views.admin
                     // Añadir el botón al panel
                     panel1.Controls.Add(boton);
 
+                    // Agrega el mismo manejador de eventos Click a todos los botones
+                    boton.Click += Habitacion_Click;
+
                     // Incrementar la posición x para el siguiente botón
                     x += boton.Width + 10;
                 }
@@ -394,6 +409,22 @@ namespace SistemaDeGestionHotel.views.admin
         }
 
 
+        private void Habitacion_Click(object sender, EventArgs e)
+        {
+            // Aquí puedes manejar el clic del botón
+            // Puedes usar sender para identificar el botón específico que se hizo clic
+            // Ejemplo: Button botonClicado = (Button)sender;
+            // ... Tu lógica de manejo de clic ...
+            Button botonClicado = sender as Button;
 
+            if (botonClicado != null)
+            {
+                if (int.TryParse(botonClicado.Name, out int idHabitacion))
+                {
+                    MessageBox.Show(idHabitacion.ToString());
+                }
+            }
+
+        }
     }
 }
