@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualBasic;
+using SistemaDeGestionHotel.NEntidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,10 +14,18 @@ namespace SistemaDeGestionHotel.views.recep
 {
     public partial class AgregarHuesped : Form
     {
-        public AgregarHuesped()
+
+        private Habitacion habitacionAgregar;
+        private Cliente clienteAgregar;
+        private int dniCliente;
+
+        public AgregarHuesped(Cliente cliente, Habitacion habitacion, int dni)
         {
             InitializeComponent();
             comboBoxEstado.SelectedIndex = 0;
+            clienteAgregar = cliente;
+            habitacionAgregar = habitacion;
+            dniCliente = dni;
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
@@ -118,5 +127,35 @@ namespace SistemaDeGestionHotel.views.recep
                 // Realizar acciones después de cerrar el formulario secundario si es necesario
             }
         }
+
+        private void TNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CargarDatos(object sender, EventArgs e)
+        {
+            //carga los datos del cliente
+            if (clienteAgregar == null) {
+                TDni.Text = dniCliente.ToString();
+            }
+            else
+            {
+                TDni.Text = clienteAgregar.DniCliente.ToString();   
+                TApellido.Text = clienteAgregar.ApellidoCliente.ToString();
+                TNombre.Text = clienteAgregar.NombreCliente.ToString();
+                textBoxTelefono.Text = clienteAgregar.Telefono.ToString();   
+            }
+            
+
+            //carga datos de la habitacion
+            labelNroHabitacion.Text = habitacionAgregar.NroHabitacion.ToString();
+            labelCantCamas.Text = habitacionAgregar.CantidadCamas.ToString();
+            labelEstado.Text = habitacionAgregar.IdEstadoNavigation.NombEstado.ToString();
+            labelPrecio.Text = habitacionAgregar.Precio.ToString("N2");
+            labelNroPiso.Text = habitacionAgregar.IdPisoNavigation.NroPiso.ToString();
+            labelTipoHabitacion.Text = habitacionAgregar.IdTipoHabNavigation.NombTipo.ToString();   
+        }
     }
+    
 }

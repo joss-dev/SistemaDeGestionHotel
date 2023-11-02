@@ -85,11 +85,11 @@ namespace SistemaDeGestionHotel.views.admin
 
         private void button7_Click(object sender, EventArgs e)
         {
-            Form buscarHuesped = new ConsultaDni();
+            //Form buscarHuesped = new ConsultaDni();
 
-            buscarHuesped.StartPosition = FormStartPosition.CenterScreen;
+            //buscarHuesped.StartPosition = FormStartPosition.CenterScreen;
 
-            DialogResult result = buscarHuesped.ShowDialog();
+            //DialogResult result = buscarHuesped.ShowDialog();
 
         }
 
@@ -421,7 +421,9 @@ namespace SistemaDeGestionHotel.views.admin
             {
                 if (int.TryParse(botonClicado.Name, out int idHabitacion))
                 {
-                    MessageBox.Show(idHabitacion.ToString());
+                    Form form = new ConsultaDni(idHabitacion);
+                    form.ShowDialog();
+                    this.Hide();
                 }
             }
 

@@ -80,7 +80,10 @@ namespace SistemaDeGestionHotel.Datos
         public Habitacion GetHabitacionByID(int iddehabitation)
         {
             return dbHotelParana.Habitacions
-                                 .FirstOrDefault(h => h.IdHabitacion == iddehabitation);
+                                .Include(h => h.IdEstadoNavigation)   // Incluye la relación a IdEstadoNavigation
+                                .Include(h => h.IdPisoNavigation)     // Incluye la relación a IdPisoNavigation
+                                .Include(h => h.IdTipoHabNavigation)  // Incluye la relación a IdTipoHabNavigation
+                                .FirstOrDefault(h => h.IdHabitacion == iddehabitation);
         }
 
 

@@ -30,6 +30,7 @@
         {
             components = new System.ComponentModel.Container();
             groupBox1 = new GroupBox();
+            labelNroHabitacion = new Label();
             label13 = new Label();
             label11 = new Label();
             label4 = new Label();
@@ -57,6 +58,11 @@
             btnCancelar = new Button();
             btnRegistrar = new Button();
             errorProviderNumero = new ErrorProvider(components);
+            labelTipoHabitacion = new Label();
+            labelNroPiso = new Label();
+            labelCantCamas = new Label();
+            labelEstado = new Label();
+            labelPrecio = new Label();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProviderNumero).BeginInit();
@@ -64,6 +70,12 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(labelPrecio);
+            groupBox1.Controls.Add(labelEstado);
+            groupBox1.Controls.Add(labelCantCamas);
+            groupBox1.Controls.Add(labelNroPiso);
+            groupBox1.Controls.Add(labelTipoHabitacion);
+            groupBox1.Controls.Add(labelNroHabitacion);
             groupBox1.Controls.Add(label13);
             groupBox1.Controls.Add(label11);
             groupBox1.Controls.Add(label4);
@@ -77,6 +89,14 @@
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Datos de la Habitación";
+            // 
+            // labelNroHabitacion
+            // 
+            labelNroHabitacion.AutoSize = true;
+            labelNroHabitacion.Location = new Point(175, 34);
+            labelNroHabitacion.Name = "labelNroHabitacion";
+            labelNroHabitacion.Size = new Size(0, 18);
+            labelNroHabitacion.TabIndex = 35;
             // 
             // label13
             // 
@@ -120,7 +140,7 @@
             label2.AutoSize = true;
             label2.BorderStyle = BorderStyle.FixedSingle;
             label2.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(481, 23);
+            label2.Location = new Point(481, 34);
             label2.Name = "label2";
             label2.Size = new Size(52, 18);
             label2.TabIndex = 31;
@@ -132,7 +152,7 @@
             label1.AutoSize = true;
             label1.BorderStyle = BorderStyle.FixedSingle;
             label1.Font = new Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(326, 23);
+            label1.Location = new Point(326, 34);
             label1.Name = "label1";
             label1.Size = new Size(52, 18);
             label1.TabIndex = 30;
@@ -260,6 +280,7 @@
             TNombre.Name = "TNombre";
             TNombre.Size = new Size(206, 24);
             TNombre.TabIndex = 27;
+            TNombre.TextChanged += TNombre_TextChanged;
             TNombre.KeyDown += ValidacionNombre;
             // 
             // label5
@@ -397,6 +418,46 @@
             // 
             errorProviderNumero.ContainerControl = this;
             // 
+            // labelTipoHabitacion
+            // 
+            labelTipoHabitacion.AutoSize = true;
+            labelTipoHabitacion.Location = new Point(384, 34);
+            labelTipoHabitacion.Name = "labelTipoHabitacion";
+            labelTipoHabitacion.Size = new Size(0, 18);
+            labelTipoHabitacion.TabIndex = 36;
+            // 
+            // labelNroPiso
+            // 
+            labelNroPiso.AutoSize = true;
+            labelNroPiso.Location = new Point(539, 34);
+            labelNroPiso.Name = "labelNroPiso";
+            labelNroPiso.Size = new Size(0, 18);
+            labelNroPiso.TabIndex = 37;
+            // 
+            // labelCantCamas
+            // 
+            labelCantCamas.AutoSize = true;
+            labelCantCamas.Location = new Point(257, 68);
+            labelCantCamas.Name = "labelCantCamas";
+            labelCantCamas.Size = new Size(0, 18);
+            labelCantCamas.TabIndex = 38;
+            // 
+            // labelEstado
+            // 
+            labelEstado.AutoSize = true;
+            labelEstado.Location = new Point(404, 70);
+            labelEstado.Name = "labelEstado";
+            labelEstado.Size = new Size(0, 18);
+            labelEstado.TabIndex = 39;
+            // 
+            // labelPrecio
+            // 
+            labelPrecio.AutoSize = true;
+            labelPrecio.Location = new Point(563, 70);
+            labelPrecio.Name = "labelPrecio";
+            labelPrecio.Size = new Size(0, 18);
+            labelPrecio.TabIndex = 40;
+            // 
             // AgregarHuesped
             // 
             AutoScaleDimensions = new SizeF(6F, 13F);
@@ -412,6 +473,7 @@
             Name = "AgregarHuesped";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Agregar Huesped";
+            Load += CargarDatos;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
@@ -450,5 +512,11 @@
         private ComboBox comboBoxEstado;
         private Label label13;
         private Button btnServiciosAd;
+        private Label labelNroHabitacion;
+        private Label labelTipoHabitacion;
+        private Label labelPrecio;
+        private Label labelEstado;
+        private Label labelCantCamas;
+        private Label labelNroPiso;
     }
 }
