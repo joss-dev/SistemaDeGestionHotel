@@ -235,7 +235,7 @@
             groupBox2.Controls.Add(label10);
             groupBox2.Controls.Add(label12);
             groupBox2.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox2.Location = new Point(115, 162);
+            groupBox2.Location = new Point(115, 158);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(669, 118);
             groupBox2.TabIndex = 31;

@@ -41,6 +41,12 @@ namespace SistemaDeGestionHotel.Datos
                                  .FirstOrDefault(r => r.IdRegistro == id);
         }
 
+        public Registro GetRegistroByIDHabitacion(int id)
+        {
+            return dbHotelParana.Registros
+                                 .FirstOrDefault(r => r.NroHabitacion == id);
+        }
+
         public Registro ClienteEnEstadiaOReserva(int idCliente)
         {
             return dbHotelParana.Registros

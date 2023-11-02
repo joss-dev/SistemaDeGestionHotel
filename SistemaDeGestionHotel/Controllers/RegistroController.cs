@@ -10,7 +10,7 @@ namespace SistemaDeGestionHotel.Controllers
 
         public bool AgregarRegistro(int cantidadHuespedes, double precioHabPactado, int estadoOcupacion, DateTime fechaIngreso, DateTime fechaSalida, int idUsuario, int nroHabitacion, int idCliente)
         {
-            
+
             Registro registro = new Registro()
             {
                 CantidadHuespedes = cantidadHuespedes,
@@ -41,7 +41,12 @@ namespace SistemaDeGestionHotel.Controllers
             return d_registro.ClienteEnEstadiaOReserva(idCliente);
         }
 
-        public bool EditarRegistro(int idRegistro, int cantidadHuespedes, double precioHabPactado, int estadoOcupacion, DateTime fechaIngreso, DateTime fechaSalida, int idUsuario, int nroHabitacion, int idCliente)
+        public Registro GetRegistroByIDHabitacion(int id)
+        {
+            return d_registro.GetRegistroByIDHabitacion(id);
+        }
+
+            public bool EditarRegistro(int idRegistro, int cantidadHuespedes, double precioHabPactado, int estadoOcupacion, DateTime fechaIngreso, DateTime fechaSalida, int idUsuario, int nroHabitacion, int idCliente)
         {
             Registro registroExistente = d_registro.GetRegistroByID(idRegistro);
 

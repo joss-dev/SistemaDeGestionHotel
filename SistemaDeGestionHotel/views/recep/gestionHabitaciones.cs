@@ -484,12 +484,30 @@ namespace SistemaDeGestionHotel.views.admin
 
         private void HabitacionOcupada_Click(object sender, EventArgs e)
         {
+            Button botonClicado = sender as Button;
 
+            if (botonClicado != null)
+            {
+                if (int.TryParse(botonClicado.Name, out int idHabitacion))
+                {
+                    Form form = new InfoRegistro(idHabitacion);
+                    form.ShowDialog();
+                }
+            }
         }
 
         private void HabitacionReservada_Click(object sender, EventArgs e)
         {
+            Button botonClicado = sender as Button;
 
+            if (botonClicado != null)
+            {
+                if (int.TryParse(botonClicado.Name, out int idHabitacion))
+                {
+                    Form form = new InfoRegistro(idHabitacion);
+                    form.ShowDialog();
+                }
+            }
         }
 
         private void Habitacion_Click(object sender, EventArgs e)
