@@ -30,6 +30,13 @@
         {
             components = new System.ComponentModel.Container();
             groupBox1 = new GroupBox();
+            labelFechaSalida = new Label();
+            labelFechaIngreso = new Label();
+            labelTelefono = new Label();
+            labelCantHuespedes = new Label();
+            labelDni = new Label();
+            labelNombre = new Label();
+            labelApellido = new Label();
             label7 = new Label();
             lApellido = new Label();
             label1 = new Label();
@@ -44,6 +51,11 @@
             TDni = new TextBox();
             errorProviderNumero = new ErrorProvider(components);
             groupBox2 = new GroupBox();
+            labelPrecio = new Label();
+            labelPiso = new Label();
+            labelTipoHabitacion = new Label();
+            labelNroHabitacion = new Label();
+            labelCantCamas = new Label();
             label13 = new Label();
             label8 = new Label();
             label9 = new Label();
@@ -58,6 +70,13 @@
             // groupBox1
             // 
             groupBox1.Anchor = AnchorStyles.None;
+            groupBox1.Controls.Add(labelFechaSalida);
+            groupBox1.Controls.Add(labelFechaIngreso);
+            groupBox1.Controls.Add(labelTelefono);
+            groupBox1.Controls.Add(labelCantHuespedes);
+            groupBox1.Controls.Add(labelDni);
+            groupBox1.Controls.Add(labelNombre);
+            groupBox1.Controls.Add(labelApellido);
             groupBox1.Controls.Add(label7);
             groupBox1.Controls.Add(lApellido);
             groupBox1.Controls.Add(label1);
@@ -74,6 +93,62 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Datos del Huésped";
             groupBox1.Enter += groupBox1_Enter;
+            // 
+            // labelFechaSalida
+            // 
+            labelFechaSalida.AutoSize = true;
+            labelFechaSalida.Location = new Point(456, 249);
+            labelFechaSalida.Name = "labelFechaSalida";
+            labelFechaSalida.Size = new Size(0, 18);
+            labelFechaSalida.TabIndex = 31;
+            // 
+            // labelFechaIngreso
+            // 
+            labelFechaIngreso.AutoSize = true;
+            labelFechaIngreso.Location = new Point(153, 247);
+            labelFechaIngreso.Name = "labelFechaIngreso";
+            labelFechaIngreso.Size = new Size(0, 18);
+            labelFechaIngreso.TabIndex = 30;
+            // 
+            // labelTelefono
+            // 
+            labelTelefono.AutoSize = true;
+            labelTelefono.Location = new Point(97, 184);
+            labelTelefono.Name = "labelTelefono";
+            labelTelefono.Size = new Size(0, 18);
+            labelTelefono.TabIndex = 29;
+            // 
+            // labelCantHuespedes
+            // 
+            labelCantHuespedes.AutoSize = true;
+            labelCantHuespedes.Location = new Point(505, 112);
+            labelCantHuespedes.Name = "labelCantHuespedes";
+            labelCantHuespedes.Size = new Size(0, 18);
+            labelCantHuespedes.TabIndex = 28;
+            // 
+            // labelDni
+            // 
+            labelDni.AutoSize = true;
+            labelDni.Location = new Point(64, 112);
+            labelDni.Name = "labelDni";
+            labelDni.Size = new Size(0, 18);
+            labelDni.TabIndex = 27;
+            // 
+            // labelNombre
+            // 
+            labelNombre.AutoSize = true;
+            labelNombre.Location = new Point(405, 39);
+            labelNombre.Name = "labelNombre";
+            labelNombre.Size = new Size(0, 18);
+            labelNombre.TabIndex = 26;
+            // 
+            // labelApellido
+            // 
+            labelApellido.AutoSize = true;
+            labelApellido.Location = new Point(90, 38);
+            labelApellido.Name = "labelApellido";
+            labelApellido.Size = new Size(0, 18);
+            labelApellido.TabIndex = 25;
             // 
             // label7
             // 
@@ -229,6 +304,11 @@
             // groupBox2
             // 
             groupBox2.Anchor = AnchorStyles.None;
+            groupBox2.Controls.Add(labelPrecio);
+            groupBox2.Controls.Add(labelPiso);
+            groupBox2.Controls.Add(labelTipoHabitacion);
+            groupBox2.Controls.Add(labelNroHabitacion);
+            groupBox2.Controls.Add(labelCantCamas);
             groupBox2.Controls.Add(label13);
             groupBox2.Controls.Add(label8);
             groupBox2.Controls.Add(label9);
@@ -241,6 +321,46 @@
             groupBox2.TabIndex = 31;
             groupBox2.TabStop = false;
             groupBox2.Text = "Datos de la Habitación";
+            // 
+            // labelPrecio
+            // 
+            labelPrecio.AutoSize = true;
+            labelPrecio.Location = new Point(517, 36);
+            labelPrecio.Name = "labelPrecio";
+            labelPrecio.Size = new Size(0, 18);
+            labelPrecio.TabIndex = 39;
+            // 
+            // labelPiso
+            // 
+            labelPiso.AutoSize = true;
+            labelPiso.Location = new Point(346, 77);
+            labelPiso.Name = "labelPiso";
+            labelPiso.Size = new Size(0, 18);
+            labelPiso.TabIndex = 38;
+            // 
+            // labelTipoHabitacion
+            // 
+            labelTipoHabitacion.AutoSize = true;
+            labelTipoHabitacion.Location = new Point(345, 36);
+            labelTipoHabitacion.Name = "labelTipoHabitacion";
+            labelTipoHabitacion.Size = new Size(0, 18);
+            labelTipoHabitacion.TabIndex = 37;
+            // 
+            // labelNroHabitacion
+            // 
+            labelNroHabitacion.AutoSize = true;
+            labelNroHabitacion.Location = new Point(87, 36);
+            labelNroHabitacion.Name = "labelNroHabitacion";
+            labelNroHabitacion.Size = new Size(0, 18);
+            labelNroHabitacion.TabIndex = 36;
+            // 
+            // labelCantCamas
+            // 
+            labelCantCamas.AutoSize = true;
+            labelCantCamas.Location = new Point(153, 77);
+            labelCantCamas.Name = "labelCantCamas";
+            labelCantCamas.Size = new Size(0, 18);
+            labelCantCamas.TabIndex = 35;
             // 
             // label13
             // 
@@ -319,6 +439,7 @@
             btnCancelar.Text = "Cancelar";
             btnCancelar.TextAlign = ContentAlignment.BottomCenter;
             btnCancelar.UseVisualStyleBackColor = false;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // GestionReservas
             // 
@@ -369,5 +490,17 @@
         private Label label10;
         private Label label12;
         private Button btnCancelar;
+        private Label labelFechaSalida;
+        private Label labelFechaIngreso;
+        private Label labelTelefono;
+        private Label labelCantHuespedes;
+        private Label labelDni;
+        private Label labelNombre;
+        private Label labelApellido;
+        private Label labelPrecio;
+        private Label labelPiso;
+        private Label labelTipoHabitacion;
+        private Label labelNroHabitacion;
+        private Label labelCantCamas;
     }
 }

@@ -123,7 +123,7 @@ CREATE TABLE Registro(
 
 
 
-CREATE TABLE Detalle_Servicios(
+CREATE TABLE DetalleServicios(
 	ID_registro INT NOT NULL,
 	ID_servicioAdic INT NOT NULL,
 	CONSTRAINT PK_Detalle_servicios PRIMARY KEY (ID_registro, ID_servicioAdic),

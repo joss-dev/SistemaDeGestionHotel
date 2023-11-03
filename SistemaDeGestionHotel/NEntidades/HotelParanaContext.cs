@@ -43,8 +43,10 @@ public partial class HotelParanaContext : DbContext
 
     public virtual DbSet<Usuario> Usuarios { get; set; }
 
+    
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Server=DESKTOP-4RGQT6N\\SQLEXPRESS;Database=HotelParana;Integrated Security=True; TrustServerCertificate=True;");
+        => optionsBuilder.UseSqlServer("Server=DESKTOP-G7GUADO\\SQLEXPRESS;Database=HotelParana;Integrated Security=True; TrustServerCertificate=True;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -267,24 +269,9 @@ public partial class HotelParanaContext : DbContext
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_ID_habitacion");
 
-            entity.HasMany(d => d.IdServicioAdics).WithMany(p => p.IdRegistros)
-                .UsingEntity<Dictionary<string, object>>(
-                    "DetalleServicio",
-                    r => r.HasOne<ServiciosAdicionale>().WithMany()
-                        .HasForeignKey("IdServicioAdic")
-                        .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK_ID_servicioAdic"),
-                    l => l.HasOne<Registro>().WithMany()
-                        .HasForeignKey("IdRegistro")
-                        .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK_ID_registro"),
-                    j =>
-                    {
-                        j.HasKey("IdRegistro", "IdServicioAdic").HasName("PK_Detalle_servicios");
-                        j.ToTable("Detalle_Servicios");
-                        j.IndexerProperty<int>("IdRegistro").HasColumnName("ID_registro");
-                        j.IndexerProperty<int>("IdServicioAdic").HasColumnName("ID_servicioAdic");
-                    });
+            
+           
+
         });
 
         modelBuilder.Entity<ServiciosAdicionale>(entity =>

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SistemaDeGestionHotel.Controllers;
+using SistemaDeGestionHotel.NEntidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,10 @@ namespace SistemaDeGestionHotel.views.recep
 {
     public partial class GestionReservas : Form
     {
+        ClienteController cliente_controller = new ClienteController();
+        RegistroController registro_controller = new RegistroController();
+        HabitacionController habitacion_controller = new HabitacionController();
+
         public GestionReservas()
         {
             InitializeComponent();
@@ -35,8 +41,60 @@ namespace SistemaDeGestionHotel.views.recep
             }
             else
             {
-                MessageBox.Show("Registrado!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Cliente clienteBuscado = cliente_controller.GetClienteByDNI(int.Parse(TDni.Text));
+                if (clienteBuscado == null)
+                {
+                    MessageBox.Show("Este dni no tiene asociado una reserva", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    Registro registroBuscado = registro_controller.GetRegistroByIDCliente(clienteBuscado.IdCliente);
+                    if (registroBuscado == null || registroBuscado.EstadoOcupacion == 0)
+                    {
+                        MessageBox.Show("Este dni no tiene asociado una reserva", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        Habitacion habitacionBuscada = habitacion_controller.GetHabitacionByID(registroBuscado.NroHabitacion);
+
+                        labelNroHabitacion.Text = habitacionBuscada.NroHabitacion.ToString();
+                        labelTipoHabitacion.Text = habitacionBuscada.IdTipoHabNavigation.NombTipo.ToString();
+                        labelPrecio.Text = habitacionBuscada.Precio.ToString("N2");
+                        labelCantCamas.Text = habitacionBuscada.CantidadCamas.ToString();
+                        labelPiso.Text = habitacionBuscada.IdPiso.ToString();
+
+
+                        labelApellido.Text = clienteBuscado.ApellidoCliente.ToString();
+                        labelNombre.Text = clienteBuscado.NombreCliente.ToString();
+                        labelDni.Text = clienteBuscado.DniCliente.ToString();
+                        labelTelefono.Text = clienteBuscado.Telefono.ToString();
+
+                        labelCantHuespedes.Text = registroBuscado.CantidadHuespedes.ToString();
+                        labelFechaIngreso.Text = registroBuscado.FechaIngreso.ToShortDateString();
+                        labelFechaSalida.Text = registroBuscado.FechaSalida.ToShortDateString();
+
+                    }
+                }
             }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            labelNroHabitacion.Text = string.Empty;
+            labelTipoHabitacion.Text = string.Empty;
+            labelPrecio.Text = string.Empty;
+            labelCantCamas.Text = string.Empty;
+            labelPiso.Text = string.Empty;
+
+
+            labelApellido.Text = string.Empty;
+            labelNombre.Text = string.Empty;
+            labelDni.Text = string.Empty;
+            labelTelefono.Text = string.Empty;
+
+            labelCantHuespedes.Text = string.Empty;
+            labelFechaIngreso.Text = string.Empty;
+            labelFechaSalida.Text = string.Empty;
         }
     }
 }
