@@ -263,6 +263,7 @@
             btnConfirmaLLegada.Text = "Registrar ";
             btnConfirmaLLegada.TextAlign = ContentAlignment.BottomCenter;
             btnConfirmaLLegada.UseVisualStyleBackColor = false;
+            btnConfirmaLLegada.Click += btnConfirmaLLegada_Click;
             // 
             // btnBuscar
             // 

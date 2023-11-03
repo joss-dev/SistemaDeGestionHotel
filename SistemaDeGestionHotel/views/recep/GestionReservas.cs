@@ -96,5 +96,10 @@ namespace SistemaDeGestionHotel.views.recep
             labelFechaIngreso.Text = string.Empty;
             labelFechaSalida.Text = string.Empty;
         }
+
+        private void btnConfirmaLLegada_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
