@@ -40,6 +40,7 @@
             btnMinimizar = new FontAwesome.Sharp.IconButton();
             panelContenedor = new Panel();
             btnPantallaCompleta = new FontAwesome.Sharp.IconButton();
+            iconButton1 = new FontAwesome.Sharp.IconButton();
             panelMenu.SuspendLayout();
             panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureLogo).BeginInit();
@@ -48,6 +49,7 @@
             // panelMenu
             // 
             panelMenu.BackColor = Color.FromArgb(39, 79, 193);
+            panelMenu.Controls.Add(iconButton1);
             panelMenu.Controls.Add(btnGestionarReservas);
             panelMenu.Controls.Add(btnCerrarSesion);
             panelMenu.Controls.Add(btnGestionPagos);
@@ -268,6 +270,32 @@
             btnPantallaCompleta.UseVisualStyleBackColor = true;
             btnPantallaCompleta.Click += btnPantallaCompleta_Click;
             // 
+            // iconButton1
+            // 
+            iconButton1.Cursor = Cursors.Hand;
+            iconButton1.Dock = DockStyle.Top;
+            iconButton1.FlatAppearance.BorderSize = 0;
+            iconButton1.FlatAppearance.MouseDownBackColor = Color.Gainsboro;
+            iconButton1.FlatAppearance.MouseOverBackColor = Color.Gray;
+            iconButton1.FlatStyle = FlatStyle.Flat;
+            iconButton1.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            iconButton1.ForeColor = Color.White;
+            iconButton1.IconChar = FontAwesome.Sharp.IconChar.S;
+            iconButton1.IconColor = Color.FromArgb(15, 15, 15);
+            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton1.IconSize = 38;
+            iconButton1.ImageAlign = ContentAlignment.MiddleLeft;
+            iconButton1.Location = new Point(0, 380);
+            iconButton1.Name = "iconButton1";
+            iconButton1.Padding = new Padding(20, 0, 10, 0);
+            iconButton1.Size = new Size(220, 60);
+            iconButton1.TabIndex = 9;
+            iconButton1.Text = "Servicios Adicionales";
+            iconButton1.TextAlign = ContentAlignment.MiddleLeft;
+            iconButton1.TextImageRelation = TextImageRelation.ImageBeforeText;
+            iconButton1.UseVisualStyleBackColor = true;
+            iconButton1.Click += iconButton1_Click;
+            // 
             // PrincipalRecep
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -306,5 +334,6 @@
         private Panel panelContenedor;
         private FontAwesome.Sharp.IconButton btnPantallaCompleta;
         private FontAwesome.Sharp.IconButton btnGestionarReservas;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }

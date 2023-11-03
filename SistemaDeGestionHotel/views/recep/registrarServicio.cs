@@ -18,11 +18,15 @@ namespace SistemaDeGestionHotel.views.recep
     {
 
         ServiciosAdicionalesController servicios_controller = new ServiciosAdicionalesController();
-        public registrarServicio()
+        private int dniCliente;
+        DetalleServicioController detalle_controller = new DetalleServicioController();
+        RegistroController registro_controller = new RegistroController();
+        ClienteController cliente_controller = new ClienteController();
+
+        public registrarServicio(int dni)
         {
             InitializeComponent();
-
-
+            dniCliente = dni;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -39,42 +43,75 @@ namespace SistemaDeGestionHotel.views.recep
 
         private void CargaDatos(object sender, EventArgs e)
         {
+            if (dniCliente == 0)
+            {
+                TDni.Text = string.Empty;
+            }
+            else
+            {
+                TDni.Text = dniCliente.ToString();
+            }
+
             List<ServiciosAdicionale> serviciosAdicionales = servicios_controller.GetServiciosAdicionales();
 
-            int y = 30;  // Inicializar la posición y
 
             foreach (ServiciosAdicionale servicio in serviciosAdicionales)
             {
 
                 if (servicio.Estado == 1)
                 {
-                    // Crear un nuevo CheckBox
-                    CheckBox checkBox = new CheckBox();
-                    Label lab = new Label();
-
-                    // Establecer la ubicación del CheckBox
-                    checkBox.Location = new Point(50, y);
-                    lab.Location = new Point(200, y);
-
-                    lab.AutoSize = true;
-                    checkBox.AutoSize = true;
-
-                    lab.Text = $"Costo: $ {servicio.Precio.ToString("N2")}";
-
-
-                    checkBox.Name = $"{servicio.NombServicio}";
-                    // Establecer el texto del CheckBox con el nombre del servicio y su precio
-                    checkBox.Text = $"{servicio.NombServicio}";
-
-                    // Añadir el CheckBox al GroupBox
-                    groupBox1.Controls.Add(checkBox);
-                    groupBox1.Controls.Add(lab);
-
-                    // Incrementar la posición y para el siguiente CheckBox
-                    y += checkBox.Height + 10;
+                    comboBoxServicios.Items.Add(servicio.NombServicio);
                 }
 
             }
+        }
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            if (ValidacionTextBox.ValidarNoVacio(TDni) || comboBoxServicios.SelectedIndex < 0)
+            {
+                MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                Cliente cliente = cliente_controller.GetClienteByDNI(int.Parse(TDni.Text));
+                
+                if(cliente == null)
+                {
+                    MessageBox.Show("El dni ingresado no se encuentra registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    Registro registro = registro_controller.GetRegistroByIDCliente(cliente.IdCliente);
+                    if(registro == null)
+                    {
+                        MessageBox.Show("El dni ingresado no se encuentra registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        if (detalle_controller.AgregarDetalleServicio(registro.IdRegistro, comboBoxServicios.SelectedIndex + 1))
+                        {
+                            MessageBox.Show("Servicio registrado!");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error al registrar servicio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void ValidarDni(object sender, KeyEventArgs e)
+        {
+            ValidacionTextBox.ValidarSoloNumeros(TDni, errorProvider);
+        }
+
+        private void CargaPrecio(object sender, EventArgs e)
+        {
+            ServiciosAdicionale servicio = servicios_controller.GetServicioAdicionalByID(comboBoxServicios.SelectedIndex + 1);
+
+            labelPrecio.Text = servicio.Precio.ToString("N2");
         }
     }
 }

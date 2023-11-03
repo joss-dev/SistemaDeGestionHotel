@@ -46,7 +46,12 @@ namespace SistemaDeGestionHotel.Controllers
             return d_registro.GetRegistroByIDHabitacion(id);
         }
 
-            public bool EditarRegistro(int idRegistro, int cantidadHuespedes, double precioHabPactado, int estadoOcupacion, DateTime fechaIngreso, DateTime fechaSalida, int idUsuario, int nroHabitacion, int idCliente)
+        public Registro GetRegistroByIDCliente(int id)
+        {
+            return d_registro.GetRegistroByIDCliente(id);
+        }
+
+        public bool EditarRegistro(int idRegistro, int cantidadHuespedes, double precioHabPactado, int estadoOcupacion, DateTime fechaIngreso, DateTime fechaSalida, int idUsuario, int nroHabitacion, int idCliente)
         {
             Registro registroExistente = d_registro.GetRegistroByID(idRegistro);
 

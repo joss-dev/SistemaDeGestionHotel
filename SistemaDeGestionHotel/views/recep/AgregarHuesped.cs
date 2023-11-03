@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualBasic;
 using SistemaDeGestionHotel.Controllers;
+using SistemaDeGestionHotel.Datos;
 using SistemaDeGestionHotel.NEntidades;
 using System;
 using System.Collections.Generic;
@@ -35,10 +36,6 @@ namespace SistemaDeGestionHotel.views.recep
             usuarioInicioSesion = usuario;
         }
 
-        private void CambiarEstadoDeHabitacion(int habitacionId, int nuevoEstado)
-        {
-           
-        }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
@@ -72,7 +69,19 @@ namespace SistemaDeGestionHotel.views.recep
                                      $"Nombre: {TNombre.Text}";
 
                     MessageBox.Show(mensaje, "Se registro con exito, detalles del registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
+                    MsgBoxResult resulta = (MsgBoxResult)MessageBox.Show("¿Desea registrar algun servicio adicional?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                    if (resulta == MsgBoxResult.Yes)
+                    {
+                        Form registrarServicio = new registrarServicio(clienteAgregar.DniCliente);
+                        registrarServicio.StartPosition = FormStartPosition.CenterScreen;
+                        registrarServicio.ShowDialog();
+                        this.Close();
+                    }
+                    else
+                    {
+                        this.Close();
+                    }
+                    
                 }
                 else
                 {
@@ -128,21 +137,6 @@ namespace SistemaDeGestionHotel.views.recep
                 // Establecer la fecha de salida como mínimo un día después de la fecha de ingreso
                 dateTimeSalida.MinDate = DateTime.Today.AddDays(1);
 
-            }
-        }
-
-        private void btnServiciosAd_Click(object sender, EventArgs e)
-        {
-            Form registrarServ = new registrarServicio();
-
-            registrarServ.StartPosition = FormStartPosition.CenterScreen;
-
-            DialogResult result = registrarServ.ShowDialog();
-
-            // Verificar si se cerró el formulario secundario
-            if (result == DialogResult.OK)
-            {
-                // Realizar acciones después de cerrar el formulario secundario si es necesario
             }
         }
 

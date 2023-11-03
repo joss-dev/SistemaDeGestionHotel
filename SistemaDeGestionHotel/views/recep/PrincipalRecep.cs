@@ -121,12 +121,6 @@ namespace SistemaDeGestionHotel
             FormsHijos.AbrirFormHija(new gestionHabitaciones(usuarioInicioSesion), panelContenedor);
         }
 
-        private void btnRegistrarServicios_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, Color.FromArgb(34, 81, 111));
-            FormsHijos.AbrirFormHija(new registrarServicio(), panelContenedor);
-
-        }
 
         private void btnGestionPagos_Click(object sender, EventArgs e)
         {
@@ -168,5 +162,10 @@ namespace SistemaDeGestionHotel
             FormsHijos.AbrirFormHija(new GestionReservas(), panelContenedor);
         }
 
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, Color.FromArgb(34, 81, 111));
+            FormsHijos.AbrirFormHija(new registrarServicio(0), panelContenedor);
+        }
     }
 }

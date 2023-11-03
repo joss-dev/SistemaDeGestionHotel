@@ -46,7 +46,7 @@ namespace SistemaDeGestionHotel.views.recep
                     Form registrarCliente = new RegistrarCliente(usuarioInicioSesion, idHabitacion, int.Parse(TDni.Text));
                     registrarCliente.StartPosition = FormStartPosition.CenterScreen;
                     DialogResult result = registrarCliente.ShowDialog();
-                    this.Hide();
+                    this.Close();
                 }
                 else
                 {
@@ -58,7 +58,7 @@ namespace SistemaDeGestionHotel.views.recep
 
                         DialogResult result = agregarHues.ShowDialog();
 
-                        this.Hide();
+                        this.Close();
                     }
                     else
                     {

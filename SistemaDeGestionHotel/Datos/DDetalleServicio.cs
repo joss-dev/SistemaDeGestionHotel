@@ -18,7 +18,6 @@ namespace SistemaDeGestionHotel.Datos
             bool result = true;
             try
             {
-                // Intenta insertar el nuevo detalle de servicio en la base de datos
                 dbHotelParana.Add(detalle);
                 dbHotelParana.SaveChanges();
                 return result;

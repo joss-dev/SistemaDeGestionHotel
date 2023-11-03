@@ -59,5 +59,11 @@ namespace SistemaDeGestionHotel.Datos
         {
             dbHotelParana.SaveChanges();
         }
+
+        public Registro GetRegistroByIDCliente(int id)
+        {
+            return dbHotelParana.Registros
+                                 .FirstOrDefault(r => r.IdCliente == id);
+        }
     }
 }
