@@ -75,5 +75,26 @@ namespace SistemaDeGestionHotel.Controllers
 
             return true;
         }
+
+        public bool RegistrarEstadia(int idRegistro)
+        {
+            Registro registroExistente = d_registro.GetRegistroByID(idRegistro);
+
+            if (registroExistente == null)
+            {
+                // El registro no existe, por lo tanto no se puede editar
+                return false;
+            }
+
+            // El registro existe, actualiza sus propiedades
+           
+            registroExistente.EstadoOcupacion = 1;
+
+
+            d_registro.GuardarCambios();
+
+            return true;
+        }
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using SistemaDeGestionHotel.Controllers;
+﻿using Microsoft.VisualBasic;
+using SistemaDeGestionHotel.Controllers;
 using SistemaDeGestionHotel.NEntidades;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace SistemaDeGestionHotel.views.recep
         ClienteController cliente_controller = new ClienteController();
         RegistroController registro_controller = new RegistroController();
         HabitacionController habitacion_controller = new HabitacionController();
-
+        private Registro registroBuscado;
         public GestionReservas()
         {
             InitializeComponent();
@@ -48,7 +49,7 @@ namespace SistemaDeGestionHotel.views.recep
                 }
                 else
                 {
-                    Registro registroBuscado = registro_controller.GetRegistroByIDCliente(clienteBuscado.IdCliente);
+                    registroBuscado = registro_controller.GetRegistroByIDCliente(clienteBuscado.IdCliente);
                     if (registroBuscado == null || registroBuscado.EstadoOcupacion == 1)
                     {
                         MessageBox.Show("Este dni no tiene asociado una reserva", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -99,7 +100,37 @@ namespace SistemaDeGestionHotel.views.recep
 
         private void btnConfirmaLLegada_Click(object sender, EventArgs e)
         {
+            MsgBoxResult result = (MsgBoxResult)MessageBox.Show("¿Está seguro de que desea confirmar la estadia de este cliente?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+            if (result == MsgBoxResult.Yes)
+            {
+                bool resil = registro_controller.RegistrarEstadia(registroBuscado.IdRegistro);
+                if(resil)
+                {
+                    MessageBox.Show("Estadia registrada correctamente!");
+                    labelNroHabitacion.Text = string.Empty;
+                    labelTipoHabitacion.Text = string.Empty;
+                    labelPrecio.Text = string.Empty;
+                    labelCantCamas.Text = string.Empty;
+                    labelPiso.Text = string.Empty;
 
+
+                    labelApellido.Text = string.Empty;
+                    labelNombre.Text = string.Empty;
+                    labelDni.Text = string.Empty;
+                    labelTelefono.Text = string.Empty;
+
+                    labelCantHuespedes.Text = string.Empty;
+                    labelFechaIngreso.Text = string.Empty;
+                    labelFechaSalida.Text = string.Empty;
+                }
+                else
+                {
+                    MessageBox.Show("Error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }else
+            {
+
+            }
         }
     }
 }
