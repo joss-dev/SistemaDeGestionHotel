@@ -49,7 +49,7 @@ namespace SistemaDeGestionHotel.views.recep
                 else
                 {
                     Registro registroBuscado = registro_controller.GetRegistroByIDCliente(clienteBuscado.IdCliente);
-                    if (registroBuscado == null || registroBuscado.EstadoOcupacion == 0)
+                    if (registroBuscado == null || registroBuscado.EstadoOcupacion == 1)
                     {
                         MessageBox.Show("Este dni no tiene asociado una reserva", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
