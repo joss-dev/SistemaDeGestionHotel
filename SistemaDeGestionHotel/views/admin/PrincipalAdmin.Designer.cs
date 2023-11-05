@@ -37,6 +37,7 @@
             btnCerrarSesion = new Button();
             btnHome = new FontAwesome.Sharp.IconButton();
             panelMenu = new Panel();
+            btnReporte = new FontAwesome.Sharp.IconButton();
             btnConsultas = new FontAwesome.Sharp.IconButton();
             btnAdmHabitaciones = new FontAwesome.Sharp.IconButton();
             btnUsuarios = new FontAwesome.Sharp.IconButton();
@@ -168,7 +169,7 @@
             btnCerrarSesion.FlatStyle = FlatStyle.Flat;
             btnCerrarSesion.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnCerrarSesion.ForeColor = SystemColors.GrayText;
-            btnCerrarSesion.Location = new Point(39, 590);
+            btnCerrarSesion.Location = new Point(39, 674);
             btnCerrarSesion.Name = "btnCerrarSesion";
             btnCerrarSesion.Size = new Size(134, 39);
             btnCerrarSesion.TabIndex = 5;
@@ -205,6 +206,7 @@
             // panelMenu
             // 
             panelMenu.BackColor = Color.FromArgb(39, 79, 193);
+            panelMenu.Controls.Add(btnReporte);
             panelMenu.Controls.Add(btnConsultas);
             panelMenu.Controls.Add(btnAdmHabitaciones);
             panelMenu.Controls.Add(btnUsuarios);
@@ -217,8 +219,34 @@
             panelMenu.ForeColor = SystemColors.ActiveCaptionText;
             panelMenu.Location = new Point(0, 0);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(220, 652);
+            panelMenu.Size = new Size(220, 736);
             panelMenu.TabIndex = 4;
+            // 
+            // btnReporte
+            // 
+            btnReporte.Cursor = Cursors.Hand;
+            btnReporte.Dock = DockStyle.Top;
+            btnReporte.FlatAppearance.BorderSize = 0;
+            btnReporte.FlatAppearance.MouseDownBackColor = Color.Gainsboro;
+            btnReporte.FlatAppearance.MouseOverBackColor = Color.Gray;
+            btnReporte.FlatStyle = FlatStyle.Flat;
+            btnReporte.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnReporte.ForeColor = Color.White;
+            btnReporte.IconChar = FontAwesome.Sharp.IconChar.FileContract;
+            btnReporte.IconColor = Color.FromArgb(20, 20, 20);
+            btnReporte.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnReporte.IconSize = 38;
+            btnReporte.ImageAlign = ContentAlignment.MiddleLeft;
+            btnReporte.Location = new Point(0, 554);
+            btnReporte.Name = "btnReporte";
+            btnReporte.Padding = new Padding(20, 0, 10, 0);
+            btnReporte.Size = new Size(220, 60);
+            btnReporte.TabIndex = 9;
+            btnReporte.Text = "Reportes";
+            btnReporte.TextAlign = ContentAlignment.MiddleLeft;
+            btnReporte.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnReporte.UseVisualStyleBackColor = true;
+            btnReporte.Click += btnReporte_Click;
             // 
             // btnConsultas
             // 
@@ -343,14 +371,14 @@
             panelCont.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panelCont.Location = new Point(220, 30);
             panelCont.Name = "panelCont";
-            panelCont.Size = new Size(580, 622);
+            panelCont.Size = new Size(580, 608);
             panelCont.TabIndex = 10;
             // 
             // PrincipalAdmin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 652);
+            ClientSize = new Size(800, 736);
             Controls.Add(panelCont);
             Controls.Add(panelMenu);
             Controls.Add(panel1);
@@ -383,5 +411,6 @@
         private FontAwesome.Sharp.IconButton btnMaximized;
         public Panel panelCont;
         private FontAwesome.Sharp.IconButton btnConsultas;
+        private FontAwesome.Sharp.IconButton btnReporte;
     }
 }

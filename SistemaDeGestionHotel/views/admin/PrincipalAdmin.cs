@@ -1,9 +1,9 @@
-using System.ComponentModel;
-using System.Runtime.InteropServices;
-using SistemaDeGestionHotel.views;
-using SistemaDeGestionHotel.views.admin;
 using FontAwesome.Sharp;
 using SistemaDeGestionHotel.NEntidades;
+using SistemaDeGestionHotel.views;
+using SistemaDeGestionHotel.views.admin;
+using SistemaDeGestionHotel.Program;
+using System.Runtime.InteropServices;
 
 namespace SistemaDeGestionHotel
 {
@@ -162,6 +162,12 @@ namespace SistemaDeGestionHotel
             Form login = new Login();
             login.Show();
             this.Hide();
+        }
+
+        private void btnReporte_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, Color.FromArgb(34, 81, 111));
+            /*FormsHijos.AbrirFormHija(new Report1(), panelCont);*/
         }
     }
 }
