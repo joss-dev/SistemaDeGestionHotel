@@ -46,12 +46,13 @@ namespace SistemaDeGestionHotel.views.recep
             else
             {
                 bool result = registro_controller.AgregarRegistro(int.Parse(TCantidadHuespedes.Text), habitacionAgregar.Precio, comboBoxEstado.SelectedIndex, dateTimeIngreso.Value, dateTimeSalida.Value, usuarioInicioSesion.IdUsuario, habitacionAgregar.IdHabitacion, clienteAgregar.IdCliente);
-                
-                if(comboBoxEstado.SelectedIndex == 0)
+
+                if (comboBoxEstado.SelectedIndex == 0)
                 {
                     habitacion_controller.MarcarReservadaHabitacion(habitacionAgregar.IdHabitacion);
 
-                }else
+                }
+                else
                 {
                     habitacion_controller.MarcarOcupadaHabitacion(habitacionAgregar.IdHabitacion);
                 }
@@ -81,7 +82,7 @@ namespace SistemaDeGestionHotel.views.recep
                     {
                         this.Close();
                     }
-                    
+
                 }
                 else
                 {
@@ -144,7 +145,7 @@ namespace SistemaDeGestionHotel.views.recep
         {
 
             TDni.Text = clienteAgregar.DniCliente.ToString();
-            TApellido.Text = clienteAgregar.ApellidoCliente.ToString(); 
+            TApellido.Text = clienteAgregar.ApellidoCliente.ToString();
             TNombre.Text = clienteAgregar.NombreCliente.ToString();
             textBoxTelefono.Text = clienteAgregar.Telefono.ToString();
 
@@ -155,6 +156,12 @@ namespace SistemaDeGestionHotel.views.recep
             labelPrecio.Text = habitacionAgregar.Precio.ToString("N2");
             labelNroPiso.Text = habitacionAgregar.IdPisoNavigation.NroPiso.ToString();
             labelTipoHabitacion.Text = habitacionAgregar.IdTipoHabNavigation.NombTipo.ToString();
+        }
+
+        private void CambiaFechaIngreso(object sender, EventArgs e)
+        {
+            // Establecer la fecha de salida como mínimo un día después de la fecha de ingreso
+            dateTimeSalida.MinDate = dateTimeIngreso.Value.AddDays(1);
         }
     }
 

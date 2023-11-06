@@ -302,6 +302,7 @@
             dateTimeIngreso.Name = "dateTimeIngreso";
             dateTimeIngreso.Size = new Size(135, 24);
             dateTimeIngreso.TabIndex = 34;
+            dateTimeIngreso.ValueChanged += CambiaFechaIngreso;
             // 
             // dateTimeSalida
             // 

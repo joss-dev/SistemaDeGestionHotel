@@ -9,15 +9,7 @@ namespace SistemaDeGestionHotel.Controllers
         DServiciosAdicionales d_servicioAdicionales = new DServiciosAdicionales();
         DRegistro d_registro = new DRegistro();
 
-        public bool AgregarDetalleServicio(int idRegistro, int idServicioAdic)
-        {
-
-
-
-
-
-            return d_detalleServicio.AgregarDetalleServicio(idServicioAdic, idRegistro);
-        }
+        
 
         //public List<DetalleServicio> GetDetallesServicios()
         //{

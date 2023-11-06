@@ -2,7 +2,6 @@ using FontAwesome.Sharp;
 using SistemaDeGestionHotel.NEntidades;
 using SistemaDeGestionHotel.views;
 using SistemaDeGestionHotel.views.admin;
-using SistemaDeGestionHotel.Program;
 using System.Runtime.InteropServices;
 
 namespace SistemaDeGestionHotel
