@@ -9,12 +9,16 @@ namespace SistemaDeGestionHotel
     {
 
         LoginController login = new LoginController();
+        OfertaRecargoControllers ofertaRecargo_controller = new OfertaRecargoControllers();
+       
         public Login()
         {
             InitializeComponent();
             // Establece la posición de inicio en el centro de la pantalla
             this.StartPosition = FormStartPosition.CenterScreen;
 
+            //da de baja las ofertas y recargos que estan vencidas
+            ofertaRecargo_controller.DarBajaOfertasYRecargos();
 
             // oculta la contraseña
             TPass.UseSystemPasswordChar = true;

@@ -32,7 +32,7 @@
             btnCobrar = new FontAwesome.Sharp.IconButton();
             btnVolver = new FontAwesome.Sharp.IconButton();
             groupBox1 = new GroupBox();
-            textBox1 = new TextBox();
+            textBoxCambio = new TextBox();
             label5 = new Label();
             textBoxEfectivo = new TextBox();
             label4 = new Label();
@@ -90,7 +90,7 @@
             // groupBox1
             // 
             groupBox1.Anchor = AnchorStyles.Top;
-            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(textBoxCambio);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(textBoxEfectivo);
             groupBox1.Controls.Add(label4);
@@ -106,14 +106,14 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Cobrar con Efectivo";
             // 
-            // textBox1
+            // textBoxCambio
             // 
-            textBox1.Enabled = false;
-            textBox1.Location = new Point(161, 220);
-            textBox1.Name = "textBox1";
-            textBox1.ReadOnly = true;
-            textBox1.Size = new Size(180, 33);
-            textBox1.TabIndex = 41;
+            textBoxCambio.Enabled = false;
+            textBoxCambio.Location = new Point(161, 220);
+            textBoxCambio.Name = "textBoxCambio";
+            textBoxCambio.ReadOnly = true;
+            textBoxCambio.Size = new Size(180, 33);
+            textBoxCambio.TabIndex = 41;
             // 
             // label5
             // 
@@ -216,7 +216,7 @@
         private Label label3;
         private TextBox textBoxEfectivo;
         private Label label4;
-        private TextBox textBox1;
+        private TextBox textBoxCambio;
         private Label label5;
         private ErrorProvider errorProvider1;
     }

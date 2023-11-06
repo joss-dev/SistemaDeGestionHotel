@@ -32,12 +32,15 @@ namespace SistemaDeGestionHotel.Datos
 
         public List<Registro> GetRegistros()
         {
-            return dbHotelParana.Registros.ToList();
+            return dbHotelParana.Registros
+                .Include(s => s.IdServicioAdics)
+                .ToList();
         }
 
         public Registro GetRegistroByID(int id)
         {
             return dbHotelParana.Registros
+                                 .Include(s => s.IdServicioAdics)
                                  .FirstOrDefault(r => r.IdRegistro == id);
         }
 
@@ -63,6 +66,7 @@ namespace SistemaDeGestionHotel.Datos
         public Registro GetRegistroByIDCliente(int id)
         {
             return dbHotelParana.Registros
+                                 .Include(s => s.IdServicioAdics)
                                  .FirstOrDefault(r => r.IdCliente == id);
         }
 

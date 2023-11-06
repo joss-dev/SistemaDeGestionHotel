@@ -13,10 +13,15 @@ namespace SistemaDeGestionHotel.views.recep
 {
     public partial class FormEfectivo : Form
     {
-        public FormEfectivo()
+        private double? MontoTotal;
+
+        public FormEfectivo(double? montoTotal)
         {
             InitializeComponent();
 
+            MontoTotal = montoTotal;
+
+            textBoxTotalApagar.Text = montoTotal.ToString();
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -45,7 +50,15 @@ namespace SistemaDeGestionHotel.views.recep
             }
             else
             {
-                MessageBox.Show("Exito!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (double.Parse(textBoxEfectivo.Text) < MontoTotal)
+                {
+                    MessageBox.Show("El monto ingresado no es suficiente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    double? cambio = double.Parse(textBoxEfectivo.Text) - MontoTotal;
+                    textBoxCambio.Text = cambio.ToString();
+                }
             }
         }
     }

@@ -58,5 +58,35 @@ namespace SistemaDeGestionHotel.Controllers
 
             return true;
         }
+
+        public void DarBajaOfertasYRecargos()
+        {
+            d_ofertaRecargo.DarBajaOfertasYRecargos();
+        }
+        
+        public List<String> ObtenerNombOfertasRecargo()
+        {
+            return d_ofertaRecargo.ObtenerNombresOfRecargos();
+        }
+
+        public List<String> ObtenerNombresRecargo()
+        {
+            return d_ofertaRecargo.ObtenerNombresRecargo();
+        }
+
+        public List<String> ObtenerNombresOferta()
+        {
+            return d_ofertaRecargo.ObtenerNombresOferta();
+        }
+
+        public List<OfertasRecargo> ObtenerOfertas()
+        {
+            return d_ofertaRecargo.ObtenerOfertas();
+        }
+
+        public List<OfertasRecargo> ObtenerRecargos()
+        {
+            return d_ofertaRecargo.ObtenerRecargos();
+        }            
     }
 }

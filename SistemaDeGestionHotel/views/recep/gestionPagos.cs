@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SistemaDeGestionHotel.Controllers;
+using SistemaDeGestionHotel.NEntidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,22 @@ namespace SistemaDeGestionHotel.views.recep
 {
     public partial class gestionPagos : Form
     {
+
+        RegistroController registro_controller = new RegistroController();
+        ClienteController cliente_controller = new ClienteController();
+        HabitacionController habitacion_controller = new HabitacionController();
+        OfertaRecargoControllers ofertaRecargo_controller = new OfertaRecargoControllers();
+        private TimeSpan diferencia;
+
+        private Habitacion habitacionPago;
+        private Registro registroPago;
+        private Cliente clientePago;
+        private OfertasRecargo oferta;
+        private OfertasRecargo recargo;
+        private double? montoOferta = 0;
+        private double? montoRecargo = 0;
+        private double subtotal = 0;
+
         public gestionPagos()
         {
             InitializeComponent();
@@ -26,8 +44,95 @@ namespace SistemaDeGestionHotel.views.recep
             }
             else
             {
-                MessageBox.Show("Exito!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                clientePago = cliente_controller.GetClienteByDNI(int.Parse(TDni.Text));
+
+                if (clientePago == null)
+                {
+                    MessageBox.Show("El cliente no se encuentra registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    registroPago = registro_controller.GetRegistroByIDCliente(clientePago.IdCliente);
+
+                    if (registroPago == null || registroPago.EstadoOcupacion == 0)
+                    {
+                        MessageBox.Show("El cliente no se encuentra registrado en ninguna habitación", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        habitacionPago = habitacion_controller.GetHabitacionByID(registroPago.NroHabitacion);
+
+                        labelNombre.Text = clientePago.NombreCliente.ToString();
+                        labelApellido.Text = clientePago.ApellidoCliente.ToString();
+                        labelDni.Text = clientePago.DniCliente.ToString();
+                        labelTelefono.Text = clientePago.Telefono.ToString();
+
+
+                        labelCantHuespedes.Text = registroPago.CantidadHuespedes.ToString();
+                        labelFechaIngreso.Text = registroPago.FechaIngreso.ToShortDateString();
+                        labelFechaSalida.Text = registroPago.FechaSalida.ToShortDateString();
+
+                        labelNroHabitacion.Text = habitacionPago.NroHabitacion.ToString();
+                        labelTipoHabitacion.Text = habitacionPago.IdTipoHabNavigation.NombTipo.ToString();
+                        labelPiso.Text = habitacionPago.IdPiso.ToString();
+
+                        diferencia = this.CalcularDiasEstadia(registroPago.FechaIngreso, registroPago.FechaSalida);
+
+
+                        dataGridViewFactura.DataSource = registroPago.IdServicioAdics.ToList();
+
+                        labelCantDias.Text = diferencia.TotalDays.ToString();
+                        labelCantServicios.Text = registroPago.IdServicioAdics.Count().ToString();
+                        labelPrecioHabitacion.Text = registroPago.PrecioHabPactado.ToString("N2");
+
+                        labelMonto.Text = this.CalcularMontoEstadia(diferencia.TotalDays, registroPago.PrecioHabPactado).ToString("N2");
+
+                        labelMontoServicios.Text = this.CalcularMontoServicios(registroPago).ToString("N2");
+
+                        subtotal = this.CalcularMontoServicios(registroPago) + this.CalcularMontoEstadia(diferencia.TotalDays, registroPago.PrecioHabPactado);
+
+
+                        labelSubtotal.Text = subtotal.ToString("N2");
+
+                        labelMontoTotal.Text = (subtotal - this.CalcularOferta(montoOferta) + this.CalcularRecargo(montoRecargo)).ToString();
+
+                    }
+                }
             }
+        }
+
+        private double? CalcularOferta(double? oferta)
+        {
+            double subtotal = this.CalcularMontoServicios(registroPago) + this.CalcularMontoEstadia(diferencia.TotalDays, registroPago.PrecioHabPactado);
+            return (subtotal * oferta) / 100;
+        }
+
+        private double? CalcularRecargo(double? recargo)
+        {
+            double subtotal = this.CalcularMontoServicios(registroPago) + this.CalcularMontoEstadia(diferencia.TotalDays, registroPago.PrecioHabPactado);
+            return (subtotal * recargo) / 100;
+        }
+
+        private double CalcularMontoServicios(Registro registro)
+        {
+            double result = 0;
+            foreach (ServiciosAdicionale servicio in registro.IdServicioAdics)
+            {
+                result += servicio.Precio;
+            }
+
+            return result * diferencia.TotalDays;
+
+        }
+
+        private double CalcularMontoEstadia(double cantDias, double precioPactado)
+        {
+            return cantDias * precioPactado;
+        }
+
+        private TimeSpan CalcularDiasEstadia(DateTime fechaIngreso, DateTime fechaSalida)
+        {
+            return fechaSalida - fechaIngreso;
         }
 
         private void ValidacionDni(object sender, KeyEventArgs e)
@@ -38,6 +143,17 @@ namespace SistemaDeGestionHotel.views.recep
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             TDni.Clear();
+
+            labelNombre.Text = string.Empty;
+            labelApellido.Text = string.Empty;
+            labelDni.Text = string.Empty;
+            labelTelefono.Text = string.Empty;
+
+
+            labelCantHuespedes.Text = string.Empty;
+            labelFechaIngreso.Text = string.Empty;
+            labelFechaSalida.Text = string.Empty;
+
         }
 
         private void dataGridViewFactura_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -54,7 +170,7 @@ namespace SistemaDeGestionHotel.views.recep
             if (indiceSeleccionado == 0)
             {
                 // Primer índice, que corresponde a "Efectivo"
-                FormEfectivo formEfectivo = new FormEfectivo();
+                FormEfectivo formEfectivo = new FormEfectivo(subtotal - this.CalcularOferta(montoOferta) + this.CalcularRecargo(montoRecargo));
                 formEfectivo.ShowDialog();
             }
             else if (indiceSeleccionado == 1)
@@ -63,6 +179,61 @@ namespace SistemaDeGestionHotel.views.recep
                 FormTarjeta form = new FormTarjeta();
                 form.ShowDialog();
             }
+        }
+
+        private void label22_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CargarDatos(object sender, EventArgs e)
+        {
+            List<String> listaOfertas = ofertaRecargo_controller.ObtenerNombresOferta();
+            List<String> listaRecargo = ofertaRecargo_controller.ObtenerNombresRecargo();
+
+            foreach (string of in listaOfertas)
+            {
+                comboBoxOfertas.Items.Add(of);
+            }
+
+
+            foreach (string re in listaRecargo)
+            {
+                comboBoxRecargos.Items.Add(re);
+            }
+        }
+
+        private void CargarOferta(object sender, EventArgs e)
+        {
+            int indice = comboBoxOfertas.SelectedIndex;
+
+            List<OfertasRecargo> listaOfertas = ofertaRecargo_controller.ObtenerOfertas();
+
+            oferta = listaOfertas[indice];
+
+            montoOferta = oferta.PorcentajeDescuento;
+
+            labelOferta.Text = oferta.PorcentajeDescuento.ToString() + " - $" + this.CalcularOferta(oferta.PorcentajeDescuento).ToString();
+            labelMontoTotal.Text = (subtotal - this.CalcularOferta(montoOferta) + this.CalcularRecargo(montoRecargo)).ToString();
+        }
+
+        private void CargarRecargo(object sender, EventArgs e)
+        {
+            int indice = comboBoxRecargos.SelectedIndex;
+
+            List<OfertasRecargo> listaRecargos = ofertaRecargo_controller.ObtenerRecargos();
+
+            recargo = listaRecargos[indice];
+
+            montoRecargo = recargo.PorcentajeRecargo;
+
+            labelRecargo.Text = recargo.PorcentajeRecargo.ToString() + " - $" + this.CalcularRecargo(recargo.PorcentajeRecargo).ToString();
+            labelMontoTotal.Text = (subtotal - this.CalcularOferta(montoOferta) + this.CalcularRecargo(montoRecargo)).ToString();
         }
     }
 }

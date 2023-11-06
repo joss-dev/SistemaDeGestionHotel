@@ -45,8 +45,64 @@ namespace SistemaDeGestionHotel.Datos
             return dbHotelParana.OfertasRecargos.ToList();
         }
 
+        public List<String> ObtenerNombresOfRecargos()
+        {
+            return dbHotelParana.OfertasRecargos
+                                 .Select(s => s.NombOfertaRecargo)
+                                 .ToList();
+        }
+
+        public List<String> ObtenerNombresOferta()
+        {
+            return dbHotelParana.OfertasRecargos
+                                 .Where(p => p.PorcentajeRecargo == 0)
+                                 .Where(p => p.Estado == 1)
+                                 .Select(s => s.NombOfertaRecargo)
+                                 .ToList();
+        }
+
+        public List<OfertasRecargo> ObtenerOfertas()
+        {
+            return dbHotelParana.OfertasRecargos
+                                 .Where(p => p.PorcentajeRecargo == 0)
+                                 .Where(p => p.Estado == 1)
+                                 .ToList();
+        }
+
+        public List<OfertasRecargo> ObtenerRecargos()
+        {
+            return dbHotelParana.OfertasRecargos
+                                 .Where(p => p.PorcentajeDescuento == 0)
+                                 .Where(p => p.Estado == 1)
+                                 .ToList();
+        }
+
+        public List<String> ObtenerNombresRecargo()
+        {
+            return dbHotelParana.OfertasRecargos
+                                 .Where(p => p.PorcentajeDescuento == 0)
+                                 .Where(p => p.Estado == 1)
+                                 .Select(s => s.NombOfertaRecargo)
+                                 .ToList();
+        }
+
         public void GuardarCambios()
         {
+            dbHotelParana.SaveChanges();
+        }
+
+        public void DarBajaOfertasYRecargos()
+        {
+            DateTime fechaActual = DateTime.Now;
+
+            var darbaja = dbHotelParana.OfertasRecargos
+                          .Where(p => p.FechaHasta < fechaActual);
+
+            foreach(OfertasRecargo baja in darbaja)
+            {
+                baja.Estado = 0;
+            }
+
             dbHotelParana.SaveChanges();
         }
     }
