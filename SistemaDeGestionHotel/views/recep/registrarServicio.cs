@@ -89,7 +89,8 @@ namespace SistemaDeGestionHotel.views.recep
                     }
                     else
                     {
-                        if (detalle_controller.AgregarDetalleServicio(registro.IdRegistro, comboBoxServicios.SelectedIndex + 1))
+                        ServiciosAdicionale servicioAd = servicios_controller.GetServicioAdicionalByID(comboBoxServicios.SelectedIndex + 1);
+                        if (registro_controller.AgregarServicioAdicional(servicioAd, registro))
                         {
                             MessageBox.Show("Servicio registrado!");
                         }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Win32;
 using SistemaDeGestionHotel.NEntidades;
 
 namespace SistemaDeGestionHotel.Datos
@@ -13,26 +14,8 @@ namespace SistemaDeGestionHotel.Datos
             dbHotelParana = new HotelParanaContext();
         }
 
-        public bool AgregarDetalleServicio(DetalleServicio detalle)
-        {
-            bool result = true;
-            try
-            {
-                dbHotelParana.Add(detalle);
-                dbHotelParana.SaveChanges();
-                return result;
-            }
-            catch (DbUpdateException ex)
-            {
-                result = false;
-                return result;
-            }
-        }
 
-        //public List<DetalleServicio> GetDetallesServicios()
-        //{
-        //    return dbHotelParana.DetalleServicios.ToList();
-        //}
+        
 
         //falto el pk enn esta tabla
         //public DetalleServicio GetDetalleServicioByID(int id)

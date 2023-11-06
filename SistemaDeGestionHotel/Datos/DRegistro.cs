@@ -65,5 +65,34 @@ namespace SistemaDeGestionHotel.Datos
             return dbHotelParana.Registros
                                  .FirstOrDefault(r => r.IdCliente == id);
         }
+
+        public bool AgregarServicioAdicional(ServiciosAdicionale servicioAdicional, Registro registro)
+        {
+            bool result = true;
+            try
+            {
+                dbHotelParana.Entry(registro).Collection(r => r.IdServicioAdics).Load();
+
+                if (registro.IdServicioAdics.Any(sa => sa.IdServicioAdic == servicioAdicional.IdServicioAdic))
+                {
+                    return false;
+                }
+                registro.IdServicioAdics.Add(servicioAdicional);
+                dbHotelParana.SaveChanges();
+                return result;
+                  
+            }
+            catch (DbUpdateException ex)
+            {
+                result = false;
+                return result;
+            }
+        }
+
+        public List<ServiciosAdicionale> GetServiciosAdicionales(int idRegistro)
+        {
+            var registro = dbHotelParana.Registros.Include(r => r.IdServicioAdics).FirstOrDefault(r => r.IdRegistro == idRegistro);
+            return registro.IdServicioAdics.ToList();
+        }
     }
 }

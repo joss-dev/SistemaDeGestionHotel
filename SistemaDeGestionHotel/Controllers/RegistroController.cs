@@ -96,5 +96,15 @@ namespace SistemaDeGestionHotel.Controllers
             return true;
         }
 
+        public bool AgregarServicioAdicional(ServiciosAdicionale servicioAdicional, Registro registro)
+        {
+            return d_registro.AgregarServicioAdicional(servicioAdicional, registro);
+        }
+
+        public List<ServiciosAdicionale> GetServiciosAdicionales(int idRegistro)
+        {
+            return d_registro.GetServiciosAdicionales(idRegistro);
+        }
+
     }
 }

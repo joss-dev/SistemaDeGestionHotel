@@ -106,6 +106,7 @@ namespace SistemaDeGestionHotel.views.recep
                 bool resil = registro_controller.RegistrarEstadia(registroBuscado.IdRegistro);
                 if(resil)
                 {
+                    habitacion_controller.MarcarOcupadaHabitacion(registroBuscado.NroHabitacion);
                     MessageBox.Show("Estadia registrada correctamente!");
                     labelNroHabitacion.Text = string.Empty;
                     labelTipoHabitacion.Text = string.Empty;

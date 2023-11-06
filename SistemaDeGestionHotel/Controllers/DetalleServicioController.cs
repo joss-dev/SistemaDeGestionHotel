@@ -6,16 +6,17 @@ namespace SistemaDeGestionHotel.Controllers
     public class DetalleServicioController
     {
         DDetalleServicio d_detalleServicio = new DDetalleServicio();
+        DServiciosAdicionales d_servicioAdicionales = new DServiciosAdicionales();
+        DRegistro d_registro = new DRegistro();
 
         public bool AgregarDetalleServicio(int idRegistro, int idServicioAdic)
         {
-            DetalleServicio detalleServicio = new DetalleServicio()
-            {
-                IdRegistro = idRegistro,
-                IdServicioAdic = idServicioAdic
-            };
 
-            return d_detalleServicio.AgregarDetalleServicio(detalleServicio);
+
+
+
+
+            return d_detalleServicio.AgregarDetalleServicio(idServicioAdic, idRegistro);
         }
 
         //public List<DetalleServicio> GetDetallesServicios()
