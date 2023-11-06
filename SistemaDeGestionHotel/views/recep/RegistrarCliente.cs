@@ -83,6 +83,8 @@ namespace SistemaDeGestionHotel.views.recep
                     agregarHues.StartPosition = FormStartPosition.CenterScreen;
 
                     DialogResult result = agregarHues.ShowDialog();
+
+                    this.Close();
                 }
                 else
                 {
