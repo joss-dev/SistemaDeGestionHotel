@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             pictureBox2 = new PictureBox();
-            label3 = new Label();
-            txtFolderCopia = new Button();
             button1 = new Button();
             label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -46,41 +44,19 @@
             pictureBox2.TabIndex = 29;
             pictureBox2.TabStop = false;
             // 
-            // label3
-            // 
-            label3.Anchor = AnchorStyles.None;
-            label3.AutoSize = true;
-            label3.Font = new Font("Bahnschrift", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(234, 191);
-            label3.Name = "label3";
-            label3.Size = new Size(213, 19);
-            label3.TabIndex = 34;
-            label3.Text = "Cargar archivo de respaldo:";
-            // 
-            // txtFolderCopia
-            // 
-            txtFolderCopia.Anchor = AnchorStyles.None;
-            txtFolderCopia.FlatAppearance.BorderColor = Color.Black;
-            txtFolderCopia.FlatStyle = FlatStyle.Popup;
-            txtFolderCopia.Image = Properties.Resources.foldered;
-            txtFolderCopia.Location = new Point(225, 216);
-            txtFolderCopia.Name = "txtFolderCopia";
-            txtFolderCopia.Size = new Size(232, 47);
-            txtFolderCopia.TabIndex = 35;
-            txtFolderCopia.UseVisualStyleBackColor = true;
-            // 
             // button1
             // 
             button1.Anchor = AnchorStyles.None;
             button1.BackColor = Color.RoyalBlue;
             button1.FlatStyle = FlatStyle.Popup;
             button1.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(301, 363);
+            button1.Location = new Point(109, 162);
             button1.Name = "button1";
-            button1.Size = new Size(355, 38);
+            button1.Size = new Size(355, 125);
             button1.TabIndex = 38;
             button1.Text = "Iniciar Proceso de Restauración";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // label2
             // 
@@ -102,8 +78,6 @@
             ClientSize = new Size(976, 462);
             Controls.Add(label2);
             Controls.Add(button1);
-            Controls.Add(txtFolderCopia);
-            Controls.Add(label3);
             Controls.Add(pictureBox2);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormRestaurarBD";
@@ -115,8 +89,6 @@
 
         #endregion
         private PictureBox pictureBox2;
-        private Label label3;
-        private Button txtFolderCopia;
         private Button button1;
         private Label label2;
     }

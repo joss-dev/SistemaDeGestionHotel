@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             label2 = new Label();
-            folderBrowserDialog1 = new FolderBrowserDialog();
-            label3 = new Label();
-            txtFolderDestino = new Button();
             pictureBox2 = new PictureBox();
             button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -47,29 +44,6 @@
             label2.Size = new Size(481, 51);
             label2.TabIndex = 26;
             label2.Text = "Back-Up Base de Datos";
-            // 
-            // label3
-            // 
-            label3.Anchor = AnchorStyles.None;
-            label3.AutoSize = true;
-            label3.Font = new Font("Bahnschrift", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(185, 222);
-            label3.Name = "label3";
-            label3.Size = new Size(250, 19);
-            label3.TabIndex = 28;
-            label3.Text = "Seleccione la carpeta de destino:";
-            // 
-            // txtFolderDestino
-            // 
-            txtFolderDestino.Anchor = AnchorStyles.None;
-            txtFolderDestino.FlatAppearance.BorderColor = Color.Black;
-            txtFolderDestino.FlatStyle = FlatStyle.Popup;
-            txtFolderDestino.Image = Properties.Resources.foldered;
-            txtFolderDestino.Location = new Point(193, 246);
-            txtFolderDestino.Name = "txtFolderDestino";
-            txtFolderDestino.Size = new Size(232, 47);
-            txtFolderDestino.TabIndex = 31;
-            txtFolderDestino.UseVisualStyleBackColor = true;
             // 
             // pictureBox2
             // 
@@ -87,12 +61,13 @@
             button1.BackColor = Color.RoyalBlue;
             button1.FlatStyle = FlatStyle.Popup;
             button1.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Italic, GraphicsUnit.Point);
-            button1.Location = new Point(308, 384);
+            button1.Location = new Point(144, 203);
             button1.Name = "button1";
-            button1.Size = new Size(309, 38);
+            button1.Size = new Size(309, 95);
             button1.TabIndex = 36;
             button1.Text = "Iniciar Proceso de Back-Up";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // FormBackUp
             // 
@@ -102,8 +77,6 @@
             ClientSize = new Size(961, 498);
             Controls.Add(button1);
             Controls.Add(pictureBox2);
-            Controls.Add(txtFolderDestino);
-            Controls.Add(label3);
             Controls.Add(label2);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormBackUp";
@@ -116,9 +89,6 @@
 
         #endregion
         private Label label2;
-        private FolderBrowserDialog folderBrowserDialog1;
-        private Label label3;
-        private Button txtFolderDestino;
         private PictureBox pictureBox2;
         private Button button1;
     }
