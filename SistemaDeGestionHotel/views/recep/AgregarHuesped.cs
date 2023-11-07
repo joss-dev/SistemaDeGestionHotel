@@ -70,19 +70,25 @@ namespace SistemaDeGestionHotel.views.recep
                                      $"Nombre: {TNombre.Text}";
 
                     MessageBox.Show(mensaje, "Se registro con exito, detalles del registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    MsgBoxResult resulta = (MsgBoxResult)MessageBox.Show("¿Desea registrar algun servicio adicional?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
-                    if (resulta == MsgBoxResult.Yes)
-                    {
-                        Form registrarServicio = new registrarServicio(clienteAgregar.DniCliente);
-                        registrarServicio.StartPosition = FormStartPosition.CenterScreen;
-                        registrarServicio.ShowDialog();
-                        this.Close();
-                    }
-                    else
+                    
+                    if(comboBoxEstado.SelectedIndex == 0)
                     {
                         this.Close();
-                    }
-
+                    }else
+                    {
+                        MsgBoxResult resulta = (MsgBoxResult)MessageBox.Show("¿Desea registrar algun servicio adicional?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                        if (resulta == MsgBoxResult.Yes)
+                        {
+                            Form registrarServicio = new registrarServicio(clienteAgregar.DniCliente);
+                            registrarServicio.StartPosition = FormStartPosition.CenterScreen;
+                            registrarServicio.ShowDialog();
+                            this.Close();
+                        }
+                        else
+                        {
+                            this.Close();
+                        }
+                    }                    
                 }
                 else
                 {

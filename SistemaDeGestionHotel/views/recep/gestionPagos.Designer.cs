@@ -122,6 +122,7 @@
             TDni.Size = new Size(206, 23);
             TDni.TabIndex = 21;
             TDni.KeyDown += ValidacionDni;
+            TDni.Validating += ValidarLonguitudDni;
             // 
             // btnBuscar
             // 

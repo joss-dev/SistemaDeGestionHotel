@@ -104,7 +104,7 @@ namespace SistemaDeGestionHotel.views.recep
             if (result == MsgBoxResult.Yes)
             {
                 bool resil = registro_controller.RegistrarEstadia(registroBuscado.IdRegistro);
-                if(resil)
+                if (resil)
                 {
                     habitacion_controller.MarcarOcupadaHabitacion(registroBuscado.NroHabitacion);
                     MessageBox.Show("Estadia registrada correctamente!");
@@ -128,9 +128,20 @@ namespace SistemaDeGestionHotel.views.recep
                 {
                     MessageBox.Show("Error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }else
+            }
+            else
             {
 
+            }
+        }
+
+        private void ValidarLonguitudDni(object sender, CancelEventArgs e)
+        {
+            // Verifica que la longitud de la entrada esté entre 7 y 8.
+            if (TDni.Text.Length < 7 || TDni.Text.Length > 8)
+            {
+                MessageBox.Show("El DNI debe tener entre 7 y 8 números.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                e.Cancel = true;
             }
         }
     }

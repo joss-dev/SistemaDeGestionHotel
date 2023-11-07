@@ -75,15 +75,15 @@ namespace SistemaDeGestionHotel.views.recep
             else
             {
                 Cliente cliente = cliente_controller.GetClienteByDNI(int.Parse(TDni.Text));
-                
-                if(cliente == null)
+
+                if (cliente == null)
                 {
                     MessageBox.Show("El dni ingresado no se encuentra registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
                     Registro registro = registro_controller.GetRegistroByIDCliente(cliente.IdCliente);
-                    if(registro == null)
+                    if (registro == null)
                     {
                         MessageBox.Show("El dni ingresado no se encuentra registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
@@ -113,6 +113,16 @@ namespace SistemaDeGestionHotel.views.recep
             ServiciosAdicionale servicio = servicios_controller.GetServicioAdicionalByID(comboBoxServicios.SelectedIndex + 1);
 
             labelPrecio.Text = servicio.Precio.ToString("N2");
+        }
+
+        private void ValidarLonguitudDni(object sender, CancelEventArgs e)
+        {
+            // Verifica que la longitud de la entrada esté entre 7 y 8.
+            if (TDni.Text.Length < 7 || TDni.Text.Length > 8)
+            {
+                MessageBox.Show("El DNI debe tener entre 7 y 8 números.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                e.Cancel = true;
+            }
         }
     }
 }

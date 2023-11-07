@@ -169,7 +169,7 @@
             btnCerrarSesion.FlatStyle = FlatStyle.Flat;
             btnCerrarSesion.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnCerrarSesion.ForeColor = SystemColors.GrayText;
-            btnCerrarSesion.Location = new Point(39, 674);
+            btnCerrarSesion.Location = new Point(39, 639);
             btnCerrarSesion.Name = "btnCerrarSesion";
             btnCerrarSesion.Size = new Size(134, 39);
             btnCerrarSesion.TabIndex = 5;
@@ -219,7 +219,7 @@
             panelMenu.ForeColor = SystemColors.ActiveCaptionText;
             panelMenu.Location = new Point(0, 0);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(220, 736);
+            panelMenu.Size = new Size(220, 701);
             panelMenu.TabIndex = 4;
             // 
             // btnReporte
@@ -371,14 +371,14 @@
             panelCont.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panelCont.Location = new Point(220, 30);
             panelCont.Name = "panelCont";
-            panelCont.Size = new Size(580, 608);
+            panelCont.Size = new Size(579, 671);
             panelCont.TabIndex = 10;
             // 
             // PrincipalAdmin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 736);
+            ClientSize = new Size(800, 701);
             Controls.Add(panelCont);
             Controls.Add(panelMenu);
             Controls.Add(panel1);

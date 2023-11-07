@@ -79,10 +79,10 @@ namespace SistemaDeGestionHotel.views.recep
                         diferencia = this.CalcularDiasEstadia(registroPago.FechaIngreso, registroPago.FechaSalida);
 
 
-                        dataGridViewFactura.DataSource = registroPago.IdServicioAdics.Select(x => new { NombreServicio = x.NombServicio, Precio = x.Precio}).ToList();
+                        dataGridViewFactura.DataSource = registroPago.IdServicioAdics.Select(x => new { NombreServicio = x.NombServicio, Precio = x.Precio }).ToList();
                         dataGridViewFactura.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                         dataGridViewFactura.Columns["NombreServicio"].HeaderText = "Servicio";
-                            
+
 
 
                         labelCantDias.Text = diferencia.TotalDays.ToString();
@@ -257,6 +257,16 @@ namespace SistemaDeGestionHotel.views.recep
             labelRecargo.Text = string.Empty;
 
             labelMontoTotal.Text = (subtotal - this.CalcularOferta(porcentajeOferta) + this.CalcularRecargo(porcentajeRecargo))?.ToString("N2");
+        }
+
+        private void ValidarLonguitudDni(object sender, CancelEventArgs e)
+        {
+            // Verifica que la longitud de la entrada esté entre 7 y 8.
+            if (TDni.Text.Length < 7 || TDni.Text.Length > 8)
+            {
+                MessageBox.Show("El DNI debe tener entre 7 y 8 números.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                e.Cancel = true;
+            }
         }
     }
 }

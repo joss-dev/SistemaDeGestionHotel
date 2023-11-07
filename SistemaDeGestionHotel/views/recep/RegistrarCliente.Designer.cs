@@ -135,6 +135,7 @@
             TDni.Size = new Size(206, 24);
             TDni.TabIndex = 28;
             TDni.KeyDown += ValidacionDni;
+            TDni.Validating += ValidarLonguitudDni;
             // 
             // label8
             // 
