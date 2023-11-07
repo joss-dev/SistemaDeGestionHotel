@@ -26,8 +26,8 @@ namespace SistemaDeGestionHotel.views.recep
         private Cliente clientePago;
         private OfertasRecargo oferta;
         private OfertasRecargo recargo;
-        private double? montoOferta = 0;
-        private double? montoRecargo = 0;
+        private double? porcentajeOferta = 0;
+        private double? porcentajeRecargo = 0;
         private double subtotal = 0;
 
         public gestionPagos()
@@ -79,7 +79,11 @@ namespace SistemaDeGestionHotel.views.recep
                         diferencia = this.CalcularDiasEstadia(registroPago.FechaIngreso, registroPago.FechaSalida);
 
 
-                        dataGridViewFactura.DataSource = registroPago.IdServicioAdics.ToList();
+                        dataGridViewFactura.DataSource = registroPago.IdServicioAdics.Select(x => new { NombreServicio = x.NombServicio, Precio = x.Precio}).ToList();
+                        dataGridViewFactura.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                        dataGridViewFactura.Columns["NombreServicio"].HeaderText = "Servicio";
+                            
+
 
                         labelCantDias.Text = diferencia.TotalDays.ToString();
                         labelCantServicios.Text = registroPago.IdServicioAdics.Count().ToString();
@@ -94,7 +98,7 @@ namespace SistemaDeGestionHotel.views.recep
 
                         labelSubtotal.Text = subtotal.ToString("N2");
 
-                        labelMontoTotal.Text = (subtotal - this.CalcularOferta(montoOferta) + this.CalcularRecargo(montoRecargo)).ToString();
+                        labelMontoTotal.Text = (subtotal - this.CalcularOferta(porcentajeOferta) + this.CalcularRecargo(porcentajeRecargo))?.ToString("N2");
 
                     }
                 }
@@ -170,7 +174,7 @@ namespace SistemaDeGestionHotel.views.recep
             if (indiceSeleccionado == 0)
             {
                 // Primer índice, que corresponde a "Efectivo"
-                FormEfectivo formEfectivo = new FormEfectivo(subtotal - this.CalcularOferta(montoOferta) + this.CalcularRecargo(montoRecargo));
+                FormEfectivo formEfectivo = new FormEfectivo(subtotal - this.CalcularOferta(porcentajeOferta) + this.CalcularRecargo(porcentajeRecargo));
                 formEfectivo.ShowDialog();
             }
             else if (indiceSeleccionado == 1)
@@ -210,30 +214,49 @@ namespace SistemaDeGestionHotel.views.recep
 
         private void CargarOferta(object sender, EventArgs e)
         {
+            comboBoxRecargos.Enabled = false;
+
             int indice = comboBoxOfertas.SelectedIndex;
 
             List<OfertasRecargo> listaOfertas = ofertaRecargo_controller.ObtenerOfertas();
 
             oferta = listaOfertas[indice];
 
-            montoOferta = oferta.PorcentajeDescuento;
+            porcentajeOferta = oferta.PorcentajeDescuento;
 
-            labelOferta.Text = oferta.PorcentajeDescuento.ToString() + " - $" + this.CalcularOferta(oferta.PorcentajeDescuento).ToString();
-            labelMontoTotal.Text = (subtotal - this.CalcularOferta(montoOferta) + this.CalcularRecargo(montoRecargo)).ToString();
+            labelOferta.Text = (oferta.PorcentajeDescuento / 100)?.ToString("P") + " - $" + this.CalcularOferta(oferta.PorcentajeDescuento)?.ToString("N2");
+            labelMontoTotal.Text = (subtotal - this.CalcularOferta(porcentajeOferta) + this.CalcularRecargo(porcentajeRecargo))?.ToString("N2");
         }
 
         private void CargarRecargo(object sender, EventArgs e)
         {
+            comboBoxOfertas.Enabled = false;
+
             int indice = comboBoxRecargos.SelectedIndex;
 
             List<OfertasRecargo> listaRecargos = ofertaRecargo_controller.ObtenerRecargos();
 
             recargo = listaRecargos[indice];
 
-            montoRecargo = recargo.PorcentajeRecargo;
+            porcentajeRecargo = recargo.PorcentajeRecargo;
 
-            labelRecargo.Text = recargo.PorcentajeRecargo.ToString() + " - $" + this.CalcularRecargo(recargo.PorcentajeRecargo).ToString();
-            labelMontoTotal.Text = (subtotal - this.CalcularOferta(montoOferta) + this.CalcularRecargo(montoRecargo)).ToString();
+            labelRecargo.Text = (recargo.PorcentajeRecargo / 100)?.ToString("P") + " - $" + this.CalcularRecargo(recargo.PorcentajeRecargo)?.ToString("N2");
+            labelMontoTotal.Text = (subtotal - this.CalcularOferta(porcentajeOferta) + this.CalcularRecargo(porcentajeRecargo))?.ToString("N2");
+        }
+
+        private void btnReiniciar_Click(object sender, EventArgs e)
+        {
+            comboBoxOfertas.Enabled = true;
+            comboBoxRecargos.Enabled = true;
+
+
+            porcentajeOferta = 0;
+            porcentajeRecargo = 0;
+
+            labelOferta.Text = string.Empty;
+            labelRecargo.Text = string.Empty;
+
+            labelMontoTotal.Text = (subtotal - this.CalcularOferta(porcentajeOferta) + this.CalcularRecargo(porcentajeRecargo))?.ToString("N2");
         }
     }
 }

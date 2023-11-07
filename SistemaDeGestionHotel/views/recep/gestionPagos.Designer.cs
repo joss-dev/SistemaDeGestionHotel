@@ -49,6 +49,7 @@
             label2 = new Label();
             label1 = new Label();
             groupBox2 = new GroupBox();
+            btnReiniciar = new Button();
             labelMontoServicios = new Label();
             labelRecargo = new Label();
             labelOferta = new Label();
@@ -91,10 +92,10 @@
             // 
             // lTitulo2
             // 
-            lTitulo2.Anchor = AnchorStyles.None;
+            lTitulo2.Anchor = AnchorStyles.Top;
             lTitulo2.AutoSize = true;
             lTitulo2.Font = new Font("Microsoft Sans Serif", 26.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lTitulo2.Location = new Point(567, 90);
+            lTitulo2.Location = new Point(567, 31);
             lTitulo2.Name = "lTitulo2";
             lTitulo2.Size = new Size(266, 39);
             lTitulo2.TabIndex = 20;
@@ -102,10 +103,10 @@
             // 
             // LDni
             // 
-            LDni.Anchor = AnchorStyles.None;
+            LDni.Anchor = AnchorStyles.Top;
             LDni.AutoSize = true;
             LDni.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            LDni.Location = new Point(24, 90);
+            LDni.Location = new Point(34, 31);
             LDni.Name = "LDni";
             LDni.Size = new Size(184, 18);
             LDni.TabIndex = 22;
@@ -113,8 +114,8 @@
             // 
             // TDni
             // 
-            TDni.Anchor = AnchorStyles.None;
-            TDni.Location = new Point(24, 113);
+            TDni.Anchor = AnchorStyles.Top;
+            TDni.Location = new Point(34, 54);
             TDni.MaxLength = 8;
             TDni.Name = "TDni";
             TDni.PlaceholderText = "Solo Números";
@@ -124,8 +125,8 @@
             // 
             // btnBuscar
             // 
-            btnBuscar.Anchor = AnchorStyles.None;
-            btnBuscar.Location = new Point(236, 110);
+            btnBuscar.Anchor = AnchorStyles.Top;
+            btnBuscar.Location = new Point(246, 51);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(85, 31);
             btnBuscar.TabIndex = 24;
@@ -211,7 +212,7 @@
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label4);
             groupBox1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox1.Location = new Point(24, 131);
+            groupBox1.Location = new Point(24, 101);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(856, 133);
             groupBox1.TabIndex = 36;
@@ -308,6 +309,7 @@
             // groupBox2
             // 
             groupBox2.Anchor = AnchorStyles.Top;
+            groupBox2.Controls.Add(btnReiniciar);
             groupBox2.Controls.Add(labelMontoServicios);
             groupBox2.Controls.Add(labelRecargo);
             groupBox2.Controls.Add(labelOferta);
@@ -340,12 +342,24 @@
             groupBox2.Controls.Add(label9);
             groupBox2.Controls.Add(dataGridViewFactura);
             groupBox2.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox2.Location = new Point(24, 270);
+            groupBox2.Location = new Point(24, 240);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(856, 413);
+            groupBox2.Size = new Size(856, 393);
             groupBox2.TabIndex = 37;
             groupBox2.TabStop = false;
             groupBox2.Text = "Factura";
+            // 
+            // btnReiniciar
+            // 
+            btnReiniciar.Anchor = AnchorStyles.Top;
+            btnReiniciar.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnReiniciar.Location = new Point(650, 276);
+            btnReiniciar.Name = "btnReiniciar";
+            btnReiniciar.Size = new Size(85, 31);
+            btnReiniciar.TabIndex = 41;
+            btnReiniciar.Text = "Reiniciar";
+            btnReiniciar.UseVisualStyleBackColor = true;
+            btnReiniciar.Click += btnReiniciar_Click;
             // 
             // labelMontoServicios
             // 
@@ -676,11 +690,11 @@
             dataGridViewFactura.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewFactura.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewFactura.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewFactura.Location = new Point(323, 126);
+            dataGridViewFactura.Location = new Point(323, 116);
             dataGridViewFactura.Name = "dataGridViewFactura";
             dataGridViewFactura.ReadOnly = true;
             dataGridViewFactura.RowTemplate.Height = 25;
-            dataGridViewFactura.Size = new Size(511, 93);
+            dataGridViewFactura.Size = new Size(511, 118);
             dataGridViewFactura.TabIndex = 35;
             dataGridViewFactura.CellContentClick += dataGridViewFactura_CellContentClick;
             // 
@@ -694,7 +708,7 @@
             btnCancelar.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnCancelar.Image = Properties.Resources.btnCancelar;
             btnCancelar.ImageAlign = ContentAlignment.TopCenter;
-            btnCancelar.Location = new Point(48, 703);
+            btnCancelar.Location = new Point(61, 643);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(98, 78);
             btnCancelar.TabIndex = 38;
@@ -719,7 +733,7 @@
             btnContinuar.IconColor = Color.Black;
             btnContinuar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnContinuar.ImageAlign = ContentAlignment.TopCenter;
-            btnContinuar.Location = new Point(760, 703);
+            btnContinuar.Location = new Point(760, 643);
             btnContinuar.Name = "btnContinuar";
             btnContinuar.Size = new Size(98, 78);
             btnContinuar.TabIndex = 40;
@@ -732,8 +746,9 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
             BackColor = Color.LightGreen;
-            ClientSize = new Size(914, 788);
+            ClientSize = new Size(914, 733);
             Controls.Add(btnContinuar);
             Controls.Add(btnCancelar);
             Controls.Add(btnBuscar);
@@ -821,5 +836,6 @@
         private Label labelRecargo;
         private Label labelOferta;
         private Label labelMontoServicios;
+        private Button btnReiniciar;
     }
 }
