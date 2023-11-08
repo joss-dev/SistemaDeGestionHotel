@@ -365,6 +365,9 @@ namespace SistemaDeGestionHotel
                       </tr>
                   </table>
                   {tablaOfertaRecargos}
+                   <hr>
+                   <h3>Metodo de pago: {pago.IdMedioPagoNavigation.Nombre}</h3>
+                    <hr>
                    <table>
                        <tr>
                         <td colspan=""1"" class=""grand total"">TOTAL</td>

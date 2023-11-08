@@ -307,7 +307,11 @@ namespace SistemaDeGestionHotel.views.recep
             labelOferta.Text = string.Empty;
             labelRecargo.Text = string.Empty;
 
-            labelMontoTotal.Text = (subtotal - this.CalcularOferta(porcentajeOferta) + this.CalcularRecargo(porcentajeRecargo))?.ToString("N2");
+            if(registroPago != null)
+            {
+                labelMontoTotal.Text = (subtotal - this.CalcularOferta(porcentajeOferta) + this.CalcularRecargo(porcentajeRecargo))?.ToString("N2");
+            }
+            
         }
 
         private void ReiniciarDatos(object sender, EventArgs e)
