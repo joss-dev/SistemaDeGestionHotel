@@ -258,7 +258,7 @@ namespace SistemaDeGestionHotel
                 <header class=""clearfix"">
                   <h1>HOTEL PARANÁ</h1>
                   <div id=""company"" class=""clearfix"">
-                    <div><b>FECHA : {DateTime.Now}</b></div>
+                    <div><b>FECHA : {DateTime.Now.ToShortDateString()}</b></div>
                     <hr>
                     <hr>
                     <div>Hotel Paraná S.A</div>
@@ -309,11 +309,11 @@ namespace SistemaDeGestionHotel
                         <table style=""display: inline-block; width: 45%;"">
                             <tr style=""text-align: left;"">
                                 <td style=""text-align: left;""><b>Fecha Ingreso :</b></td>
-                                <td style=""text-align: left;""><b>{registro.FechaIngreso}</b></td>
+                                <td style=""text-align: left;""><b>{registro.FechaIngreso.ToShortDateString()}</b></td>
                             </tr>
                             <tr style=""text-align: left;"">
                                 <td style=""text-align: left;""><b>Fecha Salida:</b></td>
-                                <td style=""text-align: left;""><b>{registro.FechaSalida}</b></td>
+                                <td style=""text-align: left;""><b>{registro.FechaSalida.ToShortDateString()}</b></td>
                             </tr>
                             <tr style=""text-align: left;"">
                                 <td style=""text-align: left;""> <b>Cantidad Huespedes:</b></td>
@@ -368,7 +368,7 @@ namespace SistemaDeGestionHotel
                    <table>
                        <tr>
                         <td colspan=""1"" class=""grand total"">TOTAL</td>
-                        <td class=""grand total"">{total.ToString("N2")}</td>
+                        <td class=""grand total"">$ {total.ToString("N2")}</td>
                       </tr>
                   </table>
                 </main>
