@@ -61,7 +61,7 @@ namespace SistemaDeGestionHotel.views.recep
                     {
                         registroPago = registro_controller.GetRegistroByIDCliente(clientePago.IdCliente);
 
-                        if (registroPago == null || registroPago.EstadoOcupacion == 0)
+                        if (registroPago == null || registroPago.EstadoOcupacion == 0 || registroPago.EstadoOcupacion == 2)
                         {
                             MessageBox.Show("El cliente no se encuentra registrado en ninguna habitación", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }

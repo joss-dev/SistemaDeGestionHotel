@@ -19,6 +19,8 @@ namespace SistemaDeGestionHotel.views.recep
         PagoController pago_controller = new PagoController();
         private OfertasRecargo OfertaOrecargo;
         private Registro registro;
+        HabitacionController habitacion_controller = new HabitacionController();
+        RegistroController registro_controller = new RegistroController();
 
         public FormEfectivo(double? montoTotal, OfertasRecargo ofertaOrecargo, Registro registrop)
         {
@@ -67,6 +69,10 @@ namespace SistemaDeGestionHotel.views.recep
                 {
                     double? cambio = double.Parse(textBoxEfectivo.Text) - MontoTotal;
                     textBoxCambio.Text = cambio.ToString();
+
+                    habitacion_controller.LiberarHabitacion(registro.NroHabitacion);
+
+                    registro_controller.RegistrarLiberado(registro.IdRegistro);
 
                     if(pago_controller.AgregarPago(MontoTotal.Value, DateTime.Now, 1, OfertaOrecargo?.IdOfertaRecargo, registro.IdRegistro, 3))
                     {

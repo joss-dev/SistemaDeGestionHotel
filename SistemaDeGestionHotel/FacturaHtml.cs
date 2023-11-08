@@ -292,7 +292,7 @@ namespace SistemaDeGestionHotel
                         <table style=""text-align: left;"">
                             <tr style=""text-align: left;"">
                                 <td style=""text-align: left;""><b>Apellido y nombre:</b></td>
-                                <td style=""text-align: left;""><b>{cliente.ApellidoCliente} {cliente.NombreCliente}</b></td>
+                                <td style=""text-align: left;""><b>{cliente.ApellidoCliente.ToUpper()} {cliente.NombreCliente.ToUpper()}</b></td>
                             </tr>
                             <tr style=""text-align: left;"">
                                 <td style=""text-align: left;""><b>Nro de Documento:</b></td>
@@ -331,7 +331,7 @@ namespace SistemaDeGestionHotel
                         <table style=""display: inline-block; width: 45%;"">
                             <tr >
                                 <td style=""text-align: right;""><b>Registrado por:</b></td>
-                                <td style=""text-align: right;""><b>{usuario.Apellido} {usuario.Nombre}</b></td>
+                                <td style=""text-align: right;""><b>{usuario.Apellido.ToUpper()} {usuario.Nombre.ToUpper()}</b></td>
                             </tr>
                             <tr style=""text-align: right;"">
                                 <td style=""text-align: right;""><b>Nro de Habitación:</b></td>

@@ -142,6 +142,23 @@ namespace SistemaDeGestionHotel.Controllers
             return true;
         }
 
+        public bool LiberarHabitacion(int idHabitacion)
+        {
+            Habitacion habitacionExistente = d_habitacion.GetHabitacionByID(idHabitacion);
+
+            if (habitacionExistente == null)
+            {
+                // La habitación no existe, por lo tanto no se puede editar
+                return false;
+            }
+
+            habitacionExistente.IdEstado = 1;
+
+            d_habitacion.GuardarCambios();
+
+            return true;
+        }
+
         public bool MarcarReservadaHabitacion(int idHabitacion)
         {
             Habitacion habitacionExistente = d_habitacion.GetHabitacionByID(idHabitacion);
