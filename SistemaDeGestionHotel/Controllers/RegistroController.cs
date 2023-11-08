@@ -91,7 +91,7 @@ namespace SistemaDeGestionHotel.Controllers
             registroExistente.EstadoOcupacion = 1;
 
 
-            d_registro.GuardarCambios();
+            d_registro.ActualizarDatos(registroExistente);
 
             return true;
         }

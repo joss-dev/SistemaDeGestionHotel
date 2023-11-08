@@ -297,7 +297,6 @@
             TDni.Size = new Size(206, 23);
             TDni.TabIndex = 27;
             TDni.KeyDown += ValidacionDni;
-            TDni.Validating += ValidarLonguitudDni;
             // 
             // errorProviderNumero
             // 

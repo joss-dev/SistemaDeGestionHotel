@@ -133,5 +133,10 @@ namespace SistemaDeGestionHotel.Datos
         {
             dbHotelParana.SaveChanges();
         }
+
+        public void ActualizarDatos(Habitacion habitacion)
+        {
+            dbHotelParana.Update(habitacion);
+        }
     }
 }

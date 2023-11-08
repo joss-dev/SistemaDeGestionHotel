@@ -44,64 +44,72 @@ namespace SistemaDeGestionHotel.views.recep
             }
             else
             {
-                clientePago = cliente_controller.GetClienteByDNI(int.Parse(TDni.Text));
-
-                if (clientePago == null)
+                // Verifica que la longitud de la entrada esté entre 7 y 8.
+                if (TDni.Text.Length < 7 || TDni.Text.Length > 8)
                 {
-                    MessageBox.Show("El cliente no se encuentra registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("El DNI debe tener entre 7 y 8 números.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    registroPago = registro_controller.GetRegistroByIDCliente(clientePago.IdCliente);
+                    clientePago = cliente_controller.GetClienteByDNI(int.Parse(TDni.Text));
 
-                    if (registroPago == null || registroPago.EstadoOcupacion == 0)
+                    if (clientePago == null)
                     {
-                        MessageBox.Show("El cliente no se encuentra registrado en ninguna habitación", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("El cliente no se encuentra registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
-                        habitacionPago = habitacion_controller.GetHabitacionByID(registroPago.NroHabitacion);
+                        registroPago = registro_controller.GetRegistroByIDCliente(clientePago.IdCliente);
 
-                        labelNombre.Text = clientePago.NombreCliente.ToString();
-                        labelApellido.Text = clientePago.ApellidoCliente.ToString();
-                        labelDni.Text = clientePago.DniCliente.ToString();
-                        labelTelefono.Text = clientePago.Telefono.ToString();
+                        if (registroPago == null || registroPago.EstadoOcupacion == 0)
+                        {
+                            MessageBox.Show("El cliente no se encuentra registrado en ninguna habitación", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            habitacionPago = habitacion_controller.GetHabitacionByID(registroPago.NroHabitacion);
 
-
-                        labelCantHuespedes.Text = registroPago.CantidadHuespedes.ToString();
-                        labelFechaIngreso.Text = registroPago.FechaIngreso.ToShortDateString();
-                        labelFechaSalida.Text = registroPago.FechaSalida.ToShortDateString();
-
-                        labelNroHabitacion.Text = habitacionPago.NroHabitacion.ToString();
-                        labelTipoHabitacion.Text = habitacionPago.IdTipoHabNavigation.NombTipo.ToString();
-                        labelPiso.Text = habitacionPago.IdPiso.ToString();
-
-                        diferencia = this.CalcularDiasEstadia(registroPago.FechaIngreso, registroPago.FechaSalida);
+                            labelNombre.Text = clientePago.NombreCliente.ToString();
+                            labelApellido.Text = clientePago.ApellidoCliente.ToString();
+                            labelDni.Text = clientePago.DniCliente.ToString();
+                            labelTelefono.Text = clientePago.Telefono.ToString();
 
 
-                        dataGridViewFactura.DataSource = registroPago.IdServicioAdics.Select(x => new { NombreServicio = x.NombServicio, Precio = x.Precio }).ToList();
-                        dataGridViewFactura.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                        dataGridViewFactura.Columns["NombreServicio"].HeaderText = "Servicio";
+                            labelCantHuespedes.Text = registroPago.CantidadHuespedes.ToString();
+                            labelFechaIngreso.Text = registroPago.FechaIngreso.ToShortDateString();
+                            labelFechaSalida.Text = registroPago.FechaSalida.ToShortDateString();
+
+                            labelNroHabitacion.Text = habitacionPago.NroHabitacion.ToString();
+                            labelTipoHabitacion.Text = habitacionPago.IdTipoHabNavigation.NombTipo.ToString();
+                            labelPiso.Text = habitacionPago.IdPiso.ToString();
+
+                            diferencia = this.CalcularDiasEstadia(registroPago.FechaIngreso, registroPago.FechaSalida);
+
+
+                            dataGridViewFactura.DataSource = registroPago.IdServicioAdics.Select(x => new { NombreServicio = x.NombServicio, Precio = x.Precio }).ToList();
+                            dataGridViewFactura.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                            dataGridViewFactura.Columns["NombreServicio"].HeaderText = "Servicio";
 
 
 
-                        labelCantDias.Text = diferencia.TotalDays.ToString();
-                        labelCantServicios.Text = registroPago.IdServicioAdics.Count().ToString();
-                        labelPrecioHabitacion.Text = registroPago.PrecioHabPactado.ToString("N2");
+                            labelCantDias.Text = diferencia.TotalDays.ToString();
+                            labelCantServicios.Text = registroPago.IdServicioAdics.Count().ToString();
+                            labelPrecioHabitacion.Text = registroPago.PrecioHabPactado.ToString("N2");
 
-                        labelMonto.Text = this.CalcularMontoEstadia(diferencia.TotalDays, registroPago.PrecioHabPactado).ToString("N2");
+                            labelMonto.Text = this.CalcularMontoEstadia(diferencia.TotalDays, registroPago.PrecioHabPactado).ToString("N2");
 
-                        labelMontoServicios.Text = this.CalcularMontoServicios(registroPago).ToString("N2");
+                            labelMontoServicios.Text = this.CalcularMontoServicios(registroPago).ToString("N2");
 
-                        subtotal = this.CalcularMontoServicios(registroPago) + this.CalcularMontoEstadia(diferencia.TotalDays, registroPago.PrecioHabPactado);
+                            subtotal = this.CalcularMontoServicios(registroPago) + this.CalcularMontoEstadia(diferencia.TotalDays, registroPago.PrecioHabPactado);
 
 
-                        labelSubtotal.Text = subtotal.ToString("N2");
+                            labelSubtotal.Text = subtotal.ToString("N2");
 
-                        labelMontoTotal.Text = (subtotal - this.CalcularOferta(porcentajeOferta) + this.CalcularRecargo(porcentajeRecargo))?.ToString("N2");
+                            labelMontoTotal.Text = (subtotal - this.CalcularOferta(porcentajeOferta) + this.CalcularRecargo(porcentajeRecargo))?.ToString("N2");
 
+                        }
                     }
-                }
+                }   
             }
         }
 
@@ -266,16 +274,6 @@ namespace SistemaDeGestionHotel.views.recep
             labelRecargo.Text = string.Empty;
 
             labelMontoTotal.Text = (subtotal - this.CalcularOferta(porcentajeOferta) + this.CalcularRecargo(porcentajeRecargo))?.ToString("N2");
-        }
-
-        private void ValidarLonguitudDni(object sender, CancelEventArgs e)
-        {
-            // Verifica que la longitud de la entrada esté entre 7 y 8.
-            if (TDni.Text.Length < 7 || TDni.Text.Length > 8)
-            {
-                MessageBox.Show("El DNI debe tener entre 7 y 8 números.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                e.Cancel = true;
-            }
         }
     }
 }

@@ -42,40 +42,48 @@ namespace SistemaDeGestionHotel.views.recep
             }
             else
             {
-                Cliente clienteBuscado = cliente_controller.GetClienteByDNI(int.Parse(TDni.Text));
-                if (clienteBuscado == null)
+                // Verifica que la longitud de la entrada esté entre 7 y 8.
+                if (TDni.Text.Length < 7 || TDni.Text.Length > 8)
                 {
-                    MessageBox.Show("Este dni no tiene asociado una reserva", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("El DNI debe tener entre 7 y 8 números.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    registroBuscado = registro_controller.GetRegistroByIDCliente(clienteBuscado.IdCliente);
-                    if (registroBuscado == null || registroBuscado.EstadoOcupacion == 1)
+                    Cliente clienteBuscado = cliente_controller.GetClienteByDNI(int.Parse(TDni.Text));
+                    if (clienteBuscado == null)
                     {
                         MessageBox.Show("Este dni no tiene asociado una reserva", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
-                        Habitacion habitacionBuscada = habitacion_controller.GetHabitacionByID(registroBuscado.NroHabitacion);
+                        registroBuscado = registro_controller.GetRegistroByIDCliente(clienteBuscado.IdCliente);
+                        if (registroBuscado == null || registroBuscado.EstadoOcupacion == 1)
+                        {
+                            MessageBox.Show("Este dni no tiene asociado una reserva", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            Habitacion habitacionBuscada = habitacion_controller.GetHabitacionByID(registroBuscado.NroHabitacion);
 
-                        labelNroHabitacion.Text = habitacionBuscada.NroHabitacion.ToString();
-                        labelTipoHabitacion.Text = habitacionBuscada.IdTipoHabNavigation.NombTipo.ToString();
-                        labelPrecio.Text = habitacionBuscada.Precio.ToString("N2");
-                        labelCantCamas.Text = habitacionBuscada.CantidadCamas.ToString();
-                        labelPiso.Text = habitacionBuscada.IdPiso.ToString();
+                            labelNroHabitacion.Text = habitacionBuscada.NroHabitacion.ToString();
+                            labelTipoHabitacion.Text = habitacionBuscada.IdTipoHabNavigation.NombTipo.ToString();
+                            labelPrecio.Text = habitacionBuscada.Precio.ToString("N2");
+                            labelCantCamas.Text = habitacionBuscada.CantidadCamas.ToString();
+                            labelPiso.Text = habitacionBuscada.IdPiso.ToString();
 
 
-                        labelApellido.Text = clienteBuscado.ApellidoCliente.ToString();
-                        labelNombre.Text = clienteBuscado.NombreCliente.ToString();
-                        labelDni.Text = clienteBuscado.DniCliente.ToString();
-                        labelTelefono.Text = clienteBuscado.Telefono.ToString();
+                            labelApellido.Text = clienteBuscado.ApellidoCliente.ToString();
+                            labelNombre.Text = clienteBuscado.NombreCliente.ToString();
+                            labelDni.Text = clienteBuscado.DniCliente.ToString();
+                            labelTelefono.Text = clienteBuscado.Telefono.ToString();
 
-                        labelCantHuespedes.Text = registroBuscado.CantidadHuespedes.ToString();
-                        labelFechaIngreso.Text = registroBuscado.FechaIngreso.ToShortDateString();
-                        labelFechaSalida.Text = registroBuscado.FechaSalida.ToShortDateString();
+                            labelCantHuespedes.Text = registroBuscado.CantidadHuespedes.ToString();
+                            labelFechaIngreso.Text = registroBuscado.FechaIngreso.ToShortDateString();
+                            labelFechaSalida.Text = registroBuscado.FechaSalida.ToShortDateString();
 
+                        }
                     }
-                }
+                }        
             }
         }
 
@@ -132,16 +140,6 @@ namespace SistemaDeGestionHotel.views.recep
             else
             {
 
-            }
-        }
-
-        private void ValidarLonguitudDni(object sender, CancelEventArgs e)
-        {
-            // Verifica que la longitud de la entrada esté entre 7 y 8.
-            if (TDni.Text.Length < 7 || TDni.Text.Length > 8)
-            {
-                MessageBox.Show("El DNI debe tener entre 7 y 8 números.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                e.Cancel = true;
             }
         }
     }

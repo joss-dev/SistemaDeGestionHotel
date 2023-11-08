@@ -70,43 +70,40 @@ namespace SistemaDeGestionHotel.views.recep
             }
             else
             {
-                if (cliente_controller.AgregarCliente(TApellido.Text, TNombre.Text, TDni.Text, 1, textBoxTelefono.Text))
+                // Verifica que la longitud de la entrada esté entre 7 y 8.
+                if (TDni.Text.Length < 7 || TDni.Text.Length > 8)
                 {
-                    MessageBox.Show("Cliente registrado exitosamente!");
-
-                    Cliente clienteBuscado = cliente_controller.GetClienteByDNI(int.Parse(TDni.Text));
-
-                    Habitacion habitacion = habitacion_controller.GetHabitacionByID(idHabitacion);
-
-                    Form agregarHues = new AgregarHuesped(usuarioInicioSesion, clienteBuscado, habitacion, int.Parse(TDni.Text));
-
-                    agregarHues.StartPosition = FormStartPosition.CenterScreen;
-
-                    DialogResult result = agregarHues.ShowDialog();
-
-                    this.Close();
+                    MessageBox.Show("El DNI debe tener entre 7 y 8 números.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    MessageBox.Show("Error al registrar el cliente!");
+                    if (cliente_controller.AgregarCliente(TApellido.Text, TNombre.Text, TDni.Text, 1, textBoxTelefono.Text))
+                    {
+                        MessageBox.Show("Cliente registrado exitosamente!");
+
+                        Cliente clienteBuscado = cliente_controller.GetClienteByDNI(int.Parse(TDni.Text));
+
+                        Habitacion habitacion = habitacion_controller.GetHabitacionByID(idHabitacion);
+
+                        Form agregarHues = new AgregarHuesped(usuarioInicioSesion, clienteBuscado, habitacion, int.Parse(TDni.Text));
+
+                        agregarHues.StartPosition = FormStartPosition.CenterScreen;
+
+                        DialogResult result = agregarHues.ShowDialog();
+
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al registrar el cliente!");
+                    }
                 }
             }
-
         }
 
         private void CargarDatos(object sender, EventArgs e)
         {
             TDni.Text = dniCliente.ToString();
-        }
-
-        private void ValidarLonguitudDni(object sender, CancelEventArgs e)
-        {
-            // Verifica que la longitud de la entrada esté entre 7 y 8.
-            if (TDni.Text.Length < 7 || TDni.Text.Length > 8)
-            {
-                MessageBox.Show("El DNI debe tener entre 7 y 8 números.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                e.Cancel = true;
-            }
         }
     }
 }

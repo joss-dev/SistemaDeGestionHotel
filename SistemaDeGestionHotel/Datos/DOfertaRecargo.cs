@@ -97,10 +97,17 @@ namespace SistemaDeGestionHotel.Datos
 
             var darbaja = dbHotelParana.OfertasRecargos
                           .Where(p => p.FechaHasta < fechaActual);
-
-            foreach(OfertasRecargo baja in darbaja)
+           
+            if(darbaja == null)
             {
-                baja.Estado = 0;
+                return;
+            }
+            else
+            {
+                foreach (OfertasRecargo baja in darbaja)
+                {
+                    baja.Estado = 0;
+                }
             }
 
             dbHotelParana.SaveChanges();

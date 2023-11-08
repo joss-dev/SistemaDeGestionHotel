@@ -30,8 +30,21 @@ namespace SistemaDeGestionHotel.Datos
             }
         }
 
+        public void ReloadAllEntities()
+        {
+            var changedEntries = dbHotelParana.ChangeTracker.Entries()
+                .Where(e => e.State != EntityState.Unchanged)
+                .ToList();
+
+            foreach (var entry in changedEntries)
+            {
+                entry.Reload();
+            }
+        }
+
         public List<Registro> GetRegistros()
         {
+            this.ReloadAllEntities();
             return dbHotelParana.Registros
                 .Include(s => s.IdServicioAdics)
                 .ToList();
@@ -39,6 +52,7 @@ namespace SistemaDeGestionHotel.Datos
 
         public Registro GetRegistroByID(int id)
         {
+            this.ReloadAllEntities();
             return dbHotelParana.Registros
                                  .Include(s => s.IdServicioAdics)
                                  .FirstOrDefault(r => r.IdRegistro == id);
@@ -46,12 +60,14 @@ namespace SistemaDeGestionHotel.Datos
 
         public Registro GetRegistroByIDHabitacion(int id)
         {
+            this.ReloadAllEntities();
             return dbHotelParana.Registros
                                  .FirstOrDefault(r => r.NroHabitacion == id);
         }
 
         public Registro ClienteEnEstadiaOReserva(int idCliente)
         {
+            this.ReloadAllEntities();
             return dbHotelParana.Registros
                                  .Include(r => r.IdClienteNavigation)
                                  .Include(h => h.NroHabitacionNavigation)
@@ -60,14 +76,17 @@ namespace SistemaDeGestionHotel.Datos
 
         public void GuardarCambios()
         {
+            this.ReloadAllEntities();
             dbHotelParana.SaveChanges();
         }
 
         public Registro GetRegistroByIDCliente(int id)
         {
+            this.ReloadAllEntities();
             return dbHotelParana.Registros
                                  .Include(s => s.IdServicioAdics)
                                  .FirstOrDefault(r => r.IdCliente == id);
+            
         }
 
         public bool AgregarServicioAdicional(ServiciosAdicionale servicioAdicional, Registro registro)
@@ -95,8 +114,16 @@ namespace SistemaDeGestionHotel.Datos
 
         public List<ServiciosAdicionale> GetServiciosAdicionales(int idRegistro)
         {
+            this.ReloadAllEntities();
             var registro = dbHotelParana.Registros.Include(r => r.IdServicioAdics).FirstOrDefault(r => r.IdRegistro == idRegistro);
             return registro.IdServicioAdics.ToList();
+        }
+
+        public void ActualizarDatos(Registro registro)
+        {
+            dbHotelParana.Update(registro);
+            dbHotelParana.Entry(registro).State = EntityState.Modified;
+            dbHotelParana.SaveChanges();
         }
     }
 }
