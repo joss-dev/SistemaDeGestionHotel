@@ -35,7 +35,7 @@ namespace SistemaDeGestionHotel.Datos
         {
             string nombreBaseDatos = dbHotelParana.Database.GetDbConnection().Database;
 
-            string comandoSql = $"USE master; RESTORE DATABASE [{nombreBaseDatos}] FROM DISK = '{nombreArchivoRespaldo}'";
+            string comandoSql = $"USE master; ALTER DATABASE {nombreBaseDatos} SET SINGLE_USER WITH ROLLBACK IMMEDIATE; RESTORE DATABASE {nombreBaseDatos} FROM DISK = '{nombreArchivoRespaldo}'";
 
             using (var command = dbHotelParana.Database.GetDbConnection().CreateCommand())
             {
