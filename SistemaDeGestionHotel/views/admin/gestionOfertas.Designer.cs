@@ -271,10 +271,10 @@
             label12.Anchor = AnchorStyles.None;
             label12.AutoSize = true;
             label12.BackColor = Color.Aquamarine;
-            label12.Font = new Font("Microsoft Sans Serif", 32.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label12.Font = new Font("Arial Rounded MT Bold", 32.25F, FontStyle.Regular, GraphicsUnit.Point);
             label12.Location = new Point(231, 40);
             label12.Name = "label12";
-            label12.Size = new Size(384, 51);
+            label12.Size = new Size(419, 50);
             label12.TabIndex = 43;
             label12.Text = "Ofertas - Recargos";
             // 

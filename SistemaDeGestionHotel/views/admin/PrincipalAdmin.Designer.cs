@@ -365,6 +365,7 @@
             btnMaximized.Size = new Size(33, 23);
             btnMaximized.TabIndex = 7;
             btnMaximized.UseVisualStyleBackColor = false;
+            btnMaximized.Click += btnMaximized_Click_1;
             // 
             // panelCont
             // 

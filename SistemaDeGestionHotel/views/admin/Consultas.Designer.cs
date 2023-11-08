@@ -48,10 +48,10 @@
             // 
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 33.75F, FontStyle.Underline, GraphicsUnit.Point);
+            label1.Font = new Font("Arial Rounded MT Bold", 33.75F, FontStyle.Underline, GraphicsUnit.Point);
             label1.Location = new Point(377, 37);
             label1.Name = "label1";
-            label1.Size = new Size(224, 52);
+            label1.Size = new Size(239, 52);
             label1.TabIndex = 0;
             label1.Text = "Consultas";
             // 
@@ -59,10 +59,10 @@
             // 
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label2.Location = new Point(190, 122);
             label2.Name = "label2";
-            label2.Size = new Size(146, 20);
+            label2.Size = new Size(168, 18);
             label2.TabIndex = 1;
             label2.Text = "Correo electrónico: ";
             // 
@@ -70,10 +70,10 @@
             // 
             label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
-            label3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label3.Location = new Point(190, 185);
             label3.Name = "label3";
-            label3.Size = new Size(161, 20);
+            label3.Size = new Size(180, 18);
             label3.TabIndex = 2;
             label3.Text = "Motivo de la consulta:";
             // 
@@ -81,10 +81,10 @@
             // 
             label4.Anchor = AnchorStyles.None;
             label4.AutoSize = true;
-            label4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label4.Location = new Point(190, 250);
             label4.Name = "label4";
-            label4.Size = new Size(132, 20);
+            label4.Size = new Size(148, 18);
             label4.TabIndex = 3;
             label4.Text = "Mensaje recibido:";
             // 

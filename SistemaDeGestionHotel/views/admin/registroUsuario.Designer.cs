@@ -468,11 +468,11 @@
             // 
             label12.Anchor = AnchorStyles.None;
             label12.AutoSize = true;
-            label12.BackColor = Color.PaleGreen;
-            label12.Font = new Font("Microsoft Sans Serif", 32.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label12.BackColor = Color.LightGreen;
+            label12.Font = new Font("Arial Rounded MT Bold", 32.25F, FontStyle.Regular, GraphicsUnit.Point);
             label12.Location = new Point(261, 41);
             label12.Name = "label12";
-            label12.Size = new Size(424, 51);
+            label12.Size = new Size(464, 50);
             label12.TabIndex = 55;
             label12.Text = "Registro de Usuarios";
             // 
