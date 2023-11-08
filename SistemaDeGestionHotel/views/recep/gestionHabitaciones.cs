@@ -78,6 +78,13 @@ namespace SistemaDeGestionHotel.views.admin
                     // Establecer la ubicación del botón
                     boton.Location = new Point(x, 100);
 
+                    // Crear un nuevo ToolTip
+                    ToolTip toolTip = new ToolTip();
+                    toolTip.IsBalloon = true;
+                    // Establecer el texto del ToolTip
+                    toolTip.SetToolTip(boton, $"Nro de Piso: {habitacion.IdPiso}\nTipo Habitación: {habitacion.IdTipoHabNavigation.NombTipo} \nPrecio: ${habitacion.Precio} \nCantidad Camas: {habitacion.CantidadCamas}");
+
+
                     // Añadir el botón al panel
                     panel1.Controls.Add(boton);
 
@@ -149,6 +156,12 @@ namespace SistemaDeGestionHotel.views.admin
 
                     // Establecer la ubicación del botón
                     boton.Location = new Point(50, 80);
+
+                    // Crear un nuevo ToolTip
+                    ToolTip toolTip = new ToolTip();
+                    toolTip.IsBalloon = true;
+                    // Establecer el texto del ToolTip
+                    toolTip.SetToolTip(boton, $"Nro de Piso: {habitacionBuscada.IdPiso}\nTipo Habitación: {habitacionBuscada.IdTipoHabNavigation.NombTipo} \nPrecio: ${habitacionBuscada.Precio} \nCantidad Camas: {habitacionBuscada.CantidadCamas}");
 
                     // Añadir el botón al panel
                     panel1.Controls.Add(boton);
@@ -247,6 +260,12 @@ namespace SistemaDeGestionHotel.views.admin
                     // Establece la ubicación del botón
                     boton.Location = new Point(x, 100);
 
+                    // Crear un nuevo ToolTip
+                    ToolTip toolTip = new ToolTip();
+                    toolTip.IsBalloon = true;
+                    // Establecer el texto del ToolTip
+                    toolTip.SetToolTip(boton, $"Nro de Piso: {habitacion.IdPiso}\nTipo Habitación: {habitacion.IdTipoHabNavigation.NombTipo} \nPrecio: ${habitacion.Precio} \nCantidad Camas: {habitacion.CantidadCamas}");
+
                     // Añade el botón al panel
                     panel1.Controls.Add(boton);
 
@@ -339,6 +358,12 @@ namespace SistemaDeGestionHotel.views.admin
 
                     // Establecer la ubicación del botón
                     boton.Location = new Point(x, 100);
+
+                    // Crear un nuevo ToolTip
+                    ToolTip toolTip = new ToolTip();
+                    toolTip.IsBalloon = true;
+                    // Establecer el texto del ToolTip
+                    toolTip.SetToolTip(boton, $"Nro de Piso: {habitacion.IdPiso}\nTipo Habitación: {habitacion.IdTipoHabNavigation.NombTipo} \nPrecio: ${habitacion.Precio} \nCantidad Camas: {habitacion.CantidadCamas}");
 
                     // Añadir el botón al panel
                     panel1.Controls.Add(boton);
@@ -436,6 +461,12 @@ namespace SistemaDeGestionHotel.views.admin
 
                     // Establecer la ubicación del botón
                     boton.Location = new Point(x, 100);
+
+                    // Crear un nuevo ToolTip
+                    ToolTip toolTip = new ToolTip();
+                    toolTip.IsBalloon = true;
+                    // Establecer el texto del ToolTip
+                    toolTip.SetToolTip(boton, $"Nro de Piso: {habitacion.IdPiso}\nTipo Habitación: {habitacion.IdTipoHabNavigation.NombTipo} \nPrecio: ${habitacion.Precio} \nCantidad Camas: {habitacion.CantidadCamas}");
 
                     // Añadir el botón al panel
                     panel1.Controls.Add(boton);
