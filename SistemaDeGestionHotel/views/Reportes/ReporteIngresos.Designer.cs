@@ -50,7 +50,7 @@
             chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             chart1.Legends.Add(legend1);
-            chart1.Location = new Point(423, 517);
+            chart1.Location = new Point(248, 517);
             chart1.Name = "chart1";
             chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
             series1.ChartArea = "ChartArea1";
@@ -60,7 +60,7 @@
             series1.Legend = "Legend1";
             series1.Name = "Ingresos";
             chart1.Series.Add(series1);
-            chart1.Size = new Size(300, 300);
+            chart1.Size = new Size(300, 276);
             chart1.TabIndex = 0;
             chart1.Text = "Ingresos";
             // 
@@ -77,7 +77,7 @@
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             CHIngresoMensual.Series.Add(series2);
-            CHIngresoMensual.Size = new Size(855, 300);
+            CHIngresoMensual.Size = new Size(838, 300);
             CHIngresoMensual.TabIndex = 1;
             CHIngresoMensual.Text = "chart2";
             // 
@@ -86,7 +86,7 @@
             label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 32.25F, FontStyle.Underline, GraphicsUnit.Point);
-            label1.Location = new Point(220, 77);
+            label1.Location = new Point(211, 77);
             label1.Name = "label1";
             label1.Size = new Size(411, 51);
             label1.TabIndex = 2;
@@ -97,7 +97,7 @@
             // 
             dateTimeInicio.Anchor = AnchorStyles.None;
             dateTimeInicio.Format = DateTimePickerFormat.Short;
-            dateTimeInicio.Location = new Point(466, 533);
+            dateTimeInicio.Location = new Point(137, 482);
             dateTimeInicio.Name = "dateTimeInicio";
             dateTimeInicio.Size = new Size(95, 23);
             dateTimeInicio.TabIndex = 28;
@@ -106,7 +106,7 @@
             // 
             dateTimePicker1.Anchor = AnchorStyles.None;
             dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(630, 533);
+            dateTimePicker1.Location = new Point(550, 482);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(95, 23);
             dateTimePicker1.TabIndex = 29;
