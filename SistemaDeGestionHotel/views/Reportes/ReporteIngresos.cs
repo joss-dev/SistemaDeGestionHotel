@@ -74,15 +74,17 @@ namespace SistemaDeGestionHotel.views.Reportes
                                                 .Select(g => new { MedioPago = g.Key, Ventas = g.Count() });
 
             // Limpia los datos anteriores del gráfico
-            chart1.Series["Series1"].Points.Clear();
+            chart1.Series["Ingresos"].Points.Clear();
 
             // Cambia el tipo de gráfico a Pie
-            chart1.Series["Series1"].ChartType = SeriesChartType.Pie;
+            chart1.Series["Ingresos"].ChartType = SeriesChartType.Pie;
 
             // Añade los nuevos datos al gráfico
             foreach (var ventas in ventasPorMedioPago)
             {
-                chart1.Series["Series1"].Points.AddXY(ventas.MedioPago, ventas.Ventas);
+                int punto = chart1.Series["Ingresos"].Points.AddXY(ventas.MedioPago, ventas.Ventas);
+
+                chart1.Series["Ingresos"].Points[punto].IsValueShownAsLabel = true;
             }
 
 

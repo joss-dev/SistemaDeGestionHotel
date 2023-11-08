@@ -39,7 +39,9 @@ namespace SistemaDeGestionHotel.Datos
 
         public List<Pago> GetPagos()
         {
-            return dbHotelParana.Pagos.ToList();
+            return dbHotelParana.Pagos
+                .Include(p => p.IdMedioPagoNavigation)
+                .ToList();
         }
 
         public Pago GetPagoByID(int id)
