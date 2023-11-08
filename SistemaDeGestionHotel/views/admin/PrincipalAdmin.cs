@@ -2,6 +2,7 @@ using FontAwesome.Sharp;
 using SistemaDeGestionHotel.NEntidades;
 using SistemaDeGestionHotel.views;
 using SistemaDeGestionHotel.views.admin;
+using SistemaDeGestionHotel.views.Reportes;
 using System.Runtime.InteropServices;
 
 namespace SistemaDeGestionHotel
@@ -166,7 +167,21 @@ namespace SistemaDeGestionHotel
         private void btnReporte_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, Color.FromArgb(34, 81, 111));
-            /*FormsHijos.AbrirFormHija(new Report1(), panelCont);*/
+            FormsHijos.AbrirFormHija(new Reportes(), panelCont);
+        }
+
+        private void btnMaximized_Click_1(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Normal)
+            {
+                // El formulario está en estado normal, maximízalo
+                this.WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                // El formulario está maximizado, restaúralo a su tamaño normal
+                this.WindowState = FormWindowState.Normal;
+            }
         }
     }
 }

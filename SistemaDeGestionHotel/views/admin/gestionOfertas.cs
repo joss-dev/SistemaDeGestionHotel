@@ -317,7 +317,7 @@ namespace SistemaDeGestionHotel.views.admin
 
         private void CambiaValorTipo(object sender, EventArgs e)
         {
-            if(comboBoxTipo.SelectedIndex == 1)
+            if (comboBoxTipo.SelectedIndex == 1)
             {
                 txtRecargo.Enabled = true;
                 txtRecargo.Text = String.Empty;
@@ -325,7 +325,9 @@ namespace SistemaDeGestionHotel.views.admin
                 txtDescuento.Enabled = false;
                 txtDescuento.Text = 0.ToString();
 
-            }else if(comboBoxTipo.SelectedIndex == 0) {
+            }
+            else if (comboBoxTipo.SelectedIndex == 0)
+            {
 
                 txtDescuento.Enabled = true;
                 txtDescuento.Text = String.Empty;

@@ -62,10 +62,10 @@
             // 
             // label1
             // 
-            label1.Anchor = AnchorStyles.Top;
+            label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(131, 133);
+            label1.Location = new Point(164, 131);
             label1.Name = "label1";
             label1.Size = new Size(174, 21);
             label1.TabIndex = 23;
@@ -73,8 +73,8 @@
             // 
             // txtNombSs
             // 
-            txtNombSs.Anchor = AnchorStyles.Top;
-            txtNombSs.Location = new Point(132, 154);
+            txtNombSs.Anchor = AnchorStyles.None;
+            txtNombSs.Location = new Point(165, 152);
             txtNombSs.Name = "txtNombSs";
             txtNombSs.Size = new Size(203, 23);
             txtNombSs.TabIndex = 24;
@@ -82,10 +82,10 @@
             // 
             // label4
             // 
-            label4.Anchor = AnchorStyles.Top;
+            label4.Anchor = AnchorStyles.None;
             label4.AutoSize = true;
             label4.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(130, 196);
+            label4.Location = new Point(163, 194);
             label4.Name = "label4";
             label4.Size = new Size(104, 21);
             label4.TabIndex = 29;
@@ -93,8 +93,8 @@
             // 
             // txtPrecioTotal
             // 
-            txtPrecioTotal.Anchor = AnchorStyles.Top;
-            txtPrecioTotal.Location = new Point(130, 218);
+            txtPrecioTotal.Anchor = AnchorStyles.None;
+            txtPrecioTotal.Location = new Point(163, 216);
             txtPrecioTotal.Name = "txtPrecioTotal";
             txtPrecioTotal.Size = new Size(203, 23);
             txtPrecioTotal.TabIndex = 30;
@@ -102,10 +102,10 @@
             // 
             // label7
             // 
-            label7.Anchor = AnchorStyles.Top;
+            label7.Anchor = AnchorStyles.None;
             label7.AutoSize = true;
             label7.Font = new Font("Yu Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(338, 405);
+            label7.Location = new Point(371, 403);
             label7.Name = "label7";
             label7.Size = new Size(46, 17);
             label7.TabIndex = 48;
@@ -114,11 +114,11 @@
             // 
             // btnEditar
             // 
-            btnEditar.Anchor = AnchorStyles.Top;
+            btnEditar.Anchor = AnchorStyles.None;
             btnEditar.BackColor = Color.LightGreen;
             btnEditar.FlatStyle = FlatStyle.Popup;
             btnEditar.Image = Properties.Resources.editar;
-            btnEditar.Location = new Point(324, 332);
+            btnEditar.Location = new Point(357, 330);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(72, 72);
             btnEditar.TabIndex = 47;
@@ -127,10 +127,10 @@
             // 
             // label6
             // 
-            label6.Anchor = AnchorStyles.Top;
+            label6.Anchor = AnchorStyles.None;
             label6.AutoSize = true;
             label6.Font = new Font("Yu Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(208, 406);
+            label6.Location = new Point(241, 404);
             label6.Name = "label6";
             label6.Size = new Size(65, 17);
             label6.TabIndex = 44;
@@ -138,11 +138,11 @@
             // 
             // btnCancelar
             // 
-            btnCancelar.Anchor = AnchorStyles.Top;
+            btnCancelar.Anchor = AnchorStyles.None;
             btnCancelar.BackColor = Color.LightGreen;
             btnCancelar.FlatStyle = FlatStyle.Popup;
             btnCancelar.Image = Properties.Resources.cancelar;
-            btnCancelar.Location = new Point(204, 332);
+            btnCancelar.Location = new Point(237, 330);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(71, 71);
             btnCancelar.TabIndex = 43;
@@ -151,10 +151,10 @@
             // 
             // label5
             // 
-            label5.Anchor = AnchorStyles.Top;
+            label5.Anchor = AnchorStyles.None;
             label5.AutoSize = true;
             label5.Font = new Font("Yu Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(84, 406);
+            label5.Location = new Point(117, 404);
             label5.Name = "label5";
             label5.Size = new Size(67, 17);
             label5.TabIndex = 42;
@@ -162,11 +162,11 @@
             // 
             // btnRegistrar
             // 
-            btnRegistrar.Anchor = AnchorStyles.Top;
+            btnRegistrar.Anchor = AnchorStyles.None;
             btnRegistrar.BackColor = Color.LightGreen;
             btnRegistrar.FlatStyle = FlatStyle.Popup;
             btnRegistrar.Image = Properties.Resources.registrar;
-            btnRegistrar.Location = new Point(82, 332);
+            btnRegistrar.Location = new Point(115, 330);
             btnRegistrar.Name = "btnRegistrar";
             btnRegistrar.Size = new Size(71, 71);
             btnRegistrar.TabIndex = 41;
@@ -175,9 +175,9 @@
             // 
             // pictureBoxSsAdic
             // 
-            pictureBoxSsAdic.Anchor = AnchorStyles.Top;
+            pictureBoxSsAdic.Anchor = AnchorStyles.None;
             pictureBoxSsAdic.Image = Properties.Resources.servicios_adicionales_hotel1;
-            pictureBoxSsAdic.Location = new Point(378, 103);
+            pictureBoxSsAdic.Location = new Point(411, 101);
             pictureBoxSsAdic.Name = "pictureBoxSsAdic";
             pictureBoxSsAdic.Size = new Size(181, 180);
             pictureBoxSsAdic.SizeMode = PictureBoxSizeMode.Zoom;
@@ -188,13 +188,13 @@
             // 
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.Anchor = AnchorStyles.Top;
+            dataGridView1.Anchor = AnchorStyles.None;
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idServicioAdic, NombServicio, Precio, estadoDataGridViewTextBoxColumn });
             dataGridView1.DataSource = serviciosAdicionaleBindingSource;
-            dataGridView1.Location = new Point(84, 459);
+            dataGridView1.Location = new Point(102, 457);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowTemplate.Height = 25;
@@ -236,13 +236,13 @@
             // 
             // label8
             // 
-            label8.Anchor = AnchorStyles.Top;
+            label8.Anchor = AnchorStyles.None;
             label8.AutoSize = true;
-            label8.BackColor = Color.PaleGreen;
-            label8.Font = new Font("Microsoft Sans Serif", 32.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Location = new Point(39, 20);
+            label8.BackColor = Color.LightGreen;
+            label8.Font = new Font("Arial Rounded MT Bold", 32.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.Location = new Point(72, 18);
             label8.Name = "label8";
-            label8.Size = new Size(664, 51);
+            label8.Size = new Size(730, 50);
             label8.TabIndex = 51;
             label8.Text = "Registro de Servicios Adicionales";
             // 
@@ -252,10 +252,10 @@
             // 
             // btnDeshabHabitacion
             // 
-            btnDeshabHabitacion.Anchor = AnchorStyles.Top;
+            btnDeshabHabitacion.Anchor = AnchorStyles.None;
             btnDeshabHabitacion.FlatStyle = FlatStyle.Popup;
             btnDeshabHabitacion.Image = Properties.Resources.off1;
-            btnDeshabHabitacion.Location = new Point(436, 333);
+            btnDeshabHabitacion.Location = new Point(469, 331);
             btnDeshabHabitacion.Name = "btnDeshabHabitacion";
             btnDeshabHabitacion.Size = new Size(71, 71);
             btnDeshabHabitacion.TabIndex = 64;
@@ -264,10 +264,10 @@
             // 
             // label15
             // 
-            label15.Anchor = AnchorStyles.Top;
+            label15.Anchor = AnchorStyles.None;
             label15.AutoSize = true;
             label15.Font = new Font("Microsoft JhengHei", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label15.Location = new Point(550, 422);
+            label15.Location = new Point(583, 420);
             label15.Name = "label15";
             label15.Size = new Size(58, 17);
             label15.TabIndex = 63;
@@ -275,10 +275,10 @@
             // 
             // label14
             // 
-            label14.Anchor = AnchorStyles.Top;
+            label14.Anchor = AnchorStyles.None;
             label14.AutoSize = true;
             label14.Font = new Font("Microsoft JhengHei", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label14.Location = new Point(436, 423);
+            label14.Location = new Point(476, 421);
             label14.Name = "label14";
             label14.Size = new Size(58, 17);
             label14.TabIndex = 62;
@@ -286,10 +286,10 @@
             // 
             // label12
             // 
-            label12.Anchor = AnchorStyles.Top;
+            label12.Anchor = AnchorStyles.None;
             label12.AutoSize = true;
             label12.Font = new Font("Microsoft JhengHei", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label12.Location = new Point(550, 405);
+            label12.Location = new Point(583, 403);
             label12.Name = "label12";
             label12.Size = new Size(65, 17);
             label12.TabIndex = 61;
@@ -297,10 +297,10 @@
             // 
             // btnHabilitarHabitacion
             // 
-            btnHabilitarHabitacion.Anchor = AnchorStyles.Top;
+            btnHabilitarHabitacion.Anchor = AnchorStyles.None;
             btnHabilitarHabitacion.FlatStyle = FlatStyle.Popup;
             btnHabilitarHabitacion.Image = Properties.Resources.on;
-            btnHabilitarHabitacion.Location = new Point(544, 333);
+            btnHabilitarHabitacion.Location = new Point(577, 331);
             btnHabilitarHabitacion.Name = "btnHabilitarHabitacion";
             btnHabilitarHabitacion.Size = new Size(71, 71);
             btnHabilitarHabitacion.TabIndex = 60;
@@ -309,10 +309,10 @@
             // 
             // label3
             // 
-            label3.Anchor = AnchorStyles.Top;
+            label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft JhengHei", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(431, 406);
+            label3.Location = new Point(464, 404);
             label3.Name = "label3";
             label3.Size = new Size(83, 17);
             label3.TabIndex = 59;
@@ -324,7 +324,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             BackColor = Color.LightGreen;
-            ClientSize = new Size(886, 646);
+            ClientSize = new Size(851, 646);
             Controls.Add(btnDeshabHabitacion);
             Controls.Add(label15);
             Controls.Add(label14);
@@ -346,7 +346,6 @@
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "registrarSsAdicionales";
-            StartPosition = FormStartPosition.CenterScreen;
             Text = "Registro de Servicios  Adicionales";
             ((System.ComponentModel.ISupportInitialize)pictureBoxSsAdic).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

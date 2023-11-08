@@ -111,8 +111,8 @@ namespace SistemaDeGestionHotel.views.admin
                 string Estado = dataGridView1.Rows[e.RowIndex].Cells["Estado_consulta"].Value.ToString();
 
                 // Define los colores para "activo" y "resuelto".
-                Color colorActiva = Color.Red; 
-                Color colorResuelta = Color.Green; 
+                Color colorActiva = Color.Red;
+                Color colorResuelta = Color.Green;
 
                 // Establece el color de fondo basado en el valor del estado.
                 if (Estado.Equals("Activa", StringComparison.OrdinalIgnoreCase))
@@ -128,7 +128,7 @@ namespace SistemaDeGestionHotel.views.admin
                     // Restaura el color de fondo predeterminado para otros valores de estado.
                     e.CellStyle.BackColor = dataGridView1.DefaultCellStyle.BackColor;
                 }
-            }            
+            }
         }
 
         private void CargarDatosDataGrid()

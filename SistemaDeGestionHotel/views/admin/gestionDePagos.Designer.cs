@@ -106,9 +106,10 @@
             Controls.Add(btnOR);
             Controls.Add(label1);
             Controls.Add(btnMP);
-            FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "gestionDePagos";
             Text = "gestionPagos";
+            Load += gestionDePagos_Load;
             ResumeLayout(false);
             PerformLayout();
         }

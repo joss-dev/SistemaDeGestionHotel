@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaDeGestionHotel.views.admin;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,16 +9,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SistemaDeGestionHotel.views.admin
+namespace SistemaDeGestionHotel.views.Reportes
 {
-    public partial class gestionDePagos : Form
+    public partial class Reportes : Form
     {
+
         private Form formularioAbierto = null;
 
-        public gestionDePagos()
+        public Reportes()
         {
             InitializeComponent();
-            this.FormBorderStyle = FormBorderStyle.None;
         }
 
         private void AbrirFormulario(Form formulario)
@@ -36,28 +37,31 @@ namespace SistemaDeGestionHotel.views.admin
                 formularioAbierto.BringToFront();
             }
         }
-
         private void Formulario_FormClosed(object sender, FormClosedEventArgs e)
         {
             // Cuando se cierra el formulario, establece la variable formularioAbierto como nula
             formularioAbierto = null;
         }
 
-        private void btnMP_Click(object sender, EventArgs e)
+
+        private void BTNSsAdicionales_Click(object sender, EventArgs e)
         {
-            // Llama a AbrirFormulario con el formulario gestionMediosPago
-            AbrirFormulario(new gestionMediosPago());
+            AbrirFormulario(new ReporteSsAdicionales());
         }
 
-        private void btnOR_Click(object sender, EventArgs e)
+        private void label5_Click(object sender, EventArgs e)
         {
-            // Llama a AbrirFormulario con el formulario gestionOfertas
-            AbrirFormulario(new gestionOfertas());
+
         }
 
-        private void gestionDePagos_Load(object sender, EventArgs e)
+        private void BTNIngresos_Click(object sender, EventArgs e)
         {
+            AbrirFormulario(new ReporteIngresos());
+        }
 
+        private void BTNSituacionHabit_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new ReporteHabitaciones());
         }
     }
 }

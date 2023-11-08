@@ -383,11 +383,11 @@
             // 
             label6.Anchor = AnchorStyles.None;
             label6.AutoSize = true;
-            label6.BackColor = Color.PaleGreen;
-            label6.Font = new Font("Microsoft Sans Serif", 32.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(134, 27);
+            label6.BackColor = Color.LightGreen;
+            label6.Font = new Font("Arial Rounded MT Bold", 32.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Location = new Point(109, 27);
             label6.Name = "label6";
-            label6.Size = new Size(621, 51);
+            label6.Size = new Size(687, 50);
             label6.TabIndex = 63;
             label6.Text = "Administración de habitaciones";
             // 
