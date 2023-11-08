@@ -77,7 +77,7 @@
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             CHIngresoMensual.Series.Add(series2);
-            CHIngresoMensual.Size = new Size(838, 300);
+            CHIngresoMensual.Size = new Size(821, 300);
             CHIngresoMensual.TabIndex = 1;
             CHIngresoMensual.Text = "chart2";
             // 
@@ -86,7 +86,7 @@
             label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 32.25F, FontStyle.Underline, GraphicsUnit.Point);
-            label1.Location = new Point(211, 77);
+            label1.Location = new Point(202, 77);
             label1.Name = "label1";
             label1.Size = new Size(411, 51);
             label1.TabIndex = 2;
@@ -97,7 +97,7 @@
             // 
             dateTimeInicio.Anchor = AnchorStyles.None;
             dateTimeInicio.Format = DateTimePickerFormat.Short;
-            dateTimeInicio.Location = new Point(137, 482);
+            dateTimeInicio.Location = new Point(140, 474);
             dateTimeInicio.Name = "dateTimeInicio";
             dateTimeInicio.Size = new Size(95, 23);
             dateTimeInicio.TabIndex = 28;
@@ -106,7 +106,7 @@
             // 
             dateTimePicker1.Anchor = AnchorStyles.None;
             dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(550, 482);
+            dateTimePicker1.Location = new Point(560, 474);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(95, 23);
             dateTimePicker1.TabIndex = 29;

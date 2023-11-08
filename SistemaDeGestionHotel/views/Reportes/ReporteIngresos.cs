@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace SistemaDeGestionHotel.views.Reportes
 {
@@ -67,6 +68,24 @@ namespace SistemaDeGestionHotel.views.Reportes
             CHIngresoMensual.ChartAreas[0].AxisX.Interval = 1;
             CHIngresoMensual.ChartAreas[0].AxisX.Minimum = 1;
             CHIngresoMensual.ChartAreas[0].AxisX.Maximum = DateTime.DaysInMonth(DateTime.Now.Year, numeroMes);
+
+            // Agrupa los pagos por medio de pago y cuenta la cantidad
+            var ventasPorMedioPago = pagosFiltrados.GroupBy(p => p.IdMedioPagoNavigation.Nombre)
+                                                .Select(g => new { MedioPago = g.Key, Ventas = g.Count() });
+
+            // Limpia los datos anteriores del gráfico
+            chart1.Series["Series1"].Points.Clear();
+
+            // Cambia el tipo de gráfico a Pie
+            chart1.Series["Series1"].ChartType = SeriesChartType.Pie;
+
+            // Añade los nuevos datos al gráfico
+            foreach (var ventas in ventasPorMedioPago)
+            {
+                chart1.Series["Series1"].Points.AddXY(ventas.MedioPago, ventas.Ventas);
+            }
+
+
         }
     }
 }
