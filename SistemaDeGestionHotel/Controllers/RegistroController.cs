@@ -89,7 +89,7 @@ namespace SistemaDeGestionHotel.Controllers
             // El registro existe, actualiza sus propiedades
            
             registroExistente.EstadoOcupacion = 1;
-
+            registroExistente.FechaIngreso = DateTime.Now;
 
             d_registro.ActualizarDatos(registroExistente);
 

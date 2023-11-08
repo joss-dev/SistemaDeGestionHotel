@@ -108,38 +108,45 @@ namespace SistemaDeGestionHotel.views.recep
 
         private void btnConfirmaLLegada_Click(object sender, EventArgs e)
         {
-            MsgBoxResult result = (MsgBoxResult)MessageBox.Show("¿Está seguro de que desea confirmar la estadia de este cliente?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
-            if (result == MsgBoxResult.Yes)
+            if(registroBuscado == null)
             {
-                bool resil = registro_controller.RegistrarEstadia(registroBuscado.IdRegistro);
-                if (resil)
-                {
-                    habitacion_controller.MarcarOcupadaHabitacion(registroBuscado.NroHabitacion);
-                    MessageBox.Show("Estadia registrada correctamente!");
-                    labelNroHabitacion.Text = string.Empty;
-                    labelTipoHabitacion.Text = string.Empty;
-                    labelPrecio.Text = string.Empty;
-                    labelCantCamas.Text = string.Empty;
-                    labelPiso.Text = string.Empty;
-
-
-                    labelApellido.Text = string.Empty;
-                    labelNombre.Text = string.Empty;
-                    labelDni.Text = string.Empty;
-                    labelTelefono.Text = string.Empty;
-
-                    labelCantHuespedes.Text = string.Empty;
-                    labelFechaIngreso.Text = string.Empty;
-                    labelFechaSalida.Text = string.Empty;
-                }
-                else
-                {
-                    MessageBox.Show("Error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                MessageBox.Show("Primero debe buscar el Dni del cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
+                MsgBoxResult result = (MsgBoxResult)MessageBox.Show("¿Está seguro de que desea confirmar la estadia de este cliente?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                if (result == MsgBoxResult.Yes)
+                {
+                    bool resil = registro_controller.RegistrarEstadia(registroBuscado.IdRegistro);
+                    if (resil)
+                    {
+                        habitacion_controller.MarcarOcupadaHabitacion(registroBuscado.NroHabitacion);
+                        MessageBox.Show("Estadia registrada correctamente!");
+                        labelNroHabitacion.Text = string.Empty;
+                        labelTipoHabitacion.Text = string.Empty;
+                        labelPrecio.Text = string.Empty;
+                        labelCantCamas.Text = string.Empty;
+                        labelPiso.Text = string.Empty;
 
+
+                        labelApellido.Text = string.Empty;
+                        labelNombre.Text = string.Empty;
+                        labelDni.Text = string.Empty;
+                        labelTelefono.Text = string.Empty;
+
+                        labelCantHuespedes.Text = string.Empty;
+                        labelFechaIngreso.Text = string.Empty;
+                        labelFechaSalida.Text = string.Empty;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+
+                }
             }
         }
     }
