@@ -39,7 +39,7 @@
             label1 = new Label();
             dateTimeInicio = new DateTimePicker();
             dateTimePicker1 = new DateTimePicker();
-            comboBox1 = new ComboBox();
+            comboBoxMeses = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)chart1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)CHIngresoMensual).BeginInit();
             SuspendLayout();
@@ -50,7 +50,7 @@
             chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             chart1.Legends.Add(legend1);
-            chart1.Location = new Point(405, 546);
+            chart1.Location = new Point(423, 517);
             chart1.Name = "chart1";
             chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
             series1.ChartArea = "ChartArea1";
@@ -70,7 +70,7 @@
             CHIngresoMensual.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             CHIngresoMensual.Legends.Add(legend2);
-            CHIngresoMensual.Location = new Point(113, 155);
+            CHIngresoMensual.Location = new Point(23, 168);
             CHIngresoMensual.Name = "CHIngresoMensual";
             series2.ChartArea = "ChartArea1";
             series2.Legend = "Legend1";
@@ -85,7 +85,7 @@
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 32.25F, FontStyle.Underline, GraphicsUnit.Point);
-            label1.Location = new Point(206, 7);
+            label1.Location = new Point(168, 41);
             label1.Name = "label1";
             label1.Size = new Size(411, 51);
             label1.TabIndex = 2;
@@ -96,7 +96,7 @@
             // 
             dateTimeInicio.Anchor = AnchorStyles.None;
             dateTimeInicio.Format = DateTimePickerFormat.Short;
-            dateTimeInicio.Location = new Point(396, 478);
+            dateTimeInicio.Location = new Point(414, 497);
             dateTimeInicio.Name = "dateTimeInicio";
             dateTimeInicio.Size = new Size(95, 23);
             dateTimeInicio.TabIndex = 28;
@@ -105,18 +105,20 @@
             // 
             dateTimePicker1.Anchor = AnchorStyles.None;
             dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(601, 478);
+            dateTimePicker1.Location = new Point(578, 497);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(95, 23);
             dateTimePicker1.TabIndex = 29;
             // 
-            // comboBox1
+            // comboBoxMeses
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(200, 115);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 30;
+            comboBoxMeses.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxMeses.FormattingEnabled = true;
+            comboBoxMeses.Location = new Point(113, 126);
+            comboBoxMeses.Name = "comboBoxMeses";
+            comboBoxMeses.Size = new Size(121, 23);
+            comboBoxMeses.TabIndex = 30;
+            comboBoxMeses.SelectedIndexChanged += CambiarChartIngresos;
             // 
             // ReporteIngresos
             // 
@@ -125,7 +127,7 @@
             AutoScroll = true;
             BackColor = Color.LightGreen;
             ClientSize = new Size(800, 745);
-            Controls.Add(comboBox1);
+            Controls.Add(comboBoxMeses);
             Controls.Add(dateTimePicker1);
             Controls.Add(dateTimeInicio);
             Controls.Add(label1);
@@ -134,6 +136,7 @@
             FormBorderStyle = FormBorderStyle.Fixed3D;
             Name = "ReporteIngresos";
             Text = "ReporteIngresos";
+            Load += CargarDatos;
             ((System.ComponentModel.ISupportInitialize)chart1).EndInit();
             ((System.ComponentModel.ISupportInitialize)CHIngresoMensual).EndInit();
             ResumeLayout(false);
@@ -147,6 +150,6 @@
         private Label label1;
         private DateTimePicker dateTimeInicio;
         private DateTimePicker dateTimePicker1;
-        private ComboBox comboBox1;
+        private ComboBox comboBoxMeses;
     }
 }
