@@ -55,7 +55,7 @@
             chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series1.Font = new Font("Arial Rounded MT Bold", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            series1.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             series1.LabelForeColor = Color.Transparent;
             series1.Legend = "Legend1";
             series1.Name = "Ingresos";
@@ -84,10 +84,10 @@
             // 
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
-            label1.Font = new Font("Arial Rounded MT Bold", 32.25F, FontStyle.Underline, GraphicsUnit.Point);
-            label1.Location = new Point(215, 22);
+            label1.Font = new Font("Microsoft Sans Serif", 32.25F, FontStyle.Underline, GraphicsUnit.Point);
+            label1.Location = new Point(206, 7);
             label1.Name = "label1";
-            label1.Size = new Size(450, 50);
+            label1.Size = new Size(411, 51);
             label1.TabIndex = 2;
             label1.Text = "Reporte de Ingresos";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -96,7 +96,7 @@
             // 
             dateTimeInicio.Anchor = AnchorStyles.None;
             dateTimeInicio.Format = DateTimePickerFormat.Short;
-            dateTimeInicio.Location = new Point(405, 493);
+            dateTimeInicio.Location = new Point(396, 478);
             dateTimeInicio.Name = "dateTimeInicio";
             dateTimeInicio.Size = new Size(95, 23);
             dateTimeInicio.TabIndex = 28;
@@ -105,7 +105,7 @@
             // 
             dateTimePicker1.Anchor = AnchorStyles.None;
             dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(610, 493);
+            dateTimePicker1.Location = new Point(601, 478);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(95, 23);
             dateTimePicker1.TabIndex = 29;
@@ -122,8 +122,9 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
             BackColor = Color.LightGreen;
-            ClientSize = new Size(800, 877);
+            ClientSize = new Size(800, 745);
             Controls.Add(comboBox1);
             Controls.Add(dateTimePicker1);
             Controls.Add(dateTimeInicio);
