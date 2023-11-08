@@ -1,6 +1,5 @@
 ﻿using Microsoft.VisualBasic;
 using SistemaDeGestionHotel.Controllers;
-using SistemaDeGestionHotel.Datos;
 using SistemaDeGestionHotel.NEntidades;
 using SistemaDeGestionHotel.views.recep;
 using Button = System.Windows.Forms.Button;
@@ -119,76 +118,77 @@ namespace SistemaDeGestionHotel.views.admin
             else
             {
                 int nroHabitacion = int.Parse(TNumHabitacion.Text);
-                Habitacion habitacionBuscada = habitacion_controller.GetHabitacionByNroHabitacion(nroHabitacion);
+                List<Habitacion> habitacionesBuscadas = habitacion_controller.GetHabitacionesByNroHabitacion(nroHabitacion);
 
-                if (habitacionBuscada != null && habitacionBuscada.IdEstado != 4 && habitacionBuscada.IdEstado != 5)
+                if (habitacionesBuscadas != null && habitacionesBuscadas.Count > 0)
                 {
                     panel1.Controls.Clear();
-                    // Crear un nuevo botón
-                    Button boton = new Button();
-
-                    //propiedades del boton 
-                    boton.AutoSize = true;
-                    boton.Anchor = AnchorStyles.None;
-                    boton.Size = new Size(140, 55);
-                    boton.FlatAppearance.BorderSize = 0;
-                    //boton.FlatAppearance.BorderColor = Color.Black;
-                    //boton.FlatAppearance.BorderSize = 1;
-
-                    if (habitacionBuscada.IdEstado == 1)
+                    foreach (Habitacion habitacionBuscada in habitacionesBuscadas)
                     {
-                        boton.BackColor = Color.MediumSpringGreen;
+                        if (habitacionBuscada.IdEstado != 4 && habitacionBuscada.IdEstado != 5)
+                        {
+                            // Crear un nuevo botón
+                            Button boton = new Button();
+
+                            //propiedades del boton 
+                            boton.AutoSize = true;
+                            boton.Anchor = AnchorStyles.None;
+                            boton.Size = new Size(140, 55);
+                            boton.FlatAppearance.BorderSize = 0;
+
+                            if (habitacionBuscada.IdEstado == 1)
+                            {
+                                boton.BackColor = Color.MediumSpringGreen;
+                            }
+                            if (habitacionBuscada.IdEstado == 2)
+                            {
+                                boton.BackColor = Color.Red;
+                            }
+                            if (habitacionBuscada.IdEstado == 3)
+                            {
+                                boton.BackColor = Color.SandyBrown;
+                            }
+
+                            // Establecer el texto del botón con el número de habitación
+                            boton.Text = $"{habitacionBuscada.NroHabitacion}";
+
+                            // Establecer el nombre del botón con el ID de la habitación
+                            boton.Name = $"{habitacionBuscada.IdHabitacion}";
+
+                            // Establecer la ubicación del botón
+                            boton.Location = new Point(50, 80);
+
+                            // Crear un nuevo ToolTip
+                            ToolTip toolTip = new ToolTip();
+                            toolTip.IsBalloon = true;
+                            // Establecer el texto del ToolTip
+                            toolTip.SetToolTip(boton, $"Nro de Piso: {habitacionBuscada.IdPiso}\nTipo Habitación: {habitacionBuscada.IdTipoHabNavigation.NombTipo} \nPrecio: ${habitacionBuscada.Precio} \nCantidad Camas: {habitacionBuscada.CantidadCamas}");
+
+                            // Añadir el botón al panel
+                            panel1.Controls.Add(boton);
+
+                            if (habitacionBuscada.IdEstado == 2)
+                            {
+                                // Agrega el mismo manejador de eventos Click a todos los botones
+                                boton.Click += HabitacionOcupada_Click;
+                            }
+                            else if (habitacionBuscada.IdEstado == 3)
+                            {
+                                // Agrega el mismo manejador de eventos Click a todos los botones
+                                boton.Click += HabitacionReservada_Click;
+                            }
+                            else if (habitacionBuscada.IdEstado == 1)
+                            {
+                                // Agrega el mismo manejador de eventos Click a todos los botones
+                                boton.Click += Habitacion_Click;
+                            }
+                        }
                     }
-                    if (habitacionBuscada.IdEstado == 2)
-                    {
-                        boton.BackColor = Color.Red;
-                    }
-                    if (habitacionBuscada.IdEstado == 3)
-                    {
-                        boton.BackColor = Color.SandyBrown;
-                    }
-
-                    // Establecer el texto del botón con el número de habitación
-                    boton.Text = $"{habitacionBuscada.NroHabitacion}";
-
-                    // Establecer el nombre del botón con el ID de la habitación
-                    boton.Name = $"{habitacionBuscada.IdHabitacion}";
-
-                    // Establecer la ubicación del botón
-                    boton.Location = new Point(50, 80);
-
-                    // Crear un nuevo ToolTip
-                    ToolTip toolTip = new ToolTip();
-                    toolTip.IsBalloon = true;
-                    // Establecer el texto del ToolTip
-                    toolTip.SetToolTip(boton, $"Nro de Piso: {habitacionBuscada.IdPiso}\nTipo Habitación: {habitacionBuscada.IdTipoHabNavigation.NombTipo} \nPrecio: ${habitacionBuscada.Precio} \nCantidad Camas: {habitacionBuscada.CantidadCamas}");
-
-                    // Añadir el botón al panel
-                    panel1.Controls.Add(boton);
-
-                    if (habitacionBuscada.IdEstado == 2)
-                    {
-                        // Agrega el mismo manejador de eventos Click a todos los botones
-                        boton.Click += HabitacionOcupada_Click;
-                    }
-                    else if (habitacionBuscada.IdEstado == 3)
-                    {
-                        // Agrega el mismo manejador de eventos Click a todos los botones
-                        boton.Click += HabitacionReservada_Click;
-                    }
-                    else if (habitacionBuscada.IdEstado == 1)
-                    {
-                        // Agrega el mismo manejador de eventos Click a todos los botones
-                        boton.Click += Habitacion_Click;
-                    }
-
-            
                 }
                 else
                 {
                     MessageBox.Show("Habitación no encontrada");
                 }
-
             }
         }
 

@@ -52,6 +52,10 @@ namespace SistemaDeGestionHotel.Controllers
             return d_habitacion.GetHabitacionesByTipoHabitacion(idTipo);
         }
 
+        public List<Habitacion> GetHabitacionesByNroHabitacion(int nroHabitacion)
+        {
+            return d_habitacion.GetHabitacionesByNroHabitacion(nroHabitacion);
+        }
         public bool EditarHabitacion(int idHabitacion, int nrodehabitacion, int cantidaddecamas, float precio, int id_estado, int id_tipohab, int id_piso)
         {
             Habitacion habitacionExistente = d_habitacion.GetHabitacionByID(idHabitacion);

@@ -54,6 +54,14 @@ namespace SistemaDeGestionHotel.Datos
                                  .FirstOrDefault(h => h.NroHabitacion == nroHabitacion);
         }
 
+        public List<Habitacion> GetHabitacionesByNroHabitacion(int nroHabitacion)
+        {
+            this.ReloadAllEntities();
+            return dbHotelParana.Habitacions
+                                 .Where(h => h.NroHabitacion == nroHabitacion)
+                                 .ToList();
+        }
+
         public List<Habitacion> GetHabitacionesByNroPiso(int nroPiso)
         {
             // Obtener todas las habitaciones
