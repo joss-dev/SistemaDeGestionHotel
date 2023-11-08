@@ -33,6 +33,7 @@ namespace SistemaDeGestionHotel.Datos
         public Pago GetPagoByIDregistro(int idRegistro)
         {
             return dbHotelParana.Pagos
+                                      .Include(p => p.IdMedioPagoNavigation)
                                       .FirstOrDefault(p => p.IdRegistro == idRegistro);
         }
 
@@ -44,6 +45,7 @@ namespace SistemaDeGestionHotel.Datos
         public Pago GetPagoByID(int id)
         {
             return dbHotelParana.Pagos
+                                 .Include(p => p.IdMedioPagoNavigation)
                                  .FirstOrDefault(p => p.IdPago == id);
         }
 
