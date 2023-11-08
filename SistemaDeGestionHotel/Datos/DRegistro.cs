@@ -58,11 +58,36 @@ namespace SistemaDeGestionHotel.Datos
                                  .FirstOrDefault(r => r.IdRegistro == id);
         }
 
+        public Registro GetRegistroFacturadoByIDHabitacion(int id)
+        {
+            var registro = dbHotelParana.Registros
+                                .Where(r => r.EstadoOcupacion == 2)
+                                .Include(s => s.IdServicioAdics)
+                                .FirstOrDefault(r => r.IdCliente == id);
+
+            // Recargar el objeto desde la base de datos
+            dbHotelParana.Entry(registro).Reload();
+
+            return registro;
+        }
+
+
         public Registro GetRegistroByIDHabitacion(int id)
         {
             this.ReloadAllEntities();
-            return dbHotelParana.Registros
+            var registro = dbHotelParana.Registros
+                                 .Where(r => r.EstadoOcupacion == 1 || r.EstadoOcupacion == 0)
                                  .FirstOrDefault(r => r.NroHabitacion == id);
+            if (registro == null)
+            {
+                return registro;
+            }
+            else
+            {
+                // Recargar el objeto desde la base de datos
+                dbHotelParana.Entry(registro).Reload();
+                return registro;
+            }
         }
 
         public Registro ClienteEnEstadiaOReserva(int idCliente)
@@ -82,11 +107,19 @@ namespace SistemaDeGestionHotel.Datos
 
         public Registro GetRegistroByIDCliente(int id)
         {
-            this.ReloadAllEntities();
-            return dbHotelParana.Registros
-                                 .Include(s => s.IdServicioAdics)
-                                 .FirstOrDefault(r => r.IdCliente == id);
-            
+            var registro = dbHotelParana.Registros
+                                .Where(r => r.EstadoOcupacion == 1 || r.EstadoOcupacion == 0)
+                                .Include(s => s.IdServicioAdics)
+                                .FirstOrDefault(r => r.IdCliente == id);
+            if(registro == null)
+            {
+                return registro;
+            }else
+            {
+                // Recargar el objeto desde la base de datos
+                dbHotelParana.Entry(registro).Reload();
+                return registro;
+            }
         }
 
         public bool AgregarServicioAdicional(ServiciosAdicionale servicioAdicional, Registro registro)

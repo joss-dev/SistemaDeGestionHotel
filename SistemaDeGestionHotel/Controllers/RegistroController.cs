@@ -46,6 +46,11 @@ namespace SistemaDeGestionHotel.Controllers
             return d_registro.GetRegistroByIDHabitacion(id);
         }
 
+        public Registro GetRegistroFacturadoByIDHabitacion(int id)
+        {
+            return d_registro.GetRegistroFacturadoByIDHabitacion(id);
+        }
+
         public Registro GetRegistroByIDCliente(int id)
         {
             return d_registro.GetRegistroByIDCliente(id);

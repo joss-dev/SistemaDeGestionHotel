@@ -32,23 +32,26 @@ namespace SistemaDeGestionHotel.views.recep
             Registro registroInfo = registro_controller.GetRegistroByIDHabitacion(idHabitacion);
             Cliente clienteInfo = ClienteController.GetClienteByID(registroInfo.IdCliente);
 
-            labelApellido.Text = clienteInfo.ApellidoCliente.ToString();
-            labelNombre.Text = clienteInfo.NombreCliente.ToString();
-            labelTelefono.Text = clienteInfo.Telefono.ToString();
-            labelDni.Text = clienteInfo.DniCliente.ToString();
+            if(registroInfo.EstadoOcupacion != 2)
+            {
+                labelApellido.Text = clienteInfo.ApellidoCliente.ToString();
+                labelNombre.Text = clienteInfo.NombreCliente.ToString();
+                labelTelefono.Text = clienteInfo.Telefono.ToString();
+                labelDni.Text = clienteInfo.DniCliente.ToString();
 
 
-            labelFechaIngreso.Text = registroInfo.FechaIngreso.ToShortDateString();
-            labelFechaSalida.Text = registroInfo.FechaSalida.ToShortDateString();
-            labelCantidaHuespedes.Text = registroInfo.CantidadHuespedes.ToString();
+                labelFechaIngreso.Text = registroInfo.FechaIngreso.ToShortDateString();
+                labelFechaSalida.Text = registroInfo.FechaSalida.ToShortDateString();
+                labelCantidaHuespedes.Text = registroInfo.CantidadHuespedes.ToString();
 
 
-            //carga datos de la habitacion
-            labelNroHabitacion.Text = habitacionInfo.NroHabitacion.ToString();
-            labelCantidadCamas.Text = habitacionInfo.CantidadCamas.ToString();
-            labelPrecio.Text = habitacionInfo.Precio.ToString("N2");
-            labelNroPiso.Text = habitacionInfo.IdPisoNavigation.NroPiso.ToString();
-            labelTipo.Text = habitacionInfo.IdTipoHabNavigation.NombTipo.ToString();
+                //carga datos de la habitacion
+                labelNroHabitacion.Text = habitacionInfo.NroHabitacion.ToString();
+                labelCantidadCamas.Text = habitacionInfo.CantidadCamas.ToString();
+                labelPrecio.Text = habitacionInfo.Precio.ToString("N2");
+                labelNroPiso.Text = habitacionInfo.IdPisoNavigation.NroPiso.ToString();
+                labelTipo.Text = habitacionInfo.IdTipoHabNavigation.NombTipo.ToString();
+            }
         }
     }
 }

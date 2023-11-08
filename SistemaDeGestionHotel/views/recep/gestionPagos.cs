@@ -109,8 +109,49 @@ namespace SistemaDeGestionHotel.views.recep
 
                         }
                     }
-                }   
+                }
             }
+        }
+
+        private void VaciarLabels()
+        {
+            TDni.Clear();
+
+            labelNombre.Text = string.Empty;
+            labelApellido.Text = string.Empty;
+            labelDni.Text = string.Empty;
+            labelTelefono.Text = string.Empty;
+
+
+            labelCantHuespedes.Text = string.Empty;
+            labelFechaIngreso.Text = string.Empty;
+            labelFechaSalida.Text = string.Empty;
+
+            labelNroHabitacion.Text = string.Empty;
+            labelPiso.Text = string.Empty;
+            labelTipoHabitacion.Text = string.Empty;
+            labelCantDias.Text = string.Empty;
+            labelCantServicios.Text = string.Empty;
+            labelPrecioHabitacion.Text = string.Empty;
+            labelMonto.Text = string.Empty;
+            labelMontoServicios.Text = string.Empty;
+            labelMontoTotal.Text = string.Empty;
+            labelOferta.Text = string.Empty;
+            labelRecargo.Text = string.Empty;
+            dataGridViewFactura.DataSource = null;
+            labelSubtotal.Text = string.Empty;
+
+        }
+
+        private void ReiniciarDatos()
+        {
+            habitacionPago = null;
+            registroPago = null;
+            clientePago = null;
+            oferta = null;
+            recargo = null;
+
+            this.VaciarLabels();
         }
 
         private double? CalcularOferta(double? oferta)
@@ -133,7 +174,7 @@ namespace SistemaDeGestionHotel.views.recep
                 result += servicio.Precio;
             }
 
-            return result * diferencia.TotalDays;
+            return result;
 
         }
 
@@ -154,17 +195,7 @@ namespace SistemaDeGestionHotel.views.recep
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            TDni.Clear();
-
-            labelNombre.Text = string.Empty;
-            labelApellido.Text = string.Empty;
-            labelDni.Text = string.Empty;
-            labelTelefono.Text = string.Empty;
-
-
-            labelCantHuespedes.Text = string.Empty;
-            labelFechaIngreso.Text = string.Empty;
-            labelFechaSalida.Text = string.Empty;
+            this.ReiniciarDatos();
 
         }
 
@@ -181,18 +212,21 @@ namespace SistemaDeGestionHotel.views.recep
 
             if (indiceSeleccionado == 0)
             {
-                if(oferta == null)
+                if (oferta == null)
                 {
                     // Primer índice, que corresponde a "Efectivo"
                     FormEfectivo formEfectivo = new FormEfectivo(subtotal - this.CalcularOferta(porcentajeOferta) + this.CalcularRecargo(porcentajeRecargo), recargo, registroPago);
                     formEfectivo.ShowDialog();
-                }else
+                    this.ReiniciarDatos();
+                }
+                else
                 {
                     // Primer índice, que corresponde a "Efectivo"
                     FormEfectivo formEfectivo = new FormEfectivo(subtotal - this.CalcularOferta(porcentajeOferta) + this.CalcularRecargo(porcentajeRecargo), oferta, registroPago);
                     formEfectivo.ShowDialog();
+                    this.ReiniciarDatos();
                 }
-                
+
             }
             else if (indiceSeleccionado == 1)
             {
@@ -274,6 +308,11 @@ namespace SistemaDeGestionHotel.views.recep
             labelRecargo.Text = string.Empty;
 
             labelMontoTotal.Text = (subtotal - this.CalcularOferta(porcentajeOferta) + this.CalcularRecargo(porcentajeRecargo))?.ToString("N2");
+        }
+
+        private void ReiniciarDatos(object sender, EventArgs e)
+        {
+            this.ReiniciarDatos();
         }
     }
 }

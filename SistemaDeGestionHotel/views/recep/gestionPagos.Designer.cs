@@ -759,6 +759,7 @@
             Controls.Add(groupBox2);
             FormBorderStyle = FormBorderStyle.None;
             Name = "gestionPagos";
+            Activated += ReiniciarDatos;
             Load += CargarDatos;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

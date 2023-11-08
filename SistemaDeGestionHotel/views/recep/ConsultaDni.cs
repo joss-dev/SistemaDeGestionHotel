@@ -77,12 +77,22 @@ namespace SistemaDeGestionHotel.views.recep
 
                                 MessageBox.Show(mensaje, "detalles", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
-                            else
+                            else if(registroCliente.EstadoOcupacion == 1)
                             {
                                 string mensaje = $"El cliente se encuentra registrado en la habitacion : {registroCliente.NroHabitacionNavigation.NroHabitacion.ToString()}\n";
 
 
                                 MessageBox.Show(mensaje, "detalles", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else if (registroCliente.EstadoOcupacion == 2)
+                            {
+                                Form agregarHues = new AgregarHuesped(usuarioInicioSesion, clienteBuscado, habitacion, int.Parse(TDni.Text));
+
+                                agregarHues.StartPosition = FormStartPosition.CenterScreen;
+
+                                DialogResult result = agregarHues.ShowDialog();
+
+                                this.Close();
                             }
 
                             this.Close();
