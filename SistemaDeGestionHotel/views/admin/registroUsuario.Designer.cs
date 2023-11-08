@@ -462,7 +462,6 @@
             txtDNI.Size = new Size(207, 23);
             txtDNI.TabIndex = 54;
             txtDNI.KeyDown += ValidacionDNI;
-            txtDNI.Validating += ValidarLonguitudDni;
             // 
             // label12
             // 

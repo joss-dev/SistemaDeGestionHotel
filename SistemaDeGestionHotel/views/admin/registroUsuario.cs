@@ -70,35 +70,39 @@ namespace SistemaDeGestionHotel.views.admin
             }
             else
             {
-
-                if (VerificarEmail.Verificar_Email(txtCorreoElec.Text))
+                // Verifica que la longitud de la entrada esté entre 7 y 8.
+                if (txtDNI.Text.Length < 7 || txtDNI.Text.Length > 8)
                 {
-                    if (usuario_controller.AgregarUsuario(txtNombre.Text, txtApellido.Text, txtDNI.Text, txtCorreoElec.Text, txtDireccion.Text, txtUserName.Text, txtPass.Text, "No imagen", comboBoxTipoPerfil.SelectedIndex))
-                    {
-                        MessageBox.Show("El usuarioo se registro correctamente", "Guardar", MessageBoxButtons.OK);
-                        txtApellido.Text = string.Empty;
-                        txtNombre.Text = string.Empty;
-                        txtDNI.Text = string.Empty;
-                        txtCorreoElec.Text = string.Empty;
-                        txtDireccion.Text = string.Empty;
-                        txtUserName.Text = string.Empty;
-                        txtPass.Text = string.Empty;
-                        // Para restablecer el ComboBox a la opción predeterminada
-                        comboBoxTipoPerfil.SelectedItem = 0;
-                    }
-                    else
-                    {
-                        MessageBox.Show("El usuario ya se encuentra registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    MessageBox.Show("El DNI debe tener entre 7 y 8 números.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    MessageBox.Show("El correo electronico no es valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
-
-                dataGridView1.DataSource = usuario_controller.GetUsuarios();
-
+                    if (VerificarEmail.Verificar_Email(txtCorreoElec.Text))
+                    {
+                        if (usuario_controller.AgregarUsuario(txtNombre.Text, txtApellido.Text, txtDNI.Text, txtCorreoElec.Text, txtDireccion.Text, txtUserName.Text, txtPass.Text, "No imagen", comboBoxTipoPerfil.SelectedIndex))
+                        {
+                            MessageBox.Show("El usuarioo se registro correctamente", "Guardar", MessageBoxButtons.OK);
+                            txtApellido.Text = string.Empty;
+                            txtNombre.Text = string.Empty;
+                            txtDNI.Text = string.Empty;
+                            txtCorreoElec.Text = string.Empty;
+                            txtDireccion.Text = string.Empty;
+                            txtUserName.Text = string.Empty;
+                            txtPass.Text = string.Empty;
+                            // Para restablecer el ComboBox a la opción predeterminada
+                            comboBoxTipoPerfil.SelectedItem = 0;
+                            dataGridView1.DataSource = usuario_controller.GetUsuarios();
+                        }
+                        else
+                        {
+                            MessageBox.Show("El usuario ya se encuentra registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("El correo electronico no es valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }     
             }
         }
 
@@ -365,16 +369,6 @@ namespace SistemaDeGestionHotel.views.admin
             else
             {
                 MessageBox.Show("No selecciono ningun usuario");
-            }
-        }
-
-        private void ValidarLonguitudDni(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            // Verifica que la longitud de la entrada esté entre 7 y 8.
-            if (txtDNI.Text.Length < 7 || txtDNI.Text.Length > 8)
-            {
-                MessageBox.Show("El DNI debe tener entre 7 y 8 números.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                e.Cancel = true;
             }
         }
     }
