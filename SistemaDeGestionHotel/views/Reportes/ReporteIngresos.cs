@@ -64,6 +64,9 @@ namespace SistemaDeGestionHotel.views.Reportes
                 CHIngresoMensual.Series["Series1"].Points.AddXY(ingresos.Dia, ingresos.Ingresos);
             }
 
+            CHIngresoMensual.ChartAreas[0].AxisX.Interval = 1;
+            CHIngresoMensual.ChartAreas[0].AxisX.Minimum = 1;
+            CHIngresoMensual.ChartAreas[0].AxisX.Maximum = DateTime.DaysInMonth(DateTime.Now.Year, numeroMes);
         }
     }
 }

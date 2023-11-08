@@ -66,6 +66,7 @@
             // 
             // CHIngresoMensual
             // 
+            CHIngresoMensual.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             chartArea2.Name = "ChartArea1";
             CHIngresoMensual.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
@@ -76,16 +77,16 @@
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             CHIngresoMensual.Series.Add(series2);
-            CHIngresoMensual.Size = new Size(300, 300);
+            CHIngresoMensual.Size = new Size(855, 300);
             CHIngresoMensual.TabIndex = 1;
             CHIngresoMensual.Text = "chart2";
             // 
             // label1
             // 
-            label1.Anchor = AnchorStyles.None;
+            label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 32.25F, FontStyle.Underline, GraphicsUnit.Point);
-            label1.Location = new Point(168, 41);
+            label1.Location = new Point(220, 77);
             label1.Name = "label1";
             label1.Size = new Size(411, 51);
             label1.TabIndex = 2;
@@ -96,7 +97,7 @@
             // 
             dateTimeInicio.Anchor = AnchorStyles.None;
             dateTimeInicio.Format = DateTimePickerFormat.Short;
-            dateTimeInicio.Location = new Point(414, 497);
+            dateTimeInicio.Location = new Point(466, 533);
             dateTimeInicio.Name = "dateTimeInicio";
             dateTimeInicio.Size = new Size(95, 23);
             dateTimeInicio.TabIndex = 28;
@@ -105,7 +106,7 @@
             // 
             dateTimePicker1.Anchor = AnchorStyles.None;
             dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(578, 497);
+            dateTimePicker1.Location = new Point(630, 533);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(95, 23);
             dateTimePicker1.TabIndex = 29;
@@ -114,7 +115,7 @@
             // 
             comboBoxMeses.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxMeses.FormattingEnabled = true;
-            comboBoxMeses.Location = new Point(113, 126);
+            comboBoxMeses.Location = new Point(23, 139);
             comboBoxMeses.Name = "comboBoxMeses";
             comboBoxMeses.Size = new Size(121, 23);
             comboBoxMeses.TabIndex = 30;
@@ -126,7 +127,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             BackColor = Color.LightGreen;
-            ClientSize = new Size(800, 745);
+            ClientSize = new Size(922, 745);
             Controls.Add(comboBoxMeses);
             Controls.Add(dateTimePicker1);
             Controls.Add(dateTimeInicio);
