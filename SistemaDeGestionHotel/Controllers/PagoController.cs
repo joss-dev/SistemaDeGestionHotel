@@ -7,17 +7,25 @@ namespace SistemaDeGestionHotel.Controllers
     {
         DPago d_pago = new DPago();
 
-        public bool AgregarPago(double montoPago, DateTime fechaPago, int estadoPago, int idOfertaRecargo, int idRegistro, int idMedioPago)
+        public bool AgregarPago(double montoPago, DateTime fechaPago, int estadoPago, int? idOfertaRecargo, int idRegistro, int idMedioPago)
         {
             Pago pago = new Pago()
             {
                 MontoPago = montoPago,
                 FechaHoraPago = fechaPago,
                 EstadoPago = estadoPago,
-                IdOfertaRecargo = idOfertaRecargo,
                 IdRegistro = idRegistro,
                 IdMedioPago = idMedioPago
             };
+
+            if (idOfertaRecargo == null)
+            {
+                pago.IdOfertaRecargo = null;
+            }
+            else
+            {
+                pago.IdOfertaRecargo = idOfertaRecargo;
+            }
 
             return d_pago.AgregarPago(pago);
         }
@@ -25,6 +33,11 @@ namespace SistemaDeGestionHotel.Controllers
         public List<Pago> GetPagos()
         {
             return d_pago.GetPagos();
+        }
+
+        public Pago GetPagoByIDregistro(int idRegistro)
+        {
+            return d_pago.GetPagoByIDregistro(idRegistro);
         }
 
         public Pago GetPagoByID(int id)

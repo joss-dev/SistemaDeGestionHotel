@@ -173,9 +173,18 @@ namespace SistemaDeGestionHotel.views.recep
 
             if (indiceSeleccionado == 0)
             {
-                // Primer índice, que corresponde a "Efectivo"
-                FormEfectivo formEfectivo = new FormEfectivo(subtotal - this.CalcularOferta(porcentajeOferta) + this.CalcularRecargo(porcentajeRecargo));
-                formEfectivo.ShowDialog();
+                if(oferta == null)
+                {
+                    // Primer índice, que corresponde a "Efectivo"
+                    FormEfectivo formEfectivo = new FormEfectivo(subtotal - this.CalcularOferta(porcentajeOferta) + this.CalcularRecargo(porcentajeRecargo), recargo, registroPago);
+                    formEfectivo.ShowDialog();
+                }else
+                {
+                    // Primer índice, que corresponde a "Efectivo"
+                    FormEfectivo formEfectivo = new FormEfectivo(subtotal - this.CalcularOferta(porcentajeOferta) + this.CalcularRecargo(porcentajeRecargo), oferta, registroPago);
+                    formEfectivo.ShowDialog();
+                }
+                
             }
             else if (indiceSeleccionado == 1)
             {

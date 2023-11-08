@@ -1,4 +1,6 @@
 ﻿using Microsoft.VisualBasic;
+using SistemaDeGestionHotel.Controllers;
+using SistemaDeGestionHotel.NEntidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,12 +16,19 @@ namespace SistemaDeGestionHotel.views.recep
     public partial class FormEfectivo : Form
     {
         private double? MontoTotal;
+        PagoController pago_controller = new PagoController();
+        private OfertasRecargo OfertaOrecargo;
+        private Registro registro;
 
-        public FormEfectivo(double? montoTotal)
+        public FormEfectivo(double? montoTotal, OfertasRecargo ofertaOrecargo, Registro registrop)
         {
             InitializeComponent();
 
             MontoTotal = montoTotal;
+
+            registro = registrop;
+
+            OfertaOrecargo = ofertaOrecargo;
 
             textBoxTotalApagar.Text = montoTotal.ToString();
         }
@@ -58,6 +67,24 @@ namespace SistemaDeGestionHotel.views.recep
                 {
                     double? cambio = double.Parse(textBoxEfectivo.Text) - MontoTotal;
                     textBoxCambio.Text = cambio.ToString();
+
+                    if(pago_controller.AgregarPago(MontoTotal.Value, DateTime.Now, 1, OfertaOrecargo?.IdOfertaRecargo, registro.IdRegistro, 3))
+                    {
+                        MessageBox.Show($"El cobro se realizo correctamente! su cambio es : {cambio?.ToString("N2")}");
+
+                        Pago pago = pago_controller.GetPagoByIDregistro(registro.IdRegistro);
+
+                        Form verfactura = new VerFactura(pago, registro);
+                        verfactura.StartPosition = FormStartPosition.CenterScreen;
+                        verfactura.ShowDialog();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Fallo el cobro", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    
                 }
             }
         }

@@ -30,6 +30,12 @@ namespace SistemaDeGestionHotel.Datos
             }
         }
 
+        public Pago GetPagoByIDregistro(int idRegistro)
+        {
+            return dbHotelParana.Pagos
+                                      .FirstOrDefault(p => p.IdRegistro == idRegistro);
+        }
+
         public List<Pago> GetPagos()
         {
             return dbHotelParana.Pagos.ToList();
