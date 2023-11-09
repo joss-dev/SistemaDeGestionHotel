@@ -1,9 +1,5 @@
 ﻿using SistemaDeGestionHotel.Controllers;
 using SistemaDeGestionHotel.NEntidades;
-using iTextSharp.text;
-using iTextSharp.text.pdf;
-using iTextSharp.text.html.simpleparser;
-
 
 namespace SistemaDeGestionHotel
 {
@@ -19,7 +15,7 @@ namespace SistemaDeGestionHotel
             Cliente cliente = cliente_controller.GetClienteByID(registro.IdCliente);
             Usuario usuario = usuario_controller.GetUsuarioByID(registro.IdUsuario);
             Habitacion habitacion = habitacion_controller.GetHabitacionByID(registro.NroHabitacion);
-            OfertasRecargo ofertaRecargo = null;    
+            OfertasRecargo ofertaRecargo = null;
 
             TimeSpan diferencia = registro.FechaSalida - registro.FechaIngreso;
 
@@ -69,10 +65,11 @@ namespace SistemaDeGestionHotel
             {
                 ofertaRecargo = ofertarecargo_controller.TraerORPorID(pago.IdOfertaRecargo.Value);
 
-                if(ofertaRecargo.PorcentajeDescuento <= 0)
+                if (ofertaRecargo.PorcentajeDescuento <= 0)
                 {
                     recargo = (subtotal * ofertaRecargo.PorcentajeRecargo.Value) / 100;
-                }else
+                }
+                else
                 {
                     oferta = (subtotal * ofertaRecargo.PorcentajeDescuento.Value) / 100;
                 }
@@ -379,30 +376,5 @@ namespace SistemaDeGestionHotel
             </html>";
             return facturaHtml;
         }
-
-        public void generarPdf(WebBrowser webBrowser1, string ruta)
-        {
-            // Crear un nuevo documento PDF.
-            Document document = new Document();
-
-            // Crear un nuevo escritor PDF.
-            PdfWriter writer = PdfWriter.GetInstance(document, new FileStream(ruta, FileMode.Create));
-
-            // Abrir el documento.
-            document.Open();
-
-            // Crear un nuevo StringReader con tu HTML.
-            StringReader sr = new StringReader(webBrowser1.DocumentText);
-
-            // Crear un nuevo HTMLWorker con tu documento.
-            HTMLWorker htmlWorker = new HTMLWorker(document);
-
-            // Parsear el HTML.
-            htmlWorker.Parse(sr);
-
-            // Cerrar el documento.
-            document.Close();
-        }
-
     }
 }
