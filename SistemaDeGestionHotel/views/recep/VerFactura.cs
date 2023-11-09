@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Forms;
 
 namespace SistemaDeGestionHotel.views.recep
@@ -16,7 +17,9 @@ namespace SistemaDeGestionHotel.views.recep
         FacturaHtml factu = new FacturaHtml();
         private Pago pagoFactura;
         private Registro registroFactura;
-
+        private System.Windows.Forms.Button printButton;
+        private System.Windows.Forms.WebBrowser webBrowser1;
+        
         public VerFactura(Pago pago, Registro registro)
         {
             InitializeComponent();
@@ -24,23 +27,28 @@ namespace SistemaDeGestionHotel.views.recep
             pagoFactura = pago;
             registroFactura = registro;
 
-            WebBrowser webBrowser1 = new WebBrowser();
+            webBrowser1 = new System.Windows.Forms.WebBrowser();
+
+            // Inicializa el botón de impresión
+            printButton = new System.Windows.Forms.Button();
+            printButton.Text = "Guardar como Pdf";
+            printButton.Click += PrintButton_Click;
+
+            Controls.Add(printButton);
+
+            
             this.Controls.Add(webBrowser1);
+            
             webBrowser1.Dock = DockStyle.Fill;
 
             webBrowser1.DocumentText = factu.GeneraFactura(pagoFactura, registroFactura);
 
-            // Crear una nueva instancia de SaveFileDialog.
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-
-            // Configurar el filtro para que solo se muestren los archivos PDF.
-            saveFileDialog.Filter = "PDF Files|*.pdf";
-
-            // Mostrar el cuadro de diálogo SaveFileDialog.
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                //factu.generarPdf(webBrowser1, saveFileDialog.FileName);
-            }
         }
+        private void PrintButton_Click(object sender, EventArgs e)
+        {
+            // Imprime el contenido del WebBrowser
+            webBrowser1.Print();
+        }
+
     }
 }
