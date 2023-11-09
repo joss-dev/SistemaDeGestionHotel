@@ -28,24 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             label1 = new Label();
             label2 = new Label();
-            chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            ChartTotalHab = new System.Windows.Forms.DataVisualization.Charting.Chart();
             label3 = new Label();
             label4 = new Label();
-            dateTimeFin = new DateTimePicker();
+            dateTimeHasta = new DateTimePicker();
             chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             dataGridView1 = new DataGridView();
             label5 = new Label();
             iconButton1 = new FontAwesome.Sharp.IconButton();
             label6 = new Label();
-            ((System.ComponentModel.ISupportInitialize)chart2).BeginInit();
+            dateTimePicker1 = new DateTimePicker();
+            ((System.ComponentModel.ISupportInitialize)ChartTotalHab).BeginInit();
             ((System.ComponentModel.ISupportInitialize)chart1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -55,7 +56,7 @@
             label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 27.75F, FontStyle.Underline, GraphicsUnit.Point);
-            label1.Location = new Point(123, 9);
+            label1.Location = new Point(123, 36);
             label1.Name = "label1";
             label1.Size = new Size(558, 42);
             label1.TabIndex = 1;
@@ -69,31 +70,31 @@
             label2.Size = new Size(0, 15);
             label2.TabIndex = 3;
             // 
-            // chart2
+            // ChartTotalHab
             // 
-            chart2.Anchor = AnchorStyles.None;
-            chartArea3.Name = "ChartArea1";
-            chart2.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            chart2.Legends.Add(legend3);
-            chart2.Location = new Point(106, 108);
-            chart2.Name = "chart2";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pyramid;
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            series3.YValuesPerPoint = 2;
-            chart2.Series.Add(series3);
-            chart2.Size = new Size(312, 274);
-            chart2.TabIndex = 4;
-            chart2.Text = "chart2";
+            ChartTotalHab.Anchor = AnchorStyles.None;
+            chartArea1.Name = "ChartArea1";
+            ChartTotalHab.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            ChartTotalHab.Legends.Add(legend1);
+            ChartTotalHab.Location = new Point(101, 209);
+            ChartTotalHab.Name = "ChartTotalHab";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pyramid;
+            series1.Legend = "Legend1";
+            series1.Name = "Estado de Habitaciones";
+            series1.YValuesPerPoint = 2;
+            ChartTotalHab.Series.Add(series1);
+            ChartTotalHab.Size = new Size(312, 300);
+            ChartTotalHab.TabIndex = 4;
+            ChartTotalHab.Text = "chart2";
             // 
             // label3
             // 
             label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(101, 67);
+            label3.Location = new Point(101, 124);
             label3.Name = "label3";
             label3.Size = new Size(225, 25);
             label3.TabIndex = 5;
@@ -105,35 +106,36 @@
             label4.AutoSize = true;
             label4.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             label4.ForeColor = SystemColors.ActiveCaptionText;
-            label4.Location = new Point(438, 67);
+            label4.Location = new Point(432, 124);
             label4.Name = "label4";
             label4.Size = new Size(243, 25);
             label4.TabIndex = 6;
             label4.Text = "Estado de ocupación al:";
             // 
-            // dateTimeFin
+            // dateTimeHasta
             // 
-            dateTimeFin.Anchor = AnchorStyles.None;
-            dateTimeFin.Format = DateTimePickerFormat.Short;
-            dateTimeFin.Location = new Point(643, 108);
-            dateTimeFin.Name = "dateTimeFin";
-            dateTimeFin.Size = new Size(95, 23);
-            dateTimeFin.TabIndex = 29;
+            dateTimeHasta.Anchor = AnchorStyles.None;
+            dateTimeHasta.Format = DateTimePickerFormat.Short;
+            dateTimeHasta.Location = new Point(101, 162);
+            dateTimeHasta.Name = "dateTimeHasta";
+            dateTimeHasta.Size = new Size(95, 23);
+            dateTimeHasta.TabIndex = 29;
+            dateTimeHasta.ValueChanged += CambiarPyramidHabitaciones;
             // 
             // chart1
             // 
             chart1.Anchor = AnchorStyles.None;
-            chartArea4.Name = "ChartArea1";
-            chart1.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            chart1.Legends.Add(legend4);
-            chart1.Location = new Point(438, 152);
+            chartArea2.Name = "ChartArea1";
+            chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            chart1.Legends.Add(legend2);
+            chart1.Location = new Point(438, 209);
             chart1.Name = "chart1";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            chart1.Series.Add(series4);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            chart1.Series.Add(series2);
             chart1.Size = new Size(300, 300);
             chart1.TabIndex = 0;
             chart1.Text = "chart1";
@@ -142,7 +144,7 @@
             // 
             dataGridView1.Anchor = AnchorStyles.None;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(101, 530);
+            dataGridView1.Location = new Point(101, 621);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.ShowCellToolTips = false;
@@ -154,7 +156,7 @@
             label5.Anchor = AnchorStyles.Left;
             label5.AutoSize = true;
             label5.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(101, 502);
+            label5.Location = new Point(101, 593);
             label5.Name = "label5";
             label5.Size = new Size(237, 25);
             label5.TabIndex = 31;
@@ -172,7 +174,7 @@
             iconButton1.IconColor = Color.Black;
             iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton1.ImageAlign = ContentAlignment.TopCenter;
-            iconButton1.Location = new Point(683, 687);
+            iconButton1.Location = new Point(668, 777);
             iconButton1.Name = "iconButton1";
             iconButton1.Size = new Size(55, 50);
             iconButton1.TabIndex = 64;
@@ -185,11 +187,20 @@
             label6.Anchor = AnchorStyles.None;
             label6.AutoSize = true;
             label6.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(664, 773);
+            label6.Location = new Point(664, 830);
             label6.Name = "label6";
             label6.Size = new Size(64, 24);
             label6.TabIndex = 63;
             label6.Text = "Volver";
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Anchor = AnchorStyles.None;
+            dateTimePicker1.Format = DateTimePickerFormat.Short;
+            dateTimePicker1.Location = new Point(438, 162);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(95, 23);
+            dateTimePicker1.TabIndex = 65;
             // 
             // ReporteHabitaciones
             // 
@@ -197,15 +208,16 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             BackColor = Color.LightGreen;
-            ClientSize = new Size(800, 749);
+            ClientSize = new Size(800, 862);
+            Controls.Add(dateTimePicker1);
             Controls.Add(iconButton1);
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(dataGridView1);
-            Controls.Add(dateTimeFin);
+            Controls.Add(dateTimeHasta);
             Controls.Add(label4);
             Controls.Add(label3);
-            Controls.Add(chart2);
+            Controls.Add(ChartTotalHab);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(chart1);
@@ -213,7 +225,7 @@
             Name = "ReporteHabitaciones";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ReporteHabitaciones";
-            ((System.ComponentModel.ISupportInitialize)chart2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ChartTotalHab).EndInit();
             ((System.ComponentModel.ISupportInitialize)chart1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
@@ -223,14 +235,15 @@
         #endregion
         private Label label1;
         private Label label2;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
+        private System.Windows.Forms.DataVisualization.Charting.Chart ChartTotalHab;
         private Label label3;
         private Label label4;
-        private DateTimePicker dateTimeFin;
+        private DateTimePicker dateTimeHasta;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private DataGridView dataGridView1;
         private Label label5;
         private FontAwesome.Sharp.IconButton iconButton1;
         private Label label6;
+        private DateTimePicker dateTimePicker1;
     }
 }
