@@ -31,6 +31,11 @@ namespace SistemaDeGestionHotel.Controllers
             return d_registro.GetRegistros();
         }
 
+        public List<Registro> GetRegistrosSinServicios()
+        {
+            return d_registro.GetRegistrosSinServicios();
+        }
+
         public Registro GetRegistroByID(int id)
         {
             return d_registro.GetRegistroByID(id);

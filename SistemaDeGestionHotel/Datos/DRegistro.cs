@@ -50,6 +50,13 @@ namespace SistemaDeGestionHotel.Datos
                 .ToList();
         }
 
+        public List<Registro> GetRegistrosSinServicios()
+        {
+            this.ReloadAllEntities();
+            return dbHotelParana.Registros
+            .ToList();
+        }
+
         public Registro GetRegistroByID(int id)
         {
             this.ReloadAllEntities();

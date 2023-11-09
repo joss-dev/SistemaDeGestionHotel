@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualBasic;
 using SistemaDeGestionHotel.Controllers;
+using SistemaDeGestionHotel.Datos;
 using SistemaDeGestionHotel.NEntidades;
 using System;
 using System.Collections.Generic;
@@ -22,10 +23,7 @@ namespace SistemaDeGestionHotel.views.Reportes
     {
 
         HabitacionController habController = new HabitacionController();
-        RegistroController registroController = new RegistroController();
-        int totalHabitaciones = 0;
-
-
+        RegistroController regController = new RegistroController();
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -49,52 +47,84 @@ namespace SistemaDeGestionHotel.views.Reportes
             }
         }
 
-        private void CambiarPyramidHabitaciones(object sender, EventArgs e)
+        private void ActualizarGraficoPyramid(object sender, EventArgs e)
         {
+            // Declarar e inicializar la variable habitacion
             List<Habitacion> habitacion = habController.GetHabitaciones();
-            List<Registro> registro = new RegistroController().GetRegistros();
 
-            // Obtén la fecha seleccionada del DateTimePicker
-            DateTime fechaSeleccionada = dateTimeHasta.Value.Date;
+            // Obtener resultados de la consulta LINQ
+            var resultados = habitacion
+                .GroupBy(h => h.IdEstadoNavigation.NombEstado)
+                .Select(g => new { Estado = g.Key, Total = g.Count() })
+                .ToList();
 
-            totalHabitaciones = habController.GetHabitaciones()
-            .Where(h => h.IdEstado != 5)
-            .Count();
+            // Calcular el total de todas las habitaciones
+            var totalTodasLasHabitaciones = habitacion.Count();
 
-            // Consulta para contar todas las habitaciones
-            var resultadoConsulta = from h in habitacion
-                                    join r in registro on h.IdHabitacion equals r.NroHabitacion
-                                    where DateTime.Today >= r.FechaIngreso.Date && DateTime.Today <= r.FechaSalida.Date
-                                    select h;
+            // Calcular porcentaje para cada estado
+            var resultadosConPorcentaje = resultados.Select(r => new
+            {
+                Estado = r.Estado,
+                Total = r.Total,
+                Porcentaje = (double)r.Total / totalTodasLasHabitaciones * 100
+            }).ToList();
 
-            // Asegúrate de tener una referencia a la serie "Estado de Habitaciones" en tu gráfico
-            var serieEstadoHabitaciones = ChartTotalHab.Series["Estado de Habitaciones"];
+            var serieEstadoHabitaciones = ChartTotalHab.Series["EstadoHabitaciones"];
 
-            // Establece el tipo de gráfico a Pyramid
-            serieEstadoHabitaciones.ChartType = SeriesChartType.Pyramid;
-
-            // Realiza la consulta para contar las habitaciones en cada estado
-            var habitacionesPorEstado = resultadoConsulta
-                .GroupBy(r => r.IdEstado)  // Agrupa por el estado de la habitación
-                .Select(g => new { Estado = g.Key, Cantidad = g.Count() });  // Cuenta la cantidad de habitaciones en cada estado
-
-            // Limpia las series existentes en el gráfico
+            // Borra los puntos existentes en la serie
             serieEstadoHabitaciones.Points.Clear();
 
-            // Agrega una nueva serie al gráfico
-            foreach (var estado in habitacionesPorEstado)
+            // Agrega nuevos puntos al gráfico
+            foreach (var resultado in resultadosConPorcentaje)
             {
-                // Asegúrate de ajustar la obtención de datos según la estructura real de tu objeto
-                //string nombreEstado = estado.Estado;  // Reemplaza "Estado" con la propiedad correcta
-                int cantidad = estado.Cantidad;  // Reemplaza "Cantidad" con la propiedad correcta
+                string nombreEstado = resultado.Estado;
+                double porcentaje = resultado.Porcentaje;
 
-                // Agrega un punto al gráfico con el nombre del estado y la cantidad
-                serieEstadoHabitaciones.Points.AddXY(cantidad);
+                // Agrega un punto al gráfico con el nombre del estado y el porcentaje
+                serieEstadoHabitaciones.Points.Add(new DataPoint(0, porcentaje) { AxisLabel = $"{nombreEstado} ({porcentaje:F2}%)", Tag = nombreEstado });
             }
+        }
 
-            ChartTotalHab.Update();
+        private void ActualizarGraficoChart(object sender, EventArgs e)
+        {
+            // Supongamos que tienes un control Chart llamado chart1 con una serie llamada "CantidadReservas"
+            ChartReservas.Series["CantidadReservas"].Points.Clear(); // Limpia los puntos anteriores
 
+            List<Registro> registros = regController.GetRegistrosSinServicios();
+
+            DateTime fechaInicio = DTPDesde.Value.Date;
+            DateTime fechaFin = DTPHasta.Value.Date;
+
+            // Consulta para obtener la cantidad de reservas diarias en el rango de fechas especificado
+            var reservasDiarias = registros
+                .Where(r => r.FechaIngreso >= fechaInicio && r.FechaIngreso <= fechaFin && r.EstadoOcupacion == 0)
+                .GroupBy(r => r.FechaIngreso.Date)
+                .Select(g => new
+                {
+                    Fecha = g.Key,
+                    CantidadHabitaciones = g.Select(r => r.NroHabitacion).Distinct().Count()
+                })
+                .ToList();
+
+            // Configura el Chart para mostrar las etiquetas de datos
+            ChartReservas.Series["CantidadReservas"].IsValueShownAsLabel = true;           
+
+            // Configura el eje Y para ir de 1 en 1
+            ChartReservas.ChartAreas[0].AxisY.Interval = 1;
+
+            // Configura el eje X para mostrar todas las fechas, incluso aquellas sin datos
+            ChartReservas.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
+            ChartReservas.ChartAreas[0].AxisX.MajorTickMark.Enabled = false;
+            ChartReservas.ChartAreas[0].AxisX.Interval = 1;
+
+            // Procesa los datos para configurar el Chart
+            foreach (var reservaDiaria in reservasDiarias)
+            {
+                // Añade los datos al Chart
+                ChartReservas.Series["CantidadReservas"].Points.AddXY(reservaDiaria.Fecha.ToShortDateString(), reservaDiaria.CantidadHabitaciones);
+            }
         }
     }
 }
+
 

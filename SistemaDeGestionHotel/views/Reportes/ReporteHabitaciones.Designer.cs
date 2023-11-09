@@ -39,16 +39,13 @@
             ChartTotalHab = new System.Windows.Forms.DataVisualization.Charting.Chart();
             label3 = new Label();
             label4 = new Label();
-            dateTimeHasta = new DateTimePicker();
-            chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            dataGridView1 = new DataGridView();
-            label5 = new Label();
             iconButton1 = new FontAwesome.Sharp.IconButton();
             label6 = new Label();
-            dateTimePicker1 = new DateTimePicker();
+            DTPDesde = new DateTimePicker();
+            DTPHasta = new DateTimePicker();
+            ChartReservas = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)ChartTotalHab).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)chart1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ChartReservas).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -73,19 +70,21 @@
             // ChartTotalHab
             // 
             ChartTotalHab.Anchor = AnchorStyles.None;
+            ChartTotalHab.BackColor = Color.LightSkyBlue;
+            ChartTotalHab.BorderlineColor = Color.Transparent;
             chartArea1.Name = "ChartArea1";
             ChartTotalHab.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             ChartTotalHab.Legends.Add(legend1);
-            ChartTotalHab.Location = new Point(101, 209);
+            ChartTotalHab.Location = new Point(369, 133);
             ChartTotalHab.Name = "ChartTotalHab";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pyramid;
             series1.Legend = "Legend1";
-            series1.Name = "Estado de Habitaciones";
+            series1.Name = "EstadoHabitaciones";
             series1.YValuesPerPoint = 2;
             ChartTotalHab.Series.Add(series1);
-            ChartTotalHab.Size = new Size(312, 300);
+            ChartTotalHab.Size = new Size(272, 273);
             ChartTotalHab.TabIndex = 4;
             ChartTotalHab.Text = "chart2";
             // 
@@ -94,7 +93,7 @@
             label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(101, 124);
+            label3.Location = new Point(141, 107);
             label3.Name = "label3";
             label3.Size = new Size(225, 25);
             label3.TabIndex = 5;
@@ -106,61 +105,11 @@
             label4.AutoSize = true;
             label4.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             label4.ForeColor = SystemColors.ActiveCaptionText;
-            label4.Location = new Point(432, 124);
+            label4.Location = new Point(56, 428);
             label4.Name = "label4";
-            label4.Size = new Size(243, 25);
+            label4.Size = new Size(259, 25);
             label4.TabIndex = 6;
-            label4.Text = "Estado de ocupación al:";
-            // 
-            // dateTimeHasta
-            // 
-            dateTimeHasta.Anchor = AnchorStyles.None;
-            dateTimeHasta.Format = DateTimePickerFormat.Short;
-            dateTimeHasta.Location = new Point(101, 162);
-            dateTimeHasta.Name = "dateTimeHasta";
-            dateTimeHasta.Size = new Size(95, 23);
-            dateTimeHasta.TabIndex = 29;
-            dateTimeHasta.ValueChanged += CambiarPyramidHabitaciones;
-            // 
-            // chart1
-            // 
-            chart1.Anchor = AnchorStyles.None;
-            chartArea2.Name = "ChartArea1";
-            chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            chart1.Legends.Add(legend2);
-            chart1.Location = new Point(438, 209);
-            chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            chart1.Series.Add(series2);
-            chart1.Size = new Size(300, 300);
-            chart1.TabIndex = 0;
-            chart1.Text = "chart1";
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.Anchor = AnchorStyles.None;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(101, 621);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.ShowCellToolTips = false;
-            dataGridView1.Size = new Size(640, 150);
-            dataGridView1.TabIndex = 30;
-            // 
-            // label5
-            // 
-            label5.Anchor = AnchorStyles.Left;
-            label5.AutoSize = true;
-            label5.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(101, 593);
-            label5.Name = "label5";
-            label5.Size = new Size(237, 25);
-            label5.TabIndex = 31;
-            label5.Text = "Detalle de habitaciones";
+            label4.Text = "Estado de reservas entre:";
             // 
             // iconButton1
             // 
@@ -174,7 +123,7 @@
             iconButton1.IconColor = Color.Black;
             iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton1.ImageAlign = ContentAlignment.TopCenter;
-            iconButton1.Location = new Point(668, 777);
+            iconButton1.Location = new Point(668, 784);
             iconButton1.Name = "iconButton1";
             iconButton1.Size = new Size(55, 50);
             iconButton1.TabIndex = 64;
@@ -187,20 +136,48 @@
             label6.Anchor = AnchorStyles.None;
             label6.AutoSize = true;
             label6.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(664, 830);
+            label6.Location = new Point(664, 837);
             label6.Name = "label6";
             label6.Size = new Size(64, 24);
             label6.TabIndex = 63;
             label6.Text = "Volver";
             // 
-            // dateTimePicker1
+            // DTPDesde
             // 
-            dateTimePicker1.Anchor = AnchorStyles.None;
-            dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(438, 162);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(95, 23);
-            dateTimePicker1.TabIndex = 65;
+            DTPDesde.Anchor = AnchorStyles.None;
+            DTPDesde.Format = DateTimePickerFormat.Short;
+            DTPDesde.Location = new Point(271, 473);
+            DTPDesde.Name = "DTPDesde";
+            DTPDesde.Size = new Size(95, 23);
+            DTPDesde.TabIndex = 65;
+            DTPDesde.ValueChanged += ActualizarGraficoChart;
+            // 
+            // DTPHasta
+            // 
+            DTPHasta.Anchor = AnchorStyles.None;
+            DTPHasta.Format = DateTimePickerFormat.Short;
+            DTPHasta.Location = new Point(440, 473);
+            DTPHasta.Name = "DTPHasta";
+            DTPHasta.Size = new Size(95, 23);
+            DTPHasta.TabIndex = 66;
+            DTPHasta.ValueChanged += ActualizarGraficoChart;
+            // 
+            // ChartReservas
+            // 
+            chartArea2.Name = "ChartArea1";
+            ChartReservas.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            ChartReservas.Legends.Add(legend2);
+            ChartReservas.Location = new Point(56, 504);
+            ChartReservas.Name = "ChartReservas";
+            ChartReservas.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "CantidadReservas";
+            ChartReservas.Series.Add(series2);
+            ChartReservas.Size = new Size(683, 259);
+            ChartReservas.TabIndex = 67;
+            ChartReservas.Text = "chart2";
             // 
             // ReporteHabitaciones
             // 
@@ -208,26 +185,24 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             BackColor = Color.LightGreen;
-            ClientSize = new Size(800, 862);
-            Controls.Add(dateTimePicker1);
+            ClientSize = new Size(800, 877);
+            Controls.Add(ChartReservas);
+            Controls.Add(DTPHasta);
+            Controls.Add(DTPDesde);
             Controls.Add(iconButton1);
             Controls.Add(label6);
-            Controls.Add(label5);
-            Controls.Add(dataGridView1);
-            Controls.Add(dateTimeHasta);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(ChartTotalHab);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(chart1);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
+            FormBorderStyle = FormBorderStyle.Fixed3D;
             Name = "ReporteHabitaciones";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ReporteHabitaciones";
+            Load += ActualizarGraficoPyramid;
             ((System.ComponentModel.ISupportInitialize)ChartTotalHab).EndInit();
-            ((System.ComponentModel.ISupportInitialize)chart1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ChartReservas).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -238,12 +213,13 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart ChartTotalHab;
         private Label label3;
         private Label label4;
-        private DateTimePicker dateTimeHasta;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private DataGridView dataGridView1;
         private Label label5;
         private FontAwesome.Sharp.IconButton iconButton1;
         private Label label6;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker DTPDesde;
+        private DateTimePicker DTPHasta;
+        private System.Windows.Forms.DataVisualization.Charting.Chart ChartReservas;
     }
 }
