@@ -1,4 +1,6 @@
-﻿using SistemaDeGestionHotel.Controllers;
+﻿using Microsoft.Win32;
+using SistemaDeGestionHotel.Controllers;
+using SistemaDeGestionHotel.Datos;
 using SistemaDeGestionHotel.NEntidades;
 using System;
 using System.Collections.Generic;
@@ -20,6 +22,9 @@ namespace SistemaDeGestionHotel.views.recep
         HabitacionController habitacion_controller = new HabitacionController();
         OfertaRecargoControllers ofertaRecargo_controller = new OfertaRecargoControllers();
         private TimeSpan diferencia;
+        MedioPagoController mediopago_controller = new MedioPagoController();
+        PagoController pago_controller = new PagoController();
+
 
         private Habitacion habitacionPago;
         private Registro registroPago;
@@ -29,11 +34,12 @@ namespace SistemaDeGestionHotel.views.recep
         private double? porcentajeOferta = 0;
         private double? porcentajeRecargo = 0;
         private double subtotal = 0;
+        private bool puedeFacturar = false;
 
         public gestionPagos()
         {
             InitializeComponent();
-            cbMetodoPago.SelectedIndex = 0;
+            
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -67,6 +73,7 @@ namespace SistemaDeGestionHotel.views.recep
                         }
                         else
                         {
+                            puedeFacturar = true;
                             habitacionPago = habitacion_controller.GetHabitacionByID(registroPago.NroHabitacion);
 
                             labelNombre.Text = clientePago.NombreCliente.ToString();
@@ -150,7 +157,7 @@ namespace SistemaDeGestionHotel.views.recep
             clientePago = null;
             oferta = null;
             recargo = null;
-
+            puedeFacturar = false;
             this.VaciarLabels();
         }
 
@@ -208,32 +215,78 @@ namespace SistemaDeGestionHotel.views.recep
 
         private void btnContinuar_Click(object sender, EventArgs e)
         {
-            int indiceSeleccionado = cbMetodoPago.SelectedIndex;
-
-            if (indiceSeleccionado == 0)
+            if(!puedeFacturar)
             {
-                if (oferta == null)
+                MessageBox.Show("Debe buscar un cliente por su dni", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                int indiceSeleccionado = cbMetodoPago.SelectedIndex;
+
+                if (indiceSeleccionado == 2)
                 {
-                    // Primer índice, que corresponde a "Efectivo"
-                    FormEfectivo formEfectivo = new FormEfectivo(subtotal - this.CalcularOferta(porcentajeOferta) + this.CalcularRecargo(porcentajeRecargo), recargo, registroPago);
-                    formEfectivo.ShowDialog();
-                    this.ReiniciarDatos();
+                    if (oferta == null)
+                    {
+                        // Primer índice, que corresponde a "Efectivo"
+                        FormEfectivo formEfectivo = new FormEfectivo(subtotal - this.CalcularOferta(porcentajeOferta) + this.CalcularRecargo(porcentajeRecargo), recargo, registroPago);
+                        formEfectivo.ShowDialog();
+                        this.ReiniciarDatos();
+                    }
+                    else
+                    {
+                        // Primer índice, que corresponde a "Efectivo"
+                        FormEfectivo formEfectivo = new FormEfectivo(subtotal - this.CalcularOferta(porcentajeOferta) + this.CalcularRecargo(porcentajeRecargo), oferta, registroPago);
+                        formEfectivo.ShowDialog();
+                        this.ReiniciarDatos();
+                    }
                 }
                 else
                 {
-                    // Primer índice, que corresponde a "Efectivo"
-                    FormEfectivo formEfectivo = new FormEfectivo(subtotal - this.CalcularOferta(porcentajeOferta) + this.CalcularRecargo(porcentajeRecargo), oferta, registroPago);
-                    formEfectivo.ShowDialog();
+                    if(oferta == null)
+                    {
+                        if (pago_controller.AgregarPago((subtotal - this.CalcularOferta(porcentajeOferta) + this.CalcularRecargo(porcentajeRecargo)).Value, DateTime.Now, 1, recargo?.IdOfertaRecargo, registroPago.IdRegistro, cbMetodoPago.SelectedIndex + 1))
+                        {
+                            MessageBox.Show($"El cobro se realizo correctamente! se imprimira la factura correspondiente.");
+
+                            habitacion_controller.LiberarHabitacion(registroPago.NroHabitacion);
+
+                            registro_controller.RegistrarLiberado(registroPago.IdRegistro);
+
+                            Pago pago = pago_controller.GetPagoByIDregistro(registroPago.IdRegistro);
+
+                            Form verfactura = new VerFactura(pago, registroPago);
+                            verfactura.StartPosition = FormStartPosition.CenterScreen;
+                            verfactura.ShowDialog();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Fallo el cobro", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        if (pago_controller.AgregarPago((subtotal - this.CalcularOferta(porcentajeOferta) + this.CalcularRecargo(porcentajeRecargo)).Value, DateTime.Now, 1, oferta?.IdOfertaRecargo, registroPago.IdRegistro, cbMetodoPago.SelectedIndex + 1))
+                        {
+                            MessageBox.Show($"El cobro se realizo correctamente! se imprimira la factura correspondiente.");
+
+                            habitacion_controller.LiberarHabitacion(registroPago.NroHabitacion);
+
+                            registro_controller.RegistrarLiberado(registroPago.IdRegistro);
+
+                            Pago pago = pago_controller.GetPagoByIDregistro(registroPago.IdRegistro);
+
+                            Form verfactura = new VerFactura(pago, registroPago);
+                            verfactura.StartPosition = FormStartPosition.CenterScreen;
+                            verfactura.ShowDialog();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Fallo el cobro", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
                     this.ReiniciarDatos();
                 }
-
-            }
-            else if (indiceSeleccionado == 1)
-            {
-                // Segundo índice, que corresponde a "Tarjeta de Débito"
-                FormTarjeta form = new FormTarjeta();
-                form.ShowDialog();
-            }
+            }  
         }
 
         private void label22_Click(object sender, EventArgs e)
@@ -250,6 +303,14 @@ namespace SistemaDeGestionHotel.views.recep
         {
             List<String> listaOfertas = ofertaRecargo_controller.ObtenerNombresOferta();
             List<String> listaRecargo = ofertaRecargo_controller.ObtenerNombresRecargo();
+            List<MediosPago> medioPago = mediopago_controller.ObtenerMedioPago();
+
+            foreach(MediosPago me in medioPago)
+            {
+                cbMetodoPago.Items.Add(me.Nombre);
+            }
+
+            cbMetodoPago.SelectedIndex = 0;
 
             foreach (string of in listaOfertas)
             {
@@ -307,16 +368,17 @@ namespace SistemaDeGestionHotel.views.recep
             labelOferta.Text = string.Empty;
             labelRecargo.Text = string.Empty;
 
-            if(registroPago != null)
+            if (registroPago != null)
             {
                 labelMontoTotal.Text = (subtotal - this.CalcularOferta(porcentajeOferta) + this.CalcularRecargo(porcentajeRecargo))?.ToString("N2");
             }
-            
+
         }
 
         private void ReiniciarDatos(object sender, EventArgs e)
         {
             this.ReiniciarDatos();
+            puedeFacturar = false;
         }
     }
 }

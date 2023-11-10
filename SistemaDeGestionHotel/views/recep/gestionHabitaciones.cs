@@ -11,7 +11,7 @@ namespace SistemaDeGestionHotel.views.admin
 
         HabitacionController habitacion_controller = new HabitacionController();
         private Usuario usuarioInicioSesion;
-       
+
 
         public gestionHabitaciones(Usuario usuario)
         {
@@ -87,21 +87,23 @@ namespace SistemaDeGestionHotel.views.admin
                     // Añadir el botón al panel
                     panel1.Controls.Add(boton);
 
-                    if(habitacion.IdEstado == 2)
+                    if (habitacion.IdEstado == 2)
                     {
                         // Agrega el mismo manejador de eventos Click a todos los botones
                         boton.Click += HabitacionOcupada_Click;
-                    }else if(habitacion.IdEstado == 3)
+                    }
+                    else if (habitacion.IdEstado == 3)
                     {
                         // Agrega el mismo manejador de eventos Click a todos los botones
                         boton.Click += HabitacionReservada_Click;
-                    }else if(habitacion.IdEstado == 1)
+                    }
+                    else if (habitacion.IdEstado == 1)
                     {
                         // Agrega el mismo manejador de eventos Click a todos los botones
                         boton.Click += Habitacion_Click;
                     }
 
-                    
+
 
                     // Incrementar la posición x para el siguiente botón
                     x += boton.Width + 10;
@@ -285,7 +287,7 @@ namespace SistemaDeGestionHotel.views.admin
                         // Agrega el mismo manejador de eventos Click a todos los botones
                         boton.Click += Habitacion_Click;
                     }
-                 
+
 
                     // Incrementa la posición x para el siguiente botón
                     x += boton.Width + 10;

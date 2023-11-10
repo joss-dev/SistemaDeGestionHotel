@@ -301,6 +301,7 @@
             Text = "Registraciones y Reservas";
             Activated += ActualizarHabitaciones;
             Load += gestionHabitaciones_Load;
+            Enter += ActualizarHabitaciones;
             ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();

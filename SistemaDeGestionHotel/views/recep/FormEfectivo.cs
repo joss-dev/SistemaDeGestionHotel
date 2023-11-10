@@ -70,13 +70,15 @@ namespace SistemaDeGestionHotel.views.recep
                     double? cambio = double.Parse(textBoxEfectivo.Text) - MontoTotal;
                     textBoxCambio.Text = cambio.ToString();
 
-                    habitacion_controller.LiberarHabitacion(registro.NroHabitacion);
-
-                    registro_controller.RegistrarLiberado(registro.IdRegistro);
+                    
 
                     if(pago_controller.AgregarPago(MontoTotal.Value, DateTime.Now, 1, OfertaOrecargo?.IdOfertaRecargo, registro.IdRegistro, 3))
                     {
                         MessageBox.Show($"El cobro se realizo correctamente! su cambio es : {cambio?.ToString("N2")}");
+
+                        habitacion_controller.LiberarHabitacion(registro.NroHabitacion);
+
+                        registro_controller.RegistrarLiberado(registro.IdRegistro);
 
                         Pago pago = pago_controller.GetPagoByIDregistro(registro.IdRegistro);
 

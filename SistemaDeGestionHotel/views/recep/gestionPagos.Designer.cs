@@ -578,7 +578,6 @@
             // 
             cbMetodoPago.DropDownStyle = ComboBoxStyle.DropDownList;
             cbMetodoPago.FormattingEnabled = true;
-            cbMetodoPago.Items.AddRange(new object[] { "Efectivo", "Tarjeta" });
             cbMetodoPago.Location = new Point(627, 348);
             cbMetodoPago.Name = "cbMetodoPago";
             cbMetodoPago.Size = new Size(182, 32);
