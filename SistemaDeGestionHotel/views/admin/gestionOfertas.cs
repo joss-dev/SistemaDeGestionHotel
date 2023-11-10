@@ -146,6 +146,12 @@ namespace SistemaDeGestionHotel.views.admin
 
             dataGridView2.DataSource = datosParaMostrar;
             dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView2.Columns["IdOfertaRecargo"].HeaderText = "ID";
+            dataGridView2.Columns["NombOfertaRecargo"].HeaderText = "Nombre";
+            dataGridView2.Columns["FechaDesde"].HeaderText = "Desde";
+            dataGridView2.Columns["FechaHasta"].HeaderText = "Hasta";
+            dataGridView2.Columns["PorcentajeDescuento"].HeaderText = "Descuento";
+            dataGridView2.Columns["PorcentajeRecargo"].HeaderText = "Recargo";
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -340,6 +346,14 @@ namespace SistemaDeGestionHotel.views.admin
             {
                 txtDescuento.Enabled = false;
                 txtRecargo.Enabled = false;
+            }
+        }
+
+        private void DarFormatoDataGrid(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridView2.Columns["estadoDataGridViewTextBoxColumn"].Index)
+            {
+                e.Value = (int)e.Value == 0 ? "Inactivo" : "Activo";
             }
         }
     }

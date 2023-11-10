@@ -164,6 +164,8 @@ namespace SistemaDeGestionHotel.views.admin
 
             dataGridView2.DataSource = datosParaMostrar;
             dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView2.Columns["IdMedioPago"].HeaderText = "ID";
+            dataGridView2.Columns["MedioPagoNombre"].HeaderText = "Nombre";
         }
 
         private void dataGridView2_SelectionChanged(object sender, EventArgs e)
