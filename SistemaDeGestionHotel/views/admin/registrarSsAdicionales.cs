@@ -22,8 +22,8 @@ namespace SistemaDeGestionHotel.views.admin
         {
             InitializeComponent();
 
-            dataGridView1.DataSource = servicio_controller.GetServiciosAdicionales();
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            this.CargarElDataGrid();
+
 
 
         }
@@ -33,7 +33,16 @@ namespace SistemaDeGestionHotel.views.admin
             ValidacionTextBox.ValidarTextoConEspacios(txtNombSs, errorProvider1);
         }
 
+        private void CargarElDataGrid()
+        {
 
+            List<ServiciosAdicionale> servicios = servicio_controller.GetServiciosAdicionales();
+
+            dataGridView1.DataSource = servicios;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.Columns["IdServicioAdic"].HeaderText = "ID";
+            dataGridView1.Columns["NombServicio"].HeaderText = "Nombre";
+        }
 
         private void ValidacionCosto(object sender, KeyEventArgs e)
         {
@@ -81,8 +90,7 @@ namespace SistemaDeGestionHotel.views.admin
                     MessageBox.Show("El servicio fue registrado correctamente", "Notificación", MessageBoxButtons.OK);
                     txtNombSs.Text = String.Empty;
                     txtPrecioTotal.Text = String.Empty;
-                    dataGridView1.DataSource = servicio_controller.GetServiciosAdicionales();
-                    dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    this.CargarElDataGrid();
                 }
                 else
                 {
@@ -128,8 +136,7 @@ namespace SistemaDeGestionHotel.views.admin
                             MessageBox.Show("El servicio fue editado correctamente", "Notificación", MessageBoxButtons.OK);
                             txtNombSs.Text = String.Empty;
                             txtPrecioTotal.Text = String.Empty;
-                            dataGridView1.DataSource = servicio_controller.GetServiciosAdicionales();
-                            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                            this.CargarElDataGrid();
                         }
                         else
                         {
@@ -187,8 +194,7 @@ namespace SistemaDeGestionHotel.views.admin
                         MessageBox.Show("El servicio fue deshabilitado correctamente", "Notificación", MessageBoxButtons.OK);
                         txtNombSs.Text = String.Empty;
                         txtPrecioTotal.Text = String.Empty;
-                        dataGridView1.DataSource = servicio_controller.GetServiciosAdicionales();
-                        dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                        this.CargarElDataGrid();
                     }
                     else
                     {
@@ -230,8 +236,7 @@ namespace SistemaDeGestionHotel.views.admin
                         MessageBox.Show("El servicio fue habilitado correctamente", "Notificación", MessageBoxButtons.OK);
                         txtNombSs.Text = String.Empty;
                         txtPrecioTotal.Text = String.Empty;
-                        dataGridView1.DataSource = servicio_controller.GetServiciosAdicionales();
-                        dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                        this.CargarElDataGrid();
                     }
                     else
                     {
@@ -242,6 +247,14 @@ namespace SistemaDeGestionHotel.views.admin
             else
             {
                 MessageBox.Show("No selecciono ningun servicio");
+            }
+        }
+
+        private void DarFormato(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridView1.Columns["estadoDataGridViewTextBoxColumn"].Index)
+            {
+                e.Value = (int)e.Value == 0 ? "Inactivo" : "Activo";
             }
         }
     }

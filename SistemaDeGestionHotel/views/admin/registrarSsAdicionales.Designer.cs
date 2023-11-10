@@ -201,6 +201,7 @@
             dataGridView1.Size = new Size(563, 203);
             dataGridView1.TabIndex = 50;
             dataGridView1.CellClick += CargarDataGrid;
+            dataGridView1.CellFormatting += DarFormato;
             // 
             // idServicioAdic
             // 
@@ -239,10 +240,10 @@
             label8.Anchor = AnchorStyles.None;
             label8.AutoSize = true;
             label8.BackColor = Color.LightGreen;
-            label8.Font = new Font("Arial Rounded MT Bold", 32.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.Font = new Font("Microsoft Sans Serif", 32.25F, FontStyle.Regular, GraphicsUnit.Point);
             label8.Location = new Point(72, 18);
             label8.Name = "label8";
-            label8.Size = new Size(730, 50);
+            label8.Size = new Size(664, 51);
             label8.TabIndex = 51;
             label8.Text = "Registro de Servicios Adicionales";
             // 

@@ -149,6 +149,9 @@ namespace SistemaDeGestionHotel.views.admin
 
             dataGridView1.DataSource = datosParaMostrar;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.Columns["IdConsulta"].HeaderText = "ID";
+            dataGridView1.Columns["CorreoElectronico"].HeaderText = "Correo";
+            dataGridView1.Columns["FechaMensaje"].HeaderText = "Fecha";
         }
 
         private void CargarDatos(object sender, EventArgs e)

@@ -156,7 +156,7 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { IdUsuario, Nombre, Apellido, Dni, CorreoElectronico, Direccion, NombreUsuario, Contraseña, fotoPerfil, idPerfilUsuario, Estado });
             dataGridView1.DataSource = usuarioBindingSource;
-            dataGridView1.Location = new Point(26, 565);
+            dataGridView1.Location = new Point(30, 564);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowTemplate.Height = 25;
@@ -468,10 +468,10 @@
             label12.Anchor = AnchorStyles.None;
             label12.AutoSize = true;
             label12.BackColor = Color.LightGreen;
-            label12.Font = new Font("Arial Rounded MT Bold", 32.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label12.Font = new Font("Microsoft Sans Serif", 32.25F, FontStyle.Regular, GraphicsUnit.Point);
             label12.Location = new Point(261, 41);
             label12.Name = "label12";
-            label12.Size = new Size(464, 50);
+            label12.Size = new Size(424, 51);
             label12.TabIndex = 55;
             label12.Text = "Registro de Usuarios";
             // 

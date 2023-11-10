@@ -102,7 +102,7 @@ namespace SistemaDeGestionHotel.views.admin
                     {
                         MessageBox.Show("El correo electronico no es valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                }     
+                }
             }
         }
 
@@ -267,6 +267,10 @@ namespace SistemaDeGestionHotel.views.admin
 
         private void FormatoIdPerfil(object sender, DataGridViewCellFormattingEventArgs e)
         {
+            if (e.ColumnIndex == dataGridView1.Columns["Estado"].Index)
+            {
+                e.Value = (int)e.Value == 0 ? "Inactivo" : "Activo";
+            }
             if (e.ColumnIndex == dataGridView1.Columns["IdPerfilUsuario"].Index && e.RowIndex >= 0)
             {
                 // Obtener el valor en la celda actual
