@@ -80,8 +80,8 @@ namespace SistemaDeGestionHotel
                         <tr>
                             <th class=""service""><h3>Ofertas O Recargos</h3></th>
                             <th>Porcentaje Descuento</th>
-                            <th>Porcentaje Recargo</th>
                             <th>Monto Descuento</th>
+                            <th>Porcentaje Recargo</th>
                             <th>Monto Recargo</th>
                           </tr>
                     </thead>
@@ -89,8 +89,8 @@ namespace SistemaDeGestionHotel
                         <tr>
                         <td class=""service"">{ofertaRecargo.NombOfertaRecargo}</td>
                         <td class=""unit"">{(ofertaRecargo.PorcentajeDescuento / 100)?.ToString("P")}</td>
-                        <td class=""unit"">{(ofertaRecargo.PorcentajeRecargo / 100)?.ToString("P")}</td>
                         <td class=""unit"">$ {oferta.ToString("N2")}</td>
+                        <td class=""unit"">{(ofertaRecargo.PorcentajeRecargo / 100)?.ToString("P")}</td>
                         <td class=""unit"">$ {recargo.ToString("N2")}</td>
                         </tr>
                     </tbody>
