@@ -83,8 +83,9 @@ namespace SistemaDeGestionHotel.views.Reportes
             foreach (var ventas in ventasPorMedioPago)
             {
                 int punto = chart1.Series["Ingresos"].Points.AddXY(ventas.MedioPago, ventas.Ventas);
-
+                // Muestra el valor como porcentaje
                 chart1.Series["Ingresos"].Points[punto].IsValueShownAsLabel = true;
+                chart1.Series["Ingresos"].Points[punto].Label = ventas.MedioPago + ": #PERCENT{P0}";
             }
 
 

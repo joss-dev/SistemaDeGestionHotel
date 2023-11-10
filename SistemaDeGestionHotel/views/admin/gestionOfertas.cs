@@ -296,8 +296,9 @@ namespace SistemaDeGestionHotel.views.admin
 
                 OfertasRecargo OREditar = oferta_recargoController.TraerORPorID(idOfertaRecargo);
 
+                dateTimeInicio.MinDate = OREditar.FechaDesde;
 
-
+                //error
                 txtNombre.Text = OREditar.NombOfertaRecargo;
                 dateTimeInicio.Value = OREditar.FechaDesde;
                 dateTimeFin.Value = OREditar.FechaHasta;
