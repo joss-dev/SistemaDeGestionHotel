@@ -101,6 +101,7 @@ namespace SistemaDeGestionHotel.Datos
         {
             this.ReloadAllEntities();
             return dbHotelParana.Registros
+                                  .Where(r => r.EstadoOcupacion == 1 || r.EstadoOcupacion == 0)
                                  .Include(r => r.IdClienteNavigation)
                                  .Include(h => h.NroHabitacionNavigation)
                                  .FirstOrDefault(r => r.IdCliente == idCliente);

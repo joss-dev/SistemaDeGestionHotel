@@ -43,6 +43,9 @@ namespace SistemaDeGestionHotel.views.admin
             {
                 comboBoxEstado.Items.Add(opcion2);
             }
+
+            comboBoxEstado.Enabled = false;
+            comboBoxEstado.SelectedIndex = 0;
         }
 
         private void ValidacionNroHabitacion(object sender, EventArgs e)
