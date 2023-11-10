@@ -44,7 +44,7 @@ public partial class HotelParanaContext : DbContext
     public virtual DbSet<Usuario> Usuarios { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Server=DESKTOP-G7GUADO\\SQLEXPRESS;Database=HotelParana;Integrated Security=True; TrustServerCertificate=True;");
+        => optionsBuilder.UseSqlServer("Server=LAPTOP-2ULFU3L6\\SQLEXPRESS;Database=HotelParana;Integrated Security=True; TrustServerCertificate=True;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
