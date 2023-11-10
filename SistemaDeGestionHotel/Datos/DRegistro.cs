@@ -117,7 +117,6 @@ namespace SistemaDeGestionHotel.Datos
         {
             var registro = dbHotelParana.Registros
                                 .Where(r => r.EstadoOcupacion == 1 || r.EstadoOcupacion == 0)
-                                .Include(s => s.IdServicioAdics)
                                 .FirstOrDefault(r => r.IdCliente == id);
             if(registro == null)
             {
