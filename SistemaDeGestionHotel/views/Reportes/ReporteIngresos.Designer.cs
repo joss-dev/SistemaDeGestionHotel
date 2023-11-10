@@ -37,20 +37,22 @@
             chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             CHIngresoMensual = new System.Windows.Forms.DataVisualization.Charting.Chart();
             label1 = new Label();
-            dateTimeInicio = new DateTimePicker();
-            dateTimePicker1 = new DateTimePicker();
             comboBoxMeses = new ComboBox();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)chart1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)CHIngresoMensual).BeginInit();
             SuspendLayout();
             // 
             // chart1
             // 
+            chart1.Anchor = AnchorStyles.Bottom;
             chartArea1.Name = "ChartArea1";
             chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             chart1.Legends.Add(legend1);
-            chart1.Location = new Point(248, 517);
+            chart1.Location = new Point(301, 448);
             chart1.Name = "chart1";
             chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
             series1.ChartArea = "ChartArea1";
@@ -71,13 +73,13 @@
             CHIngresoMensual.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             CHIngresoMensual.Legends.Add(legend2);
-            CHIngresoMensual.Location = new Point(23, 168);
+            CHIngresoMensual.Location = new Point(23, 102);
             CHIngresoMensual.Name = "CHIngresoMensual";
             series2.ChartArea = "ChartArea1";
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             CHIngresoMensual.Series.Add(series2);
-            CHIngresoMensual.Size = new Size(821, 300);
+            CHIngresoMensual.Size = new Size(871, 246);
             CHIngresoMensual.TabIndex = 1;
             CHIngresoMensual.Text = "chart2";
             // 
@@ -86,40 +88,54 @@
             label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 32.25F, FontStyle.Underline, GraphicsUnit.Point);
-            label1.Location = new Point(202, 77);
+            label1.Location = new Point(244, 9);
             label1.Name = "label1";
             label1.Size = new Size(411, 51);
             label1.TabIndex = 2;
             label1.Text = "Reporte de Ingresos";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // dateTimeInicio
-            // 
-            dateTimeInicio.Anchor = AnchorStyles.None;
-            dateTimeInicio.Format = DateTimePickerFormat.Short;
-            dateTimeInicio.Location = new Point(140, 474);
-            dateTimeInicio.Name = "dateTimeInicio";
-            dateTimeInicio.Size = new Size(95, 23);
-            dateTimeInicio.TabIndex = 28;
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Anchor = AnchorStyles.None;
-            dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(560, 474);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(95, 23);
-            dateTimePicker1.TabIndex = 29;
-            // 
             // comboBoxMeses
             // 
             comboBoxMeses.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxMeses.FormattingEnabled = true;
-            comboBoxMeses.Location = new Point(23, 139);
+            comboBoxMeses.Location = new Point(23, 73);
             comboBoxMeses.Name = "comboBoxMeses";
             comboBoxMeses.Size = new Size(121, 23);
             comboBoxMeses.TabIndex = 30;
             comboBoxMeses.SelectedIndexChanged += CambiarChartIngresos;
+            // 
+            // label2
+            // 
+            label2.Anchor = AnchorStyles.None;
+            label2.AutoSize = true;
+            label2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(301, 410);
+            label2.Name = "label2";
+            label2.Size = new Size(300, 20);
+            label2.TabIndex = 31;
+            label2.Text = "Reporte de Ingresos por Medio de Pago :";
+            // 
+            // label3
+            // 
+            label3.Anchor = AnchorStyles.Top;
+            label3.AutoSize = true;
+            label3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(160, 72);
+            label3.Name = "label3";
+            label3.Size = new Size(224, 20);
+            label3.TabIndex = 32;
+            label3.Text = "Reporte de Ingresos por Mes :";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(23, 50);
+            label4.Name = "label4";
+            label4.Size = new Size(145, 20);
+            label4.TabIndex = 33;
+            label4.Text = "Seleccione el mes :";
             // 
             // ReporteIngresos
             // 
@@ -128,9 +144,10 @@
             AutoScroll = true;
             BackColor = Color.LightGreen;
             ClientSize = new Size(922, 745);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label2);
             Controls.Add(comboBoxMeses);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(dateTimeInicio);
             Controls.Add(label1);
             Controls.Add(CHIngresoMensual);
             Controls.Add(chart1);
@@ -149,8 +166,9 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.DataVisualization.Charting.Chart CHIngresoMensual;
         private Label label1;
-        private DateTimePicker dateTimeInicio;
-        private DateTimePicker dateTimePicker1;
         private ComboBox comboBoxMeses;
+        private Label label2;
+        private Label label3;
+        private Label label4;
     }
 }
