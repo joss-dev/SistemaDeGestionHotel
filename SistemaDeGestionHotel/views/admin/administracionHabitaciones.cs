@@ -157,7 +157,6 @@ namespace SistemaDeGestionHotel.views.admin
         {
             var habitaciones = c_habitacion.GetHabitaciones();
 
-
             var habitacionesParaMostrar = habitaciones.Select(c => new
             {
                 IDHabitacion = c.IdHabitacion,
@@ -165,13 +164,18 @@ namespace SistemaDeGestionHotel.views.admin
                 CantidadCamas = c.CantidadCamas,
                 Precio = c.Precio,
                 NroPiso = c.IdPiso,
-                EstadoNro = c.IdEstado,
                 Estado = c.IdEstadoNavigation.NombEstado,
                 TipoHabitacion = c.IdTipoHabNavigation.NombTipo
             }).ToList();
 
             dataGridView1.DataSource = habitacionesParaMostrar;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.Columns["IDHabitacion"].HeaderText = "ID";
+            dataGridView1.Columns["NroHabitacion"].HeaderText = "Nro Habitación";
+            dataGridView1.Columns["CantidadCamas"].HeaderText = "Cant. Camas";
+            dataGridView1.Columns["NroPiso"].HeaderText = "Piso";
+            dataGridView1.Columns["TipoHabitacion"].HeaderText = "Tipo";
+
         }
 
         private void CargarDatos(object sender, EventArgs e)
