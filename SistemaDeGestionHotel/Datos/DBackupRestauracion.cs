@@ -17,32 +17,48 @@ namespace SistemaDeGestionHotel.Datos
             dbHotelParana = new HotelParanaContext();
         }
 
-        public void RealizarRespaldo(string nombreArchivoRespaldo)
+        public bool RealizarRespaldo(string nombreArchivoRespaldo)
         {
-            string nombreBaseDatos = dbHotelParana.Database.GetDbConnection().Database;
-            string comandoSql = $"BACKUP DATABASE [{nombreBaseDatos}] TO DISK = '{nombreArchivoRespaldo}'";
 
-            using (var command = dbHotelParana.Database.GetDbConnection().CreateCommand())
+            try
             {
-                command.CommandText = comandoSql;
-                dbHotelParana.Database.GetDbConnection().Open();
-                command.ExecuteNonQuery();
-                dbHotelParana.Database.GetDbConnection().Close();
+                string nombreBaseDatos = dbHotelParana.Database.GetDbConnection().Database;
+                string comandoSql = $"BACKUP DATABASE [{nombreBaseDatos}] TO DISK = '{nombreArchivoRespaldo}'";
+                using (var command = dbHotelParana.Database.GetDbConnection().CreateCommand())
+                {
+                    command.CommandText = comandoSql;
+                    dbHotelParana.Database.GetDbConnection().Open();
+                    command.ExecuteNonQuery();
+                    dbHotelParana.Database.GetDbConnection().Close();
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
             }
         }
 
-        public void RealizarRestauracion(string nombreArchivoRespaldo)
+        public bool RealizarRestauracion(string nombreArchivoRespaldo)
         {
-            string nombreBaseDatos = dbHotelParana.Database.GetDbConnection().Database;
-
-            string comandoSql = $"USE master; ALTER DATABASE {nombreBaseDatos} SET SINGLE_USER WITH ROLLBACK IMMEDIATE; RESTORE DATABASE {nombreBaseDatos} FROM DISK = '{nombreArchivoRespaldo}'";
-
-            using (var command = dbHotelParana.Database.GetDbConnection().CreateCommand())
+            try
             {
-                command.CommandText = comandoSql;
-                dbHotelParana.Database.GetDbConnection().Open();
-                command.ExecuteNonQuery();
-                dbHotelParana.Database.GetDbConnection().Close();
+                string nombreBaseDatos = dbHotelParana.Database.GetDbConnection().Database;
+
+                string comandoSql = $"USE master; ALTER DATABASE {nombreBaseDatos} SET SINGLE_USER WITH ROLLBACK IMMEDIATE; RESTORE DATABASE {nombreBaseDatos} FROM DISK = '{nombreArchivoRespaldo}'";
+
+                using (var command = dbHotelParana.Database.GetDbConnection().CreateCommand())
+                {
+                    command.CommandText = comandoSql;
+                    dbHotelParana.Database.GetDbConnection().Open();
+                    command.ExecuteNonQuery();
+                    dbHotelParana.Database.GetDbConnection().Close();
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
             }
         }
     }

@@ -11,14 +11,14 @@ namespace SistemaDeGestionHotel.Controllers
     {
         DBackupRestauracion d_backup = new DBackupRestauracion();
 
-        public void RealizarRespaldo(string nombreArchivoRespaldo)
+        public bool RealizarRespaldo(string nombreArchivoRespaldo)
         {
-            d_backup.RealizarRespaldo(nombreArchivoRespaldo);
+            return d_backup.RealizarRespaldo(nombreArchivoRespaldo);
         }
 
-        public void RealizarRestauracion(string nombreArchivoRespaldo)
+        public bool RealizarRestauracion(string nombreArchivoRespaldo)
         {
-            d_backup.RealizarRestauracion(nombreArchivoRespaldo);
+            return d_backup.RealizarRestauracion(nombreArchivoRespaldo);
         }
 
     }

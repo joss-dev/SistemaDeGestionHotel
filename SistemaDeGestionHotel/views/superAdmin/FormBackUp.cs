@@ -34,7 +34,13 @@ namespace SistemaDeGestionHotel.views.superAdmin
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string nombreArchivoRespaldo = saveFileDialog.FileName;
-                backup_controller.RealizarRespaldo(nombreArchivoRespaldo);
+                if(backup_controller.RealizarRespaldo(nombreArchivoRespaldo))
+                {
+                    MessageBox.Show("El respaldo se realizo correctamente!");
+                }else
+                {
+                    MessageBox.Show("Ocurrio un error al realizar el backup", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }

@@ -35,7 +35,13 @@ namespace SistemaDeGestionHotel.views.superAdmin
                 string nombreArchivoRespaldo = openFileDialog.FileName;
 
                 // Realizar la restauración desde el archivo seleccionado
-                backup_controller.RealizarRestauracion(nombreArchivoRespaldo);
+                if(backup_controller.RealizarRestauracion(nombreArchivoRespaldo))
+                {
+                    MessageBox.Show("La restauración se completo correctamente!");
+                }else
+                {
+                    MessageBox.Show("Ocurrio un error al realizar la restauración", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }
