@@ -50,7 +50,7 @@
             // 
             // label1
             // 
-            label1.Anchor = AnchorStyles.Top;
+            label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 27.75F, FontStyle.Underline, GraphicsUnit.Point);
             label1.Location = new Point(123, 36);
@@ -61,6 +61,7 @@
             // 
             // label2
             // 
+            label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.Location = new Point(550, 95);
             label2.Name = "label2";
@@ -164,6 +165,7 @@
             // 
             // ChartReservas
             // 
+            ChartReservas.Anchor = AnchorStyles.None;
             chartArea2.Name = "ChartArea1";
             ChartReservas.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";

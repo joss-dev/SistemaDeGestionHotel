@@ -107,7 +107,7 @@ namespace SistemaDeGestionHotel.views.Reportes
                 .ToList();
 
             // Configura el Chart para mostrar las etiquetas de datos
-            ChartReservas.Series["CantidadReservas"].IsValueShownAsLabel = true;           
+            ChartReservas.Series["CantidadReservas"].IsValueShownAsLabel = true;
 
             // Configura el eje Y para ir de 1 en 1
             ChartReservas.ChartAreas[0].AxisY.Interval = 1;
