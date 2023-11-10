@@ -52,6 +52,11 @@ namespace SistemaDeGestionHotel.Controllers
             return d_habitacion.GetHabitacionesByTipoHabitacion(idTipo);
         }
 
+        public bool ExisteNroHabitacionYpiso(int nroHabitacion, int idPiso)
+        {
+            return d_habitacion.ExisteNroHabitacionYpiso(nroHabitacion, idPiso);
+        }
+
         public List<Habitacion> GetHabitacionesByNroHabitacion(int nroHabitacion)
         {
             return d_habitacion.GetHabitacionesByNroHabitacion(nroHabitacion);

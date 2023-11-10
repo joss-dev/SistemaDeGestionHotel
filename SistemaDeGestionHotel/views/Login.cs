@@ -71,7 +71,7 @@ namespace SistemaDeGestionHotel
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void Login_Load(object sender, EventArgs e)

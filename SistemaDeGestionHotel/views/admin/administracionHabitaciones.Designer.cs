@@ -39,7 +39,6 @@
             label4 = new Label();
             label5 = new Label();
             label7 = new Label();
-            txtPiso = new TextBox();
             btnAgregarHabitac = new Button();
             label8 = new Label();
             label9 = new Label();
@@ -61,6 +60,7 @@
             label6 = new Label();
             comboBoxTipoHab = new ComboBox();
             comboBoxEstado = new ComboBox();
+            comboBoxPiso = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)habitacionBindingSource).BeginInit();
@@ -172,16 +172,6 @@
             label7.Size = new Size(41, 19);
             label7.TabIndex = 37;
             label7.Text = "Piso:";
-            // 
-            // txtPiso
-            // 
-            txtPiso.Anchor = AnchorStyles.None;
-            txtPiso.Location = new Point(344, 229);
-            txtPiso.Name = "txtPiso";
-            txtPiso.PlaceholderText = "Solo números";
-            txtPiso.Size = new Size(137, 23);
-            txtPiso.TabIndex = 38;
-            txtPiso.KeyDown += ValidacionPiso;
             // 
             // btnAgregarHabitac
             // 
@@ -384,10 +374,10 @@
             label6.Anchor = AnchorStyles.None;
             label6.AutoSize = true;
             label6.BackColor = Color.LightGreen;
-            label6.Font = new Font("Arial Rounded MT Bold", 32.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Font = new Font("Microsoft Sans Serif", 32.25F, FontStyle.Regular, GraphicsUnit.Point);
             label6.Location = new Point(109, 27);
             label6.Name = "label6";
-            label6.Size = new Size(687, 50);
+            label6.Size = new Size(621, 51);
             label6.TabIndex = 63;
             label6.Text = "Administración de habitaciones";
             // 
@@ -415,6 +405,16 @@
             comboBoxEstado.SelectedIndexChanged += comboBoxEstado_SelectedIndexChanged;
             comboBoxEstado.KeyDown += comboBoxEstado_SelectedIndexChanged;
             // 
+            // comboBoxPiso
+            // 
+            comboBoxPiso.Anchor = AnchorStyles.None;
+            comboBoxPiso.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxPiso.FormattingEnabled = true;
+            comboBoxPiso.Location = new Point(343, 232);
+            comboBoxPiso.Name = "comboBoxPiso";
+            comboBoxPiso.Size = new Size(138, 23);
+            comboBoxPiso.TabIndex = 66;
+            // 
             // administracionHabitaciones
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -422,6 +422,7 @@
             AutoScroll = true;
             BackColor = Color.LightGreen;
             ClientSize = new Size(928, 749);
+            Controls.Add(comboBoxPiso);
             Controls.Add(comboBoxEstado);
             Controls.Add(comboBoxTipoHab);
             Controls.Add(label6);
@@ -441,7 +442,6 @@
             Controls.Add(label9);
             Controls.Add(label8);
             Controls.Add(btnAgregarHabitac);
-            Controls.Add(txtPiso);
             Controls.Add(label7);
             Controls.Add(label5);
             Controls.Add(label4);
@@ -497,5 +497,6 @@
         private ComboBox comboBoxTipoHab;
         private ComboBox comboBoxEstado;
         private BindingSource habitacionBindingSource;
+        private ComboBox comboBoxPiso;
     }
 }

@@ -97,6 +97,17 @@ namespace SistemaDeGestionHotel.Datos
             return habitacionesFiltradas;
         }
 
+        public bool ExisteNroHabitacionYpiso(int nroHabitacion, int idPiso)
+        {
+            Habitacion hab = dbHotelParana.Habitacions.FirstOrDefault(p => p.NroHabitacion == nroHabitacion && p.IdPiso == idPiso);
+
+            if(hab != null)
+            {
+                return true;
+            }else { return false; }  
+
+        }
+
         public List<Habitacion> GetHabitacionesByTipoHabitacion(int idTipo)
         {
             // Obtener todas las habitaciones

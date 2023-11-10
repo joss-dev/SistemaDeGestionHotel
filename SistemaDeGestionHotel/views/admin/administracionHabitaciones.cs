@@ -20,7 +20,7 @@ namespace SistemaDeGestionHotel.views.admin
         TipoHabitacionController c_tipoHabitacion = new TipoHabitacionController();
         EstadoHabitacionController c_estadoHabitacion = new EstadoHabitacionController();
         HabitacionController c_habitacion = new HabitacionController();
-
+        PisoController c_piso = new PisoController();
         public administracionHabitaciones()
         {
             InitializeComponent();
@@ -65,11 +65,6 @@ namespace SistemaDeGestionHotel.views.admin
             ValidacionTextBox.ValidarSoloNumeros(txtCantCamas, errorProvider1);
         }
 
-        private void ValidacionPiso(object sender, EventArgs e)
-        {
-            ValidacionTextBox.ValidarSoloNumeros(txtPiso, errorProvider1);
-        }
-
         private void ValidacionCosto(object sender, EventArgs e)
         {
             ValidacionTextBox.ValidarPrecio(txtCosto, errorProvider1);
@@ -88,7 +83,7 @@ namespace SistemaDeGestionHotel.views.admin
         private void btnAgregarHabitac_Click(object sender, EventArgs e)
         {
             // Verificar si alguno de los campos está incompleto
-            if (ValidacionTextBox.ValidarNoVacio(txtNroHab, txtCantCamas, txtPiso, txtCosto))
+            if (ValidacionTextBox.ValidarNoVacio(txtNroHab, txtCantCamas, txtCosto) || comboBoxPiso.SelectedIndex < 0)
             {
                 // Mostrar un mensaje de error
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -96,22 +91,31 @@ namespace SistemaDeGestionHotel.views.admin
             }
             else
             {
-                if (c_habitacion.AgregarHabitacion(int.Parse(txtNroHab.Text), int.Parse(txtCantCamas.Text), float.Parse(txtCosto.Text), comboBoxEstado.SelectedIndex + 1, comboBoxTipoHab.SelectedIndex + 1, int.Parse(txtPiso.Text)))
+                if (!c_habitacion.ExisteNroHabitacionYpiso(int.Parse(txtNroHab.Text), comboBoxPiso.SelectedIndex + 1))
                 {
-                    MessageBox.Show("La habitación se registro correctamente!");
-                    this.CargarDatosDataGrid();
-                    txtNroHab.Text = String.Empty;
-                    txtCantCamas.Text = String.Empty;
-                    txtCosto.Text = String.Empty;
-                    txtPiso.Text = String.Empty;
-                    comboBoxEstado.SelectedIndex = 0;
-                    comboBoxTipoHab.SelectedIndex = 0;
+                    if (c_habitacion.AgregarHabitacion(int.Parse(txtNroHab.Text), int.Parse(txtCantCamas.Text), float.Parse(txtCosto.Text), comboBoxEstado.SelectedIndex + 1, comboBoxTipoHab.SelectedIndex + 1, comboBoxPiso.SelectedIndex + 1))
+                    {
+                        MessageBox.Show("La habitación se registro correctamente!");
+                        this.CargarDatosDataGrid();
+                        txtNroHab.Text = String.Empty;
+                        txtCantCamas.Text = String.Empty;
+                        txtCosto.Text = String.Empty;
+                        comboBoxPiso.SelectedIndex = 0;
+                        comboBoxEstado.SelectedIndex = 0;
+                        comboBoxTipoHab.SelectedIndex = 0;
 
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ocurrio un error al registrar la habitacion!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Ocurrio un error al registrar la habitacion!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("El nro de habitacion ya se encuentra registrada en este piso!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
+
             }
         }
 
@@ -170,6 +174,14 @@ namespace SistemaDeGestionHotel.views.admin
         private void CargarDatos(object sender, EventArgs e)
         {
             this.CargarDatosDataGrid();
+
+            List<Piso> pisos = c_piso.GetPisos();
+
+            foreach (Piso p in pisos)
+            {
+                comboBoxPiso.Items.Add(p.NroPiso);
+            }
+
         }
 
         private void CargaDatosTextBox(object sender, DataGridViewCellEventArgs e)
@@ -181,7 +193,7 @@ namespace SistemaDeGestionHotel.views.admin
 
                 // Accede a los datos de la fila y carga en los TextBox y ComboBox
                 txtNroHab.Text = row.Cells["NroHabitacion"].Value.ToString();
-                txtPiso.Text = row.Cells["NroPiso"].Value.ToString();
+                comboBoxPiso.SelectedIndex = int.Parse(row.Cells["NroPiso"].Value.ToString()) - 1;
                 txtCantCamas.Text = row.Cells["CantidadCamas"].Value.ToString();
                 txtCosto.Text = row.Cells["Precio"].Value.ToString();
                 comboBoxEstado.SelectedItem = row.Cells["Estado"].Value.ToString();
@@ -222,7 +234,7 @@ namespace SistemaDeGestionHotel.views.admin
                             txtCantCamas.Text = String.Empty;
                             txtCosto.Text = String.Empty;
                             txtNroHab.Text = String.Empty;
-                            txtPiso.Text = String.Empty;
+                            comboBoxPiso.SelectedIndex = 0;
                             comboBoxEstado.SelectedIndex = 0;
                             comboBoxTipoHab.SelectedIndex = 0;
                         }
@@ -308,7 +320,7 @@ namespace SistemaDeGestionHotel.views.admin
                             txtCantCamas.Text = String.Empty;
                             txtCosto.Text = String.Empty;
                             txtNroHab.Text = String.Empty;
-                            txtPiso.Text = String.Empty;
+                            comboBoxPiso.SelectedIndex = 0;
                             comboBoxEstado.SelectedIndex = 0;
                             comboBoxTipoHab.SelectedIndex = 0;
                         }
@@ -363,7 +375,7 @@ namespace SistemaDeGestionHotel.views.admin
                             txtCantCamas.Text = String.Empty;
                             txtCosto.Text = String.Empty;
                             txtNroHab.Text = String.Empty;
-                            txtPiso.Text = String.Empty;
+                            comboBoxPiso.SelectedIndex = 0;
                             comboBoxEstado.SelectedIndex = 0;
                             comboBoxTipoHab.SelectedIndex = 0;
                         }
@@ -387,7 +399,7 @@ namespace SistemaDeGestionHotel.views.admin
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (ValidacionTextBox.ValidarNoVacio(txtNroHab, txtCosto, txtCantCamas, txtPiso))
+            if (ValidacionTextBox.ValidarNoVacio(txtNroHab, txtCosto, txtCantCamas) || comboBoxPiso.SelectedIndex < 0)
             {
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -412,24 +424,31 @@ namespace SistemaDeGestionHotel.views.admin
                     if (ask == MsgBoxResult.Yes)
                     {
 
-                        bool result = c_habitacion.EditarHabitacion(habitacionEditar.IdHabitacion, int.Parse(txtNroHab.Text), int.Parse(txtCantCamas.Text), float.Parse(txtCosto.Text), comboBoxEstado.SelectedIndex + 1, comboBoxTipoHab.SelectedIndex + 1, int.Parse(txtPiso.Text));
-                        if (result)
+                        if (!c_habitacion.ExisteNroHabitacionYpiso(int.Parse(txtNroHab.Text), comboBoxPiso.SelectedIndex + 1))
                         {
-                            MessageBox.Show("La habitacion con ID: " + habitacionEditar.IdHabitacion.ToString() + " se edito correctamente", "Confirmado", MessageBoxButtons.OK);
+                            bool result = c_habitacion.EditarHabitacion(habitacionEditar.IdHabitacion, int.Parse(txtNroHab.Text), int.Parse(txtCantCamas.Text), float.Parse(txtCosto.Text), comboBoxEstado.SelectedIndex + 1, comboBoxTipoHab.SelectedIndex + 1, comboBoxPiso.SelectedIndex + 1);
+                            if (result)
+                            {
+                                MessageBox.Show("La habitacion con ID: " + habitacionEditar.IdHabitacion.ToString() + " se edito correctamente", "Confirmado", MessageBoxButtons.OK);
 
-                            idhab = -1;
-                            this.CargarDatosDataGrid();
-                            txtCantCamas.Text = String.Empty;
-                            txtCosto.Text = String.Empty;
-                            txtNroHab.Text = String.Empty;
-                            txtPiso.Text = String.Empty;
-                            comboBoxEstado.SelectedIndex = 0;
-                            comboBoxTipoHab.SelectedIndex = 0;
+                                idhab = -1;
+                                this.CargarDatosDataGrid();
+                                txtCantCamas.Text = String.Empty;
+                                txtCosto.Text = String.Empty;
+                                txtNroHab.Text = String.Empty;
+                                comboBoxPiso.SelectedIndex = 0;
+                                comboBoxEstado.SelectedIndex = 0;
+                                comboBoxTipoHab.SelectedIndex = 0;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Ocurrio un error");
+                            }
                         }
                         else
                         {
-                            MessageBox.Show("Ocurrio un error");
-                        }
+                            MessageBox.Show("El nro de habitacion ya se encuentra registrada en este piso!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }   
                     }
                 }
                 else
