@@ -77,28 +77,36 @@ namespace SistemaDeGestionHotel.views.admin
                 {
                     Consultum ConsultaCambioEstado = consultaController.TraerConsultaPorID(idConsulta);
 
-                    MsgBoxResult ask = (MsgBoxResult)MessageBox.Show("¿Seguro desea marcar como resuelta?", "Confirmacion", MessageBoxButtons.YesNo);
-                    if (ask == MsgBoxResult.Yes)
+                    if (ConsultaCambioEstado.Estado == 1)
                     {
-                        bool result = consultaController.ConsultaResuelta(ConsultaCambioEstado.IdConsulta);
-                        if (result)
+                        MsgBoxResult ask = (MsgBoxResult)MessageBox.Show("¿Seguro desea marcar como resuelta?", "Confirmacion", MessageBoxButtons.YesNo);
+                        if (ask == MsgBoxResult.Yes)
                         {
-                            MessageBox.Show("La consulta ha sido marcada como resuelta", "Confirmado", MessageBoxButtons.OK);
+                            bool result = consultaController.ConsultaResuelta(ConsultaCambioEstado.IdConsulta);
+                            if (result)
+                            {
+                                MessageBox.Show("La consulta ha sido marcada como resuelta", "Confirmado", MessageBoxButtons.OK);
 
-                            idConsulta = -1;
-                            this.CargarDatosDataGrid();
+                                idConsulta = -1;
+                                this.CargarDatosDataGrid();
 
-                            ConsultaCambioEstado.Estado = 0;
+                                ConsultaCambioEstado.Estado = 0;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Ocurrio un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
-                        else
-                        {
-                            MessageBox.Show("Ocurrio un error");
-                        }
+                    }else
+                    {
+                        MessageBox.Show("La consulta ya fue resuelta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+
+                    
                 }
                 else
                 {
-                    MessageBox.Show("No selecciono ningun usuario");
+                    MessageBox.Show("No seleccciono ninguna consulta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
