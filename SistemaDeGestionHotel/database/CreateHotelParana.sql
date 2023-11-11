@@ -176,6 +176,13 @@ VALUES ('Jose', 'Corrales', 39234123, 'joselo@gmail.com',1 ,'Rivadavia 1234', 's
 		('Jose', 'Candia', 43787475, 'josecandia@gmail.com', 1,'Alsina 1234', 'admin', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 'NO IMAGEN', 2),
 		('Eduardo', 'Lopez', 17567890, 'lopez@gmail.com',1 ,'Bolivar 1234', 'recep', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3', 'NO IMAGEN', 3)
 
+INSERT INTO Medios_pago(Nombre, Estado, ID_tipo_medioPago)
+VALUES ('Tarjeta de Crédito', 1, 1),
+		('Tarjeta de Débito', 1, 2),
+		('Efectivo', 1, 3),
+		('Transferencia', 1, 4);
+
+
 SELECT * FROM Perfil_usuario;
 SELECT * FROM Tipo_habitacion;
 SELECT * FROM Piso;
@@ -183,5 +190,5 @@ SELECT * FROM Estado_habitacion;
 SELECT * FROM Usuario;
 Select * FROM Medios_pago;
 SELECT * FROM Tipo_medioPago;
-SELECT * FROM Ofertas_recargo;
+
 
