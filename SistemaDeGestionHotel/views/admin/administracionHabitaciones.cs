@@ -247,19 +247,19 @@ namespace SistemaDeGestionHotel.views.admin
                         }
                         else
                         {
-                            MessageBox.Show("Ocurrio un error");
+                            MessageBox.Show("Ocurrio un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("La habitacion ya se encuentra deshabilitada");
+                        MessageBox.Show("La habitación ya se encuentra deshabilitada", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
                 }
             }
             else
             {
-                MessageBox.Show("No selecciono ninguna habitacion");
+                MessageBox.Show("No selecciono la habitación", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -333,19 +333,19 @@ namespace SistemaDeGestionHotel.views.admin
                         }
                         else
                         {
-                            MessageBox.Show("Ocurrio un error");
+                            MessageBox.Show("Ocurrio un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("La habitacion ya se encuentra habilitada");
+                        MessageBox.Show("La habitacion ya se encuentra habilitada", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
                 }
             }
             else
             {
-                MessageBox.Show("No selecciono ninguna habitacion");
+                MessageBox.Show("No selecciono la habitación", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -388,19 +388,19 @@ namespace SistemaDeGestionHotel.views.admin
                         }
                         else
                         {
-                            MessageBox.Show("Ocurrio un error");
+                            MessageBox.Show("Ocurrio un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("La habitacion ya se encuentra eliminada");
+                        MessageBox.Show("La habitacion ya se encuentra eliminada", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
                 }
             }
             else
             {
-                MessageBox.Show("No selecciono ninguna habitacion");
+                MessageBox.Show("No selecciono la habitación", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -460,7 +460,7 @@ namespace SistemaDeGestionHotel.views.admin
                 }
                 else
                 {
-                    MessageBox.Show("No selecciono ninguna habitacion");
+                    MessageBox.Show("No selecciono la habitación", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

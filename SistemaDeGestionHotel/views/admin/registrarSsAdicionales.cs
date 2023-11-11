@@ -182,24 +182,30 @@ namespace SistemaDeGestionHotel.views.admin
             {
                 ServiciosAdicionale servicioBaja = servicio_controller.GetServicioAdicionalByID(idServicio);
 
-                MsgBoxResult ask = (MsgBoxResult)MessageBox.Show("Seguro desea deshabilitar este Servicio?", "Confirmacion de edición", MessageBoxButtons.YesNo);
-
-                if (ask == MsgBoxResult.Yes)
+                if(servicioBaja.Estado == 1)
                 {
-                    bool result = servicio_controller.BajaServicioAdicional(servicioBaja.IdServicioAdic);
+                    MsgBoxResult ask = (MsgBoxResult)MessageBox.Show("Seguro desea deshabilitar este Servicio?", "Confirmacion de edición", MessageBoxButtons.YesNo);
 
-                    if (result)
+                    if (ask == MsgBoxResult.Yes)
                     {
-                        idServicio = -1;
-                        MessageBox.Show("El servicio fue deshabilitado correctamente", "Notificación", MessageBoxButtons.OK);
-                        txtNombSs.Text = String.Empty;
-                        txtPrecioTotal.Text = String.Empty;
-                        this.CargarElDataGrid();
+                        bool result = servicio_controller.BajaServicioAdicional(servicioBaja.IdServicioAdic);
+
+                        if (result)
+                        {
+                            idServicio = -1;
+                            MessageBox.Show("El servicio fue deshabilitado correctamente", "Notificación", MessageBoxButtons.OK);
+                            txtNombSs.Text = String.Empty;
+                            txtPrecioTotal.Text = String.Empty;
+                            this.CargarElDataGrid();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ocurrio un error al deshabilitar el servicio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
-                    else
-                    {
-                        MessageBox.Show("Ocurrio un error al deshabilitar el servicio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                }else 
+                {
+                    MessageBox.Show("El servicio ya se encuentra deshabilitado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
@@ -224,24 +230,31 @@ namespace SistemaDeGestionHotel.views.admin
             {
                 ServiciosAdicionale servicioAlta = servicio_controller.GetServicioAdicionalByID(idServicio);
 
-                MsgBoxResult ask = (MsgBoxResult)MessageBox.Show("Seguro desea habilitar este Servicio?", "Confirmacion de edición", MessageBoxButtons.YesNo);
-
-                if (ask == MsgBoxResult.Yes)
+                if(servicioAlta.Estado == 0)
                 {
-                    bool result = servicio_controller.AltaServicioAdicional(servicioAlta.IdServicioAdic);
 
-                    if (result)
+                    MsgBoxResult ask = (MsgBoxResult)MessageBox.Show("Seguro desea habilitar este Servicio?", "Confirmacion de edición", MessageBoxButtons.YesNo);
+
+                    if (ask == MsgBoxResult.Yes)
                     {
-                        idServicio = -1;
-                        MessageBox.Show("El servicio fue habilitado correctamente", "Notificación", MessageBoxButtons.OK);
-                        txtNombSs.Text = String.Empty;
-                        txtPrecioTotal.Text = String.Empty;
-                        this.CargarElDataGrid();
+                        bool result = servicio_controller.AltaServicioAdicional(servicioAlta.IdServicioAdic);
+
+                        if (result)
+                        {
+                            idServicio = -1;
+                            MessageBox.Show("El servicio fue habilitado correctamente", "Notificación", MessageBoxButtons.OK);
+                            txtNombSs.Text = String.Empty;
+                            txtPrecioTotal.Text = String.Empty;
+                            this.CargarElDataGrid();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ocurrio un error al habilitar el servicio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
-                    else
-                    {
-                        MessageBox.Show("Ocurrio un error al habilitar el servicio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                }else
+                {
+                    MessageBox.Show("El servicio ya se encuentra habilitado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else

@@ -81,22 +81,30 @@ namespace SistemaDeGestionHotel.views.admin
                 MessageBox.Show("Hubo un error al registrar el medio de pago", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            dataGridView2.DataSource = Medio_pagoController.ObtenerMedioPago();
+            this.CargarDatosDataGrid();
         }
 
         public void CargarDataGrid(object sender, EventArgs e)
         {
-            var mediosPago = Medio_pagoController.ObtenerMedioPago();
+            this.CargarDatosDataGrid();
+        }
 
-            var datosParaMostrar = mediosPago.Select(mp => new
+        private void CargarDatosDataGrid()
+        {
+            var tipoMediosPago = Medio_pagoController.ObtenerMedioPago();
+
+            var datosParaMostrar = tipoMediosPago.Select(c => new
             {
-                IdMedioPago = mp.IdMedioPago,
-                Nombre = mp.Nombre,
-                Tipo_medioPago = mp.IdTipoMedioPagoNavigation.NombMedioPago,
-                Estado_MP = mp.Estado == 1 ? "Activo" : "Desactivado"
+                IdMedioPago = c.IdMedioPago,
+                Nombre = c.Nombre,
+                MedioPagoNombre = c.IdTipoMedioPagoNavigation.NombMedioPago,
+                Estado = c.Estado == 1 ? "Activo" : "Inactivo"
             }).ToList();
 
-            this.CargarDatosDataGrid();
+            dataGridView2.DataSource = datosParaMostrar;
+            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView2.Columns["IdMedioPago"].HeaderText = "ID";
+            dataGridView2.Columns["MedioPagoNombre"].HeaderText = "Nombre";
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -150,23 +158,7 @@ namespace SistemaDeGestionHotel.views.admin
         }
 
 
-        private void CargarDatosDataGrid()
-        {
-            var tipoMediosPago = Medio_pagoController.ObtenerMedioPago();
 
-            var datosParaMostrar = tipoMediosPago.Select(c => new
-            {
-                IdMedioPago = c.IdMedioPago,
-                Nombre = c.Nombre,
-                MedioPagoNombre = c.IdTipoMedioPagoNavigation.NombMedioPago,
-                Estado = c.Estado == 1 ? "Activo" : "Inactivo"
-            }).ToList();
-
-            dataGridView2.DataSource = datosParaMostrar;
-            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView2.Columns["IdMedioPago"].HeaderText = "ID";
-            dataGridView2.Columns["MedioPagoNombre"].HeaderText = "Nombre";
-        }
 
         private void dataGridView2_SelectionChanged(object sender, EventArgs e)
         {
@@ -249,6 +241,22 @@ namespace SistemaDeGestionHotel.views.admin
 
                 // Cerrar el formulario secundario
                 this.Close();
+            }
+        }
+
+        private void CargarTextsBoxs(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.RowIndex < dataGridView2.Rows.Count)
+            {
+                int rowIndex = e.RowIndex;  // Utilizar el índice proporcionado por el evento
+                DataGridViewRow row = dataGridView2.Rows[rowIndex];
+                int idMedioPago = int.Parse(row.Cells["IdMedioPago"].Value.ToString());
+
+                MediosPago meediopago = Medio_pagoController.TraerMPPorID(idMedioPago);
+
+                txtNombMP.Text = meediopago.Nombre.ToString();
+                comboBoxEstadoMP.SelectedIndex = meediopago.Estado;
+                comboBoxTipoMP.SelectedIndex = meediopago.IdTipoMedioPago - 1;
             }
         }
     }

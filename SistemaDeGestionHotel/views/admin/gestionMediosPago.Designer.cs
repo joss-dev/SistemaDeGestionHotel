@@ -57,10 +57,10 @@
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.BackColor = Color.Aquamarine;
-            label1.Font = new Font("Arial Rounded MT Bold", 32.25F, FontStyle.Underline, GraphicsUnit.Point);
+            label1.Font = new Font("Microsoft Sans Serif", 32.25F, FontStyle.Underline, GraphicsUnit.Point);
             label1.Location = new Point(105, 66);
             label1.Name = "label1";
-            label1.Size = new Size(609, 50);
+            label1.Size = new Size(564, 51);
             label1.TabIndex = 22;
             label1.Text = "Registro de Medios de Pago";
             // 
@@ -140,6 +140,7 @@
             dataGridView2.RowTemplate.Height = 25;
             dataGridView2.Size = new Size(701, 135);
             dataGridView2.TabIndex = 43;
+            dataGridView2.CellClick += CargarTextsBoxs;
             // 
             // mediosPagoBindingSource
             // 
