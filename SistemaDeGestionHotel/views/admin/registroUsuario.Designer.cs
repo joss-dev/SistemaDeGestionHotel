@@ -73,6 +73,8 @@
             comboBoxTipoPerfil = new ComboBox();
             btnLimpiar = new Button();
             openFileDialogFotoPerfil = new OpenFileDialog();
+            label14 = new Label();
+            btnActivar = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)usuarioBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxUsuario).BeginInit();
@@ -156,7 +158,7 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { IdUsuario, Nombre, Apellido, Dni, CorreoElectronico, Direccion, NombreUsuario, Contraseña, fotoPerfil, idPerfilUsuario, Estado });
             dataGridView1.DataSource = usuarioBindingSource;
-            dataGridView1.Location = new Point(30, 564);
+            dataGridView1.Location = new Point(34, 564);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowTemplate.Height = 25;
@@ -359,7 +361,7 @@
             btnEliminar.BackColor = Color.PaleGreen;
             btnEliminar.FlatStyle = FlatStyle.Popup;
             btnEliminar.Image = Properties.Resources.eliminar;
-            btnEliminar.Location = new Point(675, 458);
+            btnEliminar.Location = new Point(767, 458);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(71, 71);
             btnEliminar.TabIndex = 45;
@@ -371,7 +373,7 @@
             label9.Anchor = AnchorStyles.None;
             label9.AutoSize = true;
             label9.Font = new Font("Yu Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label9.Location = new Point(681, 530);
+            label9.Location = new Point(777, 530);
             label9.Name = "label9";
             label9.Size = new Size(61, 17);
             label9.TabIndex = 46;
@@ -508,12 +510,39 @@
             // 
             openFileDialogFotoPerfil.FileName = "openFileDialogFotoPerfil";
             // 
+            // label14
+            // 
+            label14.Anchor = AnchorStyles.None;
+            label14.AutoSize = true;
+            label14.Font = new Font("Yu Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label14.Location = new Point(676, 531);
+            label14.Name = "label14";
+            label14.Size = new Size(53, 17);
+            label14.TabIndex = 59;
+            label14.Text = "Activar";
+            label14.UseWaitCursor = true;
+            // 
+            // btnActivar
+            // 
+            btnActivar.Anchor = AnchorStyles.None;
+            btnActivar.BackColor = Color.PaleGreen;
+            btnActivar.FlatStyle = FlatStyle.Popup;
+            btnActivar.Image = Properties.Resources.on;
+            btnActivar.Location = new Point(666, 459);
+            btnActivar.Name = "btnActivar";
+            btnActivar.Size = new Size(71, 71);
+            btnActivar.TabIndex = 58;
+            btnActivar.UseVisualStyleBackColor = false;
+            btnActivar.Click += btnActivar_Click;
+            // 
             // registroUsuario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightGreen;
             ClientSize = new Size(972, 700);
+            Controls.Add(label14);
+            Controls.Add(btnActivar);
             Controls.Add(btnLimpiar);
             Controls.Add(comboBoxTipoPerfil);
             Controls.Add(label12);
@@ -600,5 +629,7 @@
         private DataGridViewTextBoxColumn fotoPerfil;
         private DataGridViewTextBoxColumn idPerfilUsuario;
         private DataGridViewTextBoxColumn Estado;
+        private Label label14;
+        private Button btnActivar;
     }
 }

@@ -343,30 +343,95 @@ namespace SistemaDeGestionHotel.views.admin
             {
                 Usuario usuarioBaja = usuario_controller.GetUsuarioByID(idUsuario);
 
-                MsgBoxResult ask = (MsgBoxResult)MessageBox.Show("Seguro desea dar de baja el usuario con DNI: " + usuarioBaja.Dni.ToString() + "?", "Confirmacion de edición", MessageBoxButtons.YesNo);
-                if (ask == MsgBoxResult.Yes)
+                if (usuarioBaja.Estado == 0)
                 {
-                    bool result = usuario_controller.BajaUsuario(usuarioBaja.IdUsuario);
-                    if (result)
+                    MessageBox.Show("El usuario ya se encuentra eliminado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+
+                    MsgBoxResult ask = (MsgBoxResult)MessageBox.Show("Seguro desea dar de baja el usuario con DNI: " + usuarioBaja.Dni.ToString() + "?", "Confirmacion de edición", MessageBoxButtons.YesNo);
+                    if (ask == MsgBoxResult.Yes)
                     {
-                        MessageBox.Show("El Usuario con DNI: " + usuarioBaja.Dni.ToString() + " se dio de baja correctamente", "Confirmado", MessageBoxButtons.OK);
+                        bool result = usuario_controller.BajaUsuario(usuarioBaja.IdUsuario);
+                        if (result)
+                        {
+                            MessageBox.Show("El Usuario con DNI: " + usuarioBaja.Dni.ToString() + " se dio de baja correctamente", "Confirmado", MessageBoxButtons.OK);
 
-                        idUsuario = -1;
-                        dataGridView1.DataSource = usuario_controller.GetUsuarios();
+                            idUsuario = -1;
+                            dataGridView1.DataSource = usuario_controller.GetUsuarios();
 
-                        txtApellido.Text = string.Empty;
-                        txtNombre.Text = string.Empty;
-                        txtDNI.Text = string.Empty;
-                        txtCorreoElec.Text = string.Empty;
-                        txtDireccion.Text = string.Empty;
-                        txtUserName.Text = string.Empty;
-                        txtPass.Text = string.Empty;
-                        // Para restablecer el ComboBox a la opción predeterminada
-                        comboBoxTipoPerfil.SelectedItem = 0;
+                            txtApellido.Text = string.Empty;
+                            txtNombre.Text = string.Empty;
+                            txtDNI.Text = string.Empty;
+                            txtCorreoElec.Text = string.Empty;
+                            txtDireccion.Text = string.Empty;
+                            txtUserName.Text = string.Empty;
+                            txtPass.Text = string.Empty;
+                            // Para restablecer el ComboBox a la opción predeterminada
+                            comboBoxTipoPerfil.SelectedItem = 0;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ocurrio un error");
+                        }
                     }
-                    else
+                }
+            }
+            else
+            {
+                MessageBox.Show("No selecciono ningun usuario");
+            }
+        }
+
+        private void btnActivar_Click(object sender, EventArgs e)
+        {
+            int idUsuario = -1; // Valor predeterminado si no se selecciona ningún usuario
+
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                // Si al menos una fila está seleccionada, obtén el índice de la primera fila seleccionada
+                int rowIndex = dataGridView1.SelectedRows[0].Index;
+
+                DataGridViewRow row = dataGridView1.Rows[rowIndex];
+                idUsuario = int.Parse(row.Cells["IdUsuario"].Value.ToString());
+            }
+            if (idUsuario != -1)
+            {
+                Usuario usuarioBaja = usuario_controller.GetUsuarioByID(idUsuario);
+
+                if (usuarioBaja.Estado == 1)
+                {
+                    MessageBox.Show("El usuario ya se encuentra activado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+
+                    MsgBoxResult ask = (MsgBoxResult)MessageBox.Show("Seguro desea dar de alta el usuario con DNI: " + usuarioBaja.Dni.ToString() + "?", "Confirmacion de edición", MessageBoxButtons.YesNo);
+                    if (ask == MsgBoxResult.Yes)
                     {
-                        MessageBox.Show("Ocurrio un error");
+                        bool result = usuario_controller.AltaUsuario(usuarioBaja.IdUsuario);
+                        if (result)
+                        {
+                            MessageBox.Show("El Usuario con DNI: " + usuarioBaja.Dni.ToString() + " se dio de alta correctamente", "Confirmado", MessageBoxButtons.OK);
+
+                            idUsuario = -1;
+                            dataGridView1.DataSource = usuario_controller.GetUsuarios();
+
+                            txtApellido.Text = string.Empty;
+                            txtNombre.Text = string.Empty;
+                            txtDNI.Text = string.Empty;
+                            txtCorreoElec.Text = string.Empty;
+                            txtDireccion.Text = string.Empty;
+                            txtUserName.Text = string.Empty;
+                            txtPass.Text = string.Empty;
+                            // Para restablecer el ComboBox a la opción predeterminada
+                            comboBoxTipoPerfil.SelectedItem = 0;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ocurrio un error");
+                        }
                     }
                 }
             }

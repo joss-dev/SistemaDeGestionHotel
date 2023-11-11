@@ -113,5 +113,23 @@ namespace SistemaDeGestionHotel.Controllers
             return true;
         }
 
+        public bool AltaUsuario(int idUsuario)
+        {
+
+            Usuario usuarioExistente = d_usuario.GetUsuarioByID(idUsuario);
+
+            if (usuarioExistente == null)
+            {
+                // El usuario no existe, por lo tanto no se puede editar
+                return false;
+            }
+
+
+            usuarioExistente.Estado = 1;
+
+            d_usuario.GuardarCambios();
+
+            return true;
+        }
     }
 }
