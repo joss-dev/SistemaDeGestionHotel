@@ -34,7 +34,11 @@ namespace SistemaDeGestionHotel.views.superAdmin
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string nombreArchivoRespaldo = saveFileDialog.FileName;
-                if(backup_controller.RealizarRespaldo(nombreArchivoRespaldo))
+
+                nombreArchivoRespaldo = Path.Combine(Path.GetDirectoryName(nombreArchivoRespaldo),
+            Path.GetFileNameWithoutExtension(nombreArchivoRespaldo) + "_" + DateTime.Now.ToString("yyyy-MM-dd") + Path.GetExtension(nombreArchivoRespaldo));
+
+                if (backup_controller.RealizarRespaldo(nombreArchivoRespaldo))
                 {
                     MessageBox.Show("El respaldo se realizo correctamente!");
                 }else
