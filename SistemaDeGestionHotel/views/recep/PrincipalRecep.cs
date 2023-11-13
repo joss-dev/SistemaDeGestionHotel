@@ -1,9 +1,7 @@
 ﻿using FontAwesome.Sharp;
+using SistemaDeGestionHotel.NEntidades;
 using SistemaDeGestionHotel.views.admin;
 using SistemaDeGestionHotel.views.recep;
-using System.Drawing.Text;
-using SistemaDeGestionHotel.views;
-using SistemaDeGestionHotel.NEntidades;
 
 namespace SistemaDeGestionHotel
 {
