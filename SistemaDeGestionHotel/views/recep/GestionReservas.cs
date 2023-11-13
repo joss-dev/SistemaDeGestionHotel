@@ -57,7 +57,7 @@ namespace SistemaDeGestionHotel.views.recep
                     else
                     {
                         registroBuscado = registro_controller.GetRegistroByIDCliente(clienteBuscado.IdCliente);
-                        if (registroBuscado == null || registroBuscado.EstadoOcupacion == 1)
+                        if (registroBuscado == null || registroBuscado.EstadoOcupacion == 1 || registroBuscado.EstadoOcupacion == 3)
                         {
                             MessageBox.Show("Este dni no tiene asociado una reserva", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
@@ -83,7 +83,7 @@ namespace SistemaDeGestionHotel.views.recep
 
                         }
                     }
-                }        
+                }
             }
         }
 
@@ -108,7 +108,7 @@ namespace SistemaDeGestionHotel.views.recep
 
         private void btnConfirmaLLegada_Click(object sender, EventArgs e)
         {
-            if(registroBuscado == null)
+            if (registroBuscado == null)
             {
                 MessageBox.Show("Primero debe buscar el Dni del cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -148,6 +148,31 @@ namespace SistemaDeGestionHotel.views.recep
 
                 }
             }
+        }
+
+        private void BtnCancelarReserva_Click(object sender, EventArgs e)
+        {
+            if (registroBuscado == null)
+            {
+                MessageBox.Show("Primero debe buscar el Dni del cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                MsgBoxResult result = (MsgBoxResult)MessageBox.Show("¿Está seguro de que desea cancelar esta reserva?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                if (result == MsgBoxResult.Yes)
+                {
+                    bool resil = registro_controller.DarBajaReserva(registroBuscado.IdRegistro);
+                    if (resil)
+                    {
+                        habitacion_controller.LiberarHabitacion(registroBuscado.NroHabitacion);
+                        MessageBox.Show("La reserva fue cancelada correctamente!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al cancelar la reserva", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            } 
         }
     }
 }

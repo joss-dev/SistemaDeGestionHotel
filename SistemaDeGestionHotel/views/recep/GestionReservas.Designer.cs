@@ -62,6 +62,7 @@
             label10 = new Label();
             label12 = new Label();
             btnCancelar = new Button();
+            BtnCancelarReserva = new Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProviderNumero).BeginInit();
             groupBox2.SuspendLayout();
@@ -256,11 +257,11 @@
             btnConfirmaLLegada.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnConfirmaLLegada.Image = Properties.Resources.btn_guardar_;
             btnConfirmaLLegada.ImageAlign = ContentAlignment.TopCenter;
-            btnConfirmaLLegada.Location = new Point(546, 621);
+            btnConfirmaLLegada.Location = new Point(680, 623);
             btnConfirmaLLegada.Name = "btnConfirmaLLegada";
-            btnConfirmaLLegada.Size = new Size(104, 90);
+            btnConfirmaLLegada.Size = new Size(104, 99);
             btnConfirmaLLegada.TabIndex = 26;
-            btnConfirmaLLegada.Text = "Registrar ";
+            btnConfirmaLLegada.Text = "Registrar Estadía";
             btnConfirmaLLegada.TextAlign = ContentAlignment.BottomCenter;
             btnConfirmaLLegada.UseVisualStyleBackColor = false;
             btnConfirmaLLegada.Click += btnConfirmaLLegada_Click;
@@ -426,21 +427,40 @@
             // btnCancelar
             // 
             btnCancelar.Anchor = AnchorStyles.None;
-            btnCancelar.BackColor = Color.LightCoral;
+            btnCancelar.BackColor = Color.Snow;
             btnCancelar.Cursor = Cursors.Hand;
             btnCancelar.FlatAppearance.BorderSize = 0;
             btnCancelar.FlatStyle = FlatStyle.Popup;
             btnCancelar.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCancelar.Image = Properties.Resources.btnCancelar;
+            btnCancelar.Image = Properties.Resources.cancelar;
             btnCancelar.ImageAlign = ContentAlignment.TopCenter;
-            btnCancelar.Location = new Point(211, 625);
+            btnCancelar.Location = new Point(108, 623);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(104, 90);
+            btnCancelar.Size = new Size(104, 108);
             btnCancelar.TabIndex = 34;
-            btnCancelar.Text = "Cancelar";
+            btnCancelar.Text = "Limpiar Campos";
             btnCancelar.TextAlign = ContentAlignment.BottomCenter;
             btnCancelar.UseVisualStyleBackColor = false;
             btnCancelar.Click += btnCancelar_Click;
+            // 
+            // BtnCancelarReserva
+            // 
+            BtnCancelarReserva.Anchor = AnchorStyles.None;
+            BtnCancelarReserva.BackColor = Color.LightCoral;
+            BtnCancelarReserva.Cursor = Cursors.Hand;
+            BtnCancelarReserva.FlatAppearance.BorderSize = 0;
+            BtnCancelarReserva.FlatStyle = FlatStyle.Popup;
+            BtnCancelarReserva.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            BtnCancelarReserva.Image = Properties.Resources.btnCancelar;
+            BtnCancelarReserva.ImageAlign = ContentAlignment.TopCenter;
+            BtnCancelarReserva.Location = new Point(416, 623);
+            BtnCancelarReserva.Name = "BtnCancelarReserva";
+            BtnCancelarReserva.Size = new Size(104, 99);
+            BtnCancelarReserva.TabIndex = 35;
+            BtnCancelarReserva.Text = "Cancelar Reserva";
+            BtnCancelarReserva.TextAlign = ContentAlignment.BottomCenter;
+            BtnCancelarReserva.UseVisualStyleBackColor = false;
+            BtnCancelarReserva.Click += BtnCancelarReserva_Click;
             // 
             // GestionReservas
             // 
@@ -448,6 +468,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightGreen;
             ClientSize = new Size(928, 767);
+            Controls.Add(BtnCancelarReserva);
             Controls.Add(btnCancelar);
             Controls.Add(groupBox2);
             Controls.Add(btnBuscar);
@@ -503,5 +524,6 @@
         private Label labelTipoHabitacion;
         private Label labelNroHabitacion;
         private Label labelCantCamas;
+        private Button BtnCancelarReserva;
     }
 }

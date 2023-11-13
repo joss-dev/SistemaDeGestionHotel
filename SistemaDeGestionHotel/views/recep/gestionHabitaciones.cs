@@ -525,7 +525,6 @@ namespace SistemaDeGestionHotel.views.admin
                 {
                     Form form = new InfoRegistro(idHabitacion);
                     form.ShowDialog();
-                    //comentario
                     this.CargaTodasLasHabitacionesAlPanel();
                 }
             }

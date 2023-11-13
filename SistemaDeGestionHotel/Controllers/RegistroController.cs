@@ -106,6 +106,25 @@ namespace SistemaDeGestionHotel.Controllers
             return true;
         }
 
+        public bool DarBajaReserva(int idRegistro)
+        {
+            Registro registroExistente = d_registro.GetRegistroByID(idRegistro);
+
+            if (registroExistente == null)
+            {
+                // El registro no existe, por lo tanto no se puede editar
+                return false;
+            }
+
+            // El registro existe, actualiza sus propiedades
+
+            registroExistente.EstadoOcupacion = 3;
+
+            d_registro.ActualizarDatos(registroExistente);
+
+            return true;
+        }
+
         public bool RegistrarLiberado(int idRegistro)
         {
             Registro registroExistente = d_registro.GetRegistroByID(idRegistro);

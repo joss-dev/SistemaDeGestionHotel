@@ -61,7 +61,7 @@
             // 
             // groupBox2
             // 
-            groupBox2.Anchor = AnchorStyles.None;
+            groupBox2.Anchor = AnchorStyles.Top;
             groupBox2.Controls.Add(labelNroPiso);
             groupBox2.Controls.Add(labelCantidadCamas);
             groupBox2.Controls.Add(labelPrecio);
@@ -73,7 +73,7 @@
             groupBox2.Controls.Add(label10);
             groupBox2.Controls.Add(label12);
             groupBox2.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox2.Location = new Point(30, 31);
+            groupBox2.Location = new Point(30, 36);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(677, 118);
             groupBox2.TabIndex = 32;
@@ -182,7 +182,7 @@
             // 
             // groupBox1
             // 
-            groupBox1.Anchor = AnchorStyles.None;
+            groupBox1.Anchor = AnchorStyles.Top;
             groupBox1.Controls.Add(labelFechaSalida);
             groupBox1.Controls.Add(labelFechaIngreso);
             groupBox1.Controls.Add(labelTelefono);
@@ -200,7 +200,7 @@
             groupBox1.Controls.Add(label4);
             groupBox1.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox1.ForeColor = SystemColors.ControlText;
-            groupBox1.Location = new Point(30, 154);
+            groupBox1.Location = new Point(30, 166);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(669, 284);
             groupBox1.TabIndex = 33;
@@ -355,16 +355,16 @@
             label4.TabIndex = 21;
             label4.Text = "Fecha de Ingreso :";
             // 
-            // InfoReserva
+            // InfoRegistro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightGreen;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 543);
             Controls.Add(groupBox1);
             Controls.Add(groupBox2);
             FormBorderStyle = FormBorderStyle.SizableToolWindow;
-            Name = "InfoReserva";
+            Name = "InfoRegistro";
             Text = "Informacion de la Reserva";
             Load += CargarDatos;
             groupBox2.ResumeLayout(false);
