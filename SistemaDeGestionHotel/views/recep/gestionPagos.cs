@@ -29,7 +29,7 @@ namespace SistemaDeGestionHotel.views.recep
         public gestionPagos()
         {
             InitializeComponent();
-            
+
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -205,7 +205,7 @@ namespace SistemaDeGestionHotel.views.recep
 
         private void btnContinuar_Click(object sender, EventArgs e)
         {
-            if(!puedeFacturar)
+            if (!puedeFacturar)
             {
                 MessageBox.Show("Debe buscar un cliente por su dni", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -232,7 +232,7 @@ namespace SistemaDeGestionHotel.views.recep
                 }
                 else
                 {
-                    if(oferta == null)
+                    if (oferta == null)
                     {
                         if (pago_controller.AgregarPago((subtotal - this.CalcularOferta(porcentajeOferta) + this.CalcularRecargo(porcentajeRecargo)).Value, DateTime.Now, 1, recargo?.IdOfertaRecargo, registroPago.IdRegistro, cbMetodoPago.SelectedIndex + 1))
                         {
@@ -276,7 +276,7 @@ namespace SistemaDeGestionHotel.views.recep
                     }
                     this.ReiniciarDatos();
                 }
-            }  
+            }
         }
 
         private void label22_Click(object sender, EventArgs e)
@@ -295,7 +295,7 @@ namespace SistemaDeGestionHotel.views.recep
             List<String> listaRecargo = ofertaRecargo_controller.ObtenerNombresRecargo();
             List<MediosPago> medioPago = mediopago_controller.ObtenerMedioPago();
 
-            foreach(MediosPago me in medioPago)
+            foreach (MediosPago me in medioPago)
             {
                 cbMetodoPago.Items.Add(me.Nombre);
             }

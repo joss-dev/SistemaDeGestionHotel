@@ -163,7 +163,7 @@ namespace SistemaDeGestionHotel.views.recep
                         MessageBox.Show("Error al cancelar la reserva", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-            } 
+            }
         }
     }
 }

@@ -1,7 +1,4 @@
-﻿using Microsoft.Data.SqlClient;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Win32;
-using SistemaDeGestionHotel.NEntidades;
+﻿using SistemaDeGestionHotel.NEntidades;
 
 namespace SistemaDeGestionHotel.Datos
 {
@@ -15,7 +12,7 @@ namespace SistemaDeGestionHotel.Datos
         }
 
 
-        
+
 
         //falto el pk enn esta tabla
         //public DetalleServicio GetDetalleServicioByID(int id)

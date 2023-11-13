@@ -7,7 +7,7 @@
 
         public static void AbrirFormHija(Form formHija, Control panelContenedor)
         {
-            
+
 
             foreach (Control control in panelContenedor.Controls)
             {
@@ -20,10 +20,10 @@
                 }
             }
 
-           /* if (panelContenedor.Controls.Count > 0)
-            {
-                panelContenedor.Controls.RemoveAt(0);
-            }*/
+            /* if (panelContenedor.Controls.Count > 0)
+             {
+                 panelContenedor.Controls.RemoveAt(0);
+             }*/
 
             Form fh = formHija as Form;
             fh.TopLevel = false;
@@ -33,6 +33,6 @@
             fh.Show();
             fh.BringToFront();
         }
-      
+
     }
 }

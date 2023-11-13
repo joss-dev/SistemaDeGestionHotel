@@ -446,7 +446,7 @@ namespace SistemaDeGestionHotel.views.admin
                         else
                         {
                             MessageBox.Show("El nro de habitacion ya se encuentra registrada en este piso!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }   
+                        }
                     }
                 }
                 else

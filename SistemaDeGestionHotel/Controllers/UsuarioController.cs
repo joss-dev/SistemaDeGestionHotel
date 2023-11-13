@@ -1,7 +1,6 @@
 ﻿using Microsoft.IdentityModel.Tokens;
 using SistemaDeGestionHotel.Datos;
 using SistemaDeGestionHotel.NEntidades;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SistemaDeGestionHotel.Controllers
 {
@@ -36,12 +35,12 @@ namespace SistemaDeGestionHotel.Controllers
 
         public List<Usuario> GetUsuarios()
         {
-           return d_usuario.GetUsuarios();
+            return d_usuario.GetUsuarios();
         }
 
         public Usuario GetUsuarioByNombreUsuario(string nombreUsuario)
         {
-           return d_usuario.GetUsuarioByNombreUsuario(nombreUsuario);
+            return d_usuario.GetUsuarioByNombreUsuario(nombreUsuario);
         }
 
         public Usuario GetUsuarioByID(int id)
@@ -49,7 +48,7 @@ namespace SistemaDeGestionHotel.Controllers
             return d_usuario.GetUsuarioByID(id);
         }
 
-        public bool EditarUsuario(int idUsuario, string nombre, string apellido,string dni ,string correoElectronico, string direccion, string nombreUsuario, string password, string rutaFoto, int idPerfil)
+        public bool EditarUsuario(int idUsuario, string nombre, string apellido, string dni, string correoElectronico, string direccion, string nombreUsuario, string password, string rutaFoto, int idPerfil)
         {
             Usuario usuarioExistente = d_usuario.GetUsuarioByID(idUsuario);
 
@@ -87,10 +86,10 @@ namespace SistemaDeGestionHotel.Controllers
                 usuarioExistente.IdPerfilUsuario = idPerfil + 1;
             }
 
-            
+
 
             d_usuario.GuardarCambios();
-            
+
             return true;
         }
 

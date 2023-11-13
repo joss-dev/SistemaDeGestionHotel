@@ -1,7 +1,5 @@
-﻿using Microsoft.Data.SqlClient;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using SistemaDeGestionHotel.NEntidades;
-using System.Collections.Generic;
 
 
 namespace SistemaDeGestionHotel.Datos
@@ -27,14 +25,14 @@ namespace SistemaDeGestionHotel.Datos
             }
             catch (DbUpdateException ex)
             {
-                result = false; 
+                result = false;
                 return result;
             }
         }
 
         public Consultum ObtenerConsultaPorID(int idConsulta)
         {
-            return  dbHotelParana.Consulta.FirstOrDefault(c => c.IdConsulta == idConsulta); // Busca una consulta activa por ID
+            return dbHotelParana.Consulta.FirstOrDefault(c => c.IdConsulta == idConsulta); // Busca una consulta activa por ID
         }
 
         public List<Consultum> ObtenerTodasLasConsultas()
@@ -52,7 +50,8 @@ namespace SistemaDeGestionHotel.Datos
                 consulta.Estado = 0; // Cambia el estado a "desactivado"
                 dbHotelParana.SaveChanges(); // Guarda los cambios en la base de datos
                 return result;
-            }else
+            }
+            else
             {
                 result = false;
                 return result;

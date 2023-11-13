@@ -60,11 +60,12 @@ namespace SistemaDeGestionHotel.views.recep
                                      $"Nombre: {TNombre.Text}";
 
                     MessageBox.Show(mensaje, "Se registro con exito, detalles del registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    
-                    if(comboBoxEstado.SelectedIndex == 0)
+
+                    if (comboBoxEstado.SelectedIndex == 0)
                     {
                         this.Close();
-                    }else
+                    }
+                    else
                     {
                         MsgBoxResult resulta = (MsgBoxResult)MessageBox.Show("¿Desea registrar algun servicio adicional?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
                         if (resulta == MsgBoxResult.Yes)
@@ -78,7 +79,7 @@ namespace SistemaDeGestionHotel.views.recep
                         {
                             this.Close();
                         }
-                    }                    
+                    }
                 }
                 else
                 {

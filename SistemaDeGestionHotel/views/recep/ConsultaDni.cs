@@ -68,7 +68,7 @@ namespace SistemaDeGestionHotel.views.recep
 
                                 MessageBox.Show(mensaje, "detalles", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
-                            else if(registroCliente.EstadoOcupacion == 1)
+                            else if (registroCliente.EstadoOcupacion == 1)
                             {
                                 string mensaje = $"El cliente se encuentra registrado en la habitacion : {registroCliente.NroHabitacionNavigation.NroHabitacion.ToString()}\n";
 

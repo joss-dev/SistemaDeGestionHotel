@@ -1,8 +1,5 @@
-﻿using Microsoft.IdentityModel.Tokens;
-using SistemaDeGestionHotel.Datos;
+﻿using SistemaDeGestionHotel.Datos;
 using SistemaDeGestionHotel.NEntidades;
-using SistemaDeGestionHotel.views.admin;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SistemaDeGestionHotel.Controllers
 {
@@ -56,7 +53,7 @@ namespace SistemaDeGestionHotel.Controllers
             {
                 MPExistente.Nombre = nombre;
                 MPExistente.IdTipoMedioPago = idTipoMP;
-                MPExistente.Estado = Estado;            
+                MPExistente.Estado = Estado;
             }
 
             dMediosPago.GuardarCambios();

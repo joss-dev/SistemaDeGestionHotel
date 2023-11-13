@@ -1,8 +1,5 @@
-﻿using Microsoft.IdentityModel.Tokens;
-using SistemaDeGestionHotel.Datos;
+﻿using SistemaDeGestionHotel.Datos;
 using SistemaDeGestionHotel.NEntidades;
-using SistemaDeGestionHotel.views.admin;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SistemaDeGestionHotel.Controllers
 {
@@ -10,7 +7,7 @@ namespace SistemaDeGestionHotel.Controllers
     {
         DOfertaRecargo d_ofertaRecargo = new DOfertaRecargo();
 
-        public bool CargarOfertaRecargo(string nombre, DateTime fecha_desde, DateTime fecha_hasta,int estado ,float porcentajeDesc, float porcentajeRecargo)
+        public bool CargarOfertaRecargo(string nombre, DateTime fecha_desde, DateTime fecha_hasta, int estado, float porcentajeDesc, float porcentajeRecargo)
         {
             OfertasRecargo oferta_recargo = new OfertasRecargo()
             {
@@ -51,7 +48,7 @@ namespace SistemaDeGestionHotel.Controllers
                 ORExistente.FechaHasta = fecha_hasta;
                 ORExistente.Estado = estado;
                 ORExistente.PorcentajeDescuento = porcentajeDesc;
-                ORExistente.PorcentajeRecargo = porcentajeRecargo;               
+                ORExistente.PorcentajeRecargo = porcentajeRecargo;
             }
 
             d_ofertaRecargo.GuardarCambios();
@@ -63,7 +60,7 @@ namespace SistemaDeGestionHotel.Controllers
         {
             d_ofertaRecargo.DarBajaOfertasYRecargos();
         }
-        
+
         public List<String> ObtenerNombOfertasRecargo()
         {
             return d_ofertaRecargo.ObtenerNombresOfRecargos();
@@ -87,6 +84,6 @@ namespace SistemaDeGestionHotel.Controllers
         public List<OfertasRecargo> ObtenerRecargos()
         {
             return d_ofertaRecargo.ObtenerRecargos();
-        }            
+        }
     }
 }

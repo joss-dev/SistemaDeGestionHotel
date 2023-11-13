@@ -1,5 +1,4 @@
-﻿using Microsoft.Data.SqlClient;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using SistemaDeGestionHotel.NEntidades;
 
 namespace SistemaDeGestionHotel.Datos
@@ -101,10 +100,11 @@ namespace SistemaDeGestionHotel.Datos
         {
             Habitacion hab = dbHotelParana.Habitacions.FirstOrDefault(p => p.NroHabitacion == nroHabitacion && p.IdPiso == idPiso);
 
-            if(hab != null)
+            if (hab != null)
             {
                 return true;
-            }else { return false; }  
+            }
+            else { return false; }
 
         }
 

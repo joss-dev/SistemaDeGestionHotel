@@ -173,7 +173,7 @@ namespace SistemaDeGestionHotel.views.admin
             {
                 ServiciosAdicionale servicioBaja = servicio_controller.GetServicioAdicionalByID(idServicio);
 
-                if(servicioBaja.Estado == 1)
+                if (servicioBaja.Estado == 1)
                 {
                     MsgBoxResult ask = (MsgBoxResult)MessageBox.Show("Seguro desea deshabilitar este Servicio?", "Confirmacion de edición", MessageBoxButtons.YesNo);
 
@@ -194,7 +194,8 @@ namespace SistemaDeGestionHotel.views.admin
                             MessageBox.Show("Ocurrio un error al deshabilitar el servicio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
-                }else 
+                }
+                else
                 {
                     MessageBox.Show("El servicio ya se encuentra deshabilitado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -221,7 +222,7 @@ namespace SistemaDeGestionHotel.views.admin
             {
                 ServiciosAdicionale servicioAlta = servicio_controller.GetServicioAdicionalByID(idServicio);
 
-                if(servicioAlta.Estado == 0)
+                if (servicioAlta.Estado == 0)
                 {
 
                     MsgBoxResult ask = (MsgBoxResult)MessageBox.Show("Seguro desea habilitar este Servicio?", "Confirmacion de edición", MessageBoxButtons.YesNo);
@@ -243,7 +244,8 @@ namespace SistemaDeGestionHotel.views.admin
                             MessageBox.Show("Ocurrio un error al habilitar el servicio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
-                }else
+                }
+                else
                 {
                     MessageBox.Show("El servicio ya se encuentra habilitado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }

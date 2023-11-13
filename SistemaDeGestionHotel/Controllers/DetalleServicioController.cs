@@ -1,5 +1,4 @@
 ﻿using SistemaDeGestionHotel.Datos;
-using SistemaDeGestionHotel.NEntidades;
 
 namespace SistemaDeGestionHotel.Controllers
 {
@@ -9,7 +8,7 @@ namespace SistemaDeGestionHotel.Controllers
         DServiciosAdicionales d_servicioAdicionales = new DServiciosAdicionales();
         DRegistro d_registro = new DRegistro();
 
-        
+
 
         //public List<DetalleServicio> GetDetallesServicios()
         //{

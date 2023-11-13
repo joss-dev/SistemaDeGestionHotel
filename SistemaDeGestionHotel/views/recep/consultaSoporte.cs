@@ -70,9 +70,10 @@ namespace SistemaDeGestionHotel.views.recep
                 // Mostrar un mensaje de error
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
-            }else
+            }
+            else
             {
-                if(c_consulta.EnviarMensaje(usuarioInicioSesion.IdUsuario, txtMotivo.Text, txtMsje.Text))
+                if (c_consulta.EnviarMensaje(usuarioInicioSesion.IdUsuario, txtMotivo.Text, txtMsje.Text))
                 {
                     MessageBox.Show("El mensaje se envio correctamente!");
                     txtMotivo.Text = string.Empty;
@@ -80,9 +81,9 @@ namespace SistemaDeGestionHotel.views.recep
                 }
                 else
                 {
-                    MessageBox.Show("Ocurrio un error al enviar el mensaje!","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Ocurrio un error al enviar el mensaje!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                
+
             }
         }
 

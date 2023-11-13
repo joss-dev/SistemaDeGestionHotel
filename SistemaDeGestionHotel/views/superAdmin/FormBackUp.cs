@@ -32,7 +32,8 @@ namespace SistemaDeGestionHotel.views.superAdmin
                 if (backup_controller.RealizarRespaldo(nombreArchivoRespaldo))
                 {
                     MessageBox.Show("El respaldo se realizo correctamente!");
-                }else
+                }
+                else
                 {
                     MessageBox.Show("Ocurrio un error al realizar el backup", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }

@@ -88,12 +88,13 @@ namespace SistemaDeGestionHotel.views.admin
                                 MessageBox.Show("Ocurrio un error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
-                    }else
+                    }
+                    else
                     {
                         MessageBox.Show("La consulta ya fue resuelta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
-                    
+
                 }
                 else
                 {

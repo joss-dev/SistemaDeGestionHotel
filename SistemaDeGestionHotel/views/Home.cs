@@ -12,7 +12,7 @@ namespace SistemaDeGestionHotel.views
         public Home(Usuario usuario)
         {
             InitializeComponent();
-            usuarioInicioSesion = usuario;  
+            usuarioInicioSesion = usuario;
         }
 
         private void AbrirFormulario(Form formulario)

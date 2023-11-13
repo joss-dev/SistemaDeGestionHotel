@@ -1,5 +1,4 @@
-﻿using Microsoft.Data.SqlClient;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using SistemaDeGestionHotel.NEntidades;
 
 namespace SistemaDeGestionHotel.Datos
@@ -119,10 +118,11 @@ namespace SistemaDeGestionHotel.Datos
                                 .Where(r => r.EstadoOcupacion == 1 || r.EstadoOcupacion == 0)
                                 .Include(s => s.IdServicioAdics)
                                 .FirstOrDefault(r => r.IdCliente == id);
-            if(registro == null)
+            if (registro == null)
             {
                 return registro;
-            }else
+            }
+            else
             {
                 // Recargar el objeto desde la base de datos
                 dbHotelParana.Entry(registro).Reload();
@@ -144,7 +144,7 @@ namespace SistemaDeGestionHotel.Datos
                 registro.IdServicioAdics.Add(servicioAdicional);
                 dbHotelParana.SaveChanges();
                 return result;
-                  
+
             }
             catch (DbUpdateException ex)
             {

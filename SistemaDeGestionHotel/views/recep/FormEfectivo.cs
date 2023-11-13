@@ -61,9 +61,9 @@ namespace SistemaDeGestionHotel.views.recep
                     double? cambio = double.Parse(textBoxEfectivo.Text) - MontoTotal;
                     textBoxCambio.Text = cambio.ToString();
 
-                    
 
-                    if(pago_controller.AgregarPago(MontoTotal.Value, DateTime.Now, 1, OfertaOrecargo?.IdOfertaRecargo, registro.IdRegistro, 3))
+
+                    if (pago_controller.AgregarPago(MontoTotal.Value, DateTime.Now, 1, OfertaOrecargo?.IdOfertaRecargo, registro.IdRegistro, 3))
                     {
                         MessageBox.Show($"El cobro se realizo correctamente! su cambio es : {cambio?.ToString("N2")}");
 
@@ -83,7 +83,7 @@ namespace SistemaDeGestionHotel.views.recep
                         MessageBox.Show("Fallo el cobro", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
-                    
+
                 }
             }
         }

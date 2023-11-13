@@ -9,7 +9,7 @@ namespace SistemaDeGestionHotel.views.recep
         private Registro registroFactura;
         private System.Windows.Forms.Button printButton;
         private System.Windows.Forms.WebBrowser webBrowser1;
-        
+
         public VerFactura(Pago pago, Registro registro)
         {
             InitializeComponent();
@@ -26,9 +26,9 @@ namespace SistemaDeGestionHotel.views.recep
 
             Controls.Add(printButton);
 
-            
+
             this.Controls.Add(webBrowser1);
-            
+
             webBrowser1.Dock = DockStyle.Fill;
 
             webBrowser1.DocumentText = factu.GeneraFactura(pagoFactura, registroFactura);

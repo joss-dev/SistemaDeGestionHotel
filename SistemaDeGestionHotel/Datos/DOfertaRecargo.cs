@@ -1,10 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SistemaDeGestionHotel.NEntidades;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SistemaDeGestionHotel.Datos
 {
@@ -97,8 +92,8 @@ namespace SistemaDeGestionHotel.Datos
 
             var darbaja = dbHotelParana.OfertasRecargos
                           .Where(p => p.FechaHasta < fechaActual);
-           
-            if(darbaja == null)
+
+            if (darbaja == null)
             {
                 return;
             }

@@ -10,7 +10,7 @@ namespace SistemaDeGestionHotel
 
         LoginController login = new LoginController();
         OfertaRecargoControllers ofertaRecargo_controller = new OfertaRecargoControllers();
-       
+
         public Login()
         {
             InitializeComponent();

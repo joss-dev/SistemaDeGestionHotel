@@ -1,5 +1,4 @@
-﻿using Microsoft.Data.SqlClient;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using SistemaDeGestionHotel.NEntidades;
 
 namespace SistemaDeGestionHotel.Datos
@@ -51,7 +50,7 @@ namespace SistemaDeGestionHotel.Datos
                                  .FirstOrDefault(p => p.IdPago == id);
         }
 
-        
+
 
         public void GuardarCambios()
         {

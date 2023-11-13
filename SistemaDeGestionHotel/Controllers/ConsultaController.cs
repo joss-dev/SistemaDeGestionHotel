@@ -1,7 +1,5 @@
-﻿using Microsoft.IdentityModel.Tokens;
-using SistemaDeGestionHotel.Datos;
+﻿using SistemaDeGestionHotel.Datos;
 using SistemaDeGestionHotel.NEntidades;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SistemaDeGestionHotel.Controllers
 {
@@ -38,7 +36,7 @@ namespace SistemaDeGestionHotel.Controllers
 
         public List<Consultum> ObtenerConsultasConUsuarios()
         {
-               return dconsulta.ObtenerConsultasConUsuarios();
+            return dconsulta.ObtenerConsultasConUsuarios();
         }
 
     }

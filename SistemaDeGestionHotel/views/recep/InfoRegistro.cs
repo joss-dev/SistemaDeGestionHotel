@@ -48,14 +48,14 @@ namespace SistemaDeGestionHotel.views.recep
                 labelTipo.Text = habitacionInfo.IdTipoHabNavigation.NombTipo.ToString();
             }
 
-            if(registroInfo.EstadoOcupacion == 0)
+            if (registroInfo.EstadoOcupacion == 0)
             {
                 Button miBoton = new Button();
 
-               
+
                 miBoton.Location = new Point(311, 477);
 
-                
+
                 miBoton.Size = new Size(133, 44);
 
                 miBoton.UseVisualStyleBackColor = true;
