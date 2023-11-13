@@ -80,7 +80,7 @@ namespace SistemaDeGestionHotel.views.recep
                     else
                     {
                         Registro registro = registro_controller.GetRegistroByIDCliente(cliente.IdCliente);
-                        if (registro == null)
+                        if (registro == null || registro.EstadoOcupacion == 0 || registro.EstadoOcupacion == 2 || registro.EstadoOcupacion == 3)
                         {
                             MessageBox.Show("El dni ingresado no se encuentra registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }

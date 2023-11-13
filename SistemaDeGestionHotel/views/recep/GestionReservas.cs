@@ -71,7 +71,6 @@ namespace SistemaDeGestionHotel.views.recep
                             labelCantHuespedes.Text = registroBuscado.CantidadHuespedes.ToString();
                             labelFechaIngreso.Text = registroBuscado.FechaIngreso.ToShortDateString();
                             labelFechaSalida.Text = registroBuscado.FechaSalida.ToShortDateString();
-
                         }
                     }
                 }
@@ -95,6 +94,7 @@ namespace SistemaDeGestionHotel.views.recep
             labelCantHuespedes.Text = string.Empty;
             labelFechaIngreso.Text = string.Empty;
             labelFechaSalida.Text = string.Empty;
+            registroBuscado = null;
         }
 
         private void btnConfirmaLLegada_Click(object sender, EventArgs e)
@@ -128,6 +128,7 @@ namespace SistemaDeGestionHotel.views.recep
                         labelCantHuespedes.Text = string.Empty;
                         labelFechaIngreso.Text = string.Empty;
                         labelFechaSalida.Text = string.Empty;
+                        registroBuscado = null;
                     }
                     else
                     {
@@ -157,6 +158,22 @@ namespace SistemaDeGestionHotel.views.recep
                     {
                         habitacion_controller.LiberarHabitacion(registroBuscado.NroHabitacion);
                         MessageBox.Show("La reserva fue cancelada correctamente!");
+                        labelNroHabitacion.Text = string.Empty;
+                        labelTipoHabitacion.Text = string.Empty;
+                        labelPrecio.Text = string.Empty;
+                        labelCantCamas.Text = string.Empty;
+                        labelPiso.Text = string.Empty;
+
+
+                        labelApellido.Text = string.Empty;
+                        labelNombre.Text = string.Empty;
+                        labelDni.Text = string.Empty;
+                        labelTelefono.Text = string.Empty;
+
+                        labelCantHuespedes.Text = string.Empty;
+                        labelFechaIngreso.Text = string.Empty;
+                        labelFechaSalida.Text = string.Empty;
+                        registroBuscado = null;
                     }
                     else
                     {
