@@ -1,8 +1,8 @@
 ﻿using FontAwesome.Sharp;
-using System.Runtime.InteropServices;
-using SistemaDeGestionHotel.views.superAdmin;
-using SistemaDeGestionHotel.views.admin;
 using SistemaDeGestionHotel.NEntidades;
+using SistemaDeGestionHotel.views.admin;
+using SistemaDeGestionHotel.views.superAdmin;
+using System.Runtime.InteropServices;
 
 namespace SistemaDeGestionHotel.views
 {

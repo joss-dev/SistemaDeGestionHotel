@@ -1,5 +1,3 @@
-using SistemaDeGestionHotel.views.admin;
-
 namespace SistemaDeGestionHotel
 {
     internal static class Program

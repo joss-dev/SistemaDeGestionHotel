@@ -1,6 +1,5 @@
 ﻿using Microsoft.VisualBasic;
 using SistemaDeGestionHotel.Controllers;
-using SistemaDeGestionHotel.Datos;
 using SistemaDeGestionHotel.NEntidades;
 
 namespace SistemaDeGestionHotel.views.admin
