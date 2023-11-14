@@ -336,10 +336,10 @@
             pictureBoxUsuario.Anchor = AnchorStyles.None;
             pictureBoxUsuario.BackColor = Color.LightGreen;
             pictureBoxUsuario.Image = Properties.Resources.img1;
-            pictureBoxUsuario.Location = new Point(638, 174);
+            pictureBoxUsuario.Location = new Point(624, 154);
             pictureBoxUsuario.Name = "pictureBoxUsuario";
-            pictureBoxUsuario.Size = new Size(200, 200);
-            pictureBoxUsuario.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBoxUsuario.Size = new Size(262, 256);
+            pictureBoxUsuario.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxUsuario.TabIndex = 43;
             pictureBoxUsuario.TabStop = false;
             // 

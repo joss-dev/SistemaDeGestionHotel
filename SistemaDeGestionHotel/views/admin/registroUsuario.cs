@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualBasic;
 using SistemaDeGestionHotel.Controllers;
 using SistemaDeGestionHotel.NEntidades;
+using System.Windows.Forms;
 
 namespace SistemaDeGestionHotel.views.admin
 {
@@ -9,6 +10,7 @@ namespace SistemaDeGestionHotel.views.admin
 
         UsuarioController usuario_controller = new UsuarioController();
         PerfilUsuarioController perfilUsuario_controller = new PerfilUsuarioController();
+        private string destinationPath = "NO IMAGEN";
 
         public registroUsuario()
         {
@@ -78,7 +80,7 @@ namespace SistemaDeGestionHotel.views.admin
                 {
                     if (VerificarEmail.Verificar_Email(txtCorreoElec.Text))
                     {
-                        if (usuario_controller.AgregarUsuario(txtNombre.Text, txtApellido.Text, txtDNI.Text, txtCorreoElec.Text, txtDireccion.Text, txtUserName.Text, txtPass.Text, "No imagen", comboBoxTipoPerfil.SelectedIndex))
+                        if (usuario_controller.AgregarUsuario(txtNombre.Text, txtApellido.Text, txtDNI.Text, txtCorreoElec.Text, txtDireccion.Text, txtUserName.Text, txtPass.Text, destinationPath, comboBoxTipoPerfil.SelectedIndex))
                         {
                             MessageBox.Show("El usuarioo se registro correctamente", "Guardar", MessageBoxButtons.OK);
                             txtApellido.Text = string.Empty;
@@ -91,6 +93,7 @@ namespace SistemaDeGestionHotel.views.admin
                             // Para restablecer el ComboBox a la opción predeterminada
                             comboBoxTipoPerfil.SelectedItem = 0;
                             dataGridView1.DataSource = usuario_controller.GetUsuarios();
+                            destinationPath = "NO IMAGEN";
                         }
                         else
                         {
@@ -150,7 +153,16 @@ namespace SistemaDeGestionHotel.views.admin
                 txtCorreoElec.Text = row.Cells["CorreoElectronico"].Value.ToString();
                 txtDireccion.Text = row.Cells["Direccion"].Value.ToString();
                 txtUserName.Text = row.Cells["NombreUsuario"].Value.ToString();
+                // Carga la imagen en el PictureBox
+                string imagePath = row.Cells["fotoPerfil"].Value.ToString();
+                if (String.Equals(imagePath, "NO IMAGEN", StringComparison.OrdinalIgnoreCase) || String.Equals(imagePath, "no imagen", StringComparison.OrdinalIgnoreCase))
+                {
 
+                }
+                else
+                {
+                    pictureBoxUsuario.Image = Image.FromFile(imagePath);
+                }
 
                 // Aquí asumimos que el ComboBox muestra el nombre del perfil de usuario
                 comboBoxTipoPerfil.SelectedIndex = int.Parse(row.Cells["IdPerfilUsuario"].Value.ToString()) - 1;
@@ -185,7 +197,7 @@ namespace SistemaDeGestionHotel.views.admin
                     {
                         if (VerificarEmail.Verificar_Email(txtCorreoElec.Text))
                         {
-                            bool result = usuario_controller.EditarUsuario(usuarioEditar.IdUsuario, txtNombre.Text, txtApellido.Text, txtDNI.Text, txtCorreoElec.Text, txtDireccion.Text, txtUserName.Text, txtPass.Text, "No imagen", comboBoxTipoPerfil.SelectedIndex);
+                            bool result = usuario_controller.EditarUsuario(usuarioEditar.IdUsuario, txtNombre.Text, txtApellido.Text, txtDNI.Text, txtCorreoElec.Text, txtDireccion.Text, txtUserName.Text, txtPass.Text, destinationPath, comboBoxTipoPerfil.SelectedIndex);
                             if (result)
                             {
                                 MessageBox.Show("El Usuario con DNI: " + usuarioEditar.Dni.ToString() + " se edito correctamente", "Confirmado", MessageBoxButtons.OK);
@@ -202,6 +214,7 @@ namespace SistemaDeGestionHotel.views.admin
                                 txtPass.Text = string.Empty;
                                 // Para restablecer el ComboBox a la opción predeterminada
                                 comboBoxTipoPerfil.SelectedItem = 0;
+                                destinationPath = "NO IMAGEN";
                             }
                             else
                             {
@@ -226,41 +239,26 @@ namespace SistemaDeGestionHotel.views.admin
         private void btnIMG_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Archivos de imagen|*.jpg;*.jpeg;*.png;*.gif|Todos los archivos|*.*";
-
+            openFileDialog.Filter = "Imagenes|*.jpg;*.jpeg;*.png";
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                // Generar un nombre de archivo único
-                string nombreAleatorio = Path.GetRandomFileName();
+                // Aquí tienes la ruta de la imagen seleccionada
+                string filePath = openFileDialog.FileName;
 
-                // Obtener la extensión de la imagen original
-                string extension = Path.GetExtension(openFileDialog.FileName);
-
-                // Combinar el nombre único con la extensión
-                string nuevoNombreArchivo = nombreAleatorio + extension;
-
-                string crearuta = Path.Combine(Application.StartupPath, "imagenesPerfil");
-
-                // Ruta de destino en la carpeta "imagenesPerfil" en el directorio de tu proyecto
-                string rutaDestino = Path.Combine(Application.StartupPath, "imagenesPerfil", nuevoNombreArchivo);
-
-                if (!Directory.Exists(crearuta))
+                // Carpeta de destino
+                string destinationFolder = Path.Combine(Application.StartupPath, "imagenesPerfil");
+                if (!Directory.Exists(destinationFolder))
                 {
-                    Directory.CreateDirectory(crearuta);
+                    Directory.CreateDirectory(destinationFolder);
                 }
 
+                // Generar un nombre de archivo aleatorio y copiar la imagen a la carpeta de destino
+                string fileName = Path.GetRandomFileName() + Path.GetExtension(filePath);
+                destinationPath = Path.Combine(destinationFolder, fileName);
 
-                // Mostrar la imagen seleccionada en el PictureBox
-                pictureBoxUsuario.Image = new Bitmap(openFileDialog.FileName);
-
-                // Obtiene la ruta completa del archivo seleccionado
-                string archivoSeleccionado = openFileDialog.FileName;
-
-                // Copia el archivo a la carpeta "imagenesPerfil" usando el nuevo nombre y la ruta completa de destino
-                File.Copy(archivoSeleccionado, rutaDestino);
-
-
+                File.Copy(filePath, destinationPath);
             }
+
 
         }
 
@@ -369,6 +367,7 @@ namespace SistemaDeGestionHotel.views.admin
                             txtPass.Text = string.Empty;
                             // Para restablecer el ComboBox a la opción predeterminada
                             comboBoxTipoPerfil.SelectedItem = 0;
+                            destinationPath = string.Empty;
                         }
                         else
                         {
