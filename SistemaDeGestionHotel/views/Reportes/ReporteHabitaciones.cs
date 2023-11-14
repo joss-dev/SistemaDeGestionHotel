@@ -98,9 +98,13 @@ namespace SistemaDeGestionHotel.views.Reportes
             // Configura el Chart para mostrar las etiquetas de datos
             chartReservas.Series["CantidadReservas"].IsValueShownAsLabel = true;
 
+            // Configura el eje X para que muestre las fechas correctamente
+            // Configura el intervalo del eje X
+            chartReservas.ChartAreas[0].AxisX.Interval = 10;
+            chartReservas.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Days;
+            chartReservas.ChartAreas[0].AxisX.LabelStyle.Format = "dd/MM/yyyy";
+            chartReservas.ChartAreas[0].AxisX.LabelStyle.Angle = -45; // Rota las etiquetas para que se muestren en un ángulo
 
-
-            
 
             // Procesa los datos para configurar el Chart
             foreach (var ingresoDiario in ingresosDiarios)

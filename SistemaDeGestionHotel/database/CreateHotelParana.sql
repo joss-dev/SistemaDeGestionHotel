@@ -105,6 +105,9 @@ CREATE TABLE Habitacion(
 	CONSTRAINT FK_ID_piso FOREIGN KEY (ID_piso) REFERENCES Piso(ID_piso)
 );
 
+
+ --Estado de ocupación puede tomar 4 valores: 0.Reserva 1.Estadía 2.Facturado 3.Cancelado
+
 CREATE TABLE Registro(
 	ID_registro INT NOT NULL IDENTITY(1, 1),
 	Cantidad_huespedes INT NOT NULL,
