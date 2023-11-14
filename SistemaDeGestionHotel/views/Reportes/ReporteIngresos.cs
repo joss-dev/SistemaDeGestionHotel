@@ -12,6 +12,8 @@ namespace SistemaDeGestionHotel.views.Reportes
         public ReporteIngresos()
         {
             InitializeComponent();
+
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void CargarDatos(object sender, EventArgs e)
@@ -28,6 +30,13 @@ namespace SistemaDeGestionHotel.views.Reportes
             comboBoxMeses.Items.Add("Octubre");
             comboBoxMeses.Items.Add("Noviembre");
             comboBoxMeses.Items.Add("Diciembre");
+
+
+            for (int año = DateTime.Now.Year; año >= 2009; año--)
+            {
+                ComboAños.Items.Add(año.ToString());
+            }
+
         }
 
         private void CambiarChartIngresos(object sender, EventArgs e)
@@ -40,8 +49,11 @@ namespace SistemaDeGestionHotel.views.Reportes
             // Convierte el nombre del mes a su número correspondiente
             int numeroMes = DateTime.ParseExact(mesSeleccionado, "MMMM", CultureInfo.CurrentCulture).Month;
 
-            // Filtra los pagos por el mes seleccionado
-            List<Pago> pagosFiltrados = pagos.Where(p => p.FechaHoraPago.Month == numeroMes).ToList();
+            // Obtén el año seleccionado en el ComboBox
+            int añoSeleccionado = int.Parse(ComboAños.SelectedItem.ToString());
+
+            // Filtra los pagos por el mes y el año seleccionados
+            List<Pago> pagosFiltrados = pagos.Where(p => p.FechaHoraPago.Month == numeroMes && p.FechaHoraPago.Year == añoSeleccionado).ToList();
 
             // Agrupa los pagos por día y suma los montos
             var ingresosPorDia = pagosFiltrados.GroupBy(p => p.FechaHoraPago.Day)
@@ -77,7 +89,8 @@ namespace SistemaDeGestionHotel.views.Reportes
                 int punto = chart1.Series["Ingresos"].Points.AddXY(ventas.MedioPago, ventas.Ventas);
                 // Muestra el valor como porcentaje
                 chart1.Series["Ingresos"].Points[punto].IsValueShownAsLabel = true;
-                chart1.Series["Ingresos"].Points[punto].Label = ventas.MedioPago + ": #PERCENT{P0}";
+                chart1.Series["Ingresos"].Points[punto].Label = ventas.MedioPago + ":#PERCENT{P0}";
+
             }
 
 

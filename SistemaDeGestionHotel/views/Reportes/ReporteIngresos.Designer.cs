@@ -41,6 +41,8 @@
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
+            label5 = new Label();
+            ComboAños = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)chart1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)CHIngresoMensual).BeginInit();
             SuspendLayout();
@@ -52,9 +54,8 @@
             chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             chart1.Legends.Add(legend1);
-            chart1.Location = new Point(301, 448);
+            chart1.Location = new Point(301, 457);
             chart1.Name = "chart1";
-            chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             series1.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
@@ -73,7 +74,7 @@
             CHIngresoMensual.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             CHIngresoMensual.Legends.Add(legend2);
-            CHIngresoMensual.Location = new Point(23, 102);
+            CHIngresoMensual.Location = new Point(21, 147);
             CHIngresoMensual.Name = "CHIngresoMensual";
             series2.ChartArea = "ChartArea1";
             series2.Legend = "Legend1";
@@ -88,7 +89,7 @@
             label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 32.25F, FontStyle.Underline, GraphicsUnit.Point);
-            label1.Location = new Point(244, 9);
+            label1.Location = new Point(301, 9);
             label1.Name = "label1";
             label1.Size = new Size(411, 51);
             label1.TabIndex = 2;
@@ -99,7 +100,7 @@
             // 
             comboBoxMeses.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxMeses.FormattingEnabled = true;
-            comboBoxMeses.Location = new Point(23, 73);
+            comboBoxMeses.Location = new Point(155, 97);
             comboBoxMeses.Name = "comboBoxMeses";
             comboBoxMeses.Size = new Size(121, 23);
             comboBoxMeses.TabIndex = 30;
@@ -110,7 +111,7 @@
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(301, 410);
+            label2.Location = new Point(301, 419);
             label2.Name = "label2";
             label2.Size = new Size(300, 20);
             label2.TabIndex = 31;
@@ -121,7 +122,7 @@
             label3.Anchor = AnchorStyles.Top;
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(160, 72);
+            label3.Location = new Point(329, 124);
             label3.Name = "label3";
             label3.Size = new Size(224, 20);
             label3.TabIndex = 32;
@@ -131,11 +132,30 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(23, 50);
+            label4.Location = new Point(155, 74);
             label4.Name = "label4";
             label4.Size = new Size(145, 20);
             label4.TabIndex = 33;
             label4.Text = "Seleccione el mes :";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(12, 74);
+            label5.Name = "label5";
+            label5.Size = new Size(140, 20);
+            label5.TabIndex = 35;
+            label5.Text = "Seleccione el Año:";
+            // 
+            // ComboAños
+            // 
+            ComboAños.DropDownStyle = ComboBoxStyle.DropDownList;
+            ComboAños.FormattingEnabled = true;
+            ComboAños.Location = new Point(12, 97);
+            ComboAños.Name = "ComboAños";
+            ComboAños.Size = new Size(121, 23);
+            ComboAños.TabIndex = 34;
             // 
             // ReporteIngresos
             // 
@@ -144,6 +164,8 @@
             AutoScroll = true;
             BackColor = Color.LightGreen;
             ClientSize = new Size(922, 745);
+            Controls.Add(label5);
+            Controls.Add(ComboAños);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -170,5 +192,7 @@
         private Label label2;
         private Label label3;
         private Label label4;
+        private Label label5;
+        private ComboBox ComboAños;
     }
 }

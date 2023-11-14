@@ -36,14 +36,17 @@
             comboBoxMeses = new ComboBox();
             label6 = new Label();
             label2 = new Label();
+            label3 = new Label();
+            ComboAños = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)chartCantidadServicios).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.Top;
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(51, 32);
+            label1.Location = new Point(98, 32);
             label1.Name = "label1";
             label1.Size = new Size(642, 37);
             label1.TabIndex = 0;
@@ -51,6 +54,7 @@
             // 
             // chartCantidadServicios
             // 
+            chartCantidadServicios.Anchor = AnchorStyles.None;
             chartArea1.Name = "ChartArea1";
             chartCantidadServicios.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
@@ -68,9 +72,10 @@
             // 
             // comboBoxMeses
             // 
+            comboBoxMeses.Anchor = AnchorStyles.None;
             comboBoxMeses.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxMeses.FormattingEnabled = true;
-            comboBoxMeses.Location = new Point(163, 190);
+            comboBoxMeses.Location = new Point(259, 189);
             comboBoxMeses.Name = "comboBoxMeses";
             comboBoxMeses.Size = new Size(121, 23);
             comboBoxMeses.TabIndex = 36;
@@ -78,9 +83,10 @@
             // 
             // label6
             // 
+            label6.Anchor = AnchorStyles.None;
             label6.AutoSize = true;
             label6.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(163, 161);
+            label6.Location = new Point(259, 160);
             label6.Name = "label6";
             label6.Size = new Size(113, 15);
             label6.TabIndex = 37;
@@ -88,6 +94,7 @@
             // 
             // label2
             // 
+            label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             label2.Location = new Point(54, 101);
@@ -96,12 +103,35 @@
             label2.TabIndex = 2;
             label2.Text = "Cantidades por servicio adicional:";
             // 
+            // label3
+            // 
+            label3.Anchor = AnchorStyles.None;
+            label3.AutoSize = true;
+            label3.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(98, 160);
+            label3.Name = "label3";
+            label3.Size = new Size(92, 15);
+            label3.TabIndex = 39;
+            label3.Text = "Selecione año: ";
+            // 
+            // ComboAños
+            // 
+            ComboAños.Anchor = AnchorStyles.None;
+            ComboAños.DropDownStyle = ComboBoxStyle.DropDownList;
+            ComboAños.FormattingEnabled = true;
+            ComboAños.Location = new Point(98, 189);
+            ComboAños.Name = "ComboAños";
+            ComboAños.Size = new Size(121, 23);
+            ComboAños.TabIndex = 38;
+            // 
             // ReporteSsAdicionales
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightGreen;
             ClientSize = new Size(800, 597);
+            Controls.Add(label3);
+            Controls.Add(ComboAños);
             Controls.Add(label6);
             Controls.Add(comboBoxMeses);
             Controls.Add(label2);
@@ -122,5 +152,7 @@
         private ComboBox comboBoxMeses;
         private Label label6;
         private Label label2;
+        private Label label3;
+        private ComboBox ComboAños;
     }
 }

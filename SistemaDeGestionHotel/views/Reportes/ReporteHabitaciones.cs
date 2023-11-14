@@ -21,6 +21,7 @@ namespace SistemaDeGestionHotel.views.Reportes
         public ReporteHabitaciones()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void iconButton1_Click(object sender, EventArgs e)
@@ -75,44 +76,41 @@ namespace SistemaDeGestionHotel.views.Reportes
 
         private void ActualizarGraficoChart(object sender, EventArgs e)
         {
-            // Supongamos que tienes un control Chart llamado chart1 con una serie llamada "CantidadReservas"
-            ChartReservas.Series["CantidadReservas"].Points.Clear(); // Limpia los puntos anteriores
+
+            chartReservas.Series["CantidadReservas"].Points.Clear(); // Limpia los puntos anteriores
 
             List<Registro> registros = regController.GetRegistrosSinServicios();
 
             DateTime fechaInicio = DTPDesde.Value.Date;
             DateTime fechaFin = DTPHasta.Value.Date;
 
-            // Consulta para obtener la cantidad de reservas diarias en el rango de fechas especificado
-            var reservasDiarias = registros
-                .Where(r => r.FechaIngreso >= fechaInicio && r.FechaIngreso <= fechaFin && r.EstadoOcupacion == 0)
+            // Consulta para obtener la cantidad de ingresos diarias en el rango de fechas especificado
+            var ingresosDiarios = registros
+                .Where(r => r.FechaIngreso >= fechaInicio && r.FechaIngreso <= fechaFin && (r.EstadoOcupacion == 1 || r.EstadoOcupacion == 2))
                 .GroupBy(r => r.FechaIngreso.Date)
                 .Select(g => new
                 {
                     Fecha = g.Key,
-                    CantidadHabitaciones = g.Select(r => r.NroHabitacion).Distinct().Count()
+                    CantidadIngresos = g.Count() 
                 })
                 .ToList();
 
             // Configura el Chart para mostrar las etiquetas de datos
-            ChartReservas.Series["CantidadReservas"].IsValueShownAsLabel = true;
+            chartReservas.Series["CantidadReservas"].IsValueShownAsLabel = true;
 
-            // Configura el eje Y para ir de 1 en 1
-            ChartReservas.ChartAreas[0].AxisY.Interval = 1;
 
-            // Configura el eje X para mostrar todas las fechas, incluso aquellas sin datos
-            ChartReservas.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
-            ChartReservas.ChartAreas[0].AxisX.MajorTickMark.Enabled = false;
-            ChartReservas.ChartAreas[0].AxisX.Interval = 1;
+
+            
 
             // Procesa los datos para configurar el Chart
-            foreach (var reservaDiaria in reservasDiarias)
+            foreach (var ingresoDiario in ingresosDiarios)
             {
                 // Añade los datos al Chart
-                ChartReservas.Series["CantidadReservas"].Points.AddXY(reservaDiaria.Fecha.ToShortDateString(), reservaDiaria.CantidadHabitaciones);
+                chartReservas.Series["CantidadReservas"].Points.AddXY(ingresoDiario.Fecha.ToShortDateString(), ingresoDiario.CantidadIngresos);
             }
         }
     }
-}
+  }
+
 
 

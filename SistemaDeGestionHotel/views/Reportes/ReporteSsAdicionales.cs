@@ -1,5 +1,6 @@
 ﻿using SistemaDeGestionHotel.Controllers;
 using SistemaDeGestionHotel.NEntidades;
+using System;
 using System.Data;
 using System.Globalization;
 using System.Windows.Forms.DataVisualization.Charting;
@@ -14,6 +15,8 @@ namespace SistemaDeGestionHotel.views.Reportes
         {
             InitializeComponent();
 
+            this.WindowState = FormWindowState.Maximized;
+
             comboBoxMeses.Items.Add("Enero");
             comboBoxMeses.Items.Add("Febrero");
             comboBoxMeses.Items.Add("Marzo");
@@ -26,10 +29,18 @@ namespace SistemaDeGestionHotel.views.Reportes
             comboBoxMeses.Items.Add("Octubre");
             comboBoxMeses.Items.Add("Noviembre");
             comboBoxMeses.Items.Add("Diciembre");
+
+            for (int año = DateTime.Now.Year; año >= 2009; año--)
+            {
+                ComboAños.Items.Add(año.ToString());
+            }
+
         }
 
         private void CargarDatosIngresos(object sender, EventArgs e)
         {
+            // Limpia los datos anteriores del gráfico
+            chartCantidadServicios.Series["Servicios"].Points.Clear();
 
             List<Registro> registros = registro_controller.GetRegistros();
 
@@ -39,7 +50,10 @@ namespace SistemaDeGestionHotel.views.Reportes
             // Convierte el nombre del mes a su número correspondiente
             int numeroMes = DateTime.ParseExact(mesSeleccionado, "MMMM", CultureInfo.CurrentCulture).Month;
 
-            List<Registro> registroFiltrados = registros.Where(r => r.FechaIngreso.Month == numeroMes).ToList();
+
+            int añoSeleccionado = int.Parse(ComboAños.SelectedItem.ToString());
+
+            List<Registro> registroFiltrados = registros.Where(r => r.FechaIngreso.Month == numeroMes && r.FechaIngreso.Year == añoSeleccionado).ToList();
 
             var serviciosPorRegistro = registroFiltrados.SelectMany(r => r.IdServicioAdics)
                                             .GroupBy(sa => sa.NombServicio)
@@ -56,7 +70,6 @@ namespace SistemaDeGestionHotel.views.Reportes
             foreach (var servicio in serviciosPorRegistro)
             {
                 int punto = chartCantidadServicios.Series["Servicios"].Points.AddXY(servicio.Servicio, servicio.Cantidad);
-
                 chartCantidadServicios.Series["Servicios"].Points[punto].IsValueShownAsLabel = true;
             }
 
