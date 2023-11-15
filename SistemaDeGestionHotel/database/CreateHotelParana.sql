@@ -193,5 +193,11 @@ SELECT * FROM Estado_habitacion;
 SELECT * FROM Usuario;
 Select * FROM Medios_pago;
 SELECT * FROM Tipo_medioPago;
+SELECT * FROM Cliente
+SELECT * FROM Registro
+SELECT * FROM Consulta
+SELECT * FROM DetalleServicios
+SELECT * FROM Habitacion
+SELECT * FROM Pago
 
 
