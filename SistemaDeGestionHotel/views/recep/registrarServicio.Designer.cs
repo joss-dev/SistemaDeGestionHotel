@@ -142,7 +142,7 @@
             // 
             comboBoxServicios.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxServicios.FormattingEnabled = true;
-            comboBoxServicios.Location = new Point(136, 101);
+            comboBoxServicios.Location = new Point(136, 105);
             comboBoxServicios.Name = "comboBoxServicios";
             comboBoxServicios.Size = new Size(121, 28);
             comboBoxServicios.TabIndex = 0;

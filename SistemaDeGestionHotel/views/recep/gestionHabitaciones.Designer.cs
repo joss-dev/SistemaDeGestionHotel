@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(gestionHabitaciones));
             label1 = new Label();
             btnFiltroPiso1 = new Button();
             btnFiltroPiso2 = new Button();
@@ -43,11 +42,11 @@
             btnFiltroSimple = new Button();
             btnFiltroDoble = new Button();
             btnFiltroTriple = new Button();
-            label6 = new Label();
-            btnVolver = new Button();
             errorProvider1 = new ErrorProvider(components);
             todasLasHabitaciones = new Button();
             panel1 = new FlowLayoutPanel();
+            iconButton1 = new FontAwesome.Sharp.IconButton();
+            label5 = new Label();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
@@ -218,31 +217,6 @@
             btnFiltroTriple.UseVisualStyleBackColor = false;
             btnFiltroTriple.Click += btnFiltroTriple_Click;
             // 
-            // label6
-            // 
-            label6.Anchor = AnchorStyles.None;
-            label6.AutoSize = true;
-            label6.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(56, 805);
-            label6.Name = "label6";
-            label6.Size = new Size(53, 20);
-            label6.TabIndex = 70;
-            label6.Text = "Volver";
-            label6.Click += label6_Click;
-            // 
-            // btnVolver
-            // 
-            btnVolver.Anchor = AnchorStyles.None;
-            btnVolver.BackColor = Color.CornflowerBlue;
-            btnVolver.FlatStyle = FlatStyle.Popup;
-            btnVolver.Image = (Image)resources.GetObject("btnVolver.Image");
-            btnVolver.Location = new Point(44, 696);
-            btnVolver.Name = "btnVolver";
-            btnVolver.Size = new Size(71, 71);
-            btnVolver.TabIndex = 69;
-            btnVolver.UseVisualStyleBackColor = false;
-            btnVolver.Click += btnVolver_Click;
-            // 
             // errorProvider1
             // 
             errorProvider1.ContainerControl = this;
@@ -266,8 +240,39 @@
             panel1.BackColor = Color.PaleTurquoise;
             panel1.Location = new Point(21, 207);
             panel1.Name = "panel1";
-            panel1.Size = new Size(915, 483);
+            panel1.Size = new Size(915, 397);
             panel1.TabIndex = 72;
+            // 
+            // iconButton1
+            // 
+            iconButton1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            iconButton1.BackColor = Color.Teal;
+            iconButton1.FlatAppearance.BorderSize = 0;
+            iconButton1.FlatStyle = FlatStyle.Popup;
+            iconButton1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            iconButton1.ForeColor = SystemColors.ActiveCaptionText;
+            iconButton1.IconChar = FontAwesome.Sharp.IconChar.ArrowAltCircleLeft;
+            iconButton1.IconColor = Color.Black;
+            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton1.ImageAlign = ContentAlignment.TopCenter;
+            iconButton1.Location = new Point(65, 636);
+            iconButton1.Name = "iconButton1";
+            iconButton1.Size = new Size(55, 50);
+            iconButton1.TabIndex = 74;
+            iconButton1.TextAlign = ContentAlignment.BottomCenter;
+            iconButton1.UseVisualStyleBackColor = false;
+            iconButton1.Click += iconButton1_Click;
+            // 
+            // label5
+            // 
+            label5.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            label5.AutoSize = true;
+            label5.Font = new Font("Yu Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.Location = new Point(68, 689);
+            label5.Name = "label5";
+            label5.Size = new Size(48, 17);
+            label5.TabIndex = 73;
+            label5.Text = "Volver";
             // 
             // gestionHabitaciones
             // 
@@ -276,11 +281,11 @@
             AutoScroll = true;
             AutoSize = true;
             BackColor = Color.LightGreen;
-            ClientSize = new Size(963, 788);
+            ClientSize = new Size(963, 754);
+            Controls.Add(iconButton1);
+            Controls.Add(label5);
             Controls.Add(panel1);
             Controls.Add(todasLasHabitaciones);
-            Controls.Add(label6);
-            Controls.Add(btnVolver);
             Controls.Add(btnFiltroTriple);
             Controls.Add(btnFiltroDoble);
             Controls.Add(btnFiltroSimple);
@@ -322,9 +327,11 @@
         private Button btnFiltroDoble;
         private Button btnFiltroTriple;
         private Label label6;
-        private Button btnVolver;
         private ErrorProvider errorProvider1;
         private Button todasLasHabitaciones;
         private FlowLayoutPanel panel1;
+        private Button btnVolver;
+        private FontAwesome.Sharp.IconButton iconButton1;
+        private Label label5;
     }
 }

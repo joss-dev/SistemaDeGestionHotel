@@ -98,7 +98,7 @@
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
-            groupBox1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox1.Font = new Font("Microsoft New Tai Lue", 21.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             groupBox1.Location = new Point(130, 80);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(451, 297);
@@ -109,53 +109,56 @@
             // textBoxCambio
             // 
             textBoxCambio.Enabled = false;
-            textBoxCambio.Location = new Point(161, 220);
+            textBoxCambio.Location = new Point(157, 232);
             textBoxCambio.Name = "textBoxCambio";
             textBoxCambio.ReadOnly = true;
-            textBoxCambio.Size = new Size(180, 33);
+            textBoxCambio.Size = new Size(180, 45);
             textBoxCambio.TabIndex = 41;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(158, 192);
+            label5.Font = new Font("Microsoft New Tai Lue", 15.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label5.Location = new Point(154, 204);
             label5.Name = "label5";
-            label5.Size = new Size(90, 25);
+            label5.Size = new Size(99, 28);
             label5.TabIndex = 40;
             label5.Text = "Cambio :";
             // 
             // textBoxEfectivo
             // 
-            textBoxEfectivo.Location = new Point(161, 140);
+            textBoxEfectivo.Location = new Point(157, 152);
             textBoxEfectivo.Name = "textBoxEfectivo";
-            textBoxEfectivo.Size = new Size(180, 33);
+            textBoxEfectivo.Size = new Size(180, 45);
             textBoxEfectivo.TabIndex = 39;
             textBoxEfectivo.KeyDown += ValidarEfectivo;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(161, 112);
+            label4.Font = new Font("Microsoft New Tai Lue", 15.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label4.Location = new Point(157, 124);
             label4.Name = "label4";
-            label4.Size = new Size(97, 25);
+            label4.Size = new Size(108, 28);
             label4.TabIndex = 38;
             label4.Text = "Efectivo : ";
             // 
             // textBoxTotalApagar
             // 
             textBoxTotalApagar.Enabled = false;
-            textBoxTotalApagar.Location = new Point(161, 67);
+            textBoxTotalApagar.Location = new Point(157, 79);
             textBoxTotalApagar.Name = "textBoxTotalApagar";
             textBoxTotalApagar.ReadOnly = true;
-            textBoxTotalApagar.Size = new Size(180, 33);
+            textBoxTotalApagar.Size = new Size(180, 45);
             textBoxTotalApagar.TabIndex = 37;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(158, 39);
+            label3.Font = new Font("Microsoft New Tai Lue", 15.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label3.Location = new Point(154, 51);
             label3.Name = "label3";
-            label3.Size = new Size(138, 25);
+            label3.Size = new Size(153, 28);
             label3.TabIndex = 36;
             label3.Text = "Total a pagar: ";
             // 

@@ -35,7 +35,7 @@ namespace SistemaDeGestionHotel.views.Reportes
                 ComboAños.Items.Add(año.ToString());
             }
 
-            
+
         }
 
         private void CargarDatosIngresos(object sender, EventArgs e)

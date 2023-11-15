@@ -566,5 +566,17 @@ namespace SistemaDeGestionHotel.views.admin
             this.CargaTodasLasHabitacionesAlPanel();
             this.Refresh();
         }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            MsgBoxResult result = (MsgBoxResult)MessageBox.Show("¿Está seguro de que desea cerrar el formulario?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+            if (result == MsgBoxResult.Yes)
+            {
+                this.DialogResult = DialogResult.OK;
+
+                // Cerrar el formulario secundario
+                this.Close();
+            }
+        }
     }
 }

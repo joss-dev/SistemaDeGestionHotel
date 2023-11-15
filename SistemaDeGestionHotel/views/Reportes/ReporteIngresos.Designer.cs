@@ -49,12 +49,12 @@
             // 
             // chart1
             // 
-            chart1.Anchor = AnchorStyles.Bottom;
+            chart1.Anchor = AnchorStyles.None;
             chartArea1.Name = "ChartArea1";
             chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             chart1.Legends.Add(legend1);
-            chart1.Location = new Point(301, 457);
+            chart1.Location = new Point(309, 508);
             chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
@@ -69,12 +69,12 @@
             // 
             // CHIngresoMensual
             // 
-            CHIngresoMensual.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            CHIngresoMensual.Anchor = AnchorStyles.None;
             chartArea2.Name = "ChartArea1";
             CHIngresoMensual.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             CHIngresoMensual.Legends.Add(legend2);
-            CHIngresoMensual.Location = new Point(21, 147);
+            CHIngresoMensual.Location = new Point(33, 205);
             CHIngresoMensual.Name = "CHIngresoMensual";
             series2.ChartArea = "ChartArea1";
             series2.Legend = "Legend1";
@@ -86,10 +86,10 @@
             // 
             // label1
             // 
-            label1.Anchor = AnchorStyles.Top;
+            label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 32.25F, FontStyle.Underline, GraphicsUnit.Point);
-            label1.Location = new Point(301, 9);
+            label1.Location = new Point(288, 31);
             label1.Name = "label1";
             label1.Size = new Size(411, 51);
             label1.TabIndex = 2;
@@ -98,9 +98,10 @@
             // 
             // comboBoxMeses
             // 
+            comboBoxMeses.Anchor = AnchorStyles.None;
             comboBoxMeses.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxMeses.FormattingEnabled = true;
-            comboBoxMeses.Location = new Point(155, 97);
+            comboBoxMeses.Location = new Point(37, 123);
             comboBoxMeses.Name = "comboBoxMeses";
             comboBoxMeses.Size = new Size(121, 23);
             comboBoxMeses.TabIndex = 30;
@@ -110,49 +111,52 @@
             // 
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(301, 419);
+            label2.Font = new Font("Arial Rounded MT Bold", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(262, 476);
             label2.Name = "label2";
-            label2.Size = new Size(300, 20);
+            label2.Size = new Size(420, 24);
             label2.TabIndex = 31;
             label2.Text = "Reporte de Ingresos por Medio de Pago :";
             // 
             // label3
             // 
-            label3.Anchor = AnchorStyles.Top;
+            label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
-            label3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(329, 124);
+            label3.Font = new Font("Arial Rounded MT Bold", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(329, 163);
             label3.Name = "label3";
-            label3.Size = new Size(224, 20);
+            label3.Size = new Size(312, 24);
             label3.TabIndex = 32;
             label3.Text = "Reporte de Ingresos por Mes :";
             // 
             // label4
             // 
+            label4.Anchor = AnchorStyles.None;
             label4.AutoSize = true;
-            label4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(155, 74);
+            label4.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(33, 100);
             label4.Name = "label4";
-            label4.Size = new Size(145, 20);
+            label4.Size = new Size(161, 18);
             label4.TabIndex = 33;
             label4.Text = "Seleccione el mes :";
             // 
             // label5
             // 
+            label5.Anchor = AnchorStyles.None;
             label5.AutoSize = true;
-            label5.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(12, 74);
+            label5.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(200, 101);
             label5.Name = "label5";
-            label5.Size = new Size(140, 20);
+            label5.Size = new Size(156, 18);
             label5.TabIndex = 35;
             label5.Text = "Seleccione el Año:";
             // 
             // ComboAños
             // 
+            ComboAños.Anchor = AnchorStyles.None;
             ComboAños.DropDownStyle = ComboBoxStyle.DropDownList;
             ComboAños.FormattingEnabled = true;
-            ComboAños.Location = new Point(12, 97);
+            ComboAños.Location = new Point(204, 124);
             ComboAños.Name = "ComboAños";
             ComboAños.Size = new Size(121, 23);
             ComboAños.TabIndex = 34;
@@ -162,8 +166,8 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
-            BackColor = Color.LightGreen;
-            ClientSize = new Size(922, 745);
+            BackColor = Color.Aquamarine;
+            ClientSize = new Size(922, 796);
             Controls.Add(label5);
             Controls.Add(ComboAños);
             Controls.Add(label4);
@@ -174,6 +178,7 @@
             Controls.Add(CHIngresoMensual);
             Controls.Add(chart1);
             FormBorderStyle = FormBorderStyle.Fixed3D;
+            MaximizeBox = false;
             Name = "ReporteIngresos";
             Text = "ReporteIngresos";
             Load += CargarDatos;

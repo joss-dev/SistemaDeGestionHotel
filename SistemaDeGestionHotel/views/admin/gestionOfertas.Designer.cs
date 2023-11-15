@@ -154,7 +154,7 @@
             label6.Anchor = AnchorStyles.None;
             label6.AutoSize = true;
             label6.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(578, 165);
+            label6.Location = new Point(596, 178);
             label6.Name = "label6";
             label6.Size = new Size(68, 21);
             label6.TabIndex = 31;
@@ -284,7 +284,7 @@
             comboBoxEstado.Anchor = AnchorStyles.None;
             comboBoxEstado.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxEstado.FormattingEnabled = true;
-            comboBoxEstado.Location = new Point(652, 164);
+            comboBoxEstado.Location = new Point(670, 178);
             comboBoxEstado.Name = "comboBoxEstado";
             comboBoxEstado.Size = new Size(121, 23);
             comboBoxEstado.TabIndex = 44;
@@ -395,7 +395,7 @@
             comboBoxTipo.Anchor = AnchorStyles.None;
             comboBoxTipo.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxTipo.FormattingEnabled = true;
-            comboBoxTipo.Location = new Point(652, 110);
+            comboBoxTipo.Location = new Point(670, 137);
             comboBoxTipo.Name = "comboBoxTipo";
             comboBoxTipo.Size = new Size(121, 23);
             comboBoxTipo.TabIndex = 67;
@@ -406,7 +406,7 @@
             label9.Anchor = AnchorStyles.None;
             label9.AutoSize = true;
             label9.Font = new Font("Yu Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label9.Location = new Point(578, 111);
+            label9.Location = new Point(597, 140);
             label9.Name = "label9";
             label9.Size = new Size(55, 21);
             label9.TabIndex = 66;

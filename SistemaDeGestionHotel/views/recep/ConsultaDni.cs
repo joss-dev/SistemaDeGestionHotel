@@ -21,7 +21,7 @@ namespace SistemaDeGestionHotel.views.recep
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if(usuarioInicioSesion.IdPerfilUsuario == 1 || usuarioInicioSesion.IdPerfilUsuario == 2)
+            if (usuarioInicioSesion.IdPerfilUsuario == 1 || usuarioInicioSesion.IdPerfilUsuario == 2)
             {
                 MessageBox.Show("Usted no tiene los permisos para registrar un huesped", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -99,7 +99,7 @@ namespace SistemaDeGestionHotel.views.recep
                     }
                 }
             }
-            
+
         }
 
 

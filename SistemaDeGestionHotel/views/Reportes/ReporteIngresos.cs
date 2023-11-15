@@ -37,7 +37,7 @@ namespace SistemaDeGestionHotel.views.Reportes
                 ComboAños.Items.Add(año.ToString());
             }
 
-            
+
         }
 
         private void CambiarChartIngresos(object sender, EventArgs e)
@@ -45,7 +45,8 @@ namespace SistemaDeGestionHotel.views.Reportes
             if (comboBoxMeses.SelectedIndex < 0 || ComboAños.SelectedIndex < 0)
             {
                 MessageBox.Show("Debe seleccionar el mes y el año");
-            }else
+            }
+            else
             {
                 List<Pago> pagos = pago_controller.GetPagos();
 
@@ -98,7 +99,7 @@ namespace SistemaDeGestionHotel.views.Reportes
                     chart1.Series["Ingresos"].Points[punto].Label = ventas.MedioPago + ":#PERCENT{P0}";
 
                 }
-            }        
+            }
         }
     }
 }
