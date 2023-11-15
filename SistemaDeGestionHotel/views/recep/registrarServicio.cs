@@ -93,7 +93,7 @@ namespace SistemaDeGestionHotel.views.recep
                             }
                             else
                             {
-                                MessageBox.Show("Error al registrar servicio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("El servicio ya se encuentra registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                     }
