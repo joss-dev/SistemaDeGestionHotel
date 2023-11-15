@@ -35,6 +35,8 @@ namespace SistemaDeGestionHotel.views.Reportes
                 ComboAños.Items.Add(año.ToString());
             }
 
+            comboBoxMeses.SelectedIndex = 0;
+            ComboAños.SelectedIndex = 0;
         }
 
         private void CargarDatosIngresos(object sender, EventArgs e)
