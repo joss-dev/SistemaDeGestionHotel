@@ -35,46 +35,51 @@ namespace SistemaDeGestionHotel.views.Reportes
                 ComboAños.Items.Add(año.ToString());
             }
 
-            comboBoxMeses.SelectedIndex = 0;
-            ComboAños.SelectedIndex = 0;
+            
         }
 
         private void CargarDatosIngresos(object sender, EventArgs e)
         {
-            // Limpia los datos anteriores del gráfico
-            chartCantidadServicios.Series["Servicios"].Points.Clear();
-
-            List<Registro> registros = registro_controller.GetRegistros();
-
-            // el mes seleccionado en el ComboBox
-            string mesSeleccionado = comboBoxMeses.SelectedItem.ToString();
-
-            // Convierte el nombre del mes a su número correspondiente
-            int numeroMes = DateTime.ParseExact(mesSeleccionado, "MMMM", CultureInfo.CurrentCulture).Month;
-
-
-            int añoSeleccionado = int.Parse(ComboAños.SelectedItem.ToString());
-
-            List<Registro> registroFiltrados = registros.Where(r => r.FechaIngreso.Month == numeroMes && r.FechaIngreso.Year == añoSeleccionado).ToList();
-
-            var serviciosPorRegistro = registroFiltrados.SelectMany(r => r.IdServicioAdics)
-                                            .GroupBy(sa => sa.NombServicio)
-                                            .Select(g => new { Servicio = g.Key, Cantidad = g.Count() });
-
-
-            // Limpia los datos anteriores del gráfico
-            chartCantidadServicios.Series["Servicios"].Points.Clear();
-
-            // Cambia el tipo de gráfico a Pie
-            chartCantidadServicios.Series["Servicios"].ChartType = SeriesChartType.Pie;
-
-            // Añade los nuevos datos al gráfico
-            foreach (var servicio in serviciosPorRegistro)
+            if (comboBoxMeses.SelectedIndex < 0 || ComboAños.SelectedIndex < 0)
             {
-                int punto = chartCantidadServicios.Series["Servicios"].Points.AddXY(servicio.Servicio, servicio.Cantidad);
-                chartCantidadServicios.Series["Servicios"].Points[punto].IsValueShownAsLabel = true;
+                MessageBox.Show("Debe seleccionar el mes y el año");
             }
+            else
+            {
+                // Limpia los datos anteriores del gráfico
+                chartCantidadServicios.Series["Servicios"].Points.Clear();
 
+                List<Registro> registros = registro_controller.GetRegistros();
+
+                // el mes seleccionado en el ComboBox
+                string mesSeleccionado = comboBoxMeses.SelectedItem.ToString();
+
+                // Convierte el nombre del mes a su número correspondiente
+                int numeroMes = DateTime.ParseExact(mesSeleccionado, "MMMM", CultureInfo.CurrentCulture).Month;
+
+
+                int añoSeleccionado = int.Parse(ComboAños.SelectedItem.ToString());
+
+                List<Registro> registroFiltrados = registros.Where(r => r.FechaIngreso.Month == numeroMes && r.FechaIngreso.Year == añoSeleccionado).ToList();
+
+                var serviciosPorRegistro = registroFiltrados.SelectMany(r => r.IdServicioAdics)
+                                                .GroupBy(sa => sa.NombServicio)
+                                                .Select(g => new { Servicio = g.Key, Cantidad = g.Count() });
+
+
+                // Limpia los datos anteriores del gráfico
+                chartCantidadServicios.Series["Servicios"].Points.Clear();
+
+                // Cambia el tipo de gráfico a Pie
+                chartCantidadServicios.Series["Servicios"].ChartType = SeriesChartType.Pie;
+
+                // Añade los nuevos datos al gráfico
+                foreach (var servicio in serviciosPorRegistro)
+                {
+                    int punto = chartCantidadServicios.Series["Servicios"].Points.AddXY(servicio.Servicio, servicio.Cantidad);
+                    chartCantidadServicios.Series["Servicios"].Points[punto].IsValueShownAsLabel = true;
+                }
+            }
         }
     }
 }
