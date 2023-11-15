@@ -14,11 +14,13 @@ namespace SistemaDeGestionHotel.views.recep
 
         private Registro registroInfo;
         private Cliente clienteInfo;
+        private Usuario usuarioInicioSesion;
 
-        public InfoRegistro(int idhab)
+        public InfoRegistro(int idhab, Usuario usuarioInicioSesion)
         {
             InitializeComponent();
             idHabitacion = idhab;
+            this.usuarioInicioSesion = usuarioInicioSesion;
         }
 
         private void CargarDatos(object sender, EventArgs e)
@@ -69,21 +71,28 @@ namespace SistemaDeGestionHotel.views.recep
         }
         private void CancelarReserva_Click(object sender, EventArgs e)
         {
-            MsgBoxResult result = (MsgBoxResult)MessageBox.Show("¿Está seguro de que desea cancelar esta reserva?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
-            if (result == MsgBoxResult.Yes)
+            if (usuarioInicioSesion.IdPerfilUsuario == 1 || usuarioInicioSesion.IdPerfilUsuario == 2)
             {
-                bool resil = registro_controller.DarBajaReserva(registroInfo.IdRegistro);
-                if (resil)
-                {
-                    habitacion_controller.LiberarHabitacion(registroInfo.NroHabitacion);
-                    MessageBox.Show("La reserva fue cancelada correctamente!");
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Error al cancelar la reserva", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                MessageBox.Show("Usted no tiene los permisos para cancelar una reserva", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            else
+            {
+                MsgBoxResult result = (MsgBoxResult)MessageBox.Show("¿Está seguro de que desea cancelar esta reserva?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                if (result == MsgBoxResult.Yes)
+                {
+                    bool resil = registro_controller.DarBajaReserva(registroInfo.IdRegistro);
+                    if (resil)
+                    {
+                        habitacion_controller.LiberarHabitacion(registroInfo.NroHabitacion);
+                        MessageBox.Show("La reserva fue cancelada correctamente!");
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al cancelar la reserva", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }           
         }
     }
 }

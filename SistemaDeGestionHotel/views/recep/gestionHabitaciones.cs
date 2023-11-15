@@ -523,7 +523,7 @@ namespace SistemaDeGestionHotel.views.admin
             {
                 if (int.TryParse(botonClicado.Name, out int idHabitacion))
                 {
-                    Form form = new InfoRegistro(idHabitacion);
+                    Form form = new InfoRegistro(idHabitacion, usuarioInicioSesion);
                     form.ShowDialog();
                     this.CargaTodasLasHabitacionesAlPanel();
                 }
@@ -538,7 +538,7 @@ namespace SistemaDeGestionHotel.views.admin
             {
                 if (int.TryParse(botonClicado.Name, out int idHabitacion))
                 {
-                    Form form = new InfoRegistro(idHabitacion);
+                    Form form = new InfoRegistro(idHabitacion, usuarioInicioSesion);
                     form.ShowDialog();
                     this.CargaTodasLasHabitacionesAlPanel();
                 }
