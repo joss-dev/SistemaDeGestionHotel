@@ -266,7 +266,7 @@
             label6.Anchor = AnchorStyles.Bottom;
             label6.AutoSize = true;
             label6.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(411, 113);
+            label6.Location = new Point(411, 109);
             label6.Name = "label6";
             label6.Size = new Size(121, 18);
             label6.TabIndex = 37;
@@ -288,7 +288,7 @@
             label10.Anchor = AnchorStyles.Bottom;
             label10.AutoSize = true;
             label10.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label10.Location = new Point(52, 104);
+            label10.Location = new Point(52, 110);
             label10.Name = "label10";
             label10.Size = new Size(130, 18);
             label10.TabIndex = 35;
@@ -298,7 +298,7 @@
             // 
             dateTimeIngreso.Anchor = AnchorStyles.Bottom;
             dateTimeIngreso.Format = DateTimePickerFormat.Short;
-            dateTimeIngreso.Location = new Point(52, 145);
+            dateTimeIngreso.Location = new Point(52, 139);
             dateTimeIngreso.Name = "dateTimeIngreso";
             dateTimeIngreso.Size = new Size(135, 24);
             dateTimeIngreso.TabIndex = 34;
@@ -308,7 +308,7 @@
             // 
             dateTimeSalida.Anchor = AnchorStyles.Bottom;
             dateTimeSalida.Format = DateTimePickerFormat.Short;
-            dateTimeSalida.Location = new Point(411, 154);
+            dateTimeSalida.Location = new Point(411, 140);
             dateTimeSalida.Name = "dateTimeSalida";
             dateTimeSalida.Size = new Size(123, 24);
             dateTimeSalida.TabIndex = 36;

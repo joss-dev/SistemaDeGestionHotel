@@ -352,13 +352,15 @@
             // btnReiniciar
             // 
             btnReiniciar.Anchor = AnchorStyles.Top;
-            btnReiniciar.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            btnReiniciar.Location = new Point(650, 276);
+            btnReiniciar.BackColor = Color.ForestGreen;
+            btnReiniciar.FlatStyle = FlatStyle.Popup;
+            btnReiniciar.Font = new Font("Microsoft YaHei", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnReiniciar.Location = new Point(662, 276);
             btnReiniciar.Name = "btnReiniciar";
-            btnReiniciar.Size = new Size(85, 31);
+            btnReiniciar.Size = new Size(98, 31);
             btnReiniciar.TabIndex = 41;
             btnReiniciar.Text = "Reiniciar";
-            btnReiniciar.UseVisualStyleBackColor = true;
+            btnReiniciar.UseVisualStyleBackColor = false;
             btnReiniciar.Click += btnReiniciar_Click;
             // 
             // labelMontoServicios

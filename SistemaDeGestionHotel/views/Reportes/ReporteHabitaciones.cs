@@ -24,18 +24,6 @@ namespace SistemaDeGestionHotel.views.Reportes
             this.WindowState = FormWindowState.Maximized;
         }
 
-        private void iconButton1_Click(object sender, EventArgs e)
-        {
-            MsgBoxResult result = (MsgBoxResult)MessageBox.Show("¿Está seguro de que desea cerrar el formulario?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
-            if (result == MsgBoxResult.Yes)
-            {
-                this.DialogResult = DialogResult.OK;
-
-                // Cerrar el formulario secundario
-                this.Close();
-            }
-        }
-
         private void ActualizarGraficoPyramid(object sender, EventArgs e)
         {
             // Declarar e inicializar la variable habitacion
@@ -74,47 +62,19 @@ namespace SistemaDeGestionHotel.views.Reportes
             }
         }
 
-        private void ActualizarGraficoChart(object sender, EventArgs e)
+        private void iconButton1_Click_1(object sender, EventArgs e)
         {
-
-            chartReservas.Series["CantidadReservas"].Points.Clear(); // Limpia los puntos anteriores
-
-            List<Registro> registros = regController.GetRegistrosSinServicios();
-
-            DateTime fechaInicio = DTPDesde.Value.Date;
-            DateTime fechaFin = DTPHasta.Value.Date;
-
-            // Consulta para obtener la cantidad de ingresos diarias en el rango de fechas especificado
-            var ingresosDiarios = registros
-                .Where(r => r.FechaIngreso >= fechaInicio && r.FechaIngreso <= fechaFin && (r.EstadoOcupacion == 1 || r.EstadoOcupacion == 2))
-                .GroupBy(r => r.FechaIngreso.Date)
-                .Select(g => new
-                {
-                    Fecha = g.Key,
-                    CantidadIngresos = g.Count() 
-                })
-                .ToList();
-
-            // Configura el Chart para mostrar las etiquetas de datos
-            chartReservas.Series["CantidadReservas"].IsValueShownAsLabel = true;
-
-            // Configura el eje X para que muestre las fechas correctamente
-            // Configura el intervalo del eje X
-            chartReservas.ChartAreas[0].AxisX.Interval = 10;
-            chartReservas.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Days;
-            chartReservas.ChartAreas[0].AxisX.LabelStyle.Format = "dd/MM/yyyy";
-            chartReservas.ChartAreas[0].AxisX.LabelStyle.Angle = -45; // Rota las etiquetas para que se muestren en un ángulo
-
-
-            // Procesa los datos para configurar el Chart
-            foreach (var ingresoDiario in ingresosDiarios)
+            MsgBoxResult result = (MsgBoxResult)MessageBox.Show("¿Está seguro de que desea cerrar el formulario?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+            if (result == MsgBoxResult.Yes)
             {
-                // Añade los datos al Chart
-                chartReservas.Series["CantidadReservas"].Points.AddXY(ingresoDiario.Fecha.ToShortDateString(), ingresoDiario.CantidadIngresos);
+                this.DialogResult = DialogResult.OK;
+
+                // Cerrar el formulario secundario
+                this.Close();
             }
         }
     }
-  }
+}
 
 
 

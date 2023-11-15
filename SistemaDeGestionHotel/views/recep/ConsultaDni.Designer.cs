@@ -50,8 +50,8 @@
             // 
             // TDni
             // 
-            TDni.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            TDni.Location = new Point(229, 253);
+            TDni.Anchor = AnchorStyles.None;
+            TDni.Location = new Point(229, 256);
             TDni.MaxLength = 8;
             TDni.Name = "TDni";
             TDni.PlaceholderText = "Solo números";
@@ -61,10 +61,10 @@
             // 
             // label8
             // 
-            label8.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            label8.Anchor = AnchorStyles.None;
             label8.AutoSize = true;
             label8.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Location = new Point(229, 232);
+            label8.Location = new Point(229, 223);
             label8.Name = "label8";
             label8.Size = new Size(194, 18);
             label8.TabIndex = 34;
@@ -72,7 +72,9 @@
             // 
             // btnBuscar
             // 
-            btnBuscar.Location = new Point(276, 292);
+            btnBuscar.Anchor = AnchorStyles.None;
+            btnBuscar.Font = new Font("Microsoft JhengHei", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnBuscar.Location = new Point(284, 293);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(96, 38);
             btnBuscar.TabIndex = 35;
@@ -86,6 +88,7 @@
             // 
             // groupBox2
             // 
+            groupBox2.Anchor = AnchorStyles.None;
             groupBox2.Controls.Add(labelNroPiso);
             groupBox2.Controls.Add(labelCantidadCamas);
             groupBox2.Controls.Add(labelPrecio);
